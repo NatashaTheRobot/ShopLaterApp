@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="2061" systemVersion="12D78" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="Image" syncable="YES">
+        <attribute name="fileName" attributeType="String" syncable="YES"/>
+        <relationship name="product" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Product" inverseName="images" inverseEntity="Product" syncable="YES"/>
+        <relationship name="provider" optional="YES" minCount="1" maxCount="1" deletionRule="Cascade" destinationEntity="Provider" inverseName="images" inverseEntity="Provider" syncable="YES"/>
+    </entity>
+    <entity name="Price" syncable="YES">
+        <attribute name="created_at" attributeType="Date" indexed="YES" syncable="YES"/>
+        <attribute name="dollarAmount" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="type" attributeType="String" defaultValueString="current" indexed="YES" syncable="YES"/>
+        <relationship name="product" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Product" inverseName="prices" inverseEntity="Product" syncable="YES"/>
+    </entity>
+    <entity name="Product" syncable="YES">
+        <attribute name="externalId" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="identifier" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="identifierType" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="summary" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="url" attributeType="String" syncable="YES"/>
+        <relationship name="images" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Image" inverseName="product" inverseEntity="Image" syncable="YES"/>
+        <relationship name="prices" toMany="YES" minCount="1" deletionRule="Cascade" destinationEntity="Price" inverseName="product" inverseEntity="Price" syncable="YES"/>
+        <relationship name="providers" toMany="YES" minCount="1" deletionRule="Nullify" destinationEntity="Provider" inverseName="products" inverseEntity="Provider" syncable="YES"/>
+    </entity>
+    <entity name="Provider" syncable="YES">
+        <attribute name="name" attributeType="String" syncable="YES"/>
+        <attribute name="url" attributeType="String" syncable="YES"/>
+        <relationship name="images" toMany="YES" minCount="1" deletionRule="Nullify" destinationEntity="Image" inverseName="provider" inverseEntity="Image" syncable="YES"/>
+        <relationship name="products" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Product" inverseName="providers" inverseEntity="Product" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Product" positionX="376" positionY="189" width="128" height="178"/>
+        <element name="Image" positionX="448" positionY="-27" width="128" height="88"/>
+        <element name="Provider" positionX="198" positionY="-171" width="128" height="103"/>
+        <element name="Price" positionX="160" positionY="192" width="128" height="103"/>
+    </elements>
+</model>

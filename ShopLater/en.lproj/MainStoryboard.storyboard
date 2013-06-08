@@ -107,6 +107,7 @@
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstItem="X7p-5W-qgZ" firstAttribute="leading" secondItem="kZ6-S2-IBl" secondAttribute="leading" type="default" id="EW3-Gc-yHd"/>
                                     <constraint firstItem="X7p-5W-qgZ" firstAttribute="top" secondItem="kZ6-S2-IBl" secondAttribute="top" type="default" id="Rgx-t7-Vmu"/>
@@ -157,6 +158,9 @@
         </class>
         <class className="UICollectionViewFlowLayout" superclassName="UICollectionViewLayout">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewFlowLayout.h"/>
+        </class>
+        <class className="UICollectionViewLayout" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewLayout.h"/>
         </class>
     </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

@@ -10,4 +10,6 @@
 
 @interface ProviderViewController : UICollectionViewController
 
+@property (assign, nonatomic) BOOL showNavigationBar;
+
 @end

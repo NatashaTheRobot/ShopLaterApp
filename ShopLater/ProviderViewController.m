@@ -40,6 +40,10 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    if (!self.showNavigationBar) {
+        self.navigationItem.hidesBackButton = YES;
+    }
 	
 }
 
@@ -49,22 +53,24 @@
     [self.providerNames enumerateObjectsUsingBlock:^(NSString *name, NSUInteger idx, BOOL *stop) {
         [self.coreDataManager createProviderWithName:name];
     }];
-//    BOOL didSave = [self.coreDataManager saveDataInManagedContext];
-    BOOL didSave = NO;
+    
+    BOOL didSave = [self.coreDataManager saveDataInManagedContext];
     if (!didSave) {
-        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Did Not Save"
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@""
                                                             message:@"We're sorry, something went wrong :("
                                                            delegate:self
                                                   cancelButtonTitle:@"Ok"
                                                   otherButtonTitles:nil, nil];
         
-        NSLog(@"%@", self.navigationController);
-//        [self.navigationController popToRootViewControllerAnimated:YES];
-//        [alertView show];
+        [alertView show];
+        
     }
 }
 
-
+- (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex
+{
+    [self.navigationController popToRootViewControllerAnimated:YES];
+}
 
 
 @end

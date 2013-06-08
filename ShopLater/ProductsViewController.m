@@ -8,8 +8,11 @@
 
 #import "ProductsViewController.h"
 #import "CoreDataManager.h"
+#import "ProviderViewController.h"
 
 @interface ProductsViewController ()
+
+@property (assign, nonatomic) BOOL productsExist;
 
 @end
 
@@ -23,12 +26,29 @@
     
 }
 
+- (void)viewDidAppear:(BOOL)animated
+{
+    if (!self.productsExist) {
+        [self performSegueWithIdentifier:@"toProviderCollectionView" sender:self];
+    }
+}
+
 - (void)selectViewController
 {
     CoreDataManager *coreDataManager = [CoreDataManager sharedManager];
     
-    if (![coreDataManager productsExist]) {
+    self.productsExist = [coreDataManager productsExist];
+    if (!self.productsExist) {
         [self performSegueWithIdentifier:@"toProviderCollectionView" sender:self];
+    }
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if (self.productsExist) {
+        ((ProviderViewController *)segue.destinationViewController).showNavigationBar = YES;
+    } else {
+        ((ProviderViewController *)segue.destinationViewController).showNavigationBar = NO;
     }
 }
 

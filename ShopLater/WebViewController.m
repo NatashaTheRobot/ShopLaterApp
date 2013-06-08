@@ -7,12 +7,12 @@
 //
 
 #import "WebViewController.h"
+#import "NewProductViewController.h"
 
 @interface WebViewController ()
 
 @property (weak, nonatomic) IBOutlet UIWebView *webView;
-    
-- (IBAction)buyLaterWithButton:(id)sender;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
 
 @end
 
@@ -22,14 +22,22 @@
 {
     [super viewDidLoad];
     
+    [self.activityIndicator startAnimating];
+    
     NSURLRequest *request = [NSURLRequest requestWithURL:self.url];
     
     [self.webView loadRequest:request];
 }
 
-- (IBAction)buyLaterWithButton:(id)sender
+- (void)webViewDidFinishLoad:(UIWebView *)webView
 {
-    NSString *url = self.webView.request.URL.absoluteString;
-    NSLog(@"%@", url);
+    [self.activityIndicator stopAnimating];
 }
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    NSURL *productURL = [NSURL URLWithString:self.webView.request.URL.absoluteString];
+    ((NewProductViewController *)segue.destinationViewController).productURL = productURL;
+}
+
 @end

@@ -30,6 +30,13 @@
 		9CA5D74A1762AC170009098E /* ProviderCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CA5D7491762AC170009098E /* ProviderCollectionViewCell.m */; };
 		9CA5D753176350770009098E /* Product.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CA5D752176350770009098E /* Product.m */; };
 		9CA5D7561763BFFF0009098E /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CA5D7551763BFFF0009098E /* WebViewController.m */; };
+		9CA5D75D1763C9C10009098E /* TFHpple.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CA5D75A1763C9C10009098E /* TFHpple.m */; };
+		9CA5D75E1763C9C10009098E /* TFHppleElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CA5D75C1763C9C10009098E /* TFHppleElement.m */; };
+		9CA5D7611763C9CF0009098E /* XPathQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CA5D7601763C9CF0009098E /* XPathQuery.m */; };
+		9CA5D7631763CA060009098E /* libxml2.2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CA5D7621763CA060009098E /* libxml2.2.dylib */; };
+		9CA5D7661763D9E90009098E /* NewProductViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CA5D7651763D9E90009098E /* NewProductViewController.m */; };
+		9CA5D7691763E32F0009098E /* ProductErrorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CA5D7681763E32E0009098E /* ProductErrorViewController.m */; };
+		9CA5D76C1763E34D0009098E /* CreateProductViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CA5D76B1763E34C0009098E /* CreateProductViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -69,6 +76,19 @@
 		9CA5D752176350770009098E /* Product.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Product.m; sourceTree = "<group>"; };
 		9CA5D7541763BFFF0009098E /* WebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewController.h; sourceTree = "<group>"; };
 		9CA5D7551763BFFF0009098E /* WebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewController.m; sourceTree = "<group>"; };
+		9CA5D7591763C9C10009098E /* TFHpple.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFHpple.h; sourceTree = "<group>"; };
+		9CA5D75A1763C9C10009098E /* TFHpple.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFHpple.m; sourceTree = "<group>"; };
+		9CA5D75B1763C9C10009098E /* TFHppleElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFHppleElement.h; sourceTree = "<group>"; };
+		9CA5D75C1763C9C10009098E /* TFHppleElement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFHppleElement.m; sourceTree = "<group>"; };
+		9CA5D75F1763C9CF0009098E /* XPathQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XPathQuery.h; sourceTree = "<group>"; };
+		9CA5D7601763C9CF0009098E /* XPathQuery.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XPathQuery.m; sourceTree = "<group>"; };
+		9CA5D7621763CA060009098E /* libxml2.2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.2.dylib; path = usr/lib/libxml2.2.dylib; sourceTree = SDKROOT; };
+		9CA5D7641763D9E90009098E /* NewProductViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewProductViewController.h; sourceTree = "<group>"; };
+		9CA5D7651763D9E90009098E /* NewProductViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewProductViewController.m; sourceTree = "<group>"; };
+		9CA5D7671763E32E0009098E /* ProductErrorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductErrorViewController.h; sourceTree = "<group>"; };
+		9CA5D7681763E32E0009098E /* ProductErrorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductErrorViewController.m; sourceTree = "<group>"; };
+		9CA5D76A1763E34C0009098E /* CreateProductViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreateProductViewController.h; sourceTree = "<group>"; };
+		9CA5D76B1763E34C0009098E /* CreateProductViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreateProductViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +96,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9CA5D7631763CA060009098E /* libxml2.2.dylib in Frameworks */,
 				9C927B9D17627A6200570F45 /* CoreData.framework in Frameworks */,
 				9C927B751762780100570F45 /* UIKit.framework in Frameworks */,
 				9C927B771762780100570F45 /* Foundation.framework in Frameworks */,
@@ -106,6 +127,7 @@
 		9C927B731762780100570F45 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				9CA5D7621763CA060009098E /* libxml2.2.dylib */,
 				9C927B9C17627A6200570F45 /* CoreData.framework */,
 				9C927B741762780100570F45 /* UIKit.framework */,
 				9C927B761762780100570F45 /* Foundation.framework */,
@@ -127,6 +149,7 @@
 				9C927B97176278B800570F45 /* CoreDataManager.h */,
 				9C927B98176278B800570F45 /* CoreDataManager.m */,
 				9CA5D7431762A9840009098E /* ProviderLogos */,
+				9CA5D7571763C9520009098E /* Libraries */,
 				9C927B7B1762780100570F45 /* Supporting Files */,
 			);
 			path = ShopLater;
@@ -171,6 +194,12 @@
 				9CA5D73B176294A30009098E /* ProviderViewController.m */,
 				9CA5D7541763BFFF0009098E /* WebViewController.h */,
 				9CA5D7551763BFFF0009098E /* WebViewController.m */,
+				9CA5D7641763D9E90009098E /* NewProductViewController.h */,
+				9CA5D7651763D9E90009098E /* NewProductViewController.m */,
+				9CA5D7671763E32E0009098E /* ProductErrorViewController.h */,
+				9CA5D7681763E32E0009098E /* ProductErrorViewController.m */,
+				9CA5D76A1763E34C0009098E /* CreateProductViewController.h */,
+				9CA5D76B1763E34C0009098E /* CreateProductViewController.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -199,6 +228,27 @@
 			children = (
 			);
 			name = Delegates;
+			sourceTree = "<group>";
+		};
+		9CA5D7571763C9520009098E /* Libraries */ = {
+			isa = PBXGroup;
+			children = (
+				9CA5D7581763C99D0009098E /* HPPLE */,
+			);
+			name = Libraries;
+			sourceTree = "<group>";
+		};
+		9CA5D7581763C99D0009098E /* HPPLE */ = {
+			isa = PBXGroup;
+			children = (
+				9CA5D7591763C9C10009098E /* TFHpple.h */,
+				9CA5D75A1763C9C10009098E /* TFHpple.m */,
+				9CA5D75B1763C9C10009098E /* TFHppleElement.h */,
+				9CA5D75C1763C9C10009098E /* TFHppleElement.m */,
+				9CA5D75F1763C9CF0009098E /* XPathQuery.h */,
+				9CA5D7601763C9CF0009098E /* XPathQuery.m */,
+			);
+			name = HPPLE;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -281,6 +331,12 @@
 				9CA5D74A1762AC170009098E /* ProviderCollectionViewCell.m in Sources */,
 				9CA5D753176350770009098E /* Product.m in Sources */,
 				9CA5D7561763BFFF0009098E /* WebViewController.m in Sources */,
+				9CA5D75D1763C9C10009098E /* TFHpple.m in Sources */,
+				9CA5D75E1763C9C10009098E /* TFHppleElement.m in Sources */,
+				9CA5D7611763C9CF0009098E /* XPathQuery.m in Sources */,
+				9CA5D7661763D9E90009098E /* NewProductViewController.m in Sources */,
+				9CA5D7691763E32F0009098E /* ProductErrorViewController.m in Sources */,
+				9CA5D76C1763E34D0009098E /* CreateProductViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -377,6 +433,7 @@
 					"API_SECRET=@\\\"$(API_SECRET)\\\"",
 					"BASE_URL=@\\\"$(BASE_URL)\\\"",
 				);
+				HEADER_SEARCH_PATHS = "$(SDKROOT)/usr/include/libxml2";
 				INFOPLIST_FILE = "ShopLater/ShopLater-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
@@ -396,6 +453,7 @@
 					"API_KEY=@\\”$(API_KEY)\\”",
 					"BASE_URL=@\\\"$(BASE_URL)\\\"",
 				);
+				HEADER_SEARCH_PATHS = "$(SDKROOT)/usr/include/libxml2";
 				INFOPLIST_FILE = "ShopLater/ShopLater-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;

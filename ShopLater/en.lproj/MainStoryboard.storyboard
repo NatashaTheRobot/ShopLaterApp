@@ -155,7 +155,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="wgj-Ie-nc0">
-                        <barButtonItem key="rightBarButtonItem" title="Buy Later" id="8Kr-xC-T37"/>
+                        <barButtonItem key="rightBarButtonItem" title="Buy Later" id="8Kr-xC-T37">
+                            <connections>
+                                <action selector="buyLaterWithButton:" destination="NYw-1f-qMr" id="YKC-aw-TCs"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="webView" destination="ig6-DV-3fw" id="8iU-O1-qQ2"/>
@@ -200,6 +204,7 @@
         <class className="WebViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/WebViewController.h"/>
             <relationships>
+                <relationship kind="action" name="buyLaterWithButton:"/>
                 <relationship kind="outlet" name="webView" candidateClass="UIWebView"/>
             </relationships>
         </class>

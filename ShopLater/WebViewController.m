@@ -12,6 +12,8 @@
 
 @property (weak, nonatomic) IBOutlet UIWebView *webView;
     
+- (IBAction)buyLaterWithButton:(id)sender;
+
 @end
 
 @implementation WebViewController
@@ -25,4 +27,9 @@
     [self.webView loadRequest:request];
 }
 
+- (IBAction)buyLaterWithButton:(id)sender
+{
+    NSString *url = self.webView.request.URL.absoluteString;
+    NSLog(@"%@", url);
+}
 @end

@@ -7,8 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "WelcomeViewControllerDelegate.h"
 
-@interface ProductsViewController : UICollectionViewController <WelcomeViewControllerDelegate>
+@interface ProductsViewController : UICollectionViewController
 
 @end

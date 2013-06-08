@@ -17,7 +17,6 @@
 		9C927B891762780100570F45 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C927B881762780100570F45 /* Default@2x.png */; };
 		9C927B8B1762780100570F45 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C927B8A1762780100570F45 /* Default-568h@2x.png */; };
 		9C927B8E1762780100570F45 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C927B8C1762780100570F45 /* MainStoryboard.storyboard */; };
-		9C927B911762780100570F45 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C927B901762780100570F45 /* ViewController.m */; };
 		9C927B99176278B800570F45 /* CoreDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C927B98176278B800570F45 /* CoreDataManager.m */; };
 		9C927B9D17627A6200570F45 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C927B9C17627A6200570F45 /* CoreData.framework */; };
 		9C927BA017627A9A00570F45 /* ShopLater.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9C927B9E17627A9A00570F45 /* ShopLater.xcdatamodeld */; };
@@ -25,7 +24,6 @@
 		9C927BA8176287BD00570F45 /* Provider.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C927BA7176287BD00570F45 /* Provider.m */; };
 		9C927BAB176287BD00570F45 /* Product.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C927BAA176287BD00570F45 /* Product.m */; };
 		9C927BAE176287BD00570F45 /* Price.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C927BAD176287BD00570F45 /* Price.m */; };
-		9CA5D736176293EE0009098E /* WelcomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CA5D735176293EE0009098E /* WelcomeViewController.m */; };
 		9CA5D73C176294A30009098E /* ProviderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CA5D73B176294A30009098E /* ProviderViewController.m */; };
 		9CA5D7421762A4660009098E /* ProductsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CA5D7411762A4660009098E /* ProductsViewController.m */; };
 		9CA5D7451762AB5C0009098E /* toysrus_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 9CA5D7441762AB5C0009098E /* toysrus_logo.png */; };
@@ -48,8 +46,6 @@
 		9C927B881762780100570F45 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		9C927B8A1762780100570F45 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		9C927B8D1762780100570F45 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
-		9C927B8F1762780100570F45 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		9C927B901762780100570F45 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		9C927B97176278B800570F45 /* CoreDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataManager.h; sourceTree = "<group>"; };
 		9C927B98176278B800570F45 /* CoreDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataManager.m; sourceTree = "<group>"; };
 		9C927B9C17627A6200570F45 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
@@ -62,8 +58,6 @@
 		9C927BAA176287BD00570F45 /* Product.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Product.m; sourceTree = "<group>"; };
 		9C927BAC176287BD00570F45 /* Price.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Price.h; sourceTree = "<group>"; };
 		9C927BAD176287BD00570F45 /* Price.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Price.m; sourceTree = "<group>"; };
-		9CA5D734176293EE0009098E /* WelcomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WelcomeViewController.h; sourceTree = "<group>"; };
-		9CA5D735176293EE0009098E /* WelcomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WelcomeViewController.m; sourceTree = "<group>"; };
 		9CA5D73A176294A30009098E /* ProviderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProviderViewController.h; sourceTree = "<group>"; };
 		9CA5D73B176294A30009098E /* ProviderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProviderViewController.m; sourceTree = "<group>"; };
 		9CA5D7401762A4660009098E /* ProductsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductsViewController.h; sourceTree = "<group>"; };
@@ -72,7 +66,6 @@
 		9CA5D7461762AB970009098E /* toysrus_logo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "toysrus_logo@2x.png"; sourceTree = "<group>"; };
 		9CA5D7481762AC170009098E /* ProviderCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProviderCollectionViewCell.h; sourceTree = "<group>"; };
 		9CA5D7491762AC170009098E /* ProviderCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProviderCollectionViewCell.m; sourceTree = "<group>"; };
-		9CA5D74E1762BA2E0009098E /* WelcomeViewControllerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WelcomeViewControllerDelegate.h; path = ../WelcomeViewControllerDelegate.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -169,12 +162,8 @@
 		9C927BA217627D0200570F45 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				9C927B8F1762780100570F45 /* ViewController.h */,
-				9C927B901762780100570F45 /* ViewController.m */,
 				9CA5D7401762A4660009098E /* ProductsViewController.h */,
 				9CA5D7411762A4660009098E /* ProductsViewController.m */,
-				9CA5D734176293EE0009098E /* WelcomeViewController.h */,
-				9CA5D735176293EE0009098E /* WelcomeViewController.m */,
 				9CA5D73A176294A30009098E /* ProviderViewController.h */,
 				9CA5D73B176294A30009098E /* ProviderViewController.m */,
 			);
@@ -203,7 +192,6 @@
 		9CA5D74C1762B9980009098E /* Delegates */ = {
 			isa = PBXGroup;
 			children = (
-				9CA5D74E1762BA2E0009098E /* WelcomeViewControllerDelegate.h */,
 			);
 			name = Delegates;
 			sourceTree = "<group>";
@@ -278,14 +266,12 @@
 			files = (
 				9C927B811762780100570F45 /* main.m in Sources */,
 				9C927B851762780100570F45 /* AppDelegate.m in Sources */,
-				9C927B911762780100570F45 /* ViewController.m in Sources */,
 				9C927B99176278B800570F45 /* CoreDataManager.m in Sources */,
 				9C927BA017627A9A00570F45 /* ShopLater.xcdatamodeld in Sources */,
 				9C927BA5176287BC00570F45 /* Image.m in Sources */,
 				9C927BA8176287BD00570F45 /* Provider.m in Sources */,
 				9C927BAB176287BD00570F45 /* Product.m in Sources */,
 				9C927BAE176287BD00570F45 /* Price.m in Sources */,
-				9CA5D736176293EE0009098E /* WelcomeViewController.m in Sources */,
 				9CA5D73C176294A30009098E /* ProviderViewController.m in Sources */,
 				9CA5D7421762A4660009098E /* ProductsViewController.m in Sources */,
 				9CA5D74A1762AC170009098E /* ProviderCollectionViewCell.m in Sources */,

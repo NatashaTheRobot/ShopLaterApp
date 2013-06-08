@@ -8,7 +8,6 @@
 
 #import "ProductsViewController.h"
 #import "CoreDataManager.h"
-#import "WelcomeViewController.h"
 
 @interface ProductsViewController ()
 
@@ -29,21 +28,8 @@
     CoreDataManager *coreDataManager = [CoreDataManager sharedManager];
     
     if (![coreDataManager productsExist]) {
-        [self performSegueWithIdentifier:@"welcome" sender:self];
+        [self performSegueWithIdentifier:@"toProviderCollectionView" sender:self];
     }
-}
-
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    if ([segue.destinationViewController isKindOfClass:[WelcomeViewController class]]) {
-        WelcomeViewController *welcomeViewController = segue.destinationViewController;
-        welcomeViewController.delegate = self;
-    }
-}
-
-- (void)addItemAction
-{
-    [self performSegueWithIdentifier:@"toProviderCollectionView" sender:self];
 }
 
 @end

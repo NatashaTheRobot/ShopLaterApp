@@ -11,10 +11,8 @@
         <attribute name="type" attributeType="String" defaultValueString="current" indexed="YES" syncable="YES"/>
         <relationship name="product" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Product" inverseName="prices" inverseEntity="Product" syncable="YES"/>
     </entity>
-    <entity name="Product" syncable="YES">
+    <entity name="Product" representedClassName="Product" syncable="YES">
         <attribute name="externalId" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
-        <attribute name="identifier" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="identifierType" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="summary" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="url" attributeType="String" syncable="YES"/>
@@ -29,9 +27,9 @@
         <relationship name="products" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Product" inverseName="providers" inverseEntity="Product" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Product" positionX="376" positionY="189" width="128" height="178"/>
         <element name="Image" positionX="448" positionY="-27" width="128" height="88"/>
-        <element name="Provider" positionX="198" positionY="-171" width="128" height="103"/>
         <element name="Price" positionX="160" positionY="192" width="128" height="103"/>
+        <element name="Product" positionX="376" positionY="189" width="128" height="150"/>
+        <element name="Provider" positionX="198" positionY="-171" width="128" height="103"/>
     </elements>
 </model>

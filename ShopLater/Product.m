@@ -2,25 +2,21 @@
 //  Product.m
 //  ShopLater
 //
-//  Created by Natasha Murashev on 6/7/13.
+//  Created by Natasha Murashev on 6/8/13.
 //  Copyright (c) 2013 Natasha Murashev. All rights reserved.
 //
 
 #import "Product.h"
-#import "Image.h"
-#import "Provider.h"
 
 
 @implementation Product
 
-@dynamic name;
-@dynamic url;
 @dynamic externalId;
-@dynamic identifier;
-@dynamic identifierType;
+@dynamic name;
 @dynamic summary;
+@dynamic url;
 @dynamic images;
-@dynamic providers;
 @dynamic prices;
+@dynamic providers;
 
 @end

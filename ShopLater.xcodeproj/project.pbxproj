@@ -22,13 +22,13 @@
 		9C927BA017627A9A00570F45 /* ShopLater.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9C927B9E17627A9A00570F45 /* ShopLater.xcdatamodeld */; };
 		9C927BA5176287BC00570F45 /* Image.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C927BA4176287BC00570F45 /* Image.m */; };
 		9C927BA8176287BD00570F45 /* Provider.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C927BA7176287BD00570F45 /* Provider.m */; };
-		9C927BAB176287BD00570F45 /* Product.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C927BAA176287BD00570F45 /* Product.m */; };
 		9C927BAE176287BD00570F45 /* Price.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C927BAD176287BD00570F45 /* Price.m */; };
 		9CA5D73C176294A30009098E /* ProviderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CA5D73B176294A30009098E /* ProviderViewController.m */; };
 		9CA5D7421762A4660009098E /* ProductsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CA5D7411762A4660009098E /* ProductsViewController.m */; };
 		9CA5D7451762AB5C0009098E /* toysrus_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 9CA5D7441762AB5C0009098E /* toysrus_logo.png */; };
 		9CA5D7471762AB970009098E /* toysrus_logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9CA5D7461762AB970009098E /* toysrus_logo@2x.png */; };
 		9CA5D74A1762AC170009098E /* ProviderCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CA5D7491762AC170009098E /* ProviderCollectionViewCell.m */; };
+		9CA5D753176350770009098E /* Product.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CA5D752176350770009098E /* Product.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,8 +54,6 @@
 		9C927BA4176287BC00570F45 /* Image.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Image.m; sourceTree = "<group>"; };
 		9C927BA6176287BD00570F45 /* Provider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Provider.h; sourceTree = "<group>"; };
 		9C927BA7176287BD00570F45 /* Provider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Provider.m; sourceTree = "<group>"; };
-		9C927BA9176287BD00570F45 /* Product.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Product.h; sourceTree = "<group>"; };
-		9C927BAA176287BD00570F45 /* Product.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Product.m; sourceTree = "<group>"; };
 		9C927BAC176287BD00570F45 /* Price.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Price.h; sourceTree = "<group>"; };
 		9C927BAD176287BD00570F45 /* Price.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Price.m; sourceTree = "<group>"; };
 		9CA5D73A176294A30009098E /* ProviderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProviderViewController.h; sourceTree = "<group>"; };
@@ -66,6 +64,8 @@
 		9CA5D7461762AB970009098E /* toysrus_logo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "toysrus_logo@2x.png"; sourceTree = "<group>"; };
 		9CA5D7481762AC170009098E /* ProviderCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProviderCollectionViewCell.h; sourceTree = "<group>"; };
 		9CA5D7491762AC170009098E /* ProviderCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProviderCollectionViewCell.m; sourceTree = "<group>"; };
+		9CA5D751176350770009098E /* Product.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Product.h; sourceTree = "<group>"; };
+		9CA5D752176350770009098E /* Product.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Product.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,10 +147,10 @@
 			isa = PBXGroup;
 			children = (
 				9C927B9E17627A9A00570F45 /* ShopLater.xcdatamodeld */,
+				9CA5D751176350770009098E /* Product.h */,
+				9CA5D752176350770009098E /* Product.m */,
 				9C927BAC176287BD00570F45 /* Price.h */,
 				9C927BAD176287BD00570F45 /* Price.m */,
-				9C927BA9176287BD00570F45 /* Product.h */,
-				9C927BAA176287BD00570F45 /* Product.m */,
 				9C927BA6176287BD00570F45 /* Provider.h */,
 				9C927BA7176287BD00570F45 /* Provider.m */,
 				9C927BA3176287BC00570F45 /* Image.h */,
@@ -270,11 +270,11 @@
 				9C927BA017627A9A00570F45 /* ShopLater.xcdatamodeld in Sources */,
 				9C927BA5176287BC00570F45 /* Image.m in Sources */,
 				9C927BA8176287BD00570F45 /* Provider.m in Sources */,
-				9C927BAB176287BD00570F45 /* Product.m in Sources */,
 				9C927BAE176287BD00570F45 /* Price.m in Sources */,
 				9CA5D73C176294A30009098E /* ProviderViewController.m in Sources */,
 				9CA5D7421762A4660009098E /* ProductsViewController.m in Sources */,
 				9CA5D74A1762AC170009098E /* ProviderCollectionViewCell.m in Sources */,
+				9CA5D753176350770009098E /* Product.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -361,6 +361,7 @@
 			buildSettings = {
 				API_KEY = f625962ba4281b73153054037bf210f0433ae24099b1c240ded7cdeb1d9dc6afe529fd0fc18;
 				API_SECRET = a4c258f41cd6a296f808340b11011166589e686b07d1103c2656eea46bc242f5e0d5276dc19ac8ca5e;
+				BASE_URL = "http://shoplaterapi.herokuapp.com";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ShopLater/ShopLater-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -368,6 +369,7 @@
 					"$(inherited)",
 					"API_KEY=@\\”$(API_KEY)\\”",
 					"API_SECRET=@\\\"$(API_SECRET)\\\"",
+					"BASE_URL=@\\\"$(BASE_URL)\\\"",
 				);
 				INFOPLIST_FILE = "ShopLater/ShopLater-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -380,11 +382,13 @@
 			buildSettings = {
 				API_KEY = f625962ba4281b73153054037bf210f0433ae24099b1c240ded7cdeb1d9dc6afe529fd0fc18;
 				API_SECRET = a4c258f41cd6a296f808340b11011166589e686b07d1103c2656eea46bc242f5e0d5276dc19ac8ca5e;
+				BASE_URL = "http://shoplaterapi.herokuapp.com";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ShopLater/ShopLater-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"API_SECRET=@\\”$(API_SECRET)\\”",
 					"API_KEY=@\\”$(API_KEY)\\”",
+					"BASE_URL=@\\\"$(BASE_URL)\\\"",
 				);
 				INFOPLIST_FILE = "ShopLater/ShopLater-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";

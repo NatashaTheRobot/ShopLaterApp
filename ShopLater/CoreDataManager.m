@@ -7,7 +7,10 @@
 //
 
 #import "CoreDataManager.h"
-#import <CoreData/CoreData.h>
+#import "Product.h"
+#import "Provider.h"
+#import "Image.h"
+#import "Price.h"
 
 @interface CoreDataManager ()
 
@@ -35,6 +38,8 @@ static CoreDataManager *coreDataManager;
     
     return coreDataManager;
 }
+
+#pragma mark - setup
 
 - (id)init
 {
@@ -72,6 +77,55 @@ static CoreDataManager *coreDataManager;
     } else {
         NSLog(@"ERROR: %@", error.description);
     }
+}
+
+#pragma mark - custom queries
+
+- (BOOL)productsExist
+{
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    fetchRequest.entity = [NSEntityDescription entityForName:NSStringFromClass([Product class])
+                                      inManagedObjectContext:self.managedObjectContext];
+    fetchRequest.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"url" ascending:YES]];
+    NSFetchedResultsController *fetchedResultsController = [[NSFetchedResultsController alloc]
+                                                            initWithFetchRequest:fetchRequest
+                                                            managedObjectContext:self.managedObjectContext
+                                                            sectionNameKeyPath:nil
+                                                            cacheName:nil];
+    NSError *fetchError = nil;
+    BOOL success = [fetchedResultsController performFetch:&fetchError];
+    
+    if (success) {
+        
+        if (fetchedResultsController.fetchedObjects.count > 0) {
+            return YES;
+        }
+        
+    } else {
+        NSLog(@"Products Exists ERROR: %@", fetchError.description);
+    }
+    
+    return NO;
+}
+
+- (void)createProviderWithName:(NSString *)name
+{
+    Provider *provider = [NSEntityDescription insertNewObjectForEntityForName:NSStringFromClass([Provider class])
+                                                       inManagedObjectContext:self.managedObjectContext];
+    provider.name = name;
+    provider.url = [NSString stringWithFormat:@"http://wwww.%@.com", name];
+    
+    Image *image = [NSEntityDescription insertNewObjectForEntityForName:NSStringFromClass([Image class])
+                                                 inManagedObjectContext:self.managedObjectContext];
+    image.fileName = [NSString stringWithFormat:@"%@_logo.png", name];
+    image.provider = provider;
+}
+
+- (BOOL)saveDataInManagedContext
+{
+    NSError *saveError = nil;
+    BOOL didSave = [self.managedObjectContext save:&saveError];
+    return didSave;
 }
 
 @end

@@ -25,6 +25,12 @@
 		9C927BA8176287BD00570F45 /* Provider.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C927BA7176287BD00570F45 /* Provider.m */; };
 		9C927BAB176287BD00570F45 /* Product.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C927BAA176287BD00570F45 /* Product.m */; };
 		9C927BAE176287BD00570F45 /* Price.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C927BAD176287BD00570F45 /* Price.m */; };
+		9CA5D736176293EE0009098E /* WelcomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CA5D735176293EE0009098E /* WelcomeViewController.m */; };
+		9CA5D73C176294A30009098E /* ProviderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CA5D73B176294A30009098E /* ProviderViewController.m */; };
+		9CA5D7421762A4660009098E /* ProductsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CA5D7411762A4660009098E /* ProductsViewController.m */; };
+		9CA5D7451762AB5C0009098E /* toysrus_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 9CA5D7441762AB5C0009098E /* toysrus_logo.png */; };
+		9CA5D7471762AB970009098E /* toysrus_logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9CA5D7461762AB970009098E /* toysrus_logo@2x.png */; };
+		9CA5D74A1762AC170009098E /* ProviderCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CA5D7491762AC170009098E /* ProviderCollectionViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +62,17 @@
 		9C927BAA176287BD00570F45 /* Product.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Product.m; sourceTree = "<group>"; };
 		9C927BAC176287BD00570F45 /* Price.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Price.h; sourceTree = "<group>"; };
 		9C927BAD176287BD00570F45 /* Price.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Price.m; sourceTree = "<group>"; };
+		9CA5D734176293EE0009098E /* WelcomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WelcomeViewController.h; sourceTree = "<group>"; };
+		9CA5D735176293EE0009098E /* WelcomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WelcomeViewController.m; sourceTree = "<group>"; };
+		9CA5D73A176294A30009098E /* ProviderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProviderViewController.h; sourceTree = "<group>"; };
+		9CA5D73B176294A30009098E /* ProviderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProviderViewController.m; sourceTree = "<group>"; };
+		9CA5D7401762A4660009098E /* ProductsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductsViewController.h; sourceTree = "<group>"; };
+		9CA5D7411762A4660009098E /* ProductsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductsViewController.m; sourceTree = "<group>"; };
+		9CA5D7441762AB5C0009098E /* toysrus_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = toysrus_logo.png; sourceTree = "<group>"; };
+		9CA5D7461762AB970009098E /* toysrus_logo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "toysrus_logo@2x.png"; sourceTree = "<group>"; };
+		9CA5D7481762AC170009098E /* ProviderCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProviderCollectionViewCell.h; sourceTree = "<group>"; };
+		9CA5D7491762AC170009098E /* ProviderCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProviderCollectionViewCell.m; sourceTree = "<group>"; };
+		9CA5D74E1762BA2E0009098E /* WelcomeViewControllerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WelcomeViewControllerDelegate.h; path = ../WelcomeViewControllerDelegate.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,9 +125,12 @@
 				9C927B841762780100570F45 /* AppDelegate.m */,
 				9C927B8C1762780100570F45 /* MainStoryboard.storyboard */,
 				9C927BA217627D0200570F45 /* ViewControllers */,
+				9CA5D74B1762B9520009098E /* Views */,
 				9C927BA117627CF500570F45 /* Models */,
+				9CA5D74C1762B9980009098E /* Delegates */,
 				9C927B97176278B800570F45 /* CoreDataManager.h */,
 				9C927B98176278B800570F45 /* CoreDataManager.m */,
+				9CA5D7431762A9840009098E /* ProviderLogos */,
 				9C927B7B1762780100570F45 /* Supporting Files */,
 			);
 			path = ShopLater;
@@ -151,8 +171,41 @@
 			children = (
 				9C927B8F1762780100570F45 /* ViewController.h */,
 				9C927B901762780100570F45 /* ViewController.m */,
+				9CA5D7401762A4660009098E /* ProductsViewController.h */,
+				9CA5D7411762A4660009098E /* ProductsViewController.m */,
+				9CA5D734176293EE0009098E /* WelcomeViewController.h */,
+				9CA5D735176293EE0009098E /* WelcomeViewController.m */,
+				9CA5D73A176294A30009098E /* ProviderViewController.h */,
+				9CA5D73B176294A30009098E /* ProviderViewController.m */,
 			);
 			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		9CA5D7431762A9840009098E /* ProviderLogos */ = {
+			isa = PBXGroup;
+			children = (
+				9CA5D7441762AB5C0009098E /* toysrus_logo.png */,
+				9CA5D7461762AB970009098E /* toysrus_logo@2x.png */,
+			);
+			name = ProviderLogos;
+			path = ..;
+			sourceTree = "<group>";
+		};
+		9CA5D74B1762B9520009098E /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				9CA5D7491762AC170009098E /* ProviderCollectionViewCell.m */,
+				9CA5D7481762AC170009098E /* ProviderCollectionViewCell.h */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		9CA5D74C1762B9980009098E /* Delegates */ = {
+			isa = PBXGroup;
+			children = (
+				9CA5D74E1762BA2E0009098E /* WelcomeViewControllerDelegate.h */,
+			);
+			name = Delegates;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -211,6 +264,8 @@
 				9C927B891762780100570F45 /* Default@2x.png in Resources */,
 				9C927B8B1762780100570F45 /* Default-568h@2x.png in Resources */,
 				9C927B8E1762780100570F45 /* MainStoryboard.storyboard in Resources */,
+				9CA5D7451762AB5C0009098E /* toysrus_logo.png in Resources */,
+				9CA5D7471762AB970009098E /* toysrus_logo@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -230,6 +285,10 @@
 				9C927BA8176287BD00570F45 /* Provider.m in Sources */,
 				9C927BAB176287BD00570F45 /* Product.m in Sources */,
 				9C927BAE176287BD00570F45 /* Price.m in Sources */,
+				9CA5D736176293EE0009098E /* WelcomeViewController.m in Sources */,
+				9CA5D73C176294A30009098E /* ProviderViewController.m in Sources */,
+				9CA5D7421762A4660009098E /* ProductsViewController.m in Sources */,
+				9CA5D74A1762AC170009098E /* ProviderCollectionViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -314,8 +373,16 @@
 		9C927B951762780100570F45 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				API_KEY = f625962ba4281b73153054037bf210f0433ae24099b1c240ded7cdeb1d9dc6afe529fd0fc18;
+				API_SECRET = a4c258f41cd6a296f808340b11011166589e686b07d1103c2656eea46bc242f5e0d5276dc19ac8ca5e;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ShopLater/ShopLater-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+					"API_KEY=@\\”$(API_KEY)\\”",
+					"API_SECRET=@\\\"$(API_SECRET)\\\"",
+				);
 				INFOPLIST_FILE = "ShopLater/ShopLater-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
@@ -325,8 +392,14 @@
 		9C927B961762780100570F45 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				API_KEY = f625962ba4281b73153054037bf210f0433ae24099b1c240ded7cdeb1d9dc6afe529fd0fc18;
+				API_SECRET = a4c258f41cd6a296f808340b11011166589e686b07d1103c2656eea46bc242f5e0d5276dc19ac8ca5e;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ShopLater/ShopLater-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"API_SECRET=@\\”$(API_SECRET)\\”",
+					"API_KEY=@\\”$(API_KEY)\\”",
+				);
 				INFOPLIST_FILE = "ShopLater/ShopLater-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
@@ -352,6 +425,7 @@
 				9C927B961762780100570F45 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

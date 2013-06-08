@@ -7,11 +7,18 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <CoreData/CoreData.h>
 
 @interface CoreDataManager : NSObject
 
 @property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 
 + (CoreDataManager *)sharedManager;
+
+- (BOOL)productsExist;
+
+- (void)createProviderWithName:(NSString *)name;
+
+- (BOOL)saveDataInManagedContext;
 
 @end

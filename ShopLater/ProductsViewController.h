@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  ProductsViewController.h
 //  ShopLater
 //
 //  Created by Natasha Murashev on 6/7/13.
@@ -9,6 +9,6 @@
 #import <UIKit/UIKit.h>
 #import "WelcomeViewControllerDelegate.h"
 
-@interface ViewController : UIViewController <WelcomeViewControllerDelegate>
+@interface ProductsViewController : UICollectionViewController <WelcomeViewControllerDelegate>
 
 @end

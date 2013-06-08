@@ -79,7 +79,14 @@ static CoreDataManager *coreDataManager;
     }
 }
 
-#pragma mark - custom queries
+- (BOOL)saveDataInManagedContext
+{
+    NSError *saveError = nil;
+    BOOL didSave = [self.managedObjectContext save:&saveError];
+    return didSave;
+}
+
+#pragma mark - Products
 
 - (BOOL)productsExist
 {
@@ -87,6 +94,8 @@ static CoreDataManager *coreDataManager;
     fetchRequest.entity = [NSEntityDescription entityForName:NSStringFromClass([Product class])
                                       inManagedObjectContext:self.managedObjectContext];
     fetchRequest.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"url" ascending:YES]];
+    fetchRequest.fetchLimit = 1;
+    
     NSFetchedResultsController *fetchedResultsController = [[NSFetchedResultsController alloc]
                                                             initWithFetchRequest:fetchRequest
                                                             managedObjectContext:self.managedObjectContext
@@ -108,6 +117,37 @@ static CoreDataManager *coreDataManager;
     return NO;
 }
 
+#pragma mark - Providers
+
+- (BOOL)providersExist
+{
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    fetchRequest.entity = [NSEntityDescription entityForName:NSStringFromClass([Provider class])
+                                      inManagedObjectContext:self.managedObjectContext];
+    fetchRequest.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"name" ascending:YES]];
+    fetchRequest.fetchLimit = 1;
+   
+    NSFetchedResultsController *fetchedResultsController = [[NSFetchedResultsController alloc]
+                                                            initWithFetchRequest:fetchRequest
+                                                            managedObjectContext:self.managedObjectContext
+                                                            sectionNameKeyPath:nil
+                                                            cacheName:nil];
+    NSError *fetchError = nil;
+    BOOL success = [fetchedResultsController performFetch:&fetchError];
+    
+    if (success) {
+        
+        if (fetchedResultsController.fetchedObjects.count > 0) {
+            return YES;
+        }
+        
+    } else {
+        NSLog(@"Providers Exists ERROR: %@", fetchError.description);
+    }
+    
+    return NO;
+}
+
 - (void)createProviderWithName:(NSString *)name
 {
     Provider *provider = [NSEntityDescription insertNewObjectForEntityForName:NSStringFromClass([Provider class])
@@ -119,13 +159,6 @@ static CoreDataManager *coreDataManager;
                                                  inManagedObjectContext:self.managedObjectContext];
     image.fileName = [NSString stringWithFormat:@"%@_logo.png", name];
     image.provider = provider;
-}
-
-- (BOOL)saveDataInManagedContext
-{
-    NSError *saveError = nil;
-    BOOL didSave = [self.managedObjectContext save:&saveError];
-    return didSave;
 }
 
 @end

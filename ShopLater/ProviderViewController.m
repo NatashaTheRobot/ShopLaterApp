@@ -8,13 +8,18 @@
 
 #import "ProviderViewController.h"
 #import "CoreDataManager.h"
+#import "Provider.h"
+#import "Image.h"
+#import "ProviderCollectionViewCell.h"
 
 @interface ProviderViewController ()
 
-@property (strong, nonatomic) NSArray *providerNames;
 @property (strong, nonatomic) CoreDataManager *coreDataManager;
+@property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
+@property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 
-- (void)setupProviders;
+- (void)createProviders;
+- (void)fetchProviders;
 
 @end
 
@@ -27,12 +32,13 @@
     if (self) {
         
         self.coreDataManager = [CoreDataManager sharedManager];
+        self.managedObjectContext = self.coreDataManager.managedObjectContext;
         
-        // if providers exist?
-        [self setupProviders];
-        
-        // if provider doesn't exist
+        if (![self.coreDataManager providersExist]) {
+            [self createProviders];
         }
+        [self fetchProviders];
+    }
     
     return self;
 }
@@ -47,10 +53,12 @@
 	
 }
 
-- (void)setupProviders
+#pragma mark - Setup
+
+- (void)createProviders
 {
-    self.providerNames = @[@"toysrus"];
-    [self.providerNames enumerateObjectsUsingBlock:^(NSString *name, NSUInteger idx, BOOL *stop) {
+    NSArray *providerNames = @[@"toysrus"];
+    [providerNames enumerateObjectsUsingBlock:^(NSString *name, NSUInteger idx, BOOL *stop) {
         [self.coreDataManager createProviderWithName:name];
     }];
     
@@ -67,6 +75,58 @@
     }
 }
 
+- (void)fetchProviders
+{
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    NSEntityDescription *entity = [NSEntityDescription entityForName:NSStringFromClass([Provider class])
+                                              inManagedObjectContext:self.managedObjectContext];
+    [fetchRequest setEntity:entity];
+    fetchRequest.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"name" ascending:YES]];
+    
+    
+    self.fetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest
+                                                                        managedObjectContext:self.managedObjectContext
+                                                                          sectionNameKeyPath:nil
+                                                                                   cacheName:nil];
+    
+    
+    NSError *error = nil;
+    BOOL success = [self.fetchedResultsController performFetch:&error];
+    
+    if (!success) {
+        NSLog(@"fetchProviders ERROR: %@", error.description);
+    }
+}
+
+#pragma mark - CollectionView Delegate Methods
+
+- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView
+{
+    return self.fetchedResultsController.sections.count;
+}
+
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
+{
+    id <NSFetchedResultsSectionInfo> sectionInfo = self.fetchedResultsController.sections[section];
+    return [sectionInfo numberOfObjects];
+}
+
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    static NSString *cellIdentifier = @"provider";
+    
+    ProviderCollectionViewCell *cell = [self.collectionView dequeueReusableCellWithReuseIdentifier:cellIdentifier forIndexPath:indexPath];
+    
+    Provider *provider = [self.fetchedResultsController objectAtIndexPath:indexPath];
+    
+    NSString *logoImageName = ((Image *)[provider.images anyObject]).fileName;
+    
+    cell.image = [UIImage imageNamed:logoImageName];
+    
+    return cell;
+}
+
+#pragma mark - AlertView Delegate Methods
 - (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex
 {
     [self.navigationController popToRootViewControllerAnimated:YES];

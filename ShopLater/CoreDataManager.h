@@ -15,10 +15,13 @@
 
 + (CoreDataManager *)sharedManager;
 
+- (BOOL)saveDataInManagedContext;
+
+#pragma mark - Products
 - (BOOL)productsExist;
 
+#pragma mark - Providers
+- (BOOL)providersExist;
 - (void)createProviderWithName:(NSString *)name;
-
-- (BOOL)saveDataInManagedContext;
 
 @end

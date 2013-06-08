@@ -183,8 +183,8 @@
 		9CA5D74B1762B9520009098E /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				9CA5D7491762AC170009098E /* ProviderCollectionViewCell.m */,
 				9CA5D7481762AC170009098E /* ProviderCollectionViewCell.h */,
+				9CA5D7491762AC170009098E /* ProviderCollectionViewCell.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";

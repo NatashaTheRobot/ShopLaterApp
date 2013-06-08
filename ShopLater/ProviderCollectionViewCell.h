@@ -10,4 +10,6 @@
 
 @interface ProviderCollectionViewCell : UICollectionViewCell
 
+@property (strong, nonatomic) UIImage *image;
+
 @end

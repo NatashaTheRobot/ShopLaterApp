@@ -29,6 +29,7 @@
 		9CA5D7471762AB970009098E /* toysrus_logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9CA5D7461762AB970009098E /* toysrus_logo@2x.png */; };
 		9CA5D74A1762AC170009098E /* ProviderCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CA5D7491762AC170009098E /* ProviderCollectionViewCell.m */; };
 		9CA5D753176350770009098E /* Product.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CA5D752176350770009098E /* Product.m */; };
+		9CA5D7561763BFFF0009098E /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CA5D7551763BFFF0009098E /* WebViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -66,6 +67,8 @@
 		9CA5D7491762AC170009098E /* ProviderCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProviderCollectionViewCell.m; sourceTree = "<group>"; };
 		9CA5D751176350770009098E /* Product.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Product.h; sourceTree = "<group>"; };
 		9CA5D752176350770009098E /* Product.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Product.m; sourceTree = "<group>"; };
+		9CA5D7541763BFFF0009098E /* WebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewController.h; sourceTree = "<group>"; };
+		9CA5D7551763BFFF0009098E /* WebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -166,6 +169,8 @@
 				9CA5D7411762A4660009098E /* ProductsViewController.m */,
 				9CA5D73A176294A30009098E /* ProviderViewController.h */,
 				9CA5D73B176294A30009098E /* ProviderViewController.m */,
+				9CA5D7541763BFFF0009098E /* WebViewController.h */,
+				9CA5D7551763BFFF0009098E /* WebViewController.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -275,6 +280,7 @@
 				9CA5D7421762A4660009098E /* ProductsViewController.m in Sources */,
 				9CA5D74A1762AC170009098E /* ProviderCollectionViewCell.m in Sources */,
 				9CA5D753176350770009098E /* Product.m in Sources */,
+				9CA5D7561763BFFF0009098E /* WebViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

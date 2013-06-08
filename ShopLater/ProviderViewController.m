@@ -11,6 +11,7 @@
 #import "Provider.h"
 #import "Image.h"
 #import "ProviderCollectionViewCell.h"
+#import "WebViewController.h"
 
 @interface ProviderViewController ()
 
@@ -51,6 +52,15 @@
         self.navigationItem.hidesBackButton = YES;
     }
 	
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    if (![self.coreDataManager providersExist]) {
+        [self createProviders];
+        [self fetchProviders];
+        [self.collectionView reloadData];
+    }
 }
 
 #pragma mark - Setup
@@ -130,6 +140,16 @@
 - (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex
 {
     [self.navigationController popToRootViewControllerAnimated:YES];
+}
+
+#pragma mark - Segue
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    NSIndexPath *selectedIndexPath = [self.collectionView indexPathsForSelectedItems][0];
+    Provider *provider = [self.fetchedResultsController objectAtIndexPath:selectedIndexPath];
+    NSURL *url = [NSURL URLWithString:provider.url];
+    
+    ((WebViewController *)segue.destinationViewController).url = url;
 }
 
 

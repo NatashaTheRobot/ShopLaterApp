@@ -153,7 +153,7 @@ static CoreDataManager *coreDataManager;
     Provider *provider = [NSEntityDescription insertNewObjectForEntityForName:NSStringFromClass([Provider class])
                                                        inManagedObjectContext:self.managedObjectContext];
     provider.name = name;
-    provider.url = [NSString stringWithFormat:@"http://wwww.%@.com", name];
+    provider.url = [NSString stringWithFormat:@"http://www.%@.com", name];
     
     Image *image = [NSEntityDescription insertNewObjectForEntityForName:NSStringFromClass([Image class])
                                                  inManagedObjectContext:self.managedObjectContext];

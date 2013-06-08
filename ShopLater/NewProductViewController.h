@@ -10,6 +10,6 @@
 
 @interface NewProductViewController : UIViewController
 
-@property (strong, nonatomic) NSURL *productURL;
+@property (strong, nonatomic) NSString *productURLString;
 
 @end

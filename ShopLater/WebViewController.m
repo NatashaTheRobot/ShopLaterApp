@@ -36,8 +36,7 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    NSURL *productURL = [NSURL URLWithString:self.webView.request.URL.absoluteString];
-    ((NewProductViewController *)segue.destinationViewController).productURL = productURL;
+    ((NewProductViewController *)segue.destinationViewController).productURLString = self.webView.request.URL.absoluteString;
 }
 
 @end

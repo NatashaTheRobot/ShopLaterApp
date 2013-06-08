@@ -29,6 +29,7 @@
 
 - (IBAction)saveProductWithButton:(id)sender
 {
+    // use delegate so the products view controller reloads table view data
     [self.parentViewController.navigationController popToRootViewControllerAnimated:YES];
 }
 @end

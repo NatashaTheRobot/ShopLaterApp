@@ -27,12 +27,30 @@
     return self;
 }
 
+- (void)parseURL
+{
+    NSArray *urlComponents = [self.productURLString componentsSeparatedByString:@"jsp%3F"];
+    
+    NSArray *paramPairs = [urlComponents[1] componentsSeparatedByString:@"&"];
+    
+    NSMutableDictionary *urlParamsDictionary = [[NSMutableDictionary alloc] init];
+    
+    [paramPairs enumerateObjectsUsingBlock:^(NSString *paramPair, NSUInteger idx, BOOL *stop) {
+        NSArray *paramKeyValue = [paramPair componentsSeparatedByString:@"%3D"];
+        if ([paramKeyValue[0] isEqualToString:@"productId"]) {
+            NSLog(@"product id = %@", paramKeyValue[1]);
+            return;
+        }
+    }];
+}
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     
     [self.activityIndicator startAnimating];
+    
+    [self parseURL];
 	
 }
 

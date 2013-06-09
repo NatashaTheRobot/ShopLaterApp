@@ -117,6 +117,34 @@ static CoreDataManager *coreDataManager;
     return NO;
 }
 
+- (Product *)createProductWithDictionary:(NSDictionary *)productDictionary
+{
+    Product *product = [NSEntityDescription insertNewObjectForEntityForName:NSStringFromClass([Product class])
+                                                     inManagedObjectContext:self.managedObjectContext];
+    product.name = productDictionary[@"name"];
+    product.url = productDictionary[@"url"];
+    
+    if (productDictionary[@"summary"]) {
+        product.summary = productDictionary[@"summary"];
+    }
+    
+    if (productDictionary[@"externalId"]) {
+        product.externalId = productDictionary[@"externalId"];
+    }
+    
+//    NSDictionary *providerDictionary = [(NSMutableDictionary *)(productDictionary[@"provider"])
+//                                        addEntriesFromDictionary:[NSDictionary dictionaryWithObject:product forKey:@"product"]];
+//    product.providers = [NSSet setWithObject:productDictionary[@"provider"]];
+    
+    
+    Price *price = [self createPriceWithDictionary:productDictionary[@"price"]];
+    
+    product.prices = [NSSet setWithObject:productDictionary[@"price"]];
+    product.images = [NSSet setWithObject:productDictionary[@"image"]];
+    
+    return product;
+}
+
 #pragma mark - Providers
 
 - (BOOL)providersExist
@@ -148,7 +176,7 @@ static CoreDataManager *coreDataManager;
     return NO;
 }
 
-- (void)createProviderWithDictionary:(NSDictionary *)providerDictionary
+- (Provider *)createProviderWithDictionary:(NSDictionary *)providerDictionary
 {
     Provider *provider = [NSEntityDescription insertNewObjectForEntityForName:NSStringFromClass([Provider class])
                                                        inManagedObjectContext:self.managedObjectContext];
@@ -156,15 +184,60 @@ static CoreDataManager *coreDataManager;
     provider.url = [NSString stringWithFormat:@"http://www.%@.com", provider.name];
     provider.identifierName = providerDictionary[@"identifierName"];
     
-    Image *logoImage = [NSEntityDescription insertNewObjectForEntityForName:NSStringFromClass([Image class])
-                                                 inManagedObjectContext:self.managedObjectContext];
-    logoImage.fileName = [NSString stringWithFormat:@"%@_logo.png", provider.name];
-    logoImage.provider = provider;
+    NSString *imageLogoName = [NSString stringWithFormat:@"%@_logo.png", provider.name];
+    NSDictionary *logoImageDictionary = [NSDictionary dictionaryWithObjectsAndKeys: imageLogoName, @"fileName",
+                                                                                     provider, @"provider", nil];
     
-    Image *exampleImage = [NSEntityDescription insertNewObjectForEntityForName:NSStringFromClass([Image class])
+    [self createImageWithDictionary:logoImageDictionary];
+    
+    NSString *exampleImageName = [NSString stringWithFormat:@"%@_example.png", provider.name];
+    
+    NSDictionary *exampleImageDictionary = [NSDictionary dictionaryWithObjectsAndKeys: exampleImageName, @"fileName",
+                                                                                       provider, @"provider", nil];
+    
+    [self createImageWithDictionary:exampleImageDictionary];
+    
+    return provider;
+
+}
+
+# pragma mark - Images
+
+- (Image *)createImageWithDictionary:(NSDictionary *)imageDictionary
+{
+    Image *image = [NSEntityDescription insertNewObjectForEntityForName:NSStringFromClass([Image class])
                                                      inManagedObjectContext:self.managedObjectContext];
-    exampleImage.fileName = [NSString stringWithFormat:@"%@_example.png", provider.name];
-    exampleImage.provider = provider;
+    image.fileName = imageDictionary[@"fileName"];
+    
+    if (imageDictionary[@"provider"]) {
+        image.provider = imageDictionary[@"provider"];
+    }
+    if (imageDictionary[@"product"]) {
+        image.product = imageDictionary[@"product"];
+    }
+    
+    return image;
+}
+
+# pragma mark - Prices
+
+- (Price *)createPriceWithDictionary:(NSDictionary *)priceDictionary
+{
+    Price *price = [NSEntityDescription insertNewObjectForEntityForName:NSStringFromClass([Price class])
+                                                 inManagedObjectContext:self.managedObjectContext];
+    
+    price.dollarAmount = priceDictionary[@"dollarAmount"];
+    
+    if (priceDictionary[@"type"]) {
+        price.type = priceDictionary[@"type"];
+    } else {
+        price.type = @"current";
+    }
+    
+    price.created_at = [NSDate date];
+    price.product = priceDictionary[@"product"];
+    
+    return price;
 }
 
 @end

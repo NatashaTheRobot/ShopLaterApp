@@ -96,4 +96,6 @@
 // Convenience method which can be used instead of firstTextChild.content
 - (NSString *) text;
 
+- (NSArray*) childrenArray;
+
 @end

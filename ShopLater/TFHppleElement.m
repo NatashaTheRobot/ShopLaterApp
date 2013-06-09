@@ -208,4 +208,8 @@ static NSString * const TFHppleTextNodeName            = @"text";
     return self.firstTextChild.content;
 }
 
+- (NSArray*) childrenArray {
+    return [node objectForKey:TFHppleNodeChildrenKey];
+}
+
 @end

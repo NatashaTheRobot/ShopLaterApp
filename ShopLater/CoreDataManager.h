@@ -9,6 +9,11 @@
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
 
+@class Image;
+@class Price;
+@class Provider;
+@class Product;
+
 @interface CoreDataManager : NSObject
 
 @property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
@@ -19,9 +24,16 @@
 
 #pragma mark - Products
 - (BOOL)productsExist;
+- (Product *)createProductWithDictionary:(NSDictionary *)productDictionary;
 
 #pragma mark - Providers
 - (BOOL)providersExist;
-- (void)createProviderWithDictionary:(NSDictionary *)providerDictionary;
+- (Provider *)createProviderWithDictionary:(NSDictionary *)providerDictionary;
+
+#pragma mark - Images
+- (Image *)createImageWithDictionary:(NSDictionary *)imageDictionary;
+
+#pragma mark - Prices
+- (Price *)createPriceWithDictionary:(NSDictionary *)priceDictionary;
 
 @end

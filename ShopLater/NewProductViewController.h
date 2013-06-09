@@ -1,5 +1,5 @@
 //
-//  NewProductViewController.h
+//  CreateProductViewController.h
 //  ShopLater
 //
 //  Created by Natasha Murashev on 6/8/13.

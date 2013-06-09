@@ -33,13 +33,13 @@
 		9CA5D75E1763C9C10009098E /* TFHppleElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CA5D75C1763C9C10009098E /* TFHppleElement.m */; };
 		9CA5D7611763C9CF0009098E /* XPathQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CA5D7601763C9CF0009098E /* XPathQuery.m */; };
 		9CA5D7631763CA060009098E /* libxml2.2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CA5D7621763CA060009098E /* libxml2.2.dylib */; };
-		9CA5D7661763D9E90009098E /* NewProductViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CA5D7651763D9E90009098E /* NewProductViewController.m */; };
 		9CA5D7691763E32F0009098E /* InformationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CA5D7681763E32E0009098E /* InformationViewController.m */; };
-		9CA5D76C1763E34D0009098E /* CreateProductViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CA5D76B1763E34C0009098E /* CreateProductViewController.m */; };
+		9CA5D76C1763E34D0009098E /* NewProductViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CA5D76B1763E34C0009098E /* NewProductViewController.m */; };
 		9CA5D7721764BF650009098E /* Provider.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CA5D7711764BF650009098E /* Provider.m */; };
 		9CA5D7751764C58F0009098E /* toysrus_example@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9CA5D7741764C58F0009098E /* toysrus_example@2x.png */; };
 		9CA5D7771764C5ED0009098E /* toysrus_example.png in Resources */ = {isa = PBXBuildFile; fileRef = 9CA5D7761764C5ED0009098E /* toysrus_example.png */; };
 		9CA5D77A1764C9D80009098E /* Image+SLExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CA5D7791764C9D80009098E /* Image+SLExtensions.m */; };
+		9CA5D77E1764CEA80009098E /* ToysrusParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CA5D77D1764CEA80009098E /* ToysrusParser.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -84,18 +84,18 @@
 		9CA5D75F1763C9CF0009098E /* XPathQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XPathQuery.h; sourceTree = "<group>"; };
 		9CA5D7601763C9CF0009098E /* XPathQuery.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XPathQuery.m; sourceTree = "<group>"; };
 		9CA5D7621763CA060009098E /* libxml2.2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.2.dylib; path = usr/lib/libxml2.2.dylib; sourceTree = SDKROOT; };
-		9CA5D7641763D9E90009098E /* NewProductViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewProductViewController.h; sourceTree = "<group>"; };
-		9CA5D7651763D9E90009098E /* NewProductViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewProductViewController.m; sourceTree = "<group>"; };
 		9CA5D7671763E32E0009098E /* InformationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InformationViewController.h; sourceTree = "<group>"; };
 		9CA5D7681763E32E0009098E /* InformationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InformationViewController.m; sourceTree = "<group>"; };
-		9CA5D76A1763E34C0009098E /* CreateProductViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreateProductViewController.h; sourceTree = "<group>"; };
-		9CA5D76B1763E34C0009098E /* CreateProductViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreateProductViewController.m; sourceTree = "<group>"; };
+		9CA5D76A1763E34C0009098E /* NewProductViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewProductViewController.h; sourceTree = "<group>"; };
+		9CA5D76B1763E34C0009098E /* NewProductViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewProductViewController.m; sourceTree = "<group>"; };
 		9CA5D7701764BF650009098E /* Provider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Provider.h; sourceTree = "<group>"; };
 		9CA5D7711764BF650009098E /* Provider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Provider.m; sourceTree = "<group>"; };
 		9CA5D7741764C58F0009098E /* toysrus_example@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "toysrus_example@2x.png"; sourceTree = "<group>"; };
 		9CA5D7761764C5ED0009098E /* toysrus_example.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = toysrus_example.png; sourceTree = "<group>"; };
 		9CA5D7781764C9D80009098E /* Image+SLExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Image+SLExtensions.h"; sourceTree = "<group>"; };
 		9CA5D7791764C9D80009098E /* Image+SLExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Image+SLExtensions.m"; sourceTree = "<group>"; };
+		9CA5D77C1764CEA80009098E /* ToysrusParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ToysrusParser.h; sourceTree = "<group>"; };
+		9CA5D77D1764CEA80009098E /* ToysrusParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ToysrusParser.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -152,9 +152,8 @@
 				9C927BA217627D0200570F45 /* ViewControllers */,
 				9CA5D74B1762B9520009098E /* Views */,
 				9C927BA117627CF500570F45 /* Models */,
+				9CA5D77B1764CE340009098E /* Parsers */,
 				9CA5D74C1762B9980009098E /* Delegates */,
-				9C927B97176278B800570F45 /* CoreDataManager.h */,
-				9C927B98176278B800570F45 /* CoreDataManager.m */,
 				9CA5D7731764C5760009098E /* ProviderExamples */,
 				9CA5D7431762A9840009098E /* ProviderLogos */,
 				9CA5D7571763C9520009098E /* Libraries */,
@@ -180,6 +179,8 @@
 		9C927BA117627CF500570F45 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				9C927B97176278B800570F45 /* CoreDataManager.h */,
+				9C927B98176278B800570F45 /* CoreDataManager.m */,
 				9C927B9E17627A9A00570F45 /* ShopLater.xcdatamodeld */,
 				9CA5D7701764BF650009098E /* Provider.h */,
 				9CA5D7711764BF650009098E /* Provider.m */,
@@ -204,12 +205,10 @@
 				9CA5D73B176294A30009098E /* ProviderViewController.m */,
 				9CA5D7541763BFFF0009098E /* WebViewController.h */,
 				9CA5D7551763BFFF0009098E /* WebViewController.m */,
-				9CA5D7641763D9E90009098E /* NewProductViewController.h */,
-				9CA5D7651763D9E90009098E /* NewProductViewController.m */,
 				9CA5D7671763E32E0009098E /* InformationViewController.h */,
 				9CA5D7681763E32E0009098E /* InformationViewController.m */,
-				9CA5D76A1763E34C0009098E /* CreateProductViewController.h */,
-				9CA5D76B1763E34C0009098E /* CreateProductViewController.m */,
+				9CA5D76A1763E34C0009098E /* NewProductViewController.h */,
+				9CA5D76B1763E34C0009098E /* NewProductViewController.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -268,6 +267,15 @@
 				9CA5D7741764C58F0009098E /* toysrus_example@2x.png */,
 			);
 			name = ProviderExamples;
+			sourceTree = "<group>";
+		};
+		9CA5D77B1764CE340009098E /* Parsers */ = {
+			isa = PBXGroup;
+			children = (
+				9CA5D77C1764CEA80009098E /* ToysrusParser.h */,
+				9CA5D77D1764CEA80009098E /* ToysrusParser.m */,
+			);
+			name = Parsers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -354,11 +362,11 @@
 				9CA5D75D1763C9C10009098E /* TFHpple.m in Sources */,
 				9CA5D75E1763C9C10009098E /* TFHppleElement.m in Sources */,
 				9CA5D7611763C9CF0009098E /* XPathQuery.m in Sources */,
-				9CA5D7661763D9E90009098E /* NewProductViewController.m in Sources */,
 				9CA5D7691763E32F0009098E /* InformationViewController.m in Sources */,
-				9CA5D76C1763E34D0009098E /* CreateProductViewController.m in Sources */,
+				9CA5D76C1763E34D0009098E /* NewProductViewController.m in Sources */,
 				9CA5D7721764BF650009098E /* Provider.m in Sources */,
 				9CA5D77A1764C9D80009098E /* Image+SLExtensions.m in Sources */,
+				9CA5D77E1764CEA80009098E /* ToysrusParser.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

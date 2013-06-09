@@ -58,7 +58,7 @@
 {
     if ([segue.destinationViewController isKindOfClass:[NewProductViewController class]]) {
             ((NewProductViewController *)segue.destinationViewController).productURLString = self.webView.request.URL.absoluteString;
-    } else {
+    } else if ([segue.destinationViewController isKindOfClass:[InformationViewController class]]) {
         ((InformationViewController *)segue.destinationViewController).provider = self.provider;
     }
 

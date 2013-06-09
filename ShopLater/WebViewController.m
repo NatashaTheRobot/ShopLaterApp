@@ -8,6 +8,7 @@
 
 #import "WebViewController.h"
 #import "NewProductViewController.h"
+#import "InformationViewController.h"
 
 @interface WebViewController ()
 
@@ -55,7 +56,12 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    ((NewProductViewController *)segue.destinationViewController).productURLString = self.webView.request.URL.absoluteString;
+    if ([segue.destinationViewController isKindOfClass:[NewProductViewController class]]) {
+            ((NewProductViewController *)segue.destinationViewController).productURLString = self.webView.request.URL.absoluteString;
+    } else {
+        ((InformationViewController *)segue.destinationViewController).provider = self.provider;
+    }
+
 }
 
 @end

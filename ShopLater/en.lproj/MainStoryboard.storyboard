@@ -155,6 +155,9 @@
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <segue destination="UCK-7h-DF5" kind="modal" modalTransitionStyle="flipHorizontal" id="6bH-xj-87u"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -170,11 +173,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="wgj-Ie-nc0">
-                        <barButtonItem key="rightBarButtonItem" enabled="NO" title="Buy Later" id="8Kr-xC-T37">
-                            <connections>
-                                <segue destination="l0M-8r-m6w" kind="push" id="mzs-Hs-HvB"/>
-                            </connections>
-                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" enabled="NO" title="Buy Later" id="8Kr-xC-T37"/>
                     </navigationItem>
                     <connections>
                         <outlet property="activityIndicator" destination="IZX-dF-gK6" id="BJx-Om-S5e"/>
@@ -186,57 +185,12 @@
             </objects>
             <point key="canvasLocation" x="1185" y="17"/>
         </scene>
-        <!--New Product View Controller-->
-        <scene sceneID="uQz-yi-iA2">
-            <objects>
-                <viewController id="l0M-8r-m6w" customClass="NewProductViewController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="JIa-Q5-bOL">
-                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <containerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SuC-wK-xs3">
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                                <connections>
-                                    <segue destination="cqJ-YD-ehb" kind="embed" id="Me1-9u-P7z"/>
-                                </connections>
-                            </containerView>
-                            <containerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SHY-mY-LRu">
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                                <connections>
-                                    <segue destination="UCK-7h-DF5" kind="embed" id="CFO-3e-ueX"/>
-                                </connections>
-                            </containerView>
-                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="8b8-ub-g2H"/>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="SuC-wK-xs3" firstAttribute="bottom" secondItem="JIa-Q5-bOL" secondAttribute="bottom" type="default" id="1zX-uF-pRP"/>
-                            <constraint firstItem="SuC-wK-xs3" firstAttribute="top" secondItem="JIa-Q5-bOL" secondAttribute="top" type="default" id="B9m-we-0N3"/>
-                            <constraint firstItem="SHY-mY-LRu" firstAttribute="top" secondItem="JIa-Q5-bOL" secondAttribute="top" type="default" id="INO-tq-8RQ"/>
-                            <constraint firstItem="8b8-ub-g2H" firstAttribute="centerY" secondItem="SHY-mY-LRu" secondAttribute="centerY" type="default" id="Jvh-hh-EFh"/>
-                            <constraint firstItem="SuC-wK-xs3" firstAttribute="trailing" secondItem="JIa-Q5-bOL" secondAttribute="trailing" type="default" id="LFd-ze-B27"/>
-                            <constraint firstItem="SHY-mY-LRu" firstAttribute="bottom" secondItem="JIa-Q5-bOL" secondAttribute="bottom" type="default" id="OWV-Z4-YJe"/>
-                            <constraint firstItem="8b8-ub-g2H" firstAttribute="centerX" secondItem="SHY-mY-LRu" secondAttribute="centerX" type="default" id="U3h-lj-0uE"/>
-                            <constraint firstItem="SuC-wK-xs3" firstAttribute="leading" secondItem="JIa-Q5-bOL" secondAttribute="leading" type="default" id="WU5-Dl-y2s"/>
-                            <constraint firstItem="SHY-mY-LRu" firstAttribute="trailing" secondItem="JIa-Q5-bOL" secondAttribute="trailing" type="default" id="h7z-0w-kOr"/>
-                            <constraint firstItem="SHY-mY-LRu" firstAttribute="leading" secondItem="JIa-Q5-bOL" secondAttribute="leading" type="default" id="uL4-8z-CTD"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" id="3AM-wd-pSK"/>
-                    <connections>
-                        <outlet property="activityIndicator" destination="8b8-ub-g2H" id="5Dm-2m-a0h"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Goo-rd-GQB" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1656" y="17"/>
-        </scene>
         <!--Create Product View Controller-->
         <scene sceneID="SWg-ZM-nmr">
             <objects>
                 <viewController id="cqJ-YD-ehb" customClass="CreateProductViewController" sceneMemberID="viewController">
                     <view key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="VdQ-Vx-1LB">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Little Tikes Cozy Truck" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="NEb-dI-9C7">
@@ -327,14 +281,14 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2ma-rF-vOK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2178" y="545"/>
+            <point key="canvasLocation" x="1620" y="17"/>
         </scene>
-        <!--Product Error View Controller-->
+        <!--Information View Controller-->
         <scene sceneID="u5Q-fn-f0O">
             <objects>
-                <viewController id="UCK-7h-DF5" customClass="ProductErrorViewController" sceneMemberID="viewController">
+                <viewController id="UCK-7h-DF5" customClass="InformationViewController" sceneMemberID="viewController">
                     <view key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="Gmi-1E-SIN">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Make sure you're on the product page! Here is an example of what it would look like:" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Zpc-Ca-h1Y">
@@ -346,17 +300,31 @@
                             </textView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rad-cs-FgY">
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="380" id="UcO-Xt-AYQ"/>
+                                    <constraint firstAttribute="height" constant="400" id="10e-i4-v30"/>
                                 </constraints>
                             </imageView>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cKa-fo-ybz">
+                                <items>
+                                    <navigationItem title="Information" id="TyF-PC-caa">
+                                        <barButtonItem key="rightBarButtonItem" title="Done" style="done" id="QWB-On-37d">
+                                            <connections>
+                                                <action selector="doneWithButton:" destination="UCK-7h-DF5" id="vkY-Zm-4oN"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" red="0.96510529255182687" green="0.90870242763715336" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="cKa-fo-ybz" firstAttribute="top" secondItem="Gmi-1E-SIN" secondAttribute="top" type="default" id="3EU-dr-m7U"/>
+                            <constraint firstItem="cKa-fo-ybz" firstAttribute="trailing" secondItem="Gmi-1E-SIN" secondAttribute="trailing" type="default" id="45r-pQ-zXj"/>
                             <constraint firstItem="Zpc-Ca-h1Y" firstAttribute="leading" secondItem="Gmi-1E-SIN" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="61K-DQ-s4T"/>
-                            <constraint firstItem="Zpc-Ca-h1Y" firstAttribute="top" secondItem="Gmi-1E-SIN" secondAttribute="top" constant="20" symbolic="YES" type="default" id="77r-sN-Rtk"/>
                             <constraint firstItem="Rad-cs-FgY" firstAttribute="leading" secondItem="Gmi-1E-SIN" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="LJd-mA-dKJ"/>
                             <constraint firstAttribute="trailing" secondItem="Rad-cs-FgY" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="PGI-FZ-b0q"/>
-                            <constraint firstItem="Rad-cs-FgY" firstAttribute="top" secondItem="Zpc-Ca-h1Y" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="sGa-I2-Tw3"/>
+                            <constraint firstItem="Rad-cs-FgY" firstAttribute="top" secondItem="Gmi-1E-SIN" secondAttribute="top" constant="126" id="PUw-Ny-bwy"/>
+                            <constraint firstItem="cKa-fo-ybz" firstAttribute="leading" secondItem="Gmi-1E-SIN" secondAttribute="leading" type="default" id="Psa-tj-oAg"/>
+                            <constraint firstItem="Zpc-Ca-h1Y" firstAttribute="top" secondItem="Gmi-1E-SIN" secondAttribute="top" constant="60" id="osz-UR-AH0"/>
                             <constraint firstAttribute="trailing" secondItem="Zpc-Ca-h1Y" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="vcV-SA-kAf"/>
                         </constraints>
                     </view>
@@ -367,7 +335,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ox8-st-mHJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2178" y="-181"/>
+            <point key="canvasLocation" x="1190" y="723"/>
         </scene>
     </scenes>
     <classes>
@@ -382,20 +350,15 @@
                 <relationship kind="outlet" name="wishPriceLabel" candidateClass="UILabel"/>
             </relationships>
         </class>
-        <class className="NSLayoutConstraint" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
-        </class>
-        <class className="NewProductViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NewProductViewController.h"/>
+        <class className="InformationViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/InformationViewController.h"/>
             <relationships>
-                <relationship kind="outlet" name="activityIndicator" candidateClass="UIActivityIndicatorView"/>
-            </relationships>
-        </class>
-        <class className="ProductErrorViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ProductErrorViewController.h"/>
-            <relationships>
+                <relationship kind="action" name="doneWithButton:"/>
                 <relationship kind="outlet" name="imageView" candidateClass="UIImageView"/>
             </relationships>
+        </class>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
         </class>
         <class className="ProductsViewController" superclassName="UICollectionViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ProductsViewController.h"/>

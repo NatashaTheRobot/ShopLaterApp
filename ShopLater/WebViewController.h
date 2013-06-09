@@ -7,7 +7,6 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "CoreDataManager.h"
 #import "Provider.h"
 
 @interface WebViewController : UIViewController

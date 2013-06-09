@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Provider.h"
 
-@interface ProductErrorViewController : UIViewController
+@interface InformationViewController : UIViewController
+
+@property (strong, nonatomic) Provider *provider;
 
 @end

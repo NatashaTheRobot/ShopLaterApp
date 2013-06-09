@@ -156,10 +156,15 @@ static CoreDataManager *coreDataManager;
     provider.url = [NSString stringWithFormat:@"http://www.%@.com", provider.name];
     provider.identifierName = providerDictionary[@"identifierName"];
     
-    Image *image = [NSEntityDescription insertNewObjectForEntityForName:NSStringFromClass([Image class])
+    Image *logoImage = [NSEntityDescription insertNewObjectForEntityForName:NSStringFromClass([Image class])
                                                  inManagedObjectContext:self.managedObjectContext];
-    image.fileName = [NSString stringWithFormat:@"%@_logo.png", provider.name];
-    image.provider = provider;
+    logoImage.fileName = [NSString stringWithFormat:@"%@_logo.png", provider.name];
+    logoImage.provider = provider;
+    
+    Image *exampleImage = [NSEntityDescription insertNewObjectForEntityForName:NSStringFromClass([Image class])
+                                                     inManagedObjectContext:self.managedObjectContext];
+    exampleImage.fileName = [NSString stringWithFormat:@"%@_example.png", provider.name];
+    exampleImage.provider = provider;
 }
 
 @end

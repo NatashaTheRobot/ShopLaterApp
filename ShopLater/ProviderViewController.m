@@ -10,6 +10,7 @@
 #import "CoreDataManager.h"
 #import "Provider.h"
 #import "Image.h"
+#import "Image+SLExtensions.h"
 #import "ProviderCollectionViewCell.h"
 #import "WebViewController.h"
 
@@ -137,9 +138,7 @@
     
     Provider *provider = [self.fetchedResultsController objectAtIndexPath:indexPath];
     
-    NSString *logoImageName = ((Image *)[provider.images anyObject]).fileName;
-    
-    cell.image = [UIImage imageNamed:logoImageName];
+    cell.image = [Image imageForProvider:provider type:@"logo"];
     
     return cell;
 }

@@ -148,16 +148,17 @@ static CoreDataManager *coreDataManager;
     return NO;
 }
 
-- (void)createProviderWithName:(NSString *)name
+- (void)createProviderWithDictionary:(NSDictionary *)providerDictionary
 {
     Provider *provider = [NSEntityDescription insertNewObjectForEntityForName:NSStringFromClass([Provider class])
                                                        inManagedObjectContext:self.managedObjectContext];
-    provider.name = name;
-    provider.url = [NSString stringWithFormat:@"http://www.%@.com", name];
+    provider.name = providerDictionary[@"name"];
+    provider.url = [NSString stringWithFormat:@"http://www.%@.com", provider.name];
+    provider.identifierName = providerDictionary[@"identifierName"];
     
     Image *image = [NSEntityDescription insertNewObjectForEntityForName:NSStringFromClass([Image class])
                                                  inManagedObjectContext:self.managedObjectContext];
-    image.fileName = [NSString stringWithFormat:@"%@_logo.png", name];
+    image.fileName = [NSString stringWithFormat:@"%@_logo.png", provider.name];
     image.provider = provider;
 }
 

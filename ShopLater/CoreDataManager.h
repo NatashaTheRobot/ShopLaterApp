@@ -22,6 +22,6 @@
 
 #pragma mark - Providers
 - (BOOL)providersExist;
-- (void)createProviderWithName:(NSString *)name;
+- (void)createProviderWithDictionary:(NSDictionary *)providerDictionary;
 
 @end

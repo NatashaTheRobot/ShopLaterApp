@@ -7,9 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CoreDataManager.h"
+#import "Provider.h"
 
 @interface WebViewController : UIViewController
 
-@property (strong, nonatomic) NSURL *url;
+@property (strong, nonatomic) Provider *provider;
 
 @end

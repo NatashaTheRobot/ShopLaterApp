@@ -2,33 +2,34 @@
 //  Provider.h
 //  ShopLater
 //
-//  Created by Natasha Murashev on 6/7/13.
+//  Created by Natasha Murashev on 6/9/13.
 //  Copyright (c) 2013 Natasha Murashev. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
 
-@class Image;
+@class Product;
 
 @interface Provider : NSManagedObject
 
 @property (nonatomic, retain) NSString * name;
 @property (nonatomic, retain) NSString * url;
-@property (nonatomic, retain) NSSet *products;
+@property (nonatomic, retain) NSString * identifierName;
 @property (nonatomic, retain) NSSet *images;
+@property (nonatomic, retain) NSSet *products;
 @end
 
 @interface Provider (CoreDataGeneratedAccessors)
 
-- (void)addProductsObject:(NSManagedObject *)value;
-- (void)removeProductsObject:(NSManagedObject *)value;
-- (void)addProducts:(NSSet *)values;
-- (void)removeProducts:(NSSet *)values;
-
-- (void)addImagesObject:(Image *)value;
-- (void)removeImagesObject:(Image *)value;
+- (void)addImagesObject:(NSManagedObject *)value;
+- (void)removeImagesObject:(NSManagedObject *)value;
 - (void)addImages:(NSSet *)values;
 - (void)removeImages:(NSSet *)values;
+
+- (void)addProductsObject:(Product *)value;
+- (void)removeProductsObject:(Product *)value;
+- (void)addProducts:(NSSet *)values;
+- (void)removeProducts:(NSSet *)values;
 
 @end

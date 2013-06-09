@@ -146,19 +146,31 @@
                                 </connections>
                             </webView>
                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="IZX-dF-gK6"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoDark" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Jf-f0-etW">
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="bottom" secondItem="7Jf-f0-etW" secondAttribute="bottom" constant="9" id="6bI-Uf-kco"/>
                             <constraint firstItem="ig6-DV-3fw" firstAttribute="top" secondItem="yTa-KH-t04" secondAttribute="top" type="default" id="6th-rJ-aSP"/>
                             <constraint firstItem="ig6-DV-3fw" firstAttribute="bottom" secondItem="yTa-KH-t04" secondAttribute="bottom" type="default" id="Eg5-7T-9ua"/>
                             <constraint firstItem="IZX-dF-gK6" firstAttribute="top" secondItem="yTa-KH-t04" secondAttribute="top" constant="224" id="Qjr-q1-NNq"/>
                             <constraint firstItem="IZX-dF-gK6" firstAttribute="centerX" secondItem="ig6-DV-3fw" secondAttribute="centerX" type="default" id="Uno-zg-Wdn"/>
                             <constraint firstItem="ig6-DV-3fw" firstAttribute="trailing" secondItem="yTa-KH-t04" secondAttribute="trailing" type="default" id="Zo5-AG-rXO"/>
+                            <constraint firstAttribute="trailing" secondItem="7Jf-f0-etW" secondAttribute="trailing" constant="9" id="nqR-qz-9oF"/>
                             <constraint firstItem="ig6-DV-3fw" firstAttribute="leading" secondItem="yTa-KH-t04" secondAttribute="leading" type="default" id="v4d-KP-zrp"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="wgj-Ie-nc0">
-                        <barButtonItem key="rightBarButtonItem" title="Buy Later" id="8Kr-xC-T37">
+                        <barButtonItem key="rightBarButtonItem" enabled="NO" title="Buy Later" id="8Kr-xC-T37">
                             <connections>
                                 <segue destination="l0M-8r-m6w" kind="push" id="mzs-Hs-HvB"/>
                             </connections>
@@ -166,6 +178,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="activityIndicator" destination="IZX-dF-gK6" id="BJx-Om-S5e"/>
+                        <outlet property="buyLaterButton" destination="8Kr-xC-T37" id="xQi-Z0-gHu"/>
                         <outlet property="webView" destination="ig6-DV-3fw" id="8iU-O1-qQ2"/>
                     </connections>
                 </viewController>
@@ -412,6 +425,7 @@
             <source key="sourceIdentifier" type="project" relativePath="./Classes/WebViewController.h"/>
             <relationships>
                 <relationship kind="outlet" name="activityIndicator" candidateClass="UIActivityIndicatorView"/>
+                <relationship kind="outlet" name="buyLaterButton" candidateClass="UIBarButtonItem"/>
                 <relationship kind="outlet" name="webView" candidateClass="UIWebView"/>
             </relationships>
         </class>

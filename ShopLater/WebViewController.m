@@ -13,6 +13,9 @@
 
 @property (weak, nonatomic) IBOutlet UIWebView *webView;
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *buyLaterButton;
+
+- (void)checkIfProductPage:(NSString *)urlString;
 
 @end
 
@@ -24,14 +27,30 @@
     
     [self.activityIndicator startAnimating];
     
-    NSURLRequest *request = [NSURLRequest requestWithURL:self.url];
+    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:self.provider.url]];
     
     [self.webView loadRequest:request];
 }
 
 - (void)webViewDidFinishLoad:(UIWebView *)webView
 {
-    [self.activityIndicator stopAnimating];
+    if ([self.activityIndicator isAnimating]) {
+        [self.activityIndicator stopAnimating];
+    }
+    
+    [self checkIfProductPage:webView.request.URL.absoluteString];
+}
+
+- (void)checkIfProductPage:(NSString *)urlString
+{
+    BOOL providerPage = !([urlString rangeOfString:self.provider.name].location == NSNotFound);
+    BOOL productPage = !([urlString rangeOfString:self.provider.identifierName].location == NSNotFound);
+    
+    if (providerPage && productPage) {
+        self.buyLaterButton.enabled = YES;
+    } else {
+        self.buyLaterButton.enabled = NO;
+    }
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender

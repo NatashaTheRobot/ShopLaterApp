@@ -21,7 +21,6 @@
 		9C927B9D17627A6200570F45 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C927B9C17627A6200570F45 /* CoreData.framework */; };
 		9C927BA017627A9A00570F45 /* ShopLater.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9C927B9E17627A9A00570F45 /* ShopLater.xcdatamodeld */; };
 		9C927BA5176287BC00570F45 /* Image.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C927BA4176287BC00570F45 /* Image.m */; };
-		9C927BA8176287BD00570F45 /* Provider.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C927BA7176287BD00570F45 /* Provider.m */; };
 		9C927BAE176287BD00570F45 /* Price.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C927BAD176287BD00570F45 /* Price.m */; };
 		9CA5D73C176294A30009098E /* ProviderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CA5D73B176294A30009098E /* ProviderViewController.m */; };
 		9CA5D7421762A4660009098E /* ProductsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CA5D7411762A4660009098E /* ProductsViewController.m */; };
@@ -37,6 +36,7 @@
 		9CA5D7661763D9E90009098E /* NewProductViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CA5D7651763D9E90009098E /* NewProductViewController.m */; };
 		9CA5D7691763E32F0009098E /* ProductErrorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CA5D7681763E32E0009098E /* ProductErrorViewController.m */; };
 		9CA5D76C1763E34D0009098E /* CreateProductViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CA5D76B1763E34C0009098E /* CreateProductViewController.m */; };
+		9CA5D7721764BF650009098E /* Provider.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CA5D7711764BF650009098E /* Provider.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,8 +60,6 @@
 		9C927B9F17627A9A00570F45 /* ShopLater.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ShopLater.xcdatamodel; sourceTree = "<group>"; };
 		9C927BA3176287BC00570F45 /* Image.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Image.h; sourceTree = "<group>"; };
 		9C927BA4176287BC00570F45 /* Image.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Image.m; sourceTree = "<group>"; };
-		9C927BA6176287BD00570F45 /* Provider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Provider.h; sourceTree = "<group>"; };
-		9C927BA7176287BD00570F45 /* Provider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Provider.m; sourceTree = "<group>"; };
 		9C927BAC176287BD00570F45 /* Price.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Price.h; sourceTree = "<group>"; };
 		9C927BAD176287BD00570F45 /* Price.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Price.m; sourceTree = "<group>"; };
 		9CA5D73A176294A30009098E /* ProviderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProviderViewController.h; sourceTree = "<group>"; };
@@ -89,6 +87,8 @@
 		9CA5D7681763E32E0009098E /* ProductErrorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductErrorViewController.m; sourceTree = "<group>"; };
 		9CA5D76A1763E34C0009098E /* CreateProductViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreateProductViewController.h; sourceTree = "<group>"; };
 		9CA5D76B1763E34C0009098E /* CreateProductViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreateProductViewController.m; sourceTree = "<group>"; };
+		9CA5D7701764BF650009098E /* Provider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Provider.h; sourceTree = "<group>"; };
+		9CA5D7711764BF650009098E /* Provider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Provider.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -173,12 +173,12 @@
 			isa = PBXGroup;
 			children = (
 				9C927B9E17627A9A00570F45 /* ShopLater.xcdatamodeld */,
+				9CA5D7701764BF650009098E /* Provider.h */,
+				9CA5D7711764BF650009098E /* Provider.m */,
 				9CA5D751176350770009098E /* Product.h */,
 				9CA5D752176350770009098E /* Product.m */,
 				9C927BAC176287BD00570F45 /* Price.h */,
 				9C927BAD176287BD00570F45 /* Price.m */,
-				9C927BA6176287BD00570F45 /* Provider.h */,
-				9C927BA7176287BD00570F45 /* Provider.m */,
 				9C927BA3176287BC00570F45 /* Image.h */,
 				9C927BA4176287BC00570F45 /* Image.m */,
 			);
@@ -324,7 +324,6 @@
 				9C927B99176278B800570F45 /* CoreDataManager.m in Sources */,
 				9C927BA017627A9A00570F45 /* ShopLater.xcdatamodeld in Sources */,
 				9C927BA5176287BC00570F45 /* Image.m in Sources */,
-				9C927BA8176287BD00570F45 /* Provider.m in Sources */,
 				9C927BAE176287BD00570F45 /* Price.m in Sources */,
 				9CA5D73C176294A30009098E /* ProviderViewController.m in Sources */,
 				9CA5D7421762A4660009098E /* ProductsViewController.m in Sources */,
@@ -337,6 +336,7 @@
 				9CA5D7661763D9E90009098E /* NewProductViewController.m in Sources */,
 				9CA5D7691763E32F0009098E /* ProductErrorViewController.m in Sources */,
 				9CA5D76C1763E34D0009098E /* CreateProductViewController.m in Sources */,
+				9CA5D7721764BF650009098E /* Provider.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -67,9 +67,17 @@
 
 - (void)createProviders
 {
-    NSArray *providerNames = @[@"toysrus"];
-    [providerNames enumerateObjectsUsingBlock:^(NSString *name, NSUInteger idx, BOOL *stop) {
-        [self.coreDataManager createProviderWithName:name];
+    NSMutableArray *providers = [[NSMutableArray alloc] initWithCapacity:1];
+    
+    // provider dictionaries
+    NSDictionary *toysrusDictionary = [NSDictionary dictionaryWithObjectsAndKeys:@"toysrus", @"name",
+                                                                                 @"productId", @"identifierName",
+                                       nil];
+    
+    [providers addObject:toysrusDictionary];
+    
+    [providers enumerateObjectsUsingBlock:^(NSDictionary *providerDictionary, NSUInteger idx, BOOL *stop) {
+        [self.coreDataManager createProviderWithDictionary:providerDictionary];
     }];
     
     BOOL didSave = [self.coreDataManager saveDataInManagedContext];
@@ -147,9 +155,8 @@
 {
     NSIndexPath *selectedIndexPath = [self.collectionView indexPathsForSelectedItems][0];
     Provider *provider = [self.fetchedResultsController objectAtIndexPath:selectedIndexPath];
-    NSURL *url = [NSURL URLWithString:provider.url];
     
-    ((WebViewController *)segue.destinationViewController).url = url;
+    ((WebViewController *)segue.destinationViewController).provider = provider;
 }
 
 

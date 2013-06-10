@@ -11,5 +11,9 @@
 
 @interface ToysrusParser : NSObject <ParserDelegate>
 
+- (NSString *)productName;
+- (NSString *)productSummary;
+- (Price *)productPrice;
+- (Image *)productImage;
 
 @end

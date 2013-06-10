@@ -8,6 +8,8 @@
 
 #import "NewProductViewController.h"
 #import "Parser.h"
+#import "Price.h"
+#import "Image+SLExtensions.h"
 
 @interface NewProductViewController ()
 
@@ -27,25 +29,30 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     
-    Parser *parser = [Parser parserWithProviderName:self.provider.name productURLString:self.productURLString];
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self displayProduct];
+    });
+    
 }
 
-//- (void)parseURL
-//{
-//    NSArray *urlComponents = [self.productURLString componentsSeparatedByString:@"jsp%3F"];
-//    
-//    NSArray *paramPairs = [urlComponents[1] componentsSeparatedByString:@"&"];
-//    
-//    NSMutableDictionary *urlParamsDictionary = [[NSMutableDictionary alloc] init];
-//    
-//    [paramPairs enumerateObjectsUsingBlock:^(NSString *paramPair, NSUInteger idx, BOOL *stop) {
-//        NSArray *paramKeyValue = [paramPair componentsSeparatedByString:@"%3D"];
-//        if ([paramKeyValue[0] isEqualToString:@"productId"]) {
-//            NSLog(@"product id = %@", paramKeyValue[1]);
-//            return;
-//        }
-//    }];
-//}
+
+
+// asynchronous!
+- (void)displayProduct
+{
+    Parser *parser = [Parser parserWithProviderName:self.provider.name productURLString:self.productURLString];
+    
+    self.productTitleTextView.text = [parser.delegate productName];
+    self.currentPriceLabel.text = [NSString stringWithFormat:@"$%@", [(Price *)[parser.delegate productPrice] dollarAmount]];
+    
+    Image *image = [parser.delegate productImage];
+    [image downloadImageFromURL:[NSURL URLWithString:image.externalURLString] completionBlock:^(BOOL succeeded, UIImage *image) {
+        self.imageView.image = image;
+        self.imageView.contentMode = UIViewContentModeScaleAspectFit;
+    }];
+    
+    
+}
 
 - (IBAction)saveProductWithButton:(id)sender
 {

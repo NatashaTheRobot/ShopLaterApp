@@ -7,9 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "ParserDelegate.h"
 
 @interface Parser : NSObject
 
-+ (id)parserWithProviderName:(NSString *)providerName productURLString:(NSString *)productURLString;
++ (id<ParserDelegate>)parserWithProviderName:(NSString *)providerName productURLString:(NSString *)productURLString;
+
+@property (strong, nonatomic) id<ParserDelegate> delegate;
 
 @end

@@ -7,15 +7,18 @@
 //
 
 #import "Parser.h"
-#import "ParserDelegate.h"
 
 @implementation Parser
 
 + (id)parserWithProviderName:(NSString *)providerName productURLString:(NSString *)productURLString
 {
+    Parser *parser = [[Parser alloc] init];
+
     NSString *parserName = [NSString stringWithFormat:@"%@Parser", [providerName capitalizedString]];
     Class providerParser = NSClassFromString(parserName);
-    id <ParserDelegate> parser = [providerParser parserWithProductURLString:productURLString];
+
+    parser.delegate = [providerParser parserWithProductURLString:productURLString];
+    
     return parser;
 }
 

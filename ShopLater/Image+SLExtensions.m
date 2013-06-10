@@ -20,24 +20,28 @@
     return [UIImage imageNamed:image.fileName];
 }
 
-+ (NSString *)downloadImageFromURL:(NSURL *)imageURL
++ (NSString *)imageFileNameForURL:(NSURL *)imageURL
+{
+    NSString *imageFileName = [imageURL lastPathComponent];
+    return imageFileName;
+}
+
+- (void)downloadImageFromURL:(NSURL *)imageURL completionBlock:(void (^)(BOOL succeeded, UIImage *image))completionBlock
 {
     NSFileManager *fileManager = [NSFileManager defaultManager];
     NSURL *documentDirectoryURL = [fileManager URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask][0];
-    NSString *imageFileName = [imageURL lastPathComponent];
-    NSURL *localImageURL = [documentDirectoryURL URLByAppendingPathComponent:imageFileName];
+    NSURL *localImageURL = [documentDirectoryURL URLByAppendingPathComponent:[Image imageFileNameForURL:imageURL]];
     
     [NSURLConnection sendAsynchronousRequest:[NSURLRequest requestWithURL:imageURL]
                                        queue:[NSOperationQueue mainQueue]
                            completionHandler:^(NSURLResponse *response, NSData *data, NSError *error) {
                                if (!error) {
                                    [data writeToURL:localImageURL atomically:YES];
+                                   completionBlock(YES, [UIImage imageWithData:data]);
                                } else {
-                                   NSLog(@"Image NOT downloaded with URL: %@", imageURL.absoluteString);
+                                   completionBlock(NO, nil);
                                }
                            }];
-    
-    return imageFileName;
     
 }
 

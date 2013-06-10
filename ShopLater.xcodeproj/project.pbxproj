@@ -20,7 +20,6 @@
 		9C927B99176278B800570F45 /* CoreDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C927B98176278B800570F45 /* CoreDataManager.m */; };
 		9C927B9D17627A6200570F45 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C927B9C17627A6200570F45 /* CoreData.framework */; };
 		9C927BA017627A9A00570F45 /* ShopLater.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9C927B9E17627A9A00570F45 /* ShopLater.xcdatamodeld */; };
-		9C927BA5176287BC00570F45 /* Image.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C927BA4176287BC00570F45 /* Image.m */; };
 		9C927BAE176287BD00570F45 /* Price.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C927BAD176287BD00570F45 /* Price.m */; };
 		9CA5D73C176294A30009098E /* ProviderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CA5D73B176294A30009098E /* ProviderViewController.m */; };
 		9CA5D7421762A4660009098E /* ProductsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CA5D7411762A4660009098E /* ProductsViewController.m */; };
@@ -42,6 +41,7 @@
 		9CA5D77E1764CEA80009098E /* ToysrusParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CA5D77D1764CEA80009098E /* ToysrusParser.m */; };
 		9CB940621766449000DC05D2 /* Provider+SLExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CB940611766449000DC05D2 /* Provider+SLExtensions.m */; };
 		9CB9406517665AC300DC05D2 /* Parser.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CB9406417665AC300DC05D2 /* Parser.m */; };
+		9CB9406C1766796A00DC05D2 /* Image.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CB9406B1766796A00DC05D2 /* Image.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -63,8 +63,6 @@
 		9C927B98176278B800570F45 /* CoreDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataManager.m; sourceTree = "<group>"; };
 		9C927B9C17627A6200570F45 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		9C927B9F17627A9A00570F45 /* ShopLater.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ShopLater.xcdatamodel; sourceTree = "<group>"; };
-		9C927BA3176287BC00570F45 /* Image.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Image.h; sourceTree = "<group>"; };
-		9C927BA4176287BC00570F45 /* Image.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Image.m; sourceTree = "<group>"; };
 		9C927BAC176287BD00570F45 /* Price.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Price.h; sourceTree = "<group>"; };
 		9C927BAD176287BD00570F45 /* Price.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Price.m; sourceTree = "<group>"; };
 		9CA5D73A176294A30009098E /* ProviderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProviderViewController.h; sourceTree = "<group>"; };
@@ -104,6 +102,8 @@
 		9CB9406317665AC300DC05D2 /* Parser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Parser.h; sourceTree = "<group>"; };
 		9CB9406417665AC300DC05D2 /* Parser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Parser.m; sourceTree = "<group>"; };
 		9CB9406617665D2000DC05D2 /* ParserDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParserDelegate.h; sourceTree = "<group>"; };
+		9CB9406A1766796A00DC05D2 /* Image.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Image.h; sourceTree = "<group>"; };
+		9CB9406B1766796A00DC05D2 /* Image.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Image.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -197,8 +197,8 @@
 				9CA5D752176350770009098E /* Product.m */,
 				9C927BAC176287BD00570F45 /* Price.h */,
 				9C927BAD176287BD00570F45 /* Price.m */,
-				9C927BA3176287BC00570F45 /* Image.h */,
-				9C927BA4176287BC00570F45 /* Image.m */,
+				9CB9406A1766796A00DC05D2 /* Image.h */,
+				9CB9406B1766796A00DC05D2 /* Image.m */,
 				9CA5D7781764C9D80009098E /* Image+SLExtensions.h */,
 				9CA5D7791764C9D80009098E /* Image+SLExtensions.m */,
 				9CB940601766449000DC05D2 /* Provider+SLExtensions.h */,
@@ -366,7 +366,6 @@
 				9C927B851762780100570F45 /* AppDelegate.m in Sources */,
 				9C927B99176278B800570F45 /* CoreDataManager.m in Sources */,
 				9C927BA017627A9A00570F45 /* ShopLater.xcdatamodeld in Sources */,
-				9C927BA5176287BC00570F45 /* Image.m in Sources */,
 				9C927BAE176287BD00570F45 /* Price.m in Sources */,
 				9CA5D73C176294A30009098E /* ProviderViewController.m in Sources */,
 				9CA5D7421762A4660009098E /* ProductsViewController.m in Sources */,
@@ -383,6 +382,7 @@
 				9CA5D77E1764CEA80009098E /* ToysrusParser.m in Sources */,
 				9CB940621766449000DC05D2 /* Provider+SLExtensions.m in Sources */,
 				9CB9406517665AC300DC05D2 /* Parser.m in Sources */,
+				9CB9406C1766796A00DC05D2 /* Image.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -479,6 +479,7 @@
 					"API_SECRET=@\\\"$(API_SECRET)\\\"",
 					"BASE_URL=@\\\"$(BASE_URL)\\\"",
 				);
+				GCC_WARN_UNUSED_VARIABLE = NO;
 				HEADER_SEARCH_PATHS = "$(SDKROOT)/usr/include/libxml2";
 				INFOPLIST_FILE = "ShopLater/ShopLater-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -499,6 +500,7 @@
 					"API_KEY=@\\”$(API_KEY)\\”",
 					"BASE_URL=@\\\"$(BASE_URL)\\\"",
 				);
+				GCC_WARN_UNUSED_VARIABLE = NO;
 				HEADER_SEARCH_PATHS = "$(SDKROOT)/usr/include/libxml2";
 				INFOPLIST_FILE = "ShopLater/ShopLater-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";

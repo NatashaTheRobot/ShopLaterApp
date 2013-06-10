@@ -111,14 +111,12 @@ static CoreDataManager *coreDataManager;
 
 - (id)createEntityWithClassName:(NSString *)className atributesDictionary:(NSDictionary *)attributesDictionary
 {
-    id entity = [NSEntityDescription insertNewObjectForEntityForName:className
+    NSManagedObject *entity = [NSEntityDescription insertNewObjectForEntityForName:className
                                                inManagedObjectContext:self.managedObjectContext];
     [attributesDictionary enumerateKeysAndObjectsUsingBlock:^(NSString *key, id obj, BOOL *stop) {
         
-        key = [key stringByReplacingCharactersInRange:NSMakeRange(0,1) withString:[[key substringToIndex:1] uppercaseString]];
-        NSString *selectorName = [NSString stringWithFormat:@"set%@:", key];
+        [entity setValue:obj forKey:key];
         
-        [entity performSelector:NSSelectorFromString(selectorName) withObject:obj];
     }];
     
     return entity;

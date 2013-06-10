@@ -13,7 +13,8 @@
 
 + (UIImage *)imageForProvider:(Provider *)provider type:(NSString *)imageType;
 
-+ (NSString *)downloadImageFromURL:(NSURL *)imageURL;
++ (NSString *)imageFileNameForURL:(NSURL *)imageURL;
+- (void)downloadImageFromURL:(NSURL *)imageURL completionBlock:(void (^)(BOOL succeeded, UIImage *image))completionBlock;
 
 - (UIImage *)image;
 

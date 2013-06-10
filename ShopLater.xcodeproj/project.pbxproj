@@ -96,6 +96,7 @@
 		9CA5D7791764C9D80009098E /* Image+SLExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Image+SLExtensions.m"; sourceTree = "<group>"; };
 		9CA5D77C1764CEA80009098E /* ToysrusParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ToysrusParser.h; sourceTree = "<group>"; };
 		9CA5D77D1764CEA80009098E /* ToysrusParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ToysrusParser.m; sourceTree = "<group>"; };
+		9CA5D77F1766253A0009098E /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -149,6 +150,7 @@
 				9C927B831762780100570F45 /* AppDelegate.h */,
 				9C927B841762780100570F45 /* AppDelegate.m */,
 				9C927B8C1762780100570F45 /* MainStoryboard.storyboard */,
+				9CA5D77F1766253A0009098E /* Constants.h */,
 				9C927BA217627D0200570F45 /* ViewControllers */,
 				9CA5D74B1762B9520009098E /* Views */,
 				9C927BA117627CF500570F45 /* Models */,

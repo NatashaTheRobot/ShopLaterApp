@@ -13,6 +13,7 @@
 #import "Image+SLExtensions.h"
 #import "ProviderCollectionViewCell.h"
 #import "WebViewController.h"
+#import "Constants.h"
 
 @interface ProviderViewController ()
 
@@ -131,10 +132,8 @@
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
-{
-    static NSString *cellIdentifier = @"provider";
-    
-    ProviderCollectionViewCell *cell = [self.collectionView dequeueReusableCellWithReuseIdentifier:cellIdentifier forIndexPath:indexPath];
+{    
+    ProviderCollectionViewCell *cell = [self.collectionView dequeueReusableCellWithReuseIdentifier:sProviders forIndexPath:indexPath];
     
     Provider *provider = [self.fetchedResultsController objectAtIndexPath:indexPath];
     

@@ -7,9 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Provider.h"
 
 @interface NewProductViewController : UIViewController
 
 @property (strong, nonatomic) NSString *productURLString;
+@property (strong, nonatomic) Provider *provider;
 
 @end

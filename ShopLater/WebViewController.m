@@ -47,17 +47,16 @@
     BOOL providerPage = !([urlString rangeOfString:self.provider.name].location == NSNotFound);
     BOOL productPage = !([urlString rangeOfString:self.provider.identifierName].location == NSNotFound);
     
-    if (providerPage && productPage) {
-        self.buyLaterButton.enabled = YES;
-    } else {
-        self.buyLaterButton.enabled = NO;
-    }
+    self.buyLaterButton.enabled = (providerPage && productPage);
+
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if ([segue.destinationViewController isKindOfClass:[NewProductViewController class]]) {
-            ((NewProductViewController *)segue.destinationViewController).productURLString = self.webView.request.URL.absoluteString;
+        NewProductViewController *newProductViewController = segue.destinationViewController;
+        newProductViewController.productURLString = self.webView.request.URL.absoluteString;
+        newProductViewController.provider = self.provider;
     } else if ([segue.destinationViewController isKindOfClass:[InformationViewController class]]) {
         ((InformationViewController *)segue.destinationViewController).provider = self.provider;
     }

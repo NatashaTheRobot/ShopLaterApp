@@ -22,10 +22,11 @@
 
 @implementation ToysrusParser
 
-+ (ToysrusParser *)parserWithProductID:(NSString *)productID
++ (ToysrusParser *)parserWithProductURLString:(NSString *)productURLString
 {
     ToysrusParser *parser = [self init];
-    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"http://www.toysrus.com/product/index.jsp?productId=%@", productID]];
+    NSString *productId = [parser getProductIdFromURLString:productURLString];
+    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"http://www.toysrus.com/product/index.jsp?productId=%@", productId]];
     NSData *data = [NSData dataWithContentsOfURL:url];
     
     parser.hpple = [TFHpple hppleWithHTMLData:data];
@@ -33,6 +34,43 @@
     
     return parser;
 }
+
+- (NSString *)getProductIdFromURLString:(NSString *)urlString
+{
+    NSArray *urlComponents = [urlString componentsSeparatedByString:@"jsp%3F"];
+    NSArray *paramPairs = [urlComponents[1] componentsSeparatedByString:@"&"];
+    
+    [paramPairs enumerateObjectsUsingBlock:^(NSString *paramPair, NSUInteger idx, BOOL *stop) {
+        NSArray *paramKeyValue = [paramPair componentsSeparatedByString:@"%3D"];
+    }];
+    
+//    [paramPairs enumerateObjectsUsingBlock:^(NSString *paramPair, NSUInteger idx, BOOL *stop) {
+//        NSArray *paramKeyValue = [paramPair componentsSeparatedByString:@"%3D"];
+//        if ([paramKeyValue[0] isEqualToString:@"productId"]) {
+//            return paramKeyValue[1];
+//        }
+//    }];
+
+    
+    return nil;
+}
+
+//- (void)parseURL
+//{
+//    NSArray *urlComponents = [self.productURLString componentsSeparatedByString:@"jsp%3F"];
+//
+//    NSArray *paramPairs = [urlComponents[1] componentsSeparatedByString:@"&"];
+//
+//    NSMutableDictionary *urlParamsDictionary = [[NSMutableDictionary alloc] init];
+//
+//    [paramPairs enumerateObjectsUsingBlock:^(NSString *paramPair, NSUInteger idx, BOOL *stop) {
+//        NSArray *paramKeyValue = [paramPair componentsSeparatedByString:@"%3D"];
+//        if ([paramKeyValue[0] isEqualToString:@"productId"]) {
+//            NSLog(@"product id = %@", paramKeyValue[1]);
+//            return;
+//        }
+//    }];
+//}
 
 - (NSString *)productName
 {

@@ -103,7 +103,8 @@
     NSNumber *priceInDollars = [NSNumber numberWithFloat:[[priceText substringFromIndex:1] floatValue]];
     
     NSDictionary *priceDictionary = [NSDictionary dictionaryWithObjectsAndKeys:priceInDollars, @"dollarAmount", nil];
-    Price *price = [self.coreDataManager createPriceWithDictionary:priceDictionary];
+    Price *price = [self.coreDataManager createEntityWithClassName:NSStringFromClass([Price class])
+                                               atributesDictionary:priceDictionary];
     
     return price;
 }
@@ -117,7 +118,7 @@
     NSString *imageFileName = [Image downloadImageFromURL:[NSURL URLWithString:imageURLText]];
 
     NSDictionary *imageDictionary = [NSDictionary dictionaryWithObjectsAndKeys:imageFileName, @"fileName", nil];
-    Image *image = [self.coreDataManager createImageWithDictionary:imageDictionary];
+    Image *image = [self.coreDataManager createEntityWithClassName:NSStringFromClass([Image class]) atributesDictionary:imageDictionary];
     
     return image;
 }

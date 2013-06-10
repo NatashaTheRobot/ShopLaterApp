@@ -113,156 +113,19 @@ static CoreDataManager *coreDataManager;
     return fetchedResultsController;
 }
 
-
-#pragma mark - Products
-
-
-- (BOOL)productsExist
+- (id)createEntityWithClassName:(NSString *)className atributesDictionary:(NSDictionary *)attributesDictionary
 {
-    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
-    fetchRequest.entity = [NSEntityDescription entityForName:NSStringFromClass([Product class])
-                                      inManagedObjectContext:self.managedObjectContext];
-    fetchRequest.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"url" ascending:YES]];
-    fetchRequest.fetchLimit = 1;
-    
-    NSFetchedResultsController *fetchedResultsController = [[NSFetchedResultsController alloc]
-                                                            initWithFetchRequest:fetchRequest
-                                                            managedObjectContext:self.managedObjectContext
-                                                            sectionNameKeyPath:nil
-                                                            cacheName:nil];
-    NSError *fetchError = nil;
-    BOOL success = [fetchedResultsController performFetch:&fetchError];
-    
-    if (success) {
+    id entity = [NSEntityDescription insertNewObjectForEntityForName:className
+                                               inManagedObjectContext:self.managedObjectContext];
+    [attributesDictionary enumerateKeysAndObjectsUsingBlock:^(NSString *key, id obj, BOOL *stop) {
         
-        if (fetchedResultsController.fetchedObjects.count > 0) {
-            return YES;
-        }
+        key = [key stringByReplacingCharactersInRange:NSMakeRange(0,1) withString:[[key substringToIndex:1] uppercaseString]];
+        NSString *selectorName = [NSString stringWithFormat:@"set%@:", key];
         
-    } else {
-        NSLog(@"Products Exists ERROR: %@", fetchError.description);
-    }
+        [entity performSelector:NSSelectorFromString(selectorName) withObject:obj];
+    }];
     
-    return NO;
-}
-
-- (Product *)createProductWithDictionary:(NSDictionary *)productDictionary
-{
-    Product *product = [NSEntityDescription insertNewObjectForEntityForName:NSStringFromClass([Product class])
-                                                     inManagedObjectContext:self.managedObjectContext];
-    product.name = productDictionary[@"name"];
-    product.url = productDictionary[@"url"];
-    
-    if (productDictionary[@"summary"]) {
-        product.summary = productDictionary[@"summary"];
-    }
-    
-    if (productDictionary[@"externalId"]) {
-        product.externalId = productDictionary[@"externalId"];
-    }
-    
-    product.prices = [NSSet setWithObject:productDictionary[@"price"]];
-    product.images = [NSSet setWithObject:productDictionary[@"image"]];
-    
-    return product;
-}
-
-#pragma mark - Providers
-
-- (BOOL)providersExist
-{
-    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
-    fetchRequest.entity = [NSEntityDescription entityForName:NSStringFromClass([Provider class])
-                                      inManagedObjectContext:self.managedObjectContext];
-    fetchRequest.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"name" ascending:YES]];
-    fetchRequest.fetchLimit = 1;
-   
-    NSFetchedResultsController *fetchedResultsController = [[NSFetchedResultsController alloc]
-                                                            initWithFetchRequest:fetchRequest
-                                                            managedObjectContext:self.managedObjectContext
-                                                            sectionNameKeyPath:nil
-                                                            cacheName:nil];
-    NSError *fetchError = nil;
-    BOOL success = [fetchedResultsController performFetch:&fetchError];
-    
-    if (success) {
-        
-        if (fetchedResultsController.fetchedObjects.count > 0) {
-            return YES;
-        }
-        
-    } else {
-        NSLog(@"Providers Exists ERROR: %@", fetchError.description);
-    }
-    
-    return NO;
-}
-
-- (Provider *)createProviderWithDictionary:(NSDictionary *)providerDictionary
-{
-    Provider *provider = [NSEntityDescription insertNewObjectForEntityForName:NSStringFromClass([Provider class])
-                                                       inManagedObjectContext:self.managedObjectContext];
-    provider.name = providerDictionary[@"name"];
-    provider.url = [NSString stringWithFormat:@"http://www.%@.com", provider.name];
-    provider.identifierName = providerDictionary[@"identifierName"];
-    
-    NSString *imageLogoName = [NSString stringWithFormat:@"%@_logo.png", provider.name];
-    NSDictionary *logoImageDictionary = [NSDictionary dictionaryWithObjectsAndKeys: imageLogoName, @"fileName",
-                                                                                     provider, @"provider", nil];
-    
-    [self createImageWithDictionary:logoImageDictionary];
-    
-    NSString *exampleImageName = [NSString stringWithFormat:@"%@_example.png", provider.name];
-    
-    NSDictionary *exampleImageDictionary = [NSDictionary dictionaryWithObjectsAndKeys: exampleImageName, @"fileName",
-                                                                                       provider, @"provider", nil];
-    
-    [self createImageWithDictionary:exampleImageDictionary];
-    
-    return provider;
-
-}
-
-# pragma mark - Images
-
-- (Image *)createImageWithDictionary:(NSDictionary *)imageDictionary
-{
-    Image *image = [NSEntityDescription insertNewObjectForEntityForName:NSStringFromClass([Image class])
-                                                     inManagedObjectContext:self.managedObjectContext];
-    image.fileName = imageDictionary[@"fileName"];
-    
-    if (imageDictionary[@"provider"]) {
-        image.provider = imageDictionary[@"provider"];
-    }
-    if (imageDictionary[@"product"]) {
-        image.product = imageDictionary[@"product"];
-    }
-    
-    return image;
-}
-
-# pragma mark - Prices
-
-- (Price *)createPriceWithDictionary:(NSDictionary *)priceDictionary
-{
-    Price *price = [NSEntityDescription insertNewObjectForEntityForName:NSStringFromClass([Price class])
-                                                 inManagedObjectContext:self.managedObjectContext];
-    
-    price.dollarAmount = priceDictionary[@"dollarAmount"];
-    
-    if (priceDictionary[@"type"]) {
-        price.type = priceDictionary[@"type"];
-    } else {
-        price.type = @"current";
-    }
-    
-    price.created_at = [NSDate date];
-    
-    if (priceDictionary[@"product"]) {
-        price.product = priceDictionary[@"product"];
-    }
-    
-    return price;
+    return entity;
 }
 
 @end

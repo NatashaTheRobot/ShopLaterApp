@@ -24,19 +24,6 @@
 
 - (NSFetchedResultsController *)fetchManagedObjectsWithClassName:(NSString *)className
                                              withSortDescriptors:(NSArray *)sortDescriptors;
-
-#pragma mark - Products
-- (BOOL)productsExist;
-- (Product *)createProductWithDictionary:(NSDictionary *)productDictionary;
-
-#pragma mark - Providers
-- (BOOL)providersExist;
-- (Provider *)createProviderWithDictionary:(NSDictionary *)providerDictionary;
-
-#pragma mark - Images
-- (Image *)createImageWithDictionary:(NSDictionary *)imageDictionary;
-
-#pragma mark - Prices
-- (Price *)createPriceWithDictionary:(NSDictionary *)priceDictionary;
+- (id)createEntityWithClassName:(NSString *)className atributesDictionary:(NSDictionary *)attributesDictionary;
 
 @end

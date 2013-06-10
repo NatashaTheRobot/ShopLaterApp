@@ -40,6 +40,7 @@
 		9CA5D7771764C5ED0009098E /* toysrus_example.png in Resources */ = {isa = PBXBuildFile; fileRef = 9CA5D7761764C5ED0009098E /* toysrus_example.png */; };
 		9CA5D77A1764C9D80009098E /* Image+SLExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CA5D7791764C9D80009098E /* Image+SLExtensions.m */; };
 		9CA5D77E1764CEA80009098E /* ToysrusParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CA5D77D1764CEA80009098E /* ToysrusParser.m */; };
+		9CB940621766449000DC05D2 /* Provider+SLExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CB940611766449000DC05D2 /* Provider+SLExtensions.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -97,6 +98,8 @@
 		9CA5D77C1764CEA80009098E /* ToysrusParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ToysrusParser.h; sourceTree = "<group>"; };
 		9CA5D77D1764CEA80009098E /* ToysrusParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ToysrusParser.m; sourceTree = "<group>"; };
 		9CA5D77F1766253A0009098E /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
+		9CB940601766449000DC05D2 /* Provider+SLExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Provider+SLExtensions.h"; sourceTree = "<group>"; };
+		9CB940611766449000DC05D2 /* Provider+SLExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Provider+SLExtensions.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -194,6 +197,8 @@
 				9C927BA4176287BC00570F45 /* Image.m */,
 				9CA5D7781764C9D80009098E /* Image+SLExtensions.h */,
 				9CA5D7791764C9D80009098E /* Image+SLExtensions.m */,
+				9CB940601766449000DC05D2 /* Provider+SLExtensions.h */,
+				9CB940611766449000DC05D2 /* Provider+SLExtensions.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -369,6 +374,7 @@
 				9CA5D7721764BF650009098E /* Provider.m in Sources */,
 				9CA5D77A1764C9D80009098E /* Image+SLExtensions.m in Sources */,
 				9CA5D77E1764CEA80009098E /* ToysrusParser.m in Sources */,
+				9CB940621766449000DC05D2 /* Provider+SLExtensions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

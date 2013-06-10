@@ -7,3 +7,4 @@
 //
 
 static NSString *sProviderCellIdentifier = @"provider";
+static NSString *sImageTypeLogo = @"logo";

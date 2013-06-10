@@ -22,7 +22,7 @@
 
 - (void)saveDataInManagedContextUsingBlock:(void (^)(BOOL saved, NSError *error))savedBlock;
 
-- (NSFetchedResultsController *)fetchManagedObjectsWithClassName:(NSString *)className
+- (NSFetchedResultsController *)fetchEntitiesWithClassName:(NSString *)className
                                              withSortDescriptors:(NSArray *)sortDescriptors;
 - (id)createEntityWithClassName:(NSString *)className atributesDictionary:(NSDictionary *)attributesDictionary;
 

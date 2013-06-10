@@ -43,7 +43,7 @@
     NSArray *sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"name" ascending:YES]];
     
     self.fetchedResultsController = [self.coreDataManager
-                                     fetchManagedObjectsWithClassName:NSStringFromClass([Product class])
+                                     fetchEntitiesWithClassName:NSStringFromClass([Product class])
                                      withSortDescriptors:sortDescriptors];
     
     if (self.fetchedResultsController.fetchedObjects.count == 0) {

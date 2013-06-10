@@ -13,7 +13,7 @@
 
 @interface ToysrusParser : NSObject
 
-+ (ToysrusParser *)parserWithProductID:(NSString *)productID;
++ (ToysrusParser *)parserWithProductID:(NSString *)productURLString;
 
 - (NSString *)productName;
 - (NSString *)productSummary;

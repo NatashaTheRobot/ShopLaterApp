@@ -86,7 +86,7 @@
 {
     NSArray *sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"name" ascending:YES]];
     
-    self.fetchedResultsController = [self.coreDataManager fetchManagedObjectsWithClassName:NSStringFromClass([Provider class])
+    self.fetchedResultsController = [self.coreDataManager fetchEntitiesWithClassName:NSStringFromClass([Provider class])
                                                                        withSortDescriptors:sortDescriptors];
 }
 

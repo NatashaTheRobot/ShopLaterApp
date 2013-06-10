@@ -85,7 +85,7 @@ static CoreDataManager *coreDataManager;
     savedBlock([self.managedObjectContext save:&saveError], saveError);
 }
 
-- (NSFetchedResultsController *)fetchManagedObjectsWithClassName:(NSString *)className
+- (NSFetchedResultsController *)fetchEntitiesWithClassName:(NSString *)className
                                              withSortDescriptors:(NSArray *)sortDescriptors
 {
     NSFetchedResultsController *fetchedResultsController;

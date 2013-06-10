@@ -33,7 +33,7 @@
 
 @implementation ToysrusParser
 
-+ (id)parserWithProductURLString:(NSString *)productURLString
++ (instancetype)parserWithProductURLString:(NSString *)productURLString
 {
     ToysrusParser *parser = [[ToysrusParser alloc] init];
     NSString *productId = [parser getProductIdFromURLString:productURLString];

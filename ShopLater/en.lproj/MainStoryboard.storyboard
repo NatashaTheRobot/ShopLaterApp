@@ -199,7 +199,7 @@
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Little Tikes Cozy Truck" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="NEb-dI-9C7">
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="34" id="gLn-2p-k5w"/>
+                                    <constraint firstAttribute="height" constant="59" id="gw9-QQ-GFJ"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -219,7 +219,11 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="AhZ-fA-MLm"/>
+                            <slider hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="0.0" translatesAutoresizingMaskIntoConstraints="NO" id="AhZ-fA-MLm">
+                                <connections>
+                                    <action selector="adjustWishPrice:" destination="cqJ-YD-ehb" eventType="valueChanged" id="OAd-j5-TKG"/>
+                                </connections>
+                            </slider>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zX6-tA-buO">
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="Save">
@@ -249,15 +253,19 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="k6g-GJ-Pfr"/>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.94166291221120868" blue="0.78861097192132168" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="AhZ-fA-MLm" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="5HD-J4-daG"/>
                             <constraint firstItem="aAJ-Yn-Unf" firstAttribute="baseline" secondItem="gGH-Wm-fhT" secondAttribute="baseline" type="default" id="5rC-4U-jwe"/>
+                            <constraint firstItem="GgS-bi-hqu" firstAttribute="top" secondItem="VdQ-Vx-1LB" secondAttribute="top" constant="87" id="6LO-PS-HDl"/>
                             <constraint firstItem="NEb-dI-9C7" firstAttribute="trailing" secondItem="VdQ-Vx-1LB" secondAttribute="trailing" type="default" id="Avb-LT-6jv"/>
+                            <constraint firstItem="k6g-GJ-Pfr" firstAttribute="top" secondItem="VdQ-Vx-1LB" secondAttribute="top" constant="182" id="CwK-55-auw"/>
                             <constraint firstItem="GgS-bi-hqu" firstAttribute="leading" secondItem="VdQ-Vx-1LB" secondAttribute="leading" type="default" id="Hjt-qM-seT"/>
                             <constraint firstAttribute="bottom" secondItem="O6P-bf-xAL" secondAttribute="bottom" constant="191" id="IQa-LT-u3T"/>
                             <constraint firstItem="zX6-tA-buO" firstAttribute="leading" secondItem="VdQ-Vx-1LB" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="Q4W-e9-giP"/>
+                            <constraint firstItem="k6g-GJ-Pfr" firstAttribute="centerX" secondItem="GgS-bi-hqu" secondAttribute="centerX" type="default" id="Sjn-dF-0WA"/>
                             <constraint firstAttribute="trailing" secondItem="fIY-cK-FzF" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="Wcx-NB-Vfi"/>
                             <constraint firstAttribute="trailing" secondItem="aAJ-Yn-Unf" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="XPK-lV-NYy"/>
                             <constraint firstItem="O6P-bf-xAL" firstAttribute="leading" secondItem="VdQ-Vx-1LB" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="auB-oO-JdW"/>
@@ -269,14 +277,14 @@
                             <constraint firstAttribute="bottom" secondItem="gGH-Wm-fhT" secondAttribute="bottom" constant="145" id="oMv-R6-ef3"/>
                             <constraint firstItem="GgS-bi-hqu" firstAttribute="trailing" secondItem="VdQ-Vx-1LB" secondAttribute="trailing" type="default" id="oqA-PW-eCD"/>
                             <constraint firstAttribute="trailing" secondItem="zX6-tA-buO" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="ow1-c9-Vd9"/>
-                            <constraint firstItem="GgS-bi-hqu" firstAttribute="top" secondItem="VdQ-Vx-1LB" secondAttribute="top" constant="79" id="rfp-YT-06w"/>
-                            <constraint firstItem="NEb-dI-9C7" firstAttribute="top" secondItem="VdQ-Vx-1LB" secondAttribute="top" constant="20" symbolic="YES" type="default" id="szf-eI-lHk"/>
+                            <constraint firstItem="NEb-dI-9C7" firstAttribute="top" secondItem="VdQ-Vx-1LB" secondAttribute="top" constant="12" id="rK1-C1-3HO"/>
                             <constraint firstAttribute="bottom" secondItem="AhZ-fA-MLm" secondAttribute="bottom" constant="88" id="vpG-5q-e8U"/>
                         </constraints>
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="gLv-oD-IBk"/>
                     <connections>
+                        <outlet property="activityIndicator" destination="k6g-GJ-Pfr" id="Jd0-Ub-xhV"/>
                         <outlet property="currentPriceLabel" destination="fIY-cK-FzF" id="aKy-P5-KHj"/>
                         <outlet property="imageView" destination="GgS-bi-hqu" id="yUP-kb-37y"/>
                         <outlet property="priceSlider" destination="AhZ-fA-MLm" id="UZD-V8-f7l"/>
@@ -357,7 +365,9 @@
         <class className="NewProductViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/NewProductViewController.h"/>
             <relationships>
+                <relationship kind="action" name="adjustWishPrice:"/>
                 <relationship kind="action" name="saveProductWithButton:"/>
+                <relationship kind="outlet" name="activityIndicator" candidateClass="UIActivityIndicatorView"/>
                 <relationship kind="outlet" name="currentPriceLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="imageView" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="priceSlider" candidateClass="UISlider"/>
@@ -388,9 +398,6 @@
         </class>
         <class className="UICollectionViewFlowLayout" superclassName="UICollectionViewLayout">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewFlowLayout.h"/>
-        </class>
-        <class className="UICollectionViewLayout" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewLayout.h"/>
         </class>
         <class className="WebViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/WebViewController.h"/>

@@ -13,7 +13,7 @@
 
 @protocol ParserDelegate <NSObject>
 
-+ (id)parserWithProductURLString:(NSString *)productURLString;
++ (instancetype)parserWithProductURLString:(NSString *)productURLString;
 
 - (NSString *)productName;
 - (NSString *)productSummary;

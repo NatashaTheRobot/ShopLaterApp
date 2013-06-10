@@ -39,7 +39,9 @@
         [self.activityIndicator stopAnimating];
     }
     
-    [self checkIfProductPage:webView.request.URL.absoluteString];
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{
+        [self checkIfProductPage:webView.request.URL.absoluteString];
+    });
 }
 
 - (void)checkIfProductPage:(NSString *)urlString
@@ -47,7 +49,9 @@
     BOOL providerPage = !([urlString rangeOfString:self.provider.name].location == NSNotFound);
     BOOL productPage = !([urlString rangeOfString:self.provider.identifierName].location == NSNotFound);
     
-    self.buyLaterButton.enabled = (providerPage && productPage);
+    dispatch_async(dispatch_get_main_queue(), ^{
+       self.buyLaterButton.enabled = (providerPage && productPage); 
+    });
 
 }
 

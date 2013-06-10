@@ -11,7 +11,7 @@
 
 @interface Parser : NSObject
 
-+ (id<ParserDelegate>)parserWithProviderName:(NSString *)providerName productURLString:(NSString *)productURLString;
++ (instancetype)parserWithProviderName:(NSString *)providerName productURLString:(NSString *)productURLString;
 
 @property (strong, nonatomic) id<ParserDelegate> delegate;
 

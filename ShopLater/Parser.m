@@ -7,7 +7,6 @@
 //
 
 #import "Parser.h"
-#import "ToysrusParser.h"
 #import "ParserDelegate.h"
 
 @implementation Parser

@@ -9,11 +9,6 @@
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
 
-@class Image;
-@class Price;
-@class Provider;
-@class Product;
-
 @interface CoreDataManager : NSObject
 
 @property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;

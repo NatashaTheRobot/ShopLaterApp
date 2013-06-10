@@ -7,10 +7,7 @@
 //
 
 #import "CoreDataManager.h"
-#import "Product.h"
-#import "Provider.h"
-#import "Image.h"
-#import "Price.h"
+#import "Constants.h"
 
 @interface CoreDataManager ()
 
@@ -58,9 +55,9 @@ static CoreDataManager *coreDataManager;
     
     NSURL *documentDirectoryURL = [fileManager URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask][0];
     
-    NSURL *persistentURL = [documentDirectoryURL URLByAppendingPathComponent:@"ShopLater.sqlite"];
+    NSURL *persistentURL = [documentDirectoryURL URLByAppendingPathComponent:[NSString stringWithFormat:@"%@.sqlite", sProjectName]];
     
-    NSURL *modelURL = [[NSBundle mainBundle] URLForResource:@"ShopLater" withExtension:@"momd"];
+    NSURL *modelURL = [[NSBundle mainBundle] URLForResource:sProjectName withExtension:@"momd"];
     
     self.managedObjectModel = [[NSManagedObjectModel alloc] initWithContentsOfURL:modelURL];
     self.persistentStoreCoordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:self.managedObjectModel];

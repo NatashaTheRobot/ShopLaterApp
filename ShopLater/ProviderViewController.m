@@ -41,7 +41,6 @@
         
         if (self.fetchedResultsController.fetchedObjects.count == 0) {
             [self createProviders];
-            [self fetchProviders];
         }
         
     }
@@ -86,6 +85,8 @@
         
         [alertView show];
         
+    } else {
+        [self fetchProviders];
     }
 }
 
@@ -112,7 +113,7 @@
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {    
-    ProviderCollectionViewCell *cell = [self.collectionView dequeueReusableCellWithReuseIdentifier:sProviders forIndexPath:indexPath];
+    ProviderCollectionViewCell *cell = [self.collectionView dequeueReusableCellWithReuseIdentifier:sProviderCellIdentifier forIndexPath:indexPath];
     
     Provider *provider = [self.fetchedResultsController objectAtIndexPath:indexPath];
     

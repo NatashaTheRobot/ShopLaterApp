@@ -6,4 +6,4 @@
 //  Copyright (c) 2013 Natasha Murashev. All rights reserved.
 //
 
-static NSString *sProviders = @"providers";
+static NSString *sProviderCellIdentifier = @"provider";

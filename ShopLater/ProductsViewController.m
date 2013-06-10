@@ -9,10 +9,13 @@
 #import "ProductsViewController.h"
 #import "CoreDataManager.h"
 #import "ProviderViewController.h"
+#import "Product.h"
 
 @interface ProductsViewController ()
 
 @property (assign, nonatomic) BOOL productsExist;
+@property (strong, nonatomic) CoreDataManager *coreDataManager;
+@property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
 
 @end
 
@@ -22,6 +25,8 @@
 {
     [super viewDidLoad];
 	
+    self.coreDataManager = [CoreDataManager sharedManager];
+    
     [self selectViewController];
     
 }
@@ -35,17 +40,20 @@
 
 - (void)selectViewController
 {
-    CoreDataManager *coreDataManager = [CoreDataManager sharedManager];
+    NSArray *sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"name" ascending:YES]];
     
-    self.productsExist = [coreDataManager productsExist];
-    if (!self.productsExist) {
+    self.fetchedResultsController = [self.coreDataManager
+                                     fetchManagedObjectsWithClassName:NSStringFromClass([Product class])
+                                     withSortDescriptors:sortDescriptors];
+    
+    if (self.fetchedResultsController.fetchedObjects.count == 0) {
         [self performSegueWithIdentifier:@"toProviderCollectionView" sender:self];
     }
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    if (self.productsExist) {
+    if (self.fetchedResultsController.fetchedObjects.count == 0) {
         ((ProviderViewController *)segue.destinationViewController).showNavigationBar = YES;
     } else {
         ((ProviderViewController *)segue.destinationViewController).showNavigationBar = NO;

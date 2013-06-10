@@ -22,6 +22,9 @@
 
 - (BOOL)saveDataInManagedContext;
 
+- (NSFetchedResultsController *)fetchManagedObjectsWithClassName:(NSString *)className
+                                             withSortDescriptors:(NSArray *)sortDescriptors;
+
 #pragma mark - Products
 - (BOOL)productsExist;
 - (Product *)createProductWithDictionary:(NSDictionary *)productDictionary;

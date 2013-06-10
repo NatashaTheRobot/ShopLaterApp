@@ -37,10 +37,13 @@
         self.coreDataManager = [CoreDataManager sharedManager];
         self.managedObjectContext = self.coreDataManager.managedObjectContext;
         
-        if (![self.coreDataManager providersExist]) {
-            [self createProviders];
-        }
         [self fetchProviders];
+        
+        if (self.fetchedResultsController.fetchedObjects.count == 0) {
+            [self createProviders];
+            [self fetchProviders];
+        }
+        
     }
     
     return self;
@@ -54,15 +57,6 @@
         self.navigationItem.hidesBackButton = YES;
     }
 	
-}
-
-- (void)viewDidAppear:(BOOL)animated
-{
-    if (![self.coreDataManager providersExist]) {
-        [self createProviders];
-        [self fetchProviders];
-        [self.collectionView reloadData];
-    }
 }
 
 #pragma mark - Setup
@@ -97,25 +91,10 @@
 
 - (void)fetchProviders
 {
-    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
-    NSEntityDescription *entity = [NSEntityDescription entityForName:NSStringFromClass([Provider class])
-                                              inManagedObjectContext:self.managedObjectContext];
-    [fetchRequest setEntity:entity];
-    fetchRequest.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"name" ascending:YES]];
+    NSArray *sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"name" ascending:YES]];
     
-    
-    self.fetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest
-                                                                        managedObjectContext:self.managedObjectContext
-                                                                          sectionNameKeyPath:nil
-                                                                                   cacheName:nil];
-    
-    
-    NSError *error = nil;
-    BOOL success = [self.fetchedResultsController performFetch:&error];
-    
-    if (!success) {
-        NSLog(@"fetchProviders ERROR: %@", error.description);
-    }
+    self.fetchedResultsController = [self.coreDataManager fetchManagedObjectsWithClassName:NSStringFromClass([Provider class])
+                                                                       withSortDescriptors:sortDescriptors];
 }
 
 #pragma mark - CollectionView Delegate Methods

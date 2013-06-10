@@ -86,7 +86,36 @@ static CoreDataManager *coreDataManager;
     return didSave;
 }
 
+- (NSFetchedResultsController *)fetchManagedObjectsWithClassName:(NSString *)className
+                                             withSortDescriptors:(NSArray *)sortDescriptors
+{
+    NSFetchedResultsController *fetchedResultsController;
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    NSEntityDescription *entity = [NSEntityDescription entityForName:className
+                                              inManagedObjectContext:self.managedObjectContext];
+    fetchRequest.entity = entity;
+    fetchRequest.sortDescriptors = sortDescriptors;
+    
+    
+    fetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest
+                                                                        managedObjectContext:self.managedObjectContext
+                                                                          sectionNameKeyPath:nil
+                                                                                   cacheName:nil];
+    
+    
+    NSError *error = nil;
+    BOOL success = [fetchedResultsController performFetch:&error];
+    
+    if (!success) {
+        NSLog(@"fetchManagedObjectsWithClassName ERROR: %@", error.description);
+    }
+    
+    return fetchedResultsController;
+}
+
+
 #pragma mark - Products
+
 
 - (BOOL)productsExist
 {

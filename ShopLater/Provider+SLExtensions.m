@@ -9,6 +9,7 @@
 #import "Provider+SLExtensions.h"
 #import "CoreDataManager.h"
 #import "Image+SLExtensions.h"
+#import "Constants.h"
 
 @implementation Provider (SLExtensions)
 
@@ -19,12 +20,12 @@
 
 + (NSString *)logoImageNameFromProviderName:(NSString *)providerName
 {
-    return [NSString stringWithFormat:@"%@_logo.png", providerName];
+    return [NSString stringWithFormat:@"%@_%@.png", providerName, sImageTypeLogo];
 }
 
 + (NSString *)exampleImageNameFromProviderName:(NSString *)providerName
 {
-    return [NSString stringWithFormat:@"%@_example.png", providerName];
+    return [NSString stringWithFormat:@"%@_%@.png", providerName, sImageTypeExample];
 }
 
 + (NSArray *)providersArray
@@ -36,7 +37,7 @@
     return providers;
 }
 
-#pragma mark - provider dictionaries
+#pragma mark - provider dictionary
 
 + (NSDictionary *)dictionaryWithProviderName:(NSString *)providerName identifierName:(NSString *)identifierName
 {

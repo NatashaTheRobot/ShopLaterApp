@@ -8,3 +8,4 @@
 
 static NSString *sProviderCellIdentifier = @"provider";
 static NSString *sImageTypeLogo = @"logo";
+static NSString *sImageTypeExample = @"example";

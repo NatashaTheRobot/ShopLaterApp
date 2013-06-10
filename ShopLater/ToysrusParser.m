@@ -9,7 +9,6 @@
 #import "ToysrusParser.h"
 #import "TFHpple.h"
 #import "Price.h"
-#import "Image.h"
 #import "Image+SLExtensions.h"
 #import "CoreDataManager.h"
 
@@ -22,9 +21,9 @@
 
 @implementation ToysrusParser
 
-+ (ToysrusParser *)parserWithProductURLString:(NSString *)productURLString
++ (id)parserWithProductURLString:(NSString *)productURLString
 {
-    ToysrusParser *parser = [self init];
+    ToysrusParser *parser = [[self alloc] init];
     NSString *productId = [parser getProductIdFromURLString:productURLString];
     NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"http://www.toysrus.com/product/index.jsp?productId=%@", productId]];
     NSData *data = [NSData dataWithContentsOfURL:url];
@@ -94,6 +93,8 @@
     
     return summary;
 }
+
+
 
 - (Price *)productPrice
 {

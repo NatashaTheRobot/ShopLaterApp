@@ -41,6 +41,7 @@
 		9CA5D77A1764C9D80009098E /* Image+SLExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CA5D7791764C9D80009098E /* Image+SLExtensions.m */; };
 		9CA5D77E1764CEA80009098E /* ToysrusParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CA5D77D1764CEA80009098E /* ToysrusParser.m */; };
 		9CB940621766449000DC05D2 /* Provider+SLExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CB940611766449000DC05D2 /* Provider+SLExtensions.m */; };
+		9CB9406517665AC300DC05D2 /* Parser.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CB9406417665AC300DC05D2 /* Parser.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -100,6 +101,9 @@
 		9CA5D77F1766253A0009098E /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 		9CB940601766449000DC05D2 /* Provider+SLExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Provider+SLExtensions.h"; sourceTree = "<group>"; };
 		9CB940611766449000DC05D2 /* Provider+SLExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Provider+SLExtensions.m"; sourceTree = "<group>"; };
+		9CB9406317665AC300DC05D2 /* Parser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Parser.h; sourceTree = "<group>"; };
+		9CB9406417665AC300DC05D2 /* Parser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Parser.m; sourceTree = "<group>"; };
+		9CB9406617665D2000DC05D2 /* ParserDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParserDelegate.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -242,6 +246,7 @@
 		9CA5D74C1762B9980009098E /* Delegates */ = {
 			isa = PBXGroup;
 			children = (
+				9CB9406617665D2000DC05D2 /* ParserDelegate.h */,
 			);
 			name = Delegates;
 			sourceTree = "<group>";
@@ -279,6 +284,8 @@
 		9CA5D77B1764CE340009098E /* Parsers */ = {
 			isa = PBXGroup;
 			children = (
+				9CB9406317665AC300DC05D2 /* Parser.h */,
+				9CB9406417665AC300DC05D2 /* Parser.m */,
 				9CA5D77C1764CEA80009098E /* ToysrusParser.h */,
 				9CA5D77D1764CEA80009098E /* ToysrusParser.m */,
 			);
@@ -375,6 +382,7 @@
 				9CA5D77A1764C9D80009098E /* Image+SLExtensions.m in Sources */,
 				9CA5D77E1764CEA80009098E /* ToysrusParser.m in Sources */,
 				9CB940621766449000DC05D2 /* Provider+SLExtensions.m in Sources */,
+				9CB9406517665AC300DC05D2 /* Parser.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

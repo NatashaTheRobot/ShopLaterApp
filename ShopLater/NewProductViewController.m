@@ -7,7 +7,7 @@
 //
 
 #import "NewProductViewController.h"
-#import "ToysrusParser.h"
+#import "Parser.h"
 
 @interface NewProductViewController ()
 
@@ -22,26 +22,12 @@
 
 @implementation NewProductViewController
 
-- (id)initWithCoder:(NSCoder *)aDecoder
-{
-    self = [super init];
-    
-    if (self) {
-        NSString *parserProvider = [self.provider.name stringByReplacingCharactersInRange:NSMakeRange(0,1)
-                                                                               withString:[[self.provider.name substringToIndex:1] uppercaseString]];
-        NSString *parserClassName = [NSString stringWithFormat:@"%@Parser", parserProvider];
-        Class parserClass = NSClassFromString(parserClassName);
-        
-//        parserClass 
-    }
-    
-    return self;
-}
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    
+    Parser *parser = [Parser parserWithProviderName:self.provider.name productURLString:self.productURLString];
 }
 
 //- (void)parseURL

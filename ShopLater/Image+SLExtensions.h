@@ -13,4 +13,8 @@
 
 + (UIImage *)imageForProvider:(Provider *)provider type:(NSString *)imageType;
 
++ (NSString *)downloadImageFromURL:(NSURL *)imageURL;
+
+- (UIImage *)image;
+
 @end

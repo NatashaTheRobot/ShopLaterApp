@@ -132,13 +132,6 @@ static CoreDataManager *coreDataManager;
         product.externalId = productDictionary[@"externalId"];
     }
     
-//    NSDictionary *providerDictionary = [(NSMutableDictionary *)(productDictionary[@"provider"])
-//                                        addEntriesFromDictionary:[NSDictionary dictionaryWithObject:product forKey:@"product"]];
-//    product.providers = [NSSet setWithObject:productDictionary[@"provider"]];
-    
-    
-    Price *price = [self createPriceWithDictionary:productDictionary[@"price"]];
-    
     product.prices = [NSSet setWithObject:productDictionary[@"price"]];
     product.images = [NSSet setWithObject:productDictionary[@"image"]];
     
@@ -235,7 +228,10 @@ static CoreDataManager *coreDataManager;
     }
     
     price.created_at = [NSDate date];
-    price.product = priceDictionary[@"product"];
+    
+    if (priceDictionary[@"product"]) {
+        price.product = priceDictionary[@"product"];
+    }
     
     return price;
 }

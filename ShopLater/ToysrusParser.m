@@ -9,10 +9,14 @@
 #import "ToysrusParser.h"
 #import "TFHpple.h"
 #import "Price.h"
+#import "Image.h"
+#import "Image+SLExtensions.h"
+#import "CoreDataManager.h"
 
 @interface ToysrusParser ()
 
 @property (strong, nonatomic) TFHpple *hpple;
+@property (strong, nonatomic) CoreDataManager *coreDataManager;
 
 @end
 
@@ -25,6 +29,7 @@
     NSData *data = [NSData dataWithContentsOfURL:url];
     
     parser.hpple = [TFHpple hppleWithHTMLData:data];
+    parser.coreDataManager = [CoreDataManager sharedManager];
     
     return parser;
 }
@@ -37,56 +42,46 @@
     return name;
 }
 
-//- (NSMutableDictionary *)productPrice
-//{
-//    NSString *pricesPath = @"//div[@id='wrapper']/div[@id='container']/div[@id='productPanel']/div[@id='rightSide']/div[@id='buyFind']/div[@id='buyWrapper']/div[@id='buyInterior']/div[@id='price']/ul/li/span";
-//    NSArray *pricesArray = [self.hpple searchWithXPathQuery:pricesPath];
-//    NSString *price = [[pricesArray[0] firstChild] content];
-//    
-////    NSDictionary *priceDictionary = [NSDictionary ]
-////    [CoreDataManager sharedManager] createPriceWithDictionary:<#(NSDictionary *)#>
-//    
-//    // return nsmutable dictionary
-//}
-
-- (void)parseProductWithID:(NSString *)productID
+- (Price *)productPrice
 {
-
-//    NSURL* toysrusURL = [NSURL URLWithString:[NSString stringWithFormat:@"http://www.toysrus.com/product/index.jsp?productId=%@", productID]];
-//    
-//    NSData *toysrusData = [NSData dataWithContentsOfURL:toysrusURL];
-//    
-//    // create HPPLE parse object with NSData object
-//    TFHpple* hpple = [TFHpple hppleWithHTMLData:toysrusData];
-
-    // NAME
-//    NSString* toysrusProductNamesPath = @"//div[@id='wrapper']/div[@id='container']/div[@id='productPanel']/div[@id='rightSide']/div[@id='priceReviewAge']/h1";
-//    NSArray* toysrusProductNamesArray = [hpple searchWithXPathQuery:toysrusProductNamesPath];
-//    NSString* toysrusProductName = [[toysrusProductNamesArray[0] firstChild] content];
+    NSString *pricesPath = @"//div[@id='wrapper']/div[@id='container']/div[@id='productPanel']/div[@id='rightSide']/div[@id='buyFind']/div[@id='buyWrapper']/div[@id='buyInterior']/div[@id='price']/ul/li/span";
+    NSArray *pricesArray = [self.hpple searchWithXPathQuery:pricesPath];
+    NSString *priceText = [[pricesArray[0] firstChild] content];
+    NSNumber *priceInDollars = [NSNumber numberWithFloat:[[priceText substringFromIndex:1] floatValue]];
     
-    // PRICE
-//    NSString* toysrusProductPricesPath = @"//div[@id='wrapper']/div[@id='container']/div[@id='productPanel']/div[@id='rightSide']/div[@id='buyFind']/div[@id='buyWrapper']/div[@id='buyInterior']/div[@id='price']/ul/li/span";
-//    NSArray* toysrusProductsPriceArray = [hpple searchWithXPathQuery:toysrusProductPricesPath];
-//    NSString* toysrusProductPrice = [[toysrusProductsPriceArray[0] firstChild] content];
-//    
-//    // SUMMARY DESCRIPTION
-//    NSString* toysrusProductDescriptionsPath = @"//div[@id='wrapper']/div[@id='container']/div[@id='infoPanel']/dl[@id='tabset_productPage']/dd/p";
-//    NSArray* toysrusProductDescriptionsArray = [self.hpple searchWithXPathQuery:toysrusProductDescriptionsPath];
-//    NSString* toysrusProductDescription = [toysrusProductDescriptionsArray[0] valueForKeyPath:@"raw"];
-//    NSRange rangeString;
-//    while ((rangeString = [toysrusProductDescription rangeOfString:@"<[^>]+>" options:NSRegularExpressionSearch]).location != NSNotFound)
-//        toysrusProductDescription = [toysrusProductDescription stringByReplacingCharactersInRange:rangeString withString:@" "];
-//    
-//    toysrusProductDescription = [toysrusProductDescription stringByReplacingOccurrencesOfString:@"Product Description" withString:@""];
-//    toysrusProductDescription = [toysrusProductDescription stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
-//    
-//    // IMAGE
-//    
-//    NSString* toysrusProductImagesPath = @"//div[@id='wrapper']/div[@id='container']/div[@id='productPanel']/div[@id='leftSide']/div[@id='productView']";
-//    NSArray* toysrusProductImagesArray = [self.hpple searchWithXPathQuery:toysrusProductImagesPath];
-//    NSString* toysrusProductImage = [[[toysrusProductImagesArray[0] childrenArray] valueForKeyPath:@"nodeChildArray.nodeChildArray.nodeChildArray.nodeAttributeArray"][1][1][1][0][0] valueForKey:@"nodeContent"];
-//    
-//    
+    NSDictionary *priceDictionary = [NSDictionary dictionaryWithObjectsAndKeys:priceInDollars, @"dollarAmount", nil];
+    Price *price = [self.coreDataManager createPriceWithDictionary:priceDictionary];
+    
+    return price;
+}
+
+- (NSString *)productSummary
+{
+    NSString *summariesPath = @"//div[@id='wrapper']/div[@id='container']/div[@id='infoPanel']/dl[@id='tabset_productPage']/dd/p";
+    NSArray *summariesArray = [self.hpple searchWithXPathQuery:summariesPath];
+    NSString *summary = [summariesArray[0] valueForKeyPath:@"raw"];
+    NSRange rangeString;
+    while ((rangeString = [summary rangeOfString:@"<[^>]+>" options:NSRegularExpressionSearch]).location != NSNotFound)
+        summary = [summary stringByReplacingCharactersInRange:rangeString withString:@" "];
+    
+    summary = [summary stringByReplacingOccurrencesOfString:@"Product Description" withString:@""];
+    summary = [summary stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+    
+    return summary;
+}
+
+- (Image *)productImage
+{
+    NSString *imagesPath = @"//div[@id='wrapper']/div[@id='container']/div[@id='productPanel']/div[@id='leftSide']/div[@id='productView']";
+    NSArray *imagesArray = [self.hpple searchWithXPathQuery:imagesPath];
+    NSString *imageURLText = [[[imagesArray[0] childrenArray] valueForKeyPath:@"nodeChildArray.nodeChildArray.nodeChildArray.nodeAttributeArray"][1][1][1][0][0] valueForKey:@"nodeContent"];
+
+    NSString *imageFileName = [Image downloadImageFromURL:[NSURL URLWithString:imageURLText]];
+
+    NSDictionary *imageDictionary = [NSDictionary dictionaryWithObjectsAndKeys:imageFileName, @"fileName", nil];
+    Image *image = [self.coreDataManager createImageWithDictionary:imageDictionary];
+    
+    return image;
 }
 
 @end

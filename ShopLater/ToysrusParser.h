@@ -8,6 +8,17 @@
 
 #import <Foundation/Foundation.h>
 
+@class Price;
+@class Image;
+
 @interface ToysrusParser : NSObject
+
++ (ToysrusParser *)parserWithProductID:(NSString *)productID;
+
+- (NSString *)productName;
+- (NSString *)productSummary;
+- (Price *)productPrice;
+- (Image *)productImage;
+
 
 @end

@@ -42,19 +42,6 @@
     return name;
 }
 
-- (Price *)productPrice
-{
-    NSString *pricesPath = @"//div[@id='wrapper']/div[@id='container']/div[@id='productPanel']/div[@id='rightSide']/div[@id='buyFind']/div[@id='buyWrapper']/div[@id='buyInterior']/div[@id='price']/ul/li/span";
-    NSArray *pricesArray = [self.hpple searchWithXPathQuery:pricesPath];
-    NSString *priceText = [[pricesArray[0] firstChild] content];
-    NSNumber *priceInDollars = [NSNumber numberWithFloat:[[priceText substringFromIndex:1] floatValue]];
-    
-    NSDictionary *priceDictionary = [NSDictionary dictionaryWithObjectsAndKeys:priceInDollars, @"dollarAmount", nil];
-    Price *price = [self.coreDataManager createPriceWithDictionary:priceDictionary];
-    
-    return price;
-}
-
 - (NSString *)productSummary
 {
     NSString *summariesPath = @"//div[@id='wrapper']/div[@id='container']/div[@id='infoPanel']/dl[@id='tabset_productPage']/dd/p";
@@ -68,6 +55,19 @@
     summary = [summary stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
     
     return summary;
+}
+
+- (Price *)productPrice
+{
+    NSString *pricesPath = @"//div[@id='wrapper']/div[@id='container']/div[@id='productPanel']/div[@id='rightSide']/div[@id='buyFind']/div[@id='buyWrapper']/div[@id='buyInterior']/div[@id='price']/ul/li/span";
+    NSArray *pricesArray = [self.hpple searchWithXPathQuery:pricesPath];
+    NSString *priceText = [[pricesArray[0] firstChild] content];
+    NSNumber *priceInDollars = [NSNumber numberWithFloat:[[priceText substringFromIndex:1] floatValue]];
+    
+    NSDictionary *priceDictionary = [NSDictionary dictionaryWithObjectsAndKeys:priceInDollars, @"dollarAmount", nil];
+    Price *price = [self.coreDataManager createPriceWithDictionary:priceDictionary];
+    
+    return price;
 }
 
 - (Image *)productImage

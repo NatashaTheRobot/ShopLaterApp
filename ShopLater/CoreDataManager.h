@@ -20,7 +20,7 @@
 
 + (CoreDataManager *)sharedManager;
 
-- (BOOL)saveDataInManagedContext;
+- (void)saveDataInManagedContextUsingBlock:(void (^)(BOOL saved, NSError *error))savedBlock;
 
 - (NSFetchedResultsController *)fetchManagedObjectsWithClassName:(NSString *)className
                                              withSortDescriptors:(NSArray *)sortDescriptors;

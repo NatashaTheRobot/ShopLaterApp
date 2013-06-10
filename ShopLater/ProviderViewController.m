@@ -8,9 +8,7 @@
 
 #import "ProviderViewController.h"
 #import "CoreDataManager.h"
-#import "Provider.h"
 #import "Provider+SLExtensions.h"
-#import "Image.h"
 #import "Image+SLExtensions.h"
 #import "ProviderCollectionViewCell.h"
 #import "WebViewController.h"
@@ -63,50 +61,25 @@
 
 - (void)createProviders
 {
-    NSMutableArray *providers = [[NSMutableArray alloc] initWithCapacity:1];
-    
-    // toysrus
-    NSString *providerName = @"toysrus";
-    
-    NSDictionary *toysrusLogoImageDictionary = [NSDictionary dictionaryWithObjectsAndKeys:
-                                                [Provider logoImageNameFromProviderName:providerName], @"fileName",
-                                                nil];
-    Image *toysrusLogoImage = [self.coreDataManager createEntityWithClassName:NSStringFromClass([Image class])
-                                                          atributesDictionary:toysrusLogoImageDictionary];
-    
-    NSDictionary *toysrusExampleImageDictionary = [NSDictionary dictionaryWithObjectsAndKeys:
-                                                   [Provider exampleImageNameFromProviderName:providerName], @"fileName",
-                                                   nil];
-    
-    Image *toysrusExampleImage =  [self.coreDataManager createEntityWithClassName:NSStringFromClass([Image class])
-                                                              atributesDictionary:toysrusExampleImageDictionary];
-    
-    NSDictionary *toysrusDictionary = [NSDictionary dictionaryWithObjectsAndKeys:providerName, @"name",
-                                                                                 @"productId", @"identifierName",
-                                            [Provider urlStringFromProviderName:providerName], @"url",
-                            [NSSet setWithObjects:toysrusLogoImage, toysrusExampleImage, nil], @"images",
-                                       nil];
-    
-
-    [providers addObject:toysrusDictionary];
+    NSArray *providers = [Provider providersArray];
     
     [providers enumerateObjectsUsingBlock:^(NSDictionary *providerDictionary, NSUInteger idx, BOOL *stop) {
-        [self.coreDataManager createEntityWithClassName:NSStringFromClass([Provider class]) atributesDictionary:toysrusDictionary];
+        [self.coreDataManager createEntityWithClassName:NSStringFromClass([Provider class]) atributesDictionary:providerDictionary];
     }];
     
-    BOOL didSave = [self.coreDataManager saveDataInManagedContext];
-    if (!didSave) {
-        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@""
-                                                            message:@"We're sorry, something went wrong :("
-                                                           delegate:self
-                                                  cancelButtonTitle:@"Ok"
-                                                  otherButtonTitles:nil, nil];
-        
-        [alertView show];
-        
-    } else {
-        [self fetchProviders];
-    }
+    [self.coreDataManager saveDataInManagedContextUsingBlock:^(BOOL saved, NSError *error) {
+        if (saved) {
+            [self fetchProviders];
+        } else {
+            UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@""
+                                                                message:@"We're sorry, something went wrong :("
+                                                               delegate:self
+                                                      cancelButtonTitle:@"Ok"
+                                                      otherButtonTitles:nil, nil];
+            
+            [alertView show];
+        }
+    }];
 }
 
 - (void)fetchProviders

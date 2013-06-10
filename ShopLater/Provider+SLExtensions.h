@@ -14,4 +14,7 @@
 + (NSString *)logoImageNameFromProviderName:(NSString *)providerName;
 + (NSString *)exampleImageNameFromProviderName:(NSString *)providerName;
 
++ (NSArray *)providersArray;
++ (NSDictionary *)dictionaryWithProviderName:(NSString *)providerName identifierName:(NSString *)identifierName;
+
 @end

@@ -79,11 +79,10 @@ static CoreDataManager *coreDataManager;
     }
 }
 
-- (BOOL)saveDataInManagedContext
+- (void)saveDataInManagedContextUsingBlock:(void (^)(BOOL saved, NSError *error))savedBlock
 {
     NSError *saveError = nil;
-    BOOL didSave = [self.managedObjectContext save:&saveError];
-    return didSave;
+    savedBlock([self.managedObjectContext save:&saveError], saveError);
 }
 
 - (NSFetchedResultsController *)fetchManagedObjectsWithClassName:(NSString *)className

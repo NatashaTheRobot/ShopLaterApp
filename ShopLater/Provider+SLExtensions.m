@@ -7,6 +7,8 @@
 //
 
 #import "Provider+SLExtensions.h"
+#import "CoreDataManager.h"
+#import "Image+SLExtensions.h"
 
 @implementation Provider (SLExtensions)
 
@@ -23,6 +25,42 @@
 + (NSString *)exampleImageNameFromProviderName:(NSString *)providerName
 {
     return [NSString stringWithFormat:@"%@_example.png", providerName];
+}
+
++ (NSArray *)providersArray
+{
+    NSMutableArray *providers = [[NSMutableArray alloc] initWithCapacity:1];
+    
+    [providers addObject:[self dictionaryWithProviderName:@"toysrus" identifierName:@"productId"]];
+    
+    return providers;
+}
+
+#pragma mark - provider dictionaries
+
++ (NSDictionary *)dictionaryWithProviderName:(NSString *)providerName identifierName:(NSString *)identifierName
+{
+    CoreDataManager *coreDataManager = [CoreDataManager sharedManager];
+    
+    NSDictionary *logoImageDictionary = [NSDictionary dictionaryWithObjectsAndKeys:
+                                                [Provider logoImageNameFromProviderName:providerName], @"fileName",
+                                                nil];
+    Image *logoImage = [coreDataManager createEntityWithClassName:NSStringFromClass([Image class])
+                                                          atributesDictionary:logoImageDictionary];
+    
+    NSDictionary *exampleImageDictionary = [NSDictionary dictionaryWithObjectsAndKeys:
+                                                   [Provider exampleImageNameFromProviderName:providerName], @"fileName",
+                                                   nil];
+    
+    Image *exampleImage =  [coreDataManager createEntityWithClassName:NSStringFromClass([Image class])
+                                                              atributesDictionary:exampleImageDictionary];
+    
+    NSDictionary *providerDictionary = [NSDictionary dictionaryWithObjectsAndKeys:providerName, @"name",
+                                       identifierName, @"identifierName",
+                                       [Provider urlStringFromProviderName:providerName], @"url",
+                                       [NSSet setWithObjects:logoImage, exampleImage, nil], @"images",
+                                       nil];
+    return providerDictionary;
 }
 
 @end

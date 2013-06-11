@@ -11,7 +11,5 @@
 @interface SectionHeaderCell : UITableViewCell
 
 @property (strong, nonatomic) UIImage *providerLogo;
-@property (weak, nonatomic) IBOutlet UIImageView *sectionImageView;
-
 
 @end

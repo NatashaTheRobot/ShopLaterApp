@@ -33,7 +33,8 @@
 - (void)setProviderLogo:(UIImage *)providerLogo
 {
     _providerLogo = providerLogo;
-    self.sectionImageView.image = providerLogo;
+    
+    [self addSubview:[[UIImageView alloc] initWithImage:providerLogo] ];
 }
 
 @end

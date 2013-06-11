@@ -34,21 +34,9 @@
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
                                     <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Yir-M0-CdG"/>
-                                    </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
-                                <color key="backgroundColor" red="1" green="0.58496856946508125" blue="0.4227009633825396" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstItem="Yir-M0-CdG" firstAttribute="leading" secondItem="aHP-FE-rDF" secondAttribute="leading" type="default" id="LYF-qu-djh"/>
-                                    <constraint firstItem="Yir-M0-CdG" firstAttribute="top" secondItem="aHP-FE-rDF" secondAttribute="top" type="default" id="TL6-TQ-YdV"/>
-                                    <constraint firstItem="Yir-M0-CdG" firstAttribute="bottom" secondItem="aHP-FE-rDF" secondAttribute="bottom" type="default" id="TWe-KY-6sj"/>
-                                    <constraint firstItem="Yir-M0-CdG" firstAttribute="trailing" secondItem="aHP-FE-rDF" secondAttribute="trailing" type="default" id="oCv-IJ-Axv"/>
-                                </constraints>
-                                <connections>
-                                    <outlet property="sectionImageView" destination="Yir-M0-CdG" id="oE8-0E-7et"/>
-                                </connections>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </tableViewCell>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="product" rowHeight="295" id="K2X-fm-zQF" customClass="ProductTableViewCell">
                                 <rect key="frame" x="0.0" y="72" width="320" height="295"/>
@@ -475,9 +463,6 @@
         </class>
         <class className="SectionHeaderCell" superclassName="UITableViewCell">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/SectionHeaderCell.h"/>
-            <relationships>
-                <relationship kind="outlet" name="sectionImage" candidateClass="UIImageView"/>
-            </relationships>
         </class>
         <class className="UICollectionReusableView" superclassName="UIView">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionReusableView.h"/>

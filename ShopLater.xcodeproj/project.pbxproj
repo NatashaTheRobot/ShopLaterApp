@@ -12,8 +12,9 @@
 		9C195DB81767588B00183192 /* Price+SLExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C195DB71767588B00183192 /* Price+SLExtensions.m */; };
 		9C195DBB1767809400183192 /* Product.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C195DBA1767809400183192 /* Product.m */; };
 		9C195DBE176782CC00183192 /* SectionHeaderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C195DBD176782CC00183192 /* SectionHeaderCell.m */; };
-		9C195DC01767855900183192 /* toysrus_section_logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C195DBF1767855900183192 /* toysrus_section_logo@2x.png */; };
-		9C195DC21767857600183192 /* toysrus_section_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C195DC11767857600183192 /* toysrus_section_logo.png */; };
+		9C195DC417679B4E00183192 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C195DC317679B4D00183192 /* QuartzCore.framework */; };
+		9C195DC61767A0DA00183192 /* toysrus_section_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C195DC51767A0DA00183192 /* toysrus_section_logo.png */; };
+		9C195DC81767A16D00183192 /* toysrus_section_logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C195DC71767A16D00183192 /* toysrus_section_logo@2x.png */; };
 		9C927B751762780100570F45 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C927B741762780100570F45 /* UIKit.framework */; };
 		9C927B771762780100570F45 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C927B761762780100570F45 /* Foundation.framework */; };
 		9C927B791762780100570F45 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C927B781762780100570F45 /* CoreGraphics.framework */; };
@@ -61,8 +62,9 @@
 		9C195DBA1767809400183192 /* Product.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Product.m; sourceTree = "<group>"; };
 		9C195DBC176782CC00183192 /* SectionHeaderCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SectionHeaderCell.h; sourceTree = "<group>"; };
 		9C195DBD176782CC00183192 /* SectionHeaderCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SectionHeaderCell.m; sourceTree = "<group>"; };
-		9C195DBF1767855900183192 /* toysrus_section_logo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "toysrus_section_logo@2x.png"; sourceTree = "<group>"; };
-		9C195DC11767857600183192 /* toysrus_section_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = toysrus_section_logo.png; sourceTree = "<group>"; };
+		9C195DC317679B4D00183192 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		9C195DC51767A0DA00183192 /* toysrus_section_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = toysrus_section_logo.png; sourceTree = "<group>"; };
+		9C195DC71767A16D00183192 /* toysrus_section_logo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "toysrus_section_logo@2x.png"; sourceTree = "<group>"; };
 		9C927B711762780100570F45 /* ShopLater.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShopLater.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C927B741762780100570F45 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		9C927B761762780100570F45 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -125,6 +127,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9C195DC417679B4E00183192 /* QuartzCore.framework in Frameworks */,
 				9CA5D7631763CA060009098E /* libxml2.2.dylib in Frameworks */,
 				9C927B9D17627A6200570F45 /* CoreData.framework in Frameworks */,
 				9C927B751762780100570F45 /* UIKit.framework in Frameworks */,
@@ -156,6 +159,7 @@
 		9C927B731762780100570F45 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				9C195DC317679B4D00183192 /* QuartzCore.framework */,
 				9CA5D7621763CA060009098E /* libxml2.2.dylib */,
 				9C927B9C17627A6200570F45 /* CoreData.framework */,
 				9C927B741762780100570F45 /* UIKit.framework */,
@@ -243,8 +247,8 @@
 		9CA5D7431762A9840009098E /* ProviderLogos */ = {
 			isa = PBXGroup;
 			children = (
-				9C195DC11767857600183192 /* toysrus_section_logo.png */,
-				9C195DBF1767855900183192 /* toysrus_section_logo@2x.png */,
+				9C195DC71767A16D00183192 /* toysrus_section_logo@2x.png */,
+				9C195DC51767A0DA00183192 /* toysrus_section_logo.png */,
 				9CA5D7441762AB5C0009098E /* toysrus_logo.png */,
 				9CA5D7461762AB970009098E /* toysrus_logo@2x.png */,
 			);
@@ -375,8 +379,8 @@
 				9CA5D7471762AB970009098E /* toysrus_logo@2x.png in Resources */,
 				9CA5D7751764C58F0009098E /* toysrus_example@2x.png in Resources */,
 				9CA5D7771764C5ED0009098E /* toysrus_example.png in Resources */,
-				9C195DC01767855900183192 /* toysrus_section_logo@2x.png in Resources */,
-				9C195DC21767857600183192 /* toysrus_section_logo.png in Resources */,
+				9C195DC61767A0DA00183192 /* toysrus_section_logo.png in Resources */,
+				9C195DC81767A16D00183192 /* toysrus_section_logo@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

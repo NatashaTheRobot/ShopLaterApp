@@ -16,6 +16,7 @@
 #import "Price+SLExtensions.h"
 #import "Provider+SLExtensions.h"
 #import "SectionHeaderCell.h"
+#import <QuartzCore/QuartzCore.h>
 
 @interface ProductsListViewController ()
 
@@ -129,6 +130,11 @@
     headerCell.providerLogo = [UIImage imageNamed:[Provider sectionImageNameFromProviderName:sectionInfo.name]];
     
     return headerCell;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+{
+    return 50;
 }
 
 @end

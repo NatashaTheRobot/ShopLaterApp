@@ -13,6 +13,7 @@
 #import "Image+SLExtensions.h"
 #import "CoreDataManager.h"
 #import "ProductsListViewController.h"
+#import "Constants.h"
 
 @interface NewProductViewController ()
 
@@ -82,7 +83,7 @@
                                        self.productURLString, @"url",
                                        images, @"images",
                                        prices, @"prices",
-                                       self.provider, @"provider",
+                                       self.provider, @"providers",
                                        nil];
     dispatch_async(dispatch_get_main_queue(), ^{
         self.coreDataManager = [CoreDataManager sharedManager];
@@ -101,7 +102,7 @@
 {
     NSDictionary *wishPriceDictionary = [NSDictionary dictionaryWithObjectsAndKeys:
                                          [NSNumber numberWithFloat:self.priceSlider.value], @"dollarAmount",
-                                         @"wish", @"type",
+                                         sPriceTypeWish, @"type",
                                          [NSDate date], @"created_at",
                                          nil];
     Price *wishPrice = [self.coreDataManager createEntityWithClassName:NSStringFromClass([Price class])
@@ -112,7 +113,7 @@
         if (saved) {
             self.delegate = (ProductsListViewController *)self.navigationController.viewControllers[0];
             [self.navigationController popToRootViewControllerAnimated:YES];
-            [self.delegate reloadData];
+            [self.delegate reloadProductData];
         } else {
             NSLog(@"%@", error.description);
             // show alert view?

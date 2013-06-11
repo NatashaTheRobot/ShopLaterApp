@@ -9,7 +9,7 @@
 #import "ProductsListViewController.h"
 #import "CoreDataManager.h"
 #import "ProviderViewController.h"
-#import "Product.h"
+#import "Product+SLExtensions.h"
 #import "Constants.h"
 #import "ProductTableViewCell.h"
 #import "Image+SLExtensions.h"
@@ -17,6 +17,7 @@
 #import "Provider+SLExtensions.h"
 #import "SectionHeaderCell.h"
 #import <QuartzCore/QuartzCore.h>
+#import "ProductDetailViewController.h"
 
 @interface ProductsListViewController ()
 
@@ -62,15 +63,16 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    if (self.fetchedResultsController.fetchedObjects.count == 0) {
-        ((ProviderViewController *)segue.destinationViewController).showNavigationBar = YES;
-    } else {
-        ((ProviderViewController *)segue.destinationViewController).showNavigationBar = NO;
+    if ([segue.destinationViewController isKindOfClass:[ProviderViewController class]]) {
+        ((ProviderViewController *)segue.destinationViewController).showNavigationBar = (self.fetchedResultsController.fetchedObjects.count == 0);
+    } else if ([segue.destinationViewController isKindOfClass:[ProductDetailViewController class]]) {
+        Product *product = [self.fetchedResultsController objectAtIndexPath:[self.tableView indexPathForSelectedRow]];
+        ((ProductDetailViewController *)segue.destinationViewController).product = product;
     }
 }
 
 
-- (void)reloadData
+- (void)reloadProductData
 {
     NSArray *sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"name" ascending:YES]];
     self.fetchedResultsController = [self.coreDataManager fetchEntitiesWithClassName:NSStringFromClass([Product class])
@@ -104,15 +106,9 @@
     Product *product = [self.fetchedResultsController objectAtIndexPath:indexPath];
     
     cell.productName = product.name;
-    cell.productImage = [(Image *)[product.images anyObject] image];
-    
-    [product.prices enumerateObjectsUsingBlock:^(Price *price, BOOL *stop) {
-        if ([price.type isEqualToString:@"current"]) {
-            cell.currentPrice = [Price formattedPriceFromNumber:price.dollarAmount];
-        } else if ([price.type isEqualToString:@"wish"]) {
-            cell.wishPrice = [Price formattedPriceFromNumber:price.dollarAmount];
-        }
-    }];
+    cell.productImage = [product image];
+    cell.currentPrice = [product priceWithType:sPriceTypeCurrent];
+    cell.wishPrice = [product priceWithType:sPriceTypeWish];
     
     return cell;
 }

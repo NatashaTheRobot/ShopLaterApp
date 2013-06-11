@@ -15,6 +15,9 @@
 		9C195DC417679B4E00183192 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C195DC317679B4D00183192 /* QuartzCore.framework */; };
 		9C195DC61767A0DA00183192 /* toysrus_section_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C195DC51767A0DA00183192 /* toysrus_section_logo.png */; };
 		9C195DC81767A16D00183192 /* toysrus_section_logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C195DC71767A16D00183192 /* toysrus_section_logo@2x.png */; };
+		9C195DCB1767A7CB00183192 /* EditProductViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C195DCA1767A7CA00183192 /* EditProductViewController.m */; };
+		9C195DD41767AC0700183192 /* ProductDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C195DD31767AC0500183192 /* ProductDetailViewController.m */; };
+		9C195DD71767AE2500183192 /* Product+SLExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C195DD61767AE2500183192 /* Product+SLExtensions.m */; };
 		9C927B751762780100570F45 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C927B741762780100570F45 /* UIKit.framework */; };
 		9C927B771762780100570F45 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C927B761762780100570F45 /* Foundation.framework */; };
 		9C927B791762780100570F45 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C927B781762780100570F45 /* CoreGraphics.framework */; };
@@ -65,6 +68,12 @@
 		9C195DC317679B4D00183192 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		9C195DC51767A0DA00183192 /* toysrus_section_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = toysrus_section_logo.png; sourceTree = "<group>"; };
 		9C195DC71767A16D00183192 /* toysrus_section_logo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "toysrus_section_logo@2x.png"; sourceTree = "<group>"; };
+		9C195DC91767A7CA00183192 /* EditProductViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditProductViewController.h; sourceTree = "<group>"; };
+		9C195DCA1767A7CA00183192 /* EditProductViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditProductViewController.m; sourceTree = "<group>"; };
+		9C195DD21767AC0400183192 /* ProductDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductDetailViewController.h; sourceTree = "<group>"; };
+		9C195DD31767AC0500183192 /* ProductDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductDetailViewController.m; sourceTree = "<group>"; };
+		9C195DD51767AE2400183192 /* Product+SLExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Product+SLExtensions.h"; sourceTree = "<group>"; };
+		9C195DD61767AE2500183192 /* Product+SLExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Product+SLExtensions.m"; sourceTree = "<group>"; };
 		9C927B711762780100570F45 /* ShopLater.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShopLater.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C927B741762780100570F45 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		9C927B761762780100570F45 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -223,6 +232,8 @@
 				9CB940611766449000DC05D2 /* Provider+SLExtensions.m */,
 				9C195DB61767588B00183192 /* Price+SLExtensions.h */,
 				9C195DB71767588B00183192 /* Price+SLExtensions.m */,
+				9C195DD51767AE2400183192 /* Product+SLExtensions.h */,
+				9C195DD61767AE2500183192 /* Product+SLExtensions.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -240,6 +251,10 @@
 				9CA5D7681763E32E0009098E /* InformationViewController.m */,
 				9CA5D76A1763E34C0009098E /* NewProductViewController.h */,
 				9CA5D76B1763E34C0009098E /* NewProductViewController.m */,
+				9C195DD21767AC0400183192 /* ProductDetailViewController.h */,
+				9C195DD31767AC0500183192 /* ProductDetailViewController.m */,
+				9C195DC91767A7CA00183192 /* EditProductViewController.h */,
+				9C195DCA1767A7CA00183192 /* EditProductViewController.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -415,6 +430,9 @@
 				9C195DB81767588B00183192 /* Price+SLExtensions.m in Sources */,
 				9C195DBB1767809400183192 /* Product.m in Sources */,
 				9C195DBE176782CC00183192 /* SectionHeaderCell.m in Sources */,
+				9C195DCB1767A7CB00183192 /* EditProductViewController.m in Sources */,
+				9C195DD41767AC0700183192 /* ProductDetailViewController.m in Sources */,
+				9C195DD71767AE2500183192 /* Product+SLExtensions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

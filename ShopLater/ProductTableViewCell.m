@@ -10,7 +10,7 @@
 
 @interface ProductTableViewCell ()
 
-@property (weak, nonatomic) IBOutlet UIImageView *imageView;
+@property (strong, nonatomic) IBOutlet UIImageView *imageView;
 @property (weak, nonatomic) IBOutlet UILabel *currentPriceLabel;
 @property (weak, nonatomic) IBOutlet UILabel *wishPriceLabel;
 @property (weak, nonatomic) IBOutlet UILabel *productNameLabel;
@@ -24,7 +24,7 @@
 {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
-        // Initialization code
+
     }
     return self;
 }
@@ -46,7 +46,6 @@
 {
     _productImage = productImage;
     self.imageView.image = productImage;
-    self.imageView.contentMode = UIViewContentModeScaleAspectFill;
 }
 
 - (void)setCurrentPrice:(NSString *)currentPrice

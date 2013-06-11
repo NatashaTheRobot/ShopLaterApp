@@ -11,6 +11,7 @@
 #import "Price.h"
 #import "Image+SLExtensions.h"
 #import "CoreDataManager.h"
+#import "Constants.h"
 
 @interface ToysrusParser ()
 
@@ -105,7 +106,7 @@
         
         NSDictionary *priceDictionary = [NSDictionary dictionaryWithObjectsAndKeys:
                                          priceInDollars, @"dollarAmount",
-                                         @"current", @"type",
+                                         sPriceTypeCurrent, @"type",
                                          [NSDate date], @"created_at", nil];
         self.price = [self.coreDataManager createEntityWithClassName:NSStringFromClass([Price class])
                                                  atributesDictionary:priceDictionary];

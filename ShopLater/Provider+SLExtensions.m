@@ -28,6 +28,11 @@
     return [NSString stringWithFormat:@"%@_%@.png", providerName, sImageTypeExample];
 }
 
++ (NSString *)sectionImageNameFromProviderName:(NSString *)providerName
+{
+    return [NSString stringWithFormat:@"%@_%@.png", providerName, sImageTypeSection];
+}
+
 + (NSArray *)providersArray
 {
     NSMutableArray *providers = [[NSMutableArray alloc] initWithCapacity:1];

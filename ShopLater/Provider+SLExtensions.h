@@ -13,6 +13,7 @@
 + (NSString *)urlStringFromProviderName:(NSString *)providerName;
 + (NSString *)logoImageNameFromProviderName:(NSString *)providerName;
 + (NSString *)exampleImageNameFromProviderName:(NSString *)providerName;
++ (NSString *)sectionImageNameFromProviderName:(NSString *)providerName;
 
 + (NSArray *)providersArray;
 + (NSDictionary *)dictionaryWithProviderName:(NSString *)providerName identifierName:(NSString *)identifierName;

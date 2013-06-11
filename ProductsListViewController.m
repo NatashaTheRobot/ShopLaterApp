@@ -14,6 +14,8 @@
 #import "ProductTableViewCell.h"
 #import "Image+SLExtensions.h"
 #import "Price+SLExtensions.h"
+#import "Provider+SLExtensions.h"
+#import "SectionHeaderCell.h"
 
 @interface ProductsListViewController ()
 
@@ -50,7 +52,7 @@
     
     self.fetchedResultsController = [self.coreDataManager fetchEntitiesWithClassName:NSStringFromClass([Product class])
                                                                      sortDescriptors:sortDescriptors
-                                                                  sectionNameKeyPath:nil];
+                                                                  sectionNameKeyPath:@"provider.name"];
 
     if (self.fetchedResultsController.fetchedObjects.count == 0) {
         [self performSegueWithIdentifier:@"toProviderCollectionView" sender:self];
@@ -66,12 +68,13 @@
     }
 }
 
+
 - (void)reloadData
 {
     NSArray *sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"name" ascending:YES]];
     self.fetchedResultsController = [self.coreDataManager fetchEntitiesWithClassName:NSStringFromClass([Product class])
                                                                      sortDescriptors:sortDescriptors
-                                                                  sectionNameKeyPath:nil];
+                                                                  sectionNameKeyPath:@"provider.name"];
     [self.tableView reloadData];
     
 }
@@ -111,6 +114,21 @@
     }];
     
     return cell;
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+{
+    SectionHeaderCell *headerCell = [tableView dequeueReusableCellWithIdentifier:sProviderCellIdentifier];
+    
+    if (!headerCell) {
+        headerCell = [[SectionHeaderCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:sProviderCellIdentifier];
+    }
+    
+    id <NSFetchedResultsSectionInfo> sectionInfo = self.fetchedResultsController.sections[section];
+    
+    headerCell.providerLogo = [UIImage imageNamed:[Provider sectionImageNameFromProviderName:sectionInfo.name]];
+    
+    return headerCell;
 }
 
 @end

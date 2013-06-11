@@ -19,14 +19,14 @@
         <attribute name="url" attributeType="String" syncable="YES"/>
         <relationship name="images" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Image" inverseName="product" inverseEntity="Image" syncable="YES"/>
         <relationship name="prices" toMany="YES" minCount="1" deletionRule="Cascade" destinationEntity="Price" inverseName="product" inverseEntity="Price" syncable="YES"/>
-        <relationship name="providers" toMany="YES" minCount="1" deletionRule="Nullify" destinationEntity="Provider" inverseName="products" inverseEntity="Provider" syncable="YES"/>
+        <relationship name="provider" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Provider" inverseName="products" inverseEntity="Provider" syncable="YES"/>
     </entity>
     <entity name="Provider" representedClassName="Provider" syncable="YES">
         <attribute name="identifierName" attributeType="String" syncable="YES"/>
         <attribute name="name" attributeType="String" syncable="YES"/>
         <attribute name="url" attributeType="String" syncable="YES"/>
         <relationship name="images" toMany="YES" minCount="1" deletionRule="Nullify" destinationEntity="Image" inverseName="provider" inverseEntity="Image" syncable="YES"/>
-        <relationship name="products" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Product" inverseName="providers" inverseEntity="Product" syncable="YES"/>
+        <relationship name="products" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Product" inverseName="provider" inverseEntity="Product" syncable="YES"/>
     </entity>
     <elements>
         <element name="Image" positionX="448" positionY="-27" width="128" height="105"/>

@@ -82,7 +82,7 @@
                                        self.productURLString, @"url",
                                        images, @"images",
                                        prices, @"prices",
-                                       [NSSet setWithObject:self.provider], @"providers",
+                                       self.provider, @"provider",
                                        nil];
     dispatch_async(dispatch_get_main_queue(), ^{
         self.coreDataManager = [CoreDataManager sharedManager];

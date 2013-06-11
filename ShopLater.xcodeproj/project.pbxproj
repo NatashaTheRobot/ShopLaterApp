@@ -10,6 +10,10 @@
 		9C195DB217674F1F00183192 /* ProductsListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C195DB117674F1F00183192 /* ProductsListViewController.m */; };
 		9C195DB51767510500183192 /* ProductTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C195DB41767510500183192 /* ProductTableViewCell.m */; };
 		9C195DB81767588B00183192 /* Price+SLExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C195DB71767588B00183192 /* Price+SLExtensions.m */; };
+		9C195DBB1767809400183192 /* Product.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C195DBA1767809400183192 /* Product.m */; };
+		9C195DBE176782CC00183192 /* SectionHeaderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C195DBD176782CC00183192 /* SectionHeaderCell.m */; };
+		9C195DC01767855900183192 /* toysrus_section_logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C195DBF1767855900183192 /* toysrus_section_logo@2x.png */; };
+		9C195DC21767857600183192 /* toysrus_section_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C195DC11767857600183192 /* toysrus_section_logo.png */; };
 		9C927B751762780100570F45 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C927B741762780100570F45 /* UIKit.framework */; };
 		9C927B771762780100570F45 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C927B761762780100570F45 /* Foundation.framework */; };
 		9C927B791762780100570F45 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C927B781762780100570F45 /* CoreGraphics.framework */; };
@@ -28,7 +32,6 @@
 		9CA5D7451762AB5C0009098E /* toysrus_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 9CA5D7441762AB5C0009098E /* toysrus_logo.png */; };
 		9CA5D7471762AB970009098E /* toysrus_logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9CA5D7461762AB970009098E /* toysrus_logo@2x.png */; };
 		9CA5D74A1762AC170009098E /* ProviderCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CA5D7491762AC170009098E /* ProviderCollectionViewCell.m */; };
-		9CA5D753176350770009098E /* Product.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CA5D752176350770009098E /* Product.m */; };
 		9CA5D7561763BFFF0009098E /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CA5D7551763BFFF0009098E /* WebViewController.m */; };
 		9CA5D75D1763C9C10009098E /* TFHpple.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CA5D75A1763C9C10009098E /* TFHpple.m */; };
 		9CA5D75E1763C9C10009098E /* TFHppleElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CA5D75C1763C9C10009098E /* TFHppleElement.m */; };
@@ -54,6 +57,12 @@
 		9C195DB41767510500183192 /* ProductTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductTableViewCell.m; sourceTree = "<group>"; };
 		9C195DB61767588B00183192 /* Price+SLExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Price+SLExtensions.h"; sourceTree = "<group>"; };
 		9C195DB71767588B00183192 /* Price+SLExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Price+SLExtensions.m"; sourceTree = "<group>"; };
+		9C195DB91767809300183192 /* Product.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Product.h; sourceTree = "<group>"; };
+		9C195DBA1767809400183192 /* Product.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Product.m; sourceTree = "<group>"; };
+		9C195DBC176782CC00183192 /* SectionHeaderCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SectionHeaderCell.h; sourceTree = "<group>"; };
+		9C195DBD176782CC00183192 /* SectionHeaderCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SectionHeaderCell.m; sourceTree = "<group>"; };
+		9C195DBF1767855900183192 /* toysrus_section_logo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "toysrus_section_logo@2x.png"; sourceTree = "<group>"; };
+		9C195DC11767857600183192 /* toysrus_section_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = toysrus_section_logo.png; sourceTree = "<group>"; };
 		9C927B711762780100570F45 /* ShopLater.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShopLater.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C927B741762780100570F45 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		9C927B761762780100570F45 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -80,8 +89,6 @@
 		9CA5D7461762AB970009098E /* toysrus_logo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "toysrus_logo@2x.png"; sourceTree = "<group>"; };
 		9CA5D7481762AC170009098E /* ProviderCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProviderCollectionViewCell.h; sourceTree = "<group>"; };
 		9CA5D7491762AC170009098E /* ProviderCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProviderCollectionViewCell.m; sourceTree = "<group>"; };
-		9CA5D751176350770009098E /* Product.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Product.h; sourceTree = "<group>"; };
-		9CA5D752176350770009098E /* Product.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Product.m; sourceTree = "<group>"; };
 		9CA5D7541763BFFF0009098E /* WebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewController.h; sourceTree = "<group>"; };
 		9CA5D7551763BFFF0009098E /* WebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewController.m; sourceTree = "<group>"; };
 		9CA5D7591763C9C10009098E /* TFHpple.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFHpple.h; sourceTree = "<group>"; };
@@ -198,10 +205,10 @@
 				9C927B97176278B800570F45 /* CoreDataManager.h */,
 				9C927B98176278B800570F45 /* CoreDataManager.m */,
 				9C927B9E17627A9A00570F45 /* ShopLater.xcdatamodeld */,
+				9C195DB91767809300183192 /* Product.h */,
+				9C195DBA1767809400183192 /* Product.m */,
 				9CA5D7701764BF650009098E /* Provider.h */,
 				9CA5D7711764BF650009098E /* Provider.m */,
-				9CA5D751176350770009098E /* Product.h */,
-				9CA5D752176350770009098E /* Product.m */,
 				9C927BAC176287BD00570F45 /* Price.h */,
 				9C927BAD176287BD00570F45 /* Price.m */,
 				9CB9406A1766796A00DC05D2 /* Image.h */,
@@ -236,6 +243,8 @@
 		9CA5D7431762A9840009098E /* ProviderLogos */ = {
 			isa = PBXGroup;
 			children = (
+				9C195DC11767857600183192 /* toysrus_section_logo.png */,
+				9C195DBF1767855900183192 /* toysrus_section_logo@2x.png */,
 				9CA5D7441762AB5C0009098E /* toysrus_logo.png */,
 				9CA5D7461762AB970009098E /* toysrus_logo@2x.png */,
 			);
@@ -250,6 +259,8 @@
 				9C195DB41767510500183192 /* ProductTableViewCell.m */,
 				9CA5D7481762AC170009098E /* ProviderCollectionViewCell.h */,
 				9CA5D7491762AC170009098E /* ProviderCollectionViewCell.m */,
+				9C195DBC176782CC00183192 /* SectionHeaderCell.h */,
+				9C195DBD176782CC00183192 /* SectionHeaderCell.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -364,6 +375,8 @@
 				9CA5D7471762AB970009098E /* toysrus_logo@2x.png in Resources */,
 				9CA5D7751764C58F0009098E /* toysrus_example@2x.png in Resources */,
 				9CA5D7771764C5ED0009098E /* toysrus_example.png in Resources */,
+				9C195DC01767855900183192 /* toysrus_section_logo@2x.png in Resources */,
+				9C195DC21767857600183192 /* toysrus_section_logo.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -381,7 +394,6 @@
 				9C927BAE176287BD00570F45 /* Price.m in Sources */,
 				9CA5D73C176294A30009098E /* ProviderViewController.m in Sources */,
 				9CA5D74A1762AC170009098E /* ProviderCollectionViewCell.m in Sources */,
-				9CA5D753176350770009098E /* Product.m in Sources */,
 				9CA5D7561763BFFF0009098E /* WebViewController.m in Sources */,
 				9CA5D75D1763C9C10009098E /* TFHpple.m in Sources */,
 				9CA5D75E1763C9C10009098E /* TFHppleElement.m in Sources */,
@@ -397,6 +409,8 @@
 				9C195DB217674F1F00183192 /* ProductsListViewController.m in Sources */,
 				9C195DB51767510500183192 /* ProductTableViewCell.m in Sources */,
 				9C195DB81767588B00183192 /* Price+SLExtensions.m in Sources */,
+				9C195DBB1767809400183192 /* Product.m in Sources */,
+				9C195DBE176782CC00183192 /* SectionHeaderCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

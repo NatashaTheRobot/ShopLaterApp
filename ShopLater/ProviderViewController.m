@@ -51,9 +51,7 @@
 {
     [super viewDidLoad];
     
-    if (!self.showNavigationBar) {
-        self.navigationItem.hidesBackButton = YES;
-    }
+    self.navigationItem.hidesBackButton = self.showNavigationBar;
 	
 }
 

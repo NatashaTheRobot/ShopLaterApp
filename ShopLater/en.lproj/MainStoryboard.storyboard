@@ -23,20 +23,76 @@
         <scene sceneID="WzA-l5-ojF">
             <objects>
                 <tableViewController id="lXj-gi-EwX" customClass="ProductsListViewController" sceneMemberID="viewController">
-                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="Qz9-fC-oFw">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="299" sectionHeaderHeight="22" sectionFooterHeight="22" id="Qz9-fC-oFw">
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="product" id="K2X-fm-zQF" customClass="ProductTableViewCell">
-                                <rect key="frame" x="0.0" y="22" width="320" height="44"/>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="product" rowHeight="299" id="K2X-fm-zQF" customClass="ProductTableViewCell">
+                                <rect key="frame" x="0.0" y="22" width="320" height="299"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="298"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fdg-Sn-8yK">
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="168" id="JUg-8h-WdR"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Current Price:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xds-GG-aCd">
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </label>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Your Wish Price: " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g9D-bL-LMd">
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </label>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="$89.86" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G7X-oc-wP1">
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="127" id="z6Y-Ls-h9A"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </label>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="$85.86" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ff4-rv-cXA">
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </label>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Product Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rpj-Hh-ReV">
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </label>
+                                    </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
+                                <constraints>
+                                    <constraint firstItem="g9D-bL-LMd" firstAttribute="leading" secondItem="K2X-fm-zQF" secondAttribute="leading" constant="20" type="default" id="6WO-yD-DGi"/>
+                                    <constraint firstAttribute="trailing" secondItem="ff4-rv-cXA" secondAttribute="trailing" constant="20" type="default" id="9CF-Lp-x6T"/>
+                                    <constraint firstItem="Xds-GG-aCd" firstAttribute="leading" secondItem="K2X-fm-zQF" secondAttribute="leading" constant="20" type="default" id="9ee-Yf-OJC"/>
+                                    <constraint firstItem="g9D-bL-LMd" firstAttribute="top" secondItem="Xds-GG-aCd" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="MQ1-36-FBS"/>
+                                    <constraint firstItem="rpj-Hh-ReV" firstAttribute="top" secondItem="K2X-fm-zQF" secondAttribute="top" constant="6" id="OcN-5o-DIG"/>
+                                    <constraint firstItem="ff4-rv-cXA" firstAttribute="leading" secondItem="G7X-oc-wP1" secondAttribute="leading" type="default" id="PkN-jd-Fcm"/>
+                                    <constraint firstItem="G7X-oc-wP1" firstAttribute="baseline" secondItem="Xds-GG-aCd" secondAttribute="baseline" type="default" id="Sq8-4p-j1F"/>
+                                    <constraint firstItem="Fdg-Sn-8yK" firstAttribute="trailing" secondItem="K2X-fm-zQF" secondAttribute="trailing" type="default" id="Tlw-rr-0Mb"/>
+                                    <constraint firstItem="Fdg-Sn-8yK" firstAttribute="leading" secondItem="K2X-fm-zQF" secondAttribute="leading" type="default" id="Uea-bZ-OLb"/>
+                                    <constraint firstItem="rpj-Hh-ReV" firstAttribute="leading" secondItem="K2X-fm-zQF" secondAttribute="leading" constant="20" type="default" id="Wx0-es-7UO"/>
+                                    <constraint firstItem="Fdg-Sn-8yK" firstAttribute="top" secondItem="rpj-Hh-ReV" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="Ymq-TE-h4m"/>
+                                    <constraint firstItem="ff4-rv-cXA" firstAttribute="baseline" secondItem="g9D-bL-LMd" secondAttribute="baseline" type="default" id="cOR-r7-jWv"/>
+                                    <constraint firstAttribute="bottom" secondItem="g9D-bL-LMd" secondAttribute="bottom" constant="21" id="d1z-XO-hwL"/>
+                                    <constraint firstAttribute="trailing" secondItem="G7X-oc-wP1" secondAttribute="trailing" constant="20" type="default" id="qm6-T1-HXg"/>
+                                    <constraint firstAttribute="trailing" secondItem="rpj-Hh-ReV" secondAttribute="trailing" constant="20" type="default" id="rvQ-Ih-v5X"/>
+                                </constraints>
                                 <connections>
+                                    <outlet property="currentPriceLabel" destination="G7X-oc-wP1" id="cyp-rm-nfr"/>
+                                    <outlet property="imageView" destination="Fdg-Sn-8yK" id="ymP-RC-U4O"/>
+                                    <outlet property="productNameLabel" destination="rpj-Hh-ReV" id="TCS-UP-Ozg"/>
+                                    <outlet property="wishPriceLabel" destination="ff4-rv-cXA" id="r3J-Uq-35l"/>
                                     <segue destination="S3Q-a3-CkG" kind="push" id="sDQ-6b-QFx"/>
                                 </connections>
                             </tableViewCell>
@@ -369,6 +425,12 @@
         </class>
         <class className="ProductTableViewCell" superclassName="UITableViewCell">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ProductTableViewCell.h"/>
+            <relationships>
+                <relationship kind="outlet" name="currentPriceLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="imageView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="productNameLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="wishPriceLabel" candidateClass="UILabel"/>
+            </relationships>
         </class>
         <class className="ProductsListViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ProductsListViewController.h"/>

@@ -10,4 +10,9 @@
 
 @interface ProductTableViewCell : UITableViewCell
 
+@property (strong, nonatomic) UIImage *productImage;
+@property (strong, nonatomic) NSString *productName;
+@property (strong, nonatomic) NSString *currentPrice;
+@property (strong, nonatomic) NSString *wishPrice;
+
 @end

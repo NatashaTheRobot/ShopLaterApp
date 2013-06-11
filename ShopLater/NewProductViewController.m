@@ -8,7 +8,7 @@
 
 #import "NewProductViewController.h"
 #import "Parser.h"
-#import "Price.h"
+#import "Price+SLExtensions.h"
 #import "Product.h"
 #import "Image+SLExtensions.h"
 #import "CoreDataManager.h"

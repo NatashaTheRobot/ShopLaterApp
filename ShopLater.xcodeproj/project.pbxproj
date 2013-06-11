@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		9C195DB217674F1F00183192 /* ProductsListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C195DB117674F1F00183192 /* ProductsListViewController.m */; };
 		9C195DB51767510500183192 /* ProductTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C195DB41767510500183192 /* ProductTableViewCell.m */; };
+		9C195DB81767588B00183192 /* Price+SLExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C195DB71767588B00183192 /* Price+SLExtensions.m */; };
 		9C927B751762780100570F45 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C927B741762780100570F45 /* UIKit.framework */; };
 		9C927B771762780100570F45 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C927B761762780100570F45 /* Foundation.framework */; };
 		9C927B791762780100570F45 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C927B781762780100570F45 /* CoreGraphics.framework */; };
@@ -51,6 +52,8 @@
 		9C195DB117674F1F00183192 /* ProductsListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ProductsListViewController.m; path = ../ProductsListViewController.m; sourceTree = "<group>"; };
 		9C195DB31767510500183192 /* ProductTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductTableViewCell.h; sourceTree = "<group>"; };
 		9C195DB41767510500183192 /* ProductTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductTableViewCell.m; sourceTree = "<group>"; };
+		9C195DB61767588B00183192 /* Price+SLExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Price+SLExtensions.h"; sourceTree = "<group>"; };
+		9C195DB71767588B00183192 /* Price+SLExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Price+SLExtensions.m"; sourceTree = "<group>"; };
 		9C927B711762780100570F45 /* ShopLater.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShopLater.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C927B741762780100570F45 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		9C927B761762780100570F45 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -207,6 +210,8 @@
 				9CA5D7791764C9D80009098E /* Image+SLExtensions.m */,
 				9CB940601766449000DC05D2 /* Provider+SLExtensions.h */,
 				9CB940611766449000DC05D2 /* Provider+SLExtensions.m */,
+				9C195DB61767588B00183192 /* Price+SLExtensions.h */,
+				9C195DB71767588B00183192 /* Price+SLExtensions.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -391,6 +396,7 @@
 				9CB9406C1766796A00DC05D2 /* Image.m in Sources */,
 				9C195DB217674F1F00183192 /* ProductsListViewController.m in Sources */,
 				9C195DB51767510500183192 /* ProductTableViewCell.m in Sources */,
+				9C195DB81767588B00183192 /* Price+SLExtensions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -13,6 +13,7 @@
 #import "Constants.h"
 #import "ProductTableViewCell.h"
 #import "Image+SLExtensions.h"
+#import "Price+SLExtensions.h"
 
 @interface ProductsListViewController ()
 
@@ -86,7 +87,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:sProductCellIdentifier forIndexPath:indexPath];
+    ProductTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:sProductCellIdentifier forIndexPath:indexPath];
     
     if (!cell) {
         cell = [[ProductTableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:sProductCellIdentifier];
@@ -94,8 +95,16 @@
     
     Product *product = [self.fetchedResultsController objectAtIndexPath:indexPath];
     
-    cell.textLabel.text = product.name;
-    cell.imageView.image = [(Image *)[product.images anyObject] image];
+    cell.productName = product.name;
+    cell.productImage = [(Image *)[product.images anyObject] image];
+    
+//    [product.prices enumerateObjectsUsingBlock:^(Price *price, BOOL *stop) {
+//        if ([price.type isEqualToString:@"current"]) {
+//            cell.currentPrice = [price formattedPrice];
+//        } else if ([price.type isEqualToString:@"wish"]) {
+//            cell.wishPrice = [price formattedPrice];
+//        }
+//    }];
     
     return cell;
 }

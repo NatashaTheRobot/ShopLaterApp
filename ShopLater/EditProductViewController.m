@@ -10,18 +10,17 @@
 
 @interface EditProductViewController ()
 
+@property (weak, nonatomic) IBOutlet UIImageView *imageView;
+@property (weak, nonatomic) IBOutlet UITextField *titleTextField;
+@property (weak, nonatomic) IBOutlet UILabel *wishPriceLabel;
+@property (weak, nonatomic) IBOutlet UITextView *summaryTextView;
+
+- (IBAction)saveWithButton:(id)sender;
+- (IBAction)cancelWithButton:(id)sender;
+
 @end
 
 @implementation EditProductViewController
-
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
 
 - (void)viewDidLoad
 {
@@ -35,4 +34,9 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)saveWithButton:(id)sender {
+}
+
+- (IBAction)cancelWithButton:(id)sender {
+}
 @end

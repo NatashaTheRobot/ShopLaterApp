@@ -124,4 +124,9 @@ static CoreDataManager *coreDataManager;
     return entity;
 }
 
+- (void)deleteEntity:(NSManagedObject *)entity
+{
+    [self.managedObjectContext deleteObject:entity];
+}
+
 @end

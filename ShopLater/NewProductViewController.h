@@ -14,6 +14,6 @@
 
 @property (strong, nonatomic) NSString *productURLString;
 @property (strong, nonatomic) Provider *provider;
-@property (strong, nonatomic) id<ProductDelegate> delegate;
+@property (strong, nonatomic) id<ProductListDelegate> delegate;
 
 @end

@@ -9,6 +9,6 @@
 #import <UIKit/UIKit.h>
 #import "ProductDelegate.h"
 
-@interface ProductsListViewController : UITableViewController <ProductDelegate>
+@interface ProductsListViewController : UITableViewController <ProductListDelegate>
 
 @end

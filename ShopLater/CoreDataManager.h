@@ -23,4 +23,6 @@
 
 - (id)createEntityWithClassName:(NSString *)className atributesDictionary:(NSDictionary *)attributesDictionary;
 
+- (void)deleteEntity:(NSManagedObject *)entity;
+
 @end

@@ -8,6 +8,8 @@
 
 #import "ProductDetailViewController.h"
 #import "Constants.h"
+#import "CoreDataManager.h"
+#import "ProductsListViewController.h"
 
 @interface ProductDetailViewController ()
 
@@ -18,6 +20,8 @@
 @property (weak, nonatomic) IBOutlet UITextView *summaryTextView;
 
 - (void)displayProductDetails;
+- (IBAction)deleteProductWithButton:(id)sender;
+
 
 @end
 
@@ -37,6 +41,28 @@
     self.currentPriceLabel.text = [self.product priceWithType:sPriceTypeCurrent];
     self.wishPriceLabel.text = [self.product priceWithType:sPriceTypeWish];
     self.summaryTextView.text = self.product.summary;
+}
+
+- (IBAction)deleteProductWithButton:(id)sender
+{
+    
+    CoreDataManager *coreDataManager = [CoreDataManager sharedManager];
+    [coreDataManager deleteEntity:self.product];
+    [coreDataManager saveDataInManagedContextUsingBlock:^(BOOL saved, NSError *error) {
+        if (!error) {
+            [self.navigationController popToRootViewControllerAnimated:YES];
+            [self.delegate reloadProductData];
+        } else {
+            UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@""
+                                                                message:@"We're sorry, something went wrong :("
+                                                               delegate:self
+                                                      cancelButtonTitle:@"Ok"
+                                                      otherButtonTitles:nil, nil];
+            
+            [alertView show];
+        }
+    }];
+    
 }
 
 - (void)didReceiveMemoryWarning

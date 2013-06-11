@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@protocol ProductDelegate <NSObject>
+@protocol ProductListDelegate <NSObject>
 
 - (void)reloadProductData;
 

@@ -67,7 +67,10 @@
         ((ProviderViewController *)segue.destinationViewController).showNavigationBar = (self.fetchedResultsController.fetchedObjects.count == 0);
     } else if ([segue.destinationViewController isKindOfClass:[ProductDetailViewController class]]) {
         Product *product = [self.fetchedResultsController objectAtIndexPath:[self.tableView indexPathForSelectedRow]];
-        ((ProductDetailViewController *)segue.destinationViewController).product = product;
+        
+        ProductDetailViewController *productDetailViewController = (ProductDetailViewController *)segue.destinationViewController;
+        productDetailViewController.product = product;
+        productDetailViewController.delegate = self;
     }
 }
 

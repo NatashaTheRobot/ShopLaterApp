@@ -10,6 +10,6 @@
 
 @interface Price (SLExtensions)
 
-- (NSString *)formattedPrice;
++ (NSString *)formattedPriceFromNumber:(NSNumber *)dollarAmount;
 
 @end

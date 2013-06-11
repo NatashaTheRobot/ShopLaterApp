@@ -105,7 +105,7 @@
                     <navigationItem key="navigationItem" id="RNb-S4-yza">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="6Sf-qS-V71">
                             <connections>
-                                <segue destination="7iZ-Oo-cpf" kind="push" id="HzL-Aa-f7m"/>
+                                <segue destination="7iZ-Oo-cpf" kind="push" identifier="toProviderCollectionView" id="HzL-Aa-f7m"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

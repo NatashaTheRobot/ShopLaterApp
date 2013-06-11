@@ -10,9 +10,9 @@
 
 @implementation Price (SLExtensions)
 
-- (NSString *)formattedPrice
++ (NSString *)formattedPriceFromNumber:(NSNumber *)dollarAmount
 {
-    return [NSString stringWithFormat:@"$%.2f", [self.dollarAmount floatValue]];
+    return [NSString stringWithFormat:@"$%.2f", [dollarAmount floatValue]];
 }
 
 @end

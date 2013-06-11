@@ -98,13 +98,13 @@
     cell.productName = product.name;
     cell.productImage = [(Image *)[product.images anyObject] image];
     
-//    [product.prices enumerateObjectsUsingBlock:^(Price *price, BOOL *stop) {
-//        if ([price.type isEqualToString:@"current"]) {
-//            cell.currentPrice = [price formattedPrice];
-//        } else if ([price.type isEqualToString:@"wish"]) {
-//            cell.wishPrice = [price formattedPrice];
-//        }
-//    }];
+    [product.prices enumerateObjectsUsingBlock:^(Price *price, BOOL *stop) {
+        if ([price.type isEqualToString:@"current"]) {
+            cell.currentPrice = [Price formattedPriceFromNumber:price.dollarAmount];
+        } else if ([price.type isEqualToString:@"wish"]) {
+            cell.wishPrice = [Price formattedPriceFromNumber:price.dollarAmount];
+        }
+    }];
     
     return cell;
 }

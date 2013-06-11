@@ -9,5 +9,7 @@
 static NSString *sProjectName = @"ShopLater";
 
 static NSString *sProviderCellIdentifier = @"provider";
+static NSString *sProductCellIdentifier = @"product";
+
 static NSString *sImageTypeLogo = @"logo";
 static NSString *sImageTypeExample = @"example";

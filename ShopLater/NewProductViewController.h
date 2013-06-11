@@ -8,10 +8,12 @@
 
 #import <UIKit/UIKit.h>
 #import "Provider.h"
+#import "ProductDelegate.h"
 
 @interface NewProductViewController : UIViewController
 
 @property (strong, nonatomic) NSString *productURLString;
 @property (strong, nonatomic) Provider *provider;
+@property (strong, nonatomic) id<ProductDelegate> delegate;
 
 @end

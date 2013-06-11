@@ -69,7 +69,9 @@
 - (void)reloadData
 {
     NSArray *sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"name" ascending:YES]];
-    [self.coreDataManager fetchEntitiesWithClassName:NSStringFromClass([Product class]) withSortDescriptors:sortDescriptors];
+    self.fetchedResultsController = [self.coreDataManager fetchEntitiesWithClassName:NSStringFromClass([Product class]) withSortDescriptors:sortDescriptors];
+    [self.tableView reloadData];
+    
 }
 
 #pragma mark - Table view data source

@@ -12,6 +12,7 @@
 #import "Product.h"
 #import "Image+SLExtensions.h"
 #import "CoreDataManager.h"
+#import "ProductsListViewController.h"
 
 @interface NewProductViewController ()
 
@@ -109,8 +110,10 @@
     
     [self.coreDataManager saveDataInManagedContextUsingBlock:^(BOOL saved, NSError *error) {
         if (saved) {
+            NSLog(@"%@", self.navigationController.viewControllers[0]);
+            self.delegate = (ProductsListViewController *)self.navigationController.viewControllers[0];
             [self.navigationController popToRootViewControllerAnimated:YES];
-            // use delegate so the products view controller reloads table view data
+            [self.delegate reloadData];
         } else {
             NSLog(@"%@", error.description);
             // show alert view?

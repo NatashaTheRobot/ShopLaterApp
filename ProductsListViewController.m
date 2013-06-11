@@ -48,10 +48,10 @@
 {
     NSArray *sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"name" ascending:YES]];
     
-    self.fetchedResultsController = [self.coreDataManager
-                                     fetchEntitiesWithClassName:NSStringFromClass([Product class])
-                                     withSortDescriptors:sortDescriptors];
-    
+    self.fetchedResultsController = [self.coreDataManager fetchEntitiesWithClassName:NSStringFromClass([Product class])
+                                                                     sortDescriptors:sortDescriptors
+                                                                  sectionNameKeyPath:nil];
+
     if (self.fetchedResultsController.fetchedObjects.count == 0) {
         [self performSegueWithIdentifier:@"toProviderCollectionView" sender:self];
     }
@@ -69,7 +69,9 @@
 - (void)reloadData
 {
     NSArray *sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"name" ascending:YES]];
-    self.fetchedResultsController = [self.coreDataManager fetchEntitiesWithClassName:NSStringFromClass([Product class]) withSortDescriptors:sortDescriptors];
+    self.fetchedResultsController = [self.coreDataManager fetchEntitiesWithClassName:NSStringFromClass([Product class])
+                                                                     sortDescriptors:sortDescriptors
+                                                                  sectionNameKeyPath:nil];
     [self.tableView reloadData];
     
 }

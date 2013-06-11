@@ -83,7 +83,9 @@ static CoreDataManager *coreDataManager;
 }
 
 - (NSFetchedResultsController *)fetchEntitiesWithClassName:(NSString *)className
-                                             withSortDescriptors:(NSArray *)sortDescriptors
+                                           sortDescriptors:(NSArray *)sortDescriptors
+                                        sectionNameKeyPath:(NSString *)sectionNameKeypath
+
 {
     NSFetchedResultsController *fetchedResultsController;
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
@@ -95,7 +97,7 @@ static CoreDataManager *coreDataManager;
     
     fetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest
                                                                         managedObjectContext:self.managedObjectContext
-                                                                          sectionNameKeyPath:nil
+                                                                          sectionNameKeyPath:sectionNameKeypath
                                                                                    cacheName:nil];
     
     

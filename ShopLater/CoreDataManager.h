@@ -18,7 +18,9 @@
 - (void)saveDataInManagedContextUsingBlock:(void (^)(BOOL saved, NSError *error))savedBlock;
 
 - (NSFetchedResultsController *)fetchEntitiesWithClassName:(NSString *)className
-                                             withSortDescriptors:(NSArray *)sortDescriptors;
+                                           sortDescriptors:(NSArray *)sortDescriptors
+                                        sectionNameKeyPath:(NSString *)sectionNameKeypath;
+
 - (id)createEntityWithClassName:(NSString *)className atributesDictionary:(NSDictionary *)attributesDictionary;
 
 @end

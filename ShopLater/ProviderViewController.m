@@ -85,7 +85,8 @@
     NSArray *sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"name" ascending:YES]];
     
     self.fetchedResultsController = [self.coreDataManager fetchEntitiesWithClassName:NSStringFromClass([Provider class])
-                                                                       withSortDescriptors:sortDescriptors];
+                                                                     sortDescriptors:sortDescriptors
+                                                                  sectionNameKeyPath:nil];
 }
 
 #pragma mark - CollectionView Delegate Methods

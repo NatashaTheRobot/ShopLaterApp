@@ -60,7 +60,7 @@
         self.priceSlider.maximumValue = [priceInDollars floatValue];
         self.priceSlider.value = [priceInDollars floatValue] * 0.8;
         self.wishPriceLabel.text = [NSString stringWithFormat:@"$%.2f", ([priceInDollars floatValue] * 0.8)];
-        self.priceSlider.hidden = NO;
+        [self.view viewWithTag:1].alpha = 0;
         
         Image *image = [self.parser.delegate productImage];
         [image downloadImageFromURL:[NSURL URLWithString:image.externalURLString] completionBlock:^(BOOL succeeded, UIImage *image) {

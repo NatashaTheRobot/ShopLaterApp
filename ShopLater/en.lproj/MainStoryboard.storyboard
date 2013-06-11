@@ -252,7 +252,7 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <slider hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="0.0" translatesAutoresizingMaskIntoConstraints="NO" id="AhZ-fA-MLm">
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="0.0" translatesAutoresizingMaskIntoConstraints="NO" id="AhZ-fA-MLm">
                                 <connections>
                                     <action selector="adjustWishPrice:" destination="cqJ-YD-ehb" eventType="valueChanged" id="OAd-j5-TKG"/>
                                 </connections>
@@ -286,6 +286,9 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <view tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bzn-Ki-F1A">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                            </view>
                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="k6g-GJ-Pfr"/>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.94166291221120868" blue="0.78861097192132168" alpha="1" colorSpace="calibratedRGB"/>
@@ -295,16 +298,20 @@
                             <constraint firstItem="GgS-bi-hqu" firstAttribute="top" secondItem="VdQ-Vx-1LB" secondAttribute="top" constant="87" id="6LO-PS-HDl"/>
                             <constraint firstItem="NEb-dI-9C7" firstAttribute="trailing" secondItem="VdQ-Vx-1LB" secondAttribute="trailing" type="default" id="Avb-LT-6jv"/>
                             <constraint firstItem="k6g-GJ-Pfr" firstAttribute="top" secondItem="VdQ-Vx-1LB" secondAttribute="top" constant="182" id="CwK-55-auw"/>
+                            <constraint firstItem="bzn-Ki-F1A" firstAttribute="top" secondItem="VdQ-Vx-1LB" secondAttribute="top" type="default" id="Djd-yJ-bbf"/>
                             <constraint firstItem="GgS-bi-hqu" firstAttribute="leading" secondItem="VdQ-Vx-1LB" secondAttribute="leading" type="default" id="Hjt-qM-seT"/>
                             <constraint firstAttribute="bottom" secondItem="O6P-bf-xAL" secondAttribute="bottom" constant="191" id="IQa-LT-u3T"/>
                             <constraint firstItem="zX6-tA-buO" firstAttribute="leading" secondItem="VdQ-Vx-1LB" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="Q4W-e9-giP"/>
                             <constraint firstItem="k6g-GJ-Pfr" firstAttribute="centerX" secondItem="GgS-bi-hqu" secondAttribute="centerX" type="default" id="Sjn-dF-0WA"/>
+                            <constraint firstItem="bzn-Ki-F1A" firstAttribute="trailing" secondItem="VdQ-Vx-1LB" secondAttribute="trailing" type="default" id="Thk-Wz-eeF"/>
                             <constraint firstAttribute="trailing" secondItem="fIY-cK-FzF" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="Wcx-NB-Vfi"/>
                             <constraint firstAttribute="trailing" secondItem="aAJ-Yn-Unf" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="XPK-lV-NYy"/>
+                            <constraint firstItem="bzn-Ki-F1A" firstAttribute="bottom" secondItem="VdQ-Vx-1LB" secondAttribute="bottom" type="default" id="ZIw-1x-HvQ"/>
                             <constraint firstItem="O6P-bf-xAL" firstAttribute="leading" secondItem="VdQ-Vx-1LB" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="auB-oO-JdW"/>
                             <constraint firstAttribute="bottom" secondItem="zX6-tA-buO" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="bYy-z7-Lwh"/>
                             <constraint firstItem="NEb-dI-9C7" firstAttribute="leading" secondItem="VdQ-Vx-1LB" secondAttribute="leading" type="default" id="e6e-m4-6gg"/>
                             <constraint firstItem="fIY-cK-FzF" firstAttribute="baseline" secondItem="O6P-bf-xAL" secondAttribute="baseline" type="default" id="eIf-yh-Wwi"/>
+                            <constraint firstItem="bzn-Ki-F1A" firstAttribute="leading" secondItem="VdQ-Vx-1LB" secondAttribute="leading" type="default" id="hHL-ht-6L1"/>
                             <constraint firstItem="AhZ-fA-MLm" firstAttribute="leading" secondItem="VdQ-Vx-1LB" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="iNH-nF-Afl"/>
                             <constraint firstItem="gGH-Wm-fhT" firstAttribute="leading" secondItem="VdQ-Vx-1LB" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="jVl-eL-Ica"/>
                             <constraint firstAttribute="bottom" secondItem="gGH-Wm-fhT" secondAttribute="bottom" constant="145" id="oMv-R6-ef3"/>

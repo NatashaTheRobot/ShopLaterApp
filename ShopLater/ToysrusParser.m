@@ -103,7 +103,10 @@
         NSString *priceText = [[pricesArray[0] firstChild] content];
         NSNumber *priceInDollars = [NSNumber numberWithFloat:[[priceText substringFromIndex:1] floatValue]];
         
-        NSDictionary *priceDictionary = [NSDictionary dictionaryWithObjectsAndKeys:priceInDollars, @"dollarAmount", nil];
+        NSDictionary *priceDictionary = [NSDictionary dictionaryWithObjectsAndKeys:
+                                         priceInDollars, @"dollarAmount",
+                                         @"current", @"type",
+                                         [NSDate date], @"created_at", nil];
         self.price = [self.coreDataManager createEntityWithClassName:NSStringFromClass([Price class])
                                                  atributesDictionary:priceDictionary];
         

@@ -33,7 +33,7 @@
 
 - (void)viewDidAppear:(BOOL)animated
 {
-    if (!self.productsExist) {
+    if (self.fetchedResultsController.fetchedObjects.count == 0) {
         [self performSegueWithIdentifier:@"toProviderCollectionView" sender:self];
     }
 }

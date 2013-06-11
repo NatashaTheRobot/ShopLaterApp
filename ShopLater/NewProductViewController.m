@@ -9,7 +9,9 @@
 #import "NewProductViewController.h"
 #import "Parser.h"
 #import "Price.h"
+#import "Product.h"
 #import "Image+SLExtensions.h"
+#import "CoreDataManager.h"
 
 @interface NewProductViewController ()
 
@@ -19,9 +21,17 @@
 @property (weak, nonatomic) IBOutlet UILabel *currentPriceLabel;
 @property (weak, nonatomic) IBOutlet UILabel *wishPriceLabel;
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
-- (IBAction)adjustWishPrice:(id)sender;
 
+@property (strong, nonatomic) CoreDataManager *coreDataManager;
+@property (strong, nonatomic) Parser *parser;
+@property (strong, nonatomic) Product *product;
+
+- (IBAction)adjustWishPrice:(id)sender;
 - (IBAction)saveProductWithButton:(id)sender;
+
+- (void)displayProduct;
+- (void)createProduct;
+
 @end
 
 @implementation NewProductViewController
@@ -33,29 +43,50 @@
     [self.activityIndicator startAnimating];
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{
         [self displayProduct];
+        [self createProduct];
     });
     
 }
 
 - (void)displayProduct
 {
-    Parser *parser = [Parser parserWithProviderName:self.provider.name productURLString:self.productURLString];
+    self.parser = [Parser parserWithProviderName:self.provider.name productURLString:self.productURLString];
     
     dispatch_async(dispatch_get_main_queue(), ^{
-        NSNumber *priceInDollars = [(Price *)[parser.delegate productPrice] dollarAmount];
-        self.productTitleTextView.text = [parser.delegate productName];
+        NSNumber *priceInDollars = [(Price *)[self.parser.delegate productPrice] dollarAmount];
+        self.productTitleTextView.text = [self.parser.delegate productName];
         self.currentPriceLabel.text = [NSString stringWithFormat:@"$%@", priceInDollars];
         self.priceSlider.maximumValue = [priceInDollars floatValue];
         self.priceSlider.value = [priceInDollars floatValue] * 0.8;
         self.wishPriceLabel.text = [NSString stringWithFormat:@"$%.2f", ([priceInDollars floatValue] * 0.8)];
         self.priceSlider.hidden = NO;
         
-        Image *image = [parser.delegate productImage];
+        Image *image = [self.parser.delegate productImage];
         [image downloadImageFromURL:[NSURL URLWithString:image.externalURLString] completionBlock:^(BOOL succeeded, UIImage *image) {
             self.imageView.image = image;
             self.imageView.contentMode = UIViewContentModeScaleAspectFit;
             [self.activityIndicator stopAnimating];
         }];
+    });
+    
+}
+
+- (void)createProduct
+{
+    NSSet *images = [NSSet setWithObject:[self.parser.delegate productImage]];
+    NSSet *prices = [NSSet setWithObject:[self.parser.delegate productPrice]];
+    
+    NSDictionary *productDictionary = [NSDictionary dictionaryWithObjectsAndKeys:[self.parser.delegate productName], @"name",
+                                       [self.parser.delegate productSummary], @"summary",
+                                       self.productURLString, @"url",
+                                       images, @"images",
+                                       prices, @"prices",
+                                       [NSSet setWithObject:self.provider], @"providers",
+                                       nil];
+    dispatch_async(dispatch_get_main_queue(), ^{
+        self.coreDataManager = [CoreDataManager sharedManager];
+        self.product = [self.coreDataManager createEntityWithClassName:NSStringFromClass([Product class])
+                                                              atributesDictionary:productDictionary];
     });
     
 }
@@ -67,7 +98,24 @@
 
 - (IBAction)saveProductWithButton:(id)sender
 {
-    // use delegate so the products view controller reloads table view data
-    [self.navigationController popToRootViewControllerAnimated:YES];
+    NSDictionary *wishPriceDictionary = [NSDictionary dictionaryWithObjectsAndKeys:
+                                         [NSNumber numberWithFloat:self.priceSlider.value], @"dollarAmount",
+                                         @"wish", @"type",
+                                         [NSDate date], @"created_at",
+                                         nil];
+    Price *wishPrice = [self.coreDataManager createEntityWithClassName:NSStringFromClass([Price class])
+                                                   atributesDictionary:wishPriceDictionary];
+    self.product.prices = [self.product.prices setByAddingObject:wishPrice];
+    
+    [self.coreDataManager saveDataInManagedContextUsingBlock:^(BOOL saved, NSError *error) {
+        if (saved) {
+            [self.navigationController popToRootViewControllerAnimated:YES];
+            // use delegate so the products view controller reloads table view data
+        } else {
+            NSLog(@"%@", error.description);
+            // show alert view?
+        }
+    }];
+    
 }
 @end

@@ -7,6 +7,10 @@
 //
 
 #import "EditProductViewController.h"
+#import "Constants.h"
+#import "Price+SLExtensions.h"
+#import "CoreDataManager.h"
+#import "ProductsListViewController.h"
 
 @interface EditProductViewController ()
 
@@ -14,9 +18,14 @@
 @property (weak, nonatomic) IBOutlet UITextField *titleTextField;
 @property (weak, nonatomic) IBOutlet UILabel *wishPriceLabel;
 @property (weak, nonatomic) IBOutlet UITextView *summaryTextView;
+@property (weak, nonatomic) IBOutlet UISlider *priceSlider;
 
 - (IBAction)saveWithButton:(id)sender;
 - (IBAction)cancelWithButton:(id)sender;
+- (IBAction)adjustPrice:(id)sender;
+- (IBAction)deleteWithButton:(id)sender;
+
+- (void)setupEditFields;
 
 @end
 
@@ -25,7 +34,18 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view.
+	
+    [self setupEditFields];
+}
+
+- (void)setupEditFields
+{
+    self.imageView.image = [self.product image];
+    self.titleTextField.placeholder = self.product.name;
+    self.wishPriceLabel.text = [self.product formattedPriceWithType:sPriceTypeWish];
+    self.summaryTextView.text = self.product.summary;
+    self.priceSlider.maximumValue = [[self.product priceWithType:sPriceTypeCurrent].dollarAmount floatValue];
+    self.priceSlider.value = [[self.product priceWithType:sPriceTypeWish].dollarAmount floatValue];
 }
 
 - (void)didReceiveMemoryWarning
@@ -34,9 +54,42 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (IBAction)saveWithButton:(id)sender {
+- (IBAction)saveWithButton:(id)sender
+{
+    
 }
 
-- (IBAction)cancelWithButton:(id)sender {
+- (IBAction)cancelWithButton:(id)sender
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (IBAction)adjustPrice:(id)sender
+{
+    self.wishPriceLabel.text = [NSString stringWithFormat:@"$%.2f", self.priceSlider.value];
+}
+
+- (IBAction)deleteWithButton:(id)sender
+{
+    
+    CoreDataManager *coreDataManager = [CoreDataManager sharedManager];
+    [coreDataManager deleteEntity:self.product];
+    [coreDataManager saveDataInManagedContextUsingBlock:^(BOOL saved, NSError *error) {
+        if (!error) {
+            [self dismissViewControllerAnimated:YES completion:^{
+                // dismiss to parent view controller and reload data
+            }];
+            [self.delegate reloadProductData];
+        } else {
+            UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@""
+                                                                message:@"We're sorry, something went wrong :("
+                                                               delegate:self
+                                                      cancelButtonTitle:@"Ok"
+                                                      otherButtonTitles:nil, nil];
+            
+            [alertView show];
+        }
+    }];
+    
 }
 @end

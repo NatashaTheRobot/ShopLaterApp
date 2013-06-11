@@ -7,7 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Product+SLExtensions.h"
+#import "ProductDelegate.h"
 
 @interface EditProductViewController : UIViewController
+
+@property (strong, nonatomic) Product *product;
+@property (strong, nonatomic) id<ProductListDelegate> delegate;
 
 @end

@@ -13,6 +13,7 @@
 
 - (UIImage *)image;
 
-- (NSString *)priceWithType:(NSString *)type;
+- (Price *)priceWithType:(NSString *)type;
+- (NSString *)formattedPriceWithType:(NSString *)type;
 
 @end

@@ -8,8 +8,7 @@
 
 #import "ProductDetailViewController.h"
 #import "Constants.h"
-#import "CoreDataManager.h"
-#import "ProductsListViewController.h"
+#import "EditProductViewController.h"
 
 @interface ProductDetailViewController ()
 
@@ -20,8 +19,6 @@
 @property (weak, nonatomic) IBOutlet UITextView *summaryTextView;
 
 - (void)displayProductDetails;
-- (IBAction)deleteProductWithButton:(id)sender;
-
 
 @end
 
@@ -38,31 +35,18 @@
 {
     self.productNameTextView.text = self.product.name;
     self.imageView.image = [self.product image];
-    self.currentPriceLabel.text = [self.product priceWithType:sPriceTypeCurrent];
-    self.wishPriceLabel.text = [self.product priceWithType:sPriceTypeWish];
+    self.currentPriceLabel.text = [self.product formattedPriceWithType:sPriceTypeCurrent];
+    self.wishPriceLabel.text = [self.product formattedPriceWithType:sPriceTypeWish];
     self.summaryTextView.text = self.product.summary;
 }
 
-- (IBAction)deleteProductWithButton:(id)sender
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    
-    CoreDataManager *coreDataManager = [CoreDataManager sharedManager];
-    [coreDataManager deleteEntity:self.product];
-    [coreDataManager saveDataInManagedContextUsingBlock:^(BOOL saved, NSError *error) {
-        if (!error) {
-            [self.navigationController popToRootViewControllerAnimated:YES];
-            [self.delegate reloadProductData];
-        } else {
-            UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@""
-                                                                message:@"We're sorry, something went wrong :("
-                                                               delegate:self
-                                                      cancelButtonTitle:@"Ok"
-                                                      otherButtonTitles:nil, nil];
-            
-            [alertView show];
-        }
-    }];
-    
+    if ([segue.destinationViewController isKindOfClass:[EditProductViewController class]]) {
+        EditProductViewController *editViewController = (EditProductViewController *)segue.destinationViewController;
+        editViewController.product = self.product;
+        editViewController.delegate = self.navigationController.viewControllers[0];
+    }
 }
 
 - (void)didReceiveMemoryWarning

@@ -17,10 +17,15 @@
     return [(Image *)[self.images anyObject] image];
 }
 
-- (NSString *)priceWithType:(NSString *)type
+- (Price *)priceWithType:(NSString *)type
 {
     NSPredicate *priceFilter = [NSPredicate predicateWithFormat:@"type == %@", type];
-    Price *price = [[self.prices filteredSetUsingPredicate:priceFilter] anyObject];
+    return [[self.prices filteredSetUsingPredicate:priceFilter] anyObject];
+}
+
+- (NSString *)formattedPriceWithType:(NSString *)type
+{
+    Price *price = [self priceWithType:type];
     return [Price formattedPriceFromNumber:price.dollarAmount];
 }
 

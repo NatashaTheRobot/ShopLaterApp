@@ -22,7 +22,7 @@
                                         sectionNameKeyPath:(NSString *)sectionNameKeypath;
 
 - (id)createEntityWithClassName:(NSString *)className atributesDictionary:(NSDictionary *)attributesDictionary;
-
+- (id)updateEntity:(NSManagedObject *)entity updateAttributesDictionary:(NSDictionary *)updateAttributesDictionary;
 - (void)deleteEntity:(NSManagedObject *)entity;
 
 @end

@@ -70,7 +70,6 @@
         
         ProductDetailViewController *productDetailViewController = (ProductDetailViewController *)segue.destinationViewController;
         productDetailViewController.product = product;
-        productDetailViewController.delegate = self;
     }
 }
 
@@ -110,8 +109,8 @@
     
     cell.productName = product.name;
     cell.productImage = [product image];
-    cell.currentPrice = [product priceWithType:sPriceTypeCurrent];
-    cell.wishPrice = [product priceWithType:sPriceTypeWish];
+    cell.currentPrice = [product formattedPriceWithType:sPriceTypeCurrent];
+    cell.wishPrice = [product formattedPriceWithType:sPriceTypeWish];
     
     return cell;
 }

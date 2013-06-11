@@ -110,7 +110,6 @@
     
     [self.coreDataManager saveDataInManagedContextUsingBlock:^(BOOL saved, NSError *error) {
         if (saved) {
-            NSLog(@"%@", self.navigationController.viewControllers[0]);
             self.delegate = (ProductsListViewController *)self.navigationController.viewControllers[0];
             [self.navigationController popToRootViewControllerAnimated:YES];
             [self.delegate reloadData];

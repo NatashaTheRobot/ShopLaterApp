@@ -70,6 +70,7 @@
         
         ProductDetailViewController *productDetailViewController = (ProductDetailViewController *)segue.destinationViewController;
         productDetailViewController.product = product;
+        productDetailViewController.delegate = self;
     }
 }
 

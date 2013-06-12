@@ -9,8 +9,6 @@
 #import "EditProductViewController.h"
 #import "Constants.h"
 #import "Price+SLExtensions.h"
-#import "CoreDataManager.h"
-#import "ProductsListViewController.h"
 
 @interface EditProductViewController ()
 
@@ -71,25 +69,9 @@
 
 - (IBAction)deleteWithButton:(id)sender
 {
-    
-    CoreDataManager *coreDataManager = [CoreDataManager sharedManager];
-    [coreDataManager deleteEntity:self.product];
-    [coreDataManager saveDataInManagedContextUsingBlock:^(BOOL saved, NSError *error) {
-        if (!error) {
-            [self dismissViewControllerAnimated:YES completion:^{
-                // dismiss to parent view controller and reload data
-            }];
-            [self.delegate reloadProductData];
-        } else {
-            UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@""
-                                                                message:@"We're sorry, something went wrong :("
-                                                               delegate:self
-                                                      cancelButtonTitle:@"Ok"
-                                                      otherButtonTitles:nil, nil];
-            
-            [alertView show];
-        }
+    [self dismissViewControllerAnimated:NO completion:^{
+        [self.delegate deleteProduct];
     }];
-    
+        
 }
 @end

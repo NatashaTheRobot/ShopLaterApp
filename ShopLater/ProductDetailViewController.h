@@ -8,9 +8,12 @@
 
 #import <UIKit/UIKit.h>
 #import "Product+SLExtensions.h"
+#import "ProductDetailDelegate.h"
+#import "ProductListDelegate.h"
 
-@interface ProductDetailViewController : UIViewController
+@interface ProductDetailViewController : UIViewController <ProductDetailDelegate>
 
 @property (strong, nonatomic) Product *product;
+@property (strong, nonatomic) id<ProductListDelegate> delegate;
 
 @end

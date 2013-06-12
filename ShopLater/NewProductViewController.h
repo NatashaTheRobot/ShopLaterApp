@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "Provider.h"
-#import "ProductDelegate.h"
+#import "ProductListDelegate.h"
 
 @interface NewProductViewController : UIViewController
 

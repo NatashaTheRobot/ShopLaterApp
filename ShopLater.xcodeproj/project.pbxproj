@@ -54,7 +54,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		9C195DAC17674E6800183192 /* ProductDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductDelegate.h; sourceTree = "<group>"; };
+		9C195DAC17674E6800183192 /* ProductListDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductListDelegate.h; sourceTree = "<group>"; };
 		9C195DB017674F1F00183192 /* ProductsListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ProductsListViewController.h; path = ../ProductsListViewController.h; sourceTree = "<group>"; };
 		9C195DB117674F1F00183192 /* ProductsListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ProductsListViewController.m; path = ../ProductsListViewController.m; sourceTree = "<group>"; };
 		9C195DB31767510500183192 /* ProductTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductTableViewCell.h; sourceTree = "<group>"; };
@@ -74,6 +74,7 @@
 		9C195DD31767AC0500183192 /* ProductDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductDetailViewController.m; sourceTree = "<group>"; };
 		9C195DD51767AE2400183192 /* Product+SLExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Product+SLExtensions.h"; sourceTree = "<group>"; };
 		9C195DD61767AE2500183192 /* Product+SLExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Product+SLExtensions.m"; sourceTree = "<group>"; };
+		9C195DDB1768A1C500183192 /* ProductDetailDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductDetailDelegate.h; sourceTree = "<group>"; };
 		9C927B711762780100570F45 /* ShopLater.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShopLater.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C927B741762780100570F45 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		9C927B761762780100570F45 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -288,7 +289,8 @@
 			isa = PBXGroup;
 			children = (
 				9CB9406617665D2000DC05D2 /* ParserDelegate.h */,
-				9C195DAC17674E6800183192 /* ProductDelegate.h */,
+				9C195DAC17674E6800183192 /* ProductListDelegate.h */,
+				9C195DDB1768A1C500183192 /* ProductDetailDelegate.h */,
 			);
 			name = Delegates;
 			sourceTree = "<group>";

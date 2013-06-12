@@ -37,6 +37,8 @@
 + (instancetype)parserWithProductURLString:(NSString *)productURLString
 {
     ToysrusParser *parser = [[ToysrusParser alloc] init];
+    parser.mobileURLString = productURLString;
+    
     NSString *productId = [parser getProductIdFromURLString:productURLString];
     
     // handle error (if we cannot get the product id for some reason)

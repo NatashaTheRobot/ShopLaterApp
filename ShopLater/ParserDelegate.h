@@ -15,6 +15,8 @@
 
 + (instancetype)parserWithProductURLString:(NSString *)productURLString;
 
+@property (strong, nonatomic) NSString *mobileURLString;
+
 - (NSString *)productName;
 - (NSString *)productSummary;
 - (Price *)productPrice;

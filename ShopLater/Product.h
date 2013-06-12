@@ -2,7 +2,7 @@
 //  Product.h
 //  ShopLater
 //
-//  Created by Natasha Murashev on 6/11/13.
+//  Created by Natasha Murashev on 6/12/13.
 //  Copyright (c) 2013 Natasha Murashev. All rights reserved.
 //
 
@@ -17,6 +17,7 @@
 @property (nonatomic, retain) NSString * name;
 @property (nonatomic, retain) NSString * summary;
 @property (nonatomic, retain) NSString * url;
+@property (nonatomic, retain) NSString * mobileURL;
 @property (nonatomic, retain) NSSet *images;
 @property (nonatomic, retain) NSSet *prices;
 @property (nonatomic, retain) Provider *provider;

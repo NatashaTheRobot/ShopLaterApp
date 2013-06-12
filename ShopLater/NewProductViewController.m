@@ -84,6 +84,7 @@
                                        images, @"images",
                                        prices, @"prices",
                                        self.provider, @"provider",
+                                       [self.parser.delegate mobileURLString], @"mobileURL",
                                        nil];
     dispatch_async(dispatch_get_main_queue(), ^{
         self.coreDataManager = [CoreDataManager sharedManager];

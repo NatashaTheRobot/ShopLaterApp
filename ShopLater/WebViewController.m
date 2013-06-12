@@ -48,11 +48,17 @@
 
 - (void)checkIfProductPage:(NSString *)urlString
 {
+    BOOL productURL = !([urlString rangeOfString:self.product.mobileURL].location == NSNotFound);
     BOOL providerPage = !([urlString rangeOfString:self.provider.name].location == NSNotFound);
     BOOL productPage = !([urlString rangeOfString:self.provider.identifierName].location == NSNotFound);
     
     dispatch_async(dispatch_get_main_queue(), ^{
-       self.buyLaterButton.enabled = (providerPage && productPage); 
+        if (self.product && productURL) {
+            self.buyLaterButton.enabled = NO;
+            return;
+        }
+
+       self.buyLaterButton.enabled = (providerPage && productPage);
     });
 
 }

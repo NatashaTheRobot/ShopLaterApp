@@ -11,6 +11,8 @@
 
 @interface ToysrusParser : NSObject <ParserDelegate>
 
+@property (strong, nonatomic) NSString *mobileURLString;
+
 - (NSString *)productName;
 - (NSString *)productSummary;
 - (Price *)productPrice;

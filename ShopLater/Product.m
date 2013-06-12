@@ -18,6 +18,7 @@
 @dynamic summary;
 @dynamic url;
 @dynamic mobileURL;
+@dynamic createdAt;
 @dynamic images;
 @dynamic prices;
 @dynamic provider;

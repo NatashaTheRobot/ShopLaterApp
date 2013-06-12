@@ -18,6 +18,7 @@
 @property (nonatomic, retain) NSString * summary;
 @property (nonatomic, retain) NSString * url;
 @property (nonatomic, retain) NSString * mobileURL;
+@property (nonatomic, retain) NSDate * createdAt;
 @property (nonatomic, retain) NSSet *images;
 @property (nonatomic, retain) NSSet *prices;
 @property (nonatomic, retain) Provider *provider;

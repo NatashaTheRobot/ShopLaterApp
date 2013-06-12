@@ -86,6 +86,7 @@
                                        prices, @"prices",
                                        self.provider, @"provider",
                                        [self.parser.delegate mobileURLString], @"mobileURL",
+                                       [NSDate date], @"createdAt",
                                        nil];
     dispatch_async(dispatch_get_main_queue(), ^{
         self.coreDataManager = [CoreDataManager sharedManager];

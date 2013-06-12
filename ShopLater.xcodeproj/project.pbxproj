@@ -17,7 +17,7 @@
 		9C195DCB1767A7CB00183192 /* EditProductViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C195DCA1767A7CA00183192 /* EditProductViewController.m */; };
 		9C195DD41767AC0700183192 /* ProductDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C195DD31767AC0500183192 /* ProductDetailViewController.m */; };
 		9C195DD71767AE2500183192 /* Product+SLExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C195DD61767AE2500183192 /* Product+SLExtensions.m */; };
-		9C195DDE1768B3CC00183192 /* Product.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C195DDD1768B3CC00183192 /* Product.m */; };
+		9C195DE11768C44E00183192 /* Product.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C195DE01768C44D00183192 /* Product.m */; };
 		9C927B751762780100570F45 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C927B741762780100570F45 /* UIKit.framework */; };
 		9C927B771762780100570F45 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C927B761762780100570F45 /* Foundation.framework */; };
 		9C927B791762780100570F45 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C927B781762780100570F45 /* CoreGraphics.framework */; };
@@ -73,8 +73,8 @@
 		9C195DD51767AE2400183192 /* Product+SLExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Product+SLExtensions.h"; sourceTree = "<group>"; };
 		9C195DD61767AE2500183192 /* Product+SLExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Product+SLExtensions.m"; sourceTree = "<group>"; };
 		9C195DDB1768A1C500183192 /* ProductDetailDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductDetailDelegate.h; sourceTree = "<group>"; };
-		9C195DDC1768B3CB00183192 /* Product.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Product.h; sourceTree = "<group>"; };
-		9C195DDD1768B3CC00183192 /* Product.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Product.m; sourceTree = "<group>"; };
+		9C195DDF1768C44D00183192 /* Product.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Product.h; sourceTree = "<group>"; };
+		9C195DE01768C44D00183192 /* Product.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Product.m; sourceTree = "<group>"; };
 		9C927B711762780100570F45 /* ShopLater.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShopLater.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C927B741762780100570F45 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		9C927B761762780100570F45 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -219,8 +219,8 @@
 				9C927B9E17627A9A00570F45 /* ShopLater.xcdatamodeld */,
 				9C927B97176278B800570F45 /* CoreDataManager.h */,
 				9C927B98176278B800570F45 /* CoreDataManager.m */,
-				9C195DDC1768B3CB00183192 /* Product.h */,
-				9C195DDD1768B3CC00183192 /* Product.m */,
+				9C195DDF1768C44D00183192 /* Product.h */,
+				9C195DE01768C44D00183192 /* Product.m */,
 				9CA5D7701764BF650009098E /* Provider.h */,
 				9CA5D7711764BF650009098E /* Provider.m */,
 				9C927BAC176287BD00570F45 /* Price.h */,
@@ -434,7 +434,7 @@
 				9C195DCB1767A7CB00183192 /* EditProductViewController.m in Sources */,
 				9C195DD41767AC0700183192 /* ProductDetailViewController.m in Sources */,
 				9C195DD71767AE2500183192 /* Product+SLExtensions.m in Sources */,
-				9C195DDE1768B3CC00183192 /* Product.m in Sources */,
+				9C195DE11768C44E00183192 /* Product.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

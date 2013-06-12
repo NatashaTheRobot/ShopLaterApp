@@ -45,7 +45,7 @@
     
     NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"http://www.toysrus.com/product/index.jsp?productId=%@", productId]];
     NSData *data = [NSData dataWithContentsOfURL:url];
-    parser.htmlString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+    parser.htmlString = [[NSString alloc] initWithData:data encoding:NSASCIIStringEncoding];
 
     parser.coreDataManager = [CoreDataManager sharedManager];
     

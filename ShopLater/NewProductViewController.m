@@ -81,7 +81,7 @@
     
     NSDictionary *productDictionary = [NSDictionary dictionaryWithObjectsAndKeys:[self.parser.delegate productName], @"name",
                                        [self.parser.delegate productSummary], @"summary",
-                                       self.productURLString, @"url",
+                                       [self.parser.delegate cleanURLString], @"url",
                                        images, @"images",
                                        prices, @"prices",
                                        self.provider, @"provider",

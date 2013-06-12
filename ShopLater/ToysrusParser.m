@@ -42,9 +42,8 @@
     NSString *productId = [parser getProductIdFromURLString:productURLString];
     
     // handle error (if we cannot get the product id for some reason)
-    
-    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"http://www.toysrus.com/product/index.jsp?productId=%@", productId]];
-    NSData *data = [NSData dataWithContentsOfURL:url];
+    parser.cleanURLString = [NSString stringWithFormat:@"http://www.toysrus.com/product/index.jsp?productId=%@", productId];
+    NSData *data = [NSData dataWithContentsOfURL:[NSURL URLWithString:parser.cleanURLString]];
     parser.htmlString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
     
     if (parser.htmlString == nil) {

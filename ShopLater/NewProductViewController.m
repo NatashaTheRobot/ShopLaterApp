@@ -9,7 +9,7 @@
 #import "NewProductViewController.h"
 #import "Parser.h"
 #import "Price+SLExtensions.h"
-#import "Product.h"
+#import "Product+SLExtensions.h"
 #import "Image+SLExtensions.h"
 #import "CoreDataManager.h"
 #import "ProductsListViewController.h"
@@ -81,7 +81,7 @@
     
     NSDictionary *productDictionary = [NSDictionary dictionaryWithObjectsAndKeys:[self.parser.delegate productName], @"name",
                                        [self.parser.delegate productSummary], @"summary",
-                                       self.productURLString, @"url",
+                                       [self.parser.delegate cleanURLString], @"url",
                                        images, @"images",
                                        prices, @"prices",
                                        self.provider, @"provider",
@@ -92,6 +92,7 @@
         self.coreDataManager = [CoreDataManager sharedManager];
         self.product = [self.coreDataManager createEntityWithClassName:NSStringFromClass([Product class])
                                                               atributesDictionary:productDictionary];
+        [self.product postToAPI];
     });
     
 }

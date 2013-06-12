@@ -9,6 +9,9 @@
 #import "Product+SLExtensions.h"
 #import "Image+SLExtensions.h"
 #import "Price+SLExtensions.h"
+#import "AFHTTPClient.h"
+#import "AFHTTPRequestOperation.h"
+#import "Constants.h"
 
 @implementation Product (SLExtensions)
 
@@ -27,6 +30,31 @@
 {
     Price *price = [self priceWithType:type];
     return [Price formattedPriceFromNumber:price.dollarAmount];
+}
+
+- (void)postToAPI
+{
+    AFHTTPClient *httpClient = [[AFHTTPClient alloc] initWithBaseURL:[NSURL URLWithString:sAPIBaseURL]];
+    
+    NSDictionary *parameters = [NSDictionary dictionaryWithObjects:@[sAPIKey, sAPISecret, self.url, self.provider.name]
+                                                           forKeys:@[@"api_key", @"api_secret", @"url", @"provider"]];
+       
+    NSMutableURLRequest *request = [httpClient multipartFormRequestWithMethod:@"POST"
+                                                                         path:@"/products"
+                                                                   parameters:parameters
+                                                    constructingBodyWithBlock:^(id<AFMultipartFormData> formData) {
+                                                        nil;
+                                                    }];
+    
+    AFHTTPRequestOperation *requestOperation = [[AFHTTPRequestOperation alloc] initWithRequest:request];
+    
+    [requestOperation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSLog(@"SUCCESS! %@", responseObject);
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"FAILURE %@", error.description);
+    }];
+    
+    [httpClient enqueueHTTPRequestOperation:requestOperation];
 }
 
 @end

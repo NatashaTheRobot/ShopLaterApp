@@ -12,10 +12,8 @@
 #import "CoreDataManager.h"
 
 @interface ToysrusParser ()
-{
-    NSString *htmlString;
-}
 
+@property (strong, nonatomic) NSString *htmlString;
 @property (strong, nonatomic) CoreDataManager *coreDataManager;
 
 @property (strong, nonatomic) NSString *name;
@@ -43,7 +41,7 @@
     
     NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"http://www.toysrus.com/product/index.jsp?productId=%@", productId]];
     NSData *data = [NSData dataWithContentsOfURL:url];
-    parser->htmlString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+    parser.htmlString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
 
     parser.coreDataManager = [CoreDataManager sharedManager];
     
@@ -72,7 +70,7 @@
    
     if (!self.price) {
         
-        NSScanner *scanner = [[NSScanner alloc] initWithString:htmlString];
+        NSScanner *scanner = [[NSScanner alloc] initWithString:self.htmlString];
         
         scanner.scanLocation = 0;
         
@@ -116,7 +114,7 @@
     
     if (!self.name) {
         
-        NSScanner *scanner = [[NSScanner alloc] initWithString:htmlString];
+        NSScanner *scanner = [[NSScanner alloc] initWithString:self.htmlString];
                 
         NSString *startTag = @"<div id=\"priceReviewAge\">";
         NSString *endTag = @"<h3>";
@@ -149,7 +147,7 @@
 {
     if (!self.summary) {
         
-        NSScanner *scanner = [[NSScanner alloc] initWithString:htmlString];
+        NSScanner *scanner = [[NSScanner alloc] initWithString:self.htmlString];
         
         NSString *startTag = @"<label>Product Description</label>";
         NSString *endTag = @"<p>";
@@ -185,7 +183,7 @@
 {
     if (!self.image) {
                 
-        NSScanner *scanner = [[NSScanner alloc] initWithString:htmlString];
+        NSScanner *scanner = [[NSScanner alloc] initWithString:self.htmlString];
         
         NSString *startTag = @"dtmTag.dtmc_prod_img =";
         NSString *endTag = @";";

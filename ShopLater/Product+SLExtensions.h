@@ -16,4 +16,6 @@
 - (Price *)priceWithType:(NSString *)type;
 - (NSString *)formattedPriceWithType:(NSString *)type;
 
+- (void)postToAPI;
+
 @end

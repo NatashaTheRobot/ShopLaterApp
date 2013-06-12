@@ -37,10 +37,6 @@
 		9CA5D7471762AB970009098E /* toysrus_logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9CA5D7461762AB970009098E /* toysrus_logo@2x.png */; };
 		9CA5D74A1762AC170009098E /* ProviderCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CA5D7491762AC170009098E /* ProviderCollectionViewCell.m */; };
 		9CA5D7561763BFFF0009098E /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CA5D7551763BFFF0009098E /* WebViewController.m */; };
-		9CA5D75D1763C9C10009098E /* TFHpple.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CA5D75A1763C9C10009098E /* TFHpple.m */; };
-		9CA5D75E1763C9C10009098E /* TFHppleElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CA5D75C1763C9C10009098E /* TFHppleElement.m */; };
-		9CA5D7611763C9CF0009098E /* XPathQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CA5D7601763C9CF0009098E /* XPathQuery.m */; };
-		9CA5D7631763CA060009098E /* libxml2.2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CA5D7621763CA060009098E /* libxml2.2.dylib */; };
 		9CA5D7691763E32F0009098E /* InformationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CA5D7681763E32E0009098E /* InformationViewController.m */; };
 		9CA5D76C1763E34D0009098E /* NewProductViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CA5D76B1763E34C0009098E /* NewProductViewController.m */; };
 		9CA5D7721764BF650009098E /* Provider.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CA5D7711764BF650009098E /* Provider.m */; };
@@ -103,12 +99,6 @@
 		9CA5D7491762AC170009098E /* ProviderCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProviderCollectionViewCell.m; sourceTree = "<group>"; };
 		9CA5D7541763BFFF0009098E /* WebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewController.h; sourceTree = "<group>"; };
 		9CA5D7551763BFFF0009098E /* WebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewController.m; sourceTree = "<group>"; };
-		9CA5D7591763C9C10009098E /* TFHpple.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFHpple.h; sourceTree = "<group>"; };
-		9CA5D75A1763C9C10009098E /* TFHpple.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFHpple.m; sourceTree = "<group>"; };
-		9CA5D75B1763C9C10009098E /* TFHppleElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFHppleElement.h; sourceTree = "<group>"; };
-		9CA5D75C1763C9C10009098E /* TFHppleElement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFHppleElement.m; sourceTree = "<group>"; };
-		9CA5D75F1763C9CF0009098E /* XPathQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XPathQuery.h; sourceTree = "<group>"; };
-		9CA5D7601763C9CF0009098E /* XPathQuery.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XPathQuery.m; sourceTree = "<group>"; };
 		9CA5D7621763CA060009098E /* libxml2.2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.2.dylib; path = usr/lib/libxml2.2.dylib; sourceTree = SDKROOT; };
 		9CA5D7671763E32E0009098E /* InformationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InformationViewController.h; sourceTree = "<group>"; };
 		9CA5D7681763E32E0009098E /* InformationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InformationViewController.m; sourceTree = "<group>"; };
@@ -138,7 +128,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				9C195DC417679B4E00183192 /* QuartzCore.framework in Frameworks */,
-				9CA5D7631763CA060009098E /* libxml2.2.dylib in Frameworks */,
 				9C927B9D17627A6200570F45 /* CoreData.framework in Frameworks */,
 				9C927B751762780100570F45 /* UIKit.framework in Frameworks */,
 				9C927B771762780100570F45 /* Foundation.framework in Frameworks */,
@@ -298,22 +287,8 @@
 		9CA5D7571763C9520009098E /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
-				9CA5D7581763C99D0009098E /* HPPLE */,
 			);
 			name = Libraries;
-			sourceTree = "<group>";
-		};
-		9CA5D7581763C99D0009098E /* HPPLE */ = {
-			isa = PBXGroup;
-			children = (
-				9CA5D7591763C9C10009098E /* TFHpple.h */,
-				9CA5D75A1763C9C10009098E /* TFHpple.m */,
-				9CA5D75B1763C9C10009098E /* TFHppleElement.h */,
-				9CA5D75C1763C9C10009098E /* TFHppleElement.m */,
-				9CA5D75F1763C9CF0009098E /* XPathQuery.h */,
-				9CA5D7601763C9CF0009098E /* XPathQuery.m */,
-			);
-			name = HPPLE;
 			sourceTree = "<group>";
 		};
 		9CA5D7731764C5760009098E /* ProviderExamples */ = {
@@ -416,9 +391,6 @@
 				9CA5D73C176294A30009098E /* ProviderViewController.m in Sources */,
 				9CA5D74A1762AC170009098E /* ProviderCollectionViewCell.m in Sources */,
 				9CA5D7561763BFFF0009098E /* WebViewController.m in Sources */,
-				9CA5D75D1763C9C10009098E /* TFHpple.m in Sources */,
-				9CA5D75E1763C9C10009098E /* TFHppleElement.m in Sources */,
-				9CA5D7611763C9CF0009098E /* XPathQuery.m in Sources */,
 				9CA5D7691763E32F0009098E /* InformationViewController.m in Sources */,
 				9CA5D76C1763E34D0009098E /* NewProductViewController.m in Sources */,
 				9CA5D7721764BF650009098E /* Provider.m in Sources */,

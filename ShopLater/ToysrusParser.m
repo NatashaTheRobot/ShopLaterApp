@@ -7,7 +7,7 @@
 //
 
 #import "ToysrusParser.h"
-#import "TFHpple.h"
+#import "Parser.h"
 #import "Price.h"
 #import "Image+SLExtensions.h"
 #import "CoreDataManager.h"
@@ -15,7 +15,7 @@
 
 @interface ToysrusParser ()
 
-@property (strong, nonatomic) TFHpple *hpple;
+@property (strong, nonatomic) NSString *htmlString;
 @property (strong, nonatomic) CoreDataManager *coreDataManager;
 
 @property (strong, nonatomic) NSString *name;
@@ -45,8 +45,8 @@
     
     NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"http://www.toysrus.com/product/index.jsp?productId=%@", productId]];
     NSData *data = [NSData dataWithContentsOfURL:url];
-    
-    parser.hpple = [TFHpple hppleWithHTMLData:data];
+    parser.htmlString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+
     parser.coreDataManager = [CoreDataManager sharedManager];
     
     return parser;
@@ -69,42 +69,22 @@
 
 # pragma mark - Property Delegate Methods
 
-- (NSString *)productName
-{
-    if (!self.name) {
-        
-        NSString *namesPath = @"//div[@id='wrapper']/div[@id='container']/div[@id='productPanel']/div[@id='rightSide']/div[@id='priceReviewAge']/h1";
-        NSArray *namesArray = [self.hpple searchWithXPathQuery:namesPath];
-        self.name = [[namesArray[0] firstChild] content];
-    }
-    
-    return self.name;
-}
-
-- (NSString *)productSummary
-{
-    if (!self.summary) {
-        NSString *summariesPath = @"//div[@id='wrapper']/div[@id='container']/div[@id='infoPanel']/dl[@id='tabset_productPage']/dd/p";
-        NSArray *summariesArray = [self.hpple searchWithXPathQuery:summariesPath];
-        NSString *summary = [summariesArray[0] valueForKeyPath:@"raw"];
-        NSRange rangeString;
-        while ((rangeString = [summary rangeOfString:@"<[^>]+>" options:NSRegularExpressionSearch]).location != NSNotFound)
-            summary = [summary stringByReplacingCharactersInRange:rangeString withString:@" "];
-        
-        summary = [summary stringByReplacingOccurrencesOfString:@"Product Description" withString:@""];
-        self.summary = [summary stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
-    }
-    return self.summary;
-}
-
 - (Price *)productPrice
 {
+   
     if (!self.price) {
         
-        NSString *pricesPath = @"//div[@id='wrapper']/div[@id='container']/div[@id='productPanel']/div[@id='rightSide']/div[@id='buyFind']/div[@id='buyWrapper']/div[@id='buyInterior']/div[@id='price']/ul/li[@class='retail']/span";
-        NSArray *pricesArray = [self.hpple searchWithXPathQuery:pricesPath];
-        NSString *priceText = [[pricesArray[0] firstChild] content];
-        NSNumber *priceInDollars = [NSNumber numberWithFloat:[[priceText substringFromIndex:1] floatValue]];
+        NSString *startTag = @"<li class=\"retail\">";
+        NSString *endTag = @"</li>";
+        
+        NSString *priceStringUnformatted = [Parser scanString:self.htmlString startTag:startTag endTag:endTag];
+
+        startTag = @"&#036;";
+        endTag = @"</span>";
+        
+        NSString *priceString = [Parser scanString:priceStringUnformatted startTag:startTag endTag:endTag];
+        
+        NSNumber *priceInDollars = [NSNumber numberWithFloat:[priceString floatValue]];
         
         NSDictionary *priceDictionary = [NSDictionary dictionaryWithObjectsAndKeys:
                                          priceInDollars, @"dollarAmount",
@@ -118,18 +98,68 @@
     return self.price;
 }
 
+
+- (NSString *)productName
+{
+    
+    if (!self.name) {
+                
+        NSString *startTag = @"<div id=\"priceReviewAge\">";
+        NSString *endTag = @"<h3>";
+        
+        NSString *nameStringUnformatted = [Parser scanString:self.htmlString startTag:startTag endTag:endTag];
+        
+        startTag = @"<h1>";
+        endTag = @"</h1>";
+
+        self.name = [Parser scanString:nameStringUnformatted startTag:startTag endTag:endTag];
+    }
+    
+    return self.name;
+}
+
+- (NSString *)productSummary
+{
+    if (!self.summary) {
+        
+        NSString *startTag = @"<label>Product Description</label>";
+        NSString *endTag = @"<p>";
+        
+        NSString *descriptionStringUnformatted = [Parser scanString:self.htmlString startTag:startTag endTag:endTag];
+        
+        startTag = @"<br />";
+        endTag = @"<br />";
+        
+        self.summary = [Parser scanString:descriptionStringUnformatted startTag:startTag endTag:endTag];
+        
+    }
+    return self.summary;
+}
+
+
+
 - (Image *)productImage
 {
     if (!self.image) {
         
-        NSString *imagesPath = @"//div[@id='wrapper']/div[@id='container']/div[@id='productPanel']/div[@id='leftSide']/div[@id='productView']";
-        NSArray *imagesArray = [self.hpple searchWithXPathQuery:imagesPath];
-        NSString *imageURLText = [[[imagesArray[0] childrenArray] valueForKeyPath:@"nodeChildArray.nodeChildArray.nodeChildArray.nodeAttributeArray"][1][1][1][0][0] valueForKey:@"nodeContent"];
+        NSString *startTag = @"dtmTag.dtmc_prod_img =";
+        NSString *endTag = @";";
         
-        NSString *imageFileName = [Image imageFileNameForURL:[NSURL URLWithString:imageURLText]];
+        NSString *imageStringUnformatted = [Parser scanString:self.htmlString startTag:startTag endTag:endTag];
+
+        startTag = @"\"";
+        endTag = @"\"";
+        
+        NSString *imageString = [Parser scanString:imageStringUnformatted startTag:startTag endTag:endTag];
+        
+        NSString *urlString = [NSString stringWithFormat:@"http://toysrus.com%@", imageString];
+        
+        NSURL *urlImage = [NSURL URLWithString:urlString];
+        
+        NSString *imageFileName = [Image imageFileNameForURL:urlImage];
         
         NSDictionary *imageDictionary = [NSDictionary dictionaryWithObjectsAndKeys:imageFileName, @"fileName",
-                               [NSString stringWithFormat:@"http://toysrus.com%@", imageURLText], @"externalURLString",
+                               urlString, @"externalURLString",
                                                                                     nil];
         self.image = [self.coreDataManager createEntityWithClassName:NSStringFromClass([Image class]) atributesDictionary:imageDictionary];
         

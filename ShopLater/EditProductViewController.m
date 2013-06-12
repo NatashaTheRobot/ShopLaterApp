@@ -40,8 +40,9 @@
 {
     self.imageView.image = [self.product image];
     self.titleTextField.placeholder = self.product.name;
-    self.wishPriceLabel.text = [self.product formattedPriceWithType:sPriceTypeWish];
     self.summaryTextView.text = self.product.summary;
+    
+    self.wishPriceLabel.text = [self.product formattedPriceWithType:sPriceTypeWish];
     self.priceSlider.maximumValue = [[self.product priceWithType:sPriceTypeCurrent].dollarAmount floatValue];
     self.priceSlider.value = [[self.product priceWithType:sPriceTypeWish].dollarAmount floatValue];
 }
@@ -54,7 +55,15 @@
 
 - (IBAction)saveWithButton:(id)sender
 {
+    self.product.name = self.titleTextField.text;
+    self.product.summary = self.summaryTextView.text;
     
+    Price *wishPrice = [self.product priceWithType:sPriceTypeWish];
+    wishPrice.dollarAmount = [NSNumber numberWithFloat:self.priceSlider.value];
+    
+    [self dismissViewControllerAnimated:YES completion:^{
+        [self.delegate reloadProductDetails];
+    }];
 }
 
 - (IBAction)cancelWithButton:(id)sender

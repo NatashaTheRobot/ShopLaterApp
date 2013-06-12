@@ -124,15 +124,6 @@ static CoreDataManager *coreDataManager;
     return entity;
 }
 
-- (id)updateEntity:(NSManagedObject *)entity updateAttributesDictionary:(NSDictionary *)updateAttributesDictionary
-{
-    [updateAttributesDictionary enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
-        [entity setValue:obj forKey:key];
-    }];
-    
-    return entity;
-}
-
 - (void)deleteEntity:(NSManagedObject *)entity
 {
     [self.managedObjectContext deleteObject:entity];

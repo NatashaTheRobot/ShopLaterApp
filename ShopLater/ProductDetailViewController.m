@@ -19,17 +19,32 @@
 @property (weak, nonatomic) IBOutlet UILabel *wishPriceLabel;
 @property (weak, nonatomic) IBOutlet UITextView *summaryTextView;
 
+@property (strong, nonatomic) CoreDataManager *coreDataManager;
+
 - (void)displayProductDetails;
+- (void)showAlertView;
 
 @end
 
 @implementation ProductDetailViewController
 
+- (id)initWithCoder:(NSCoder *)aDecoder
+{
+    self = [super initWithCoder:aDecoder];
+    
+    if (self) {
+        self.coreDataManager = [CoreDataManager sharedManager];
+    }
+    
+    return self;
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
+    
     [self displayProductDetails];
+
 }
 
 - (void)displayProductDetails
@@ -50,27 +65,28 @@
     }
 }
 
-- (void)reloadProductDetailData
+#pragma mark - Product Detail Delegate Methods
+- (void)reloadProductDetails
 {
-    
+    [self.coreDataManager saveDataInManagedContextUsingBlock:^(BOOL saved, NSError *error) {
+        if (saved) {
+            [self displayProductDetails];
+            [self.delegate reloadProductData];
+        } else {
+            [self showAlertView];
+        }
+    }];
 }
 
 - (void)deleteProduct
 {
-    CoreDataManager *coreDataManager = [CoreDataManager sharedManager];
-    [coreDataManager deleteEntity:self.product];
-    [coreDataManager saveDataInManagedContextUsingBlock:^(BOOL saved, NSError *error) {
+    [self.coreDataManager deleteEntity:self.product];
+    [self.coreDataManager saveDataInManagedContextUsingBlock:^(BOOL saved, NSError *error) {
         if (!error) {
             [self.navigationController popToRootViewControllerAnimated:YES];
             [self.delegate reloadProductData];
         } else {
-            UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@""
-                                                                message:@"We're sorry, something went wrong :("
-                                                               delegate:self
-                                                      cancelButtonTitle:@"Ok"
-                                                      otherButtonTitles:nil, nil];
-            
-            [alertView show];
+            [self showAlertView];
         }
     }];
 
@@ -78,6 +94,16 @@
     [self.navigationController popToRootViewControllerAnimated:YES];
 }
 
+- (void)showAlertView
+{
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@""
+                                                        message:@"We're sorry, something went wrong :("
+                                                       delegate:self
+                                              cancelButtonTitle:@"Ok"
+                                              otherButtonTitles:nil, nil];
+    
+    [alertView show];
+}
 
 - (void)didReceiveMemoryWarning
 {

@@ -7,10 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
+@class Product;
 
 @protocol ProductDetailDelegate <NSObject>
 
-- (void)reloadProductDetailData;
+- (void)reloadProductDetails;
 - (void)deleteProduct;
 
 @end

@@ -14,11 +14,13 @@
 
 @interface ProductDetailViewController ()
 
+@property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 @property (weak, nonatomic) IBOutlet UILabel *productNameLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
 @property (weak, nonatomic) IBOutlet UILabel *currentPriceLabel;
 @property (weak, nonatomic) IBOutlet UILabel *wishPriceLabel;
-@property (weak, nonatomic) IBOutlet UITextView *summaryTextView;
+@property (strong, nonatomic) UITextView *textView;
+@property (weak, nonatomic) IBOutlet UIButton *buyButton;
 
 @property (strong, nonatomic) CoreDataManager *coreDataManager;
 
@@ -44,7 +46,28 @@
 {
     [super viewDidLoad];
     
+    
+    
+    CGSize size = [self.product.summary sizeWithFont:[UIFont systemFontOfSize:18]
+                  constrainedToSize:CGSizeMake(100, 2000)
+                      lineBreakMode:NSLineBreakByCharWrapping];
+    
+    
+    self.textView = [[UITextView alloc] initWithFrame:CGRectMake(self.buyButton.frame.origin.x
+                                                                 , self.buyButton.frame.origin.y + 50, self.view.frame.size.width - 75, size.height + 10)];
+    
+    CGSize scrollViewSize = CGSizeMake(self.view.frame.size.width, self.view.frame.size.height + (self.textView.frame.size.height/10));
+    
+    [self.scrollView addSubview:self.textView];
+    self.scrollView.contentSize = scrollViewSize;
+    self.scrollView.scrollEnabled = YES;
+    
     [self displayProductDetails];
+    
+    
+
+    
+    
 
 }
 
@@ -54,7 +77,7 @@
     self.imageView.image = [self.product image];
     self.currentPriceLabel.text = [self.product formattedPriceWithType:sPriceTypeCurrent];
     self.wishPriceLabel.text = [self.product formattedPriceWithType:sPriceTypeWish];
-    self.summaryTextView.text = self.product.summary;
+    self.textView.text = self.product.summary;
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender

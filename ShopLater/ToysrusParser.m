@@ -7,6 +7,7 @@
 //
 
 #import "ToysrusParser.h"
+#import "Parser.h"
 #import "Price.h"
 #import "Image+SLExtensions.h"
 #import "CoreDataManager.h"
@@ -63,6 +64,20 @@
     return nil;
 }
 
+- (NSString *)scanString:(NSString *)string startTag:(NSString *)startTag endTag:(NSString *)endTag
+{
+    NSString* scanString = @"";
+    
+    NSScanner* scanner = [[NSScanner alloc] initWithString:string];
+    
+    [scanner scanUpToString:startTag intoString:nil];
+    scanner.scanLocation += [startTag length];
+    [scanner scanUpToString:endTag intoString:&scanString];
+    
+    return scanString;
+    
+}
+
 # pragma mark - Property Delegate Methods
 
 - (Price *)productPrice
@@ -70,29 +85,15 @@
    
     if (!self.price) {
         
-        NSScanner *scanner = [[NSScanner alloc] initWithString:self.htmlString];
-        
-        scanner.scanLocation = 0;
-        
         NSString *startTag = @"<li class=\"retail\">";
         NSString *endTag = @"</li>";
         
-        NSString *priceString = nil;
-        
-        
-        [scanner scanUpToString:startTag intoString:nil];
-        scanner.scanLocation += [startTag length];
-        [scanner scanUpToString:endTag intoString:&priceString];
-        
-        
-        scanner = [[NSScanner alloc] initWithString:priceString];
+        NSString *priceStringUnformatted = [Parser scanString:self.htmlString startTag:startTag endTag:endTag];
+
         startTag = @"&#036;";
         endTag = @"</span>";
         
-        [scanner scanUpToString:startTag intoString:nil];
-        scanner.scanLocation += [startTag length];
-        [scanner scanUpToString:endTag intoString:&priceString];
-  
+        NSString *priceString = [Parser scanString:priceStringUnformatted startTag:startTag endTag:endTag];
         
         NSNumber *priceInDollars = [NSNumber numberWithFloat:[priceString floatValue]];
         
@@ -113,31 +114,16 @@
 {
     
     if (!self.name) {
-        
-        NSScanner *scanner = [[NSScanner alloc] initWithString:self.htmlString];
                 
         NSString *startTag = @"<div id=\"priceReviewAge\">";
         NSString *endTag = @"<h3>";
         
-        NSString *nameString = nil;
-        
-        
-        [scanner scanUpToString:startTag intoString:nil];
-        scanner.scanLocation += [startTag length];
-        [scanner scanUpToString:endTag intoString:&nameString
-         ];
-        
-        
-        scanner = [[NSScanner alloc] initWithString:nameString];
+        NSString *nameStringUnformatted = [Parser scanString:self.htmlString startTag:startTag endTag:endTag];
         
         startTag = @"<h1>";
         endTag = @"</h1>";
-        
-        [scanner scanUpToString:startTag intoString:&nameString];
-        scanner.scanLocation += [startTag length];
-        [scanner scanUpToString:endTag intoString:&nameString];
-        
-        self.name = nameString;
+
+        self.name = [Parser scanString:nameStringUnformatted startTag:startTag endTag:endTag];
     }
     
     return self.name;
@@ -147,31 +133,15 @@
 {
     if (!self.summary) {
         
-        NSScanner *scanner = [[NSScanner alloc] initWithString:self.htmlString];
-        
         NSString *startTag = @"<label>Product Description</label>";
         NSString *endTag = @"<p>";
         
-        NSString *descriptionString = nil;
-        
-        
-        [scanner scanUpToString:startTag intoString:nil];
-        scanner.scanLocation += [startTag length];
-        [scanner scanUpToString:endTag intoString:&descriptionString
-         ];
-        
+        NSString *descriptionStringUnformatted = [Parser scanString:self.htmlString startTag:startTag endTag:endTag];
         
         startTag = @"<br />";
         endTag = @"<br />";
         
-        scanner = [[NSScanner alloc] initWithString:descriptionString];
-        [scanner scanUpToString:startTag intoString:nil];
-        scanner.scanLocation += [startTag length];
-        [scanner scanUpToString:endTag intoString:&descriptionString
-         ];
-        
-        self.summary = descriptionString;
-        
+        self.summary = [Parser scanString:descriptionStringUnformatted startTag:startTag endTag:endTag];
         
     }
     return self.summary;
@@ -182,36 +152,20 @@
 - (Image *)productImage
 {
     if (!self.image) {
-                
-        NSScanner *scanner = [[NSScanner alloc] initWithString:self.htmlString];
         
         NSString *startTag = @"dtmTag.dtmc_prod_img =";
         NSString *endTag = @";";
         
-        NSString *imageString = nil;
+        NSString *imageStringUnformatted = [Parser scanString:self.htmlString startTag:startTag endTag:endTag];
 
-        
-        [scanner scanUpToString:startTag intoString:nil];
-        scanner.scanLocation += [startTag length];
-        [scanner scanUpToString:endTag intoString:&imageString
-         ];
-        
-        scanner = [[NSScanner alloc] initWithString:imageString];
         startTag = @"\"";
         endTag = @"\"";
         
-        [scanner scanUpToString:startTag intoString:nil];
-        scanner.scanLocation += [startTag length];
-        [scanner scanUpToString:endTag intoString:&imageString
-         ];
-        
-        NSLog(@"%@", imageString);
+        NSString *imageString = [Parser scanString:imageStringUnformatted startTag:startTag endTag:endTag];
         
         NSString *urlString = [NSString stringWithFormat:@"http://toysrus.com%@", imageString];
         
         NSURL *urlImage = [NSURL URLWithString:urlString];
-        
-    
         
         NSString *imageFileName = [Image imageFileNameForURL:urlImage];
         

@@ -12,6 +12,7 @@
 #import "AFHTTPClient.h"
 #import "AFHTTPRequestOperation.h"
 #import "Constants.h"
+#import "CoreDataManager.h"
 
 @implementation Product (SLExtensions)
 
@@ -36,8 +37,9 @@
 {
     AFHTTPClient *httpClient = [[AFHTTPClient alloc] initWithBaseURL:[NSURL URLWithString:sAPIBaseURL]];
     
-    NSDictionary *parameters = [NSDictionary dictionaryWithObjects:@[sAPIKey, sAPISecret, self.url, self.provider.name]
-                                                           forKeys:@[@"api_key", @"api_secret", @"url", @"provider"]];
+    NSString *wishPrice = [NSString stringWithFormat:@"%@", [self priceWithType:sPriceTypeWish].dollarAmount ];
+    NSDictionary *parameters = [NSDictionary dictionaryWithObjects:@[sAPIKey, sAPISecret, self.url, self.provider.name, wishPrice]
+                                                           forKeys:@[@"api_key", @"api_secret", @"url", @"provider", @"wish_price"]];
        
     NSMutableURLRequest *request = [httpClient multipartFormRequestWithMethod:@"POST"
                                                                          path:@"/products"
@@ -49,7 +51,9 @@
     AFHTTPRequestOperation *requestOperation = [[AFHTTPRequestOperation alloc] initWithRequest:request];
     
     [requestOperation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
-        NSLog(@"SUCCESS! %@", responseObject);
+        NSDictionary *productResponse = [NSJSONSerialization JSONObjectWithData:responseObject options:0 error:nil];
+        self.externalId = productResponse[@"id"];
+        [[CoreDataManager sharedManager] saveDataInManagedContextUsingBlock:^(BOOL saved, NSError *error) {}];
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"FAILURE %@", error.description);
     }];

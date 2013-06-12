@@ -92,7 +92,6 @@
         self.coreDataManager = [CoreDataManager sharedManager];
         self.product = [self.coreDataManager createEntityWithClassName:NSStringFromClass([Product class])
                                                               atributesDictionary:productDictionary];
-        [self.product postToAPI];
     });
     
 }
@@ -118,6 +117,9 @@
             self.delegate = (ProductsListViewController *)self.navigationController.viewControllers[0];
             [self.navigationController popToRootViewControllerAnimated:YES];
             [self.delegate reloadProductData];
+            dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{
+                [self.product postToAPI];
+            });
         } else {
             NSLog(@"%@", error.description);
             // show alert view?

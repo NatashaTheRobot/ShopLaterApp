@@ -8,9 +8,11 @@
 
 #import <UIKit/UIKit.h>
 #import "Provider.h"
+#import "Product.h"
 
 @interface WebViewController : UIViewController
 
 @property (strong, nonatomic) Provider *provider;
+@property (strong, nonatomic) Product *product;
 
 @end

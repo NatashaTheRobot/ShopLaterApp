@@ -27,8 +27,10 @@
     [super viewDidLoad];
     
     [self.activityIndicator startAnimating];
+
+    NSString *urlString = self.product ? self.product.url : self.provider.url;
     
-    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:self.provider.url]];
+    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:urlString]];
     
     [self.webView loadRequest:request];
 }

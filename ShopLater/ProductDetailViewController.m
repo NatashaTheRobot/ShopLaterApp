@@ -10,6 +10,7 @@
 #import "Constants.h"
 #import "EditProductViewController.h"
 #import "CoreDataManager.h"
+#import "WebViewController.h"
 
 @interface ProductDetailViewController ()
 
@@ -62,6 +63,10 @@
         EditProductViewController *editViewController = (EditProductViewController *)segue.destinationViewController;
         editViewController.product = self.product;
         editViewController.delegate = self;
+    } else if ([segue.destinationViewController isKindOfClass:[WebViewController class]]) {
+        WebViewController *webViewController = (WebViewController *)segue.destinationViewController;
+        webViewController.product = self.product;
+        webViewController.provider = self.product.provider;
     }
 }
 

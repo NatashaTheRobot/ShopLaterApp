@@ -132,6 +132,20 @@
         
         self.summary = [Parser scanString:descriptionStringUnformatted startTag:startTag endTag:endTag];
         
+        /*
+         
+         Regex to remove nasty html tags and artifacts from product description, add as needed :
+         
+         || range = [self.summary rangeOfString:@"ENTER_NASTY_TAG_HERE" options:NSRegularExpressionSearch]).location != NSNotFound
+         
+         */
+        
+        NSRange range;
+        while ((range = [self.summary rangeOfString:@"<[^>]+>" options:NSRegularExpressionSearch]).location != NSNotFound || (range = [self.summary rangeOfString:@"&reg" options:NSRegularExpressionSearch]).location != NSNotFound) {
+            self.summary = [self.summary stringByReplacingCharactersInRange:range withString:@""];
+        }
+    
+        
     }
     return self.summary;
 }

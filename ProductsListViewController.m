@@ -103,7 +103,7 @@
     ProductTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:sProductCellIdentifier forIndexPath:indexPath];
     
     if (!cell) {
-        cell = [[ProductTableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:sProductCellIdentifier];
+        cell = [[ProductTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:sProductCellIdentifier];
     }
     
     Product *product = [self.fetchedResultsController objectAtIndexPath:indexPath];

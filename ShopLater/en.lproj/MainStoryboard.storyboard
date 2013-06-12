@@ -38,11 +38,11 @@
                                 </view>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </tableViewCell>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="product" rowHeight="295" id="K2X-fm-zQF" customClass="ProductTableViewCell">
-                                <rect key="frame" x="0.0" y="72" width="320" height="295"/>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="product" rowHeight="315" id="K2X-fm-zQF" customClass="ProductTableViewCell">
+                                <rect key="frame" x="0.0" y="72" width="320" height="315"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="294"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="314"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fdg-Sn-8yK">
@@ -74,6 +74,9 @@
                                             <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </label>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="rpj-Hh-ReV">
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="46" id="mgK-mN-IW9"/>
+                                            </constraints>
                                             <attributedString key="attributedText">
                                                 <fragment content="Product Name">
                                                     <attributes>
@@ -93,16 +96,16 @@
                                     <constraint firstAttribute="trailing" secondItem="ff4-rv-cXA" secondAttribute="trailing" constant="20" type="default" id="9CF-Lp-x6T"/>
                                     <constraint firstItem="Xds-GG-aCd" firstAttribute="leading" secondItem="K2X-fm-zQF" secondAttribute="leading" constant="20" type="default" id="9ee-Yf-OJC"/>
                                     <constraint firstItem="g9D-bL-LMd" firstAttribute="top" secondItem="Xds-GG-aCd" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="MQ1-36-FBS"/>
-                                    <constraint firstItem="rpj-Hh-ReV" firstAttribute="top" secondItem="K2X-fm-zQF" secondAttribute="top" constant="6" id="OcN-5o-DIG"/>
                                     <constraint firstItem="ff4-rv-cXA" firstAttribute="leading" secondItem="G7X-oc-wP1" secondAttribute="leading" type="default" id="PkN-jd-Fcm"/>
                                     <constraint firstAttribute="bottom" secondItem="g9D-bL-LMd" secondAttribute="bottom" constant="17" id="RGV-Sf-C6q"/>
                                     <constraint firstItem="G7X-oc-wP1" firstAttribute="baseline" secondItem="Xds-GG-aCd" secondAttribute="baseline" type="default" id="Sq8-4p-j1F"/>
                                     <constraint firstItem="Fdg-Sn-8yK" firstAttribute="trailing" secondItem="K2X-fm-zQF" secondAttribute="trailing" type="default" id="Tlw-rr-0Mb"/>
                                     <constraint firstItem="Fdg-Sn-8yK" firstAttribute="leading" secondItem="K2X-fm-zQF" secondAttribute="leading" type="default" id="Uea-bZ-OLb"/>
                                     <constraint firstItem="rpj-Hh-ReV" firstAttribute="leading" secondItem="K2X-fm-zQF" secondAttribute="leading" constant="20" type="default" id="Wx0-es-7UO"/>
-                                    <constraint firstItem="Fdg-Sn-8yK" firstAttribute="top" secondItem="rpj-Hh-ReV" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="Ymq-TE-h4m"/>
+                                    <constraint firstItem="rpj-Hh-ReV" firstAttribute="top" secondItem="K2X-fm-zQF" secondAttribute="top" constant="9" id="bSP-ct-3R2"/>
                                     <constraint firstItem="ff4-rv-cXA" firstAttribute="baseline" secondItem="g9D-bL-LMd" secondAttribute="baseline" type="default" id="cOR-r7-jWv"/>
                                     <constraint firstAttribute="trailing" secondItem="G7X-oc-wP1" secondAttribute="trailing" constant="20" type="default" id="qm6-T1-HXg"/>
+                                    <constraint firstItem="Fdg-Sn-8yK" firstAttribute="top" secondItem="rpj-Hh-ReV" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="rAV-Xv-9kv"/>
                                     <constraint firstAttribute="trailing" secondItem="rpj-Hh-ReV" secondAttribute="trailing" constant="20" type="default" id="rvQ-Ih-v5X"/>
                                 </constraints>
                                 <connections>

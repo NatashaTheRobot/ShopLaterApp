@@ -14,14 +14,16 @@
 
 @interface ProductDetailViewController ()
 
+@property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 @property (weak, nonatomic) IBOutlet UILabel *productNameLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
 @property (weak, nonatomic) IBOutlet UILabel *currentPriceLabel;
 @property (weak, nonatomic) IBOutlet UILabel *wishPriceLabel;
-@property (weak, nonatomic) IBOutlet UITextView *summaryTextView;
-
+@property (strong, nonatomic) UITextView *summaryTextView;
+@property (weak, nonatomic) IBOutlet UIButton *buyButton;
 @property (strong, nonatomic) CoreDataManager *coreDataManager;
 
+- (void)makeSummaryTextView;
 - (void)displayProductDetails;
 - (void)showAlertView;
 
@@ -44,9 +46,28 @@
 {
     [super viewDidLoad];
     
+    [self makeSummaryTextView];
+    
     [self displayProductDetails];
-
+    
 }
+
+- (void)makeSummaryTextView
+{    
+    CGSize size = [self.product.summary sizeWithFont:[UIFont systemFontOfSize:18]
+                                   constrainedToSize:CGSizeMake(100, 2000)
+                                       lineBreakMode:NSLineBreakByCharWrapping];
+    
+    self.summaryTextView = [[UITextView alloc] initWithFrame:CGRectMake(self.buyButton.frame.origin.x
+                                                                        , self.buyButton.frame.origin.y + 50, self.view.frame.size.width - 75, size.height + 10)];
+    
+    CGSize scrollViewSize = CGSizeMake(self.view.frame.size.width, self.view.frame.size.height + (self.summaryTextView.frame.size.height/10));
+    
+    [self.scrollView addSubview:self.summaryTextView];
+    self.scrollView.contentSize = scrollViewSize;
+    
+}
+
 
 - (void)displayProductDetails
 {

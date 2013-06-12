@@ -14,7 +14,7 @@
 
 @interface ProductDetailViewController ()
 
-@property (weak, nonatomic) IBOutlet UITextView *productNameTextView;
+@property (weak, nonatomic) IBOutlet UILabel *productNameLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
 @property (weak, nonatomic) IBOutlet UILabel *currentPriceLabel;
 @property (weak, nonatomic) IBOutlet UILabel *wishPriceLabel;
@@ -50,7 +50,7 @@
 
 - (void)displayProductDetails
 {
-    self.productNameTextView.text = self.product.name;
+    self.productNameLabel.text = self.product.name;
     self.imageView.image = [self.product image];
     self.currentPriceLabel.text = [self.product formattedPriceWithType:sPriceTypeCurrent];
     self.wishPriceLabel.text = [self.product formattedPriceWithType:sPriceTypeWish];

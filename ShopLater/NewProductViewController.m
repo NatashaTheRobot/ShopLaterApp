@@ -17,7 +17,8 @@
 
 @interface NewProductViewController ()
 
-@property (weak, nonatomic) IBOutlet UITextView *productTitleTextView;
+
+@property (weak, nonatomic) IBOutlet UILabel *productNameLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
 @property (weak, nonatomic) IBOutlet UISlider *priceSlider;
 @property (weak, nonatomic) IBOutlet UILabel *currentPriceLabel;
@@ -56,7 +57,7 @@
     
     dispatch_async(dispatch_get_main_queue(), ^{
         NSNumber *priceInDollars = [(Price *)[self.parser.delegate productPrice] dollarAmount];
-        self.productTitleTextView.text = [self.parser.delegate productName];
+        self.productNameLabel.text = [self.parser.delegate productName];
         self.currentPriceLabel.text = [NSString stringWithFormat:@"$%@", priceInDollars];
         self.priceSlider.maximumValue = [priceInDollars floatValue];
         self.priceSlider.value = [priceInDollars floatValue] * 0.8;

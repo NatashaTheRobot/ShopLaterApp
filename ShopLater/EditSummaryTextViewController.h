@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "EditDelegate.h"
 
-@interface EditViewController : UIViewController
+@interface EditSummaryTextViewController : UIViewController
 
 @property (strong, nonatomic) NSString *currentTextViewString;
 @property (strong, nonatomic) id <EditDelegate> delegate;

@@ -6,9 +6,9 @@
 //  Copyright (c) 2013 Natasha Murashev. All rights reserved.
 //
 
-#import "EditViewController.h"
+#import "EditSummaryTextViewController.h"
 
-@interface EditViewController ()
+@interface EditSummaryTextViewController  ()
 
 @property (weak, nonatomic) IBOutlet UITextView *textView;
 
@@ -17,7 +17,7 @@
 
 @end
 
-@implementation EditViewController
+@implementation EditSummaryTextViewController
 
 - (void)viewDidLoad
 {

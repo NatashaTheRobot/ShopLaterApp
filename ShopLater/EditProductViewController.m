@@ -9,6 +9,7 @@
 #import "EditProductViewController.h"
 #import "Constants.h"
 #import "Price+SLExtensions.h"
+#import "EditSummaryTextViewController.h"
 
 @interface EditProductViewController ()
 
@@ -107,6 +108,7 @@
     
     Price *wishPrice = [self.product priceWithType:sPriceTypeWish];
     wishPrice.dollarAmount = [NSNumber numberWithFloat:self.priceSlider.value];
+    self.product.priceDifference = [self.product currentWishPriceDifference];
     
     [self dismissViewControllerAnimated:YES completion:^{
         [self.delegate reloadProductDetails];
@@ -127,13 +129,13 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     
-    if ([segue.destinationViewController isKindOfClass:[EditViewController class]]) {
+    if ([segue.destinationViewController isKindOfClass:[EditSummaryTextViewController class]]) {
         
-        EditViewController *editViewController = segue.destinationViewController;
+        EditSummaryTextViewController *editSummaryTextViewController = segue.destinationViewController;
         
-        editViewController.delegate = self;
+        editSummaryTextViewController.delegate = self;
         
-        editViewController.currentTextViewString = self.summaryTextView.text;
+        editSummaryTextViewController.currentTextViewString = self.summaryTextView.text;
         
     }
 }

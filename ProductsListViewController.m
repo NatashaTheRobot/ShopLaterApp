@@ -58,15 +58,14 @@
             Parser *parser = [Parser parserWithProviderName:product.provider.name productURLString:product.mobileURL];
             Price *currentPrice = [product priceWithType:sPriceTypeCurrent];
             currentPrice.dollarAmount = [parser.delegate priceInDollars];
+            product.priceDifference = [product currentWishPriceDifference];
+            [self.tableView reloadRowsAtIndexPaths:@[[self.fetchedResultsController indexPathForObject:product]] withRowAnimation:YES];
         }];
         [self.coreDataManager saveDataInManagedContextUsingBlock:^(BOOL saved, NSError *error) {
             if (saved) {
-                dispatch_async(dispatch_get_main_queue(), ^{
-                    [self.refreshControl endRefreshing];
-                    [self reloadProductData];
-                });
-            } else {
                 [self.refreshControl endRefreshing];
+            } else {
+                NSLog(@"NOT SAVED");
             }
         }];
     });
@@ -148,7 +147,7 @@
     cell.wishPrice = [product formattedPriceWithType:sPriceTypeWish];
     cell.provider = product.provider;
     
-    if ([product.priceDifference floatValue] <= 0) {
+    if ([product.priceDifference floatValue] <= 0.0) {
         cell.layer.borderColor = [[UIColor redColor] CGColor];
         cell.layer.borderWidth = 1.0f;
     }

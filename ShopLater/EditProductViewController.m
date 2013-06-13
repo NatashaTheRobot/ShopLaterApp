@@ -103,6 +103,8 @@
     
 }
 
+#pragma mark - Button methods
+
 - (void)deleteWithButton
 {
     [self dismissViewControllerAnimated:NO completion:^{
@@ -110,7 +112,6 @@
     }];
 }
 
-#pragma mark -Button methods
 - (IBAction)saveWithButton:(id)sender
 {
     self.product.name = self.titleTextField.text;

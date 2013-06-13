@@ -15,7 +15,6 @@
 #import "Image+SLExtensions.h"
 #import "Price+SLExtensions.h"
 #import "Provider+SLExtensions.h"
-#import "SectionHeaderCell.h"
 #import <QuartzCore/QuartzCore.h>
 #import "ProductDetailViewController.h"
 
@@ -54,7 +53,7 @@
     
     self.fetchedResultsController = [self.coreDataManager fetchEntitiesWithClassName:NSStringFromClass([Product class])
                                                                      sortDescriptors:sortDescriptors
-                                                                  sectionNameKeyPath:@"provider.name"];
+                                                                  sectionNameKeyPath:nil];
 
     if (self.fetchedResultsController.fetchedObjects.count == 0) {
         [self performSegueWithIdentifier:@"toProviderCollectionView" sender:self];
@@ -80,7 +79,7 @@
     NSArray *sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"createdAt" ascending:NO]];
     self.fetchedResultsController = [self.coreDataManager fetchEntitiesWithClassName:NSStringFromClass([Product class])
                                                                      sortDescriptors:sortDescriptors
-                                                                  sectionNameKeyPath:@"provider.name"];
+                                                                  sectionNameKeyPath:nil];
     [self.tableView reloadData];
     
 }
@@ -114,26 +113,6 @@
     cell.wishPrice = [product formattedPriceWithType:sPriceTypeWish];
     
     return cell;
-}
-
-- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
-{
-    SectionHeaderCell *headerCell = [tableView dequeueReusableCellWithIdentifier:sProviderCellIdentifier];
-    
-    if (!headerCell) {
-        headerCell = [[SectionHeaderCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:sProviderCellIdentifier];
-    }
-    
-    id <NSFetchedResultsSectionInfo> sectionInfo = self.fetchedResultsController.sections[section];
-    
-    headerCell.providerLogo = [UIImage imageNamed:[Provider sectionImageNameFromProviderName:sectionInfo.name]];
-    
-    return headerCell;
-}
-
-- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
-{
-    return 50;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath

@@ -28,18 +28,8 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" indentationWidth="10" reuseIdentifier="sectionHeader" rowHeight="50" id="aHP-FE-rDF" customClass="SectionHeaderCell">
-                                <rect key="frame" x="0.0" y="22" width="320" height="50"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                </view>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                            </tableViewCell>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="product" rowHeight="315" id="K2X-fm-zQF" customClass="ProductTableViewCell">
-                                <rect key="frame" x="0.0" y="72" width="320" height="315"/>
+                                <rect key="frame" x="0.0" y="22" width="320" height="315"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="314"/>
@@ -114,7 +104,7 @@
             </objects>
             <point key="canvasLocation" x="366" y="1"/>
         </scene>
-        <!--Provider View Controller - Providers-->
+        <!--Provider View Controller - Stores-->
         <scene sceneID="4me-eQ-64s">
             <objects>
                 <collectionViewController autoresizesArchivedViewToFullSize="NO" id="7iZ-Oo-cpf" customClass="ProviderViewController" sceneMemberID="viewController">
@@ -154,7 +144,7 @@
                             <outlet property="delegate" destination="7iZ-Oo-cpf" id="Lu6-mx-uK3"/>
                         </connections>
                     </collectionView>
-                    <navigationItem key="navigationItem" title="Providers" id="ICw-8k-6rr"/>
+                    <navigationItem key="navigationItem" title="Stores" id="ICw-8k-6rr"/>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="McW-Dk-NDl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -597,9 +587,6 @@
         <class className="ProviderViewController" superclassName="UICollectionViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ProviderViewController.h"/>
         </class>
-        <class className="SectionHeaderCell" superclassName="UITableViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/SectionHeaderCell.h"/>
-        </class>
         <class className="UICollectionReusableView" superclassName="UIView">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionReusableView.h"/>
         </class>
@@ -611,6 +598,9 @@
         </class>
         <class className="UICollectionViewFlowLayout" superclassName="UICollectionViewLayout">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewFlowLayout.h"/>
+        </class>
+        <class className="UICollectionViewLayout" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewLayout.h"/>
         </class>
         <class className="WebViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/WebViewController.h"/>
@@ -627,6 +617,6 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="XR8-zx-AhL"/>
+        <segue reference="vfs-XF-iee"/>
     </inferredMetricsTieBreakers>
 </document>

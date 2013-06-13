@@ -88,6 +88,8 @@
 
     if (self.fetchedResultsController.fetchedObjects.count == 0) {
         [self performSegueWithIdentifier:@"toProviderCollectionView" sender:self];
+    } else {
+        [self getUpdatedPrices];
     }
 }
 

@@ -15,13 +15,18 @@
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
 @property (weak, nonatomic) IBOutlet UITextField *titleTextField;
 @property (weak, nonatomic) IBOutlet UILabel *wishPriceLabel;
-@property (weak, nonatomic) IBOutlet UITextView *summaryTextView;
 @property (weak, nonatomic) IBOutlet UISlider *priceSlider;
+@property (weak, nonatomic) IBOutlet UIButton *deleteButton;
+@property (strong, nonatomic) IBOutlet UIScrollView *scrollView;
+@property (strong, nonatomic) UITextView *summaryTextView;
+
 
 - (IBAction)saveWithButton:(id)sender;
 - (IBAction)cancelWithButton:(id)sender;
 - (IBAction)adjustPrice:(id)sender;
 - (IBAction)deleteWithButton:(id)sender;
+- (IBAction)editDescriptionWithButton:(id)sender;
+
 
 - (void)setupEditFields;
 
@@ -32,8 +37,37 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	
+
+    [self makeSummaryTextView];
+    
     [self setupEditFields];
+    
+}
+
+- (void)makeSummaryTextView
+{
+    
+    CGSize size = [self.product.summary sizeWithFont:[UIFont systemFontOfSize:14]
+                                   constrainedToSize:CGSizeMake(100, 2000)
+                                       lineBreakMode:NSLineBreakByCharWrapping];
+    
+    self.summaryTextView = [[UITextView alloc] initWithFrame:CGRectMake(self.deleteButton.frame.origin.x, self.deleteButton.frame.origin.y + 50, self.view.frame.size.width - 100, size.height + 10)];
+    
+    
+    CGSize scrollViewSize = CGSizeMake(self.view.frame.size.width, self.view.frame.size.height + (self.summaryTextView.frame.size.height/5));
+    
+    UIFont *font = [UIFont fontWithName:@"Georgia" size:14.0];
+    
+    [self.summaryTextView setFont:font];
+    
+    self.summaryTextView.allowsEditingTextAttributes = NO;
+    self.summaryTextView.editable = NO;
+    self.summaryTextView.userInteractionEnabled = YES;
+    self.summaryTextView.multipleTouchEnabled = YES;
+    
+    [self.scrollView addSubview:self.summaryTextView];
+    self.scrollView.contentSize = scrollViewSize;
+    [self.scrollView bringSubviewToFront:self.scrollView];
 }
 
 - (void)setupEditFields
@@ -41,7 +75,6 @@
     self.imageView.image = [self.product image];
     self.titleTextField.placeholder = self.product.name;
     self.summaryTextView.text = self.product.summary;
-    
     self.wishPriceLabel.text = [self.product formattedPriceWithType:sPriceTypeWish];
     self.priceSlider.maximumValue = [[self.product priceWithType:sPriceTypeCurrent].dollarAmount floatValue];
     self.priceSlider.value = [[self.product priceWithType:sPriceTypeWish].dollarAmount floatValue];
@@ -52,6 +85,7 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
 
 - (IBAction)saveWithButton:(id)sender
 {
@@ -81,6 +115,33 @@
     [self dismissViewControllerAnimated:NO completion:^{
         [self.delegate deleteProduct];
     }];
-        
+    
 }
+
+- (IBAction)editDescriptionWithButton:(id)sender {
+    
+    [self performSegueWithIdentifier:@"toEditView" sender:self];
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"toEditView"]) {
+        
+        EdiViewController *editViewController = [segue destinationViewController];
+        
+        editViewController.editDelegate = self;
+        
+        editViewController.currentTextViewString = self.summaryTextView.text;
+        
+    }
+}
+
+#pragma mark -Edit view delegate
+-(void)updateTextViewInDetailViewController:(NSString *)withString
+{
+
+    [self.summaryTextView setText:withString];
+   
+}
+
 @end

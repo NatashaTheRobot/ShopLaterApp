@@ -9,11 +9,14 @@
 #import <UIKit/UIKit.h>
 #import "Product+SLExtensions.h"
 #import "ProductDetailDelegate.h"
+#import "EdiViewController.h"
 
-@interface EditProductViewController : UIViewController
+@interface EditProductViewController : UIViewController <UITextViewDelegate, EditDelegate>
 
 @property (strong, nonatomic) Product *product;
-
 @property (strong, nonatomic) id<ProductDetailDelegate> delegate;
+
+-(void)updateTextViewInDetailViewController:(NSString *)withString;
+
 
 @end

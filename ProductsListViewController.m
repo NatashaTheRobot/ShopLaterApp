@@ -148,6 +148,11 @@
     cell.wishPrice = [product formattedPriceWithType:sPriceTypeWish];
     cell.provider = product.provider;
     
+    if ([product.priceDifference floatValue] <= 0) {
+        cell.layer.borderColor = [[UIColor redColor] CGColor];
+        cell.layer.borderWidth = 1.0f;
+    }
+    
     return cell;
 }
 

@@ -111,6 +111,7 @@
     Price *wishPrice = [self.coreDataManager createEntityWithClassName:NSStringFromClass([Price class])
                                                    atributesDictionary:wishPriceDictionary];
     self.product.prices = [self.product.prices setByAddingObject:wishPrice];
+    self.product.priceDifference = [self.product currentWishPriceDifference];
     
     [self.coreDataManager saveDataInManagedContextUsingBlock:^(BOOL saved, NSError *error) {
         if (saved) {

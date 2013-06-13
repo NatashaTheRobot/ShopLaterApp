@@ -2,7 +2,7 @@
 //  Product.m
 //  ShopLater
 //
-//  Created by Natasha Murashev on 6/12/13.
+//  Created by Natasha Murashev on 6/13/13.
 //  Copyright (c) 2013 Natasha Murashev. All rights reserved.
 //
 
@@ -13,12 +13,13 @@
 
 @implementation Product
 
+@dynamic createdAt;
 @dynamic externalId;
+@dynamic mobileURL;
 @dynamic name;
 @dynamic summary;
 @dynamic url;
-@dynamic mobileURL;
-@dynamic createdAt;
+@dynamic priceDifference;
 @dynamic images;
 @dynamic prices;
 @dynamic provider;

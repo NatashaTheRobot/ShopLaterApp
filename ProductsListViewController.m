@@ -81,7 +81,7 @@
 
 - (void)selectViewController
 {
-    NSArray *sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"createdAt" ascending:NO]];
+    NSArray *sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:sProductSortAttribute ascending:YES]];
     
     self.fetchedResultsController = [self.coreDataManager fetchEntitiesWithClassName:NSStringFromClass([Product class])
                                                                      sortDescriptors:sortDescriptors
@@ -111,7 +111,7 @@
 
 - (void)reloadProductData
 {
-    NSArray *sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"createdAt" ascending:NO]];
+    NSArray *sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:sProductSortAttribute ascending:YES]];
     self.fetchedResultsController = [self.coreDataManager fetchEntitiesWithClassName:NSStringFromClass([Product class])
                                                                      sortDescriptors:sortDescriptors
                                                                   sectionNameKeyPath:nil];

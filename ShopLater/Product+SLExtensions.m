@@ -33,6 +33,15 @@
     return [Price formattedPriceFromNumber:price.dollarAmount];
 }
 
+- (NSNumber *)currentWishPriceDifference
+{
+    CGFloat currentPrice = [[self priceWithType:sPriceTypeCurrent].dollarAmount floatValue];
+    CGFloat wishPrice = [[self priceWithType:sPriceTypeWish].dollarAmount floatValue];
+    CGFloat priceDifference = currentPrice - wishPrice;
+    
+    return [NSNumber numberWithFloat:priceDifference];
+}
+
 - (void)postToAPI
 {
     AFHTTPClient *httpClient = [[AFHTTPClient alloc] initWithBaseURL:[NSURL URLWithString:sAPIBaseURL]];

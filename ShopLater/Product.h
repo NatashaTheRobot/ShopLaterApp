@@ -2,7 +2,7 @@
 //  Product.h
 //  ShopLater
 //
-//  Created by Natasha Murashev on 6/12/13.
+//  Created by Natasha Murashev on 6/13/13.
 //  Copyright (c) 2013 Natasha Murashev. All rights reserved.
 //
 
@@ -13,12 +13,13 @@
 
 @interface Product : NSManagedObject
 
+@property (nonatomic, retain) NSDate * createdAt;
 @property (nonatomic, retain) NSNumber * externalId;
+@property (nonatomic, retain) NSString * mobileURL;
 @property (nonatomic, retain) NSString * name;
 @property (nonatomic, retain) NSString * summary;
 @property (nonatomic, retain) NSString * url;
-@property (nonatomic, retain) NSString * mobileURL;
-@property (nonatomic, retain) NSDate * createdAt;
+@property (nonatomic, retain) NSNumber * priceDifference;
 @property (nonatomic, retain) NSSet *images;
 @property (nonatomic, retain) NSSet *prices;
 @property (nonatomic, retain) Provider *provider;

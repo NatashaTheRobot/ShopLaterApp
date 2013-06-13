@@ -38,6 +38,10 @@
     self.coreDataManager = [CoreDataManager sharedManager];
     
     [self selectViewController];
+    self.navigationController.navigationBar.tintColor = [UIColor grayColor];
+    self.navigationItem.titleView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Screenshot.png"]];
+    
+    
 
 }
 

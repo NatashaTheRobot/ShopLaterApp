@@ -16,7 +16,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *titleTextField;
 @property (weak, nonatomic) IBOutlet UILabel *wishPriceLabel;
 @property (weak, nonatomic) IBOutlet UISlider *priceSlider;
-@property (weak, nonatomic) IBOutlet UIButton *deleteButton;
+@property (weak, nonatomic) IBOutlet UIButton *editButton;
 @property (strong, nonatomic) IBOutlet UIScrollView *scrollView;
 @property (strong, nonatomic) UITextView *summaryTextView;
 
@@ -24,7 +24,6 @@
 - (IBAction)saveWithButton:(id)sender;
 - (IBAction)cancelWithButton:(id)sender;
 - (IBAction)adjustPrice:(id)sender;
-- (IBAction)deleteWithButton:(id)sender;
 - (IBAction)editDescriptionWithButton:(id)sender;
 
 
@@ -42,6 +41,7 @@
     
     [self setupEditFields];
     
+    [self makeDeleteButton];
 }
 
 - (void)makeSummaryTextView
@@ -51,22 +51,45 @@
                                    constrainedToSize:CGSizeMake(100, 2000)
                                        lineBreakMode:NSLineBreakByCharWrapping];
     
-    self.summaryTextView = [[UITextView alloc] initWithFrame:CGRectMake(self.deleteButton.frame.origin.x, self.deleteButton.frame.origin.y + 50, self.view.frame.size.width - 100, size.height + 10)];
+    self.summaryTextView = [[UITextView alloc] initWithFrame:CGRectMake(self.editButton.frame.origin.x, self.editButton.frame.origin.y + 50, self.view.frame.size.width - 100, size.height + 10)];
     
     
-    CGSize scrollViewSize = CGSizeMake(self.view.frame.size.width, self.view.frame.size.height + (self.summaryTextView.frame.size.height/2));
+    CGSize scrollViewSize = CGSizeMake(self.view.frame.size.width, 0.6*self.view.frame.size.height + self.summaryTextView.frame.size.height);
     
     UIFont *font = [UIFont fontWithName:@"Georgia" size:14.0];
     
     [self.summaryTextView setFont:font];
     
-    self.summaryTextView.allowsEditingTextAttributes = NO;
     self.summaryTextView.editable = NO;
-    self.summaryTextView.userInteractionEnabled = YES;
+    self.summaryTextView.userInteractionEnabled = NO;
     self.summaryTextView.multipleTouchEnabled = YES;
+    self.summaryTextView.delegate = self;
     
     [self.scrollView addSubview:self.summaryTextView];
     self.scrollView.contentSize = scrollViewSize;
+}
+
+- (void)makeDeleteButton
+{
+    
+    UIButton *deleteWithButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    
+    [deleteWithButton addTarget:self action:@selector(deleteMethod) forControlEvents:UIControlEventTouchDown];
+
+    deleteWithButton.frame = CGRectMake(self.summaryTextView.frame.origin.x, self.scrollView.frame.size.height + self.summaryTextView.frame.origin.y + 100, 125, 50);
+    
+    [deleteWithButton setTitle:@"DELETE ITEM" forState:UIControlStateNormal];
+    
+    [deleteWithButton setBackgroundColor:[UIColor redColor]];
+    [self.scrollView addSubview:deleteWithButton];
+    
+}
+
+- (void)deleteMethod
+{
+    [self dismissViewControllerAnimated:NO completion:^{
+        [self.delegate deleteProduct];
+    }];
 }
 
 - (void)setupEditFields
@@ -77,12 +100,6 @@
     self.wishPriceLabel.text = [self.product formattedPriceWithType:sPriceTypeWish];
     self.priceSlider.maximumValue = [[self.product priceWithType:sPriceTypeCurrent].dollarAmount floatValue];
     self.priceSlider.value = [[self.product priceWithType:sPriceTypeWish].dollarAmount floatValue];
-}
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 
@@ -109,13 +126,6 @@
     self.wishPriceLabel.text = [NSString stringWithFormat:@"$%.2f", self.priceSlider.value];
 }
 
-- (IBAction)deleteWithButton:(id)sender
-{
-    [self dismissViewControllerAnimated:NO completion:^{
-        [self.delegate deleteProduct];
-    }];
-    
-}
 
 - (IBAction)editDescriptionWithButton:(id)sender {
     
@@ -134,6 +144,7 @@
         
     }
 }
+
 
 #pragma mark -Edit view delegate
 -(void)updateTextViewInDetailViewController:(NSString *)withString

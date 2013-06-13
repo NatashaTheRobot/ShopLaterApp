@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import <Parse/Parse.h>
 
 @implementation AppDelegate
 
@@ -14,6 +15,9 @@
 {
     // Override point for customization after application launch.
     [[UIApplication sharedApplication] registerForRemoteNotificationTypes:UIRemoteNotificationTypeAlert];
+    [Parse setApplicationId:@"mmFktBqeXBDrm6SxFTY0pNsSElWWRxr6k3CfTKw3"
+                  clientKey:@"11y2n64UVURnO9WN5AD6yDlpfTTo04mOyKXdyN1K"];
+    [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
     return YES;
 }
 

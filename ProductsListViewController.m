@@ -36,8 +36,6 @@
     
     self.coreDataManager = [CoreDataManager sharedManager];
     
-    self.navigationController.navigationBar.tintColor = [UIColor grayColor];
-    
     [self selectViewController];
 
 }

@@ -54,14 +54,21 @@
 
 - (void)makeSummaryTextView
 {
-    CGSize size = [self.product.summary sizeWithFont:[UIFont systemFontOfSize:18]
+    UIFont *font = [UIFont fontWithName:@"Georgia" size:14.0];
+    
+    CGSize size = [self.product.summary sizeWithFont:font
                                    constrainedToSize:CGSizeMake(100, 2000)
-                                       lineBreakMode:NSLineBreakByCharWrapping];
+                                       lineBreakMode:NSLineBreakByTruncatingTail];
     
-    self.summaryTextView = [[UITextView alloc] initWithFrame:CGRectMake(self.buyButton.frame.origin.x, self.buyButton.frame.origin.y + 50, self.view.frame.size.width - 75, size.height + 10)];
     
-    CGSize scrollViewSize = CGSizeMake(self.view.frame.size.width, self.view.frame.size.height + (self.summaryTextView.frame.size.height/5));
+    self.summaryTextView = [[UITextView alloc] initWithFrame:CGRectMake(self.buyButton.frame.origin.x, self.buyButton.frame.origin.y + 50, self.buyButton.frame.size.width, size.height)];
     
+    
+    CGFloat deltaY = self.view.frame.size.height - self.buyButton.frame.origin.y;
+    
+    CGSize scrollViewSize = CGSizeMake(self.view.frame.size.width, (deltaY * 1.5) + (size.height * .4));
+    
+    self.summaryTextView.font = font;
     self.summaryTextView.allowsEditingTextAttributes = NO;
     self.summaryTextView.editable = NO;
     

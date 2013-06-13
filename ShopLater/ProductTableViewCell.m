@@ -8,6 +8,8 @@
 
 #import "ProductTableViewCell.h"
 #import <QuartzCore/QuartzCore.h>
+#import "Image+SLExtensions.h"
+#import "Constants.h"
 
 @interface ProductTableViewCell ()
 
@@ -15,6 +17,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *currentPriceLabel;
 @property (weak, nonatomic) IBOutlet UILabel *wishPriceLabel;
 @property (weak, nonatomic) IBOutlet UILabel *productNameLabel;
+@property (weak, nonatomic) IBOutlet UIImageView *logoImageView;
 
 
 @end
@@ -61,6 +64,12 @@
 {
     _wishPrice = wishPrice;
     self.wishPriceLabel.text = wishPrice;
+}
+
+- (void)setProvider:(Provider *)provider
+{
+    _provider = provider;
+    self.logoImageView.image = [Image imageForProvider:provider type:sImageTypeLogo];
 }
 
 @end

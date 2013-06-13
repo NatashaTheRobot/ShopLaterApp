@@ -17,6 +17,7 @@
 #import "Provider+SLExtensions.h"
 #import <QuartzCore/QuartzCore.h>
 #import "ProductDetailViewController.h"
+#import "Parser.h"
 
 @interface ProductsListViewController ()
 
@@ -25,6 +26,8 @@
 @property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
 
 - (void)selectViewController;
+- (void)addRefreshControl;
+- (void)getUpdatedPrices;
 
 @end
 
@@ -37,7 +40,35 @@
     self.coreDataManager = [CoreDataManager sharedManager];
     
     [self selectViewController];
+    
+    [self addRefreshControl];
+}
 
+- (void)addRefreshControl
+{
+    self.refreshControl = [[UIRefreshControl alloc] init];
+    [self.refreshControl addTarget:self action:@selector(getUpdatedPrices) forControlEvents:UIControlEventValueChanged];
+}
+
+- (void)getUpdatedPrices
+{
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{
+        [self.fetchedResultsController.fetchedObjects enumerateObjectsUsingBlock:^(Product *product, NSUInteger idx, BOOL *stop) {
+            Parser *parser = [Parser parserWithProviderName:product.provider.name productURLString:product.mobileURL];
+            Price *currentPrice = [product priceWithType:sPriceTypeCurrent];
+            currentPrice = [parser.delegate productPrice];
+            [self.coreDataManager saveDataInManagedContextUsingBlock:^(BOOL saved, NSError *error) {
+                if (saved) {
+                    dispatch_async(dispatch_get_main_queue(), ^{
+                        [self.refreshControl endRefreshing];
+                        [self reloadProductData];
+                    });
+                } else {
+                    [self.refreshControl endRefreshing];
+                }
+             }];
+        }];
+    });
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -111,6 +142,7 @@
     cell.productImage = [product image];
     cell.currentPrice = [product formattedPriceWithType:sPriceTypeCurrent];
     cell.wishPrice = [product formattedPriceWithType:sPriceTypeWish];
+    cell.provider = product.provider;
     
     return cell;
 }

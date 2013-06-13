@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Provider.h"
 
 @interface ProductTableViewCell : UITableViewCell
 
@@ -14,5 +15,6 @@
 @property (strong, nonatomic) NSString *productName;
 @property (strong, nonatomic) NSString *currentPrice;
 @property (strong, nonatomic) NSString *wishPrice;
+@property (strong, nonatomic) Provider *provider;
 
 @end

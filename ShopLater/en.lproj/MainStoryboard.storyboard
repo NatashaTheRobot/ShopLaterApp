@@ -103,7 +103,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="RNb-S4-yza">
-                        <barButtonItem key="rightBarButtonItem" title=">" systemItem="add" id="6Sf-qS-V71">
+                        <barButtonItem key="rightBarButtonItem" title="Shop" id="6Sf-qS-V71">
                             <connections>
                                 <segue destination="7iZ-Oo-cpf" kind="push" identifier="toProviderCollectionView" id="xHH-9w-cEY"/>
                             </connections>

@@ -6,17 +6,18 @@
 //  Copyright (c) 2013 Natasha Murashev. All rights reserved.
 //
 
-#import "EdiViewController.h"
+#import "EditViewController.h"
 
-@interface EdiViewController ()
+@interface EditViewController ()
 
 @property (weak, nonatomic) IBOutlet UITextView *textView;
 
 - (IBAction)submitWithButton:(id)sender;
+- (IBAction)cancelWithButton:(id)sender;
 
 @end
 
-@implementation EdiViewController
+@implementation EditViewController
 
 - (void)viewDidLoad
 {
@@ -42,5 +43,10 @@
         [self.editDelegate updateTextViewInDetailViewController:self.textView.text];
         [self dismissViewControllerAnimated:YES completion:nil];
     }
+}
+
+- (IBAction)cancelWithButton:(id)sender
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 @end

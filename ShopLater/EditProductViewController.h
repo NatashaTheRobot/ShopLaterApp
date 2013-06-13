@@ -9,7 +9,8 @@
 #import <UIKit/UIKit.h>
 #import "Product+SLExtensions.h"
 #import "ProductDetailDelegate.h"
-#import "EdiViewController.h"
+#import "EditViewController.h"
+#import "EditDelegate.h"
 
 @interface EditProductViewController : UIViewController <UITextViewDelegate, EditDelegate>
 

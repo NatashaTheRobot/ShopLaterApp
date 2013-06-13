@@ -54,7 +54,7 @@
     self.summaryTextView = [[UITextView alloc] initWithFrame:CGRectMake(self.deleteButton.frame.origin.x, self.deleteButton.frame.origin.y + 50, self.view.frame.size.width - 100, size.height + 10)];
     
     
-    CGSize scrollViewSize = CGSizeMake(self.view.frame.size.width, self.view.frame.size.height + (self.summaryTextView.frame.size.height/5));
+    CGSize scrollViewSize = CGSizeMake(self.view.frame.size.width, self.view.frame.size.height + (self.summaryTextView.frame.size.height/2));
     
     UIFont *font = [UIFont fontWithName:@"Georgia" size:14.0];
     
@@ -67,7 +67,6 @@
     
     [self.scrollView addSubview:self.summaryTextView];
     self.scrollView.contentSize = scrollViewSize;
-    [self.scrollView bringSubviewToFront:self.scrollView];
 }
 
 - (void)setupEditFields
@@ -127,7 +126,7 @@
 {
     if ([segue.identifier isEqualToString:@"toEditView"]) {
         
-        EdiViewController *editViewController = [segue destinationViewController];
+        EditViewController *editViewController = [segue destinationViewController];
         
         editViewController.editDelegate = self;
         

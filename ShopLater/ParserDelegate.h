@@ -20,6 +20,7 @@
 
 - (NSString *)productName;
 - (NSString *)productSummary;
+- (NSNumber *)priceInDollars;
 - (Price *)productPrice;
 - (Image *)productImage;
 

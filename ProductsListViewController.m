@@ -39,9 +39,10 @@
     
     self.coreDataManager = [CoreDataManager sharedManager];
     
-    [self selectViewController];
-    
     [self addRefreshControl];
+    
+    [self selectViewController];
+
 }
 
 - (void)addRefreshControl
@@ -56,17 +57,17 @@
         [self.fetchedResultsController.fetchedObjects enumerateObjectsUsingBlock:^(Product *product, NSUInteger idx, BOOL *stop) {
             Parser *parser = [Parser parserWithProviderName:product.provider.name productURLString:product.mobileURL];
             Price *currentPrice = [product priceWithType:sPriceTypeCurrent];
-            currentPrice = [parser.delegate productPrice];
-            [self.coreDataManager saveDataInManagedContextUsingBlock:^(BOOL saved, NSError *error) {
-                if (saved) {
-                    dispatch_async(dispatch_get_main_queue(), ^{
-                        [self.refreshControl endRefreshing];
-                        [self reloadProductData];
-                    });
-                } else {
+            currentPrice.dollarAmount = [parser.delegate priceInDollars];
+        }];
+        [self.coreDataManager saveDataInManagedContextUsingBlock:^(BOOL saved, NSError *error) {
+            if (saved) {
+                dispatch_async(dispatch_get_main_queue(), ^{
                     [self.refreshControl endRefreshing];
-                }
-             }];
+                    [self reloadProductData];
+                });
+            } else {
+                [self.refreshControl endRefreshing];
+            }
         }];
     });
 }
@@ -89,6 +90,7 @@
     if (self.fetchedResultsController.fetchedObjects.count == 0) {
         [self performSegueWithIdentifier:@"toProviderCollectionView" sender:self];
     } else {
+        [self.refreshControl beginRefreshing];
         [self getUpdatedPrices];
     }
 }

@@ -72,25 +72,28 @@
 
 # pragma mark - Property Delegate Methods
 
+- (NSNumber *)priceInDollars
+{
+    NSString *startTag = @"<li class=\"retail\">";
+    NSString *endTag = @"</li>";
+    
+    NSString *priceStringUnformatted = [Parser scanString:self.htmlString startTag:startTag endTag:endTag];
+    
+    startTag = @"&#036;";
+    endTag = @"</span>";
+    
+    NSString *priceString = [Parser scanString:priceStringUnformatted startTag:startTag endTag:endTag];
+    
+    return [NSNumber numberWithFloat:[priceString floatValue]];
+}
+
 - (Price *)productPrice
 {
    
     if (!self.price) {
         
-        NSString *startTag = @"<li class=\"retail\">";
-        NSString *endTag = @"</li>";
-        
-        NSString *priceStringUnformatted = [Parser scanString:self.htmlString startTag:startTag endTag:endTag];
-
-        startTag = @"&#036;";
-        endTag = @"</span>";
-        
-        NSString *priceString = [Parser scanString:priceStringUnformatted startTag:startTag endTag:endTag];
-        
-        NSNumber *priceInDollars = [NSNumber numberWithFloat:[priceString floatValue]];
-        
         NSDictionary *priceDictionary = [NSDictionary dictionaryWithObjectsAndKeys:
-                                         priceInDollars, @"dollarAmount",
+                                         [self priceInDollars], @"dollarAmount",
                                          sPriceTypeCurrent, @"type",
                                          [NSDate date], @"created_at", nil];
         self.price = [self.coreDataManager createEntityWithClassName:NSStringFromClass([Price class])

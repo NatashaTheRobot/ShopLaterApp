@@ -7,10 +7,11 @@
 //
 
 #import "ProductTableViewCell.h"
+#import <QuartzCore/QuartzCore.h>
 
 @interface ProductTableViewCell ()
 
-@property (strong, nonatomic) IBOutlet UIImageView *imageView;
+@property (strong, nonatomic) IBOutlet UIImageView *productImageView;
 @property (weak, nonatomic) IBOutlet UILabel *currentPriceLabel;
 @property (weak, nonatomic) IBOutlet UILabel *wishPriceLabel;
 @property (weak, nonatomic) IBOutlet UILabel *productNameLabel;
@@ -45,7 +46,9 @@
 - (void)setProductImage:(UIImage *)productImage
 {
     _productImage = productImage;
-    self.imageView.image = productImage;
+    self.productImageView.layer.borderColor = [[UIColor colorWithRed:128/255.0 green:128/255.0  blue:128/255.0 alpha:1] CGColor];
+    self.productImageView.layer.borderWidth = 1.0;
+    self.productImageView.image = productImage;
 }
 
 - (void)setCurrentPrice:(NSString *)currentPrice

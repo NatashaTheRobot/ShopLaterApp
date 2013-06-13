@@ -19,70 +19,60 @@
             </objects>
             <point key="canvasLocation" x="-76" y="13"/>
         </scene>
-        <!--Products List View Controller-->
+        <!--Products List View Controller - ShopLater-->
         <scene sceneID="WzA-l5-ojF">
             <objects>
                 <tableViewController id="lXj-gi-EwX" customClass="ProductsListViewController" sceneMemberID="viewController">
-                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" allowsMultipleSelection="YES" rowHeight="299" sectionHeaderHeight="22" sectionFooterHeight="22" id="Qz9-fC-oFw">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" allowsMultipleSelection="YES" rowHeight="328" sectionHeaderHeight="22" sectionFooterHeight="22" id="Qz9-fC-oFw">
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" indentationWidth="10" reuseIdentifier="sectionHeader" rowHeight="50" id="aHP-FE-rDF" customClass="SectionHeaderCell">
-                                <rect key="frame" x="0.0" y="22" width="320" height="50"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                </view>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                            </tableViewCell>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="product" rowHeight="315" id="K2X-fm-zQF" customClass="ProductTableViewCell">
-                                <rect key="frame" x="0.0" y="72" width="320" height="315"/>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="product" rowHeight="328" id="K2X-fm-zQF" customClass="ProductTableViewCell">
+                                <rect key="frame" x="0.0" y="22" width="320" height="328"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="314"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="300" height="327"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" id="Fdg-Sn-8yK">
-                                            <rect key="frame" x="0.0" y="63" width="320" height="168"/>
-                                        </imageView>
-                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Current Price:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Xds-GG-aCd">
-                                            <rect key="frame" x="20" y="248" width="105" height="21"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                            <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        </label>
-                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Your Wish Price: " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="g9D-bL-LMd">
-                                            <rect key="frame" x="20" y="277" width="132" height="21"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                            <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        </label>
-                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="$89.86" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="G7X-oc-wP1">
-                                            <rect key="frame" x="173" y="248" width="127" height="21"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                            <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        </label>
-                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="$85.86" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ff4-rv-cXA">
-                                            <rect key="frame" x="173" y="277" width="127" height="21"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                            <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        </label>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="rpj-Hh-ReV">
-                                            <rect key="frame" x="20" y="9" width="280" height="46"/>
+                                            <rect key="frame" x="20" y="10" width="280" height="61"/>
                                             <attributedString key="attributedText">
                                                 <fragment content="Product Name">
                                                     <attributes>
                                                         <color key="NSColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                        <font key="NSFont" size="17" name="Helvetica"/>
+                                                        <font key="NSFont" size="14" name="Helvetica"/>
                                                         <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
                                                     </attributes>
                                                 </fragment>
                                             </attributedString>
+                                            <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </label>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" id="Fdg-Sn-8yK">
+                                            <rect key="frame" x="35" y="79" width="250" height="150"/>
+                                        </imageView>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Current Price:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Xds-GG-aCd">
+                                            <rect key="frame" x="20" y="239" width="132" height="21"/>
+                                            <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="15"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </label>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Buy Price:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="g9D-bL-LMd">
+                                            <rect key="frame" x="20" y="287" width="101" height="21"/>
+                                            <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="17"/>
+                                            <color key="textColor" red="1" green="0.41886694391914892" blue="0.93228775669805175" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </label>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="$88.75" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Uyh-cQ-0xi">
+                                            <rect key="frame" x="199" y="283" width="101" height="21"/>
+                                            <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="17"/>
+                                            <color key="textColor" red="1" green="0.41886694390000001" blue="0.93228775669999997" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </label>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="$89.86" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="G7X-oc-wP1">
+                                            <rect key="frame" x="165" y="240" width="135" height="21"/>
+                                            <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </label>
                                     </subviews>
@@ -90,9 +80,8 @@
                                 </view>
                                 <connections>
                                     <outlet property="currentPriceLabel" destination="G7X-oc-wP1" id="cyp-rm-nfr"/>
-                                    <outlet property="imageView" destination="Fdg-Sn-8yK" id="ymP-RC-U4O"/>
+                                    <outlet property="productImageView" destination="Fdg-Sn-8yK" id="GRo-bt-DbC"/>
                                     <outlet property="productNameLabel" destination="rpj-Hh-ReV" id="TCS-UP-Ozg"/>
-                                    <outlet property="wishPriceLabel" destination="ff4-rv-cXA" id="r3J-Uq-35l"/>
                                     <segue destination="S3Q-a3-CkG" kind="push" id="sDQ-6b-QFx"/>
                                 </connections>
                             </tableViewCell>
@@ -102,7 +91,7 @@
                             <outlet property="delegate" destination="lXj-gi-EwX" id="0RU-eQ-IfE"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="RNb-S4-yza">
+                    <navigationItem key="navigationItem" title="ShopLater" id="RNb-S4-yza">
                         <barButtonItem key="rightBarButtonItem" title="Shop" id="6Sf-qS-V71">
                             <connections>
                                 <segue destination="7iZ-Oo-cpf" kind="push" identifier="toProviderCollectionView" id="xHH-9w-cEY"/>
@@ -114,7 +103,7 @@
             </objects>
             <point key="canvasLocation" x="366" y="1"/>
         </scene>
-        <!--Provider View Controller - Providers-->
+        <!--Provider View Controller - Stores-->
         <scene sceneID="4me-eQ-64s">
             <objects>
                 <collectionViewController autoresizesArchivedViewToFullSize="NO" id="7iZ-Oo-cpf" customClass="ProviderViewController" sceneMemberID="viewController">
@@ -154,7 +143,7 @@
                             <outlet property="delegate" destination="7iZ-Oo-cpf" id="Lu6-mx-uK3"/>
                         </connections>
                     </collectionView>
-                    <navigationItem key="navigationItem" title="Providers" id="ICw-8k-6rr"/>
+                    <navigationItem key="navigationItem" title="Stores" id="ICw-8k-6rr"/>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="McW-Dk-NDl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -580,7 +569,7 @@
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ProductTableViewCell.h"/>
             <relationships>
                 <relationship kind="outlet" name="currentPriceLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="imageView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="productImageView" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="productNameLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="wishPriceLabel" candidateClass="UILabel"/>
             </relationships>
@@ -596,9 +585,6 @@
         </class>
         <class className="ProviderViewController" superclassName="UICollectionViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ProviderViewController.h"/>
-        </class>
-        <class className="SectionHeaderCell" superclassName="UITableViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/SectionHeaderCell.h"/>
         </class>
         <class className="UICollectionReusableView" superclassName="UIView">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionReusableView.h"/>

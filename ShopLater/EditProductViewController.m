@@ -18,7 +18,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *wishPriceLabel;
 @property (weak, nonatomic) IBOutlet UISlider *priceSlider;
 @property (weak, nonatomic) IBOutlet UIButton *editButton;
-@property (strong, nonatomic) IBOutlet UIScrollView *scrollView;
+@property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
+
 @property (strong, nonatomic) UITextView *summaryTextView;
 
 - (IBAction)saveWithButton:(id)sender;

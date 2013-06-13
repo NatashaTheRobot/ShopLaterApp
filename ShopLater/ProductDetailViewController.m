@@ -53,18 +53,20 @@
 }
 
 - (void)makeSummaryTextView
-{    
+{
     CGSize size = [self.product.summary sizeWithFont:[UIFont systemFontOfSize:18]
                                    constrainedToSize:CGSizeMake(100, 2000)
                                        lineBreakMode:NSLineBreakByCharWrapping];
     
-    self.summaryTextView = [[UITextView alloc] initWithFrame:CGRectMake(self.buyButton.frame.origin.x
-                                                                        , self.buyButton.frame.origin.y + 50, self.view.frame.size.width - 75, size.height + 10)];
+    self.summaryTextView = [[UITextView alloc] initWithFrame:CGRectMake(self.buyButton.frame.origin.x, self.buyButton.frame.origin.y + 50, self.view.frame.size.width - 75, size.height + 10)];
     
     CGSize scrollViewSize = CGSizeMake(self.view.frame.size.width, self.view.frame.size.height + (self.summaryTextView.frame.size.height/5));
     
+    self.summaryTextView.allowsEditingTextAttributes = NO;
+    self.summaryTextView.editable = NO;
+    
     [self.scrollView addSubview:self.summaryTextView];
-    self.scrollView.contentSize = scrollViewSize;
+    self.scrollView.contentSize = scrollViewSize; //CGSizeMake(self.view.frame.size.width, self.view.frame.size.height + self.summaryTextView.frame.size.height);
     
 }
 
@@ -115,7 +117,7 @@
             [self showAlertView];
         }
     }];
-
+    
     
     [self.navigationController popToRootViewControllerAnimated:YES];
 }

@@ -22,7 +22,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view.
     
     self.textView.text = self.currentTextViewString;
     [self becomeFirstResponder];
@@ -32,11 +31,11 @@
 
 - (IBAction)submitWithButton:(id)sender {
     
-    if (self.textView.text.length > 6) {
-        //delegate method here
-        [self.editDelegate updateTextViewInDetailViewController:self.textView.text];
-        [self dismissViewControllerAnimated:YES completion:nil];
+    if (self.textView.text.length > 3) {
+        [self.delegate updateTextViewWithText:self.textView.text];
     }
+    
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (IBAction)cancelWithButton:(id)sender

@@ -11,7 +11,7 @@
 
 @interface EditViewController : UIViewController
 
-@property (weak, nonatomic) NSString *currentTextViewString;
-@property (strong, nonatomic) id <EditDelegate> editDelegate;
+@property (strong, nonatomic) NSString *currentTextViewString;
+@property (strong, nonatomic) id <EditDelegate> delegate;
 
 @end

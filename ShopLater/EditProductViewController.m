@@ -23,10 +23,11 @@
 - (IBAction)saveWithButton:(id)sender;
 - (IBAction)cancelWithButton:(id)sender;
 - (IBAction)adjustPrice:(id)sender;
-- (IBAction)editDescriptionWithButton:(id)sender;
 
 - (void)setupEditFields;
-- (void)updateTextViewInDetailViewController:(NSString *)withString;
+- (void)makeSummaryTextView;
+- (void)makeDeleteButton;
+- (void)deleteWithButton;
 
 @end
 
@@ -34,9 +35,9 @@
 
 - (void)viewDidLoad
 {
-    [self makeSummaryTextView];
-    
     [super viewDidLoad];
+    
+    [self makeSummaryTextView];
 	
     [self setupEditFields];
     
@@ -46,7 +47,7 @@
 - (void)setupEditFields
 {
     self.imageView.image = [self.product image];
-    self.titleTextField.text = self.product.name;
+    self.titleTextField.placeholder = self.product.name;
     self.summaryTextView.text = self.product.summary;
     self.wishPriceLabel.text = [self.product formattedPriceWithType:sPriceTypeWish];
     self.priceSlider.maximumValue = [[self.product priceWithType:sPriceTypeCurrent].dollarAmount floatValue];
@@ -62,37 +63,36 @@
     
     self.summaryTextView = [[UITextView alloc] initWithFrame:CGRectMake(self.editButton.frame.origin.x, self.editButton.frame.origin.y + 50, self.view.frame.size.width - 100, size.height + 10)];
     
-    
     CGSize scrollViewSize = CGSizeMake(self.view.frame.size.width, self.view.frame.size.height + self.summaryTextView.frame.size.height);
     
     UIFont *font = [UIFont fontWithName:@"Georgia" size:14.0];
-    [self.summaryTextView setFont:font];
-    
+
+    self.summaryTextView.font = font;
     self.summaryTextView.allowsEditingTextAttributes = NO;
     self.summaryTextView.editable = NO;
     self.summaryTextView.userInteractionEnabled = NO;
     self.summaryTextView.multipleTouchEnabled = YES;
     
     [self.scrollView addSubview:self.summaryTextView];
-    self.scrollView.contentSize = scrollViewSize; //CGSizeMake(self.view.frame.size.width, self.view.frame.size.height + self.summaryTextView.frame.size.height/5);
+    self.scrollView.contentSize = scrollViewSize;
 }
 
 - (void)makeDeleteButton
 {
     
-    UIButton *deleteWithButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    UIButton *deleteButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     
-    [deleteWithButton addTarget:self action:@selector(deleteMethod) forControlEvents:UIControlEventTouchDown];
+    [deleteButton addTarget:self action:@selector(deleteMethod) forControlEvents:UIControlEventTouchDown];
     
-    deleteWithButton.frame = CGRectMake(self.summaryTextView.frame.origin.x, self.scrollView.frame.size.height + self.summaryTextView.frame.size.height/2, 125, 50);
+    deleteButton.frame = CGRectMake(self.summaryTextView.frame.origin.x, self.scrollView.frame.size.height + self.summaryTextView.frame.size.height/2, 125, 50);
     
-    [deleteWithButton setTitle:@"DELETE ITEM" forState:UIControlStateNormal];
+    [deleteButton setTitle:@"DELETE ITEM" forState:UIControlStateNormal];
     
-    [self.scrollView addSubview:deleteWithButton];
+    [self.scrollView addSubview:deleteButton];
     
 }
 
-- (void)deleteMethod
+- (void)deleteWithButton
 {
     [self dismissViewControllerAnimated:NO completion:^{
         [self.delegate deleteProduct];
@@ -123,21 +123,15 @@
     self.wishPriceLabel.text = [NSString stringWithFormat:@"$%.2f", self.priceSlider.value];
 }
 
-- (IBAction)editDescriptionWithButton:(id)sender {
-    
-    [self performSegueWithIdentifier:@"toEditView" sender:self];
-}
-
-
 #pragma mark -Prepare for segue
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     
-    if ([segue.identifier isEqualToString:@"toEditView"]) {
+    if ([segue.destinationViewController isKindOfClass:[EditViewController class]]) {
         
-        EditViewController *editViewController = [segue destinationViewController];
+        EditViewController *editViewController = segue.destinationViewController;
         
-        editViewController.editDelegate = self;
+        editViewController.delegate = self;
         
         editViewController.currentTextViewString = self.summaryTextView.text;
         
@@ -145,11 +139,9 @@
 }
 
 #pragma mark -Edit view delegate
-- (void)updateTextViewInDetailViewController:(NSString *)withString
+- (void)updateTextViewWithText:(NSString *)text
 {
-    
-    [self.summaryTextView setText:withString];
-    
+    self.summaryTextView.text = text;
 }
 
 #pragma mark -Text field delegate

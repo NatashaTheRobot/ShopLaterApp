@@ -17,6 +17,4 @@
 @property (strong, nonatomic) Product *product;
 @property (strong, nonatomic) id<ProductDetailDelegate> delegate;
 
-- (void)updateTextViewInDetailViewController:(NSString *)withString;
-
 @end

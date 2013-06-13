@@ -10,6 +10,6 @@
 
 @protocol EditDelegate <NSObject>
 
-- (void)updateTextViewInDetailViewController:(NSString *)withString;
+- (void)updateTextViewWithText:(NSString *)text;
 
 @end

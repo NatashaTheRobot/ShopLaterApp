@@ -66,10 +66,9 @@
     self.summaryTextView.editable = NO;
     
     [self.scrollView addSubview:self.summaryTextView];
-    self.scrollView.contentSize = scrollViewSize; //CGSizeMake(self.view.frame.size.width, self.view.frame.size.height + self.summaryTextView.frame.size.height);
+    self.scrollView.contentSize = scrollViewSize;
     
 }
-
 
 - (void)displayProductDetails
 {

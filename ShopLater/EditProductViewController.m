@@ -19,6 +19,7 @@
 @property (weak, nonatomic) IBOutlet UISlider *priceSlider;
 @property (weak, nonatomic) IBOutlet UIButton *editButton;
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
+@property (assign, nonatomic) CGSize scrollViewSize;
 
 @property (strong, nonatomic) UITextView *summaryTextView;
 
@@ -58,17 +59,19 @@
 
 - (void)makeSummaryTextView
 {
-    
-    CGSize size = [self.product.summary sizeWithFont:[UIFont systemFontOfSize:14]
-                                   constrainedToSize:CGSizeMake(100, 2000)
-                                       lineBreakMode:NSLineBreakByCharWrapping];
-    
-    self.summaryTextView = [[UITextView alloc] initWithFrame:CGRectMake(self.editButton.frame.origin.x, self.editButton.frame.origin.y + 50, self.view.frame.size.width - 100, size.height + 10)];
-    
-    CGSize scrollViewSize = CGSizeMake(self.view.frame.size.width, self.view.frame.size.height + self.summaryTextView.frame.size.height);
-    
     UIFont *font = [UIFont fontWithName:@"Georgia" size:14.0];
-
+    
+    CGSize size = [self.product.summary sizeWithFont:font
+                                   constrainedToSize:CGSizeMake(100, 2000)
+                                       lineBreakMode:NSLineBreakByTruncatingTail];
+    
+    self.summaryTextView = [[UITextView alloc] initWithFrame:CGRectMake(self.editButton.frame.origin.x, self.editButton.frame.origin.y + 50, self.editButton.frame.size.width, size.height + 10)];
+    
+    CGFloat deltaY = self.view.frame.size.height - self.editButton.frame.origin.y;
+    
+    self.scrollViewSize = CGSizeMake(self.view.frame.size.width, deltaY + 100 + (size.height * .4));
+    
+    
     self.summaryTextView.font = font;
     self.summaryTextView.allowsEditingTextAttributes = NO;
     self.summaryTextView.editable = NO;
@@ -76,7 +79,7 @@
     self.summaryTextView.multipleTouchEnabled = YES;
     
     [self.scrollView addSubview:self.summaryTextView];
-    self.scrollView.contentSize = scrollViewSize;
+    self.scrollView.contentSize = self.scrollViewSize;
 }
 
 - (void)makeDeleteButton
@@ -86,7 +89,13 @@
     
     [deleteButton addTarget:self action:@selector(deleteMethod) forControlEvents:UIControlEventTouchDown];
     
-    deleteButton.frame = CGRectMake(self.summaryTextView.frame.origin.x, self.scrollView.frame.size.height + self.summaryTextView.frame.size.height/2, 125, 50);
+    
+    if (self.scrollViewSize.height > 300) {
+        deleteButton.frame = CGRectMake(self.summaryTextView.frame.origin.x, self.scrollViewSize.height - 80, 280  , 50);
+    } else {
+        deleteButton.frame = CGRectMake(self.summaryTextView.frame.origin.x, self.view.frame.size.height - 100, 280  , 50);
+    }
+    
     
     [deleteButton setTitle:@"DELETE ITEM" forState:UIControlStateNormal];
     

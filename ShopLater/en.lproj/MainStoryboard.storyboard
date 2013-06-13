@@ -88,6 +88,7 @@
                                     <outlet property="logoImageView" destination="EBY-lj-xej" id="uT6-wt-uYt"/>
                                     <outlet property="productImageView" destination="Fdg-Sn-8yK" id="GRo-bt-DbC"/>
                                     <outlet property="productNameLabel" destination="rpj-Hh-ReV" id="TCS-UP-Ozg"/>
+                                    <outlet property="wishPriceLabel" destination="Uyh-cQ-0xi" id="CVp-GH-Jbh"/>
                                     <segue destination="S3Q-a3-CkG" kind="push" id="sDQ-6b-QFx"/>
                                 </connections>
                             </tableViewCell>

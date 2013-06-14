@@ -12,6 +12,7 @@
 #import "Image+SLExtensions.h"
 #import "CoreDataManager.h"
 #import "Constants.h"
+#import "NSString+SLExtensions.h"
 
 @interface BestbuyParser ()
 
@@ -28,7 +29,6 @@
 
 + (instancetype)parserWithProductURLString:(NSString *)productURLString
 {
-    
     BestbuyParser *parser = [[BestbuyParser alloc] init];
     parser.mobileURLString = productURLString;
     parser.cleanURLString = productURLString;
@@ -36,7 +36,7 @@
     NSData *data = [NSData dataWithContentsOfURL:[NSURL URLWithString:productURLString]];
     
     parser.htmlString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-    
+
     if (parser.htmlString == nil) {
         parser.htmlString = [[NSString alloc] initWithData:data encoding:NSASCIIStringEncoding];
     }
@@ -80,11 +80,11 @@
 - (NSString *)productName
 {
     
+   
+    
     if (!self.name) {
-        
-        NSString *nameString = [Parser scanString:self.htmlString startTag:@"title bold Arial" endTag:@"</div>"];
-        
-        self.name = [Parser scanString:nameString startTag:@" >" endTag:@""];
+
+        self.name = [Parser scanString:self.htmlString startTag:@"<head>" endTag:@"</head>"];
     }
     
     return self.name;
@@ -92,11 +92,17 @@
 
 - (Image *)productImage
 {
+
     if (!self.image) {
         
-        NSString *imageString = [Parser scanString:self.htmlString startTag:@"PdpImageIMG" endTag:@"</li>"];
-        
-        imageString = [Parser scanString:imageString startTag:@"<img src=\"" endTag:@";"];
+        NSString *imageString;
+        if ([self.htmlString containsString:@"PdpImageIMG"]) {
+            imageString = [Parser scanString:self.htmlString startTag:@"PdpImageIMG" endTag:@"</li>"];
+            imageString = [Parser scanString:imageString startTag:@"<img src=\"" endTag:@";"];
+        } else {
+            imageString = [Parser scanString:self.htmlString startTag:@"pdp-single-image" endTag:@"</div>"];
+            imageString = [Parser scanString:imageString startTag:@"<img src=\"" endTag:@";"];
+        }
         
         NSURL *urlImage = [NSURL URLWithString:imageString];
         

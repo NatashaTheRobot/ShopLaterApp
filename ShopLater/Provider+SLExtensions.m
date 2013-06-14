@@ -45,6 +45,8 @@
                                               identifiers:[Identifier identifiersWithNames:@[@"/p/"]]]];
     
     [providers addObject:[self dictionaryWithProviderName:@"bestbuy" identifiers:[Identifier identifiersWithNames:@[@"/product/"]]]];
+    
+    [providers addObject:[self dictionaryWithProviderName:@"macys" identifiers:[Identifier identifiersWithNames:@[@"/product/"]]]];
 
     return providers;
 }

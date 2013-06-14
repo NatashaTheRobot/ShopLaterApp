@@ -16,6 +16,7 @@
 + (NSString *)sectionImageNameFromProviderName:(NSString *)providerName;
 
 + (NSArray *)providersArray;
-+ (NSDictionary *)dictionaryWithProviderName:(NSString *)providerName identifierName:(NSString *)identifierName;
++ (NSDictionary *)dictionaryWithProviderName:(NSString *)providerName identifiers:(NSSet *)identifiers
+;
 
 @end

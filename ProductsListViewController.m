@@ -91,8 +91,8 @@
     if (self.fetchedResultsController.fetchedObjects.count == 0) {
         [self performSegueWithIdentifier:@"toProviderCollectionView" sender:self];
     } else {
-        [self.refreshControl beginRefreshing];
-        [self getUpdatedPrices];
+//        [self.refreshControl beginRefreshing];
+//        [self getUpdatedPrices];
     }
 }
 

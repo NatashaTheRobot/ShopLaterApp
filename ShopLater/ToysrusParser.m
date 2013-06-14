@@ -55,6 +55,8 @@
     return parser;
 }
 
+
+#pragma mark - URL parse
 - (NSString *)getProductIdFromURLString:(NSString *)urlString
 {
     NSArray *urlComponents = [urlString componentsSeparatedByString:@"jsp%3F"];

@@ -35,9 +35,11 @@
 
 + (NSArray *)providersArray
 {
-    NSMutableArray *providers = [[NSMutableArray alloc] initWithCapacity:1];
+    NSMutableArray *providers = [[NSMutableArray alloc] initWithCapacity:2];
     
     [providers addObject:[self dictionaryWithProviderName:@"toysrus" identifierName:@"productId"]];
+    
+    [providers addObject:[self dictionaryWithProviderName:@"macys" identifierName:@"productId"]];
     
     return providers;
 }

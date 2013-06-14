@@ -1,19 +1,20 @@
 //
-//  HomedepotParser.m
+//  MacysParser.m
 //  ShopLater
 //
 //  Created by Reza Fatahi on 6/14/13.
 //  Copyright (c) 2013 Natasha Murashev. All rights reserved.
 //
 
-#import "HomedepotParser.h"
+#import "MacysParser.h"
 #import "Parser.h"
 #import "Price.h"
 #import "Image+SLExtensions.h"
 #import "CoreDataManager.h"
 #import "Constants.h"
+#import "NSString+SLExtensions.h"
 
-@interface HomedepotParser ()
+@interface MacysParser ()
 
 @property (strong, nonatomic) NSString *htmlString;
 @property (strong, nonatomic) CoreDataManager *coreDataManager;
@@ -23,29 +24,28 @@
 @property (strong, nonatomic) Image *image;
 
 - (NSString *)getProductIdFromURLString:(NSString *)urlString;
+- (NSString *)getProductNameFromURLString:(NSString *)urlString;
 
 @end
 
-@implementation HomedepotParser
+@implementation MacysParser
 
 + (instancetype)parserWithProductURLString:(NSString *)productURLString
 {
-    HomedepotParser *parser = [[HomedepotParser alloc] init];
+    MacysParser *parser = [[MacysParser alloc] init];
     parser.mobileURLString = productURLString;
     
     NSString *productId = [parser getProductIdFromURLString:productURLString];
     
+    NSString *nameId = [parser getProductNameFromURLString:productURLString];
+    
     // handle error (if we cannot get the product id for some reason)
-    parser.cleanURLString = [NSString stringWithFormat:@"http://www.homedepot.com/p/%@", productId];
+    parser.cleanURLString = [NSString stringWithFormat:@"http://www1.macys.com/shop/product/%@?ID=%@", nameId, productId];
     
     NSData *data = [NSData dataWithContentsOfURL:[NSURL URLWithString:parser.cleanURLString]];
     
-    parser.htmlString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-    
-    if (parser.htmlString == nil) {
-        parser.htmlString = [[NSString alloc] initWithData:data encoding:NSASCIIStringEncoding];
-    }
-    
+    parser.htmlString = [[NSString alloc] initWithData:data encoding:NSASCIIStringEncoding];
+        
     parser.coreDataManager = [CoreDataManager sharedManager];
     
     return parser;
@@ -53,24 +53,39 @@
 
 - (NSString *)getProductIdFromURLString:(NSString *)urlString
 {
-    NSString *paramsString = [Parser scanString:urlString startTag:@"/p/" endTag:@""];
-    
-    return [Parser scanString:paramsString startTag:@"/" endTag:@"/"];
+    return [Parser scanString:urlString startTag:@"?ID=" endTag:@"&"];
+}
+
+- (NSString *)getProductNameFromURLString:(NSString *)urlString
+{
+    return [Parser scanString:urlString startTag:@"product/" endTag:@"?"];
 }
 
 # pragma mark - Property Delegate Methods
 
 - (NSNumber *)priceInDollars
 {
-    NSString *priceString = [Parser scanString:self.htmlString startTag:@" itemprop=\"price\"> $" endTag:@"</span>"];
-    priceString = [priceString stringByReplacingOccurrencesOfString:@"," withString:@""];
+    NSString *priceString;
+    
+    if ([self.htmlString containsString:@"<!-- PRICE BLOCK: Single Price -->"]) {
+        
+        priceString = [Parser scanString:self.htmlString startTag:@"<!-- PRICE BLOCK: Single Price -->" endTag:@"<br>"];
+        priceString = [Parser scanString:priceString startTag:@"$" endTag:@"</"];
+        priceString = [priceString stringByReplacingOccurrencesOfString:@"," withString:@""];
+
+    } else {
+        
+        priceString = [Parser scanString:self.htmlString startTag:@"<span>Was" endTag:@"<br>"];
+        priceString = [Parser scanString:priceString startTag:@"$" endTag:@"</"];
+        priceString = [priceString stringByReplacingOccurrencesOfString:@"," withString:@""];
+
+    }
     
     return [NSNumber numberWithFloat:[priceString floatValue]];
 }
 
 - (Price *)productPrice
 {
-    
     if (!self.price) {
         
         NSDictionary *priceDictionary = [NSDictionary dictionaryWithObjectsAndKeys:
@@ -78,8 +93,7 @@
                                          sPriceTypeCurrent, @"type",
                                          [NSDate date], @"created_at", nil];
         self.price = [self.coreDataManager createEntityWithClassName:NSStringFromClass([Price class])
-                                                attributesDictionary:priceDictionary];
-        
+                                                 attributesDictionary:priceDictionary];
     }
     
     return self.price;
@@ -88,10 +102,9 @@
 
 - (NSString *)productName
 {
-    
     if (!self.name) {
         
-        self.name = [Parser scanString:self.htmlString startTag:@"<span itemprop=\"name\">" endTag:@"</span>"];
+        self.name = [Parser scanString:self.htmlString startTag:@"itemprop=\"name\">" endTag:@"</h1>"];
     }
     
     return self.name;
@@ -101,17 +114,14 @@
 {
     if (!self.image) {
         
-        NSString *imageString = [Parser scanString:self.htmlString startTag:@"class=\"product_mainimg\"" endTag:@"</div>"];
-        imageString = [Parser scanString:imageString startTag:@"itemprop=\"image\"" endTag:@"</a>"];
+        NSString *imageString = [Parser scanString:self.htmlString startTag:@"property=\"og:image\" content=\"" endTag:@"\" />"];
         
-        NSString *urlString = [Parser scanString:imageString startTag:@"src=\"" endTag:@"\""];
-        
-        NSURL *urlImage = [NSURL URLWithString:urlString];
+        NSURL *urlImage = [NSURL URLWithString:imageString];
         
         NSString *imageFileName = [Image imageFileNameForURL:urlImage];
         
         NSDictionary *imageDictionary = [NSDictionary dictionaryWithObjectsAndKeys:imageFileName, @"fileName",
-                                         urlString, @"externalURLString",
+                                         imageString, @"externalURLString",
                                          nil];
         self.image = [self.coreDataManager createEntityWithClassName:NSStringFromClass([Image class]) attributesDictionary:imageDictionary];
         

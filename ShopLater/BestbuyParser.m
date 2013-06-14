@@ -31,13 +31,11 @@
     
     BestbuyParser *parser = [[BestbuyParser alloc] init];
     parser.mobileURLString = productURLString;
+    parser.cleanURLString = productURLString;
     
     NSData *data = [NSData dataWithContentsOfURL:[NSURL URLWithString:productURLString]];
     
     parser.htmlString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-    
-    NSLog(@"%@", parser.htmlString);
-    
     
     if (parser.htmlString == nil) {
         parser.htmlString = [[NSString alloc] initWithData:data encoding:NSASCIIStringEncoding];
@@ -71,7 +69,7 @@
                                          sPriceTypeCurrent, @"type",
                                          [NSDate date], @"created_at", nil];
         self.price = [self.coreDataManager createEntityWithClassName:NSStringFromClass([Price class])
-                                                 atributesDictionary:priceDictionary];
+                                                attributesDictionary:priceDictionary];
         
     }
     
@@ -107,7 +105,7 @@
         NSDictionary *imageDictionary = [NSDictionary dictionaryWithObjectsAndKeys:imageFileName, @"fileName",
                                          imageString, @"externalURLString",
                                          nil];
-        self.image = [self.coreDataManager createEntityWithClassName:NSStringFromClass([Image class]) atributesDictionary:imageDictionary];
+        self.image = [self.coreDataManager createEntityWithClassName:NSStringFromClass([Image class]) attributesDictionary:imageDictionary];
         
     }
 

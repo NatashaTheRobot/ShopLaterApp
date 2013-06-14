@@ -24,16 +24,6 @@
     return [NSString stringWithFormat:@"%@_%@.png", providerName, sImageTypeLogo];
 }
 
-+ (NSString *)exampleImageNameFromProviderName:(NSString *)providerName
-{
-    return [NSString stringWithFormat:@"%@_%@.png", providerName, sImageTypeExample];
-}
-
-+ (NSString *)sectionImageNameFromProviderName:(NSString *)providerName
-{
-    return [NSString stringWithFormat:@"%@_%@.png", providerName, sImageTypeSection];
-}
-
 + (NSArray *)providersArray
 {
     NSMutableArray *providers = [[NSMutableArray alloc] initWithCapacity:3];
@@ -61,17 +51,11 @@
     Image *logoImage = [coreDataManager createEntityWithClassName:NSStringFromClass([Image class])
                                                           attributesDictionary:logoImageDictionary];
     
-    NSDictionary *exampleImageDictionary = [NSDictionary dictionaryWithObjectsAndKeys:
-                                                   [Provider exampleImageNameFromProviderName:providerName], @"fileName",
-                                                   nil];
-    
-    Image *exampleImage =  [coreDataManager createEntityWithClassName:NSStringFromClass([Image class])
-                                                              attributesDictionary:exampleImageDictionary];
     
     NSDictionary *providerDictionary = [NSDictionary dictionaryWithObjectsAndKeys:providerName, @"name",
                                        identifiers, @"identifiers",
                                        [Provider urlStringFromProviderName:providerName], @"url",
-                                       [NSSet setWithObjects:logoImage, exampleImage, nil], @"images",
+                                       [NSSet setWithObjects:logoImage, nil], @"images",
                                        nil];
     return providerDictionary;
 }

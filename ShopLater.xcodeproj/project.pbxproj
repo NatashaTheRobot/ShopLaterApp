@@ -33,6 +33,9 @@
 		9C195DFB1768D91200183192 /* AFURLConnectionOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C195DF01768D91100183192 /* AFURLConnectionOperation.m */; };
 		9C195DFC1768D91200183192 /* AFXMLRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C195DF21768D91100183192 /* AFXMLRequestOperation.m */; };
 		9C195DFD1768D91200183192 /* UIImageView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C195DF41768D91200183192 /* UIImageView+AFNetworking.m */; };
+		9C2263F4176BAB0C00C3FDD9 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C2263F3176BAB0C00C3FDD9 /* MainViewController.m */; };
+		9C2263F7176BAB4400C3FDD9 /* LeftPanelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C2263F6176BAB4400C3FDD9 /* LeftPanelViewController.m */; };
+		9C2263FA176BB04200C3FDD9 /* CenterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C2263F9176BB04200C3FDD9 /* CenterViewController.m */; };
 		9C927B751762780100570F45 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C927B741762780100570F45 /* UIKit.framework */; };
 		9C927B771762780100570F45 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C927B761762780100570F45 /* Foundation.framework */; };
 		9C927B791762780100570F45 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C927B781762780100570F45 /* CoreGraphics.framework */; };
@@ -108,6 +111,12 @@
 		9C195DF21768D91100183192 /* AFXMLRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFXMLRequestOperation.m; sourceTree = "<group>"; };
 		9C195DF31768D91100183192 /* UIImageView+AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+AFNetworking.h"; sourceTree = "<group>"; };
 		9C195DF41768D91200183192 /* UIImageView+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+AFNetworking.m"; sourceTree = "<group>"; };
+		9C2263F2176BAB0C00C3FDD9 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
+		9C2263F3176BAB0C00C3FDD9 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
+		9C2263F5176BAB4400C3FDD9 /* LeftPanelViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeftPanelViewController.h; sourceTree = "<group>"; };
+		9C2263F6176BAB4400C3FDD9 /* LeftPanelViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeftPanelViewController.m; sourceTree = "<group>"; };
+		9C2263F8176BB04200C3FDD9 /* CenterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CenterViewController.h; sourceTree = "<group>"; };
+		9C2263F9176BB04200C3FDD9 /* CenterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CenterViewController.m; sourceTree = "<group>"; };
 		9C927B711762780100570F45 /* ShopLater.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShopLater.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C927B741762780100570F45 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		9C927B761762780100570F45 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -285,6 +294,12 @@
 		9C927BA217627D0200570F45 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				9C2263F2176BAB0C00C3FDD9 /* MainViewController.h */,
+				9C2263F3176BAB0C00C3FDD9 /* MainViewController.m */,
+				9C2263F8176BB04200C3FDD9 /* CenterViewController.h */,
+				9C2263F9176BB04200C3FDD9 /* CenterViewController.m */,
+				9C2263F5176BAB4400C3FDD9 /* LeftPanelViewController.h */,
+				9C2263F6176BAB4400C3FDD9 /* LeftPanelViewController.m */,
 				9C195DB017674F1F00183192 /* ProductsListViewController.h */,
 				9C195DB117674F1F00183192 /* ProductsListViewController.m */,
 				9CA5D73A176294A30009098E /* ProviderViewController.h */,
@@ -459,6 +474,9 @@
 				346DE78D176B794200090C0E /* Identifier+SLExtensions.m in Sources */,
 				346DE796176B7F8800090C0E /* HomedepotParser.m in Sources */,
 				346DE79D176B8DEA00090C0E /* BestbuyParser.m in Sources */,
+				9C2263F4176BAB0C00C3FDD9 /* MainViewController.m in Sources */,
+				9C2263F7176BAB4400C3FDD9 /* LeftPanelViewController.m in Sources */,
+				9C2263FA176BB04200C3FDD9 /* CenterViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

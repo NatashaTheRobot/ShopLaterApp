@@ -19,7 +19,6 @@
 @property (strong, nonatomic) NSString *mobileURLString;
 
 - (NSString *)productName;
-- (NSString *)productSummary;
 - (NSNumber *)priceInDollars;
 - (Price *)productPrice;
 - (Image *)productImage;

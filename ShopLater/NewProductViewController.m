@@ -80,7 +80,6 @@
     NSSet *prices = [NSSet setWithObject:[self.parser.delegate productPrice]];
     
     NSDictionary *productDictionary = [NSDictionary dictionaryWithObjectsAndKeys:[self.parser.delegate productName], @"name",
-                                       [self.parser.delegate productSummary], @"summary",
                                        [self.parser.delegate cleanURLString], @"url",
                                        images, @"images",
                                        prices, @"prices",

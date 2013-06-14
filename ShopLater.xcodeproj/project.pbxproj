@@ -49,7 +49,7 @@
 		9CB940621766449000DC05D2 /* Provider+SLExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CB940611766449000DC05D2 /* Provider+SLExtensions.m */; };
 		9CB9406517665AC300DC05D2 /* Parser.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CB9406417665AC300DC05D2 /* Parser.m */; };
 		9CB9406C1766796A00DC05D2 /* Image.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CB9406B1766796A00DC05D2 /* Image.m */; };
-		9CEB8562176A4EE300E2AE80 /* Product.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CEB8561176A4EE300E2AE80 /* Product.m */; };
+		9CEB8565176B6AFB00E2AE80 /* Product.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CEB8564176B6AFB00E2AE80 /* Product.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -128,8 +128,8 @@
 		9CB9406617665D2000DC05D2 /* ParserDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParserDelegate.h; sourceTree = "<group>"; };
 		9CB9406A1766796A00DC05D2 /* Image.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Image.h; sourceTree = "<group>"; };
 		9CB9406B1766796A00DC05D2 /* Image.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Image.m; sourceTree = "<group>"; };
-		9CEB8560176A4EE300E2AE80 /* Product.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Product.h; sourceTree = "<group>"; };
-		9CEB8561176A4EE300E2AE80 /* Product.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Product.m; sourceTree = "<group>"; };
+		9CEB8563176B6AFB00E2AE80 /* Product.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Product.h; sourceTree = "<group>"; };
+		9CEB8564176B6AFB00E2AE80 /* Product.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Product.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -243,8 +243,8 @@
 				9C927B9E17627A9A00570F45 /* ShopLater.xcdatamodeld */,
 				9C927B97176278B800570F45 /* CoreDataManager.h */,
 				9C927B98176278B800570F45 /* CoreDataManager.m */,
-				9CEB8560176A4EE300E2AE80 /* Product.h */,
-				9CEB8561176A4EE300E2AE80 /* Product.m */,
+				9CEB8563176B6AFB00E2AE80 /* Product.h */,
+				9CEB8564176B6AFB00E2AE80 /* Product.m */,
 				9CA5D7701764BF650009098E /* Provider.h */,
 				9CA5D7711764BF650009098E /* Provider.m */,
 				9C927BAC176287BD00570F45 /* Price.h */,
@@ -434,7 +434,7 @@
 				9C195DFB1768D91200183192 /* AFURLConnectionOperation.m in Sources */,
 				9C195DFC1768D91200183192 /* AFXMLRequestOperation.m in Sources */,
 				9C195DFD1768D91200183192 /* UIImageView+AFNetworking.m in Sources */,
-				9CEB8562176A4EE300E2AE80 /* Product.m in Sources */,
+				9CEB8565176B6AFB00E2AE80 /* Product.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

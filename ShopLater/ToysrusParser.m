@@ -19,16 +19,10 @@
 @property (strong, nonatomic) CoreDataManager *coreDataManager;
 
 @property (strong, nonatomic) NSString *name;
-@property (strong, nonatomic) NSString *summary;
 @property (strong, nonatomic) Price *price;
 @property (strong, nonatomic) Image *image;
 
 - (NSString *)getProductIdFromURLString:(NSString *)urlString;
-
-- (NSString *)productName;
-- (NSString *)productSummary;
-- (Price *)productPrice;
-- (Image *)productImage;
 
 @end
 
@@ -123,40 +117,6 @@
     
     return self.name;
 }
-
-- (NSString *)productSummary
-{
-    if (!self.summary) {
-        
-        NSString *startTag = @"<label>Product Description</label>";
-        NSString *endTag = @"<p>";
-        
-        NSString *descriptionStringUnformatted = [Parser scanString:self.htmlString startTag:startTag endTag:endTag];
-        
-        startTag = @"<br />";
-        endTag = @"<br />";
-        
-        self.summary = [Parser scanString:descriptionStringUnformatted startTag:startTag endTag:endTag];
-        
-        /*
-         
-         Regex to remove nasty html tags and artifacts from product description, add as needed :
-         
-         || range = [self.summary rangeOfString:@"ENTER_NASTY_TAG_HERE" options:NSRegularExpressionSearch]).location != NSNotFound
-         
-         */
-        
-        NSRange range;
-        while ((range = [self.summary rangeOfString:@"<[^>]+>" options:NSRegularExpressionSearch]).location != NSNotFound || (range = [self.summary rangeOfString:@"&reg" options:NSRegularExpressionSearch]).location != NSNotFound) {
-            self.summary = [self.summary stringByReplacingCharactersInRange:range withString:@""];
-        }
-    
-        
-    }
-    return self.summary;
-}
-
-
 
 - (Image *)productImage
 {

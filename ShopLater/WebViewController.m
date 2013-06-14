@@ -9,6 +9,7 @@
 #import "WebViewController.h"
 #import "NewProductViewController.h"
 #import "Identifier.h"
+#import "CoreDataManager.h"
 
 @interface WebViewController ()
 
@@ -54,7 +55,7 @@
 
 - (void)loadWebPage
 {
-    NSString *urlString = self.product ? self.product.url : self.provider.url;
+    NSString *urlString = self.product ? self.product.mobileURL : self.provider.url;
     
     NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:urlString]];
     
@@ -85,20 +86,14 @@
         }
     }];
     
-    
+    BOOL newProduct = [[CoreDataManager sharedManager] uniqueAttributeForClassName:NSStringFromClass([Product class])
+                                                                     attributeName:@"mobileURL" attributeValue:urlString];
     dispatch_async(dispatch_get_main_queue(), ^{
-        if (self.product) {
-            BOOL productURL = !([urlString rangeOfString:self.product.mobileURL].location == NSNotFound);
-            if (productURL) {
-                [self hideBuyLaterButton];
-                return;
-            }
-        }
-        
-        if (providerPage && productPage) {
+        if (providerPage && productPage && newProduct) {
             [self showBuyLaterButton];
+        } else {
+            [self hideBuyLaterButton];
         }
-        
     });
     
 }

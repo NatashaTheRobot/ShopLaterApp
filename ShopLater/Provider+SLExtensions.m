@@ -57,14 +57,14 @@
                                                 [Provider logoImageNameFromProviderName:providerName], @"fileName",
                                                 nil];
     Image *logoImage = [coreDataManager createEntityWithClassName:NSStringFromClass([Image class])
-                                                          atributesDictionary:logoImageDictionary];
+                                                          attributesDictionary:logoImageDictionary];
     
     NSDictionary *exampleImageDictionary = [NSDictionary dictionaryWithObjectsAndKeys:
                                                    [Provider exampleImageNameFromProviderName:providerName], @"fileName",
                                                    nil];
     
     Image *exampleImage =  [coreDataManager createEntityWithClassName:NSStringFromClass([Image class])
-                                                              atributesDictionary:exampleImageDictionary];
+                                                              attributesDictionary:exampleImageDictionary];
     
     NSDictionary *providerDictionary = [NSDictionary dictionaryWithObjectsAndKeys:providerName, @"name",
                                        identifiers, @"identifiers",

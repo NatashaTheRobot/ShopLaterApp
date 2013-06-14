@@ -11,17 +11,17 @@
 
 @interface CoreDataManager : NSObject
 
-@property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
-
 + (CoreDataManager *)sharedManager;
 
 - (void)saveDataInManagedContextUsingBlock:(void (^)(BOOL saved, NSError *error))savedBlock;
 
 - (NSFetchedResultsController *)fetchEntitiesWithClassName:(NSString *)className
                                            sortDescriptors:(NSArray *)sortDescriptors
-                                        sectionNameKeyPath:(NSString *)sectionNameKeypath;
+                                        sectionNameKeyPath:(NSString *)sectionNameKeypath
+                                                 predicate:(NSPredicate *)predicate;
 
-- (id)createEntityWithClassName:(NSString *)className atributesDictionary:(NSDictionary *)attributesDictionary;
+- (id)createEntityWithClassName:(NSString *)className attributesDictionary:(NSDictionary *)attributesDictionary;
 - (void)deleteEntity:(NSManagedObject *)entity;
+- (BOOL)uniqueAttributeForClassName:(NSString *)className attributeName:(NSString *)attributeName attributeValue:(id)attributeValue;
 
 @end

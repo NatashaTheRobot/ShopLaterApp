@@ -11,6 +11,7 @@
 
 @interface CoreDataManager ()
 
+@property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 @property (strong, nonatomic) NSManagedObjectModel *managedObjectModel;
 @property (strong, nonatomic) NSPersistentStoreCoordinator *persistentStoreCoordinator;
 
@@ -85,6 +86,7 @@ static CoreDataManager *coreDataManager;
 - (NSFetchedResultsController *)fetchEntitiesWithClassName:(NSString *)className
                                            sortDescriptors:(NSArray *)sortDescriptors
                                         sectionNameKeyPath:(NSString *)sectionNameKeypath
+                                                 predicate:(NSPredicate *)predicate
 
 {
     NSFetchedResultsController *fetchedResultsController;
@@ -93,7 +95,7 @@ static CoreDataManager *coreDataManager;
                                               inManagedObjectContext:self.managedObjectContext];
     fetchRequest.entity = entity;
     fetchRequest.sortDescriptors = sortDescriptors;
-    
+    fetchRequest.predicate = predicate;
     
     fetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest
                                                                         managedObjectContext:self.managedObjectContext
@@ -111,7 +113,7 @@ static CoreDataManager *coreDataManager;
     return fetchedResultsController;
 }
 
-- (id)createEntityWithClassName:(NSString *)className atributesDictionary:(NSDictionary *)attributesDictionary
+- (id)createEntityWithClassName:(NSString *)className attributesDictionary:(NSDictionary *)attributesDictionary
 {
     NSManagedObject *entity = [NSEntityDescription insertNewObjectForEntityForName:className
                                                inManagedObjectContext:self.managedObjectContext];
@@ -127,6 +129,19 @@ static CoreDataManager *coreDataManager;
 - (void)deleteEntity:(NSManagedObject *)entity
 {
     [self.managedObjectContext deleteObject:entity];
+}
+
+- (BOOL)uniqueAttributeForClassName:(NSString *)className attributeName:(NSString *)attributeName attributeValue:(id)attributeValue
+{
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"%K like %@", attributeName, attributeValue];
+    NSArray *sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:attributeName ascending:YES]];
+    
+    NSFetchedResultsController *fetchedResultsController = [self fetchEntitiesWithClassName:className
+                                                                            sortDescriptors:sortDescriptors
+                                                                         sectionNameKeyPath:nil
+                                                                                  predicate:predicate];
+
+    return fetchedResultsController.fetchedObjects.count == 0;
 }
 
 @end

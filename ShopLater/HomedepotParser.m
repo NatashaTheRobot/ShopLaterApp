@@ -77,7 +77,7 @@
                                          sPriceTypeCurrent, @"type",
                                          [NSDate date], @"created_at", nil];
         self.price = [self.coreDataManager createEntityWithClassName:NSStringFromClass([Price class])
-                                                 atributesDictionary:priceDictionary];
+                                                 attributesDictionary:priceDictionary];
         
     }
     
@@ -112,7 +112,7 @@
         NSDictionary *imageDictionary = [NSDictionary dictionaryWithObjectsAndKeys:imageFileName, @"fileName",
                                          urlString, @"externalURLString",
                                          nil];
-        self.image = [self.coreDataManager createEntityWithClassName:NSStringFromClass([Image class]) atributesDictionary:imageDictionary];
+        self.image = [self.coreDataManager createEntityWithClassName:NSStringFromClass([Image class]) attributesDictionary:imageDictionary];
         
     }
     return self.image;

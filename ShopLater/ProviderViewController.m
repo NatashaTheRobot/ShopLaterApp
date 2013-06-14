@@ -18,7 +18,6 @@
 
 @property (strong, nonatomic) CoreDataManager *coreDataManager;
 @property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
-@property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 
 - (void)createProviders;
 - (void)fetchProviders;
@@ -34,7 +33,6 @@
     if (self) {
         
         self.coreDataManager = [CoreDataManager sharedManager];
-        self.managedObjectContext = self.coreDataManager.managedObjectContext;
         
         [self fetchProviders];
         
@@ -62,7 +60,7 @@
     NSArray *providers = [Provider providersArray];
     
     [providers enumerateObjectsUsingBlock:^(NSDictionary *providerDictionary, NSUInteger idx, BOOL *stop) {
-        [self.coreDataManager createEntityWithClassName:NSStringFromClass([Provider class]) atributesDictionary:providerDictionary];
+        [self.coreDataManager createEntityWithClassName:NSStringFromClass([Provider class]) attributesDictionary:providerDictionary];
     }];
     
     [self.coreDataManager saveDataInManagedContextUsingBlock:^(BOOL saved, NSError *error) {
@@ -86,7 +84,8 @@
     
     self.fetchedResultsController = [self.coreDataManager fetchEntitiesWithClassName:NSStringFromClass([Provider class])
                                                                      sortDescriptors:sortDescriptors
-                                                                  sectionNameKeyPath:nil];
+                                                                  sectionNameKeyPath:nil
+                                                                           predicate:nil];
 }
 
 #pragma mark - CollectionView Delegate Methods
@@ -104,7 +103,8 @@
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {    
-    ProviderCollectionViewCell *cell = [self.collectionView dequeueReusableCellWithReuseIdentifier:sProviderCellIdentifier forIndexPath:indexPath];
+    ProviderCollectionViewCell *cell = [self.collectionView dequeueReusableCellWithReuseIdentifier:sProviderCellIdentifier
+                                                                                      forIndexPath:indexPath];
     
     Provider *provider = [self.fetchedResultsController objectAtIndexPath:indexPath];
     

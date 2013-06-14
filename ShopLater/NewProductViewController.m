@@ -89,8 +89,9 @@
                                        nil];
     dispatch_async(dispatch_get_main_queue(), ^{
         self.coreDataManager = [CoreDataManager sharedManager];
+        
         self.product = [self.coreDataManager createEntityWithClassName:NSStringFromClass([Product class])
-                                                              atributesDictionary:productDictionary];
+                                                              attributesDictionary:productDictionary];
     });
     
 }
@@ -108,7 +109,7 @@
                                          [NSDate date], @"created_at",
                                          nil];
     Price *wishPrice = [self.coreDataManager createEntityWithClassName:NSStringFromClass([Price class])
-                                                   atributesDictionary:wishPriceDictionary];
+                                                   attributesDictionary:wishPriceDictionary];
     self.product.prices = [self.product.prices setByAddingObject:wishPrice];
     self.product.priceDifference = [self.product currentWishPriceDifference];
     

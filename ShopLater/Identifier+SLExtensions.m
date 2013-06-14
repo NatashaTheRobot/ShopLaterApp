@@ -20,7 +20,7 @@
         NSDictionary *identiferDictionary = [NSDictionary dictionaryWithObject:name forKey:@"name"];
         
         Identifier *identifier = [[CoreDataManager sharedManager] createEntityWithClassName:NSStringFromClass([Identifier class])
-                                                                        atributesDictionary:identiferDictionary];
+                                                                        attributesDictionary:identiferDictionary];
 
         [identifierSet addObject:identifier];
         

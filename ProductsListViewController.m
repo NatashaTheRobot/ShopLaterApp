@@ -85,7 +85,7 @@
     
     self.fetchedResultsController = [self.coreDataManager fetchEntitiesWithClassName:NSStringFromClass([Product class])
                                                                      sortDescriptors:sortDescriptors
-                                                                  sectionNameKeyPath:nil];
+                                                                  sectionNameKeyPath:@"name"];
 
     if (self.fetchedResultsController.fetchedObjects.count == 0) {
         [self performSegueWithIdentifier:@"toProviderCollectionView" sender:self];
@@ -114,7 +114,7 @@
     NSArray *sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:sProductSortAttribute ascending:YES]];
     self.fetchedResultsController = [self.coreDataManager fetchEntitiesWithClassName:NSStringFromClass([Product class])
                                                                      sortDescriptors:sortDescriptors
-                                                                  sectionNameKeyPath:nil];
+                                                                  sectionNameKeyPath:@"name"];
     [self.tableView reloadData];
     
 }
@@ -148,10 +148,10 @@
     cell.wishPrice = [product formattedPriceWithType:sPriceTypeWish];
     cell.provider = product.provider;
     
-    if ([product.priceDifference floatValue] <= 0) {
-        cell.layer.borderColor = [[UIColor redColor] CGColor];
-        cell.layer.borderWidth = 1.0f;
-    }
+//    if ([product.priceDifference floatValue] <= 0) {
+//        cell.layer.borderColor = [[UIColor redColor] CGColor];
+//        cell.layer.borderWidth = 1.0f;
+//    }
     
     return cell;
 }

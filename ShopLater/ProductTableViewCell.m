@@ -49,8 +49,6 @@
 - (void)setProductImage:(UIImage *)productImage
 {
     _productImage = productImage;
-    self.productImageView.layer.borderColor = [[UIColor colorWithRed:128/255.0 green:128/255.0  blue:128/255.0 alpha:1] CGColor];
-    self.productImageView.layer.borderWidth = 1.0;
     self.productImageView.image = productImage;
 }
 

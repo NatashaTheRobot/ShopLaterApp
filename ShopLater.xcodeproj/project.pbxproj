@@ -7,13 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		34C5C005176A312F00E947BD /* EditSummaryTextViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34C5C004176A312E00E947BD /* EditSummaryTextViewController.m */; };
 		9C195DB217674F1F00183192 /* ProductsListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C195DB117674F1F00183192 /* ProductsListViewController.m */; };
 		9C195DB51767510500183192 /* ProductTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C195DB41767510500183192 /* ProductTableViewCell.m */; };
 		9C195DB81767588B00183192 /* Price+SLExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C195DB71767588B00183192 /* Price+SLExtensions.m */; };
 		9C195DC417679B4E00183192 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C195DC317679B4D00183192 /* QuartzCore.framework */; };
-		9C195DCB1767A7CB00183192 /* EditProductViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C195DCA1767A7CA00183192 /* EditProductViewController.m */; };
-		9C195DD41767AC0700183192 /* ProductDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C195DD31767AC0500183192 /* ProductDetailViewController.m */; };
 		9C195DD71767AE2500183192 /* Product+SLExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C195DD61767AE2500183192 /* Product+SLExtensions.m */; };
 		9C195DF51768D91200183192 /* AFHTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C195DE31768D91100183192 /* AFHTTPClient.m */; };
 		9C195DF61768D91200183192 /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C195DE51768D91100183192 /* AFHTTPRequestOperation.m */; };
@@ -57,9 +54,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		34C5C002176A271F00E947BD /* EditDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EditDelegate.h; sourceTree = "<group>"; };
-		34C5C003176A312E00E947BD /* EditSummaryTextViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditSummaryTextViewController.h; sourceTree = "<group>"; };
-		34C5C004176A312E00E947BD /* EditSummaryTextViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditSummaryTextViewController.m; sourceTree = "<group>"; };
 		9C195DAC17674E6800183192 /* ProductListDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductListDelegate.h; sourceTree = "<group>"; };
 		9C195DB017674F1F00183192 /* ProductsListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ProductsListViewController.h; path = ../ProductsListViewController.h; sourceTree = "<group>"; };
 		9C195DB117674F1F00183192 /* ProductsListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ProductsListViewController.m; path = ../ProductsListViewController.m; sourceTree = "<group>"; };
@@ -68,13 +62,8 @@
 		9C195DB61767588B00183192 /* Price+SLExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Price+SLExtensions.h"; sourceTree = "<group>"; };
 		9C195DB71767588B00183192 /* Price+SLExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Price+SLExtensions.m"; sourceTree = "<group>"; };
 		9C195DC317679B4D00183192 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
-		9C195DC91767A7CA00183192 /* EditProductViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditProductViewController.h; sourceTree = "<group>"; };
-		9C195DCA1767A7CA00183192 /* EditProductViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditProductViewController.m; sourceTree = "<group>"; };
-		9C195DD21767AC0400183192 /* ProductDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductDetailViewController.h; sourceTree = "<group>"; };
-		9C195DD31767AC0500183192 /* ProductDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductDetailViewController.m; sourceTree = "<group>"; };
 		9C195DD51767AE2400183192 /* Product+SLExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Product+SLExtensions.h"; sourceTree = "<group>"; };
 		9C195DD61767AE2500183192 /* Product+SLExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Product+SLExtensions.m"; sourceTree = "<group>"; };
-		9C195DDB1768A1C500183192 /* ProductDetailDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductDetailDelegate.h; sourceTree = "<group>"; };
 		9C195DE21768D91100183192 /* AFHTTPClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPClient.h; sourceTree = "<group>"; };
 		9C195DE31768D91100183192 /* AFHTTPClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPClient.m; sourceTree = "<group>"; };
 		9C195DE41768D91100183192 /* AFHTTPRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperation.h; sourceTree = "<group>"; };
@@ -290,12 +279,6 @@
 				9CA5D7681763E32E0009098E /* InformationViewController.m */,
 				9CA5D76A1763E34C0009098E /* NewProductViewController.h */,
 				9CA5D76B1763E34C0009098E /* NewProductViewController.m */,
-				9C195DD21767AC0400183192 /* ProductDetailViewController.h */,
-				9C195DD31767AC0500183192 /* ProductDetailViewController.m */,
-				9C195DC91767A7CA00183192 /* EditProductViewController.h */,
-				9C195DCA1767A7CA00183192 /* EditProductViewController.m */,
-				34C5C003176A312E00E947BD /* EditSummaryTextViewController.h */,
-				34C5C004176A312E00E947BD /* EditSummaryTextViewController.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -326,8 +309,6 @@
 			children = (
 				9CB9406617665D2000DC05D2 /* ParserDelegate.h */,
 				9C195DAC17674E6800183192 /* ProductListDelegate.h */,
-				9C195DDB1768A1C500183192 /* ProductDetailDelegate.h */,
-				34C5C002176A271F00E947BD /* EditDelegate.h */,
 			);
 			name = Delegates;
 			sourceTree = "<group>";
@@ -449,8 +430,6 @@
 				9C195DB217674F1F00183192 /* ProductsListViewController.m in Sources */,
 				9C195DB51767510500183192 /* ProductTableViewCell.m in Sources */,
 				9C195DB81767588B00183192 /* Price+SLExtensions.m in Sources */,
-				9C195DCB1767A7CB00183192 /* EditProductViewController.m in Sources */,
-				9C195DD41767AC0700183192 /* ProductDetailViewController.m in Sources */,
 				9C195DD71767AE2500183192 /* Product+SLExtensions.m in Sources */,
 				9C195DF51768D91200183192 /* AFHTTPClient.m in Sources */,
 				9C195DF61768D91200183192 /* AFHTTPRequestOperation.m in Sources */,
@@ -461,7 +440,6 @@
 				9C195DFB1768D91200183192 /* AFURLConnectionOperation.m in Sources */,
 				9C195DFC1768D91200183192 /* AFXMLRequestOperation.m in Sources */,
 				9C195DFD1768D91200183192 /* UIImageView+AFNetworking.m in Sources */,
-				34C5C005176A312F00E947BD /* EditSummaryTextViewController.m in Sources */,
 				9CEB8562176A4EE300E2AE80 /* Product.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

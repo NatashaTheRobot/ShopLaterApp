@@ -16,7 +16,7 @@
 #import "Price+SLExtensions.h"
 #import "Provider+SLExtensions.h"
 #import <QuartzCore/QuartzCore.h>
-#import "ProductDetailViewController.h"
+#import "WebViewController.h"
 #import "Parser.h"
 
 @interface ProductsListViewController ()
@@ -99,12 +99,12 @@
 {
     if ([segue.destinationViewController isKindOfClass:[ProviderViewController class]]) {
         ((ProviderViewController *)segue.destinationViewController).showNavigationBar = (self.fetchedResultsController.fetchedObjects.count == 0);
-    } else if ([segue.destinationViewController isKindOfClass:[ProductDetailViewController class]]) {
+    } else if ([segue.destinationViewController isKindOfClass:[WebViewController class]]) {
         Product *product = [self.fetchedResultsController objectAtIndexPath:[self.tableView indexPathForSelectedRow]];
         
-        ProductDetailViewController *productDetailViewController = (ProductDetailViewController *)segue.destinationViewController;
-        productDetailViewController.product = product;
-        productDetailViewController.delegate = self;
+        WebViewController *webViewController = (WebViewController *)segue.destinationViewController;
+        webViewController.product = product;
+        webViewController.provider = product.provider;
     }
 }
 

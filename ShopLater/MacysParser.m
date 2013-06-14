@@ -32,7 +32,6 @@
 
 + (instancetype)parserWithProductURLString:(NSString *)productURLString
 {
-    NSLog(@"in instanceType\nproductURLString is \n%@", productURLString);
     MacysParser *parser = [[MacysParser alloc] init];
     parser.mobileURLString = productURLString;
     
@@ -46,9 +45,7 @@
     NSData *data = [NSData dataWithContentsOfURL:[NSURL URLWithString:parser.cleanURLString]];
     
     parser.htmlString = [[NSString alloc] initWithData:data encoding:NSASCIIStringEncoding];
-    
-    NSLog(@"parser.html\n%@",parser.htmlString);
-    
+        
     parser.coreDataManager = [CoreDataManager sharedManager];
     
     return parser;
@@ -64,7 +61,6 @@
     return [Parser scanString:urlString startTag:@"product/" endTag:@"?"];
 }
 
-
 # pragma mark - Property Delegate Methods
 
 - (NSNumber *)priceInDollars
@@ -72,20 +68,17 @@
     NSString *priceString;
     
     if ([self.htmlString containsString:@"<!-- PRICE BLOCK: Single Price -->"]) {
-        NSLog(@"not a sale item");
         
         priceString = [Parser scanString:self.htmlString startTag:@"<!-- PRICE BLOCK: Single Price -->" endTag:@"<br>"];
-        //NSLog(@"string1 (it didn't work) = %@", string1);
         priceString = [Parser scanString:priceString startTag:@"$" endTag:@"</"];
-        NSLog(@"%@", priceString);
-        
+        priceString = [priceString stringByReplacingOccurrencesOfString:@"," withString:@""];
+
     } else {
-        NSLog(@"sale item");
         
         priceString = [Parser scanString:self.htmlString startTag:@"<span>Was" endTag:@"<br>"];
-        //NSLog(@"sting 1 = %@", string1Sale);
         priceString = [Parser scanString:priceString startTag:@"$" endTag:@"</"];
-        NSLog(@"%@", priceString);
+        priceString = [priceString stringByReplacingOccurrencesOfString:@"," withString:@""];
+
     }
     
     return [NSNumber numberWithFloat:[priceString floatValue]];
@@ -93,7 +86,6 @@
 
 - (Price *)productPrice
 {
-    
     if (!self.price) {
         
         NSDictionary *priceDictionary = [NSDictionary dictionaryWithObjectsAndKeys:
@@ -110,7 +102,6 @@
 
 - (NSString *)productName
 {
-    
     if (!self.name) {
         
         self.name = [Parser scanString:self.htmlString startTag:@"itemprop=\"name\">" endTag:@"</h1>"];

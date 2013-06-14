@@ -20,9 +20,9 @@
 		346DE7A4176B97C500090C0E /* MacysParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 346DE7A3176B97C500090C0E /* MacysParser.m */; };
 		346DE7A7176BA21600090C0E /* bestbuy_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 346DE7A5176BA21600090C0E /* bestbuy_logo.png */; };
 		346DE7A8176BA21600090C0E /* bestbuy_logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 346DE7A6176BA21600090C0E /* bestbuy_logo@2x.png */; };
-		346DE7AB176BA54A00090C0E /* macys_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 346DE7A9176BA54A00090C0E /* macys_logo.png */; };
-		346DE7AC176BA54A00090C0E /* macys_logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 346DE7AA176BA54A00090C0E /* macys_logo@2x.png */; };
 		34C4E09E176BB7FF00D1EFD5 /* NSString+SLExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 34C4E09D176BB7FF00D1EFD5 /* NSString+SLExtensions.m */; };
+		34C4E0A1176BBCF100D1EFD5 /* macys_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 34C4E09F176BBCF100D1EFD5 /* macys_logo.png */; };
+		34C4E0A2176BBCF100D1EFD5 /* macys_logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 34C4E0A0176BBCF100D1EFD5 /* macys_logo@2x.png */; };
 		9C195DB217674F1F00183192 /* ProductsListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C195DB117674F1F00183192 /* ProductsListViewController.m */; };
 		9C195DB51767510500183192 /* ProductTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C195DB41767510500183192 /* ProductTableViewCell.m */; };
 		9C195DB81767588B00183192 /* Price+SLExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C195DB71767588B00183192 /* Price+SLExtensions.m */; };
@@ -85,10 +85,10 @@
 		346DE7A3176B97C500090C0E /* MacysParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MacysParser.m; sourceTree = "<group>"; };
 		346DE7A5176BA21600090C0E /* bestbuy_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bestbuy_logo.png; sourceTree = "<group>"; };
 		346DE7A6176BA21600090C0E /* bestbuy_logo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bestbuy_logo@2x.png"; sourceTree = "<group>"; };
-		346DE7A9176BA54A00090C0E /* macys_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = macys_logo.png; sourceTree = "<group>"; };
-		346DE7AA176BA54A00090C0E /* macys_logo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "macys_logo@2x.png"; sourceTree = "<group>"; };
 		34C4E09C176BB7FF00D1EFD5 /* NSString+SLExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+SLExtensions.h"; sourceTree = "<group>"; };
 		34C4E09D176BB7FF00D1EFD5 /* NSString+SLExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+SLExtensions.m"; sourceTree = "<group>"; };
+		34C4E09F176BBCF100D1EFD5 /* macys_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = macys_logo.png; sourceTree = "<group>"; };
+		34C4E0A0176BBCF100D1EFD5 /* macys_logo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "macys_logo@2x.png"; sourceTree = "<group>"; };
 		9C195DAC17674E6800183192 /* ProductListDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductListDelegate.h; sourceTree = "<group>"; };
 		9C195DB017674F1F00183192 /* ProductsListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ProductsListViewController.h; path = ../ProductsListViewController.h; sourceTree = "<group>"; };
 		9C195DB117674F1F00183192 /* ProductsListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ProductsListViewController.m; path = ../ProductsListViewController.m; sourceTree = "<group>"; };
@@ -312,8 +312,8 @@
 		9CA5D7431762A9840009098E /* ProviderLogos */ = {
 			isa = PBXGroup;
 			children = (
-				346DE7A9176BA54A00090C0E /* macys_logo.png */,
-				346DE7AA176BA54A00090C0E /* macys_logo@2x.png */,
+				34C4E09F176BBCF100D1EFD5 /* macys_logo.png */,
+				34C4E0A0176BBCF100D1EFD5 /* macys_logo@2x.png */,
 				346DE7A5176BA21600090C0E /* bestbuy_logo.png */,
 				346DE7A6176BA21600090C0E /* bestbuy_logo@2x.png */,
 				346DE797176B822300090C0E /* homedepot_logo.png */,
@@ -432,8 +432,8 @@
 				346DE79A176B822300090C0E /* homedepot_log@2x.png in Resources */,
 				346DE7A7176BA21600090C0E /* bestbuy_logo.png in Resources */,
 				346DE7A8176BA21600090C0E /* bestbuy_logo@2x.png in Resources */,
-				346DE7AB176BA54A00090C0E /* macys_logo.png in Resources */,
-				346DE7AC176BA54A00090C0E /* macys_logo@2x.png in Resources */,
+				34C4E0A1176BBCF100D1EFD5 /* macys_logo.png in Resources */,
+				34C4E0A2176BBCF100D1EFD5 /* macys_logo@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

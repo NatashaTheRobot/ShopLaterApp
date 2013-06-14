@@ -61,7 +61,6 @@
 
 - (Price *)productPrice
 {
-    
     if (!self.price) {
         
         NSDictionary *priceDictionary = [NSDictionary dictionaryWithObjectsAndKeys:
@@ -76,15 +75,12 @@
     return self.price;
 }
 
-
 - (NSString *)productName
 {
-    
-   
-    
     if (!self.name) {
 
-        self.name = [Parser scanString:self.htmlString startTag:@"<head>" endTag:@"</head>"];
+        NSString *name = [Parser scanString:self.htmlString startTag:@"<head>" endTag:@"</head>"];
+        self.name = [Parser scanString:name startTag:@"<title>" endTag:@"<"];
     }
     
     return self.name;
@@ -92,7 +88,6 @@
 
 - (Image *)productImage
 {
-
     if (!self.image) {
         
         NSString *imageString;

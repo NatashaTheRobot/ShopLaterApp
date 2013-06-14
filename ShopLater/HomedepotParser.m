@@ -62,7 +62,8 @@
 
 - (NSNumber *)priceInDollars
 {
-   NSString *priceString = [Parser scanString:self.htmlString startTag:@" itemprop=\"price\"> $" endTag:@"</span>"];
+    NSString *priceString = [Parser scanString:self.htmlString startTag:@" itemprop=\"price\"> $" endTag:@"</span>"];
+    priceString = [priceString stringByReplacingOccurrencesOfString:@"," withString:@""];
     
     return [NSNumber numberWithFloat:[priceString floatValue]];
 }
@@ -77,7 +78,7 @@
                                          sPriceTypeCurrent, @"type",
                                          [NSDate date], @"created_at", nil];
         self.price = [self.coreDataManager createEntityWithClassName:NSStringFromClass([Price class])
-                                                 attributesDictionary:priceDictionary];
+                                                attributesDictionary:priceDictionary];
         
     }
     

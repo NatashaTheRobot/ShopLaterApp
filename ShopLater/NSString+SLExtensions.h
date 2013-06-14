@@ -10,6 +10,6 @@
 
 @interface NSString (SLExtensions)
 
-- (BOOL) containsString: (NSString*) substring;
+- (BOOL)containsString:(NSString*)substring;
 
 @end

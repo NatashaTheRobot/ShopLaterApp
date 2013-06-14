@@ -2,7 +2,7 @@
 //  Image.m
 //  ShopLater
 //
-//  Created by Natasha Murashev on 6/10/13.
+//  Created by Reza Fatahi on 6/14/13.
 //  Copyright (c) 2013 Natasha Murashev. All rights reserved.
 //
 
@@ -13,8 +13,8 @@
 
 @implementation Image
 
-@dynamic fileName;
 @dynamic externalURLString;
+@dynamic fileName;
 @dynamic product;
 @dynamic provider;
 

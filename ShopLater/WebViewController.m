@@ -8,6 +8,7 @@
 
 #import "WebViewController.h"
 #import "NewProductViewController.h"
+#import "Identifier.h"
 
 @interface WebViewController ()
 
@@ -34,7 +35,7 @@
     
     self.toolbarButtons = [self.navigationItem.rightBarButtonItems mutableCopy];
     [self hideBuyLaterButton];
-
+    
 }
 
 - (void)hideBuyLaterButton
@@ -74,7 +75,16 @@
 - (void)checkIfProductPage:(NSString *)urlString
 {
     BOOL providerPage = !([urlString rangeOfString:self.provider.name].location == NSNotFound);
-    BOOL productPage = !([urlString rangeOfString:self.provider.identifierName].location == NSNotFound);
+    
+    __block BOOL productPage = YES;
+    
+    [self.provider.identifiers enumerateObjectsUsingBlock:^(Identifier *identifier, BOOL *stop) {
+        if ([urlString rangeOfString:identifier.name].location == NSNotFound) {
+            productPage = NO;
+            *stop = YES;
+        }
+    }];
+    
     
     dispatch_async(dispatch_get_main_queue(), ^{
         if (self.product) {
@@ -90,7 +100,7 @@
         }
         
     });
-
+    
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
@@ -100,7 +110,7 @@
         newProductViewController.productURLString = self.webView.request.URL.absoluteString;
         newProductViewController.provider = self.provider;
     }
-
+    
 }
 
 @end

@@ -10,6 +10,7 @@
 #import "CoreDataManager.h"
 #import "Image+SLExtensions.h"
 #import "Constants.h"
+#import "Identifier+SLExtensions.h"
 
 @implementation Provider (SLExtensions)
 
@@ -37,14 +38,16 @@
 {
     NSMutableArray *providers = [[NSMutableArray alloc] initWithCapacity:1];
     
-    [providers addObject:[self dictionaryWithProviderName:@"toysrus" identifierName:@"productId"]];
+    [providers addObject:[self dictionaryWithProviderName:@"toysrus"
+                                              identifiers:[Identifier identifiersWithNames:@[@"productId"]]]];
+
     
     return providers;
 }
 
 #pragma mark - provider dictionary
 
-+ (NSDictionary *)dictionaryWithProviderName:(NSString *)providerName identifierName:(NSString *)identifierName
++ (NSDictionary *)dictionaryWithProviderName:(NSString *)providerName identifiers:(NSSet *)identifiers
 {
     CoreDataManager *coreDataManager = [CoreDataManager sharedManager];
     
@@ -62,7 +65,7 @@
                                                               atributesDictionary:exampleImageDictionary];
     
     NSDictionary *providerDictionary = [NSDictionary dictionaryWithObjectsAndKeys:providerName, @"name",
-                                       identifierName, @"identifierName",
+                                       identifiers, @"identifiers",
                                        [Provider urlStringFromProviderName:providerName], @"url",
                                        [NSSet setWithObjects:logoImage, exampleImage, nil], @"images",
                                        nil];

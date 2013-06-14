@@ -1,5 +1,5 @@
 //
-//  Image.h
+//  Identifier.h
 //  ShopLater
 //
 //  Created by Reza Fatahi on 6/14/13.
@@ -9,13 +9,11 @@
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
 
-@class Product, Provider;
+@class Provider;
 
-@interface Image : NSManagedObject
+@interface Identifier : NSManagedObject
 
-@property (nonatomic, retain) NSString * externalURLString;
-@property (nonatomic, retain) NSString * fileName;
-@property (nonatomic, retain) Product *product;
+@property (nonatomic, retain) NSString * name;
 @property (nonatomic, retain) Provider *provider;
 
 @end

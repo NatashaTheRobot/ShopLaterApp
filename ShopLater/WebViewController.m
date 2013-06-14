@@ -8,15 +8,17 @@
 
 #import "WebViewController.h"
 #import "NewProductViewController.h"
-#import "InformationViewController.h"
 
 @interface WebViewController ()
 
 @property (weak, nonatomic) IBOutlet UIWebView *webView;
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
-@property (weak, nonatomic) IBOutlet UIBarButtonItem *buyLaterButton;
+
+@property (strong, nonatomic) IBOutlet UIBarButtonItem *buyLaterButton;
+@property (strong, nonatomic) NSMutableArray *toolbarButtons;
 
 - (void)checkIfProductPage:(NSString *)urlString;
+- (void)loadWebPage;
 
 @end
 
@@ -27,7 +29,30 @@
     [super viewDidLoad];
     
     [self.activityIndicator startAnimating];
+    
+    [self loadWebPage];
+    
+    self.toolbarButtons = [self.navigationItem.rightBarButtonItems mutableCopy];
+    [self hideBuyLaterButton];
 
+}
+
+- (void)hideBuyLaterButton
+{
+    [self.toolbarButtons removeObject:self.buyLaterButton];
+    [self.navigationItem setRightBarButtonItems:self.toolbarButtons animated:NO];
+}
+
+- (void)showBuyLaterButton
+{
+    if (![self.toolbarButtons containsObject:self.buyLaterButton]) {
+        [self.toolbarButtons addObject:self.buyLaterButton];
+        [self.navigationItem setRightBarButtonItems:self.toolbarButtons animated:YES];
+    }
+}
+
+- (void)loadWebPage
+{
     NSString *urlString = self.product ? self.product.url : self.provider.url;
     
     NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:urlString]];
@@ -55,12 +80,15 @@
         if (self.product) {
             BOOL productURL = !([urlString rangeOfString:self.product.mobileURL].location == NSNotFound);
             if (productURL) {
-                self.buyLaterButton.enabled = !productURL;
+                [self hideBuyLaterButton];
                 return;
             }
         }
-
-       self.buyLaterButton.enabled = (providerPage && productPage);
+        
+        if (providerPage && productPage) {
+            [self showBuyLaterButton];
+        }
+        
     });
 
 }
@@ -71,8 +99,6 @@
         NewProductViewController *newProductViewController = segue.destinationViewController;
         newProductViewController.productURLString = self.webView.request.URL.absoluteString;
         newProductViewController.provider = self.provider;
-    } else if ([segue.destinationViewController isKindOfClass:[InformationViewController class]]) {
-        ((InformationViewController *)segue.destinationViewController).provider = self.provider;
     }
 
 }

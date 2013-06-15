@@ -62,7 +62,7 @@
     dispatch_async(dispatch_get_main_queue(), ^{
         NSNumber *priceInDollars = [(Price *)[self.parser.delegate productPrice] dollarAmount];
         self.productNameLabel.text = [self.parser.delegate productName];
-        self.currentPriceLabel.text = [NSString stringWithFormat:@"$%@", priceInDollars];
+        self.currentPriceLabel.text = [NSString stringWithFormat:@"$%.2f", [priceInDollars floatValue]];
         self.priceSlider.maximumValue = [priceInDollars floatValue];
         self.priceSlider.value = [priceInDollars floatValue] * 0.8;
         self.wishPriceLabel.text = [NSString stringWithFormat:@"$%.2f", ([priceInDollars floatValue] * 0.8)];

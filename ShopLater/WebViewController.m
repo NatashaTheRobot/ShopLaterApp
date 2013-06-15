@@ -12,6 +12,7 @@
 #import "CoreDataManager.h"
 #import "ECSlidingViewController.h"
 #import "MenuViewController.h"
+#import <QuartzCore/QuartzCore.h>
 
 @interface WebViewController ()
 
@@ -47,6 +48,10 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
+    
+    self.view.layer.shadowOpacity = 0.8f;
+    self.view.layer.shadowRadius = 10.0f;
+    self.view.layer.shadowColor = [UIColor blackColor].CGColor;
     
     if (![self.slidingViewController.underLeftViewController isKindOfClass:[MenuViewController class]]) {
         self.slidingViewController.underLeftViewController  = [self.storyboard instantiateViewControllerWithIdentifier:NSStringFromClass([MenuViewController class])];

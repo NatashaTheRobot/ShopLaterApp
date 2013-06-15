@@ -10,7 +10,7 @@ static NSString *sProjectName = @"ShopLater";
 
 static NSString *sProviderCellIdentifier = @"provider";
 static NSString *sProductCellIdentifier = @"product";
-static NSString *sProductSortAttribute = @"priceDifference";
+static NSString *sProductSortAttribute = @"createdAt";
 
 static NSString *sImageTypeLogo = @"logo";
 static NSString *sImageTypeExample = @"example";

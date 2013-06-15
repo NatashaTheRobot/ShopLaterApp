@@ -109,14 +109,17 @@
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
     if (section == 1) {
-        UITableViewCell *headerCell = [tableView dequeueReusableCellWithIdentifier:sMenuStoreSectionCell];
-
-        if (!headerCell) {
-            UITableViewCell *header = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:sMenuStoreSectionCell];
-        }
+        UIView *header = [[UIView alloc] initWithFrame:CGRectMake(0, 0, tableView.frame.size.width, 40.0)];
+        header.backgroundColor = [UIColor grayColor];
         
-        headerCell.textLabel.text = @"Stores";
-        return headerCell;
+        UILabel *textLabel = [[UILabel alloc] initWithFrame:header.frame];
+        textLabel.text = sMenuStoreSectionTitle;
+        textLabel.backgroundColor = [UIColor grayColor];
+        textLabel.textColor = [UIColor whiteColor];
+        
+        [header addSubview:textLabel];
+        
+        return header;
     }
     
     return nil;

@@ -31,6 +31,7 @@
 {
     LululemonParser *parser = [[LululemonParser alloc] init];
     parser.cleanURLString = productURLString;
+    parser.mobileURLString = productURLString;
     
     // handle error (if we cannot get the product id for some reason)
     NSData *data = [NSData dataWithContentsOfURL:[NSURL URLWithString:parser.cleanURLString]];

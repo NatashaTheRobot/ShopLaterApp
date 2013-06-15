@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		3447CEBA176B774700BF0490 /* Identifier.m in Sources */ = {isa = PBXBuildFile; fileRef = 3447CEB9176B774700BF0490 /* Identifier.m */; };
-		3447CEBD176B774800BF0490 /* Provider.m in Sources */ = {isa = PBXBuildFile; fileRef = 3447CEBC176B774800BF0490 /* Provider.m */; };
 		3447CEC0176B774800BF0490 /* Price.m in Sources */ = {isa = PBXBuildFile; fileRef = 3447CEBF176B774800BF0490 /* Price.m */; };
 		3447CEC3176B774900BF0490 /* Product.m in Sources */ = {isa = PBXBuildFile; fileRef = 3447CEC2176B774800BF0490 /* Product.m */; };
 		3447CEC6176B774900BF0490 /* Image.m in Sources */ = {isa = PBXBuildFile; fileRef = 3447CEC5176B774900BF0490 /* Image.m */; };
@@ -37,6 +36,13 @@
 		9C195DFB1768D91200183192 /* AFURLConnectionOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C195DF01768D91100183192 /* AFURLConnectionOperation.m */; };
 		9C195DFC1768D91200183192 /* AFXMLRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C195DF21768D91100183192 /* AFXMLRequestOperation.m */; };
 		9C195DFD1768D91200183192 /* UIImageView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C195DF41768D91200183192 /* UIImageView+AFNetworking.m */; };
+		9C226414176BCCC600C3FDD9 /* ECSlidingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C226411176BCCC600C3FDD9 /* ECSlidingViewController.m */; };
+		9C226415176BCCC600C3FDD9 /* UIImage+ImageWithUIView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C226413176BCCC600C3FDD9 /* UIImage+ImageWithUIView.m */; };
+		9C22641E176BD12600C3FDD9 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C22641D176BD12600C3FDD9 /* MainViewController.m */; };
+		9C226421176BD2AF00C3FDD9 /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C226420176BD2AE00C3FDD9 /* MenuViewController.m */; };
+		9C226424176BD37B00C3FDD9 /* reveal-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C226422176BD37B00C3FDD9 /* reveal-icon.png */; };
+		9C226425176BD37B00C3FDD9 /* reveal-icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C226423176BD37B00C3FDD9 /* reveal-icon@2x.png */; };
+		9C226428176C83F100C3FDD9 /* Provider.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C226427176C83F100C3FDD9 /* Provider.m */; };
 		9C927B751762780100570F45 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C927B741762780100570F45 /* UIKit.framework */; };
 		9C927B771762780100570F45 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C927B761762780100570F45 /* Foundation.framework */; };
 		9C927B791762780100570F45 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C927B781762780100570F45 /* CoreGraphics.framework */; };
@@ -65,8 +71,6 @@
 /* Begin PBXFileReference section */
 		3447CEB8176B774700BF0490 /* Identifier.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Identifier.h; sourceTree = "<group>"; };
 		3447CEB9176B774700BF0490 /* Identifier.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Identifier.m; sourceTree = "<group>"; };
-		3447CEBB176B774800BF0490 /* Provider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Provider.h; sourceTree = "<group>"; };
-		3447CEBC176B774800BF0490 /* Provider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Provider.m; sourceTree = "<group>"; };
 		3447CEBE176B774800BF0490 /* Price.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Price.h; sourceTree = "<group>"; };
 		3447CEBF176B774800BF0490 /* Price.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Price.m; sourceTree = "<group>"; };
 		3447CEC1176B774800BF0490 /* Product.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Product.h; sourceTree = "<group>"; };
@@ -118,6 +122,18 @@
 		9C195DF21768D91100183192 /* AFXMLRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFXMLRequestOperation.m; sourceTree = "<group>"; };
 		9C195DF31768D91100183192 /* UIImageView+AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+AFNetworking.h"; sourceTree = "<group>"; };
 		9C195DF41768D91200183192 /* UIImageView+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+AFNetworking.m"; sourceTree = "<group>"; };
+		9C226410176BCCC600C3FDD9 /* ECSlidingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECSlidingViewController.h; sourceTree = "<group>"; };
+		9C226411176BCCC600C3FDD9 /* ECSlidingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECSlidingViewController.m; sourceTree = "<group>"; };
+		9C226412176BCCC600C3FDD9 /* UIImage+ImageWithUIView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+ImageWithUIView.h"; sourceTree = "<group>"; };
+		9C226413176BCCC600C3FDD9 /* UIImage+ImageWithUIView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ImageWithUIView.m"; sourceTree = "<group>"; };
+		9C22641C176BD12600C3FDD9 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
+		9C22641D176BD12600C3FDD9 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
+		9C22641F176BD2AE00C3FDD9 /* MenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuViewController.h; sourceTree = "<group>"; };
+		9C226420176BD2AE00C3FDD9 /* MenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuViewController.m; sourceTree = "<group>"; };
+		9C226422176BD37B00C3FDD9 /* reveal-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "reveal-icon.png"; sourceTree = "<group>"; };
+		9C226423176BD37B00C3FDD9 /* reveal-icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "reveal-icon@2x.png"; sourceTree = "<group>"; };
+		9C226426176C83F100C3FDD9 /* Provider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Provider.h; sourceTree = "<group>"; };
+		9C226427176C83F100C3FDD9 /* Provider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Provider.m; sourceTree = "<group>"; };
 		9C927B711762780100570F45 /* ShopLater.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShopLater.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C927B741762780100570F45 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		9C927B761762780100570F45 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -200,6 +216,17 @@
 			name = AFNetworking;
 			sourceTree = "<group>";
 		};
+		9C22640F176BCCC600C3FDD9 /* ECSlidingViewController */ = {
+			isa = PBXGroup;
+			children = (
+				9C226410176BCCC600C3FDD9 /* ECSlidingViewController.h */,
+				9C226411176BCCC600C3FDD9 /* ECSlidingViewController.m */,
+				9C226412176BCCC600C3FDD9 /* UIImage+ImageWithUIView.h */,
+				9C226413176BCCC600C3FDD9 /* UIImage+ImageWithUIView.m */,
+			);
+			path = ECSlidingViewController;
+			sourceTree = "<group>";
+		};
 		9C927B681762780100570F45 = {
 			isa = PBXGroup;
 			children = (
@@ -251,6 +278,8 @@
 		9C927B7B1762780100570F45 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				9C226422176BD37B00C3FDD9 /* reveal-icon.png */,
+				9C226423176BD37B00C3FDD9 /* reveal-icon@2x.png */,
 				9C927B7C1762780100570F45 /* ShopLater-Info.plist */,
 				9C927B7D1762780100570F45 /* InfoPlist.strings */,
 				9C927B801762780100570F45 /* main.m */,
@@ -270,10 +299,10 @@
 				9C927B98176278B800570F45 /* CoreDataManager.m */,
 				3447CEC1176B774800BF0490 /* Product.h */,
 				3447CEC2176B774800BF0490 /* Product.m */,
+				9C226426176C83F100C3FDD9 /* Provider.h */,
+				9C226427176C83F100C3FDD9 /* Provider.m */,
 				3447CEBE176B774800BF0490 /* Price.h */,
 				3447CEBF176B774800BF0490 /* Price.m */,
-				3447CEBB176B774800BF0490 /* Provider.h */,
-				3447CEBC176B774800BF0490 /* Provider.m */,
 				3447CEB8176B774700BF0490 /* Identifier.h */,
 				3447CEB9176B774700BF0490 /* Identifier.m */,
 				3447CEC4176B774900BF0490 /* Image.h */,
@@ -297,6 +326,10 @@
 		9C927BA217627D0200570F45 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				9C22641C176BD12600C3FDD9 /* MainViewController.h */,
+				9C22641D176BD12600C3FDD9 /* MainViewController.m */,
+				9C22641F176BD2AE00C3FDD9 /* MenuViewController.h */,
+				9C226420176BD2AE00C3FDD9 /* MenuViewController.m */,
 				9C195DB017674F1F00183192 /* ProductsListViewController.h */,
 				9C195DB117674F1F00183192 /* ProductsListViewController.m */,
 				9CA5D73A176294A30009098E /* ProviderViewController.h */,
@@ -348,6 +381,7 @@
 		9CA5D7571763C9520009098E /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				9C22640F176BCCC600C3FDD9 /* ECSlidingViewController */,
 				9C195DFE1768D97800183192 /* AFNetworking */,
 			);
 			name = Libraries;
@@ -434,6 +468,8 @@
 				346DE7A8176BA21600090C0E /* bestbuy_logo@2x.png in Resources */,
 				34C4E0A1176BBCF100D1EFD5 /* macys_logo.png in Resources */,
 				34C4E0A2176BBCF100D1EFD5 /* macys_logo@2x.png in Resources */,
+				9C226424176BD37B00C3FDD9 /* reveal-icon.png in Resources */,
+				9C226425176BD37B00C3FDD9 /* reveal-icon@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -470,7 +506,6 @@
 				9C195DFC1768D91200183192 /* AFXMLRequestOperation.m in Sources */,
 				9C195DFD1768D91200183192 /* UIImageView+AFNetworking.m in Sources */,
 				3447CEBA176B774700BF0490 /* Identifier.m in Sources */,
-				3447CEBD176B774800BF0490 /* Provider.m in Sources */,
 				3447CEC0176B774800BF0490 /* Price.m in Sources */,
 				3447CEC3176B774900BF0490 /* Product.m in Sources */,
 				3447CEC6176B774900BF0490 /* Image.m in Sources */,
@@ -479,6 +514,11 @@
 				346DE79D176B8DEA00090C0E /* BestbuyParser.m in Sources */,
 				346DE7A4176B97C500090C0E /* MacysParser.m in Sources */,
 				34C4E09E176BB7FF00D1EFD5 /* NSString+SLExtensions.m in Sources */,
+				9C226414176BCCC600C3FDD9 /* ECSlidingViewController.m in Sources */,
+				9C226415176BCCC600C3FDD9 /* UIImage+ImageWithUIView.m in Sources */,
+				9C22641E176BD12600C3FDD9 /* MainViewController.m in Sources */,
+				9C226421176BD2AF00C3FDD9 /* MenuViewController.m in Sources */,
+				9C226428176C83F100C3FDD9 /* Provider.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

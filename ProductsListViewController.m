@@ -7,6 +7,8 @@
 //
 
 #import "ProductsListViewController.h"
+#import "ECSlidingViewController.h"
+#import "MenuViewController.h"
 #import "CoreDataManager.h"
 #import "ProviderViewController.h"
 #import "Product+SLExtensions.h"
@@ -29,6 +31,8 @@
 - (void)addRefreshControl;
 - (void)getUpdatedPrices;
 
+- (IBAction)revealMenuWithButton:(id)sender;
+
 @end
 
 @implementation ProductsListViewController
@@ -43,6 +47,26 @@
     
     [self selectViewController];
 
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    
+    // shadowPath, shadowOffset, and rotation is handled by ECSlidingViewController.
+    // You just need to set the opacity, radius, and color.
+    self.view.layer.shadowOpacity = 0.8f;
+    self.view.layer.shadowRadius = 10.0f;
+    self.view.layer.shadowColor = [UIColor blackColor].CGColor;
+    self.view.layer.cornerRadius = 4;
+    self.view.layer.shadowOffset = CGSizeMake(-2, -2);
+    
+    if (![self.slidingViewController.underLeftViewController isKindOfClass:[MenuViewController class]]) {
+        self.slidingViewController.underLeftViewController  = [self.storyboard instantiateViewControllerWithIdentifier:
+                                                               NSStringFromClass([MenuViewController class])];
+    }
+    
+    [self.slidingViewController setAnchorRightRevealAmount:280.0f];
 }
 
 - (void)addRefreshControl
@@ -70,6 +94,11 @@
             }
         }];
     });
+}
+
+- (IBAction)revealMenuWithButton:(id)sender
+{
+    [self.slidingViewController anchorTopViewTo:ECRight];
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -107,6 +136,7 @@
         webViewController.product = product;
         webViewController.provider = product.provider;
     }
+    [self.refreshControl endRefreshing];
 }
 
 

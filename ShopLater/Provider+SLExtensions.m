@@ -24,56 +24,49 @@
     return [NSString stringWithFormat:@"%@_%@.png", providerName, sImageTypeLogo];
 }
 
-+ (NSString *)exampleImageNameFromProviderName:(NSString *)providerName
-{
-    return [NSString stringWithFormat:@"%@_%@.png", providerName, sImageTypeExample];
-}
-
-+ (NSString *)sectionImageNameFromProviderName:(NSString *)providerName
-{
-    return [NSString stringWithFormat:@"%@_%@.png", providerName, sImageTypeSection];
-}
-
 + (NSArray *)providersArray
 {
-    NSMutableArray *providers = [[NSMutableArray alloc] initWithCapacity:3];
+    NSMutableArray *providers = [[NSMutableArray alloc] initWithCapacity:4];
     
     [providers addObject:[self dictionaryWithProviderName:@"toysrus"
-                                              identifiers:[Identifier identifiersWithNames:@[@"productId"]]]];
+                                              identifiers:[Identifier identifiersWithNames:@[@"productId"]]
+                                           commercialName:@"Toys\"R\"Us"]];
     
     [providers addObject:[self dictionaryWithProviderName:@"homedepot"
-                                              identifiers:[Identifier identifiersWithNames:@[@"/p/"]]]];
+                                              identifiers:[Identifier identifiersWithNames:@[@"/p/"]]
+                                           commercialName:@"HomeDepot"]];
     
-    [providers addObject:[self dictionaryWithProviderName:@"bestbuy" identifiers:[Identifier identifiersWithNames:@[@"/product/"]]]];
-    
-    [providers addObject:[self dictionaryWithProviderName:@"macys" identifiers:[Identifier identifiersWithNames:@[@"/product/"]]]];
+    [providers addObject:[self dictionaryWithProviderName:@"macys"
+                                              identifiers:[Identifier identifiersWithNames:@[@"/product/"]]
+                                           commercialName:@"Macy's"]];
+
+    [providers addObject:[self dictionaryWithProviderName:@"bestbuy"
+                                              identifiers:[Identifier identifiersWithNames:@[@"/product/"]]
+                                           commercialName:@"BestBuy"]];
 
     return providers;
 }
 
 #pragma mark - provider dictionary
 
-+ (NSDictionary *)dictionaryWithProviderName:(NSString *)providerName identifiers:(NSSet *)identifiers
++ (NSDictionary *)dictionaryWithProviderName:(NSString *)providerName
+                                 identifiers:(NSSet *)identifiers
+                              commercialName:(NSString *)commercialName
 {
     CoreDataManager *coreDataManager = [CoreDataManager sharedManager];
     
     NSDictionary *logoImageDictionary = [NSDictionary dictionaryWithObjectsAndKeys:
                                                 [Provider logoImageNameFromProviderName:providerName], @"fileName",
                                                 nil];
+    
     Image *logoImage = [coreDataManager createEntityWithClassName:NSStringFromClass([Image class])
-                                                          attributesDictionary:logoImageDictionary];
-    
-    NSDictionary *exampleImageDictionary = [NSDictionary dictionaryWithObjectsAndKeys:
-                                                   [Provider exampleImageNameFromProviderName:providerName], @"fileName",
-                                                   nil];
-    
-    Image *exampleImage =  [coreDataManager createEntityWithClassName:NSStringFromClass([Image class])
-                                                              attributesDictionary:exampleImageDictionary];
+                                             attributesDictionary:logoImageDictionary];
     
     NSDictionary *providerDictionary = [NSDictionary dictionaryWithObjectsAndKeys:providerName, @"name",
                                        identifiers, @"identifiers",
                                        [Provider urlStringFromProviderName:providerName], @"url",
-                                       [NSSet setWithObjects:logoImage, exampleImage, nil], @"images",
+                                       [NSSet setWithObjects:logoImage, nil], @"images",
+                                        commercialName, @"commercialName",
                                        nil];
     return providerDictionary;
 }

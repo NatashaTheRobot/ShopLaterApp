@@ -14,6 +14,7 @@
 #import "CoreDataManager.h"
 #import "ProductsListViewController.h"
 #import "Constants.h"
+#import "ECSlidingViewController.h"
 
 @interface NewProductViewController ()
 
@@ -48,6 +49,9 @@
         [self displayProduct];
         [self createProduct];
     });
+    
+    [self.slidingViewController setAnchorRightRevealAmount:280.0f];
+    self.slidingViewController.underLeftWidthLayout = ECFullWidth;
     
 }
 
@@ -115,12 +119,21 @@
     
     [self.coreDataManager saveDataInManagedContextUsingBlock:^(BOOL saved, NSError *error) {
         if (saved) {
-            self.delegate = (ProductsListViewController *)self.navigationController.viewControllers[0];
-            [self.navigationController popToRootViewControllerAnimated:YES];
-            [self.delegate reloadProductData];
-            dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{
-                [self.product postToAPI];
-            });
+            UINavigationController *productListNavigation = [self.storyboard instantiateViewControllerWithIdentifier:@"first"];
+            self.delegate = (ProductsListViewController *)productListNavigation.topViewController;
+            
+            [self.slidingViewController resetTopViewWithAnimations:nil onComplete:^{
+                CGRect frame = self.slidingViewController.topViewController.view.frame;
+                self.slidingViewController.topViewController = productListNavigation;
+                self.slidingViewController.topViewController.view.frame = frame;
+                [self.slidingViewController resetTopView];
+                // insert the newest item on top
+                [self.delegate reloadProductData];
+                dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{
+                    [self.product postToAPI];
+                });
+
+            }];
         } else {
             NSLog(@"%@", error.description);
             // show alert view?

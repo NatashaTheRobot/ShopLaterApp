@@ -59,7 +59,6 @@
     self.view.layer.shadowRadius = 10.0f;
     self.view.layer.shadowColor = [UIColor blackColor].CGColor;
     self.view.layer.cornerRadius = 4;
-    self.view.layer.shadowOffset = CGSizeMake(-2, -2);
     
     if (![self.slidingViewController.underLeftViewController isKindOfClass:[MenuViewController class]]) {
         self.slidingViewController.underLeftViewController  = [self.storyboard instantiateViewControllerWithIdentifier:
@@ -81,18 +80,20 @@
         [self.fetchedResultsController.fetchedObjects enumerateObjectsUsingBlock:^(Product *product, NSUInteger idx, BOOL *stop) {
             Parser *parser = [Parser parserWithProviderName:product.provider.name productURLString:product.mobileURL];
             Price *currentPrice = [product priceWithType:sPriceTypeCurrent];
-            currentPrice.dollarAmount = [parser.delegate priceInDollars];
-        }];
-        [self.coreDataManager saveDataInManagedContextUsingBlock:^(BOOL saved, NSError *error) {
-            if (saved) {
+            NSNumber *newPrice = [parser.delegate priceInDollars];
+            if ([currentPrice.dollarAmount floatValue] != [newPrice floatValue]) {
+                NSIndexPath *productIndexPath = [self.fetchedResultsController indexPathForObject:product];
                 dispatch_async(dispatch_get_main_queue(), ^{
-                    [self.refreshControl endRefreshing];
-                    [self reloadProductData];
+                    currentPrice.dollarAmount = newPrice;
+                    [self.tableView reloadRowsAtIndexPaths:@[productIndexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
                 });
-            } else {
-                [self.refreshControl endRefreshing];
             }
         }];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self.coreDataManager saveDataInManagedContextUsingBlock:^(BOOL saved, NSError *error) {
+                [self.refreshControl endRefreshing];
+            }];
+        });
     });
 }
 
@@ -142,7 +143,7 @@
 
 - (void)reloadProductData
 {
-    NSArray *sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:sProductSortAttribute ascending:YES]];
+    NSArray *sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"createdAt" ascending:YES]];
     self.fetchedResultsController = [self.coreDataManager fetchEntitiesWithClassName:NSStringFromClass([Product class])
                                                                      sortDescriptors:sortDescriptors
                                                                   sectionNameKeyPath:@"name"

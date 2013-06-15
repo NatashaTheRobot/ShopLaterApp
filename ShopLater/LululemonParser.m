@@ -1,12 +1,12 @@
 //
-//  BedbathbeyondParser.m
+//  LululemonParser.m
 //  ShopLater
 //
 //  Created by Reza Fatahi on 6/15/13.
 //  Copyright (c) 2013 Natasha Murashev. All rights reserved.
 //
 
-#import "BedbathbeyondParser.h"
+#import "LululemonParser.h"
 #import "Parser.h"
 #import "Price.h"
 #import "Image+SLExtensions.h"
@@ -14,7 +14,7 @@
 #import "Constants.h"
 #import "NSString+SLExtensions.h"
 
-@interface BedbathbeyondParser ()
+@interface LululemonParser ()
 
 @property (strong, nonatomic) NSString *htmlString;
 @property (strong, nonatomic) CoreDataManager *coreDataManager;
@@ -23,22 +23,16 @@
 @property (strong, nonatomic) Price *price;
 @property (strong, nonatomic) Image *image;
 
-- (NSString *)getProductIdFromURLString:(NSString *)urlString;
-
 @end
 
-@implementation BedbathbeyondParser
+@implementation LululemonParser
 
 + (instancetype)parserWithProductURLString:(NSString *)productURLString
 {
-    BedbathbeyondParser *parser = [[BedbathbeyondParser alloc] init];
-    parser.mobileURLString = productURLString;
-    
-    NSString *productId = [parser getProductIdFromURLString:productURLString];
+    LululemonParser *parser = [[LululemonParser alloc] init];
+    parser.cleanURLString = productURLString;
     
     // handle error (if we cannot get the product id for some reason)
-    parser.cleanURLString = [NSString stringWithFormat:@"http://www.bedbathandbeyond.com/product.asp?SKU=%@", productId];
-    
     NSData *data = [NSData dataWithContentsOfURL:[NSURL URLWithString:parser.cleanURLString]];
     
     parser.htmlString = [[NSString alloc] initWithData:data encoding:NSASCIIStringEncoding];
@@ -48,16 +42,13 @@
     return parser;
 }
 
-- (NSString *)getProductIdFromURLString:(NSString *)urlString
-{
-    return [Parser scanString:urlString startTag:@"itemId=" endTag:@"&categoryId"];
-}
-
 # pragma mark - Property Delegate Methods
 
 - (NSNumber *)priceInDollars
 {
-    NSString *priceString = [Parser scanString:self.htmlString startTag:@"name=\"price0\" id=\"price0\" value=\"" endTag:@"\">"];
+    NSString *priceString = [Parser scanString:self.htmlString startTag:@"class=\"amount\"" endTag:@"class=\"currency\""];
+    
+    priceString = [Parser scanString:priceString startTag:@"</span>" endTag:@"</span>"];
     
     return [NSNumber numberWithFloat:[priceString floatValue]];
 }
@@ -82,7 +73,7 @@
 {
     if (!self.name) {
         
-        self.name = [Parser scanString:self.htmlString startTag:@"class=\"producttitle\">" endTag:@"</h1>"];
+        self.name = [Parser scanString:self.htmlString startTag:@"<title>" endTag:@"</title>"];
     }
     
     return self.name;
@@ -92,11 +83,9 @@
 {
     if (!self.image) {
         
-        NSString *imagePathString = [Parser scanString:self.htmlString startTag:@"ppimgandinfo" endTag:@"</a>"];
+        NSString *imagePathString = [Parser scanString:self.htmlString startTag:@"pdpMainImg jqzoom" endTag:@"</a>"];
         
-        imagePathString = [Parser scanString:imagePathString startTag:@"<img src=\"" endTag:@"\""];
-        
-        NSString *imageString = [NSString stringWithFormat:@"http://www.bedbathandbeyond.com/%@", imagePathString];
+        NSString *imageString = [Parser scanString:imagePathString startTag:@"<img src=\"" endTag:@"\""];
         
         NSURL *urlImage = [NSURL URLWithString:imageString];
         

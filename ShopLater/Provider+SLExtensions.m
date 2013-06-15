@@ -26,7 +26,7 @@
 
 + (NSArray *)providersArray
 {
-    NSMutableArray *providers = [[NSMutableArray alloc] initWithCapacity:5];
+    NSMutableArray *providers = [[NSMutableArray alloc] initWithCapacity:6];
     
     [providers addObject:[self dictionaryWithProviderName:@"toysrus"
                                               identifiers:[Identifier identifiersWithNames:@[@"productId"]]
@@ -47,6 +47,10 @@
     [providers addObject:[self dictionaryWithProviderName:@"bedbathbeyond"
                                               identifiers:[Identifier identifiersWithNames:@[@"/product/"]]
                                            commercialName:@"Bed Bath & Beyond"]];
+    
+    [providers addObject:[self dictionaryWithProviderName:@"lululemon"
+                                              identifiers:[Identifier identifiersWithNames:@[@"skuId"]]
+                                           commercialName:@"Lululemon"]];
 
     return providers;
 }

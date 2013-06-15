@@ -73,7 +73,8 @@
 {
     if (!self.name) {
         
-        self.name = [Parser scanString:self.htmlString startTag:@"<title>" endTag:@"</title>"];
+        self.name = [Parser scanString:self.htmlString startTag:@"<title>" endTag:@"|"];
+        self.name = [self.name capitalizedString];
     }
     
     return self.name;

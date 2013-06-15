@@ -30,7 +30,7 @@
     
     [self.slidingViewController setAnchorRightRevealAmount:280.0f];
     self.slidingViewController.underLeftWidthLayout = ECFullWidth;
-
+    
 }
 
 - (void)setupDataSource
@@ -49,13 +49,17 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return self.fetchedResultsController.sections.count;
+    return self.fetchedResultsController.sections.count + 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    id <NSFetchedResultsSectionInfo> sectionInfo = self.fetchedResultsController.sections[section];
-    return [sectionInfo numberOfObjects] + 1;
+    if (section == 0) {
+        return 1;
+    } else {
+        id <NSFetchedResultsSectionInfo> sectionInfo = self.fetchedResultsController.sections[section - 1];
+        return [sectionInfo numberOfObjects];
+    }
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -66,10 +70,10 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:sMenuStoreCell];
     }
     
-    if (indexPath.row == 0 ) {
+    if (indexPath.section == 0 ) {
         cell.textLabel.text = sMenuHomeCellText;
     } else {
-        NSIndexPath *providerIndexPath = [NSIndexPath indexPathForItem:(indexPath.row - 1) inSection:indexPath.section];
+        NSIndexPath *providerIndexPath = [NSIndexPath indexPathForItem:indexPath.row inSection:(indexPath.section - 1)];
         Provider *provider = [self.fetchedResultsController objectAtIndexPath:providerIndexPath];
         
         cell.textLabel.text = provider.commercialName;
@@ -85,10 +89,10 @@
 {
     UIViewController *newTopViewController;
     
-    if (indexPath.row == 0) {
+    if (indexPath.section == 0) {
         newTopViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"first"];
     } else {
-        NSIndexPath *providerIndexPath = [NSIndexPath indexPathForItem:(indexPath.row - 1) inSection:indexPath.section];
+        NSIndexPath *providerIndexPath = [NSIndexPath indexPathForItem:indexPath.row inSection:(indexPath.section - 1)];
         newTopViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"webViewNavigation"];
         UINavigationController *webViewNavigation = (UINavigationController *)newTopViewController;
         ((WebViewController *)webViewNavigation.topViewController).provider = [self.fetchedResultsController objectAtIndexPath:providerIndexPath];
@@ -100,6 +104,31 @@
         self.slidingViewController.topViewController.view.frame = frame;
         [self.slidingViewController resetTopView];
     }];
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+{
+    if (section == 1) {
+        UITableViewCell *headerCell = [tableView dequeueReusableCellWithIdentifier:sMenuStoreSectionCell];
+
+        if (!headerCell) {
+            UITableViewCell *header = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:sMenuStoreSectionCell];
+        }
+        
+        headerCell.textLabel.text = @"Stores";
+        return headerCell;
+    }
+    
+    return nil;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+{
+    if (section == 1) {
+        return 40.0;
+    }
+    
+    return 0;
 }
 
 @end

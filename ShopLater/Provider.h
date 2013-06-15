@@ -2,7 +2,7 @@
 //  Provider.h
 //  ShopLater
 //
-//  Created by Reza Fatahi on 6/14/13.
+//  Created by Natasha Murashev on 6/15/13.
 //  Copyright (c) 2013 Natasha Murashev. All rights reserved.
 //
 
@@ -15,12 +15,18 @@
 
 @property (nonatomic, retain) NSString * name;
 @property (nonatomic, retain) NSString * url;
+@property (nonatomic, retain) NSString * commercialName;
+@property (nonatomic, retain) NSSet *identifiers;
 @property (nonatomic, retain) NSSet *images;
 @property (nonatomic, retain) NSSet *products;
-@property (nonatomic, retain) NSSet *identifiers;
 @end
 
 @interface Provider (CoreDataGeneratedAccessors)
+
+- (void)addIdentifiersObject:(Identifier *)value;
+- (void)removeIdentifiersObject:(Identifier *)value;
+- (void)addIdentifiers:(NSSet *)values;
+- (void)removeIdentifiers:(NSSet *)values;
 
 - (void)addImagesObject:(Image *)value;
 - (void)removeImagesObject:(Image *)value;
@@ -31,10 +37,5 @@
 - (void)removeProductsObject:(Product *)value;
 - (void)addProducts:(NSSet *)values;
 - (void)removeProducts:(NSSet *)values;
-
-- (void)addIdentifiersObject:(Identifier *)value;
-- (void)removeIdentifiersObject:(Identifier *)value;
-- (void)addIdentifiers:(NSSet *)values;
-- (void)removeIdentifiers:(NSSet *)values;
 
 @end

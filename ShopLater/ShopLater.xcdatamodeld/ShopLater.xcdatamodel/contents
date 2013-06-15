@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="2061" systemVersion="11G63" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
+<model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="2061" systemVersion="12D78" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
     <entity name="Identifier" representedClassName="Identifier" syncable="YES">
         <attribute name="name" attributeType="String" indexed="YES" syncable="YES"/>
         <relationship name="provider" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Provider" inverseName="identifiers" inverseEntity="Provider" syncable="YES"/>
@@ -28,6 +28,7 @@
         <relationship name="provider" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Provider" inverseName="products" inverseEntity="Provider" syncable="YES"/>
     </entity>
     <entity name="Provider" representedClassName="Provider" syncable="YES">
+        <attribute name="commercialName" attributeType="String" syncable="YES"/>
         <attribute name="name" attributeType="String" syncable="YES"/>
         <attribute name="url" attributeType="String" syncable="YES"/>
         <relationship name="identifiers" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Identifier" inverseName="provider" inverseEntity="Identifier" syncable="YES"/>
@@ -35,10 +36,10 @@
         <relationship name="products" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Product" inverseName="provider" inverseEntity="Product" syncable="YES"/>
     </entity>
     <elements>
+        <element name="Identifier" positionX="160" positionY="192" width="128" height="75"/>
         <element name="Image" positionX="448" positionY="-27" width="128" height="105"/>
         <element name="Price" positionX="160" positionY="192" width="128" height="103"/>
         <element name="Product" positionX="376" positionY="189" width="128" height="180"/>
-        <element name="Provider" positionX="198" positionY="-171" width="128" height="120"/>
-        <element name="Identifier" positionX="160" positionY="192" width="128" height="75"/>
+        <element name="Provider" positionX="198" positionY="-171" width="128" height="135"/>
     </elements>
 </model>

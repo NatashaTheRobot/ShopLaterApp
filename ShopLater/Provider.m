@@ -2,7 +2,7 @@
 //  Provider.m
 //  ShopLater
 //
-//  Created by Reza Fatahi on 6/14/13.
+//  Created by Natasha Murashev on 6/15/13.
 //  Copyright (c) 2013 Natasha Murashev. All rights reserved.
 //
 
@@ -16,8 +16,9 @@
 
 @dynamic name;
 @dynamic url;
+@dynamic commercialName;
+@dynamic identifiers;
 @dynamic images;
 @dynamic products;
-@dynamic identifiers;
 
 @end

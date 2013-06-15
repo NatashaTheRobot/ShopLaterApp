@@ -136,6 +136,7 @@
         webViewController.product = product;
         webViewController.provider = product.provider;
     }
+    [self.refreshControl endRefreshing];
 }
 
 

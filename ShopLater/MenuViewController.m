@@ -88,9 +88,10 @@
     if (indexPath.row == 0) {
         newTopViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"first"];
     } else {
-        newTopViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"webViewNavigation"];
         NSIndexPath *providerIndexPath = [NSIndexPath indexPathForItem:(indexPath.row - 1) inSection:indexPath.section];
-        ((WebViewController *)((UINavigationController *)newTopViewController).topViewController).provider = [self.fetchedResultsController objectAtIndexPath:providerIndexPath];
+        newTopViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"webViewNavigation"];
+        UINavigationController *webViewNavigation = (UINavigationController *)newTopViewController;
+        ((WebViewController *)webViewNavigation.topViewController).provider = [self.fetchedResultsController objectAtIndexPath:providerIndexPath];
     }
     
     [self.slidingViewController anchorTopViewOffScreenTo:ECRight animations:nil onComplete:^{

@@ -119,16 +119,13 @@
     
     [self.coreDataManager saveDataInManagedContextUsingBlock:^(BOOL saved, NSError *error) {
         if (saved) {
-            UINavigationController *productListNavigation = [self.storyboard instantiateViewControllerWithIdentifier:@"first"];
-            self.delegate = (ProductsListViewController *)productListNavigation.topViewController;
+            UINavigationController *productListNavigationController = [self.storyboard instantiateViewControllerWithIdentifier:@"first"];
             
             [self.slidingViewController resetTopViewWithAnimations:nil onComplete:^{
                 CGRect frame = self.slidingViewController.topViewController.view.frame;
-                self.slidingViewController.topViewController = productListNavigation;
+                self.slidingViewController.topViewController = productListNavigationController;
                 self.slidingViewController.topViewController.view.frame = frame;
                 [self.slidingViewController resetTopView];
-                // insert the newest item on top
-                [self.delegate reloadProductData];
                 dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{
                     [self.product postToAPI];
                 });

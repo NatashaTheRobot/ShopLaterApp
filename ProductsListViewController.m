@@ -21,7 +21,7 @@
 #import "WebViewController.h"
 #import "Parser.h"
 
-@interface ProductsListViewController ()
+@interface ProductsListViewController () <NSFetchedResultsControllerDelegate>
 
 @property (assign, nonatomic) BOOL productsExist;
 @property (strong, nonatomic) CoreDataManager *coreDataManager;
@@ -32,6 +32,8 @@
 - (void)getUpdatedPrices;
 
 - (IBAction)revealMenuWithButton:(id)sender;
+
+- (void)configureCell:(ProductTableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath;
 
 @end
 
@@ -58,7 +60,6 @@
     self.view.layer.shadowOpacity = 0.8f;
     self.view.layer.shadowRadius = 10.0f;
     self.view.layer.shadowColor = [UIColor blackColor].CGColor;
-    self.view.layer.cornerRadius = 4;
     
     if (![self.slidingViewController.underLeftViewController isKindOfClass:[MenuViewController class]]) {
         self.slidingViewController.underLeftViewController  = [self.storyboard instantiateViewControllerWithIdentifier:
@@ -82,10 +83,8 @@
             Price *currentPrice = [product priceWithType:sPriceTypeCurrent];
             NSNumber *newPrice = [parser.delegate priceInDollars];
             if ([currentPrice.dollarAmount floatValue] != [newPrice floatValue]) {
-                NSIndexPath *productIndexPath = [self.fetchedResultsController indexPathForObject:product];
                 dispatch_async(dispatch_get_main_queue(), ^{
                     currentPrice.dollarAmount = newPrice;
-                    [self.tableView reloadRowsAtIndexPaths:@[productIndexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
                 });
             }
         }];
@@ -140,18 +139,6 @@
     [self.refreshControl endRefreshing];
 }
 
-
-- (void)reloadProductData
-{
-    NSArray *sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"createdAt" ascending:YES]];
-    self.fetchedResultsController = [self.coreDataManager fetchEntitiesWithClassName:NSStringFromClass([Product class])
-                                                                     sortDescriptors:sortDescriptors
-                                                                  sectionNameKeyPath:@"name"
-                                                                           predicate:nil];
-    [self.tableView reloadData];
-    
-}
-
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -187,6 +174,77 @@
 //    }
     
     return cell;
+}
+
+#pragma mark - NSFetchResultsController Delegate Methods
+
+- (void)controllerWillChangeContent:(NSFetchedResultsController *)controller
+{
+    [self.tableView beginUpdates];
+}
+
+- (void)controllerDidChangeContent:(NSFetchedResultsController *)controller
+{
+    [self.tableView endUpdates];
+}
+
+- (void)configureCell:(ProductTableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath
+{
+    Product *product = [self.fetchedResultsController objectAtIndexPath:indexPath];
+    cell.currentPrice = [product formattedPriceWithType:sPriceTypeCurrent];
+}
+
+- (void)controller:(NSFetchedResultsController *)controller
+   didChangeObject:(id)anObject
+       atIndexPath:(NSIndexPath *)indexPath
+     forChangeType:(NSFetchedResultsChangeType)type
+      newIndexPath:(NSIndexPath *)newIndexPath
+{
+    
+    UITableView *tableView = self.tableView;
+    
+    switch(type) {
+            
+        case NSFetchedResultsChangeInsert:
+            [tableView insertRowsAtIndexPaths:[NSArray arrayWithObject:newIndexPath]
+                             withRowAnimation:UITableViewRowAnimationFade];
+            break;
+            
+        case NSFetchedResultsChangeDelete:
+            [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath]
+                             withRowAnimation:UITableViewRowAnimationFade];
+            break;
+            
+        case NSFetchedResultsChangeUpdate:
+            [self configureCell:(ProductTableViewCell *)[tableView cellForRowAtIndexPath:indexPath]
+                    atIndexPath:indexPath];
+            break;
+            
+        case NSFetchedResultsChangeMove:
+            [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath]
+                             withRowAnimation:UITableViewRowAnimationFade];
+            [tableView insertRowsAtIndexPaths:[NSArray arrayWithObject:newIndexPath]
+                             withRowAnimation:UITableViewRowAnimationFade];
+            break;
+    }
+}
+
+- (void)controller:(NSFetchedResultsController *)controller
+  didChangeSection:(id <NSFetchedResultsSectionInfo>)sectionInfo
+           atIndex:(NSUInteger)sectionIndex
+     forChangeType:(NSFetchedResultsChangeType)type {
+    
+    switch(type) {
+        case NSFetchedResultsChangeInsert:
+            [self.tableView insertSections:[NSIndexSet indexSetWithIndex:sectionIndex]
+                          withRowAnimation:UITableViewRowAnimationFade];
+            break;
+            
+        case NSFetchedResultsChangeDelete:
+            [self.tableView deleteSections:[NSIndexSet indexSetWithIndex:sectionIndex]
+                          withRowAnimation:UITableViewRowAnimationFade];
+            break;
+    }
 }
 
 @end

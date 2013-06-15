@@ -66,7 +66,6 @@
                                                                NSStringFromClass([MenuViewController class])];
     }
     
-    [self.view addGestureRecognizer:self.slidingViewController.panGesture];
     [self.slidingViewController setAnchorRightRevealAmount:280.0f];
 }
 

@@ -10,6 +10,8 @@
 #import "NewProductViewController.h"
 #import "Identifier.h"
 #import "CoreDataManager.h"
+#import "ECSlidingViewController.h"
+#import "MenuViewController.h"
 
 @interface WebViewController ()
 
@@ -17,10 +19,14 @@
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
 
 @property (strong, nonatomic) IBOutlet UIBarButtonItem *buyLaterButton;
-@property (strong, nonatomic) NSMutableArray *toolbarButtons;
+@property (strong, nonatomic) NSMutableArray *toolbarButtonsRight;
+
+@property (assign, nonatomic) BOOL fromMenu;
 
 - (void)checkIfProductPage:(NSString *)urlString;
 - (void)loadWebPage;
+- (void)setupToolbarButtons;
+- (void)revealMenu;
 
 @end
 
@@ -34,28 +40,65 @@
     
     [self loadWebPage];
     
-    self.toolbarButtons = [self.navigationItem.rightBarButtonItems mutableCopy];
+    [self setupToolbarButtons];
+    
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    
+    if (![self.slidingViewController.underLeftViewController isKindOfClass:[MenuViewController class]]) {
+        self.slidingViewController.underLeftViewController  = [self.storyboard instantiateViewControllerWithIdentifier:NSStringFromClass([MenuViewController class])];
+    }
+    
+    [self.view addGestureRecognizer:self.slidingViewController.panGesture];
+}
+
+
+- (void)setupToolbarButtons
+{
+    self.toolbarButtonsRight = [self.navigationItem.rightBarButtonItems mutableCopy];
     [self hideBuyLaterButton];
     
+    if (self.fromMenu) {
+        UIBarButtonItem *menuButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"reveal-icon.png"]
+                                                                       style:UIBarButtonItemStyleBordered
+                                                                      target:self
+                                                                      action:@selector(revealMenu)];
+        [self.navigationItem setLeftBarButtonItems:@[menuButton] animated:NO];
+    }
+}
+
+- (void)revealMenu
+{
+    [self.slidingViewController anchorTopViewTo:ECRight];
 }
 
 - (void)hideBuyLaterButton
 {
-    [self.toolbarButtons removeObject:self.buyLaterButton];
-    [self.navigationItem setRightBarButtonItems:self.toolbarButtons animated:NO];
+    [self.toolbarButtonsRight removeObject:self.buyLaterButton];
+    [self.navigationItem setRightBarButtonItems:self.toolbarButtonsRight animated:NO];
 }
 
 - (void)showBuyLaterButton
 {
-    if (![self.toolbarButtons containsObject:self.buyLaterButton]) {
-        [self.toolbarButtons addObject:self.buyLaterButton];
-        [self.navigationItem setRightBarButtonItems:self.toolbarButtons animated:YES];
+    if (![self.toolbarButtonsRight containsObject:self.buyLaterButton]) {
+        [self.toolbarButtonsRight addObject:self.buyLaterButton];
+        [self.navigationItem setRightBarButtonItems:self.toolbarButtonsRight animated:YES];
     }
 }
 
 - (void)loadWebPage
 {
-    NSString *urlString = self.product ? self.product.mobileURL : self.provider.url;
+    NSString *urlString;
+    
+    if (self.product) {
+        urlString = self.product.mobileURL;
+    } else {
+        urlString = self.provider.url;
+        self.fromMenu = YES;
+    }
     
     NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:urlString]];
     

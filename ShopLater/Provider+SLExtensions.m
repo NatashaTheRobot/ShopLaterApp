@@ -26,7 +26,7 @@
 
 + (NSArray *)providersArray
 {
-    NSMutableArray *providers = [[NSMutableArray alloc] initWithCapacity:6];
+    NSMutableArray *providers = [[NSMutableArray alloc] initWithCapacity:7];
     
     [providers addObject:[self dictionaryWithProviderName:@"toysrus"
                                               identifiers:[Identifier identifiersWithNames:@[@"productId"]]
@@ -51,6 +51,10 @@
     [providers addObject:[self dictionaryWithProviderName:@"lululemon"
                                               identifiers:[Identifier identifiersWithNames:@[@"skuId"]]
                                            commercialName:@"Lululemon"]];
+    
+    [providers addObject:[self dictionaryWithProviderName:@"dupontregistry"
+                                              identifiers:[Identifier identifiersWithNames:@[@"/listingdetail"]]
+                                           commercialName:@"Dupont Registry"]];
 
     return providers;
 }

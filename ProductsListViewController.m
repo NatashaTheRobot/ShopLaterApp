@@ -10,7 +10,6 @@
 #import "ECSlidingViewController.h"
 #import "MenuViewController.h"
 #import "CoreDataManager.h"
-#import "ProviderViewController.h"
 #import "Product+SLExtensions.h"
 #import "Constants.h"
 #import "ProductTableViewCell.h"
@@ -104,7 +103,8 @@
 - (void)viewDidAppear:(BOOL)animated
 {
     if (self.fetchedResultsController.fetchedObjects.count == 0) {
-        [self performSegueWithIdentifier:@"toProviderCollectionView" sender:self];
+        NSLog(@"SHOW VIEW");
+        [self.slidingViewController anchorTopViewTo:ECRight];
     }
 }
 
@@ -118,7 +118,7 @@
                                                                            predicate:nil];
 
     if (self.fetchedResultsController.fetchedObjects.count == 0) {
-        [self performSegueWithIdentifier:@"toProviderCollectionView" sender:self];
+        NSLog(@"SHOW Menu");
     } else {
         [self.refreshControl beginRefreshing];
         [self getUpdatedPrices];
@@ -127,9 +127,7 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    if ([segue.destinationViewController isKindOfClass:[ProviderViewController class]]) {
-        ((ProviderViewController *)segue.destinationViewController).showNavigationBar = (self.fetchedResultsController.fetchedObjects.count == 0);
-    } else if ([segue.destinationViewController isKindOfClass:[WebViewController class]]) {
+    if ([segue.destinationViewController isKindOfClass:[WebViewController class]]) {
         Product *product = [self.fetchedResultsController objectAtIndexPath:[self.tableView indexPathForSelectedRow]];
         
         WebViewController *webViewController = (WebViewController *)segue.destinationViewController;

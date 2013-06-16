@@ -22,25 +22,63 @@
 
 @implementation MenuViewController
 
+- (id)initWithCoder:(NSCoder *)aDecoder
+{
+    self = [super initWithCoder:aDecoder];
+    
+    if (self) {
+        
+        self.coreDataManager = [CoreDataManager sharedManager];
+        
+        [self fetchProviders];
+        
+        if (self.fetchedResultsController.fetchedObjects.count == 0) {
+            [self createProviders];
+        }
+        
+    }
+    
+    return self;
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-    [self setupDataSource];
     
     [self.slidingViewController setAnchorRightRevealAmount:280.0f];
     self.slidingViewController.underLeftWidthLayout = ECFullWidth;
     
 }
 
-- (void)setupDataSource
+- (void)createProviders
 {
-    self.coreDataManager = [CoreDataManager sharedManager];
+    NSArray *providers = [Provider providersArray];
     
-    NSSortDescriptor *sortDescriptor = [NSSortDescriptor sortDescriptorWithKey:@"name" ascending:YES];
+    [providers enumerateObjectsUsingBlock:^(NSDictionary *providerDictionary, NSUInteger idx, BOOL *stop) {
+        [self.coreDataManager createEntityWithClassName:NSStringFromClass([Provider class]) attributesDictionary:providerDictionary];
+    }];
+    
+    [self.coreDataManager saveDataInManagedContextUsingBlock:^(BOOL saved, NSError *error) {
+        if (saved) {
+            [self fetchProviders];
+        } else {
+            UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@""
+                                                                message:@"We're sorry, something went wrong :("
+                                                               delegate:self
+                                                      cancelButtonTitle:@"Ok"
+                                                      otherButtonTitles:nil, nil];
+            
+            [alertView show];
+        }
+    }];
+}
+
+- (void)fetchProviders
+{
+    NSArray *sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"name" ascending:YES]];
     
     self.fetchedResultsController = [self.coreDataManager fetchEntitiesWithClassName:NSStringFromClass([Provider class])
-                                                                     sortDescriptors:@[sortDescriptor]
+                                                                     sortDescriptors:sortDescriptors
                                                                   sectionNameKeyPath:nil
                                                                            predicate:nil];
 }

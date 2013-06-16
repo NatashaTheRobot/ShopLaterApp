@@ -50,6 +50,18 @@
 		9C22642A176CF0A300C3FDD9 /* macys_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C226429176CF0A300C3FDD9 /* macys_logo.png */; };
 		9C22642C176CF0F600C3FDD9 /* macys_logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C22642B176CF0F600C3FDD9 /* macys_logo@2x.png */; };
 		9C22642F176DE17300C3FDD9 /* WelcomView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C22642E176DE17300C3FDD9 /* WelcomView.m */; };
+		9C226432176E71D600C3FDD9 /* macys_logo_wide.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C226430176E71D200C3FDD9 /* macys_logo_wide.png */; };
+		9C226433176E71D600C3FDD9 /* macys_logo_wide@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C226431176E71D400C3FDD9 /* macys_logo_wide@2x.png */; };
+		9C226436176E738D00C3FDD9 /* toysrus_logo_wide@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C226434176E738900C3FDD9 /* toysrus_logo_wide@2x.png */; };
+		9C226437176E738D00C3FDD9 /* toysrus_logo_wide.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C226435176E738B00C3FDD9 /* toysrus_logo_wide.png */; };
+		9C22643A176E747100C3FDD9 /* bedbathbeyond_logo_wide.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C226438176E746D00C3FDD9 /* bedbathbeyond_logo_wide.png */; };
+		9C22643B176E747100C3FDD9 /* bedbathbeyond_logo_wide@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C226439176E746F00C3FDD9 /* bedbathbeyond_logo_wide@2x.png */; };
+		9C22643E176E754400C3FDD9 /* bestbuy_logo_wide.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C22643C176E754000C3FDD9 /* bestbuy_logo_wide.png */; };
+		9C22643F176E754400C3FDD9 /* bestbuy_logo_wide@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C22643D176E754200C3FDD9 /* bestbuy_logo_wide@2x.png */; };
+		9C226442176E771400C3FDD9 /* homedepot_logo_wide.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C226440176E771000C3FDD9 /* homedepot_logo_wide.png */; };
+		9C226443176E771400C3FDD9 /* homedepot_logo_wide@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C226441176E771200C3FDD9 /* homedepot_logo_wide@2x.png */; };
+		9C226446176E79EE00C3FDD9 /* lululemon_logo_wide.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C226444176E79E900C3FDD9 /* lululemon_logo_wide.png */; };
+		9C226447176E79EE00C3FDD9 /* lululemon_logo_wide@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C226445176E79EC00C3FDD9 /* lululemon_logo_wide@2x.png */; };
 		9C927B751762780100570F45 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C927B741762780100570F45 /* UIKit.framework */; };
 		9C927B771762780100570F45 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C927B761762780100570F45 /* Foundation.framework */; };
 		9C927B791762780100570F45 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C927B781762780100570F45 /* CoreGraphics.framework */; };
@@ -149,6 +161,18 @@
 		9C22642B176CF0F600C3FDD9 /* macys_logo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "macys_logo@2x.png"; sourceTree = "<group>"; };
 		9C22642D176DE17300C3FDD9 /* WelcomView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WelcomView.h; sourceTree = "<group>"; };
 		9C22642E176DE17300C3FDD9 /* WelcomView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WelcomView.m; sourceTree = "<group>"; };
+		9C226430176E71D200C3FDD9 /* macys_logo_wide.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = macys_logo_wide.png; sourceTree = "<group>"; };
+		9C226431176E71D400C3FDD9 /* macys_logo_wide@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "macys_logo_wide@2x.png"; sourceTree = "<group>"; };
+		9C226434176E738900C3FDD9 /* toysrus_logo_wide@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "toysrus_logo_wide@2x.png"; sourceTree = "<group>"; };
+		9C226435176E738B00C3FDD9 /* toysrus_logo_wide.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = toysrus_logo_wide.png; sourceTree = "<group>"; };
+		9C226438176E746D00C3FDD9 /* bedbathbeyond_logo_wide.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bedbathbeyond_logo_wide.png; sourceTree = "<group>"; };
+		9C226439176E746F00C3FDD9 /* bedbathbeyond_logo_wide@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bedbathbeyond_logo_wide@2x.png"; sourceTree = "<group>"; };
+		9C22643C176E754000C3FDD9 /* bestbuy_logo_wide.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bestbuy_logo_wide.png; sourceTree = "<group>"; };
+		9C22643D176E754200C3FDD9 /* bestbuy_logo_wide@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bestbuy_logo_wide@2x.png"; sourceTree = "<group>"; };
+		9C226440176E771000C3FDD9 /* homedepot_logo_wide.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = homedepot_logo_wide.png; sourceTree = "<group>"; };
+		9C226441176E771200C3FDD9 /* homedepot_logo_wide@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "homedepot_logo_wide@2x.png"; sourceTree = "<group>"; };
+		9C226444176E79E900C3FDD9 /* lululemon_logo_wide.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lululemon_logo_wide.png; sourceTree = "<group>"; };
+		9C226445176E79EC00C3FDD9 /* lululemon_logo_wide@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "lululemon_logo_wide@2x.png"; sourceTree = "<group>"; };
 		9C927B711762780100570F45 /* ShopLater.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShopLater.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C927B741762780100570F45 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		9C927B761762780100570F45 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -358,16 +382,28 @@
 			children = (
 				3401B4AA176CEA6000DAD80D /* lululemon_logo.png */,
 				3401B4AB176CEA6000DAD80D /* lululemon_logo_@2x.png */,
+				9C226444176E79E900C3FDD9 /* lululemon_logo_wide.png */,
+				9C226445176E79EC00C3FDD9 /* lululemon_logo_wide@2x.png */,
 				3401B4A3176CDB0500DAD80D /* bedbathbeyond_logo.png */,
 				3401B4A4176CDB0500DAD80D /* bedbathbeyond_logo@2x.png */,
+				9C226438176E746D00C3FDD9 /* bedbathbeyond_logo_wide.png */,
+				9C226439176E746F00C3FDD9 /* bedbathbeyond_logo_wide@2x.png */,
 				9C226429176CF0A300C3FDD9 /* macys_logo.png */,
 				9C22642B176CF0F600C3FDD9 /* macys_logo@2x.png */,
+				9C226430176E71D200C3FDD9 /* macys_logo_wide.png */,
+				9C226431176E71D400C3FDD9 /* macys_logo_wide@2x.png */,
 				346DE7A5176BA21600090C0E /* bestbuy_logo.png */,
 				346DE7A6176BA21600090C0E /* bestbuy_logo@2x.png */,
+				9C22643C176E754000C3FDD9 /* bestbuy_logo_wide.png */,
+				9C22643D176E754200C3FDD9 /* bestbuy_logo_wide@2x.png */,
 				346DE797176B822300090C0E /* homedepot_logo.png */,
 				346DE798176B822300090C0E /* homedepot_log@2x.png */,
+				9C226440176E771000C3FDD9 /* homedepot_logo_wide.png */,
+				9C226441176E771200C3FDD9 /* homedepot_logo_wide@2x.png */,
 				9CA5D7441762AB5C0009098E /* toysrus_logo.png */,
 				9CA5D7461762AB970009098E /* toysrus_logo@2x.png */,
+				9C226435176E738B00C3FDD9 /* toysrus_logo_wide.png */,
+				9C226434176E738900C3FDD9 /* toysrus_logo_wide@2x.png */,
 			);
 			name = ProviderLogos;
 			path = ..;
@@ -494,6 +530,18 @@
 				3401B4AD176CEA6000DAD80D /* lululemon_logo_@2x.png in Resources */,
 				9C22642A176CF0A300C3FDD9 /* macys_logo.png in Resources */,
 				9C22642C176CF0F600C3FDD9 /* macys_logo@2x.png in Resources */,
+				9C226432176E71D600C3FDD9 /* macys_logo_wide.png in Resources */,
+				9C226433176E71D600C3FDD9 /* macys_logo_wide@2x.png in Resources */,
+				9C226436176E738D00C3FDD9 /* toysrus_logo_wide@2x.png in Resources */,
+				9C226437176E738D00C3FDD9 /* toysrus_logo_wide.png in Resources */,
+				9C22643A176E747100C3FDD9 /* bedbathbeyond_logo_wide.png in Resources */,
+				9C22643B176E747100C3FDD9 /* bedbathbeyond_logo_wide@2x.png in Resources */,
+				9C22643E176E754400C3FDD9 /* bestbuy_logo_wide.png in Resources */,
+				9C22643F176E754400C3FDD9 /* bestbuy_logo_wide@2x.png in Resources */,
+				9C226442176E771400C3FDD9 /* homedepot_logo_wide.png in Resources */,
+				9C226443176E771400C3FDD9 /* homedepot_logo_wide@2x.png in Resources */,
+				9C226446176E79EE00C3FDD9 /* lululemon_logo_wide.png in Resources */,
+				9C226447176E79EE00C3FDD9 /* lululemon_logo_wide@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

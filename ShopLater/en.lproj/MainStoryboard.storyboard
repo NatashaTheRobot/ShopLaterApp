@@ -16,7 +16,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1Cy-D9-CPJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1809" y="834"/>
+            <point key="canvasLocation" x="-2409" y="410"/>
         </scene>
         <!--Menu View Controller - Menu-->
         <scene sceneID="jmc-OG-4TK">
@@ -45,11 +45,11 @@
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
                             </tableViewCell>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="store" id="SSn-Dl-diO">
-                                <rect key="frame" x="0.0" y="66" width="320" height="44"/>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="store" rowHeight="50" id="SSn-Dl-diO">
+                                <rect key="frame" x="0.0" y="66" width="320" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
@@ -61,7 +61,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hG8-vP-HDy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1270" y="834"/>
+            <point key="canvasLocation" x="-1946" y="402"/>
         </scene>
         <!--Products List View Controller - Shopping List-->
         <scene sceneID="WzA-l5-ojF">
@@ -174,7 +174,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xqk-6i-JPZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1282" y="17"/>
+            <point key="canvasLocation" x="-1286" y="-21"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="oaZ-sM-BTF">
@@ -189,7 +189,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xUc-iE-zAf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-118" y="546"/>
+            <point key="canvasLocation" x="-1266" y="814"/>
         </scene>
         <!--Web View Controller-->
         <scene sceneID="H55-tV-SNB">
@@ -227,7 +227,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PRU-jw-rXu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="455" y="522"/>
+            <point key="canvasLocation" x="71" y="542"/>
         </scene>
         <!--New Product View Controller-->
         <scene sceneID="SWg-ZM-nmr">
@@ -320,7 +320,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2ma-rF-vOK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1000" y="530"/>
+            <point key="canvasLocation" x="712" y="542"/>
         </scene>
     </scenes>
     <resources>
@@ -380,6 +380,6 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="ezO-hq-PsK"/>
+        <segue reference="paE-o6-1Db"/>
     </inferredMetricsTieBreakers>
 </document>

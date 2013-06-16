@@ -30,6 +30,8 @@
 @property (strong, nonatomic) Parser *parser;
 @property (strong, nonatomic) Product *product;
 
+@property (assign, nonatomic) BOOL saveProduct;
+
 - (IBAction)adjustWishPrice:(id)sender;
 - (IBAction)saveProductWithButton:(id)sender;
 
@@ -53,6 +55,11 @@
     [self.slidingViewController setAnchorRightRevealAmount:280.0f];
     self.slidingViewController.underLeftWidthLayout = ECFullWidth;
     
+}
+
+- (void)viewDidDisappear:(BOOL)animated
+{
+    [self.coreDataManager.managedObjectContext reset];
 }
 
 - (void)displayProduct
@@ -107,6 +114,7 @@
 
 - (IBAction)saveProductWithButton:(id)sender
 {
+    self.saveProduct = YES;
     NSDictionary *wishPriceDictionary = [NSDictionary dictionaryWithObjectsAndKeys:
                                          [NSNumber numberWithFloat:self.priceSlider.value], @"dollarAmount",
                                          sPriceTypeWish, @"type",

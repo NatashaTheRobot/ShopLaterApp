@@ -11,6 +11,8 @@
 
 @interface CoreDataManager : NSObject
 
+@property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
+
 + (CoreDataManager *)sharedManager;
 
 - (void)saveDataInManagedContextUsingBlock:(void (^)(BOOL saved, NSError *error))savedBlock;

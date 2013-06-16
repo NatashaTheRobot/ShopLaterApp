@@ -19,6 +19,7 @@
 #import <QuartzCore/QuartzCore.h>
 #import "WebViewController.h"
 #import "Parser.h"
+#import "WelcomView.h"
 
 @interface ProductsListViewController () <NSFetchedResultsControllerDelegate>
 
@@ -66,6 +67,13 @@
     }
     
     [self.slidingViewController setAnchorRightRevealAmount:280.0f];
+    
+    if (self.fetchedResultsController.fetchedObjects.count == 0) {
+        WelcomView *welcomeView = [[WelcomView alloc] initWithFrame:CGRectMake(10, 50, self.view.frame.size.width - 40, 200)];
+        [self.view addSubview:welcomeView];
+        
+        [self.slidingViewController anchorTopViewTo:ECRight];
+    }
 }
 
 - (void)addRefreshControl
@@ -100,14 +108,6 @@
     [self.slidingViewController anchorTopViewTo:ECRight];
 }
 
-- (void)viewDidAppear:(BOOL)animated
-{
-    if (self.fetchedResultsController.fetchedObjects.count == 0) {
-        NSLog(@"SHOW VIEW");
-        [self.slidingViewController anchorTopViewTo:ECRight];
-    }
-}
-
 - (void)selectViewController
 {
     NSArray *sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:sProductSortAttribute ascending:NO]];
@@ -117,12 +117,10 @@
                                                                   sectionNameKeyPath:@"name"
                                                                            predicate:nil];
 
-    if (self.fetchedResultsController.fetchedObjects.count == 0) {
-        NSLog(@"SHOW Menu");
-    } else {
+    if (self.fetchedResultsController.fetchedObjects.count != 0) {
         [self.refreshControl beginRefreshing];
         [self getUpdatedPrices];
-    }
+    } 
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender

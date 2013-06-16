@@ -49,6 +49,7 @@
 		9C226428176C83F100C3FDD9 /* Provider.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C226427176C83F100C3FDD9 /* Provider.m */; };
 		9C22642A176CF0A300C3FDD9 /* macys_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C226429176CF0A300C3FDD9 /* macys_logo.png */; };
 		9C22642C176CF0F600C3FDD9 /* macys_logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C22642B176CF0F600C3FDD9 /* macys_logo@2x.png */; };
+		9C22642F176DE17300C3FDD9 /* WelcomView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C22642E176DE17300C3FDD9 /* WelcomView.m */; };
 		9C927B751762780100570F45 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C927B741762780100570F45 /* UIKit.framework */; };
 		9C927B771762780100570F45 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C927B761762780100570F45 /* Foundation.framework */; };
 		9C927B791762780100570F45 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C927B781762780100570F45 /* CoreGraphics.framework */; };
@@ -146,6 +147,8 @@
 		9C226427176C83F100C3FDD9 /* Provider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Provider.m; sourceTree = "<group>"; };
 		9C226429176CF0A300C3FDD9 /* macys_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = macys_logo.png; sourceTree = "<group>"; };
 		9C22642B176CF0F600C3FDD9 /* macys_logo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "macys_logo@2x.png"; sourceTree = "<group>"; };
+		9C22642D176DE17300C3FDD9 /* WelcomView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WelcomView.h; sourceTree = "<group>"; };
+		9C22642E176DE17300C3FDD9 /* WelcomView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WelcomView.m; sourceTree = "<group>"; };
 		9C927B711762780100570F45 /* ShopLater.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShopLater.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C927B741762780100570F45 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		9C927B761762780100570F45 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -377,6 +380,8 @@
 				9C195DB41767510500183192 /* ProductTableViewCell.m */,
 				9CA5D7481762AC170009098E /* ProviderCollectionViewCell.h */,
 				9CA5D7491762AC170009098E /* ProviderCollectionViewCell.m */,
+				9C22642D176DE17300C3FDD9 /* WelcomView.h */,
+				9C22642E176DE17300C3FDD9 /* WelcomView.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -539,6 +544,7 @@
 				9C226428176C83F100C3FDD9 /* Provider.m in Sources */,
 				3401B4A2176CD83B00DAD80D /* BedbathbeyondParser.m in Sources */,
 				3401B4A9176CE34000DAD80D /* LululemonParser.m in Sources */,
+				9C22642F176DE17300C3FDD9 /* WelcomView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

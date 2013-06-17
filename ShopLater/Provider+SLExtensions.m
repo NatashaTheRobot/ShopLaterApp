@@ -16,7 +16,11 @@
 
 + (NSString *)urlStringFromProviderName:(NSString *)providerName
 {
-    return [NSString stringWithFormat:@"http://www.%@.com", providerName];
+    if ([providerName isEqualToString:@"dupontregistry"]) {
+        return [NSString stringWithFormat:@"http://m.%@.com", providerName];
+    } else {
+        return [NSString stringWithFormat:@"http://www.%@.com", providerName];
+    }
 }
 
 + (NSString *)logoImageNameFromProviderName:(NSString *)providerName
@@ -45,7 +49,7 @@
                                            commercialName:@"BestBuy"]];
     
     [providers addObject:[self dictionaryWithProviderName:@"bedbathbeyond"
-                                              identifiers:[Identifier identifiersWithNames:@[@"/product/"]]
+                                              identifiers:[Identifier identifiersWithNames:@[@"/product/detail."]]
                                            commercialName:@"Bed Bath & Beyond"]];
     
     [providers addObject:[self dictionaryWithProviderName:@"lululemon"

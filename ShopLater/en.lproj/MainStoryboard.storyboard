@@ -69,6 +69,8 @@
                 <navigationController storyboardIdentifier="first" definesPresentationContext="YES" id="dzT-QA-fZg" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="YHA-ZE-AgP">
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" red="0.70588235294117641" green="0.51372549019607838" blue="0.6705882352941176" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="tintColor" red="0.70588235290000001" green="0.51372549020000002" blue="0.6705882353" alpha="1" colorSpace="calibratedRGB"/>
                     </navigationBar>
                     <connections>
                         <segue destination="kf3-f8-LLF" kind="relationship" relationship="rootViewController" id="avX-f5-QhG"/>
@@ -78,7 +80,7 @@
             </objects>
             <point key="canvasLocation" x="-1286" y="-21"/>
         </scene>
-        <!--Shopping List View Controller-->
+        <!--Shopping List View Controller - Shopping List-->
         <scene sceneID="fhK-Jr-vE9">
             <objects>
                 <collectionViewController autoresizesArchivedViewToFullSize="NO" id="kf3-f8-LLF" customClass="ShoppingListViewController" sceneMemberID="viewController">
@@ -189,7 +191,7 @@
                             <outlet property="delegate" destination="kf3-f8-LLF" id="EcW-hV-trO"/>
                         </connections>
                     </collectionView>
-                    <navigationItem key="navigationItem" id="lTi-fZ-TyJ">
+                    <navigationItem key="navigationItem" title="Shopping List" id="lTi-fZ-TyJ">
                         <barButtonItem key="leftBarButtonItem" image="reveal-icon.png" id="SA3-4q-7IS">
                             <connections>
                                 <action selector="revealMenuWithButton:" destination="kf3-f8-LLF" id="5nI-yp-jSz"/>
@@ -207,6 +209,8 @@
                 <navigationController storyboardIdentifier="webViewNavigation" definesPresentationContext="YES" id="g7o-b5-nxK" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Qot-3x-RAc">
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" red="0.70588235290000001" green="0.51372549020000002" blue="0.6705882353" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="tintColor" red="0.70588235290000001" green="0.51372549020000002" blue="0.6705882353" alpha="1" colorSpace="calibratedRGB"/>
                     </navigationBar>
                     <connections>
                         <segue destination="NYw-1f-qMr" kind="relationship" relationship="rootViewController" id="paE-o6-1Db"/>
@@ -235,7 +239,7 @@
                                 <rect key="frame" x="150" y="223" width="20" height="20"/>
                             </activityIndicatorView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.94901960784313721" green="0.94117647058823528" blue="0.94901960784313721" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <navigationItem key="navigationItem" id="wgj-Ie-nc0">
                         <barButtonItem key="rightBarButtonItem" title="Buy Later" id="8Kr-xC-T37">
@@ -310,13 +314,13 @@
                             </label>
                             <view tag="1" contentMode="scaleToFill" id="bzn-Ki-F1A">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="0.94901960780000005" green="0.94117647059999998" blue="0.94901960780000005" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" hidesWhenStopped="YES" style="gray" id="k6g-GJ-Pfr">
                                 <rect key="frame" x="150" y="181" width="20" height="20"/>
                             </activityIndicatorView>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="0.94166291221120868" blue="0.78861097192132168" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.94901960780000005" green="0.94117647059999998" blue="0.94901960780000005" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="gLv-oD-IBk">
@@ -412,6 +416,6 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="jb2-V4-MPz"/>
+        <segue reference="paE-o6-1Db"/>
     </inferredMetricsTieBreakers>
 </document>

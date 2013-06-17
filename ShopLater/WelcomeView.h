@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface WelcomView : UIView
+@interface WelcomeView : UIView
 
 @end

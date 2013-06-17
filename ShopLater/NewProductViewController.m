@@ -12,7 +12,6 @@
 #import "Product+SLExtensions.h"
 #import "Image+SLExtensions.h"
 #import "CoreDataManager.h"
-#import "ProductsListViewController.h"
 #import "Constants.h"
 #import "ECSlidingViewController.h"
 

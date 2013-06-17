@@ -34,7 +34,6 @@
 		34BE7CC3176F7B950005FB14 /* nordstrom_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 34BE7CC1176F7B950005FB14 /* nordstrom_logo.png */; };
 		34BE7CC4176F7B950005FB14 /* nordstrom_logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 34BE7CC2176F7B950005FB14 /* nordstrom_logo@2x.png */; };
 		34C4E09E176BB7FF00D1EFD5 /* NSString+SLExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 34C4E09D176BB7FF00D1EFD5 /* NSString+SLExtensions.m */; };
-		9C195DB217674F1F00183192 /* ProductsListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C195DB117674F1F00183192 /* ProductsListViewController.m */; };
 		9C195DB51767510500183192 /* ProductTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C195DB41767510500183192 /* ProductTableViewCell.m */; };
 		9C195DB81767588B00183192 /* Price+SLExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C195DB71767588B00183192 /* Price+SLExtensions.m */; };
 		9C195DC417679B4E00183192 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C195DC317679B4D00183192 /* QuartzCore.framework */; };
@@ -48,7 +47,7 @@
 		9C226428176C83F100C3FDD9 /* Provider.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C226427176C83F100C3FDD9 /* Provider.m */; };
 		9C22642A176CF0A300C3FDD9 /* macys_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C226429176CF0A300C3FDD9 /* macys_logo.png */; };
 		9C22642C176CF0F600C3FDD9 /* macys_logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C22642B176CF0F600C3FDD9 /* macys_logo@2x.png */; };
-		9C22642F176DE17300C3FDD9 /* WelcomView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C22642E176DE17300C3FDD9 /* WelcomView.m */; };
+		9C22642F176DE17300C3FDD9 /* WelcomeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C22642E176DE17300C3FDD9 /* WelcomeView.m */; };
 		9C927B751762780100570F45 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C927B741762780100570F45 /* UIKit.framework */; };
 		9C927B771762780100570F45 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C927B761762780100570F45 /* Foundation.framework */; };
 		9C927B791762780100570F45 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C927B781762780100570F45 /* CoreGraphics.framework */; };
@@ -118,8 +117,6 @@
 		34BE7CC2176F7B950005FB14 /* nordstrom_logo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "nordstrom_logo@2x.png"; sourceTree = "<group>"; };
 		34C4E09C176BB7FF00D1EFD5 /* NSString+SLExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+SLExtensions.h"; sourceTree = "<group>"; };
 		34C4E09D176BB7FF00D1EFD5 /* NSString+SLExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+SLExtensions.m"; sourceTree = "<group>"; };
-		9C195DB017674F1F00183192 /* ProductsListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ProductsListViewController.h; path = ../ProductsListViewController.h; sourceTree = "<group>"; };
-		9C195DB117674F1F00183192 /* ProductsListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ProductsListViewController.m; path = ../ProductsListViewController.m; sourceTree = "<group>"; };
 		9C195DB31767510500183192 /* ProductTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductTableViewCell.h; sourceTree = "<group>"; };
 		9C195DB41767510500183192 /* ProductTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductTableViewCell.m; sourceTree = "<group>"; };
 		9C195DB61767588B00183192 /* Price+SLExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Price+SLExtensions.h"; sourceTree = "<group>"; };
@@ -141,8 +138,8 @@
 		9C226427176C83F100C3FDD9 /* Provider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Provider.m; sourceTree = "<group>"; };
 		9C226429176CF0A300C3FDD9 /* macys_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = macys_logo.png; sourceTree = "<group>"; };
 		9C22642B176CF0F600C3FDD9 /* macys_logo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "macys_logo@2x.png"; sourceTree = "<group>"; };
-		9C22642D176DE17300C3FDD9 /* WelcomView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WelcomView.h; sourceTree = "<group>"; };
-		9C22642E176DE17300C3FDD9 /* WelcomView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WelcomView.m; sourceTree = "<group>"; };
+		9C22642D176DE17300C3FDD9 /* WelcomeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WelcomeView.h; sourceTree = "<group>"; };
+		9C22642E176DE17300C3FDD9 /* WelcomeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WelcomeView.m; sourceTree = "<group>"; };
 		9C226448176F41CE00C3FDD9 /* ProductDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductDelegate.h; sourceTree = "<group>"; };
 		9C927B711762780100570F45 /* ShopLater.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShopLater.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C927B741762780100570F45 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -314,8 +311,6 @@
 				9C22641D176BD12600C3FDD9 /* MainViewController.m */,
 				9C22641F176BD2AE00C3FDD9 /* MenuViewController.h */,
 				9C226420176BD2AE00C3FDD9 /* MenuViewController.m */,
-				9C195DB017674F1F00183192 /* ProductsListViewController.h */,
-				9C195DB117674F1F00183192 /* ProductsListViewController.m */,
 				9C9519DB176F9A1300F70377 /* ShoppingListViewController.h */,
 				9C9519DC176F9A1300F70377 /* ShoppingListViewController.m */,
 				9CA5D7541763BFFF0009098E /* WebViewController.h */,
@@ -370,8 +365,8 @@
 				9C195DB41767510500183192 /* ProductTableViewCell.m */,
 				9C9519DE176F9AE800F70377 /* ProductCollectionViewCell.h */,
 				9C9519DF176F9AE800F70377 /* ProductCollectionViewCell.m */,
-				9C22642D176DE17300C3FDD9 /* WelcomView.h */,
-				9C22642E176DE17300C3FDD9 /* WelcomView.m */,
+				9C22642D176DE17300C3FDD9 /* WelcomeView.h */,
+				9C22642E176DE17300C3FDD9 /* WelcomeView.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -517,7 +512,6 @@
 				9CA5D77E1764CEA80009098E /* ToysrusParser.m in Sources */,
 				9CB940621766449000DC05D2 /* Provider+SLExtensions.m in Sources */,
 				9CB9406517665AC300DC05D2 /* Parser.m in Sources */,
-				9C195DB217674F1F00183192 /* ProductsListViewController.m in Sources */,
 				9C195DB51767510500183192 /* ProductTableViewCell.m in Sources */,
 				9C195DB81767588B00183192 /* Price+SLExtensions.m in Sources */,
 				9C195DD71767AE2500183192 /* Product+SLExtensions.m in Sources */,
@@ -537,7 +531,7 @@
 				9C226428176C83F100C3FDD9 /* Provider.m in Sources */,
 				3401B4A2176CD83B00DAD80D /* BedbathbeyondParser.m in Sources */,
 				3401B4A9176CE34000DAD80D /* LululemonParser.m in Sources */,
-				9C22642F176DE17300C3FDD9 /* WelcomView.m in Sources */,
+				9C22642F176DE17300C3FDD9 /* WelcomeView.m in Sources */,
 				3401B4B0176CEE0100DAD80D /* DupontregistryParser.m in Sources */,
 				34BE7CB9176F58490005FB14 /* BuybuybabyParser.m in Sources */,
 				34BE7CC0176F77330005FB14 /* NordstromParser.m in Sources */,

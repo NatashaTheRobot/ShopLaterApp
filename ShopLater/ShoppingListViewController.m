@@ -16,7 +16,7 @@
 #import "Provider+SLExtensions.h"
 #import <QuartzCore/QuartzCore.h>
 #import "WebViewController.h"
-#import "WelcomView.h"
+#import "WelcomeView.h"
 
 @interface ShoppingListViewController () <NSFetchedResultsControllerDelegate>
 
@@ -69,10 +69,11 @@
                                                                NSStringFromClass([MenuViewController class])];
     }
     
+    ((MenuViewController *)self.slidingViewController.underLeftViewController).selectedProvider = nil;
     [self.slidingViewController setAnchorRightRevealAmount:280.0f];
     
     if (self.fetchedResultsController.fetchedObjects.count == 0) {
-        WelcomView *welcomeView = [[WelcomView alloc] initWithFrame:CGRectMake(10, 50, self.view.frame.size.width - 40, 200)];
+        WelcomeView *welcomeView = [[WelcomeView alloc] initWithFrame:CGRectMake(10, 50, self.view.frame.size.width - 40, 200)];
         [self.view addSubview:welcomeView];
         
         [self.slidingViewController anchorTopViewTo:ECRight];

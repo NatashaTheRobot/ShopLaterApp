@@ -6,15 +6,15 @@
 //  Copyright (c) 2013 Natasha Murashev. All rights reserved.
 //
 
-#import "WelcomView.h"
+#import "WelcomeView.h"
 
-@interface WelcomView ()
+@interface WelcomeView ()
 
 - (void)addTextViewWithFrame:(CGRect)frame;
 
 @end
 
-@implementation WelcomView
+@implementation WelcomeView
 
 - (id)initWithFrame:(CGRect)frame
 {

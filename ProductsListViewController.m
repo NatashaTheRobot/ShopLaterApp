@@ -88,12 +88,11 @@
 - (void)addRefreshControl
 {
     self.refreshControl = [[UIRefreshControl alloc] init];
-    [self.refreshControl addTarget:self action:@selector(getUpdatedPrices) forControlEvents:UIControlEventValueChanged];
+    [self.refreshControl addTarget:self action:@selector(getUpdatedProductData) forControlEvents:UIControlEventValueChanged];
 }
 
 - (void)getUpdatedProductData
 {
-    [self.tableView reloadData];
     [self.refreshControl endRefreshing];
 }
 

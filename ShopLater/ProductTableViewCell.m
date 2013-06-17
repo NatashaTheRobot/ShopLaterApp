@@ -10,6 +10,7 @@
 #import <QuartzCore/QuartzCore.h>
 #import "Image+SLExtensions.h"
 #import "Constants.h"
+#import "Provider.h"
 
 @interface ProductTableViewCell ()
 
@@ -49,6 +50,12 @@
     self.currentPriceLabel.text = [product formattedPriceWithType:sPriceTypeCurrent];
     self.wishPriceLabel.text = [product formattedPriceWithType:sPriceTypeWish];
     self.logoImageView.image = [Image imageForProvider:product.provider type:sImageTypeLogo];
+}
+
+- (void)setCurrentPriceFormatted:(NSString *)currentPriceFormatted
+{
+    _currentPriceFormatted = currentPriceFormatted;
+    self.currentPriceLabel.text = currentPriceFormatted;
 }
 
 - (IBAction)deleteProductWithButton:(id)sender

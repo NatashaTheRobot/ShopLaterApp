@@ -27,7 +27,7 @@
 @property (strong, nonatomic) CoreDataManager *coreDataManager;
 @property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
 
-- (void)selectViewController;
+- (void)selectView;
 - (void)addRefreshControl;
 - (void)getUpdatedPrices;
 
@@ -47,7 +47,7 @@
     
     [self addRefreshControl];
     
-    [self selectViewController];
+    [self selectView];
 
 }
 
@@ -108,7 +108,7 @@
     [self.slidingViewController anchorTopViewTo:ECRight];
 }
 
-- (void)selectViewController
+- (void)selectView
 {
     NSArray *sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:sProductSortAttribute ascending:NO]];
     
@@ -183,7 +183,8 @@
 
 - (void)configureCell:(ProductTableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath
 {
-    cell.product = [self.fetchedResultsController objectAtIndexPath:indexPath];
+    Product *product = [self.fetchedResultsController objectAtIndexPath:indexPath];
+    cell.currentPriceFormatted = [product formattedPriceWithType:sPriceTypeCurrent];
 }
 
 - (void)controller:(NSFetchedResultsController *)controller

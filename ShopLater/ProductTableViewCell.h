@@ -7,13 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "Provider.h"
 #import "ProductDelegate.h"
 #import "Product+SLExtensions.h"
 
 @interface ProductTableViewCell : UITableViewCell
 
 @property (strong, nonatomic) Product *product;
+@property (strong, nonatomic) NSString *currentPriceFormatted;
 
 @property (strong, nonatomic) id<ProductDelegate> delegate;
 

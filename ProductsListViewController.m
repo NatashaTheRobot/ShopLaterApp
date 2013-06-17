@@ -13,8 +13,6 @@
 #import "Product+SLExtensions.h"
 #import "Constants.h"
 #import "ProductTableViewCell.h"
-#import "Image+SLExtensions.h"
-#import "Price+SLExtensions.h"
 #import "Provider+SLExtensions.h"
 #import <QuartzCore/QuartzCore.h>
 #import "WebViewController.h"
@@ -139,10 +137,6 @@
     
     cell.product = product;
     
-//    if ([product.priceDifference floatValue] <= 0) {
-//        cell.layer.borderColor = [[UIColor redColor] CGColor];
-//        cell.layer.borderWidth = 1.0f;
-//    }
     cell.delegate = self;
     
     return cell;

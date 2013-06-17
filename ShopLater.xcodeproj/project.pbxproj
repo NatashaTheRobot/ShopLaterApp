@@ -62,6 +62,10 @@
 		9C927B99176278B800570F45 /* CoreDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C927B98176278B800570F45 /* CoreDataManager.m */; };
 		9C927B9D17627A6200570F45 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C927B9C17627A6200570F45 /* CoreData.framework */; };
 		9C927BA017627A9A00570F45 /* ShopLater.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9C927B9E17627A9A00570F45 /* ShopLater.xcdatamodeld */; };
+		9C9519D9176F990E00F70377 /* delete_btn@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C9519D7176F990E00F70377 /* delete_btn@2x.png */; };
+		9C9519DA176F990E00F70377 /* delete_btn.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C9519D8176F990E00F70377 /* delete_btn.png */; };
+		9C9519DD176F9A1300F70377 /* ShoppingListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C9519DC176F9A1300F70377 /* ShoppingListViewController.m */; };
+		9C9519E0176F9AE800F70377 /* ProductCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C9519DF176F9AE800F70377 /* ProductCollectionViewCell.m */; };
 		9CA5D7451762AB5C0009098E /* toysrus_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 9CA5D7441762AB5C0009098E /* toysrus_logo.png */; };
 		9CA5D7471762AB970009098E /* toysrus_logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9CA5D7461762AB970009098E /* toysrus_logo@2x.png */; };
 		9CA5D7561763BFFF0009098E /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CA5D7551763BFFF0009098E /* WebViewController.m */; };
@@ -158,6 +162,12 @@
 		9C927B98176278B800570F45 /* CoreDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataManager.m; sourceTree = "<group>"; };
 		9C927B9C17627A6200570F45 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		9C927B9F17627A9A00570F45 /* ShopLater.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ShopLater.xcdatamodel; sourceTree = "<group>"; };
+		9C9519D7176F990E00F70377 /* delete_btn@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "delete_btn@2x.png"; sourceTree = "<group>"; };
+		9C9519D8176F990E00F70377 /* delete_btn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = delete_btn.png; sourceTree = "<group>"; };
+		9C9519DB176F9A1300F70377 /* ShoppingListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShoppingListViewController.h; sourceTree = "<group>"; };
+		9C9519DC176F9A1300F70377 /* ShoppingListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShoppingListViewController.m; sourceTree = "<group>"; };
+		9C9519DE176F9AE800F70377 /* ProductCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductCollectionViewCell.h; sourceTree = "<group>"; };
+		9C9519DF176F9AE800F70377 /* ProductCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductCollectionViewCell.m; sourceTree = "<group>"; };
 		9CA5D7441762AB5C0009098E /* toysrus_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = toysrus_logo.png; sourceTree = "<group>"; };
 		9CA5D7461762AB970009098E /* toysrus_logo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "toysrus_logo@2x.png"; sourceTree = "<group>"; };
 		9CA5D7541763BFFF0009098E /* WebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewController.h; sourceTree = "<group>"; };
@@ -244,7 +254,7 @@
 				9C927BA117627CF500570F45 /* Models */,
 				9CA5D77B1764CE340009098E /* Parsers */,
 				9CA5D74C1762B9980009098E /* Delegates */,
-				9CA5D7431762A9840009098E /* ProviderLogos */,
+				9C9519D6176F98E600F70377 /* Images */,
 				9CA5D7571763C9520009098E /* Libraries */,
 				9C927B7B1762780100570F45 /* Supporting Files */,
 			);
@@ -254,8 +264,6 @@
 		9C927B7B1762780100570F45 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				9C226422176BD37B00C3FDD9 /* reveal-icon.png */,
-				9C226423176BD37B00C3FDD9 /* reveal-icon@2x.png */,
 				9C927B7C1762780100570F45 /* ShopLater-Info.plist */,
 				9C927B7D1762780100570F45 /* InfoPlist.strings */,
 				9C927B801762780100570F45 /* main.m */,
@@ -308,12 +316,26 @@
 				9C226420176BD2AE00C3FDD9 /* MenuViewController.m */,
 				9C195DB017674F1F00183192 /* ProductsListViewController.h */,
 				9C195DB117674F1F00183192 /* ProductsListViewController.m */,
+				9C9519DB176F9A1300F70377 /* ShoppingListViewController.h */,
+				9C9519DC176F9A1300F70377 /* ShoppingListViewController.m */,
 				9CA5D7541763BFFF0009098E /* WebViewController.h */,
 				9CA5D7551763BFFF0009098E /* WebViewController.m */,
 				9CA5D76A1763E34C0009098E /* NewProductViewController.h */,
 				9CA5D76B1763E34C0009098E /* NewProductViewController.m */,
 			);
 			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		9C9519D6176F98E600F70377 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				9C9519D8176F990E00F70377 /* delete_btn.png */,
+				9C9519D7176F990E00F70377 /* delete_btn@2x.png */,
+				9C226422176BD37B00C3FDD9 /* reveal-icon.png */,
+				9C226423176BD37B00C3FDD9 /* reveal-icon@2x.png */,
+				9CA5D7431762A9840009098E /* ProviderLogos */,
+			);
+			name = Images;
 			sourceTree = "<group>";
 		};
 		9CA5D7431762A9840009098E /* ProviderLogos */ = {
@@ -346,6 +368,8 @@
 			children = (
 				9C195DB31767510500183192 /* ProductTableViewCell.h */,
 				9C195DB41767510500183192 /* ProductTableViewCell.m */,
+				9C9519DE176F9AE800F70377 /* ProductCollectionViewCell.h */,
+				9C9519DF176F9AE800F70377 /* ProductCollectionViewCell.m */,
 				9C22642D176DE17300C3FDD9 /* WelcomView.h */,
 				9C22642E176DE17300C3FDD9 /* WelcomView.m */,
 			);
@@ -471,6 +495,8 @@
 				34BE7CBD176F5BCA0005FB14 /* buybuybaby_logo@2x.png in Resources */,
 				34BE7CC3176F7B950005FB14 /* nordstrom_logo.png in Resources */,
 				34BE7CC4176F7B950005FB14 /* nordstrom_logo@2x.png in Resources */,
+				9C9519D9176F990E00F70377 /* delete_btn@2x.png in Resources */,
+				9C9519DA176F990E00F70377 /* delete_btn.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -515,6 +541,8 @@
 				3401B4B0176CEE0100DAD80D /* DupontregistryParser.m in Sources */,
 				34BE7CB9176F58490005FB14 /* BuybuybabyParser.m in Sources */,
 				34BE7CC0176F77330005FB14 /* NordstromParser.m in Sources */,
+				9C9519DD176F9A1300F70377 /* ShoppingListViewController.m in Sources */,
+				9C9519E0176F9AE800F70377 /* ProductCollectionViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

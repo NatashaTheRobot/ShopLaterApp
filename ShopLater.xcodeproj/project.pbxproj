@@ -30,6 +30,9 @@
 		34BE7CB9176F58490005FB14 /* BuybuybabyParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 34BE7CB8176F58490005FB14 /* BuybuybabyParser.m */; };
 		34BE7CBC176F5BCA0005FB14 /* buybuybaby_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 34BE7CBA176F5BCA0005FB14 /* buybuybaby_logo.png */; };
 		34BE7CBD176F5BCA0005FB14 /* buybuybaby_logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 34BE7CBB176F5BCA0005FB14 /* buybuybaby_logo@2x.png */; };
+		34BE7CC0176F77330005FB14 /* NordstromParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 34BE7CBF176F77330005FB14 /* NordstromParser.m */; };
+		34BE7CC3176F7B950005FB14 /* nordstrom_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 34BE7CC1176F7B950005FB14 /* nordstrom_logo.png */; };
+		34BE7CC4176F7B950005FB14 /* nordstrom_logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 34BE7CC2176F7B950005FB14 /* nordstrom_logo@2x.png */; };
 		34C4E09E176BB7FF00D1EFD5 /* NSString+SLExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 34C4E09D176BB7FF00D1EFD5 /* NSString+SLExtensions.m */; };
 		9C195DB217674F1F00183192 /* ProductsListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C195DB117674F1F00183192 /* ProductsListViewController.m */; };
 		9C195DB51767510500183192 /* ProductTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C195DB41767510500183192 /* ProductTableViewCell.m */; };
@@ -105,6 +108,10 @@
 		34BE7CB8176F58490005FB14 /* BuybuybabyParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BuybuybabyParser.m; sourceTree = "<group>"; };
 		34BE7CBA176F5BCA0005FB14 /* buybuybaby_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = buybuybaby_logo.png; sourceTree = "<group>"; };
 		34BE7CBB176F5BCA0005FB14 /* buybuybaby_logo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "buybuybaby_logo@2x.png"; sourceTree = "<group>"; };
+		34BE7CBE176F77330005FB14 /* NordstromParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NordstromParser.h; sourceTree = "<group>"; };
+		34BE7CBF176F77330005FB14 /* NordstromParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NordstromParser.m; sourceTree = "<group>"; };
+		34BE7CC1176F7B950005FB14 /* nordstrom_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nordstrom_logo.png; sourceTree = "<group>"; };
+		34BE7CC2176F7B950005FB14 /* nordstrom_logo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "nordstrom_logo@2x.png"; sourceTree = "<group>"; };
 		34C4E09C176BB7FF00D1EFD5 /* NSString+SLExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+SLExtensions.h"; sourceTree = "<group>"; };
 		34C4E09D176BB7FF00D1EFD5 /* NSString+SLExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+SLExtensions.m"; sourceTree = "<group>"; };
 		9C195DB017674F1F00183192 /* ProductsListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ProductsListViewController.h; path = ../ProductsListViewController.h; sourceTree = "<group>"; };
@@ -312,6 +319,8 @@
 		9CA5D7431762A9840009098E /* ProviderLogos */ = {
 			isa = PBXGroup;
 			children = (
+				34BE7CC1176F7B950005FB14 /* nordstrom_logo.png */,
+				34BE7CC2176F7B950005FB14 /* nordstrom_logo@2x.png */,
 				34BE7CBA176F5BCA0005FB14 /* buybuybaby_logo.png */,
 				34BE7CBB176F5BCA0005FB14 /* buybuybaby_logo@2x.png */,
 				3401B4B1176CEFFD00DAD80D /* dupontregistry_logo.png */,
@@ -381,6 +390,8 @@
 				3401B4AF176CEE0000DAD80D /* DupontregistryParser.m */,
 				34BE7CB7176F58490005FB14 /* BuybuybabyParser.h */,
 				34BE7CB8176F58490005FB14 /* BuybuybabyParser.m */,
+				34BE7CBE176F77330005FB14 /* NordstromParser.h */,
+				34BE7CBF176F77330005FB14 /* NordstromParser.m */,
 			);
 			name = Parsers;
 			sourceTree = "<group>";
@@ -458,6 +469,8 @@
 				3401B4B4176CEFFD00DAD80D /* dupontregistry_logo@2x.png in Resources */,
 				34BE7CBC176F5BCA0005FB14 /* buybuybaby_logo.png in Resources */,
 				34BE7CBD176F5BCA0005FB14 /* buybuybaby_logo@2x.png in Resources */,
+				34BE7CC3176F7B950005FB14 /* nordstrom_logo.png in Resources */,
+				34BE7CC4176F7B950005FB14 /* nordstrom_logo@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -501,6 +514,7 @@
 				9C22642F176DE17300C3FDD9 /* WelcomView.m in Sources */,
 				3401B4B0176CEE0100DAD80D /* DupontregistryParser.m in Sources */,
 				34BE7CB9176F58490005FB14 /* BuybuybabyParser.m in Sources */,
+				34BE7CC0176F77330005FB14 /* NordstromParser.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

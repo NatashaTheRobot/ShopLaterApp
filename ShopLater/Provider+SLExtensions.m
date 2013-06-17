@@ -18,10 +18,13 @@
 {
     if ([providerName isEqualToString:@"dupontregistry"]) {
         return [NSString stringWithFormat:@"http://m.%@.com", providerName];
+    } else if ([providerName isEqualToString:@"nordstrom"]) {
+        return [NSString stringWithFormat:@"http://shop.%@.com", providerName];
     } else {
         return [NSString stringWithFormat:@"http://www.%@.com", providerName];
     }
 }
+
 
 + (NSString *)logoImageNameFromProviderName:(NSString *)providerName
 {
@@ -30,7 +33,7 @@
 
 + (NSArray *)providersArray
 {
-    NSMutableArray *providers = [[NSMutableArray alloc] initWithCapacity:8];
+    NSMutableArray *providers = [[NSMutableArray alloc] initWithCapacity:9];
     
     [providers addObject:[self dictionaryWithProviderName:@"toysrus"
                                               identifiers:[Identifier identifiersWithNames:@[@"productId"]]
@@ -43,7 +46,7 @@
     [providers addObject:[self dictionaryWithProviderName:@"macys"
                                               identifiers:[Identifier identifiersWithNames:@[@"/product/"]]
                                            commercialName:@"Macy's"]];
-
+    
     [providers addObject:[self dictionaryWithProviderName:@"bestbuy"
                                               identifiers:[Identifier identifiersWithNames:@[@"/product/"]]
                                            commercialName:@"BestBuy"]];
@@ -63,7 +66,11 @@
     [providers addObject:[self dictionaryWithProviderName:@"buybuybaby"
                                               identifiers:[Identifier identifiersWithNames:@[@"/product/detail."]]
                                            commercialName:@"Buy Buy Baby"]];
-
+    
+    [providers addObject:[self dictionaryWithProviderName:@"nordstrom"
+                                              identifiers:[Identifier identifiersWithNames:@[@"/Product/Details/"]]
+                                           commercialName:@"Nordstrom's"]];
+    
     return providers;
 }
 
@@ -76,18 +83,18 @@
     CoreDataManager *coreDataManager = [CoreDataManager sharedManager];
     
     NSDictionary *logoImageDictionary = [NSDictionary dictionaryWithObjectsAndKeys:
-                                                [Provider logoImageNameFromProviderName:providerName], @"fileName",
-                                                nil];
+                                         [Provider logoImageNameFromProviderName:providerName], @"fileName",
+                                         nil];
     
     Image *logoImage = [coreDataManager createEntityWithClassName:NSStringFromClass([Image class])
                                              attributesDictionary:logoImageDictionary];
     
     NSDictionary *providerDictionary = [NSDictionary dictionaryWithObjectsAndKeys:providerName, @"name",
-                                       identifiers, @"identifiers",
-                                       [Provider urlStringFromProviderName:providerName], @"url",
-                                       [NSSet setWithObjects:logoImage, nil], @"images",
+                                        identifiers, @"identifiers",
+                                        [Provider urlStringFromProviderName:providerName], @"url",
+                                        [NSSet setWithObjects:logoImage, nil], @"images",
                                         commercialName, @"commercialName",
-                                       nil];
+                                        nil];
     return providerDictionary;
 }
 

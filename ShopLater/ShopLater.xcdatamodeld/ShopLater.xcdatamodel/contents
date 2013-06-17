@@ -7,7 +7,7 @@
     <entity name="Image" representedClassName="Image" syncable="YES">
         <attribute name="externalURLString" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="fileName" attributeType="String" syncable="YES"/>
-        <relationship name="product" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Product" inverseName="images" inverseEntity="Product" syncable="YES"/>
+        <relationship name="product" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Product" inverseName="images" inverseEntity="Product" syncable="YES"/>
         <relationship name="provider" optional="YES" minCount="1" maxCount="1" deletionRule="Cascade" destinationEntity="Provider" inverseName="images" inverseEntity="Provider" syncable="YES"/>
     </entity>
     <entity name="Price" representedClassName="Price" syncable="YES">

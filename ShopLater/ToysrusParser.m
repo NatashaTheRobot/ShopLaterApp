@@ -51,17 +51,7 @@
 
 - (NSString *)getProductIdFromURLString:(NSString *)urlString
 {
-    NSArray *urlComponents = [urlString componentsSeparatedByString:@"jsp%3F"];
-    NSArray *paramPairs = [urlComponents[1] componentsSeparatedByString:@"&"];
-    
-    for (NSString *paramPair in paramPairs) {
-        NSArray *paramKeyValue = [paramPair componentsSeparatedByString:@"%3D"];
-        if ([paramKeyValue[0] isEqualToString:@"productId"]) {
-            return paramKeyValue[1];
-        }
-    }
-
-    return nil;
+   return [Parser scanString:urlString startTag:@"productId%3D" endTag:@"&"];
 }
 
 # pragma mark - Property Delegate Methods

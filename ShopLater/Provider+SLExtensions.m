@@ -20,6 +20,8 @@
         return [NSString stringWithFormat:@"http://m.%@.com", providerName];
     } else if ([providerName isEqualToString:@"nordstrom"]) {
         return [NSString stringWithFormat:@"http://shop.%@.com", providerName];
+    } else if ([providerName isEqualToString:@"ikea"]) {
+        return [NSString stringWithFormat:@"http://m.%@.com/us/en", providerName];
     } else {
         return [NSString stringWithFormat:@"http://www.%@.com", providerName];
     }
@@ -33,7 +35,7 @@
 
 + (NSArray *)providersArray
 {
-    NSMutableArray *providers = [[NSMutableArray alloc] initWithCapacity:10];
+    NSMutableArray *providers = [[NSMutableArray alloc] initWithCapacity:11];
     
     [providers addObject:[self dictionaryWithProviderName:@"toysrus"
                                               identifiers:[Identifier identifiersWithNames:@[@"productId"]]
@@ -69,11 +71,15 @@
     
     [providers addObject:[self dictionaryWithProviderName:@"nordstrom"
                                               identifiers:[Identifier identifiersWithNames:@[@"/Product/Details/"]]
-                                           commercialName:@"Nordstrom's"]];
+                                           commercialName:@"Nordstrom"]];
     
     [providers addObject:[self dictionaryWithProviderName:@"sears"
                                               identifiers:[Identifier identifiersWithNames:@[@"/productdetails.do?partNumber="]]
                                            commercialName:@"Sears"]];
+    
+    [providers addObject:[self dictionaryWithProviderName:@"ikea"
+                                              identifiers:[Identifier identifiersWithNames:@[@"catalog/products/"]]
+                                           commercialName:@"Ikea"]];
     
     return providers;
 }

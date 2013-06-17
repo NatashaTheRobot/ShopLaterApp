@@ -60,8 +60,10 @@
     self.parser = [Parser parserWithProviderName:self.provider.name productURLString:self.productURLString];
     
     NSNumber *priceInDollars = [(Price *)[self.parser.delegate productPrice] dollarAmount];
-    self.productNameLabel.text = [self.parser.delegate productName];
-    self.currentPriceLabel.text = [NSString stringWithFormat:@"$%.2f", [priceInDollars floatValue]];
+    
+    NSString *productNameUnformatted = [self.parser.delegate productName];
+    self.productNameLabel.text = [Product formattedName:productNameUnformatted];
+    self.currentPriceLabel.text = [Price formattedPriceFromNumber:priceInDollars];
     self.priceSlider.maximumValue = [priceInDollars floatValue];
     self.priceSlider.value = [priceInDollars floatValue] * 0.8;
     self.wishPriceLabel.text = [NSString stringWithFormat:@"$%.2f", ([priceInDollars floatValue] * 0.8)];

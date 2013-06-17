@@ -18,6 +18,11 @@
 		34449EE5176FC2F9000873DC /* SearsParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 34449EE4176FC2F9000873DC /* SearsParser.m */; };
 		34449EF0176FC5DA000873DC /* sears_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 34449EEE176FC5DA000873DC /* sears_logo.png */; };
 		34449EF1176FC5DA000873DC /* sears_logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 34449EEF176FC5DA000873DC /* sears_logo@2x.png */; };
+		34449EF4176FCDE8000873DC /* nordstrom_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 34449EF2176FCDE8000873DC /* nordstrom_logo.png */; };
+		34449EF5176FCDE8000873DC /* nordstrom_logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 34449EF3176FCDE8000873DC /* nordstrom_logo@2x.png */; };
+		34449EF8176FCFAB000873DC /* IkeaParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 34449EF7176FCFAB000873DC /* IkeaParser.m */; };
+		34449EFB176FD2FF000873DC /* ikea_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 34449EF9176FD2FF000873DC /* ikea_logo.png */; };
+		34449EFC176FD2FF000873DC /* ikea_logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 34449EFA176FD2FF000873DC /* ikea_logo@2x.png */; };
 		3447CEBA176B774700BF0490 /* Identifier.m in Sources */ = {isa = PBXBuildFile; fileRef = 3447CEB9176B774700BF0490 /* Identifier.m */; };
 		3447CEC0176B774800BF0490 /* Price.m in Sources */ = {isa = PBXBuildFile; fileRef = 3447CEBF176B774800BF0490 /* Price.m */; };
 		3447CEC3176B774900BF0490 /* Product.m in Sources */ = {isa = PBXBuildFile; fileRef = 3447CEC2176B774800BF0490 /* Product.m */; };
@@ -34,8 +39,6 @@
 		34BE7CBC176F5BCA0005FB14 /* buybuybaby_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 34BE7CBA176F5BCA0005FB14 /* buybuybaby_logo.png */; };
 		34BE7CBD176F5BCA0005FB14 /* buybuybaby_logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 34BE7CBB176F5BCA0005FB14 /* buybuybaby_logo@2x.png */; };
 		34BE7CC0176F77330005FB14 /* NordstromParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 34BE7CBF176F77330005FB14 /* NordstromParser.m */; };
-		34BE7CC3176F7B950005FB14 /* nordstrom_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 34BE7CC1176F7B950005FB14 /* nordstrom_logo.png */; };
-		34BE7CC4176F7B950005FB14 /* nordstrom_logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 34BE7CC2176F7B950005FB14 /* nordstrom_logo@2x.png */; };
 		34C4E09E176BB7FF00D1EFD5 /* NSString+SLExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 34C4E09D176BB7FF00D1EFD5 /* NSString+SLExtensions.m */; };
 		9C195DB51767510500183192 /* ProductTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C195DB41767510500183192 /* ProductTableViewCell.m */; };
 		9C195DB81767588B00183192 /* Price+SLExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C195DB71767588B00183192 /* Price+SLExtensions.m */; };
@@ -94,6 +97,12 @@
 		34449EE4176FC2F9000873DC /* SearsParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearsParser.m; sourceTree = "<group>"; };
 		34449EEE176FC5DA000873DC /* sears_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sears_logo.png; sourceTree = "<group>"; };
 		34449EEF176FC5DA000873DC /* sears_logo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sears_logo@2x.png"; sourceTree = "<group>"; };
+		34449EF2176FCDE8000873DC /* nordstrom_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nordstrom_logo.png; sourceTree = "<group>"; };
+		34449EF3176FCDE8000873DC /* nordstrom_logo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "nordstrom_logo@2x.png"; sourceTree = "<group>"; };
+		34449EF6176FCFAB000873DC /* IkeaParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IkeaParser.h; sourceTree = "<group>"; };
+		34449EF7176FCFAB000873DC /* IkeaParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IkeaParser.m; sourceTree = "<group>"; };
+		34449EF9176FD2FF000873DC /* ikea_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ikea_logo.png; sourceTree = "<group>"; };
+		34449EFA176FD2FF000873DC /* ikea_logo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ikea_logo@2x.png"; sourceTree = "<group>"; };
 		3447CEB8176B774700BF0490 /* Identifier.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Identifier.h; sourceTree = "<group>"; };
 		3447CEB9176B774700BF0490 /* Identifier.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Identifier.m; sourceTree = "<group>"; };
 		3447CEBE176B774800BF0490 /* Price.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Price.h; sourceTree = "<group>"; };
@@ -120,8 +129,6 @@
 		34BE7CBB176F5BCA0005FB14 /* buybuybaby_logo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "buybuybaby_logo@2x.png"; sourceTree = "<group>"; };
 		34BE7CBE176F77330005FB14 /* NordstromParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NordstromParser.h; sourceTree = "<group>"; };
 		34BE7CBF176F77330005FB14 /* NordstromParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NordstromParser.m; sourceTree = "<group>"; };
-		34BE7CC1176F7B950005FB14 /* nordstrom_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nordstrom_logo.png; sourceTree = "<group>"; };
-		34BE7CC2176F7B950005FB14 /* nordstrom_logo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "nordstrom_logo@2x.png"; sourceTree = "<group>"; };
 		34C4E09C176BB7FF00D1EFD5 /* NSString+SLExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+SLExtensions.h"; sourceTree = "<group>"; };
 		34C4E09D176BB7FF00D1EFD5 /* NSString+SLExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+SLExtensions.m"; sourceTree = "<group>"; };
 		9C195DB31767510500183192 /* ProductTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductTableViewCell.h; sourceTree = "<group>"; };
@@ -343,10 +350,12 @@
 		9CA5D7431762A9840009098E /* ProviderLogos */ = {
 			isa = PBXGroup;
 			children = (
+				34449EF9176FD2FF000873DC /* ikea_logo.png */,
+				34449EFA176FD2FF000873DC /* ikea_logo@2x.png */,
+				34449EF2176FCDE8000873DC /* nordstrom_logo.png */,
+				34449EF3176FCDE8000873DC /* nordstrom_logo@2x.png */,
 				34449EEE176FC5DA000873DC /* sears_logo.png */,
 				34449EEF176FC5DA000873DC /* sears_logo@2x.png */,
-				34BE7CC1176F7B950005FB14 /* nordstrom_logo.png */,
-				34BE7CC2176F7B950005FB14 /* nordstrom_logo@2x.png */,
 				34BE7CBA176F5BCA0005FB14 /* buybuybaby_logo.png */,
 				34BE7CBB176F5BCA0005FB14 /* buybuybaby_logo@2x.png */,
 				3401B4B1176CEFFD00DAD80D /* dupontregistry_logo.png */,
@@ -422,6 +431,8 @@
 				34BE7CBF176F77330005FB14 /* NordstromParser.m */,
 				34449EE3176FC2F9000873DC /* SearsParser.h */,
 				34449EE4176FC2F9000873DC /* SearsParser.m */,
+				34449EF6176FCFAB000873DC /* IkeaParser.h */,
+				34449EF7176FCFAB000873DC /* IkeaParser.m */,
 			);
 			name = Parsers;
 			sourceTree = "<group>";
@@ -497,14 +508,16 @@
 				3401B4B4176CEFFD00DAD80D /* dupontregistry_logo@2x.png in Resources */,
 				34BE7CBC176F5BCA0005FB14 /* buybuybaby_logo.png in Resources */,
 				34BE7CBD176F5BCA0005FB14 /* buybuybaby_logo@2x.png in Resources */,
-				34BE7CC3176F7B950005FB14 /* nordstrom_logo.png in Resources */,
-				34BE7CC4176F7B950005FB14 /* nordstrom_logo@2x.png in Resources */,
 				9C9519D9176F990E00F70377 /* delete_btn@2x.png in Resources */,
 				9C9519DA176F990E00F70377 /* delete_btn.png in Resources */,
 				9C9519E2176FB0EB00F70377 /* Default-568h@2x.png in Resources */,
 				9C9519E4176FB0F400F70377 /* Default.png in Resources */,
 				34449EF0176FC5DA000873DC /* sears_logo.png in Resources */,
 				34449EF1176FC5DA000873DC /* sears_logo@2x.png in Resources */,
+				34449EF4176FCDE8000873DC /* nordstrom_logo.png in Resources */,
+				34449EF5176FCDE8000873DC /* nordstrom_logo@2x.png in Resources */,
+				34449EFB176FD2FF000873DC /* ikea_logo.png in Resources */,
+				34449EFC176FD2FF000873DC /* ikea_logo@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -551,6 +564,7 @@
 				9C9519DD176F9A1300F70377 /* ShoppingListViewController.m in Sources */,
 				9C9519E0176F9AE800F70377 /* ProductCollectionViewCell.m in Sources */,
 				34449EE5176FC2F9000873DC /* SearsParser.m in Sources */,
+				34449EF8176FCFAB000873DC /* IkeaParser.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

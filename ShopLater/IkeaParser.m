@@ -1,20 +1,19 @@
 //
-//  SearsParser.m
+//  IkeaParser.m
 //  ShopLater
 //
 //  Created by Reza Fatahi on 6/17/13.
 //  Copyright (c) 2013 Natasha Murashev. All rights reserved.
 //
 
-#import "SearsParser.h"
+#import "IkeaParser.h"
 #import "Parser.h"
 #import "Price.h"
 #import "Image+SLExtensions.h"
 #import "CoreDataManager.h"
 #import "Constants.h"
-#import "NSString+SLExtensions.h"
 
-@interface SearsParser ()
+@interface IkeaParser ()
 
 @property (strong, nonatomic) NSString *htmlString;
 @property (strong, nonatomic) CoreDataManager *coreDataManager;
@@ -23,15 +22,13 @@
 @property (strong, nonatomic) Price *price;
 @property (strong, nonatomic) Image *image;
 
-- (NSString *)getProductIdFromURLString:(NSString *)urlString;
-
 @end
 
-@implementation SearsParser
+@implementation IkeaParser
 
 + (instancetype)parserWithProductURLString:(NSString *)productURLString
 {
-    SearsParser *parser = [[SearsParser alloc] init];
+    IkeaParser *parser = [[IkeaParser alloc] init];
     parser.mobileURLString = productURLString;
     parser.cleanURLString = productURLString;
     
@@ -47,22 +44,11 @@
     return parser;
 }
 
-- (NSString *)getProductIdFromURLString:(NSString *)urlString
-{
-    return [Parser scanString:urlString startTag:@"Details/" endTag:@"?"];
-}
-
 # pragma mark - Property Delegate Methods
 
 - (NSNumber *)priceInDollars
 {
-    NSString* priceString;
-    NSString* price = [Parser scanString:self.htmlString startTag:@"<span id=\"salePrice\"" endTag:@"</div>"];
-    if ([price containsString:@"*"]) {
-        priceString = [Parser scanString:price startTag:@">" endTag:@"*"];
-    } else {
-        priceString = [Parser scanString:price startTag:@">" endTag:@"</span>"];
-    }
+    NSString* priceString = [Parser scanString:self.htmlString startTag:@"<span itemprop=\"price\"><span class=\"inline\">$" endTag:@"</span>"];
     
     return [NSNumber numberWithFloat:[priceString floatValue]];
 }
@@ -89,9 +75,8 @@
 {
     
     if (!self.name) {
-        NSString* name = [Parser scanString:self.htmlString startTag:@"<div id=\"productName\" class=\"spu-margin\">" endTag:@"</div>"];
-        self.name = [Parser scanString:name startTag:@"<b>" endTag:@"</b>"];
-    }
+
+        self.name = [Parser scanString:self.htmlString startTag:@"<meta name=\"title\" content=\"" endTag:@","];    }
     
     return self.name;
 }
@@ -101,8 +86,8 @@
     if (!self.image) {
         
         
-        NSString *urlString = [Parser scanString:self.htmlString startTag:@"productgalleryPage('" endTag:@"?"];
-
+        NSString *urlString = [Parser scanString:self.htmlString startTag:@"<meta itemprop=\"image\" content=\"" endTag:@"\""];
+        
         NSURL *urlImage = [NSURL URLWithString:urlString];
         
         NSString *imageFileName = [Image imageFileNameForURL:urlImage];

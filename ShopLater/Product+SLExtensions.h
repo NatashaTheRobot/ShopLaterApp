@@ -17,6 +17,6 @@
 - (NSString *)formattedPriceWithType:(NSString *)type;
 - (NSNumber *)currentWishPriceDifference;
 - (NSString *)formattedName:(NSString *)name;
-
++ (NSString *)formattedName:(NSString *)name;
 
 @end

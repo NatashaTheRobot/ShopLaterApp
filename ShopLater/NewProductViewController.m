@@ -77,14 +77,9 @@
 }
 
 - (void)createProduct
-{
-    NSSet *images = [NSSet setWithObject:[self.parser.delegate productImage]];
-    NSSet *prices = [NSSet setWithObject:[self.parser.delegate productPrice]];
-    
+{    
     NSDictionary *productDictionary = [NSDictionary dictionaryWithObjectsAndKeys:[self.parser.delegate productName], @"name",
                                        [self.parser.delegate cleanURLString], @"url",
-                                       images, @"images",
-                                       prices, @"prices",
                                        self.provider, @"provider",
                                        [self.parser.delegate mobileURLString], @"mobileURL",
                                        [NSDate date], @"createdAt",
@@ -93,6 +88,10 @@
     
     self.product = [self.coreDataManager createEntityWithClassName:NSStringFromClass([Product class])
                                               attributesDictionary:productDictionary];
+    
+    [self.product addImagesObject:[self.parser.delegate productImage]];
+    [self.product addPricesObject:[self.parser.delegate productPrice]];
+    
     
 }
 

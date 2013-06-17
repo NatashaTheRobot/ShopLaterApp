@@ -48,8 +48,6 @@
     [self.slidingViewController setAnchorRightRevealAmount:280.0f];
     self.slidingViewController.underLeftWidthLayout = ECFullWidth;
     
-    self.clearsSelectionOnViewWillAppear = YES;
-    
 }
 
 - (void)viewDidAppear:(BOOL)animated

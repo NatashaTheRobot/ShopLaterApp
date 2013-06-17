@@ -12,7 +12,11 @@
 
 + (NSString *)formattedPriceFromNumber:(NSNumber *)dollarAmount
 {
-    return [NSString stringWithFormat:@"$%.2f", [dollarAmount floatValue]];
+    NSNumberFormatter *numberFormatter = [[NSNumberFormatter alloc] init];
+    numberFormatter.numberStyle = NSNumberFormatterCurrencyStyle;
+    numberFormatter.currencyCode = @"USD";
+    
+    return [numberFormatter stringFromNumber:dollarAmount];
 }
 
 @end

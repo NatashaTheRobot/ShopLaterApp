@@ -49,7 +49,7 @@
 - (void)setProduct:(Product *)product
 {
     _product = product;
-    self.productNameLabel.text = product.name;
+    self.productNameLabel.text = [product formattedName:product.name];
     self.productImageView.image = [product image];
     self.currentPriceLabel.text = [product formattedPriceWithType:sPriceTypeCurrent];
     self.wishPriceLabel.text = [product formattedPriceWithType:sPriceTypeWish];

@@ -69,6 +69,10 @@
                                                                NSStringFromClass([MenuViewController class])];
     }
     
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
     ((MenuViewController *)self.slidingViewController.underLeftViewController).selectedProvider = nil;
     [self.slidingViewController setAnchorRightRevealAmount:280.0f];
     
@@ -76,8 +80,18 @@
         WelcomeView *welcomeView = [[WelcomeView alloc] initWithFrame:CGRectMake(10, 50, self.view.frame.size.width - 40, 200)];
         [self.view addSubview:welcomeView];
         
-        [self.slidingViewController anchorTopViewTo:ECRight];
+        
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(slideMenu) name:ECSlidingViewTopDidReset object:nil];
+
     }
+}
+
+- (void)slideMenu
+{
+    [self.slidingViewController anchorTopViewTo:ECRight animations:nil onComplete:^{
+        [[NSNotificationCenter defaultCenter] removeObserver:self name:ECSlidingViewTopDidReset object:nil];
+    }];
+    
 }
 
 - (IBAction)revealMenuWithButton:(id)sender

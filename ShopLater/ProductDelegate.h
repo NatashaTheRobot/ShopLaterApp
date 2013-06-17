@@ -7,9 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
+@class Product;
 
 @protocol ProductDelegate <NSObject>
 
-- (void)deleteSelectedProduct;
+- (void)deleteProduct:(Product *)product;
 
 @end

@@ -53,6 +53,6 @@
 
 - (IBAction)deleteProductWithButton:(id)sender
 {
-    [self.delegate deleteSelectedProduct];
+    [self.delegate deleteProduct:self.product];
 }
 @end

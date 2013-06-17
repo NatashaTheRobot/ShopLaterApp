@@ -238,9 +238,8 @@
 
 #pragma mark - Product Delegate Methods
 
-- (void)deleteSelectedProduct
+- (void)deleteProduct:(Product *)product
 {
-    Product *product = [self.fetchedResultsController objectAtIndexPath:[self.tableView indexPathForSelectedRow]];
     [self.coreDataManager deleteEntity:product];
     [self.coreDataManager saveDataInManagedContextUsingBlock:^(BOOL saved, NSError *error) {
         if (error) {

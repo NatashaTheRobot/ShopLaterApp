@@ -8,7 +8,6 @@
 
 #import "MenuViewController.h"
 #import "CoreDataManager.h"
-#import "Provider+SLExtensions.h"
 #import "Constants.h"
 #import "ECSlidingViewController.h"
 #import "WebViewController.h"
@@ -17,6 +16,7 @@
 
 @property (strong, nonatomic) CoreDataManager *coreDataManager;
 @property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
+@property (strong, nonatomic) UITableViewCell *selectedCell;
 
 @end
 
@@ -48,6 +48,22 @@
     [self.slidingViewController setAnchorRightRevealAmount:280.0f];
     self.slidingViewController.underLeftWidthLayout = ECFullWidth;
     
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    UITableViewCell *cellToSelect;
+    if (self.selectedProvider) {
+        NSIndexPath *fetchResultsIndexPath = [self.fetchedResultsController indexPathForObject:self.selectedProvider];
+        NSIndexPath *providerIndexPath = [NSIndexPath indexPathForRow:fetchResultsIndexPath.row  inSection:(fetchResultsIndexPath.section + 1)];
+        cellToSelect = [self.tableView cellForRowAtIndexPath:providerIndexPath];
+    } else {
+        NSIndexPath *shoppingListIndexPath = [NSIndexPath indexPathForRow:0 inSection:0];
+        cellToSelect = [self.tableView cellForRowAtIndexPath:shoppingListIndexPath];
+    }
+    
+    self.selectedCell = cellToSelect;
+    cellToSelect.selected = YES;
 }
 
 - (void)createProviders
@@ -125,6 +141,9 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    self.selectedCell.selected = NO;
+    self.selectedCell = [self.tableView cellForRowAtIndexPath:indexPath];
+    
     UIViewController *newTopViewController;
     
     if (indexPath.section == 0) {

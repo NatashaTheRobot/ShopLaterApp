@@ -77,6 +77,7 @@
 
 - (void)revealMenu
 {
+    ((MenuViewController *)self.slidingViewController.underLeftViewController).selectedProvider = self.provider;
     [self.slidingViewController anchorTopViewTo:ECRight];
 }
 

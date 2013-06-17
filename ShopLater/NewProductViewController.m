@@ -126,9 +126,6 @@
                 self.slidingViewController.topViewController = productListNavigationController;
                 self.slidingViewController.topViewController.view.frame = frame;
                 [self.slidingViewController resetTopView];
-                dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{
-                    [self.product postToAPI];
-                });
 
             }];
         } else {

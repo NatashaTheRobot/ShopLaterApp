@@ -31,15 +31,6 @@
 		9C195DB81767588B00183192 /* Price+SLExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C195DB71767588B00183192 /* Price+SLExtensions.m */; };
 		9C195DC417679B4E00183192 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C195DC317679B4D00183192 /* QuartzCore.framework */; };
 		9C195DD71767AE2500183192 /* Product+SLExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C195DD61767AE2500183192 /* Product+SLExtensions.m */; };
-		9C195DF51768D91200183192 /* AFHTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C195DE31768D91100183192 /* AFHTTPClient.m */; };
-		9C195DF61768D91200183192 /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C195DE51768D91100183192 /* AFHTTPRequestOperation.m */; };
-		9C195DF71768D91200183192 /* AFImageRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C195DE71768D91100183192 /* AFImageRequestOperation.m */; };
-		9C195DF81768D91200183192 /* AFJSONRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C195DE91768D91100183192 /* AFJSONRequestOperation.m */; };
-		9C195DF91768D91200183192 /* AFNetworkActivityIndicatorManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C195DEB1768D91100183192 /* AFNetworkActivityIndicatorManager.m */; };
-		9C195DFA1768D91200183192 /* AFPropertyListRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C195DEE1768D91100183192 /* AFPropertyListRequestOperation.m */; };
-		9C195DFB1768D91200183192 /* AFURLConnectionOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C195DF01768D91100183192 /* AFURLConnectionOperation.m */; };
-		9C195DFC1768D91200183192 /* AFXMLRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C195DF21768D91100183192 /* AFXMLRequestOperation.m */; };
-		9C195DFD1768D91200183192 /* UIImageView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C195DF41768D91200183192 /* UIImageView+AFNetworking.m */; };
 		9C226414176BCCC600C3FDD9 /* ECSlidingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C226411176BCCC600C3FDD9 /* ECSlidingViewController.m */; };
 		9C226415176BCCC600C3FDD9 /* UIImage+ImageWithUIView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C226413176BCCC600C3FDD9 /* UIImage+ImageWithUIView.m */; };
 		9C22641E176BD12600C3FDD9 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C22641D176BD12600C3FDD9 /* MainViewController.m */; };
@@ -113,25 +104,6 @@
 		9C195DC317679B4D00183192 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		9C195DD51767AE2400183192 /* Product+SLExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Product+SLExtensions.h"; sourceTree = "<group>"; };
 		9C195DD61767AE2500183192 /* Product+SLExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Product+SLExtensions.m"; sourceTree = "<group>"; };
-		9C195DE21768D91100183192 /* AFHTTPClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPClient.h; sourceTree = "<group>"; };
-		9C195DE31768D91100183192 /* AFHTTPClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPClient.m; sourceTree = "<group>"; };
-		9C195DE41768D91100183192 /* AFHTTPRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperation.h; sourceTree = "<group>"; };
-		9C195DE51768D91100183192 /* AFHTTPRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPRequestOperation.m; sourceTree = "<group>"; };
-		9C195DE61768D91100183192 /* AFImageRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFImageRequestOperation.h; sourceTree = "<group>"; };
-		9C195DE71768D91100183192 /* AFImageRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFImageRequestOperation.m; sourceTree = "<group>"; };
-		9C195DE81768D91100183192 /* AFJSONRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFJSONRequestOperation.h; sourceTree = "<group>"; };
-		9C195DE91768D91100183192 /* AFJSONRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFJSONRequestOperation.m; sourceTree = "<group>"; };
-		9C195DEA1768D91100183192 /* AFNetworkActivityIndicatorManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFNetworkActivityIndicatorManager.h; sourceTree = "<group>"; };
-		9C195DEB1768D91100183192 /* AFNetworkActivityIndicatorManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFNetworkActivityIndicatorManager.m; sourceTree = "<group>"; };
-		9C195DEC1768D91100183192 /* AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFNetworking.h; sourceTree = "<group>"; };
-		9C195DED1768D91100183192 /* AFPropertyListRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFPropertyListRequestOperation.h; sourceTree = "<group>"; };
-		9C195DEE1768D91100183192 /* AFPropertyListRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFPropertyListRequestOperation.m; sourceTree = "<group>"; };
-		9C195DEF1768D91100183192 /* AFURLConnectionOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFURLConnectionOperation.h; sourceTree = "<group>"; };
-		9C195DF01768D91100183192 /* AFURLConnectionOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLConnectionOperation.m; sourceTree = "<group>"; };
-		9C195DF11768D91100183192 /* AFXMLRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFXMLRequestOperation.h; sourceTree = "<group>"; };
-		9C195DF21768D91100183192 /* AFXMLRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFXMLRequestOperation.m; sourceTree = "<group>"; };
-		9C195DF31768D91100183192 /* UIImageView+AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+AFNetworking.h"; sourceTree = "<group>"; };
-		9C195DF41768D91200183192 /* UIImageView+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+AFNetworking.m"; sourceTree = "<group>"; };
 		9C226410176BCCC600C3FDD9 /* ECSlidingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECSlidingViewController.h; sourceTree = "<group>"; };
 		9C226411176BCCC600C3FDD9 /* ECSlidingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECSlidingViewController.m; sourceTree = "<group>"; };
 		9C226412176BCCC600C3FDD9 /* UIImage+ImageWithUIView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+ImageWithUIView.h"; sourceTree = "<group>"; };
@@ -200,32 +172,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		9C195DFE1768D97800183192 /* AFNetworking */ = {
-			isa = PBXGroup;
-			children = (
-				9C195DE21768D91100183192 /* AFHTTPClient.h */,
-				9C195DE31768D91100183192 /* AFHTTPClient.m */,
-				9C195DE41768D91100183192 /* AFHTTPRequestOperation.h */,
-				9C195DE51768D91100183192 /* AFHTTPRequestOperation.m */,
-				9C195DE61768D91100183192 /* AFImageRequestOperation.h */,
-				9C195DE71768D91100183192 /* AFImageRequestOperation.m */,
-				9C195DE81768D91100183192 /* AFJSONRequestOperation.h */,
-				9C195DE91768D91100183192 /* AFJSONRequestOperation.m */,
-				9C195DEA1768D91100183192 /* AFNetworkActivityIndicatorManager.h */,
-				9C195DEB1768D91100183192 /* AFNetworkActivityIndicatorManager.m */,
-				9C195DEC1768D91100183192 /* AFNetworking.h */,
-				9C195DED1768D91100183192 /* AFPropertyListRequestOperation.h */,
-				9C195DEE1768D91100183192 /* AFPropertyListRequestOperation.m */,
-				9C195DEF1768D91100183192 /* AFURLConnectionOperation.h */,
-				9C195DF01768D91100183192 /* AFURLConnectionOperation.m */,
-				9C195DF11768D91100183192 /* AFXMLRequestOperation.h */,
-				9C195DF21768D91100183192 /* AFXMLRequestOperation.m */,
-				9C195DF31768D91100183192 /* UIImageView+AFNetworking.h */,
-				9C195DF41768D91200183192 /* UIImageView+AFNetworking.m */,
-			);
-			name = AFNetworking;
-			sourceTree = "<group>";
-		};
 		9C22640F176BCCC600C3FDD9 /* ECSlidingViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -393,7 +339,6 @@
 			isa = PBXGroup;
 			children = (
 				9C22640F176BCCC600C3FDD9 /* ECSlidingViewController */,
-				9C195DFE1768D97800183192 /* AFNetworking */,
 			);
 			name = Libraries;
 			sourceTree = "<group>";
@@ -513,15 +458,6 @@
 				9C195DB51767510500183192 /* ProductTableViewCell.m in Sources */,
 				9C195DB81767588B00183192 /* Price+SLExtensions.m in Sources */,
 				9C195DD71767AE2500183192 /* Product+SLExtensions.m in Sources */,
-				9C195DF51768D91200183192 /* AFHTTPClient.m in Sources */,
-				9C195DF61768D91200183192 /* AFHTTPRequestOperation.m in Sources */,
-				9C195DF71768D91200183192 /* AFImageRequestOperation.m in Sources */,
-				9C195DF81768D91200183192 /* AFJSONRequestOperation.m in Sources */,
-				9C195DF91768D91200183192 /* AFNetworkActivityIndicatorManager.m in Sources */,
-				9C195DFA1768D91200183192 /* AFPropertyListRequestOperation.m in Sources */,
-				9C195DFB1768D91200183192 /* AFURLConnectionOperation.m in Sources */,
-				9C195DFC1768D91200183192 /* AFXMLRequestOperation.m in Sources */,
-				9C195DFD1768D91200183192 /* UIImageView+AFNetworking.m in Sources */,
 				3447CEBA176B774700BF0490 /* Identifier.m in Sources */,
 				3447CEC0176B774800BF0490 /* Price.m in Sources */,
 				3447CEC3176B774900BF0490 /* Product.m in Sources */,

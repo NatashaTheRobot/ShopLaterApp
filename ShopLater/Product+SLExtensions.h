@@ -17,6 +17,4 @@
 - (NSString *)formattedPriceWithType:(NSString *)type;
 - (NSNumber *)currentWishPriceDifference;
 
-- (void)postToAPI;
-
 @end

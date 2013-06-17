@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Provider+SLExtensions.h"
 
 @interface MenuViewController : UITableViewController
+
+@property (strong, nonatomic) Provider *selectedProvider;
 
 @end

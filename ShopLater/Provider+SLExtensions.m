@@ -16,7 +16,11 @@
 
 + (NSString *)urlStringFromProviderName:(NSString *)providerName
 {
-    return [NSString stringWithFormat:@"http://www.%@.com", providerName];
+    if ([providerName isEqualToString:@"dupontregistry"]) {
+        return [NSString stringWithFormat:@"http://m.%@.com", providerName];
+    } else {
+        return [NSString stringWithFormat:@"http://www.%@.com", providerName];
+    }
 }
 
 + (NSString *)logoImageNameFromProviderName:(NSString *)providerName
@@ -26,7 +30,7 @@
 
 + (NSArray *)providersArray
 {
-    NSMutableArray *providers = [[NSMutableArray alloc] initWithCapacity:6];
+    NSMutableArray *providers = [[NSMutableArray alloc] initWithCapacity:8];
     
     [providers addObject:[self dictionaryWithProviderName:@"toysrus"
                                               identifiers:[Identifier identifiersWithNames:@[@"productId"]]
@@ -45,12 +49,20 @@
                                            commercialName:@"BestBuy"]];
     
     [providers addObject:[self dictionaryWithProviderName:@"bedbathbeyond"
-                                              identifiers:[Identifier identifiersWithNames:@[@"/product/"]]
+                                              identifiers:[Identifier identifiersWithNames:@[@"/product/detail."]]
                                            commercialName:@"Bed Bath & Beyond"]];
     
     [providers addObject:[self dictionaryWithProviderName:@"lululemon"
                                               identifiers:[Identifier identifiersWithNames:@[@"skuId"]]
                                            commercialName:@"Lululemon"]];
+    
+    [providers addObject:[self dictionaryWithProviderName:@"dupontregistry"
+                                              identifiers:[Identifier identifiersWithNames:@[@"ItemID"]]
+                                           commercialName:@"Dupont Registry"]];
+    
+    [providers addObject:[self dictionaryWithProviderName:@"buybuybaby"
+                                              identifiers:[Identifier identifiersWithNames:@[@"/product/detail."]]
+                                           commercialName:@"Buy Buy Baby"]];
 
     return providers;
 }

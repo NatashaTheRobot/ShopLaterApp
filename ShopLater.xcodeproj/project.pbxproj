@@ -12,7 +12,9 @@
 		3401B4A6176CDB0500DAD80D /* bedbathbeyond_logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3401B4A4176CDB0500DAD80D /* bedbathbeyond_logo@2x.png */; };
 		3401B4A9176CE34000DAD80D /* LululemonParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 3401B4A8176CE34000DAD80D /* LululemonParser.m */; };
 		3401B4AC176CEA6000DAD80D /* lululemon_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 3401B4AA176CEA6000DAD80D /* lululemon_logo.png */; };
-		3401B4AD176CEA6000DAD80D /* lululemon_logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3401B4AB176CEA6000DAD80D /* lululemon_logo@2x.png */; };
+		3401B4B0176CEE0100DAD80D /* DupontregistryParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 3401B4AF176CEE0000DAD80D /* DupontregistryParser.m */; };
+		3401B4B3176CEFFD00DAD80D /* dupontregistry_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 3401B4B1176CEFFD00DAD80D /* dupontregistry_logo.png */; };
+		3401B4B4176CEFFD00DAD80D /* dupontregistry_logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3401B4B2176CEFFD00DAD80D /* dupontregistry_logo@2x.png */; };
 		3447CEBA176B774700BF0490 /* Identifier.m in Sources */ = {isa = PBXBuildFile; fileRef = 3447CEB9176B774700BF0490 /* Identifier.m */; };
 		3447CEC0176B774800BF0490 /* Price.m in Sources */ = {isa = PBXBuildFile; fileRef = 3447CEBF176B774800BF0490 /* Price.m */; };
 		3447CEC3176B774900BF0490 /* Product.m in Sources */ = {isa = PBXBuildFile; fileRef = 3447CEC2176B774800BF0490 /* Product.m */; };
@@ -25,6 +27,9 @@
 		346DE7A4176B97C500090C0E /* MacysParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 346DE7A3176B97C500090C0E /* MacysParser.m */; };
 		346DE7A7176BA21600090C0E /* bestbuy_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 346DE7A5176BA21600090C0E /* bestbuy_logo.png */; };
 		346DE7A8176BA21600090C0E /* bestbuy_logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 346DE7A6176BA21600090C0E /* bestbuy_logo@2x.png */; };
+		34BE7CB9176F58490005FB14 /* BuybuybabyParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 34BE7CB8176F58490005FB14 /* BuybuybabyParser.m */; };
+		34BE7CBC176F5BCA0005FB14 /* buybuybaby_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 34BE7CBA176F5BCA0005FB14 /* buybuybaby_logo.png */; };
+		34BE7CBD176F5BCA0005FB14 /* buybuybaby_logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 34BE7CBB176F5BCA0005FB14 /* buybuybaby_logo@2x.png */; };
 		34C4E09E176BB7FF00D1EFD5 /* NSString+SLExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 34C4E09D176BB7FF00D1EFD5 /* NSString+SLExtensions.m */; };
 		9C195DB217674F1F00183192 /* ProductsListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C195DB117674F1F00183192 /* ProductsListViewController.m */; };
 		9C195DB51767510500183192 /* ProductTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C195DB41767510500183192 /* ProductTableViewCell.m */; };
@@ -72,7 +77,10 @@
 		3401B4A7176CE34000DAD80D /* LululemonParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LululemonParser.h; sourceTree = "<group>"; };
 		3401B4A8176CE34000DAD80D /* LululemonParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LululemonParser.m; sourceTree = "<group>"; };
 		3401B4AA176CEA6000DAD80D /* lululemon_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lululemon_logo.png; sourceTree = "<group>"; };
-		3401B4AB176CEA6000DAD80D /* lululemon_logo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "lululemon_logo@2x.png"; sourceTree = "<group>"; };
+		3401B4AE176CEE0000DAD80D /* DupontregistryParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DupontregistryParser.h; sourceTree = "<group>"; };
+		3401B4AF176CEE0000DAD80D /* DupontregistryParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DupontregistryParser.m; sourceTree = "<group>"; };
+		3401B4B1176CEFFD00DAD80D /* dupontregistry_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dupontregistry_logo.png; sourceTree = "<group>"; };
+		3401B4B2176CEFFD00DAD80D /* dupontregistry_logo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dupontregistry_logo@2x.png"; sourceTree = "<group>"; };
 		3447CEB8176B774700BF0490 /* Identifier.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Identifier.h; sourceTree = "<group>"; };
 		3447CEB9176B774700BF0490 /* Identifier.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Identifier.m; sourceTree = "<group>"; };
 		3447CEBE176B774800BF0490 /* Price.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Price.h; sourceTree = "<group>"; };
@@ -93,6 +101,10 @@
 		346DE7A3176B97C500090C0E /* MacysParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MacysParser.m; sourceTree = "<group>"; };
 		346DE7A5176BA21600090C0E /* bestbuy_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bestbuy_logo.png; sourceTree = "<group>"; };
 		346DE7A6176BA21600090C0E /* bestbuy_logo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bestbuy_logo@2x.png"; sourceTree = "<group>"; };
+		34BE7CB7176F58490005FB14 /* BuybuybabyParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BuybuybabyParser.h; sourceTree = "<group>"; };
+		34BE7CB8176F58490005FB14 /* BuybuybabyParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BuybuybabyParser.m; sourceTree = "<group>"; };
+		34BE7CBA176F5BCA0005FB14 /* buybuybaby_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = buybuybaby_logo.png; sourceTree = "<group>"; };
+		34BE7CBB176F5BCA0005FB14 /* buybuybaby_logo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "buybuybaby_logo@2x.png"; sourceTree = "<group>"; };
 		34C4E09C176BB7FF00D1EFD5 /* NSString+SLExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+SLExtensions.h"; sourceTree = "<group>"; };
 		34C4E09D176BB7FF00D1EFD5 /* NSString+SLExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+SLExtensions.m"; sourceTree = "<group>"; };
 		9C195DB017674F1F00183192 /* ProductsListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ProductsListViewController.h; path = ../ProductsListViewController.h; sourceTree = "<group>"; };
@@ -300,8 +312,11 @@
 		9CA5D7431762A9840009098E /* ProviderLogos */ = {
 			isa = PBXGroup;
 			children = (
+				34BE7CBA176F5BCA0005FB14 /* buybuybaby_logo.png */,
+				34BE7CBB176F5BCA0005FB14 /* buybuybaby_logo@2x.png */,
+				3401B4B1176CEFFD00DAD80D /* dupontregistry_logo.png */,
+				3401B4B2176CEFFD00DAD80D /* dupontregistry_logo@2x.png */,
 				3401B4AA176CEA6000DAD80D /* lululemon_logo.png */,
-				3401B4AB176CEA6000DAD80D /* lululemon_logo@2x.png */,
 				3401B4A3176CDB0500DAD80D /* bedbathbeyond_logo.png */,
 				3401B4A4176CDB0500DAD80D /* bedbathbeyond_logo@2x.png */,
 				9C226429176CF0A300C3FDD9 /* macys_logo.png */,
@@ -362,6 +377,10 @@
 				3401B4A1176CD83B00DAD80D /* BedbathbeyondParser.m */,
 				3401B4A7176CE34000DAD80D /* LululemonParser.h */,
 				3401B4A8176CE34000DAD80D /* LululemonParser.m */,
+				3401B4AE176CEE0000DAD80D /* DupontregistryParser.h */,
+				3401B4AF176CEE0000DAD80D /* DupontregistryParser.m */,
+				34BE7CB7176F58490005FB14 /* BuybuybabyParser.h */,
+				34BE7CB8176F58490005FB14 /* BuybuybabyParser.m */,
 			);
 			name = Parsers;
 			sourceTree = "<group>";
@@ -433,9 +452,12 @@
 				3401B4A5176CDB0500DAD80D /* bedbathbeyond_logo.png in Resources */,
 				3401B4A6176CDB0500DAD80D /* bedbathbeyond_logo@2x.png in Resources */,
 				3401B4AC176CEA6000DAD80D /* lululemon_logo.png in Resources */,
-				3401B4AD176CEA6000DAD80D /* lululemon_logo@2x.png in Resources */,
 				9C22642A176CF0A300C3FDD9 /* macys_logo.png in Resources */,
 				9C22642C176CF0F600C3FDD9 /* macys_logo@2x.png in Resources */,
+				3401B4B3176CEFFD00DAD80D /* dupontregistry_logo.png in Resources */,
+				3401B4B4176CEFFD00DAD80D /* dupontregistry_logo@2x.png in Resources */,
+				34BE7CBC176F5BCA0005FB14 /* buybuybaby_logo.png in Resources */,
+				34BE7CBD176F5BCA0005FB14 /* buybuybaby_logo@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -477,6 +499,8 @@
 				3401B4A2176CD83B00DAD80D /* BedbathbeyondParser.m in Sources */,
 				3401B4A9176CE34000DAD80D /* LululemonParser.m in Sources */,
 				9C22642F176DE17300C3FDD9 /* WelcomView.m in Sources */,
+				3401B4B0176CEE0100DAD80D /* DupontregistryParser.m in Sources */,
+				34BE7CB9176F58490005FB14 /* BuybuybabyParser.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

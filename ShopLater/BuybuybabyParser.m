@@ -1,12 +1,12 @@
 //
-//  LululemonParser.m
+//  BuybuybabyParse.m
 //  ShopLater
 //
-//  Created by Reza Fatahi on 6/15/13.
+//  Created by Reza Fatahi on 6/17/13.
 //  Copyright (c) 2013 Natasha Murashev. All rights reserved.
 //
 
-#import "LululemonParser.h"
+#import "BuybuybabyParser.h"
 #import "Parser.h"
 #import "Price.h"
 #import "Image+SLExtensions.h"
@@ -14,7 +14,7 @@
 #import "Constants.h"
 #import "NSString+SLExtensions.h"
 
-@interface LululemonParser ()
+@interface BuybuybabyParser ()
 
 @property (strong, nonatomic) NSString *htmlString;
 @property (strong, nonatomic) CoreDataManager *coreDataManager;
@@ -25,18 +25,18 @@
 
 @end
 
-@implementation LululemonParser
+@implementation BuybuybabyParser
 
 + (instancetype)parserWithProductURLString:(NSString *)productURLString
-{
-    LululemonParser *parser = [[LululemonParser alloc] init];
+{    
+    BuybuybabyParser *parser = [[BuybuybabyParser alloc] init];
     parser.cleanURLString = productURLString;
     parser.mobileURLString = productURLString;
     
     // handle error (if we cannot get the product id for some reason)
     NSData *data = [NSData dataWithContentsOfURL:[NSURL URLWithString:parser.cleanURLString]];
     
-    parser.htmlString = [[NSString alloc] initWithData:data encoding:NSASCIIStringEncoding];
+    parser.htmlString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
     
     parser.coreDataManager = [CoreDataManager sharedManager];
     
@@ -47,10 +47,9 @@
 
 - (NSNumber *)priceInDollars
 {
-    NSString *priceString = [Parser scanString:self.htmlString startTag:@"class=\"amount\"" endTag:@"class=\"currency\""];
-    
-    priceString = [Parser scanString:priceString startTag:@"</span>" endTag:@"</span>"];
-    
+    NSString *content = [Parser scanString:self.htmlString startTag:@"<div class=\"detail\">" endTag:@"<div class=\"infor\">"];
+    NSString *priceString = [Parser scanString:content startTag:@"\"price\">$" endTag:@"&"];
+    priceString = [priceString stringByReplacingOccurrencesOfString:@"," withString:@""];
     return [NSNumber numberWithFloat:[priceString floatValue]];
 }
 
@@ -74,8 +73,8 @@
 {
     if (!self.name) {
         
-        self.name = [Parser scanString:self.htmlString startTag:@"<title>" endTag:@"|"];
-        self.name = [self.name capitalizedString];
+        NSString *content = [Parser scanString:self.htmlString startTag:@"<div class=\"detail\">" endTag:@"<div class=\"infor\">"];
+        self.name = [Parser scanString:content startTag:@"<h1>" endTag:@"</h1>"];
     }
     
     return self.name;
@@ -84,10 +83,9 @@
 - (Image *)productImage
 {
     if (!self.image) {
-        
-        NSString *imagePathString = [Parser scanString:self.htmlString startTag:@"pdpMainImg jqzoom" endTag:@"</a>"];
-        
-        NSString *imageString = [Parser scanString:imagePathString startTag:@"<img src=\"" endTag:@"\""];
+
+        NSString *content = [Parser scanString:self.htmlString startTag:@"<div class=\"detail\">" endTag:@"<div class=\"infor\">"];
+        NSString *imageString = [Parser scanString:content startTag:@"src=\"" endTag:@"\""];
         
         NSURL *urlImage = [NSURL URLWithString:imageString];
         

@@ -1,12 +1,12 @@
 //
-//  LululemonParser.m
+//  DupontregistryParser.m
 //  ShopLater
 //
 //  Created by Reza Fatahi on 6/15/13.
 //  Copyright (c) 2013 Natasha Murashev. All rights reserved.
 //
 
-#import "LululemonParser.h"
+#import "DupontregistryParser.h"
 #import "Parser.h"
 #import "Price.h"
 #import "Image+SLExtensions.h"
@@ -14,7 +14,7 @@
 #import "Constants.h"
 #import "NSString+SLExtensions.h"
 
-@interface LululemonParser ()
+@interface DupontregistryParser ()
 
 @property (strong, nonatomic) NSString *htmlString;
 @property (strong, nonatomic) CoreDataManager *coreDataManager;
@@ -25,18 +25,18 @@
 
 @end
 
-@implementation LululemonParser
+@implementation DupontregistryParser
 
 + (instancetype)parserWithProductURLString:(NSString *)productURLString
 {
-    LululemonParser *parser = [[LululemonParser alloc] init];
+    DupontregistryParser *parser = [[DupontregistryParser alloc] init];
     parser.cleanURLString = productURLString;
     parser.mobileURLString = productURLString;
     
     // handle error (if we cannot get the product id for some reason)
     NSData *data = [NSData dataWithContentsOfURL:[NSURL URLWithString:parser.cleanURLString]];
     
-    parser.htmlString = [[NSString alloc] initWithData:data encoding:NSASCIIStringEncoding];
+    parser.htmlString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
     
     parser.coreDataManager = [CoreDataManager sharedManager];
     
@@ -47,10 +47,9 @@
 
 - (NSNumber *)priceInDollars
 {
-    NSString *priceString = [Parser scanString:self.htmlString startTag:@"class=\"amount\"" endTag:@"class=\"currency\""];
-    
-    priceString = [Parser scanString:priceString startTag:@"</span>" endTag:@"</span>"];
-    
+    NSString *priceString = [Parser scanString:self.htmlString startTag:@"Price:</strong>" endTag:@"<br />"];
+    priceString = [Parser scanString:priceString startTag:@"$" endTag:@""];
+    priceString = [priceString stringByReplacingOccurrencesOfString:@"," withString:@""];
     return [NSNumber numberWithFloat:[priceString floatValue]];
 }
 
@@ -74,8 +73,11 @@
 {
     if (!self.name) {
         
-        self.name = [Parser scanString:self.htmlString startTag:@"<title>" endTag:@"|"];
-        self.name = [self.name capitalizedString];
+        NSString* fullName = [Parser scanString:self.htmlString startTag:@"Make" endTag:@"Mileage"];
+        NSString* firstName = [Parser scanString:fullName startTag:@"</strong>" endTag:@"<br />"];
+        NSString* lastName = [Parser scanString:fullName startTag:@"Model:</strong>" endTag:@"<br />"];
+        
+        self.name = [NSString stringWithFormat:@"%@ %@", firstName, lastName];
     }
     
     return self.name;
@@ -85,7 +87,7 @@
 {
     if (!self.image) {
         
-        NSString *imagePathString = [Parser scanString:self.htmlString startTag:@"pdpMainImg jqzoom" endTag:@"</a>"];
+        NSString *imagePathString = [Parser scanString:self.htmlString startTag:@"<div id=\"imagegallery\">" endTag:@"width"];
         
         NSString *imageString = [Parser scanString:imagePathString startTag:@"<img src=\"" endTag:@"\""];
         

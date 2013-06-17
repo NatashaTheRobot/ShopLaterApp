@@ -93,6 +93,7 @@
 
 - (void)getUpdatedProductData
 {
+    [self.tableView reloadData];
     [self.refreshControl endRefreshing];
 }
 

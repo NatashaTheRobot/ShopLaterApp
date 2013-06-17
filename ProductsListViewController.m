@@ -57,6 +57,7 @@
                                                                      sortDescriptors:sortDescriptors
                                                                   sectionNameKeyPath:@"name"
                                                                            predicate:nil];
+    self.fetchedResultsController.delegate = self;
 }
 
 - (void)viewWillAppear:(BOOL)animated

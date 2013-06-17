@@ -126,12 +126,15 @@
     
     if (indexPath.section == 0 ) {
         cell.textLabel.text = sMenuHomeCellText;
+        cell.textLabel.textColor = [UIColor whiteColor];
     } else {
         NSIndexPath *providerIndexPath = [NSIndexPath indexPathForItem:indexPath.row inSection:(indexPath.section - 1)];
         Provider *provider = [self.fetchedResultsController objectAtIndexPath:providerIndexPath];
         
         cell.textLabel.text = provider.commercialName;
+        cell.textLabel.textColor = [UIColor whiteColor];
         cell.imageView.image = [UIImage imageNamed:[Provider logoImageNameFromProviderName:provider.name]];
+        cell.imageView.backgroundColor = [UIColor colorWithRed:242/255.0 green:240/255.0 blue:242/250.0 alpha:1];
     }
     
     return cell;
@@ -167,11 +170,11 @@
 {
     if (section == 1) {
         UIView *header = [[UIView alloc] initWithFrame:CGRectMake(0, 0, tableView.frame.size.width, 40.0)];
-        header.backgroundColor = [UIColor grayColor];
         
         UILabel *textLabel = [[UILabel alloc] initWithFrame:header.frame];
         textLabel.text = sMenuStoreSectionTitle;
-        textLabel.backgroundColor = [UIColor grayColor];
+        textLabel.font = [UIFont fontWithName:@"HelveticaNeue-Bold" size:17.0];
+        textLabel.backgroundColor = [UIColor colorWithRed:80/255.0 green:80/255.0 blue:80/255.0 alpha:1];
         textLabel.textColor = [UIColor whiteColor];
         
         [header addSubview:textLabel];

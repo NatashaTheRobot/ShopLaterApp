@@ -27,4 +27,4 @@ static NSString *sMenuShoppingListCell = @"shoppingList";
 static NSString *sMenuStoreCell = @"store";
 static NSString *sMenuHomeCellText = @"Shopping List";
 static NSString *sMenuStoreSectionCell = @"storeSectionHeader";
-static NSString *sMenuStoreSectionTitle = @"Stores";
+static NSString *sMenuStoreSectionTitle = @"STORES";

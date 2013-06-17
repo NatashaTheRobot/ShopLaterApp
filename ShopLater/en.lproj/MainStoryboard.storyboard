@@ -142,11 +142,16 @@
                                                 <action selector="deleteProductWithButton:" destination="K2X-fm-zQF" eventType="touchUpInside" id="s2I-gW-PxF"/>
                                             </connections>
                                         </button>
+                                        <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" hidesWhenStopped="YES" style="gray" id="gfo-Fx-Jzf">
+                                            <rect key="frame" x="193" y="312" width="20" height="20"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        </activityIndicatorView>
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <connections>
+                                    <outlet property="activityIndicator" destination="gfo-Fx-Jzf" id="n2M-AY-wSj"/>
                                     <outlet property="currentPriceLabel" destination="syM-kW-TVl" id="g7n-cf-BUa"/>
                                     <outlet property="logoImageView" destination="mkn-gk-eZf" id="grH-X1-swR"/>
                                     <outlet property="productImageView" destination="8lp-Gx-ZIO" id="6Bl-w5-RhZ"/>
@@ -365,6 +370,7 @@
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ProductTableViewCell.h"/>
             <relationships>
                 <relationship kind="action" name="deleteProductWithButton:"/>
+                <relationship kind="outlet" name="activityIndicator" candidateClass="UIActivityIndicatorView"/>
                 <relationship kind="outlet" name="currentPriceLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="logoImageView" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="productImageView" candidateClass="UIImageView"/>

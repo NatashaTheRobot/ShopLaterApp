@@ -173,7 +173,7 @@
         
         UILabel *textLabel = [[UILabel alloc] initWithFrame:header.frame];
         textLabel.text = sMenuStoreSectionTitle;
-        textLabel.font = [UIFont fontWithName:@"HelveticaNeue-Bold" size:17.0];
+        textLabel.font = [UIFont fontWithName:@"HelveticaNeue-Bold" size:14.0];
         textLabel.backgroundColor = [UIColor colorWithRed:80/255.0 green:80/255.0 blue:80/255.0 alpha:1];
         textLabel.textColor = [UIColor whiteColor];
         

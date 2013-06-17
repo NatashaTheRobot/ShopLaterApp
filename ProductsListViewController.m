@@ -18,7 +18,6 @@
 #import "Provider+SLExtensions.h"
 #import <QuartzCore/QuartzCore.h>
 #import "WebViewController.h"
-#import "Parser.h"
 #import "WelcomView.h"
 
 @interface ProductsListViewController () <NSFetchedResultsControllerDelegate>
@@ -27,9 +26,9 @@
 @property (strong, nonatomic) CoreDataManager *coreDataManager;
 @property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
 
-- (void)selectView;
 - (void)addRefreshControl;
-- (void)getUpdatedPrices;
+- (void)getUpdatedProductData;
+- (void)fetchProducts;
 
 - (IBAction)revealMenuWithButton:(id)sender;
 
@@ -47,8 +46,17 @@
     
     [self addRefreshControl];
     
-    [self selectView];
+    [self fetchProducts];
+}
 
+- (void)fetchProducts
+{
+    NSArray *sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:sProductSortAttribute ascending:NO]];
+    
+    self.fetchedResultsController = [self.coreDataManager fetchEntitiesWithClassName:NSStringFromClass([Product class])
+                                                                     sortDescriptors:sortDescriptors
+                                                                  sectionNameKeyPath:@"name"
+                                                                           predicate:nil];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -82,45 +90,15 @@
     [self.refreshControl addTarget:self action:@selector(getUpdatedPrices) forControlEvents:UIControlEventValueChanged];
 }
 
-- (void)getUpdatedPrices
+- (void)getUpdatedProductData
 {
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{
-        [self.fetchedResultsController.fetchedObjects enumerateObjectsUsingBlock:^(Product *product, NSUInteger idx, BOOL *stop) {
-            Parser *parser = [Parser parserWithProviderName:product.provider.name productURLString:product.mobileURL];
-            Price *currentPrice = [product priceWithType:sPriceTypeCurrent];
-            NSNumber *newPrice = [parser.delegate priceInDollars];
-            if ([currentPrice.dollarAmount floatValue] != [newPrice floatValue]) {
-                dispatch_async(dispatch_get_main_queue(), ^{
-                    currentPrice.dollarAmount = newPrice;
-                });
-            }
-        }];
-        dispatch_async(dispatch_get_main_queue(), ^{
-            [self.coreDataManager saveDataInManagedContextUsingBlock:^(BOOL saved, NSError *error) {
-                [self.refreshControl endRefreshing];
-            }];
-        });
-    });
+    [self.tableView reloadData];
+    [self.refreshControl endRefreshing];
 }
 
 - (IBAction)revealMenuWithButton:(id)sender
 {
     [self.slidingViewController anchorTopViewTo:ECRight];
-}
-
-- (void)selectView
-{
-    NSArray *sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:sProductSortAttribute ascending:NO]];
-    
-    self.fetchedResultsController = [self.coreDataManager fetchEntitiesWithClassName:NSStringFromClass([Product class])
-                                                                     sortDescriptors:sortDescriptors
-                                                                  sectionNameKeyPath:@"name"
-                                                                           predicate:nil];
-
-    if (self.fetchedResultsController.fetchedObjects.count != 0) {
-        [self.refreshControl beginRefreshing];
-        [self getUpdatedPrices];
-    } 
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
@@ -183,8 +161,7 @@
 
 - (void)configureCell:(ProductTableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath
 {
-    Product *product = [self.fetchedResultsController objectAtIndexPath:indexPath];
-    cell.currentPriceFormatted = [product formattedPriceWithType:sPriceTypeCurrent];
+    cell.product = [self.fetchedResultsController objectAtIndexPath:indexPath];
 }
 
 - (void)controller:(NSFetchedResultsController *)controller

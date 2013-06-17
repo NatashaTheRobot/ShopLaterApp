@@ -13,7 +13,6 @@
 @interface ProductTableViewCell : UITableViewCell
 
 @property (strong, nonatomic) Product *product;
-@property (strong, nonatomic) NSString *currentPriceFormatted;
 
 @property (strong, nonatomic) id<ProductDelegate> delegate;
 

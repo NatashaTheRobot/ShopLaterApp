@@ -19,6 +19,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *productNameLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *logoImageView;
 
+- (IBAction)deleteProductWithButton:(id)sender;
 
 @end
 
@@ -40,34 +41,18 @@
     // Configure the view for the selected state
 }
 
-- (void)setProductName:(NSString *)productName
+- (void)setProduct:(Product *)product
 {
-    _productName = productName;
-    self.productNameLabel.text = productName;
+    _product = product;
+    self.productNameLabel.text = product.name;
+    self.productImageView.image = [product image];
+    self.currentPriceLabel.text = [product formattedPriceWithType:sPriceTypeCurrent];
+    self.wishPriceLabel.text = [product formattedPriceWithType:sPriceTypeWish];
+    self.logoImageView.image = [Image imageForProvider:product.provider type:sImageTypeLogo];
 }
 
-- (void)setProductImage:(UIImage *)productImage
+- (IBAction)deleteProductWithButton:(id)sender
 {
-    _productImage = productImage;
-    self.productImageView.image = productImage;
+    [self.delegate deleteSelectedProduct];
 }
-
-- (void)setCurrentPrice:(NSString *)currentPrice
-{
-    _currentPrice = currentPrice;
-    self.currentPriceLabel.text = currentPrice;
-}
-
-- (void)setWishPrice:(NSString *)wishPrice
-{
-    _wishPrice = wishPrice;
-    self.wishPriceLabel.text = wishPrice;
-}
-
-- (void)setProvider:(Provider *)provider
-{
-    _provider = provider;
-    self.logoImageView.image = [Image imageForProvider:provider type:sImageTypeLogo];
-}
-
 @end

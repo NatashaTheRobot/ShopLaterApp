@@ -158,16 +158,13 @@
     
     Product *product = [self.fetchedResultsController objectAtIndexPath:indexPath];
     
-    cell.productName = product.name;
-    cell.productImage = [product image];
-    cell.currentPrice = [product formattedPriceWithType:sPriceTypeCurrent];
-    cell.wishPrice = [product formattedPriceWithType:sPriceTypeWish];
-    cell.provider = product.provider;
+    cell.product = product;
     
 //    if ([product.priceDifference floatValue] <= 0) {
 //        cell.layer.borderColor = [[UIColor redColor] CGColor];
 //        cell.layer.borderWidth = 1.0f;
 //    }
+    cell.delegate = self;
     
     return cell;
 }
@@ -186,8 +183,7 @@
 
 - (void)configureCell:(ProductTableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath
 {
-    Product *product = [self.fetchedResultsController objectAtIndexPath:indexPath];
-    cell.currentPrice = [product formattedPriceWithType:sPriceTypeCurrent];
+    cell.product = [self.fetchedResultsController objectAtIndexPath:indexPath];
 }
 
 - (void)controller:(NSFetchedResultsController *)controller
@@ -238,6 +234,24 @@
                           withRowAnimation:UITableViewRowAnimationFade];
             break;
     }
+}
+
+#pragma mark - Product Delegate Methods
+
+- (void)deleteSelectedProduct
+{
+    Product *product = [self.fetchedResultsController objectAtIndexPath:[self.tableView indexPathForSelectedRow]];
+    [self.coreDataManager deleteEntity:product];
+    [self.coreDataManager saveDataInManagedContextUsingBlock:^(BOOL saved, NSError *error) {
+        if (error) {
+            UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:nil
+                                                                message:@"We're sorry, but this product could not be deleted. Please try again"
+                                                               delegate:self
+                                                      cancelButtonTitle:@"Ok"
+                                                      otherButtonTitles:nil, nil];
+            [alertView show];
+        }
+    }];
 }
 
 @end

@@ -120,6 +120,7 @@
 		9C22642B176CF0F600C3FDD9 /* macys_logo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "macys_logo@2x.png"; sourceTree = "<group>"; };
 		9C22642D176DE17300C3FDD9 /* WelcomView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WelcomView.h; sourceTree = "<group>"; };
 		9C22642E176DE17300C3FDD9 /* WelcomView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WelcomView.m; sourceTree = "<group>"; };
+		9C226448176F41CE00C3FDD9 /* ProductDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductDelegate.h; sourceTree = "<group>"; };
 		9C927B711762780100570F45 /* ShopLater.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShopLater.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C927B741762780100570F45 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		9C927B761762780100570F45 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -331,6 +332,7 @@
 			isa = PBXGroup;
 			children = (
 				9CB9406617665D2000DC05D2 /* ParserDelegate.h */,
+				9C226448176F41CE00C3FDD9 /* ProductDelegate.h */,
 			);
 			name = Delegates;
 			sourceTree = "<group>";

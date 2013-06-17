@@ -8,13 +8,13 @@
 
 #import <UIKit/UIKit.h>
 #import "Provider.h"
+#import "ProductDelegate.h"
+#import "Product+SLExtensions.h"
 
 @interface ProductTableViewCell : UITableViewCell
 
-@property (strong, nonatomic) UIImage *productImage;
-@property (strong, nonatomic) NSString *productName;
-@property (strong, nonatomic) NSString *currentPrice;
-@property (strong, nonatomic) NSString *wishPrice;
-@property (strong, nonatomic) Provider *provider;
+@property (strong, nonatomic) Product *product;
+
+@property (strong, nonatomic) id<ProductDelegate> delegate;
 
 @end

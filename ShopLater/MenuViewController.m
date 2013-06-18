@@ -126,17 +126,22 @@
     
     if (indexPath.section == 0 ) {
         cell.textLabel.text = sMenuHomeCellText;
-        cell.textLabel.textColor = [UIColor whiteColor];
+        cell.imageView.image = [UIImage imageNamed:@"list_icon.png"];
     } else {
         NSIndexPath *providerIndexPath = [NSIndexPath indexPathForItem:indexPath.row inSection:(indexPath.section - 1)];
         Provider *provider = [self.fetchedResultsController objectAtIndexPath:providerIndexPath];
         
         cell.textLabel.text = provider.commercialName;
-        cell.textLabel.textColor = [UIColor whiteColor];
+        
         cell.imageView.image = [UIImage imageNamed:[Provider logoImageNameFromProviderName:provider.name]];
-        cell.imageView.backgroundColor = [UIColor colorWithRed:242/255.0 green:240/255.0 blue:242/250.0 alpha:1];
     }
     
+    UIView *customColorView = [[UIView alloc] init];
+    customColorView.backgroundColor = [UIColor colorWithRed:180/255.0 green:138/255.0 blue:171/255.0 alpha:1];
+    
+    cell.selectedBackgroundView =  customColorView;
+    cell.textLabel.textColor = [UIColor blackColor];
+
     return cell;
 }
 
@@ -173,7 +178,7 @@
         
         UILabel *textLabel = [[UILabel alloc] initWithFrame:header.frame];
         textLabel.text = sMenuStoreSectionTitle;
-        textLabel.font = [UIFont fontWithName:@"HelveticaNeue-Bold" size:14.0];
+        textLabel.font = [UIFont fontWithName:@"HelveticaNeue-Bold" size:24.0];
         textLabel.backgroundColor = [UIColor colorWithRed:80/255.0 green:80/255.0 blue:80/255.0 alpha:1];
         textLabel.textColor = [UIColor whiteColor];
         

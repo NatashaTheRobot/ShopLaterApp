@@ -79,6 +79,7 @@
         self.imageView.contentMode = UIViewContentModeScaleAspectFit;
         [self.activityIndicator stopAnimating];
     }];
+    
     self.navigationItem.leftBarButtonItem = [ButtonFactory barButtonItemWithImageName:@"back_btn.png"
                                                                                target:self
                                                                                action:@selector(goBack)];

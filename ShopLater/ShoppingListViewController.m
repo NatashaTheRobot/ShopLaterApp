@@ -18,11 +18,13 @@
 #import "WebViewController.h"
 #import "ButtonFactory.h"
 
-@interface ShoppingListViewController () <NSFetchedResultsControllerDelegate>
+@interface ShoppingListViewController () <NSFetchedResultsControllerDelegate, UIAlertViewDelegate>
 
 @property (assign, nonatomic) BOOL productsExist;
 @property (strong, nonatomic) CoreDataManager *coreDataManager;
 @property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
+
+@property (strong, nonatomic) Product *productToDelete;
 
 - (void)customizeNavigationBar;
 - (void)revealMenu;
@@ -195,17 +197,31 @@
 
 - (void)deleteProduct:(Product *)product
 {
-    [self.coreDataManager deleteEntity:product];
-    [self.coreDataManager saveDataInManagedContextUsingBlock:^(BOOL saved, NSError *error) {
-        if (error) {
-            UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:nil
-                                                                message:@"We're sorry, but this product could not be deleted. Please try again"
-                                                               delegate:self
-                                                      cancelButtonTitle:@"Ok"
-                                                      otherButtonTitles:nil, nil];
-            [alertView show];
-        }
-    }];
+    self.productToDelete = product;
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:nil
+                                                        message:@"Are you sure you want to delete this item?"
+                                                       delegate:self
+                                              cancelButtonTitle:@"NO"
+                                              otherButtonTitles:@"YES", nil];
+    alertView.delegate = self;
+    [alertView show];
+}
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if ([[alertView buttonTitleAtIndex:buttonIndex] isEqualToString:@"YES"]) {
+        [self.coreDataManager deleteEntity:self.productToDelete];
+        [self.coreDataManager saveDataInManagedContextUsingBlock:^(BOOL saved, NSError *error) {
+            if (error) {
+                UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:nil
+                                                                    message:@"We're sorry, but this product could not be deleted. Please try again"
+                                                                   delegate:self
+                                                          cancelButtonTitle:@"Ok"
+                                                          otherButtonTitles:nil, nil];
+                [alertView show];
+            }
+        }];
+    }
 }
 
 

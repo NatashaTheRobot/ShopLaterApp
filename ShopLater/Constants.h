@@ -21,7 +21,7 @@ static NSString *sPriceTypeWish = @"wish";
 
 static NSString *sMenuShoppingListCell = @"shoppingList";
 static NSString *sMenuStoreCell = @"store";
-static NSString *sMenuHomeCellText = @"My Shopping List";
+static NSString *sMenuHomeCellText = @"Shopping List";
 static NSString *sMenuStoreSectionCell = @"storeSectionHeader";
 static NSString *sMenuStoreSectionTitle = @"STORES";
 static CGFloat   sMenuAnchorRevealAmount = 260.0f;

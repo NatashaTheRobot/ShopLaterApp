@@ -51,7 +51,6 @@
     
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{
         [self displayProduct];
-        [self createProduct];
     });
     
     [self.slidingViewController setAnchorRightRevealAmount:280.0f];
@@ -77,6 +76,7 @@
 
 - (void)saveProduct
 {
+    [self createProduct];
     NSDictionary *wishPriceDictionary = [NSDictionary dictionaryWithObjectsAndKeys:
                                          [NSNumber numberWithFloat:self.priceSlider.value], @"dollarAmount",
                                          sPriceTypeWish, @"type",

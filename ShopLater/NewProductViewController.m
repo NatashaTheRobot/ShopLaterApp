@@ -49,9 +49,7 @@
 
     [self.activityIndicator startAnimating];
     
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{
-        [self displayProduct];
-    });
+    [self displayProduct];
     
     [self.slidingViewController setAnchorRightRevealAmount:280.0f];
     self.slidingViewController.underLeftWidthLayout = ECFullWidth;
@@ -127,23 +125,24 @@
 
 - (void)displayProduct
 {
-    self.parser = [Parser parserWithProviderName:self.provider.name productURLString:self.productURLString];
-    
-    dispatch_sync(dispatch_get_main_queue(), ^{
-        NSNumber *priceInDollars = [(Price *)[self.parser.delegate productPrice] dollarAmount];
-        self.productNameLabel.text = [self.parser.delegate productName];
-        self.currentPriceLabel.text = [NSString stringWithFormat:@"$%.2f", [priceInDollars floatValue]];
-        self.priceSlider.maximumValue = [priceInDollars floatValue];
-        self.priceSlider.value = [priceInDollars floatValue] * 0.8;
-        self.wishPriceLabel.text = [NSString stringWithFormat:@"$%.2f", ([priceInDollars floatValue] * 0.8)];
-        [self.view viewWithTag:1].alpha = 0;
-        
-        Image *image = [self.parser.delegate productImage];
-        [image downloadImageFromURL:[NSURL URLWithString:image.externalURLString] completionBlock:^(BOOL succeeded, UIImage *image) {
-            self.imageView.image = image;
-            self.imageView.contentMode = UIViewContentModeScaleAspectFit;
-            [self.activityIndicator stopAnimating];
-        }];
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{
+        self.parser = [Parser parserWithProviderName:self.provider.name productURLString:self.productURLString];
+        dispatch_sync(dispatch_get_main_queue(), ^{
+            NSNumber *priceInDollars = [(Price *)[self.parser.delegate productPrice] dollarAmount];
+            self.productNameLabel.text = [self.parser.delegate productName];
+            self.currentPriceLabel.text = [NSString stringWithFormat:@"$%.2f", [priceInDollars floatValue]];
+            self.priceSlider.maximumValue = [priceInDollars floatValue];
+            self.priceSlider.value = [priceInDollars floatValue] * 0.8;
+            self.wishPriceLabel.text = [NSString stringWithFormat:@"$%.2f", ([priceInDollars floatValue] * 0.8)];
+            [self.view viewWithTag:1].alpha = 0;
+            
+            Image *image = [self.parser.delegate productImage];
+            [image downloadImageFromURL:[NSURL URLWithString:image.externalURLString] completionBlock:^(BOOL succeeded, UIImage *image) {
+                self.imageView.image = image;
+                self.imageView.contentMode = UIViewContentModeScaleAspectFit;
+                [self.activityIndicator stopAnimating];
+            }];
+        });
     });
 }
 

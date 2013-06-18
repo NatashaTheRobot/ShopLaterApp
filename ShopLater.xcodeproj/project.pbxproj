@@ -65,8 +65,6 @@
 		9C9519DD176F9A1300F70377 /* ShoppingListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C9519DC176F9A1300F70377 /* ShoppingListViewController.m */; };
 		9C9519E0176F9AE800F70377 /* ProductCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C9519DF176F9AE800F70377 /* ProductCollectionViewCell.m */; };
 		9C9519E4176FB0F400F70377 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C9519E3176FB0F400F70377 /* Default.png */; };
-		9C9519E71770771700F70377 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C9519E51770771700F70377 /* Icon@2x.png */; };
-		9C9519E81770771700F70377 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C9519E61770771700F70377 /* Icon.png */; };
 		9C9519EB1770775D00F70377 /* price_match@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C9519E91770775D00F70377 /* price_match@2x.png */; };
 		9C9519EC1770775D00F70377 /* price_match.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C9519EA1770775D00F70377 /* price_match.png */; };
 		9C9519F0177078C900F70377 /* delete_btn@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C9519EF177078C900F70377 /* delete_btn@2x.png */; };
@@ -85,6 +83,8 @@
 		9C951A0B1770904D00F70377 /* logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C951A0A1770904C00F70377 /* logo@2x.png */; };
 		9C951A0D1770983500F70377 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C951A0C1770983500F70377 /* Default-568h@2x.png */; };
 		9C951A1117709A3A00F70377 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C951A1017709A3900F70377 /* Default@2x.png */; };
+		9C951A1717709B7F00F70377 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C951A1617709B7F00F70377 /* Icon.png */; };
+		9C951A1917709B8400F70377 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C951A1817709B8200F70377 /* Icon@2x.png */; };
 		9CA5D7451762AB5C0009098E /* toysrus_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 9CA5D7441762AB5C0009098E /* toysrus_logo.png */; };
 		9CA5D7471762AB970009098E /* toysrus_logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9CA5D7461762AB970009098E /* toysrus_logo@2x.png */; };
 		9CA5D7561763BFFF0009098E /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CA5D7551763BFFF0009098E /* WebViewController.m */; };
@@ -186,8 +186,6 @@
 		9C9519DE176F9AE800F70377 /* ProductCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductCollectionViewCell.h; sourceTree = "<group>"; };
 		9C9519DF176F9AE800F70377 /* ProductCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductCollectionViewCell.m; sourceTree = "<group>"; };
 		9C9519E3176FB0F400F70377 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
-		9C9519E51770771700F70377 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
-		9C9519E61770771700F70377 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
 		9C9519E91770775D00F70377 /* price_match@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "price_match@2x.png"; sourceTree = "<group>"; };
 		9C9519EA1770775D00F70377 /* price_match.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = price_match.png; sourceTree = "<group>"; };
 		9C9519EF177078C900F70377 /* delete_btn@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "delete_btn@2x.png"; sourceTree = "<group>"; };
@@ -207,6 +205,8 @@
 		9C951A0A1770904C00F70377 /* logo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logo@2x.png"; sourceTree = "<group>"; };
 		9C951A0C1770983500F70377 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		9C951A1017709A3900F70377 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		9C951A1617709B7F00F70377 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Icon.png; path = ../Icon.png; sourceTree = "<group>"; };
+		9C951A1817709B8200F70377 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon@2x.png"; path = "../Icon@2x.png"; sourceTree = "<group>"; };
 		9CA5D7441762AB5C0009098E /* toysrus_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = toysrus_logo.png; sourceTree = "<group>"; };
 		9CA5D7461762AB970009098E /* toysrus_logo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "toysrus_logo@2x.png"; sourceTree = "<group>"; };
 		9CA5D7541763BFFF0009098E /* WebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewController.h; sourceTree = "<group>"; };
@@ -303,11 +303,11 @@
 		9C927B7B1762780100570F45 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				9C951A1817709B8200F70377 /* Icon@2x.png */,
+				9C951A1617709B7F00F70377 /* Icon.png */,
 				9C951A1017709A3900F70377 /* Default@2x.png */,
 				9C9519E3176FB0F400F70377 /* Default.png */,
 				9C951A0C1770983500F70377 /* Default-568h@2x.png */,
-				9C9519E51770771700F70377 /* Icon@2x.png */,
-				9C9519E61770771700F70377 /* Icon.png */,
 				9C927B7C1762780100570F45 /* ShopLater-Info.plist */,
 				9C927B7D1762780100570F45 /* InfoPlist.strings */,
 				9C927B801762780100570F45 /* main.m */,
@@ -555,8 +555,6 @@
 				9C9519E4176FB0F400F70377 /* Default.png in Resources */,
 				34449EF0176FC5DA000873DC /* sears_logo.png in Resources */,
 				34449EF1176FC5DA000873DC /* sears_logo@2x.png in Resources */,
-				9C9519E71770771700F70377 /* Icon@2x.png in Resources */,
-				9C9519E81770771700F70377 /* Icon.png in Resources */,
 				9C9519EB1770775D00F70377 /* price_match@2x.png in Resources */,
 				9C9519EC1770775D00F70377 /* price_match.png in Resources */,
 				9C9519F0177078C900F70377 /* delete_btn@2x.png in Resources */,
@@ -574,6 +572,8 @@
 				9C951A0B1770904D00F70377 /* logo@2x.png in Resources */,
 				9C951A0D1770983500F70377 /* Default-568h@2x.png in Resources */,
 				9C951A1117709A3A00F70377 /* Default@2x.png in Resources */,
+				9C951A1717709B7F00F70377 /* Icon.png in Resources */,
+				9C951A1917709B8400F70377 /* Icon@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

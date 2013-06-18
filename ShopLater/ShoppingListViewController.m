@@ -24,9 +24,9 @@
 @property (strong, nonatomic) CoreDataManager *coreDataManager;
 @property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
 
+- (void)customizeNavigationBar;
+- (void)revealMenu;
 - (void)fetchProducts;
-
-- (IBAction)revealMenuWithButton:(id)sender;
 
 - (void)configureCell:(ProductCollectionViewCell *)cell atIndexPath:(NSIndexPath *)indexPath;
 
@@ -38,12 +38,25 @@
 {
     [super viewDidLoad];
     
-    [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed: @"nav_bar.png"]
-                   forBarMetrics:UIBarMetricsDefault];
+    [self customizeNavigationBar];
 	
     self.coreDataManager = [CoreDataManager sharedManager];
     
     [self fetchProducts];
+}
+
+- (void)customizeNavigationBar
+{
+    [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed: @"nav_bar.png"]
+                                                  forBarMetrics:UIBarMetricsDefault];
+
+    UIImage *menuButtonImage = [UIImage imageNamed:@"menu_btn.png"];
+    UIButton *menuButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    menuButton.bounds = CGRectMake( 0, 0, menuButtonImage.size.width, menuButtonImage.size.height );
+    [menuButton setImage:menuButtonImage forState:UIControlStateNormal];
+    [menuButton addTarget:self action:@selector(revealMenu) forControlEvents:UIControlEventTouchUpInside];
+    UIBarButtonItem *menuBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:menuButton];
+    self.navigationItem.leftBarButtonItem = menuBarButtonItem;
 }
 
 - (void)fetchProducts
@@ -97,7 +110,7 @@
     
 }
 
-- (IBAction)revealMenuWithButton:(id)sender
+- (void)revealMenu
 {
     [self.slidingViewController anchorTopViewTo:ECRight];
 }

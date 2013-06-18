@@ -193,13 +193,7 @@
                             <outlet property="delegate" destination="kf3-f8-LLF" id="EcW-hV-trO"/>
                         </connections>
                     </collectionView>
-                    <navigationItem key="navigationItem" title="Shopping List" id="lTi-fZ-TyJ">
-                        <barButtonItem key="leftBarButtonItem" image="reveal-icon.png" id="SA3-4q-7IS">
-                            <connections>
-                                <action selector="revealMenuWithButton:" destination="kf3-f8-LLF" id="5nI-yp-jSz"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Shopping List" id="lTi-fZ-TyJ"/>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iNh-bJ-tI3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -348,7 +342,6 @@
     </scenes>
     <resources>
         <image name="delete_btn.png" width="17" height="15"/>
-        <image name="reveal-icon.png" width="22" height="17"/>
     </resources>
     <classes>
         <class className="ECSlidingViewController" superclassName="UIViewController">
@@ -418,6 +411,6 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="paE-o6-1Db"/>
+        <segue reference="jb2-V4-MPz"/>
     </inferredMetricsTieBreakers>
 </document>

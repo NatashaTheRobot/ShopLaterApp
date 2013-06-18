@@ -54,7 +54,7 @@
 
 - (void)parseCurrentPrice
 {
-    dispatch_async(dispatch_get_main_queue(), ^{
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{
         Parser *parser = [Parser parserWithProviderName:self.product.provider.name productURLString:self.product.mobileURL];
         Price *currentPrice = [self.product priceWithType:sPriceTypeCurrent];
         NSNumber *newPrice = [parser.delegate priceInDollars];
@@ -65,9 +65,10 @@
                 }
             }];
         }
-        [self.activityIndicator stopAnimating];
-        self.currentPriceLabel.text = [self.product formattedPriceWithType:sPriceTypeCurrent];
-        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self.activityIndicator stopAnimating];
+            self.currentPriceLabel.text = [self.product formattedPriceWithType:sPriceTypeCurrent];
+        });
     });
 }
 

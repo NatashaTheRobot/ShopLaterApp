@@ -17,6 +17,7 @@
 #import <QuartzCore/QuartzCore.h>
 #import "WebViewController.h"
 #import "WelcomeView.h"
+#import "ButtonFactory.h"
 
 @interface ShoppingListViewController () <NSFetchedResultsControllerDelegate>
 
@@ -24,9 +25,9 @@
 @property (strong, nonatomic) CoreDataManager *coreDataManager;
 @property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
 
+- (void)customizeNavigationBar;
+- (void)revealMenu;
 - (void)fetchProducts;
-
-- (IBAction)revealMenuWithButton:(id)sender;
 
 - (void)configureCell:(ProductCollectionViewCell *)cell atIndexPath:(NSIndexPath *)indexPath;
 
@@ -37,10 +38,22 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    [self customizeNavigationBar];
 	
     self.coreDataManager = [CoreDataManager sharedManager];
     
     [self fetchProducts];
+}
+
+- (void)customizeNavigationBar
+{
+    [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed: @"nav_bar.png"]
+                                                  forBarMetrics:UIBarMetricsDefault];
+
+    self.navigationItem.leftBarButtonItem = [ButtonFactory barButtonItemWithImageName:@"menu_btn.png"
+                                                                               target:self
+                                                                               action:@selector(revealMenu)];
 }
 
 - (void)fetchProducts
@@ -69,6 +82,10 @@
                                                                NSStringFromClass([MenuViewController class])];
     }
     
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
     ((MenuViewController *)self.slidingViewController.underLeftViewController).selectedProvider = nil;
     [self.slidingViewController setAnchorRightRevealAmount:280.0f];
     
@@ -76,11 +93,21 @@
         WelcomeView *welcomeView = [[WelcomeView alloc] initWithFrame:CGRectMake(10, 50, self.view.frame.size.width - 40, 200)];
         [self.view addSubview:welcomeView];
         
-        [self.slidingViewController anchorTopViewTo:ECRight];
+        
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(slideMenu) name:ECSlidingViewTopDidReset object:nil];
+
     }
 }
 
-- (IBAction)revealMenuWithButton:(id)sender
+- (void)slideMenu
+{
+    [self.slidingViewController anchorTopViewTo:ECRight animations:nil onComplete:^{
+        [[NSNotificationCenter defaultCenter] removeObserver:self name:ECSlidingViewTopDidReset object:nil];
+    }];
+    
+}
+
+- (void)revealMenu
 {
     [self.slidingViewController anchorTopViewTo:ECRight];
 }

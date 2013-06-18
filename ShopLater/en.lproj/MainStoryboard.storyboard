@@ -193,13 +193,7 @@
                             <outlet property="delegate" destination="kf3-f8-LLF" id="EcW-hV-trO"/>
                         </connections>
                     </collectionView>
-                    <navigationItem key="navigationItem" title="Shopping List" id="lTi-fZ-TyJ">
-                        <barButtonItem key="leftBarButtonItem" image="reveal-icon.png" id="SA3-4q-7IS">
-                            <connections>
-                                <action selector="revealMenuWithButton:" destination="kf3-f8-LLF" id="5nI-yp-jSz"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Shopping List" id="lTi-fZ-TyJ"/>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iNh-bJ-tI3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -243,24 +237,18 @@
                         </subviews>
                         <color key="backgroundColor" red="0.94901960784313721" green="0.94117647058823528" blue="0.94901960784313721" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
-                    <navigationItem key="navigationItem" id="wgj-Ie-nc0">
-                        <barButtonItem key="rightBarButtonItem" title="Buy Later" id="8Kr-xC-T37">
-                            <connections>
-                                <segue destination="cqJ-YD-ehb" kind="push" id="t50-Dm-gVd"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" id="wgj-Ie-nc0"/>
                     <connections>
                         <outlet property="activityIndicator" destination="IZX-dF-gK6" id="BJx-Om-S5e"/>
-                        <outlet property="buyLaterButton" destination="8Kr-xC-T37" id="xQi-Z0-gHu"/>
                         <outlet property="webView" destination="ig6-DV-3fw" id="8iU-O1-qQ2"/>
+                        <segue destination="cqJ-YD-ehb" kind="push" identifier="toNewProduct" id="jhZ-F3-NRF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PRU-jw-rXu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-269" y="286"/>
         </scene>
-        <!--New Product View Controller-->
+        <!--New Product View Controller - Set Price-->
         <scene sceneID="SWg-ZM-nmr">
             <objects>
                 <viewController id="cqJ-YD-ehb" customClass="NewProductViewController" sceneMemberID="viewController">
@@ -325,13 +313,7 @@
                         <color key="backgroundColor" red="0.94901960780000005" green="0.94117647059999998" blue="0.94901960780000005" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" id="gLv-oD-IBk">
-                        <barButtonItem key="rightBarButtonItem" title="Save" id="9ga-7G-spQ">
-                            <connections>
-                                <action selector="saveProductWithButton:" destination="cqJ-YD-ehb" id="3JF-mY-KDp"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Set Price" id="gLv-oD-IBk"/>
                     <connections>
                         <outlet property="activityIndicator" destination="k6g-GJ-Pfr" id="Jd0-Ub-xhV"/>
                         <outlet property="currentPriceLabel" destination="fIY-cK-FzF" id="aKy-P5-KHj"/>
@@ -343,12 +325,11 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2ma-rF-vOK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="712" y="542"/>
+            <point key="canvasLocation" x="184" y="286"/>
         </scene>
     </scenes>
     <resources>
         <image name="delete_btn.png" width="17" height="15"/>
-        <image name="reveal-icon.png" width="22" height="17"/>
     </resources>
     <classes>
         <class className="ECSlidingViewController" superclassName="UIViewController">
@@ -364,7 +345,6 @@
             <source key="sourceIdentifier" type="project" relativePath="./Classes/NewProductViewController.h"/>
             <relationships>
                 <relationship kind="action" name="adjustWishPrice:"/>
-                <relationship kind="action" name="saveProductWithButton:"/>
                 <relationship kind="outlet" name="activityIndicator" candidateClass="UIActivityIndicatorView"/>
                 <relationship kind="outlet" name="currentPriceLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="imageView" candidateClass="UIImageView"/>
@@ -387,9 +367,6 @@
         </class>
         <class className="ShoppingListViewController" superclassName="UICollectionViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ShoppingListViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="revealMenuWithButton:"/>
-            </relationships>
         </class>
         <class className="UICollectionReusableView" superclassName="UIView">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionReusableView.h"/>
@@ -407,7 +384,6 @@
             <source key="sourceIdentifier" type="project" relativePath="./Classes/WebViewController.h"/>
             <relationships>
                 <relationship kind="outlet" name="activityIndicator" candidateClass="UIActivityIndicatorView"/>
-                <relationship kind="outlet" name="buyLaterButton" candidateClass="UIBarButtonItem"/>
                 <relationship kind="outlet" name="webView" candidateClass="UIWebView"/>
             </relationships>
         </class>
@@ -418,6 +394,6 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="paE-o6-1Db"/>
+        <segue reference="jb2-V4-MPz"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -61,21 +61,19 @@
 
 - (void)parseCurrentPrice
 {
-    dispatch_async(dispatch_get_main_queue(), ^{
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{
         Parser *parser = [Parser parserWithProviderName:self.product.provider.name productURLString:self.product.mobileURL];
         Price *currentPrice = [self.product priceWithType:sPriceTypeCurrent];
         NSNumber *newPrice = [parser.delegate priceInDollars];
         if ([currentPrice.dollarAmount floatValue] != [newPrice floatValue]) {
             currentPrice.dollarAmount = newPrice;
-            [[CoreDataManager sharedManager] saveDataInManagedContextUsingBlock:^(BOOL saved, NSError *error) {
-                if (saved) {
-                }
-            }];
+            [[CoreDataManager sharedManager] saveDataInManagedContextUsingBlock:nil];
         }
-        [self.activityIndicator stopAnimating];
-        self.currentPriceLabel.text = [self.product formattedPriceWithType:sPriceTypeCurrent];
-
-    });
+        dispatch_sync(dispatch_get_main_queue(), ^{
+            [self.activityIndicator stopAnimating];
+            self.currentPriceLabel.text = [self.product formattedPriceWithType:sPriceTypeCurrent];
+        });
+    }); 
 }
 
 - (IBAction)deleteProductWithButton:(id)sender

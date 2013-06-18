@@ -46,7 +46,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
+    
     [self.activityIndicator startAnimating];
     
     [self displayProduct];
@@ -58,26 +58,7 @@
 }
 
 - (void)customizeNavigationBar
-{
-    self.parser = [Parser parserWithProviderName:self.provider.name productURLString:self.productURLString];
-    
-    NSNumber *priceInDollars = [(Price *)[self.parser.delegate productPrice] dollarAmount];
-    
-    NSString *productNameUnformatted = [self.parser.delegate productName];
-    self.productNameLabel.text = [Product formattedName:productNameUnformatted];
-    self.currentPriceLabel.text = [Price formattedPriceFromNumber:priceInDollars];
-    self.priceSlider.maximumValue = [priceInDollars floatValue];
-    self.priceSlider.value = [priceInDollars floatValue] * 0.8;
-    self.wishPriceLabel.text = [NSString stringWithFormat:@"$%.2f", ([priceInDollars floatValue] * 0.8)];
-    [self.view viewWithTag:1].alpha = 0;
-    
-    Image *image = [self.parser.delegate productImage];
-    [image downloadImageFromURL:[NSURL URLWithString:image.externalURLString] completionBlock:^(BOOL succeeded, UIImage *image) {
-        self.imageView.image = image;
-        self.imageView.contentMode = UIViewContentModeScaleAspectFit;
-        [self.activityIndicator stopAnimating];
-    }];
-    
+{    
     self.navigationItem.leftBarButtonItem = [ButtonFactory barButtonItemWithImageName:@"back_btn.png"
                                                                                target:self
                                                                                action:@selector(goBack)];
@@ -120,34 +101,47 @@
             // show alert view?
         }
     }];
-   
+    
 }
 
 - (void)displayProduct
 {
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{
         self.parser = [Parser parserWithProviderName:self.provider.name productURLString:self.productURLString];
+        
         dispatch_sync(dispatch_get_main_queue(), ^{
-            NSNumber *priceInDollars = [(Price *)[self.parser.delegate productPrice] dollarAmount];
-            self.productNameLabel.text = [self.parser.delegate productName];
-            self.currentPriceLabel.text = [NSString stringWithFormat:@"$%.2f", [priceInDollars floatValue]];
-            self.priceSlider.maximumValue = [priceInDollars floatValue];
-            self.priceSlider.value = [priceInDollars floatValue] * 0.8;
-            self.wishPriceLabel.text = [NSString stringWithFormat:@"$%.2f", ([priceInDollars floatValue] * 0.8)];
-            [self.view viewWithTag:1].alpha = 0;
             
-            Image *image = [self.parser.delegate productImage];
-            [image downloadImageFromURL:[NSURL URLWithString:image.externalURLString] completionBlock:^(BOOL succeeded, UIImage *image) {
-                self.imageView.image = image;
-                self.imageView.contentMode = UIViewContentModeScaleAspectFit;
-                [self.activityIndicator stopAnimating];
-            }];
+            if (self.parser == nil) {
+                UIAlertView *alertParser = [[UIAlertView alloc] initWithTitle:@"Please try again!"
+                                                                      message:@"Something went wrong, and we were unable to retrieve your product."
+                                                                     delegate:self
+                                                            cancelButtonTitle:@"OK"
+                                                            otherButtonTitles:nil, nil];
+                [alertParser show];
+            } else {
+                
+                NSNumber *priceInDollars = [(Price *)[self.parser.delegate productPrice] dollarAmount];
+                self.productNameLabel.text = [self.parser.delegate productName];
+                self.currentPriceLabel.text = [NSString stringWithFormat:@"$%.2f", [priceInDollars floatValue]];
+                self.priceSlider.maximumValue = [priceInDollars floatValue];
+                self.priceSlider.value = [priceInDollars floatValue] * 0.8;
+                self.wishPriceLabel.text = [NSString stringWithFormat:@"$%.2f", ([priceInDollars floatValue] * 0.8)];
+                [self.view viewWithTag:1].alpha = 0;
+                
+                Image *image = [self.parser.delegate productImage];
+                [image downloadImageFromURL:[NSURL URLWithString:image.externalURLString] completionBlock:^(BOOL succeeded, UIImage *image) {
+                    self.imageView.image = image;
+                    self.imageView.contentMode = UIViewContentModeScaleAspectFit;
+                    [self.activityIndicator stopAnimating];
+                    
+                }];
+            }
         });
     });
 }
 
 - (void)createProduct
-{    
+{
     NSDictionary *productDictionary = [NSDictionary dictionaryWithObjectsAndKeys:[self.parser.delegate productName], @"name",
                                        [self.parser.delegate cleanURLString], @"url",
                                        self.provider, @"provider",
@@ -163,6 +157,15 @@
     [self.product addPricesObject:[self.parser.delegate productPrice]];
     
     
+}
+
+-(void) alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
+    
+    if (buttonIndex == 0) {
+        
+        [self.navigationController popViewControllerAnimated:YES];
+        
+    }
 }
 
 - (IBAction)adjustWishPrice:(UISlider *)slider

@@ -1,15 +1,15 @@
 //
-//  IkeaParser.h
+//  JcrewParser.h
 //  ShopLater
 //
-//  Created by Reza Fatahi on 6/17/13.
+//  Created by Reza Fatahi on 6/18/13.
 //  Copyright (c) 2013 Natasha Murashev. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
 #import "ParserDelegate.h"
 
-@interface IkeaParser : NSObject <ParserDelegate>
+@interface JcrewParser : NSObject <ParserDelegate>
 
 @property (strong, nonatomic) NSString *cleanURLString;
 @property (strong, nonatomic) NSString *mobileURLString;

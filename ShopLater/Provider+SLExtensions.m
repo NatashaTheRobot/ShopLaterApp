@@ -20,8 +20,6 @@
         return [NSString stringWithFormat:@"http://m.%@.com", providerName];
     } else if ([providerName isEqualToString:@"nordstrom"]) {
         return [NSString stringWithFormat:@"http://shop.%@.com", providerName];
-    } else if ([providerName isEqualToString:@"ikea"]) {
-        return [NSString stringWithFormat:@"http://m.%@.com/us/en", providerName];
     } else {
         return [NSString stringWithFormat:@"http://www.%@.com", providerName];
     }
@@ -77,9 +75,9 @@
                                               identifiers:[Identifier identifiersWithNames:@[@"/productdetails.do?partNumber="]]
                                            commercialName:@"Sears"]];
     
-    [providers addObject:[self dictionaryWithProviderName:@"ikea"
-                                              identifiers:[Identifier identifiersWithNames:@[@"catalog/products/"]]
-                                           commercialName:@"Ikea"]];
+    [providers addObject:[self dictionaryWithProviderName:@"jcrew"
+                                              identifiers:[Identifier identifiersWithNames:@[@"/PRDOVR"]]
+                                           commercialName:@"J.Crew"]];
     
     return providers;
 }

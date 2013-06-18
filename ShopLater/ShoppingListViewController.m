@@ -90,12 +90,17 @@
 {
     if (self.fetchedResultsController.fetchedObjects.count == 0) {
         [self showWelcomeView];
+        if ([[NSUserDefaults standardUserDefaults] integerForKey:@"LaunchTime"] == 0) {
+            
+            double delayInSeconds = 1.0;
+            dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
+            dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+                [self revealMenu];
+            });
+            
+        }
     }
     
-    if ([[NSUserDefaults standardUserDefaults] integerForKey:@"LaunchTime"] == 0) {
-        [self revealMenu];
-    }
-
 }
 
 - (void)showWelcomeView

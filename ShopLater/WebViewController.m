@@ -128,6 +128,10 @@
 
 - (void)revealMenu
 {
+    [self.view.subviews enumerateObjectsUsingBlock:^(UIView *view, NSUInteger idx, BOOL *stop) {
+        NSLog(@"%@", [view class]);
+    }];
+    
     [self.webView stringByEvaluatingJavaScriptFromString:@"document.activeElement.blur()"];
     ((MenuViewController *)self.slidingViewController.underLeftViewController).selectedProvider = self.provider;
     [self.slidingViewController anchorTopViewTo:ECRight];

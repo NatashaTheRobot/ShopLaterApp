@@ -16,7 +16,6 @@
 
 @property (strong, nonatomic) CoreDataManager *coreDataManager;
 @property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
-@property (strong, nonatomic) UITableViewCell *selectedCell;
 
 @end
 
@@ -52,18 +51,15 @@
 
 - (void)viewDidAppear:(BOOL)animated
 {
-    UITableViewCell *cellToSelect;
+    NSIndexPath *indexPathToSelect;
     if (self.selectedProvider) {
         NSIndexPath *fetchResultsIndexPath = [self.fetchedResultsController indexPathForObject:self.selectedProvider];
-        NSIndexPath *providerIndexPath = [NSIndexPath indexPathForRow:fetchResultsIndexPath.row  inSection:(fetchResultsIndexPath.section + 1)];
-        cellToSelect = [self.tableView cellForRowAtIndexPath:providerIndexPath];
+        indexPathToSelect = [NSIndexPath indexPathForRow:fetchResultsIndexPath.row  inSection:(fetchResultsIndexPath.section + 1)];
     } else {
-        NSIndexPath *shoppingListIndexPath = [NSIndexPath indexPathForRow:0 inSection:0];
-        cellToSelect = [self.tableView cellForRowAtIndexPath:shoppingListIndexPath];
+        indexPathToSelect = [NSIndexPath indexPathForRow:0 inSection:0];
     }
     
-    self.selectedCell = cellToSelect;
-    cellToSelect.selected = YES;
+    [self.tableView selectRowAtIndexPath:indexPathToSelect animated:NO scrollPosition:UITableViewScrollPositionNone];
 }
 
 - (void)createProviders
@@ -148,10 +144,7 @@
 #pragma mark - Table view delegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    self.selectedCell.selected = NO;
-    self.selectedCell = [self.tableView cellForRowAtIndexPath:indexPath];
-    
+{    
     UIViewController *newTopViewController;
     
     if (indexPath.section == 0) {

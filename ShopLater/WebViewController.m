@@ -127,6 +127,7 @@
 
 - (void)revealMenu
 {
+    [self.webView stringByEvaluatingJavaScriptFromString:@"document.activeElement.blur()"];
     ((MenuViewController *)self.slidingViewController.underLeftViewController).selectedProvider = self.provider;
     [self.slidingViewController anchorTopViewTo:ECRight];
 }

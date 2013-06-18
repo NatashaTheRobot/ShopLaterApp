@@ -79,6 +79,8 @@
 		9C9519FB1770876400F70377 /* ButtonFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C9519FA1770876400F70377 /* ButtonFactory.m */; };
 		9C9519FD1770898A00F70377 /* back_btn@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C9519FC1770898A00F70377 /* back_btn@2x.png */; };
 		9C9519FF1770899800F70377 /* back_btn.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C9519FE1770899800F70377 /* back_btn.png */; };
+		9C951A0117708C7500F70377 /* buy_later_btn.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C951A0017708C7500F70377 /* buy_later_btn.png */; };
+		9C951A0317708C8200F70377 /* buy_later_btn@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C951A0217708C8100F70377 /* buy_later_btn@2x.png */; };
 		9CA5D7451762AB5C0009098E /* toysrus_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 9CA5D7441762AB5C0009098E /* toysrus_logo.png */; };
 		9CA5D7471762AB970009098E /* toysrus_logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9CA5D7461762AB970009098E /* toysrus_logo@2x.png */; };
 		9CA5D7561763BFFF0009098E /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CA5D7551763BFFF0009098E /* WebViewController.m */; };
@@ -195,6 +197,8 @@
 		9C9519FA1770876400F70377 /* ButtonFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ButtonFactory.m; sourceTree = "<group>"; };
 		9C9519FC1770898A00F70377 /* back_btn@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "back_btn@2x.png"; sourceTree = "<group>"; };
 		9C9519FE1770899800F70377 /* back_btn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back_btn.png; sourceTree = "<group>"; };
+		9C951A0017708C7500F70377 /* buy_later_btn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = buy_later_btn.png; sourceTree = "<group>"; };
+		9C951A0217708C8100F70377 /* buy_later_btn@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "buy_later_btn@2x.png"; sourceTree = "<group>"; };
 		9CA5D7441762AB5C0009098E /* toysrus_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = toysrus_logo.png; sourceTree = "<group>"; };
 		9CA5D7461762AB970009098E /* toysrus_logo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "toysrus_logo@2x.png"; sourceTree = "<group>"; };
 		9CA5D7541763BFFF0009098E /* WebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewController.h; sourceTree = "<group>"; };
@@ -356,6 +360,8 @@
 		9C9519D6176F98E600F70377 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				9C951A0217708C8100F70377 /* buy_later_btn@2x.png */,
+				9C951A0017708C7500F70377 /* buy_later_btn.png */,
 				9C9519FE1770899800F70377 /* back_btn.png */,
 				9C9519FC1770898A00F70377 /* back_btn@2x.png */,
 				9C9519F717707A3000F70377 /* menu_btn@2x.png */,
@@ -550,6 +556,8 @@
 				9C9519F817707A3000F70377 /* menu_btn@2x.png in Resources */,
 				9C9519FD1770898A00F70377 /* back_btn@2x.png in Resources */,
 				9C9519FF1770899800F70377 /* back_btn.png in Resources */,
+				9C951A0117708C7500F70377 /* buy_later_btn.png in Resources */,
+				9C951A0317708C8200F70377 /* buy_later_btn@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

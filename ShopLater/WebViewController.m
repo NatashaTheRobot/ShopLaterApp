@@ -20,7 +20,7 @@
 @property (weak, nonatomic) IBOutlet UIWebView *webView;
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
 
-@property (strong, nonatomic) IBOutlet UIBarButtonItem *buyLaterButton;
+@property (strong, nonatomic) UIBarButtonItem *buyLaterButton;
 @property (strong, nonatomic) NSMutableArray *toolbarButtonsRight;
 
 @property (assign, nonatomic) BOOL fromMenu;
@@ -53,6 +53,9 @@
 {
     [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed: @"nav_bar.png"]
                                                   forBarMetrics:UIBarMetricsDefault];
+    
+    self.buyLaterButton = [ButtonFactory barButtonItemWithImageName:@"buy_later_btn.png" target:self action:@selector(buyLaterAction)];
+    [self.navigationItem setRightBarButtonItem:self.buyLaterButton];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -93,6 +96,11 @@
 - (void)goBack
 {
     [self.navigationController popViewControllerAnimated:YES];
+}
+
+- (void)buyLaterAction
+{
+    [self performSegueWithIdentifier:@"toNewProduct" sender:self];
 }
 
 - (void)revealMenu

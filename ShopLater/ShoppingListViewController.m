@@ -82,7 +82,7 @@
                                                                NSStringFromClass([MenuViewController class])];
     }
     ((MenuViewController *)self.slidingViewController.underLeftViewController).selectedProvider = nil;
-    [self.slidingViewController setAnchorRightRevealAmount:280.0f];
+    [self.slidingViewController setAnchorRightRevealAmount:sMenuAnchorRevealAmount];
     
 }
 

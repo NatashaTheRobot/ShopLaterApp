@@ -51,7 +51,7 @@
     
     [self displayProduct];
     
-    [self.slidingViewController setAnchorRightRevealAmount:280.0f];
+    [self.slidingViewController setAnchorRightRevealAmount:sMenuAnchorRevealAmount];
     self.slidingViewController.underLeftWidthLayout = ECFullWidth;
     
     [self customizeNavigationBar];

@@ -44,7 +44,7 @@
 {
     [super viewDidLoad];
     
-    [self.slidingViewController setAnchorRightRevealAmount:280.0f];
+    [self.slidingViewController setAnchorRightRevealAmount:sMenuAnchorRevealAmount];
     self.slidingViewController.underLeftWidthLayout = ECFullWidth;
     
 }
@@ -60,6 +60,7 @@
     }
     
     [self.tableView selectRowAtIndexPath:indexPathToSelect animated:NO scrollPosition:UITableViewScrollPositionNone];
+    [self.tableView addGestureRecognizer:self.slidingViewController.panGesture];
 }
 
 - (void)createProviders

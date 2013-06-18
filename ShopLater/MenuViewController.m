@@ -12,7 +12,7 @@
 #import "ECSlidingViewController.h"
 #import "WebViewController.h"
 
-@interface MenuViewController ()
+@interface MenuViewController () <UIGestureRecognizerDelegate, UIScrollViewDelegate>
 
 @property (strong, nonatomic) CoreDataManager *coreDataManager;
 @property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
@@ -60,7 +60,8 @@
     }
     
     [self.tableView selectRowAtIndexPath:indexPathToSelect animated:NO scrollPosition:UITableViewScrollPositionNone];
-    [self.tableView addGestureRecognizer:self.slidingViewController.panGesture];
+    [self.view addGestureRecognizer:self.slidingViewController.panGesture];
+    self.slidingViewController.panGesture.delegate = self;
 }
 
 - (void)createProviders
@@ -191,6 +192,22 @@
     }
     
     return 0;
+}
+
+- (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView
+{
+    [self.view removeGestureRecognizer:self.slidingViewController.panGesture];
+}
+
+- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate
+{
+    [self.view addGestureRecognizer:self.slidingViewController.panGesture];
+    self.slidingViewController.panGesture.delegate = self;
+}
+
+- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer
+{
+    return YES;
 }
 
 @end

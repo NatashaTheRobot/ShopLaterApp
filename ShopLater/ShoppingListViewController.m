@@ -88,15 +88,12 @@
 
 - (void)viewDidAppear:(BOOL)animated
 {
-    if ([[NSUserDefaults standardUserDefaults] integerForKey:@"LaunchTime"] == 0) {
-        
-        [self showWelcomeView];
-        
-        [self revealMenu];
-    }
-    
     if (self.fetchedResultsController.fetchedObjects.count == 0) {
         [self showWelcomeView];
+    }
+    
+    if ([[NSUserDefaults standardUserDefaults] integerForKey:@"LaunchTime"] == 0) {
+        [self revealMenu];
     }
 
 }

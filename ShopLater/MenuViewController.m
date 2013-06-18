@@ -16,6 +16,7 @@
 
 @property (strong, nonatomic) CoreDataManager *coreDataManager;
 @property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
+@property (assign, nonatomic) BOOL viewIsScrolling;
 
 @end
 
@@ -197,12 +198,31 @@
 - (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView
 {
     [self.view removeGestureRecognizer:self.slidingViewController.panGesture];
+    self.viewIsScrolling = YES;
 }
 
 - (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate
 {
     [self.view addGestureRecognizer:self.slidingViewController.panGesture];
     self.slidingViewController.panGesture.delegate = self;
+    self.viewIsScrolling = NO;
+}
+
+- (BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer *)gestureRecognizer
+{
+    if ([gestureRecognizer isEqual:self.slidingViewController.panGesture]) {
+        if (self.viewIsScrolling) {
+            return NO;
+        } else {
+            self.tableView.scrollEnabled = NO;
+            return YES;
+        }
+    }
+    
+    self.tableView.scrollEnabled = YES;
+    NSLog(@"%@", self.view.gestureRecognizers);
+//    self.view removeGestureRecognizer:self.view.gestureRecognizers
+    return YES;
 }
 
 - (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer

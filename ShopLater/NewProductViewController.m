@@ -34,7 +34,6 @@
 - (IBAction)adjustWishPrice:(id)sender;
 
 - (void)customizeNavigationBar;
-- (void)addLogoToNavigationBar;
 - (void)goBack;
 - (void)saveProduct;
 - (void)displayProduct;
@@ -61,16 +60,6 @@
     [self customizeNavigationBar];
 }
 
-- (void)viewWillAppear:(BOOL)animated
-{
-    [self addLogoToNavigationBar];
-}
-
-- (void)viewWillDisappear:(BOOL)animated
-{
-    [self.logoImageView removeFromSuperview];
-}
-
 - (void)customizeNavigationBar
 {
     self.navigationItem.leftBarButtonItem = [ButtonFactory barButtonItemWithImageName:@"back_btn.png"
@@ -79,16 +68,6 @@
     self.navigationItem.rightBarButtonItem = [ButtonFactory barButtonItemWithImageName:@"save_btn.png"
                                                                                 target:self
                                                                                 action:@selector(saveProduct)];
-}
-
-- (void)addLogoToNavigationBar
-{
-    UINavigationBar *navigationBar = self.navigationController.navigationBar;
-    UIImage *logoImage = [UIImage imageNamed:@"logo.png"];
-    self.logoImageView = [[UIImageView alloc] initWithFrame:CGRectMake(navigationBar.frame.size.width / 2.0f - logoImage.size.width/2, 0, logoImage.size.width, navigationBar.frame.size.height)];
-    self.logoImageView.image = logoImage;
-    
-    [self.navigationController.navigationBar addSubview:self.logoImageView];
 }
 
 - (void)goBack

@@ -248,7 +248,7 @@
             </objects>
             <point key="canvasLocation" x="-269" y="286"/>
         </scene>
-        <!--New Product View Controller-->
+        <!--New Product View Controller - Set Price-->
         <scene sceneID="SWg-ZM-nmr">
             <objects>
                 <viewController id="cqJ-YD-ehb" customClass="NewProductViewController" sceneMemberID="viewController">
@@ -313,7 +313,7 @@
                         <color key="backgroundColor" red="0.94901960780000005" green="0.94117647059999998" blue="0.94901960780000005" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" id="gLv-oD-IBk"/>
+                    <navigationItem key="navigationItem" title="Set Price" id="gLv-oD-IBk"/>
                     <connections>
                         <outlet property="activityIndicator" destination="k6g-GJ-Pfr" id="Jd0-Ub-xhV"/>
                         <outlet property="currentPriceLabel" destination="fIY-cK-FzF" id="aKy-P5-KHj"/>

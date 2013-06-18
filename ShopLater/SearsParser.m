@@ -100,8 +100,17 @@
 {
     if (!self.image) {
         
+        NSString *urlString;
         
-        NSString *urlString = [Parser scanString:self.htmlString startTag:@"productgalleryPage('" endTag:@"?"];
+        urlString = [Parser scanString:self.htmlString startTag:@"productgalleryPage('" endTag:@"?"];
+        
+        NSData *data2 = [NSData dataWithContentsOfURL:[NSURL URLWithString:urlString]];
+        
+        if (data2.length == 0) {
+            urlString = [Parser scanString:self.htmlString  startTag:@"productgalleryPage('" endTag:@"\'"];
+            urlString = [urlString stringByReplacingOccurrencesOfString:@";" withString:@""];
+            urlString = [urlString stringByReplacingOccurrencesOfString:@"amp" withString:@""];
+        }
 
         NSURL *urlImage = [NSURL URLWithString:urlString];
         

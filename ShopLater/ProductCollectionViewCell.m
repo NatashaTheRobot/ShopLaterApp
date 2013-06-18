@@ -23,6 +23,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *productNameLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *logoImageView;
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
+@property (weak, nonatomic) IBOutlet UIImageView *priceMatchImageView;
 
 - (IBAction)deleteProductWithButton:(id)sender;
 
@@ -48,6 +49,10 @@
     self.wishPriceLabel.text = [product formattedPriceWithType:sPriceTypeWish];
     self.logoImageView.image = [Image imageForProvider:product.provider type:sImageTypeLogo];
     
+    if ([product.priceDifference floatValue] <= 0) {
+        self.priceMatchImageView.alpha = 1;
+    }
+    
     [self.activityIndicator startAnimating];
     [self parseCurrentPrice];
 }
@@ -60,6 +65,7 @@
         NSNumber *newPrice = [parser.delegate priceInDollars];
         if ([currentPrice.dollarAmount floatValue] != [newPrice floatValue]) {
             currentPrice.dollarAmount = newPrice;
+            self.product.priceDifference = [self.product priceDifference];
             [[CoreDataManager sharedManager] saveDataInManagedContextUsingBlock:^(BOOL saved, NSError *error) {
                 if (saved) {
                 }
@@ -68,6 +74,9 @@
         dispatch_async(dispatch_get_main_queue(), ^{
             [self.activityIndicator stopAnimating];
             self.currentPriceLabel.text = [self.product formattedPriceWithType:sPriceTypeCurrent];
+            if ([self.product.priceDifference floatValue] <= 0) {
+                self.priceMatchImageView.alpha = 1;
+            }
         });
     });
 }

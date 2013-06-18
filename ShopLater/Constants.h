@@ -25,6 +25,6 @@ static NSString *sAPISecret = @"a4c258f41cd6a296f808340b11011166589e686b07d1103c
 
 static NSString *sMenuShoppingListCell = @"shoppingList";
 static NSString *sMenuStoreCell = @"store";
-static NSString *sMenuHomeCellText = @"Shopping List";
+static NSString *sMenuHomeCellText = @"My Shopping List";
 static NSString *sMenuStoreSectionCell = @"storeSectionHeader";
 static NSString *sMenuStoreSectionTitle = @"STORES";

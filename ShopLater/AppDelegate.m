@@ -14,6 +14,18 @@
 {
     // Override point for customization after application launch.
 //    [[UIApplication sharedApplication] registerForRemoteNotificationTypes:UIRemoteNotificationTypeAlert];
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    
+    if ([userDefaults boolForKey:@"HasLaunchedOnce"]) {
+        [userDefaults setInteger:1 forKey:@"LaunchTime"];
+    }
+    else {
+        [userDefaults setBool:YES forKey:@"HasLaunchedOnce"];
+        [userDefaults setInteger:0 forKey:@"LaunchTime"];
+        [userDefaults synchronize];
+        // This is the first launch ever
+    }
+    
     return YES;
 }
 

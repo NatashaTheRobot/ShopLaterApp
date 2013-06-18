@@ -27,6 +27,7 @@
 - (void)customizeNavigationBar;
 - (void)revealMenu;
 - (void)fetchProducts;
+- (void)showWelcomeView;
 
 - (void)configureCell:(ProductCollectionViewCell *)cell atIndexPath:(NSIndexPath *)indexPath;
 
@@ -80,34 +81,35 @@
         self.slidingViewController.underLeftViewController  = [self.storyboard instantiateViewControllerWithIdentifier:
                                                                NSStringFromClass([MenuViewController class])];
     }
+    ((MenuViewController *)self.slidingViewController.underLeftViewController).selectedProvider = nil;
+    [self.slidingViewController setAnchorRightRevealAmount:280.0f];
     
 }
 
 - (void)viewDidAppear:(BOOL)animated
 {
-    ((MenuViewController *)self.slidingViewController.underLeftViewController).selectedProvider = nil;
-    [self.slidingViewController setAnchorRightRevealAmount:280.0f];
+    if ([[NSUserDefaults standardUserDefaults] integerForKey:@"LaunchTime"] == 0) {
+        
+        [self showWelcomeView];
+        
+        [self revealMenu];
+    }
     
     if (self.fetchedResultsController.fetchedObjects.count == 0) {
-        UIImage *welcomeImage = [UIImage imageNamed:@"welcome.png"];
-        
-        UIImageView *welcomeImageView = [[UIImageView alloc] initWithFrame:CGRectMake(self.view.frame.size.width / 2 - welcomeImage.size.width / 2, self.view.frame.size.height/ 2 - welcomeImage.size.height, welcomeImage.size.width, welcomeImage.size.height)];
-        
-        welcomeImageView.image = welcomeImage;
-        
-        [self.view addSubview:welcomeImageView];
-        
-        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(slideMenu) name:ECSlidingViewTopDidReset object:nil];
-
+        [self showWelcomeView];
     }
+
 }
 
-- (void)slideMenu
+- (void)showWelcomeView
 {
-    [self.slidingViewController anchorTopViewTo:ECRight animations:nil onComplete:^{
-        [[NSNotificationCenter defaultCenter] removeObserver:self name:ECSlidingViewTopDidReset object:nil];
-    }];
+    UIImage *welcomeImage = [UIImage imageNamed:@"welcome.png"];
     
+    UIImageView *welcomeImageView = [[UIImageView alloc] initWithFrame:CGRectMake(self.view.frame.size.width / 2 - welcomeImage.size.width / 2, self.view.frame.size.height/ 2 - welcomeImage.size.height, welcomeImage.size.width, welcomeImage.size.height)];
+    
+    welcomeImageView.image = welcomeImage;
+    
+    [self.view addSubview:welcomeImageView];
 }
 
 - (void)revealMenu

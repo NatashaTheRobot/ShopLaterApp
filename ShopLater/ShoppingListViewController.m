@@ -16,7 +16,6 @@
 #import "Provider+SLExtensions.h"
 #import <QuartzCore/QuartzCore.h>
 #import "WebViewController.h"
-#import "WelcomeView.h"
 #import "ButtonFactory.h"
 
 @interface ShoppingListViewController () <NSFetchedResultsControllerDelegate>
@@ -90,8 +89,13 @@
     [self.slidingViewController setAnchorRightRevealAmount:280.0f];
     
     if (self.fetchedResultsController.fetchedObjects.count == 0) {
-        WelcomeView *welcomeView = [[WelcomeView alloc] initWithFrame:CGRectMake(10, 50, self.view.frame.size.width - 40, 200)];
-        [self.view addSubview:welcomeView];
+        UIImage *welcomeImage = [UIImage imageNamed:@"welcome.png"];
+        
+        UIImageView *welcomeImageView = [[UIImageView alloc] initWithFrame:CGRectMake(self.view.frame.size.width / 2 - welcomeImage.size.width / 2, self.view.frame.size.height/ 2 - welcomeImage.size.height, welcomeImage.size.width, welcomeImage.size.height)];
+        
+        welcomeImageView.image = welcomeImage;
+        
+        [self.view addSubview:welcomeImageView];
         
         
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(slideMenu) name:ECSlidingViewTopDidReset object:nil];

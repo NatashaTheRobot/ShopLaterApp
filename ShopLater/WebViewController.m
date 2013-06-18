@@ -13,16 +13,23 @@
 #import "ECSlidingViewController.h"
 #import "MenuViewController.h"
 #import <QuartzCore/QuartzCore.h>
+#import "ButtonFactory.h"
 
 @interface WebViewController ()
 
 @property (weak, nonatomic) IBOutlet UIWebView *webView;
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
 
-@property (strong, nonatomic) IBOutlet UIBarButtonItem *buyLaterButton;
+@property (strong, nonatomic) UIBarButtonItem *buyLaterButton;
+@property (strong, nonatomic) UIImageView *logoImageView;
 @property (strong, nonatomic) NSMutableArray *toolbarButtonsRight;
 
 @property (assign, nonatomic) BOOL fromMenu;
+
+- (void)customizeNavigationBar;
+- (void)goBack;
+- (void)buyLaterAction;
+- (void)addLogoToNavigationBar;
 
 - (void)checkIfProductPage:(NSString *)urlString;
 - (void)loadWebPage;
@@ -41,6 +48,8 @@
     
     [self loadWebPage];
     
+    [self customizeNavigationBar];
+    
     [self setupToolbarButtons];
     
 }
@@ -58,6 +67,32 @@
     }
     
     [self.view addGestureRecognizer:self.slidingViewController.panGesture];
+    
+    [self addLogoToNavigationBar];
+}
+
+- (void)customizeNavigationBar
+{
+    [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed: @"nav_bar.png"]
+                                                  forBarMetrics:UIBarMetricsDefault];
+    
+    self.buyLaterButton = [ButtonFactory barButtonItemWithImageName:@"buy_later_btn.png" target:self action:@selector(buyLaterAction)];
+    [self.navigationItem setRightBarButtonItem:self.buyLaterButton];
+}
+
+- (void)addLogoToNavigationBar
+{
+    UINavigationBar *navigationBar = self.navigationController.navigationBar;
+    UIImage *logoImage = [UIImage imageNamed:@"logo.png"];
+    self.logoImageView = [[UIImageView alloc] initWithFrame:CGRectMake(navigationBar.frame.size.width / 2.0f - logoImage.size.width/2, 0, logoImage.size.width, navigationBar.frame.size.height)];
+    self.logoImageView.image = logoImage;
+    
+    [self.navigationController.navigationBar addSubview:self.logoImageView];
+}
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [self.logoImageView removeFromSuperview];
 }
 
 
@@ -67,12 +102,27 @@
     [self hideBuyLaterButton];
     
     if (self.fromMenu) {
-        UIBarButtonItem *menuButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"reveal-icon.png"]
-                                                                       style:UIBarButtonItemStyleBordered
-                                                                      target:self
-                                                                      action:@selector(revealMenu)];
+        UIBarButtonItem *menuButton = [ButtonFactory barButtonItemWithImageName:@"menu_btn.png"
+                                                                                   target:self
+                                                                                   action:@selector(revealMenu)];
+        
         [self.navigationItem setLeftBarButtonItems:@[menuButton] animated:NO];
+    } else {
+        UIBarButtonItem *backButton = [ButtonFactory barButtonItemWithImageName:@"back_btn.png"
+                                                                         target:self
+                                                                         action:@selector(goBack)];
+        [self.navigationItem setLeftBarButtonItems:@[backButton] animated:YES];
     }
+}
+
+- (void)goBack
+{
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
+- (void)buyLaterAction
+{
+    [self performSegueWithIdentifier:@"toNewProduct" sender:self];
 }
 
 - (void)revealMenu

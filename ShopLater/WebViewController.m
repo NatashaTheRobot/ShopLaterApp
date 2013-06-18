@@ -59,6 +59,14 @@
     
     self.buyLaterButton = [ButtonFactory barButtonItemWithImageName:@"buy_later_btn.png" target:self action:@selector(buyLaterAction)];
     [self.navigationItem setRightBarButtonItem:self.buyLaterButton];
+    
+    UINavigationBar *navigationBar = self.navigationController.navigationBar;
+    UIImage *logoImage = [UIImage imageNamed:@"logo.png"];
+    UIImageView *logoImageView = [[UIImageView alloc] initWithFrame:CGRectMake(navigationBar.frame.size.width / 2.0f - logoImage.size.width/2, 0, logoImage.size.width, navigationBar.frame.size.height)];
+    logoImageView.image = logoImage;
+    
+    [self.navigationController.navigationBar addSubview:logoImageView];
+//    [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"logo.png"] forBarMetrics:UIBarMetricsDefault];
 }
 
 - (void)viewWillAppear:(BOOL)animated

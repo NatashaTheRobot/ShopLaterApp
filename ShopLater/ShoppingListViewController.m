@@ -17,6 +17,7 @@
 #import <QuartzCore/QuartzCore.h>
 #import "WebViewController.h"
 #import "WelcomeView.h"
+#import "ButtonFactory.h"
 
 @interface ShoppingListViewController () <NSFetchedResultsControllerDelegate>
 
@@ -50,13 +51,9 @@
     [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed: @"nav_bar.png"]
                                                   forBarMetrics:UIBarMetricsDefault];
 
-    UIImage *menuButtonImage = [UIImage imageNamed:@"menu_btn.png"];
-    UIButton *menuButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    menuButton.bounds = CGRectMake( 0, 0, menuButtonImage.size.width, menuButtonImage.size.height );
-    [menuButton setImage:menuButtonImage forState:UIControlStateNormal];
-    [menuButton addTarget:self action:@selector(revealMenu) forControlEvents:UIControlEventTouchUpInside];
-    UIBarButtonItem *menuBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:menuButton];
-    self.navigationItem.leftBarButtonItem = menuBarButtonItem;
+    self.navigationItem.leftBarButtonItem = [ButtonFactory barButtonItemWithImageName:@"menu_btn.png"
+                                                                               target:self
+                                                                               action:@selector(revealMenu)];
 }
 
 - (void)fetchProducts

@@ -13,6 +13,7 @@
 #import "ECSlidingViewController.h"
 #import "MenuViewController.h"
 #import <QuartzCore/QuartzCore.h>
+#import "ButtonFactory.h"
 
 @interface WebViewController ()
 
@@ -24,6 +25,7 @@
 
 @property (assign, nonatomic) BOOL fromMenu;
 
+- (void)customizeNavigationBar;
 - (void)checkIfProductPage:(NSString *)urlString;
 - (void)loadWebPage;
 - (void)setupToolbarButtons;
@@ -37,8 +39,7 @@
 {
     [super viewDidLoad];
     
-    [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed: @"nav_bar.png"]
-                                                  forBarMetrics:UIBarMetricsDefault];
+    [self customizeNavigationBar];
     
     [self.activityIndicator startAnimating];
     
@@ -46,6 +47,12 @@
     
     [self setupToolbarButtons];
     
+}
+
+- (void)customizeNavigationBar
+{
+    [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed: @"nav_bar.png"]
+                                                  forBarMetrics:UIBarMetricsDefault];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -70,10 +77,10 @@
     [self hideBuyLaterButton];
     
     if (self.fromMenu) {
-        UIBarButtonItem *menuButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"reveal-icon.png"]
-                                                                       style:UIBarButtonItemStyleBordered
-                                                                      target:self
-                                                                      action:@selector(revealMenu)];
+        UIBarButtonItem *menuButton = [ButtonFactory barButtonItemWithImageName:@"menu_btn.png"
+                                                                                   target:self
+                                                                                   action:@selector(revealMenu)];
+        
         [self.navigationItem setLeftBarButtonItems:@[menuButton] animated:NO];
     }
 }

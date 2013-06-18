@@ -14,6 +14,7 @@
 #import "MenuViewController.h"
 #import <QuartzCore/QuartzCore.h>
 #import "ButtonFactory.h"
+#import "NSString+SLExtensions.h"
 
 @interface WebViewController ()
 
@@ -174,27 +175,39 @@
 
 - (void)checkIfProductPage:(NSString *)urlString
 {
-    BOOL providerPage = !([urlString rangeOfString:self.provider.name].location == NSNotFound);
     
-    __block BOOL productPage = YES;
     
-    [self.provider.identifiers enumerateObjectsUsingBlock:^(Identifier *identifier, BOOL *stop) {
-        if ([urlString rangeOfString:identifier.name].location == NSNotFound) {
-            productPage = NO;
-            *stop = YES;
-        }
-    }];
-    
-    BOOL newProduct = [[CoreDataManager sharedManager] uniqueAttributeForClassName:NSStringFromClass([Product class])
-                                                                     attributeName:@"mobileURL" attributeValue:urlString];
-    dispatch_async(dispatch_get_main_queue(), ^{
-        if (providerPage && productPage && newProduct) {
-            [self showBuyLaterButton];
-        } else {
+    if ([self.provider.name isEqualToString:@"lululemon"]) {
+        NSString *urlLululemonPage = self.webView.request.URL.absoluteString;
+        if ([urlLululemonPage containsString:@"category"]) {
             [self hideBuyLaterButton];
+        } else if (![urlLululemonPage containsString:@"category"]) {
+            [self showBuyLaterButton];
         }
-    });
-    
+    } else {
+        
+        BOOL providerPage = !([urlString rangeOfString:self.provider.name].location == NSNotFound);
+        
+        BOOL newProduct = [[CoreDataManager sharedManager] uniqueAttributeForClassName:NSStringFromClass([Product class])
+                                                                         attributeName:@"mobileURL" attributeValue:urlString];
+        
+        __block BOOL productPage = YES;
+        
+        [self.provider.identifiers enumerateObjectsUsingBlock:^(Identifier *identifier, BOOL *stop) {
+            if ([urlString rangeOfString:identifier.name].location == NSNotFound) {
+                productPage = NO;
+                *stop = YES;
+            }
+        }];
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            if (providerPage && productPage && newProduct) {
+                [self showBuyLaterButton];
+            } else {
+                [self hideBuyLaterButton];
+            }
+        });
+    }
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender

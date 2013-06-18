@@ -31,9 +31,10 @@
 @property (strong, nonatomic) Product *product;
 
 - (IBAction)adjustWishPrice:(id)sender;
-- (IBAction)saveProductWithButton:(id)sender;
 
+- (void)customizeNavigationBar;
 - (void)goBack;
+- (void)saveProduct;
 - (void)displayProduct;
 - (void)createProduct;
 
@@ -55,15 +56,53 @@
     [self.slidingViewController setAnchorRightRevealAmount:280.0f];
     self.slidingViewController.underLeftWidthLayout = ECFullWidth;
     
+    [self customizeNavigationBar];
+}
+
+- (void)customizeNavigationBar
+{
     self.navigationItem.leftBarButtonItem = [ButtonFactory barButtonItemWithImageName:@"back_btn.png"
                                                                                target:self
                                                                                action:@selector(goBack)];
-    
+    self.navigationItem.rightBarButtonItem = [ButtonFactory barButtonItemWithImageName:@"save_btn.png"
+                                                                                target:self
+                                                                                action:@selector(saveProduct)];
 }
 
 - (void)goBack
 {
     [self.navigationController popViewControllerAnimated:YES];
+}
+
+- (void)saveProduct
+{
+    NSDictionary *wishPriceDictionary = [NSDictionary dictionaryWithObjectsAndKeys:
+                                         [NSNumber numberWithFloat:self.priceSlider.value], @"dollarAmount",
+                                         sPriceTypeWish, @"type",
+                                         [NSDate date], @"created_at",
+                                         nil];
+    Price *wishPrice = [self.coreDataManager createEntityWithClassName:NSStringFromClass([Price class])
+                                                  attributesDictionary:wishPriceDictionary];
+    self.product.prices = [self.product.prices setByAddingObject:wishPrice];
+    self.product.priceDifference = [self.product currentWishPriceDifference];
+    
+    [self.coreDataManager saveDataInManagedContextUsingBlock:^(BOOL saved, NSError *error) {
+        if (saved) {
+            UINavigationController *productListNavigationController = [self.storyboard instantiateViewControllerWithIdentifier:@"first"];
+            
+            [self.slidingViewController resetTopViewWithAnimations:nil onComplete:^{
+                CGRect frame = self.slidingViewController.topViewController.view.frame;
+                self.slidingViewController.topViewController = productListNavigationController;
+                self.slidingViewController.topViewController.view.frame = frame;
+                [self.slidingViewController resetTopView];
+                
+            }];
+        } else {
+            NSLog(@"%@", error.description);
+            // show alert view?
+        }
+    }];
+   
 }
 
 - (void)displayProduct
@@ -112,34 +151,4 @@
     self.wishPriceLabel.text = [NSString stringWithFormat:@"$%.2f", slider.value];
 }
 
-- (IBAction)saveProductWithButton:(id)sender
-{
-    NSDictionary *wishPriceDictionary = [NSDictionary dictionaryWithObjectsAndKeys:
-                                         [NSNumber numberWithFloat:self.priceSlider.value], @"dollarAmount",
-                                         sPriceTypeWish, @"type",
-                                         [NSDate date], @"created_at",
-                                         nil];
-    Price *wishPrice = [self.coreDataManager createEntityWithClassName:NSStringFromClass([Price class])
-                                                   attributesDictionary:wishPriceDictionary];
-    self.product.prices = [self.product.prices setByAddingObject:wishPrice];
-    self.product.priceDifference = [self.product currentWishPriceDifference];
-    
-    [self.coreDataManager saveDataInManagedContextUsingBlock:^(BOOL saved, NSError *error) {
-        if (saved) {
-            UINavigationController *productListNavigationController = [self.storyboard instantiateViewControllerWithIdentifier:@"first"];
-            
-            [self.slidingViewController resetTopViewWithAnimations:nil onComplete:^{
-                CGRect frame = self.slidingViewController.topViewController.view.frame;
-                self.slidingViewController.topViewController = productListNavigationController;
-                self.slidingViewController.topViewController.view.frame = frame;
-                [self.slidingViewController resetTopView];
-
-            }];
-        } else {
-            NSLog(@"%@", error.description);
-            // show alert view?
-        }
-    }];
-    
-}
 @end

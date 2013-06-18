@@ -313,13 +313,7 @@
                         <color key="backgroundColor" red="0.94901960780000005" green="0.94117647059999998" blue="0.94901960780000005" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" id="gLv-oD-IBk">
-                        <barButtonItem key="rightBarButtonItem" title="Save" id="9ga-7G-spQ">
-                            <connections>
-                                <action selector="saveProductWithButton:" destination="cqJ-YD-ehb" id="3JF-mY-KDp"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" id="gLv-oD-IBk"/>
                     <connections>
                         <outlet property="activityIndicator" destination="k6g-GJ-Pfr" id="Jd0-Ub-xhV"/>
                         <outlet property="currentPriceLabel" destination="fIY-cK-FzF" id="aKy-P5-KHj"/>
@@ -351,7 +345,6 @@
             <source key="sourceIdentifier" type="project" relativePath="./Classes/NewProductViewController.h"/>
             <relationships>
                 <relationship kind="action" name="adjustWishPrice:"/>
-                <relationship kind="action" name="saveProductWithButton:"/>
                 <relationship kind="outlet" name="activityIndicator" candidateClass="UIActivityIndicatorView"/>
                 <relationship kind="outlet" name="currentPriceLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="imageView" candidateClass="UIImageView"/>

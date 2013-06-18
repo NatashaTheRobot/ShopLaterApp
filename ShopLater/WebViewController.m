@@ -26,6 +26,9 @@
 @property (assign, nonatomic) BOOL fromMenu;
 
 - (void)customizeNavigationBar;
+- (void)goBack;
+- (void)buyLaterAction;
+
 - (void)checkIfProductPage:(NSString *)urlString;
 - (void)loadWebPage;
 - (void)setupToolbarButtons;

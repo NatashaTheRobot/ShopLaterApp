@@ -57,17 +57,23 @@
 		9C927B7F1762780100570F45 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9C927B7D1762780100570F45 /* InfoPlist.strings */; };
 		9C927B811762780100570F45 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C927B801762780100570F45 /* main.m */; };
 		9C927B851762780100570F45 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C927B841762780100570F45 /* AppDelegate.m */; };
-		9C927B8B1762780100570F45 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C927B8A1762780100570F45 /* Default@2x.png */; };
 		9C927B8E1762780100570F45 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C927B8C1762780100570F45 /* MainStoryboard.storyboard */; };
 		9C927B99176278B800570F45 /* CoreDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C927B98176278B800570F45 /* CoreDataManager.m */; };
 		9C927B9D17627A6200570F45 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C927B9C17627A6200570F45 /* CoreData.framework */; };
 		9C927BA017627A9A00570F45 /* ShopLater.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9C927B9E17627A9A00570F45 /* ShopLater.xcdatamodeld */; };
-		9C9519D9176F990E00F70377 /* delete_btn@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C9519D7176F990E00F70377 /* delete_btn@2x.png */; };
 		9C9519DA176F990E00F70377 /* delete_btn.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C9519D8176F990E00F70377 /* delete_btn.png */; };
 		9C9519DD176F9A1300F70377 /* ShoppingListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C9519DC176F9A1300F70377 /* ShoppingListViewController.m */; };
 		9C9519E0176F9AE800F70377 /* ProductCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C9519DF176F9AE800F70377 /* ProductCollectionViewCell.m */; };
 		9C9519E2176FB0EB00F70377 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C9519E1176FB0EB00F70377 /* Default-568h@2x.png */; };
 		9C9519E4176FB0F400F70377 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C9519E3176FB0F400F70377 /* Default.png */; };
+		9C9519E71770771700F70377 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C9519E51770771700F70377 /* Icon@2x.png */; };
+		9C9519E81770771700F70377 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C9519E61770771700F70377 /* Icon.png */; };
+		9C9519EB1770775D00F70377 /* price_match@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C9519E91770775D00F70377 /* price_match@2x.png */; };
+		9C9519EC1770775D00F70377 /* price_match.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C9519EA1770775D00F70377 /* price_match.png */; };
+		9C9519EE1770779200F70377 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C9519ED1770779200F70377 /* Default@2x.png */; };
+		9C9519F0177078C900F70377 /* delete_btn@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C9519EF177078C900F70377 /* delete_btn@2x.png */; };
+		9C9519F21770791900F70377 /* nav_bar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C9519F11770791800F70377 /* nav_bar@2x.png */; };
+		9C9519F41770793300F70377 /* nav_bar.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C9519F31770793300F70377 /* nav_bar.png */; };
 		9CA5D7451762AB5C0009098E /* toysrus_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 9CA5D7441762AB5C0009098E /* toysrus_logo.png */; };
 		9CA5D7471762AB970009098E /* toysrus_logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9CA5D7461762AB970009098E /* toysrus_logo@2x.png */; };
 		9CA5D7561763BFFF0009098E /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CA5D7551763BFFF0009098E /* WebViewController.m */; };
@@ -158,13 +164,11 @@
 		9C927B821762780100570F45 /* ShopLater-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ShopLater-Prefix.pch"; sourceTree = "<group>"; };
 		9C927B831762780100570F45 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		9C927B841762780100570F45 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		9C927B8A1762780100570F45 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		9C927B8D1762780100570F45 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		9C927B97176278B800570F45 /* CoreDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataManager.h; sourceTree = "<group>"; };
 		9C927B98176278B800570F45 /* CoreDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataManager.m; sourceTree = "<group>"; };
 		9C927B9C17627A6200570F45 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		9C927B9F17627A9A00570F45 /* ShopLater.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ShopLater.xcdatamodel; sourceTree = "<group>"; };
-		9C9519D7176F990E00F70377 /* delete_btn@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "delete_btn@2x.png"; sourceTree = "<group>"; };
 		9C9519D8176F990E00F70377 /* delete_btn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = delete_btn.png; sourceTree = "<group>"; };
 		9C9519DB176F9A1300F70377 /* ShoppingListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShoppingListViewController.h; sourceTree = "<group>"; };
 		9C9519DC176F9A1300F70377 /* ShoppingListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShoppingListViewController.m; sourceTree = "<group>"; };
@@ -172,6 +176,14 @@
 		9C9519DF176F9AE800F70377 /* ProductCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductCollectionViewCell.m; sourceTree = "<group>"; };
 		9C9519E1176FB0EB00F70377 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		9C9519E3176FB0F400F70377 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		9C9519E51770771700F70377 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
+		9C9519E61770771700F70377 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
+		9C9519E91770775D00F70377 /* price_match@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "price_match@2x.png"; sourceTree = "<group>"; };
+		9C9519EA1770775D00F70377 /* price_match.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = price_match.png; sourceTree = "<group>"; };
+		9C9519ED1770779200F70377 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		9C9519EF177078C900F70377 /* delete_btn@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "delete_btn@2x.png"; sourceTree = "<group>"; };
+		9C9519F11770791800F70377 /* nav_bar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "nav_bar@2x.png"; sourceTree = "<group>"; };
+		9C9519F31770793300F70377 /* nav_bar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nav_bar.png; sourceTree = "<group>"; };
 		9CA5D7441762AB5C0009098E /* toysrus_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = toysrus_logo.png; sourceTree = "<group>"; };
 		9CA5D7461762AB970009098E /* toysrus_logo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "toysrus_logo@2x.png"; sourceTree = "<group>"; };
 		9CA5D7541763BFFF0009098E /* WebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewController.h; sourceTree = "<group>"; };
@@ -258,8 +270,8 @@
 				9C927BA117627CF500570F45 /* Models */,
 				9CA5D77B1764CE340009098E /* Parsers */,
 				9CA5D74C1762B9980009098E /* Delegates */,
-				9C9519D6176F98E600F70377 /* Images */,
 				9CA5D7571763C9520009098E /* Libraries */,
+				9C9519D6176F98E600F70377 /* Images */,
 				9C927B7B1762780100570F45 /* Supporting Files */,
 			);
 			path = ShopLater;
@@ -268,13 +280,15 @@
 		9C927B7B1762780100570F45 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				9C9519E51770771700F70377 /* Icon@2x.png */,
+				9C9519E61770771700F70377 /* Icon.png */,
+				9C9519ED1770779200F70377 /* Default@2x.png */,
 				9C9519E3176FB0F400F70377 /* Default.png */,
 				9C9519E1176FB0EB00F70377 /* Default-568h@2x.png */,
 				9C927B7C1762780100570F45 /* ShopLater-Info.plist */,
 				9C927B7D1762780100570F45 /* InfoPlist.strings */,
 				9C927B801762780100570F45 /* main.m */,
 				9C927B821762780100570F45 /* ShopLater-Prefix.pch */,
-				9C927B8A1762780100570F45 /* Default@2x.png */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -331,8 +345,12 @@
 		9C9519D6176F98E600F70377 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				9C9519F31770793300F70377 /* nav_bar.png */,
+				9C9519F11770791800F70377 /* nav_bar@2x.png */,
+				9C9519EA1770775D00F70377 /* price_match.png */,
+				9C9519E91770775D00F70377 /* price_match@2x.png */,
 				9C9519D8176F990E00F70377 /* delete_btn.png */,
-				9C9519D7176F990E00F70377 /* delete_btn@2x.png */,
+				9C9519EF177078C900F70377 /* delete_btn@2x.png */,
 				9C226422176BD37B00C3FDD9 /* reveal-icon.png */,
 				9C226423176BD37B00C3FDD9 /* reveal-icon@2x.png */,
 				9CA5D7431762A9840009098E /* ProviderLogos */,
@@ -478,7 +496,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				9C927B7F1762780100570F45 /* InfoPlist.strings in Resources */,
-				9C927B8B1762780100570F45 /* Default@2x.png in Resources */,
 				9C927B8E1762780100570F45 /* MainStoryboard.storyboard in Resources */,
 				9CA5D7451762AB5C0009098E /* toysrus_logo.png in Resources */,
 				9CA5D7471762AB970009098E /* toysrus_logo@2x.png in Resources */,
@@ -499,12 +516,19 @@
 				34BE7CBD176F5BCA0005FB14 /* buybuybaby_logo@2x.png in Resources */,
 				34BE7CC3176F7B950005FB14 /* nordstrom_logo.png in Resources */,
 				34BE7CC4176F7B950005FB14 /* nordstrom_logo@2x.png in Resources */,
-				9C9519D9176F990E00F70377 /* delete_btn@2x.png in Resources */,
 				9C9519DA176F990E00F70377 /* delete_btn.png in Resources */,
 				9C9519E2176FB0EB00F70377 /* Default-568h@2x.png in Resources */,
 				9C9519E4176FB0F400F70377 /* Default.png in Resources */,
 				34449EF0176FC5DA000873DC /* sears_logo.png in Resources */,
 				34449EF1176FC5DA000873DC /* sears_logo@2x.png in Resources */,
+				9C9519E71770771700F70377 /* Icon@2x.png in Resources */,
+				9C9519E81770771700F70377 /* Icon.png in Resources */,
+				9C9519EB1770775D00F70377 /* price_match@2x.png in Resources */,
+				9C9519EC1770775D00F70377 /* price_match.png in Resources */,
+				9C9519EE1770779200F70377 /* Default@2x.png in Resources */,
+				9C9519F0177078C900F70377 /* delete_btn@2x.png in Resources */,
+				9C9519F21770791900F70377 /* nav_bar@2x.png in Resources */,
+				9C9519F41770793300F70377 /* nav_bar.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

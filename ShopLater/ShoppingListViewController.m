@@ -37,6 +37,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed: @"nav_bar.png"]
+                   forBarMetrics:UIBarMetricsDefault];
 	
     self.coreDataManager = [CoreDataManager sharedManager];
     

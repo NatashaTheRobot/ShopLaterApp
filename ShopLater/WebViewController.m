@@ -37,6 +37,9 @@
 {
     [super viewDidLoad];
     
+    [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed: @"nav_bar.png"]
+                                                  forBarMetrics:UIBarMetricsDefault];
+    
     [self.activityIndicator startAnimating];
     
     [self loadWebPage];

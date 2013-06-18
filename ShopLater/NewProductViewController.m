@@ -15,6 +15,7 @@
 #import "Constants.h"
 #import "ECSlidingViewController.h"
 #import "ButtonFactory.h"
+#import "WebViewController.h"
 
 @interface NewProductViewController ()
 
@@ -73,7 +74,7 @@
 }
 
 - (void)saveProduct
-{
+{    
     [self createProduct];
     NSDictionary *wishPriceDictionary = [NSDictionary dictionaryWithObjectsAndKeys:
                                          [NSNumber numberWithFloat:self.priceSlider.value], @"dollarAmount",
@@ -102,6 +103,11 @@
         }
     }];
     
+//    NSArray *viewControllers = self.navigationController.viewControllers;
+//    WebViewController *webViewController = viewControllers[viewControllers.count - 2];
+//    [webViewController reloadWebViewWithURL:[NSURL URLWithString:self.provider.url]];
+
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 - (void)displayProduct

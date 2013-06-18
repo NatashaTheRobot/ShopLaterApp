@@ -25,8 +25,6 @@
 @property (strong, nonatomic) UIImageView *logoImageView;
 @property (strong, nonatomic) NSMutableArray *toolbarButtonsRight;
 
-@property (assign, nonatomic) BOOL fromMenu;
-
 - (void)customizeNavigationBar;
 - (void)goBack;
 - (void)buyLaterAction;
@@ -47,8 +45,6 @@
     
     [self.activityIndicator startAnimating];
     
-    [self loadWebPage];
-    
     [self customizeNavigationBar];
     
     [self setupToolbarButtons];
@@ -57,6 +53,8 @@
 
 - (void)viewWillAppear:(BOOL)animated
 {
+    [self loadWebPage];
+    
     [super viewWillAppear:animated];
     
     self.view.layer.shadowOpacity = 0.8f;
@@ -159,6 +157,14 @@
     }
     
     NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:urlString]];
+    
+    [self.webView loadRequest:request];
+}
+
+- (void)reloadWebViewWithURL:(NSURL *)url
+{
+    [self.activityIndicator startAnimating];
+    NSURLRequest *request = [NSURLRequest requestWithURL:url];
     
     [self.webView loadRequest:request];
 }

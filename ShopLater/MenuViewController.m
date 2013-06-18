@@ -133,7 +133,7 @@
     }
     
     UIView *customColorView = [[UIView alloc] init];
-    customColorView.backgroundColor = [UIColor colorWithRed:180/255.0 green:138/255.0 blue:171/255.0 alpha:1];
+    customColorView.backgroundColor = [UIColor colorWithRed:180/255.0 green:138/255.0 blue:171/255.0 alpha:0.5];
     
     cell.selectedBackgroundView =  customColorView;
     cell.textLabel.textColor = [UIColor blackColor];
@@ -153,7 +153,9 @@
         NSIndexPath *providerIndexPath = [NSIndexPath indexPathForItem:indexPath.row inSection:(indexPath.section - 1)];
         newTopViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"webViewNavigation"];
         UINavigationController *webViewNavigation = (UINavigationController *)newTopViewController;
-        ((WebViewController *)webViewNavigation.topViewController).provider = [self.fetchedResultsController objectAtIndexPath:providerIndexPath];
+        WebViewController *webViewController = (WebViewController *)webViewNavigation.topViewController;
+        webViewController.provider = [self.fetchedResultsController objectAtIndexPath:providerIndexPath];
+        webViewController.fromMenu = YES;
     }
     
     [self.slidingViewController anchorTopViewOffScreenTo:ECRight animations:nil onComplete:^{
@@ -171,7 +173,7 @@
         
         UILabel *textLabel = [[UILabel alloc] initWithFrame:header.frame];
         textLabel.text = sMenuStoreSectionTitle;
-        textLabel.font = [UIFont fontWithName:@"HelveticaNeue-Bold" size:24.0];
+        textLabel.font = [UIFont fontWithName:@"HelveticaNeue-Bold" size:12.0];
         textLabel.backgroundColor = [UIColor colorWithRed:80/255.0 green:80/255.0 blue:80/255.0 alpha:1];
         textLabel.textColor = [UIColor whiteColor];
         

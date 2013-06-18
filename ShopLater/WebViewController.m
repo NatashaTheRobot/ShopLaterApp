@@ -25,8 +25,6 @@
 @property (strong, nonatomic) UIImageView *logoImageView;
 @property (strong, nonatomic) NSMutableArray *toolbarButtonsRight;
 
-@property (assign, nonatomic) BOOL fromMenu;
-
 - (void)customizeNavigationBar;
 - (void)goBack;
 - (void)buyLaterAction;

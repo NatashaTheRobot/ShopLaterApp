@@ -15,4 +15,6 @@
 @property (strong, nonatomic) Provider *provider;
 @property (strong, nonatomic) Product *product;
 
+@property (assign, nonatomic) BOOL fromMenu;
+
 @end

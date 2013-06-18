@@ -24,4 +24,4 @@ static NSString *sMenuStoreCell = @"store";
 static NSString *sMenuHomeCellText = @"My Shopping List";
 static NSString *sMenuStoreSectionCell = @"storeSectionHeader";
 static NSString *sMenuStoreSectionTitle = @"STORES";
-static CGFloat   sMenuAnchorRevealAmount = 280.0f;
+static CGFloat   sMenuAnchorRevealAmount = 260.0f;

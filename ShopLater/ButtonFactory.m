@@ -19,7 +19,8 @@
     button.bounds = CGRectMake( 0, 0, buttonImage.size.width, buttonImage.size.height );
     [button setImage:buttonImage forState:UIControlStateNormal];
     [button addTarget:target action:action forControlEvents:UIControlEventTouchUpInside];
-    return [[UIBarButtonItem alloc] initWithCustomView:button];
+    UIBarButtonItem *barButtonItem = [[UIBarButtonItem alloc] initWithCustomView:button];
+    return barButtonItem;
 }
 
 @end

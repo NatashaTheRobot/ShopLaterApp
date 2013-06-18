@@ -82,7 +82,17 @@
                                                                                    action:@selector(revealMenu)];
         
         [self.navigationItem setLeftBarButtonItems:@[menuButton] animated:NO];
+    } else {
+        UIBarButtonItem *backButton = [ButtonFactory barButtonItemWithImageName:@"back_btn.png"
+                                                                         target:self
+                                                                         action:@selector(goBack)];
+        [self.navigationItem setLeftBarButtonItems:@[backButton] animated:YES];
     }
+}
+
+- (void)goBack
+{
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 - (void)revealMenu

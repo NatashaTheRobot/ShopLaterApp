@@ -14,6 +14,7 @@
 #import "CoreDataManager.h"
 #import "Constants.h"
 #import "ECSlidingViewController.h"
+#import "ButtonFactory.h"
 
 @interface NewProductViewController ()
 
@@ -32,6 +33,7 @@
 - (IBAction)adjustWishPrice:(id)sender;
 - (IBAction)saveProductWithButton:(id)sender;
 
+- (void)goBack;
 - (void)displayProduct;
 - (void)createProduct;
 
@@ -53,6 +55,15 @@
     [self.slidingViewController setAnchorRightRevealAmount:280.0f];
     self.slidingViewController.underLeftWidthLayout = ECFullWidth;
     
+    self.navigationItem.leftBarButtonItem = [ButtonFactory barButtonItemWithImageName:@"back_btn.png"
+                                                                               target:self
+                                                                               action:@selector(goBack)];
+    
+}
+
+- (void)goBack
+{
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 - (void)displayProduct

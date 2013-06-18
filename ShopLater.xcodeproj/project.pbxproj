@@ -443,8 +443,6 @@
 				9C195DB41767510500183192 /* ProductTableViewCell.m */,
 				9C9519DE176F9AE800F70377 /* ProductCollectionViewCell.h */,
 				9C9519DF176F9AE800F70377 /* ProductCollectionViewCell.m */,
-				9C22642D176DE17300C3FDD9 /* WelcomeView.h */,
-				9C22642E176DE17300C3FDD9 /* WelcomeView.m */,
 				9C9519F91770876400F70377 /* ButtonFactory.h */,
 				9C9519FA1770876400F70377 /* ButtonFactory.m */,
 			);
@@ -569,9 +567,6 @@
 				3401B4B4176CEFFD00DAD80D /* dupontregistry_logo@2x.png in Resources */,
 				34BE7CBC176F5BCA0005FB14 /* buybuybaby_logo.png in Resources */,
 				34BE7CBD176F5BCA0005FB14 /* buybuybaby_logo@2x.png in Resources */,
-				9C9519D9176F990E00F70377 /* delete_btn@2x.png in Resources */,
-				34BE7CC3176F7B950005FB14 /* nordstrom_logo.png in Resources */,
-				34BE7CC4176F7B950005FB14 /* nordstrom_logo@2x.png in Resources */,
 				9C9519DA176F990E00F70377 /* delete_btn.png in Resources */,
 				9C9519E4176FB0F400F70377 /* Default.png in Resources */,
 				34449EF0176FC5DA000873DC /* sears_logo.png in Resources */,

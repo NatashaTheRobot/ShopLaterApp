@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "ParserDelegate.h"
 
-@interface Parser : NSObject
+@interface Parser : NSObject <UIAlertViewDelegate>
 
 + (instancetype)parserWithProviderName:(NSString *)providerName productURLString:(NSString *)productURLString;
 + (NSString *)scanString:(NSString *)string startTag:(NSString *)startTag endTag:(NSString *)endTag;

@@ -30,6 +30,7 @@
 @property (strong, nonatomic) UILabel *productNameLabel;
 
 - (void)setupView;
+- (void)createProductLabelForProduct:(Product *)product;
 
 - (IBAction)deleteProductWithButton:(id)sender;
 - (IBAction)buyNowWithButton:(id)sender;
@@ -78,18 +79,7 @@
 {
     _product = product;
     
-    NSString *text = product.name;
-    CGSize maximumLabelSize = CGSizeMake(250, CGFLOAT_MAX);
-    UIFont *font = [UIFont fontWithName:@"HelveticaNeue" size:14];
-    CGSize expectedLabelSize = [text sizeWithFont:font constrainedToSize:maximumLabelSize lineBreakMode:NSLineBreakByWordWrapping];
-    
-    self.productNameLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 10, 250, expectedLabelSize.height)];
-    self.productNameLabel.text = [product formattedName:product.name];
-    self.productNameLabel.lineBreakMode = NSLineBreakByWordWrapping;
-    self.productNameLabel.numberOfLines = 0;
-    self.productNameLabel.font = font;
-    
-    [self.labelView addSubview:self.productNameLabel];
+    [self createProductLabelForProduct:product];
     
     self.productImageView.image = [product image];
     self.currentPriceLabel.text = [product formattedPriceWithType:sPriceTypeCurrent];
@@ -107,6 +97,20 @@
     } else {
         [self.activityIndicator stopAnimating];
     }
+}
+
+- (void)createProductLabelForProduct:(Product *)product
+{
+    CGSize maximumLabelSize = CGSizeMake(250, CGFLOAT_MAX);
+    UIFont *font = [UIFont fontWithName:@"HelveticaNeue" size:14];
+    CGSize labelSize = [product.name sizeWithFont:font constrainedToSize:maximumLabelSize lineBreakMode:NSLineBreakByWordWrapping];
+    self.productNameLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 10, 250, labelSize.height)];
+    self.productNameLabel.lineBreakMode = NSLineBreakByWordWrapping;
+    self.productNameLabel.numberOfLines = 0;
+    self.productNameLabel.font = font;
+    self.productNameLabel.text = [product formattedName:product.name];
+    
+    [self.labelView addSubview:self.productNameLabel];
 }
 
 - (void)parseCurrentPrice

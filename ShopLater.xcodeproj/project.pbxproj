@@ -46,10 +46,11 @@
 		9C08B5971771E8E900C7FF75 /* btn_browser_back@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C08B5911771E8E900C7FF75 /* btn_browser_back@2x.png */; };
 		9C08B59B1771F05A00C7FF75 /* btn_browser_forward@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C08B59A1771F05A00C7FF75 /* btn_browser_forward@2x.png */; };
 		9C08B59D1771F06800C7FF75 /* btn_browser_forward.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C08B59C1771F06800C7FF75 /* btn_browser_forward.png */; };
-		9C08B59F17721E0D00C7FF75 /* logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C08B59E17721E0D00C7FF75 /* logo@2x.png */; };
 		9C08B5A11772302500C7FF75 /* ic_tag@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C08B5A01772302500C7FF75 /* ic_tag@2x.png */; };
 		9C08B5A31772303800C7FF75 /* ic_tag.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C08B5A21772303700C7FF75 /* ic_tag.png */; };
 		9C08B5A517723C7800C7FF75 /* lululemon_logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C08B5A417723C7700C7FF75 /* lululemon_logo@2x.png */; };
+		9C08B5A717723FD000C7FF75 /* logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C08B5A617723FD000C7FF75 /* logo@2x.png */; };
+		9C08B5A917723FD800C7FF75 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C08B5A817723FD800C7FF75 /* logo.png */; };
 		9C195DB51767510500183192 /* ProductTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C195DB41767510500183192 /* ProductTableViewCell.m */; };
 		9C195DB81767588B00183192 /* Price+SLExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C195DB71767588B00183192 /* Price+SLExtensions.m */; };
 		9C195DC417679B4E00183192 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C195DC317679B4D00183192 /* QuartzCore.framework */; };
@@ -89,7 +90,6 @@
 		9C951A0317708C8200F70377 /* buy_later_btn@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C951A0217708C8100F70377 /* buy_later_btn@2x.png */; };
 		9C951A0517708E3E00F70377 /* save_btn@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C951A0417708E3E00F70377 /* save_btn@2x.png */; };
 		9C951A0717708E4B00F70377 /* save_btn.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C951A0617708E4B00F70377 /* save_btn.png */; };
-		9C951A091770903D00F70377 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C951A081770903C00F70377 /* logo.png */; };
 		9C951A0D1770983500F70377 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C951A0C1770983500F70377 /* Default-568h@2x.png */; };
 		9C951A1117709A3A00F70377 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C951A1017709A3900F70377 /* Default@2x.png */; };
 		9C951A1717709B7F00F70377 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C951A1617709B7F00F70377 /* Icon.png */; };
@@ -166,10 +166,11 @@
 		9C08B5911771E8E900C7FF75 /* btn_browser_back@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn_browser_back@2x.png"; sourceTree = "<group>"; };
 		9C08B59A1771F05A00C7FF75 /* btn_browser_forward@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn_browser_forward@2x.png"; sourceTree = "<group>"; };
 		9C08B59C1771F06800C7FF75 /* btn_browser_forward.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btn_browser_forward.png; sourceTree = "<group>"; };
-		9C08B59E17721E0D00C7FF75 /* logo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logo@2x.png"; sourceTree = "<group>"; };
 		9C08B5A01772302500C7FF75 /* ic_tag@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_tag@2x.png"; sourceTree = "<group>"; };
 		9C08B5A21772303700C7FF75 /* ic_tag.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_tag.png; sourceTree = "<group>"; };
 		9C08B5A417723C7700C7FF75 /* lululemon_logo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "lululemon_logo@2x.png"; sourceTree = "<group>"; };
+		9C08B5A617723FD000C7FF75 /* logo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logo@2x.png"; sourceTree = "<group>"; };
+		9C08B5A817723FD800C7FF75 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
 		9C195DB31767510500183192 /* ProductTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductTableViewCell.h; sourceTree = "<group>"; };
 		9C195DB41767510500183192 /* ProductTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductTableViewCell.m; sourceTree = "<group>"; };
 		9C195DB61767588B00183192 /* Price+SLExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Price+SLExtensions.h"; sourceTree = "<group>"; };
@@ -226,7 +227,6 @@
 		9C951A0217708C8100F70377 /* buy_later_btn@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "buy_later_btn@2x.png"; sourceTree = "<group>"; };
 		9C951A0417708E3E00F70377 /* save_btn@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "save_btn@2x.png"; sourceTree = "<group>"; };
 		9C951A0617708E4B00F70377 /* save_btn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = save_btn.png; sourceTree = "<group>"; };
-		9C951A081770903C00F70377 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
 		9C951A0C1770983500F70377 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		9C951A1017709A3900F70377 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		9C951A1617709B7F00F70377 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Icon.png; path = ../Icon.png; sourceTree = "<group>"; };
@@ -398,6 +398,8 @@
 		9C9519D6176F98E600F70377 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				9C08B5A817723FD800C7FF75 /* logo.png */,
+				9C08B5A617723FD000C7FF75 /* logo@2x.png */,
 				9C08B5A21772303700C7FF75 /* ic_tag.png */,
 				9C08B5A01772302500C7FF75 /* ic_tag@2x.png */,
 				9C08B59C1771F06800C7FF75 /* btn_browser_forward.png */,
@@ -412,8 +414,6 @@
 				9C951A1E1770C2C400F70377 /* list_icon@2x.png */,
 				9C951A1C1770B1CD00F70377 /* welcome.png */,
 				9C951A1A1770B19B00F70377 /* welcome@2x.png */,
-				9C951A081770903C00F70377 /* logo.png */,
-				9C08B59E17721E0D00C7FF75 /* logo@2x.png */,
 				9C951A0617708E4B00F70377 /* save_btn.png */,
 				9C951A0417708E3E00F70377 /* save_btn@2x.png */,
 				9C951A0217708C8100F70377 /* buy_later_btn@2x.png */,
@@ -611,7 +611,6 @@
 				9C951A0317708C8200F70377 /* buy_later_btn@2x.png in Resources */,
 				9C951A0517708E3E00F70377 /* save_btn@2x.png in Resources */,
 				9C951A0717708E4B00F70377 /* save_btn.png in Resources */,
-				9C951A091770903D00F70377 /* logo.png in Resources */,
 				9C951A0D1770983500F70377 /* Default-568h@2x.png in Resources */,
 				9C951A1117709A3A00F70377 /* Default@2x.png in Resources */,
 				9C951A1717709B7F00F70377 /* Icon.png in Resources */,
@@ -630,10 +629,11 @@
 				9C08B5971771E8E900C7FF75 /* btn_browser_back@2x.png in Resources */,
 				9C08B59B1771F05A00C7FF75 /* btn_browser_forward@2x.png in Resources */,
 				9C08B59D1771F06800C7FF75 /* btn_browser_forward.png in Resources */,
-				9C08B59F17721E0D00C7FF75 /* logo@2x.png in Resources */,
 				9C08B5A11772302500C7FF75 /* ic_tag@2x.png in Resources */,
 				9C08B5A31772303800C7FF75 /* ic_tag.png in Resources */,
 				9C08B5A517723C7800C7FF75 /* lululemon_logo@2x.png in Resources */,
+				9C08B5A717723FD000C7FF75 /* logo@2x.png in Resources */,
+				9C08B5A917723FD800C7FF75 /* logo.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

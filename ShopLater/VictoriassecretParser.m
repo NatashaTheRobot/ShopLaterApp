@@ -1,12 +1,12 @@
 //
-//  JcrewParser.m
+//  VictoriassecretParser.m
 //  ShopLater
 //
-//  Created by Reza Fatahi on 6/18/13.
+//  Created by Reza Fatahi on 6/19/13.
 //  Copyright (c) 2013 Natasha Murashev. All rights reserved.
 //
 
-#import "JcrewParser.h"
+#import "VictoriassecretParser.h"
 #import "Parser.h"
 #import "Price.h"
 #import "Image+SLExtensions.h"
@@ -14,7 +14,7 @@
 #import "Constants.h"
 #import "NSString+SLExtensions.h"
 
-@interface JcrewParser ()
+@interface VictoriassecretParser ()
 
 @property (strong, nonatomic) NSString *htmlString;
 @property (strong, nonatomic) CoreDataManager *coreDataManager;
@@ -23,15 +23,13 @@
 @property (strong, nonatomic) Price *price;
 @property (strong, nonatomic) Image *image;
 
-- (NSString *)getProductIdFromURLString:(NSString *)urlString;
-
 @end
 
-@implementation JcrewParser
+@implementation VictoriassecretParser
 
 + (instancetype)parserWithProductURLString:(NSString *)productURLString
 {
-    JcrewParser *parser = [[JcrewParser alloc] init];
+    VictoriassecretParser *parser = [[VictoriassecretParser alloc] init];
     parser.mobileURLString = productURLString;
     parser.cleanURLString = productURLString;
     
@@ -47,27 +45,39 @@
     return parser;
 }
 
-- (NSString *)getProductIdFromURLString:(NSString *)urlString
-{
-    return [Parser scanString:urlString startTag:@"Details/" endTag:@"?"];
-}
-
 # pragma mark - Property Delegate Methods
 
 - (NSNumber *)priceInDollars
 {
-    NSString *priceString;
+    NSString* priceHTMLString = [Parser scanString:self.htmlString startTag:@" <p class=\"price\">" endTag:@"</section>"];
     
-    if ([self.htmlString containsString:@"class=\"selected-color\">select colors"]) {
-        priceString = [Parser scanString:self.htmlString startTag:@"<DIV class=\"selected-color\">select colors $" endTag:@"\""];
+    NSString *priceString;
+    if ([priceHTMLString containsString:@"Clearance"]) {
+        priceString = [Parser scanString:priceHTMLString startTag:@"Clearance $" endTag:@"</em>"];
+    } else if ([priceHTMLString containsString:@"Special"]) {
+        priceString = [Parser scanString:priceHTMLString startTag:@"$" endTag:@"or"];
+        if ([priceString containsString:@"</em>"]) {
+            priceString = [Parser scanString:priceHTMLString startTag:@"" endTag:@"</em>"];
+        }
+    } else if ([priceHTMLString containsString:@"Sale"]) {
+        priceString = [Parser scanString:priceHTMLString startTag:@"Sale $" endTag:@"</em>"];
+    } else if ([priceHTMLString containsString:@"price"]) {
+        priceString = [Parser scanString:priceHTMLString startTag:@"price" endTag:@"<br>"];
+    }  else if ([priceHTMLString containsString:@"Print"]) {
+        if ([[priceHTMLString componentsSeparatedByString:@","][0] containsString:@"Solids"]) {
+            priceString = [Parser scanString:priceHTMLString startTag:@"$" endTag:@"<br>"];
+        } else if ([priceHTMLString containsString:@"Print, $"]){
+            priceString = [Parser scanString:priceHTMLString startTag:@"Print, $" endTag:@"</em>"];
+            if ([priceString containsString:@"<br>"]) {
+                priceString = [priceString componentsSeparatedByString:@"<br>"][0];
+            }
+        }
+        else {
+            priceString = [Parser scanString:priceHTMLString startTag:@"$" endTag:@"<br>"];
+        }
     } else {
-        priceString = [Parser scanString:self.htmlString startTag:@"<DIV class=\"spaceTB10 white\">$" endTag:@"</DIV>"];
+        priceString = [Parser scanString:priceHTMLString startTag:@"$" endTag:@"<br>"];
     }
-//    if ([price containsString:@"now"]) {
-//        priceString = [Parser scanString:price startTag:@"now $" endTag:@"</"];
-//    } else {
-//        priceString = [Parser scanString:price startTag:@"$" endTag:@"<BR"];
-//    }
     
     return [NSNumber numberWithFloat:[priceString floatValue]];
 }
@@ -94,8 +104,9 @@
 {
     
     if (!self.name) {
-
-        self.name = [Parser scanString:self.htmlString startTag:@"<TITLE>" endTag:@" - "];    }
+        
+        self.name = [Parser scanString:self.htmlString startTag:@"<title>" endTag:@"</title>"];
+    }
     
     return self.name;
 }
@@ -104,17 +115,11 @@
 {
     if (!self.image) {
         
-        NSString *image = [Parser scanString:self.htmlString startTag:@"carousel_img" endTag:@"</div>"];
+        NSString *image = [Parser scanString:self.htmlString startTag:@"mainContentOfPage" endTag:@"div class=\"name\""];
         NSString *urlString = [Parser scanString:image startTag:@"src=\"" endTag:@"\""];
-        urlString = [NSString stringWithFormat:@"http://m.jcrew.com%@", urlString];
-        
-        NSData *data2 = [NSData dataWithContentsOfURL:[NSURL URLWithString:urlString]];
-        
-        if (data2.length == 0) {
-            urlString = [Parser scanString:self.htmlString  startTag:@"productgalleryPage('" endTag:@"\'"];
-            urlString = [urlString stringByReplacingOccurrencesOfString:@";" withString:@""];
-            urlString = [urlString stringByReplacingOccurrencesOfString:@"amp" withString:@""];
-        }
+        urlString = [urlString componentsSeparatedByString:@"-"][1];
+        urlString = [NSString stringWithFormat:@"http://%@", urlString];
+        NSLog(@"%@", urlString);
         
         NSURL *urlImage = [NSURL URLWithString:urlString];
         
@@ -130,3 +135,5 @@
 }
 
 @end
+
+

@@ -20,6 +20,10 @@
         return @"http://m.dupontregistry.com/listings.cfm";
     } else if ([providerName isEqualToString:@"nordstrom"]) {
         return [NSString stringWithFormat:@"http://shop.%@.com", providerName];
+    } else if ([providerName isEqualToString:@"underarmour"]) {
+        return @"http://m.underarmour.com/shop/us/en";
+    } else if ([providerName isEqualToString:@"victoriassecret"]) {
+        return @"http://mobile.victoriassecret.com/";
     } else {
         return [NSString stringWithFormat:@"http://www.%@.com", providerName];
     }
@@ -33,7 +37,7 @@
 
 + (NSArray *)providersArray
 {
-    NSMutableArray *providers = [[NSMutableArray alloc] initWithCapacity:11];
+    NSMutableArray *providers = [[NSMutableArray alloc] initWithCapacity:13];
     
     [providers addObject:[self dictionaryWithProviderName:@"toysrus"
                                               identifiers:[Identifier identifiersWithNames:@[@"productId"]]
@@ -78,6 +82,15 @@
     [providers addObject:[self dictionaryWithProviderName:@"jcrew"
                                               identifiers:[Identifier identifiersWithNames:@[@"/PRDOVR"]]
                                            commercialName:@"J.Crew"]];
+    
+    [providers addObject:[self dictionaryWithProviderName:@"underarmour"
+                                              identifiers:[Identifier identifiersWithNames:@[@"/pid"]]
+                                           commercialName:@"Under Armour"]];
+    
+    [providers addObject:[self dictionaryWithProviderName:@"victoriassecret"
+                                              identifiers:[Identifier identifiersWithNames:@[@"ProductID"]]
+                                           commercialName:@"Victoria's Secret"]];
+    
     
     return providers;
 }

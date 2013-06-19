@@ -23,6 +23,12 @@
 		3447CEBA176B774700BF0490 /* Identifier.m in Sources */ = {isa = PBXBuildFile; fileRef = 3447CEB9176B774700BF0490 /* Identifier.m */; };
 		3447CEC0176B774800BF0490 /* Price.m in Sources */ = {isa = PBXBuildFile; fileRef = 3447CEBF176B774800BF0490 /* Price.m */; };
 		3447CEC6176B774900BF0490 /* Image.m in Sources */ = {isa = PBXBuildFile; fileRef = 3447CEC5176B774900BF0490 /* Image.m */; };
+		344D78BB1772367E00C2CBF8 /* VictoriassecretParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 344D78BA1772367E00C2CBF8 /* VictoriassecretParser.m */; };
+		344D78BE17723AC100C2CBF8 /* underarmour_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 344D78BC17723AC100C2CBF8 /* underarmour_logo.png */; };
+		344D78BF17723AC100C2CBF8 /* underarmour_logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 344D78BD17723AC100C2CBF8 /* underarmour_logo@2x.png */; };
+		344D78C217723C3C00C2CBF8 /* victoriassecret_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 344D78C017723C3C00C2CBF8 /* victoriassecret_logo.png */; };
+		344D78C317723C3C00C2CBF8 /* victoriassecret_logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 344D78C117723C3C00C2CBF8 /* victoriassecret_logo@2x.png */; };
+		344D78C61772427A00C2CBF8 /* UnderarmourParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 344D78C51772427A00C2CBF8 /* UnderarmourParser.m */; };
 		3454A1EF1770F3ED006D8CD5 /* JcrewParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 3454A1EE1770F3ED006D8CD5 /* JcrewParser.m */; };
 		3454A1F21770F7E0006D8CD5 /* jcrew_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 3454A1F01770F7E0006D8CD5 /* jcrew_logo.png */; };
 		3454A1F31770F7E0006D8CD5 /* jcrew_logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3454A1F11770F7E0006D8CD5 /* jcrew_logo@2x.png */; };
@@ -131,6 +137,14 @@
 		3447CEBF176B774800BF0490 /* Price.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Price.m; sourceTree = "<group>"; };
 		3447CEC4176B774900BF0490 /* Image.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Image.h; sourceTree = "<group>"; };
 		3447CEC5176B774900BF0490 /* Image.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Image.m; sourceTree = "<group>"; };
+		344D78B91772367E00C2CBF8 /* VictoriassecretParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VictoriassecretParser.h; sourceTree = "<group>"; };
+		344D78BA1772367E00C2CBF8 /* VictoriassecretParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VictoriassecretParser.m; sourceTree = "<group>"; };
+		344D78BC17723AC100C2CBF8 /* underarmour_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = underarmour_logo.png; sourceTree = "<group>"; };
+		344D78BD17723AC100C2CBF8 /* underarmour_logo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "underarmour_logo@2x.png"; sourceTree = "<group>"; };
+		344D78C017723C3C00C2CBF8 /* victoriassecret_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = victoriassecret_logo.png; sourceTree = "<group>"; };
+		344D78C117723C3C00C2CBF8 /* victoriassecret_logo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "victoriassecret_logo@2x.png"; sourceTree = "<group>"; };
+		344D78C41772427A00C2CBF8 /* UnderarmourParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UnderarmourParser.h; sourceTree = "<group>"; };
+		344D78C51772427A00C2CBF8 /* UnderarmourParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UnderarmourParser.m; sourceTree = "<group>"; };
 		3454A1ED1770F3ED006D8CD5 /* JcrewParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JcrewParser.h; sourceTree = "<group>"; };
 		3454A1EE1770F3ED006D8CD5 /* JcrewParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JcrewParser.m; sourceTree = "<group>"; };
 		3454A1F01770F7E0006D8CD5 /* jcrew_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = jcrew_logo.png; sourceTree = "<group>"; };
@@ -428,6 +442,10 @@
 		9CA5D7431762A9840009098E /* ProviderLogos */ = {
 			isa = PBXGroup;
 			children = (
+				344D78C017723C3C00C2CBF8 /* victoriassecret_logo.png */,
+				344D78C117723C3C00C2CBF8 /* victoriassecret_logo@2x.png */,
+				344D78BC17723AC100C2CBF8 /* underarmour_logo.png */,
+				344D78BD17723AC100C2CBF8 /* underarmour_logo@2x.png */,
 				3454A1F01770F7E0006D8CD5 /* jcrew_logo.png */,
 				3454A1F11770F7E0006D8CD5 /* jcrew_logo@2x.png */,
 				34449EF2176FCDE8000873DC /* nordstrom_logo.png */,
@@ -511,6 +529,10 @@
 				34449EE4176FC2F9000873DC /* SearsParser.m */,
 				3454A1ED1770F3ED006D8CD5 /* JcrewParser.h */,
 				3454A1EE1770F3ED006D8CD5 /* JcrewParser.m */,
+				344D78C41772427A00C2CBF8 /* UnderarmourParser.h */,
+				344D78C51772427A00C2CBF8 /* UnderarmourParser.m */,
+				344D78B91772367E00C2CBF8 /* VictoriassecretParser.h */,
+				344D78BA1772367E00C2CBF8 /* VictoriassecretParser.m */,
 			);
 			name = Parsers;
 			sourceTree = "<group>";
@@ -622,6 +644,10 @@
 				9C08B5971771E8E900C7FF75 /* btn_browser_back@2x.png in Resources */,
 				9C08B59B1771F05A00C7FF75 /* btn_browser_forward@2x.png in Resources */,
 				9C08B59D1771F06800C7FF75 /* btn_browser_forward.png in Resources */,
+				344D78BE17723AC100C2CBF8 /* underarmour_logo.png in Resources */,
+				344D78BF17723AC100C2CBF8 /* underarmour_logo@2x.png in Resources */,
+				344D78C217723C3C00C2CBF8 /* victoriassecret_logo.png in Resources */,
+				344D78C317723C3C00C2CBF8 /* victoriassecret_logo@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -669,6 +695,8 @@
 				9C9519FB1770876400F70377 /* ButtonFactory.m in Sources */,
 				3454A1EF1770F3ED006D8CD5 /* JcrewParser.m in Sources */,
 				9C08B5891771DB6800C7FF75 /* Product.m in Sources */,
+				344D78BB1772367E00C2CBF8 /* VictoriassecretParser.m in Sources */,
+				344D78C61772427A00C2CBF8 /* UnderarmourParser.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

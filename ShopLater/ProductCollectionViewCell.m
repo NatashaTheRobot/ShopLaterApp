@@ -30,6 +30,7 @@
 - (void)setupView;
 
 - (IBAction)deleteProductWithButton:(id)sender;
+- (IBAction)buyNowWithButton:(id)sender;
 
 @end
 
@@ -141,6 +142,11 @@
 - (IBAction)deleteProductWithButton:(id)sender
 {
     [self.delegate deleteProduct:self.product];
+}
+
+- (IBAction)buyNowWithButton:(id)sender
+{
+    [self.delegate buyProduct:self.product];
 }
 
 @end

@@ -161,6 +161,13 @@
     [self.webView loadRequest:request];
 }
 
+- (void)webViewDidStartLoad:(UIWebView *)webView
+{
+    if (![self.activityIndicator isAnimating]) {
+        [self.activityIndicator startAnimating];
+    }
+}
+
 - (void)webViewDidFinishLoad:(UIWebView *)webView
 {
     if ([self.activityIndicator isAnimating]) {

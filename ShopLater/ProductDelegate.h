@@ -12,5 +12,6 @@
 @protocol ProductDelegate <NSObject>
 
 - (void)deleteProduct:(Product *)product;
+- (void)buyProduct:(Product *)product;
 
 @end

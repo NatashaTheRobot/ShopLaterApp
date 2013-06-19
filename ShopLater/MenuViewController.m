@@ -46,6 +46,8 @@
     
     [self.slidingViewController setAnchorRightRevealAmount:sMenuAnchorRevealAmount];
     self.slidingViewController.underLeftWidthLayout = ECFullWidth;
+    self.slidingViewController.shouldAllowUserInteractionsWhenAnchored = YES;
+    [self.view addGestureRecognizer:self.slidingViewController.panGesture];
     
 }
 

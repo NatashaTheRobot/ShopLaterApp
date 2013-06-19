@@ -70,6 +70,8 @@
     }
     ((MenuViewController *)self.slidingViewController.underLeftViewController).selectedProvider = nil;
     [self.slidingViewController setAnchorRightRevealAmount:sMenuAnchorRevealAmount];
+    self.slidingViewController.shouldAllowUserInteractionsWhenAnchored = YES;
+    [self.view addGestureRecognizer:self.slidingViewController.panGesture];
 }
 
 - (void)fetchProducts

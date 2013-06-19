@@ -59,7 +59,6 @@
 		9C08B5A917723FD800C7FF75 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C08B5A817723FD800C7FF75 /* logo.png */; };
 		9C08B5AE17725D4300C7FF75 /* list_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C08B5AD17725D4300C7FF75 /* list_icon@2x.png */; };
 		9C08B5B017725D6500C7FF75 /* list_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C08B5AF17725D6500C7FF75 /* list_icon.png */; };
-		9C195DB51767510500183192 /* ProductTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C195DB41767510500183192 /* ProductTableViewCell.m */; };
 		9C195DB81767588B00183192 /* Price+SLExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C195DB71767588B00183192 /* Price+SLExtensions.m */; };
 		9C195DC417679B4E00183192 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C195DC317679B4D00183192 /* QuartzCore.framework */; };
 		9C195DD71767AE2500183192 /* Product+SLExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C195DD61767AE2500183192 /* Product+SLExtensions.m */; };
@@ -187,8 +186,6 @@
 		9C08B5A817723FD800C7FF75 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
 		9C08B5AD17725D4300C7FF75 /* list_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "list_icon@2x.png"; sourceTree = "<group>"; };
 		9C08B5AF17725D6500C7FF75 /* list_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = list_icon.png; sourceTree = "<group>"; };
-		9C195DB31767510500183192 /* ProductTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductTableViewCell.h; sourceTree = "<group>"; };
-		9C195DB41767510500183192 /* ProductTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductTableViewCell.m; sourceTree = "<group>"; };
 		9C195DB61767588B00183192 /* Price+SLExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Price+SLExtensions.h"; sourceTree = "<group>"; };
 		9C195DB71767588B00183192 /* Price+SLExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Price+SLExtensions.m"; sourceTree = "<group>"; };
 		9C195DC317679B4D00183192 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
@@ -484,8 +481,6 @@
 		9CA5D74B1762B9520009098E /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				9C195DB31767510500183192 /* ProductTableViewCell.h */,
-				9C195DB41767510500183192 /* ProductTableViewCell.m */,
 				9C9519DE176F9AE800F70377 /* ProductCollectionViewCell.h */,
 				9C9519DF176F9AE800F70377 /* ProductCollectionViewCell.m */,
 				9C9519F91770876400F70377 /* ButtonFactory.h */,
@@ -680,7 +675,6 @@
 				9CA5D77E1764CEA80009098E /* ToysrusParser.m in Sources */,
 				9CB940621766449000DC05D2 /* Provider+SLExtensions.m in Sources */,
 				9CB9406517665AC300DC05D2 /* Parser.m in Sources */,
-				9C195DB51767510500183192 /* ProductTableViewCell.m in Sources */,
 				9C195DB81767588B00183192 /* Price+SLExtensions.m in Sources */,
 				9C195DD71767AE2500183192 /* Product+SLExtensions.m in Sources */,
 				3447CEBA176B774700BF0490 /* Identifier.m in Sources */,

@@ -170,11 +170,12 @@
 {
     if (section == 1) {
         UIView *header = [[UIView alloc] initWithFrame:CGRectMake(0, 0, tableView.frame.size.width, 20.0)];
+        header.backgroundColor = [UIColor colorWithRed:80/255.0 green:80/255.0 blue:80/255.0 alpha:1];
         
-        UILabel *textLabel = [[UILabel alloc] initWithFrame:header.frame];
+        UILabel *textLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 0, header.frame.size.width, header.frame.size.height)];
         textLabel.text = sMenuStoreSectionTitle;
         textLabel.font = [UIFont fontWithName:@"HelveticaNeue-Bold" size:12.0];
-        textLabel.backgroundColor = [UIColor colorWithRed:80/255.0 green:80/255.0 blue:80/255.0 alpha:1];
+        textLabel.backgroundColor = header.backgroundColor;
         textLabel.textColor = [UIColor whiteColor];
         
         [header addSubview:textLabel];

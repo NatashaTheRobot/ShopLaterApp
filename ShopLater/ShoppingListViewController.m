@@ -28,6 +28,7 @@
 @property (strong, nonatomic) Product *producttoBuy;
 
 - (void)customizeNavigationBar;
+- (void)setupSlidingViewController;
 - (void)revealMenu;
 - (void)fetchProducts;
 - (void)showWelcomeView;
@@ -47,6 +48,8 @@
     self.coreDataManager = [CoreDataManager sharedManager];
     
     [self fetchProducts];
+    
+    [self setupSlidingViewController];
 }
 
 - (void)customizeNavigationBar
@@ -57,6 +60,16 @@
     self.navigationItem.leftBarButtonItem = [ButtonFactory barButtonItemWithImageName:@"menu_btn.png"
                                                                                target:self
                                                                                action:@selector(revealMenu)];
+}
+
+- (void)setupSlidingViewController
+{
+    if (![self.slidingViewController.underLeftViewController isKindOfClass:[MenuViewController class]]) {
+        self.slidingViewController.underLeftViewController  = [self.storyboard instantiateViewControllerWithIdentifier:
+                                                               NSStringFromClass([MenuViewController class])];
+    }
+    ((MenuViewController *)self.slidingViewController.underLeftViewController).selectedProvider = nil;
+    [self.slidingViewController setAnchorRightRevealAmount:sMenuAnchorRevealAmount];
 }
 
 - (void)fetchProducts
@@ -74,40 +87,10 @@
 {
     [super viewWillAppear:animated];
     
-    // shadowPath, shadowOffset, and rotation is handled by ECSlidingViewController.
-    // You just need to set the opacity, radius, and color.
-    self.view.layer.shadowOpacity = 0.8f;
-    self.view.layer.shadowRadius = 10.0f;
-    self.view.layer.shadowColor = [UIColor greenColor].CGColor;
-    self.view.layer.masksToBounds = NO;
-    self.view.layer.shadowOffset = CGSizeMake(-2, -2);
-    self.view.layer.shadowRadius = 1;
-    self.view.layer.cornerRadius = 4;
-//    self.view.layer.shadowPath = 
-    
-//    self.layer.masksToBounds = NO;
-//    
-//    self.layer.borderColor = [[UIColor colorWithRed:80/255.0 green:80/255.0 blue:80/255.0 alpha:0.3] CGColor];
-//    self.layer.borderWidth = 1;
-//    self.layer.cornerRadius = 4;
-//    self.layer.shadowColor = [[UIColor colorWithRed:80/255.0 green:80/255.0 blue:80/255.0 alpha:1] CGColor];
-//    self.layer.shadowOffset = CGSizeMake(2, 2);
-//    self.layer.shadowRadius = 1;
-//    self.layer.shadowOpacity = 0.5;
-//    
-//    self.buyNowButton.layer.cornerRadius = 4;
-//    self.buyNowButton.layer.masksToBounds = YES;
-//    
-//    self.buyView.layer.cornerRadius = 4;
-//    self.buyView.layer.masksToBounds = YES;
-//    self.buyView.layer.shadowColor = [[UIColor greenColor] CGColor];
-    
-    if (![self.slidingViewController.underLeftViewController isKindOfClass:[MenuViewController class]]) {
-        self.slidingViewController.underLeftViewController  = [self.storyboard instantiateViewControllerWithIdentifier:
-                                                               NSStringFromClass([MenuViewController class])];
-    }
-    ((MenuViewController *)self.slidingViewController.underLeftViewController).selectedProvider = nil;
-    [self.slidingViewController setAnchorRightRevealAmount:sMenuAnchorRevealAmount];
+    CALayer *navigationControllerLayer = self.navigationController.view.layer;
+    navigationControllerLayer.shadowOpacity = 0.8f;
+    navigationControllerLayer.shadowRadius = 10.0f;
+    navigationControllerLayer.shadowColor = [[UIColor colorWithRed:80/255.0 green:80/255.0 blue:80/255.0 alpha:1] CGColor];
     
 }
 

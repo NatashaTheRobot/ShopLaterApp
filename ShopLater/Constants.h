@@ -13,7 +13,6 @@ static NSString *sProductCellIdentifier = @"product";
 static NSString *sProductSortAttribute = @"createdAt";
 
 static NSString *sImageTypeLogo = @"logo";
-static NSString *sImageTypeExample = @"example";
 static NSString *sImageTypeSection = @"section_logo";
 
 static NSString *sPriceTypeCurrent = @"current";

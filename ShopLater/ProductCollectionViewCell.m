@@ -20,12 +20,13 @@
 @property (strong, nonatomic) IBOutlet UIImageView *productImageView;
 @property (weak, nonatomic) IBOutlet UILabel *currentPriceLabel;
 @property (weak, nonatomic) IBOutlet UILabel *wishPriceLabel;
-@property (weak, nonatomic) IBOutlet UILabel *productNameLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *logoImageView;
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
 @property (weak, nonatomic) IBOutlet UIImageView *priceMatchImageView;
 @property (weak, nonatomic) IBOutlet UIView *buyView;
 @property (weak, nonatomic) IBOutlet UIButton *buyNowButton;
+
+@property (strong, nonatomic) UILabel *productNameLabel;
 
 - (void)setupView;
 
@@ -76,7 +77,19 @@
 {
     _product = product;
     
+    NSString *text = product.name;
+    CGSize maximumLabelSize = CGSizeMake(250, CGFLOAT_MAX);
+    UIFont *font = [UIFont fontWithName:@"HelveticaNeue" size:14];
+    CGSize expectedLabelSize = [text sizeWithFont:font constrainedToSize:maximumLabelSize lineBreakMode:NSLineBreakByWordWrapping];
+    
+    self.productNameLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 10, 250, expectedLabelSize.height)];
     self.productNameLabel.text = [product formattedName:product.name];
+    self.productNameLabel.lineBreakMode = NSLineBreakByWordWrapping;
+    self.productNameLabel.numberOfLines = 0;
+    self.productNameLabel.font = font;
+    
+    [self addSubview:self.productNameLabel];
+    
     self.productImageView.image = [product image];
     self.currentPriceLabel.text = [product formattedPriceWithType:sPriceTypeCurrent];
     self.wishPriceLabel.text = [product formattedPriceWithType:sPriceTypeWish];

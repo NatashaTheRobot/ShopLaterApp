@@ -25,6 +25,7 @@
 @property (weak, nonatomic) IBOutlet UIImageView *priceMatchImageView;
 @property (weak, nonatomic) IBOutlet UIView *buyView;
 @property (weak, nonatomic) IBOutlet UIButton *buyNowButton;
+@property (weak, nonatomic) IBOutlet UIView *labelView;
 
 @property (strong, nonatomic) UILabel *productNameLabel;
 
@@ -88,7 +89,7 @@
     self.productNameLabel.numberOfLines = 0;
     self.productNameLabel.font = font;
     
-    [self addSubview:self.productNameLabel];
+    [self.labelView addSubview:self.productNameLabel];
     
     self.productImageView.image = [product image];
     self.currentPriceLabel.text = [product formattedPriceWithType:sPriceTypeCurrent];

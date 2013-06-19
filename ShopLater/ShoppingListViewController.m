@@ -175,11 +175,14 @@
     CGSize maximumLabelSize = CGSizeMake(250, CGFLOAT_MAX);
     UIFont *font = [UIFont fontWithName:@"HelveticaNeue" size:14];
     CGSize expectedLabelSize = [text sizeWithFont:font constrainedToSize:maximumLabelSize lineBreakMode:NSLineBreakByWordWrapping];
-    CGFloat height = expectedLabelSize.height + 356;
+    CGFloat height = expectedLabelSize.height + 350;
     return CGSizeMake(290, height);
 }
 
-
+- (void)collectionView:(UICollectionView *)collectionView didEndDisplayingCell:(UICollectionViewCell *)cell forItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    [(ProductCollectionViewCell *)cell removeProductLabel];
+}
 
 #pragma mark - NSFetchResultsController Delegate Methods
 

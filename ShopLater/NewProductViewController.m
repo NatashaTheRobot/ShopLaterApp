@@ -25,7 +25,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *currentPriceLabel;
 @property (weak, nonatomic) IBOutlet UILabel *wishPriceLabel;
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
-@property (strong, nonatomic) UIImageView *logoImageView;
+@property (weak, nonatomic) IBOutlet UIImageView *logoImageView;
+
 
 @property (strong, nonatomic) CoreDataManager *coreDataManager;
 @property (strong, nonatomic) Parser *parser;
@@ -97,6 +98,8 @@
                 self.priceSlider.maximumValue = [priceInDollars floatValue];
                 self.priceSlider.value = [priceInDollars floatValue] * 0.8;
                 self.wishPriceLabel.text = [NSString stringWithFormat:@"$%.2f", ([priceInDollars floatValue] * 0.8)];
+                self.logoImageView.image = [Image imageForProvider:self.provider type:sImageTypeLogo];
+                
                 [self.view viewWithTag:1].alpha = 0;
                 
                 Image *image = [self.parser.delegate productImage];

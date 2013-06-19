@@ -302,9 +302,6 @@
                                 <rect key="frame" x="15" y="27" width="290" height="450"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="GgS-bi-hqu">
-                                        <rect key="frame" x="30" y="75" width="230" height="213"/>
-                                    </imageView>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Current Price: $49.98" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="fIY-cK-FzF">
                                         <rect key="frame" x="0.0" y="296" width="290" height="21"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
@@ -329,16 +326,19 @@
                                             <action selector="adjustWishPrice:" destination="cqJ-YD-ehb" eventType="valueChanged" id="OAd-j5-TKG"/>
                                         </connections>
                                     </slider>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="GgS-bi-hqu">
+                                        <rect key="frame" x="30" y="75" width="230" height="213"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="KVw-Qp-SyU">
+                                        <rect key="frame" x="195" y="222" width="65" height="65"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Product Name" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="9pE-xD-z7C">
                                         <rect key="frame" x="11" y="12" width="268" height="61"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="KVw-Qp-SyU">
-                                        <rect key="frame" x="195" y="222" width="65" height="65"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    </imageView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                             </view>
@@ -351,6 +351,7 @@
                         <outlet property="activityIndicator" destination="k6g-GJ-Pfr" id="Jd0-Ub-xhV"/>
                         <outlet property="currentPriceLabel" destination="fIY-cK-FzF" id="aKy-P5-KHj"/>
                         <outlet property="imageView" destination="GgS-bi-hqu" id="yUP-kb-37y"/>
+                        <outlet property="logoImageView" destination="KVw-Qp-SyU" id="qeG-Ka-xCi"/>
                         <outlet property="priceSlider" destination="AhZ-fA-MLm" id="UZD-V8-f7l"/>
                         <outlet property="productNameLabel" destination="9pE-xD-z7C" id="kaG-Ol-1rL"/>
                         <outlet property="wishPriceLabel" destination="aAJ-Yn-Unf" id="HQu-un-rtP"/>
@@ -385,6 +386,7 @@
                 <relationship kind="outlet" name="activityIndicator" candidateClass="UIActivityIndicatorView"/>
                 <relationship kind="outlet" name="currentPriceLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="imageView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="logoImageView" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="priceSlider" candidateClass="UISlider"/>
                 <relationship kind="outlet" name="productNameLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="wishPriceLabel" candidateClass="UILabel"/>

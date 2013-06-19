@@ -93,7 +93,7 @@
                 NSNumber *priceInDollars = [(Price *)[self.parser.delegate productPrice] dollarAmount];
                 NSString *nameUnformatted = [self.parser.delegate productName];
                 self.productNameLabel.text = [Product formattedName:nameUnformatted];
-                self.currentPriceLabel.text = [NSString stringWithFormat:@"Current Price: %@",
+                self.currentPriceLabel.text = [NSString stringWithFormat:@"%@",
                                                [Price formattedPriceFromNumber:priceInDollars]];
                 self.priceSlider.maximumValue = [priceInDollars floatValue];
                 self.priceSlider.value = [priceInDollars floatValue] * 0.8;

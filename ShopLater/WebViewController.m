@@ -39,6 +39,7 @@
 - (void)checkIfProductPage:(NSString *)urlString;
 - (void)loadWebPage;
 - (void)setupToolbarButtons;
+- (void)prepareToSlideToMenu;
 - (void)revealMenu;
 
 @end
@@ -64,6 +65,11 @@
     
 }
 
+- (void)viewDidUnload
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:ECSlidingViewUnderLeftWillAppear object:nil];
+}
+
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
@@ -83,6 +89,7 @@
     }
     
     [self.view addGestureRecognizer:self.slidingViewController.panGesture];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(prepareToSlideToMenu) name:ECSlidingViewUnderLeftWillAppear object:nil];
 }
 
 - (IBAction)backWithButton:(id)sender
@@ -147,10 +154,16 @@
     [self performSegueWithIdentifier:@"toNewProduct" sender:self];
 }
 
-- (void)revealMenu
+
+- (void)prepareToSlideToMenu
 {
     [self.webView stringByEvaluatingJavaScriptFromString:@"document.activeElement.blur()"];
     ((MenuViewController *)self.slidingViewController.underLeftViewController).selectedProvider = self.provider;
+}
+
+- (void)revealMenu
+{
+    [self prepareToSlideToMenu];
     [self.slidingViewController anchorTopViewTo:ECRight];
 }
 

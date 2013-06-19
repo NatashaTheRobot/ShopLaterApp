@@ -251,12 +251,50 @@
                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" hidesWhenStopped="YES" style="gray" id="IZX-dF-gK6">
                                 <rect key="frame" x="150" y="223" width="20" height="20"/>
                             </activityIndicatorView>
+                            <view contentMode="scaleToFill" id="Sz1-K2-9Bz">
+                                <rect key="frame" x="0.0" y="-3" width="320" height="26"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="r7e-Po-aR6">
+                                        <rect key="frame" x="0.0" y="-9" width="44" height="44"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                        <state key="normal" backgroundImage="btn_browser_back.png">
+                                            <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="highlighted">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="backWithButton:" destination="NYw-1f-qMr" eventType="touchUpInside" id="pDX-Dp-GYk"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="RNl-m7-lzZ">
+                                        <rect key="frame" x="273" y="-9" width="44" height="44"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                        <state key="normal" backgroundImage="btn_browser_forward.png">
+                                            <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="highlighted">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="forwardWithButton:" destination="NYw-1f-qMr" eventType="touchUpInside" id="4d5-U5-WiG"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.46942148760000002" green="0.46942148760000002" blue="0.46942148760000002" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.94901960784313721" green="0.94117647058823528" blue="0.94901960784313721" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <navigationItem key="navigationItem" id="wgj-Ie-nc0"/>
                     <connections>
                         <outlet property="activityIndicator" destination="IZX-dF-gK6" id="BJx-Om-S5e"/>
+                        <outlet property="topBarView" destination="Sz1-K2-9Bz" id="Bbp-UA-DTO"/>
                         <outlet property="webView" destination="ig6-DV-3fw" id="8iU-O1-qQ2"/>
                         <segue destination="cqJ-YD-ehb" kind="push" identifier="toNewProduct" id="jhZ-F3-NRF"/>
                     </connections>
@@ -346,6 +384,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="btn_browser_back.png" width="44" height="44"/>
+        <image name="btn_browser_forward.png" width="44" height="44"/>
         <image name="buy_now_btn_background.png" width="100" height="35"/>
         <image name="delete_btn.png" width="17" height="15"/>
         <image name="price_match.png" width="102" height="98"/>
@@ -405,7 +445,10 @@
         <class className="WebViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/WebViewController.h"/>
             <relationships>
+                <relationship kind="action" name="backWithButton:"/>
+                <relationship kind="action" name="refreshWithButton:"/>
                 <relationship kind="outlet" name="activityIndicator" candidateClass="UIActivityIndicatorView"/>
+                <relationship kind="outlet" name="topBarView" candidateClass="UIView"/>
                 <relationship kind="outlet" name="webView" candidateClass="UIWebView"/>
             </relationships>
         </class>

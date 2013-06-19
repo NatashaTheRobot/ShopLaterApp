@@ -16,13 +16,17 @@
 #import "ButtonFactory.h"
 #import "NSString+SLExtensions.h"
 
-@interface WebViewController ()
+@interface WebViewController () <UIScrollViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UIWebView *webView;
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
 
 @property (strong, nonatomic) UIBarButtonItem *buyLaterButton;
 @property (strong, nonatomic) UIImageView *logoImageView;
+@property (weak, nonatomic) IBOutlet UIView *topBarView;
+
+- (IBAction)backWithButton:(id)sender;
+- (IBAction)forwardWithButton:(id)sender;
 
 - (void)customizeNavigationBar;
 - (void)goBack;
@@ -41,6 +45,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    [[self.webView scrollView] setContentInset:UIEdgeInsetsMake(26, 0, 0, 0)];
+    self.webView.scrollView.delegate = self;
     
     [self.activityIndicator startAnimating];
     
@@ -67,6 +74,16 @@
     [self.view addGestureRecognizer:self.slidingViewController.panGesture];
     
     [self addLogoToNavigationBar];
+}
+
+- (IBAction)backWithButton:(id)sender
+{
+    [self.webView goBack];
+}
+
+- (IBAction)forwardWithButton:(id)sender
+{
+    [self.webView goForward];
 }
 
 - (void)customizeNavigationBar
@@ -197,6 +214,17 @@
         newProductViewController.provider = self.provider;
     }
     
+}
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView
+{
+    if ( scrollView.contentOffset.y >= -26 && scrollView.contentOffset.y < 26 )
+    {
+        self.topBarView.frame = CGRectMake(0, -26 - scrollView.contentOffset.y, 320, 26);
+        
+    } else if ( scrollView.contentOffset.y < -26) {
+        self.topBarView.frame = CGRectMake(0, 0, 320, 26);
+    }
 }
 
 @end

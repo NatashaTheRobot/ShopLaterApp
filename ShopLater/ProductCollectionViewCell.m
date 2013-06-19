@@ -36,9 +36,18 @@
     self = [super initWithCoder:aDecoder];
     
     if (self) {
+        self.layer.masksToBounds = NO;
+        
         self.contentView.layer.cornerRadius = 4;
         self.contentView.layer.borderColor = [[UIColor colorWithRed:80/255.0 green:80/255.0 blue:80/255.0 alpha:0.3] CGColor];
         self.contentView.layer.borderWidth = 1;
+        
+        self.layer.shadowColor = [[UIColor colorWithRed:80/255.0 green:80/255.0 blue:80/255.0 alpha:1] CGColor];
+        self.layer.shadowOffset = CGSizeMake(2, 2);
+        self.layer.shadowRadius = 1;
+        self.layer.shadowPath = [[UIBezierPath bezierPathWithRoundedRect:self.bounds
+                                                            cornerRadius:self.contentView.layer.cornerRadius] CGPath];
+        self.layer.shadowOpacity = 0.5;
     }
     
     return self;

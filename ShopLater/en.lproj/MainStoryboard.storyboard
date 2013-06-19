@@ -193,6 +193,8 @@
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
                                     <outlet property="activityIndicator" destination="erl-bU-Rg9" id="Vxc-VW-kmG"/>
+                                    <outlet property="buyNowButton" destination="ZNc-lV-7aD" id="SEp-fH-OaY"/>
+                                    <outlet property="buyView" destination="06O-jh-mVc" id="n1e-Fs-AqD"/>
                                     <outlet property="currentPriceLabel" destination="WNL-yT-hkY" id="iUT-64-41c"/>
                                     <outlet property="logoImageView" destination="lxs-oN-Bfj" id="s6U-bF-XpP"/>
                                     <outlet property="priceMatchImageView" destination="Lck-pp-NZR" id="9Zw-UV-DLh"/>
@@ -375,6 +377,8 @@
             <relationships>
                 <relationship kind="action" name="deleteProductWithButton:"/>
                 <relationship kind="outlet" name="activityIndicator" candidateClass="UIActivityIndicatorView"/>
+                <relationship kind="outlet" name="buyNowButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="buyView" candidateClass="UIView"/>
                 <relationship kind="outlet" name="currentPriceLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="logoImageView" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="priceMatchImageView" candidateClass="UIImageView"/>

@@ -54,13 +54,10 @@
         self.priceMatchImageView.alpha = 1;
     }
     
-    [self.activityIndicator startAnimating];
-    
     if ([product.priceLoadedInSession integerValue] == 0) {
+        [self.activityIndicator startAnimating];
         [self parseCurrentPrice];
-    } else {
-        [self.activityIndicator stopAnimating];
-    }
+    } 
 }
 
 - (void)createProductLabelForProduct:(Product *)product

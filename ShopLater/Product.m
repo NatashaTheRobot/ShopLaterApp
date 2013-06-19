@@ -2,7 +2,7 @@
 //  Product.m
 //  ShopLater
 //
-//  Created by Reza Fatahi on 6/14/13.
+//  Created by Natasha Murashev on 6/19/13.
 //  Copyright (c) 2013 Natasha Murashev. All rights reserved.
 //
 
@@ -20,6 +20,7 @@
 @dynamic name;
 @dynamic priceDifference;
 @dynamic url;
+@dynamic priceLoadedInSession;
 @dynamic images;
 @dynamic prices;
 @dynamic provider;

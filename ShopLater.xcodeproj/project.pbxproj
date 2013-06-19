@@ -22,7 +22,6 @@
 		34449EF5176FCDE8000873DC /* nordstrom_logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 34449EF3176FCDE8000873DC /* nordstrom_logo@2x.png */; };
 		3447CEBA176B774700BF0490 /* Identifier.m in Sources */ = {isa = PBXBuildFile; fileRef = 3447CEB9176B774700BF0490 /* Identifier.m */; };
 		3447CEC0176B774800BF0490 /* Price.m in Sources */ = {isa = PBXBuildFile; fileRef = 3447CEBF176B774800BF0490 /* Price.m */; };
-		3447CEC3176B774900BF0490 /* Product.m in Sources */ = {isa = PBXBuildFile; fileRef = 3447CEC2176B774800BF0490 /* Product.m */; };
 		3447CEC6176B774900BF0490 /* Image.m in Sources */ = {isa = PBXBuildFile; fileRef = 3447CEC5176B774900BF0490 /* Image.m */; };
 		3454A1EF1770F3ED006D8CD5 /* JcrewParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 3454A1EE1770F3ED006D8CD5 /* JcrewParser.m */; };
 		3454A1F21770F7E0006D8CD5 /* jcrew_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 3454A1F01770F7E0006D8CD5 /* jcrew_logo.png */; };
@@ -40,6 +39,7 @@
 		34BE7CBD176F5BCA0005FB14 /* buybuybaby_logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 34BE7CBB176F5BCA0005FB14 /* buybuybaby_logo@2x.png */; };
 		34BE7CC0176F77330005FB14 /* NordstromParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 34BE7CBF176F77330005FB14 /* NordstromParser.m */; };
 		34C4E09E176BB7FF00D1EFD5 /* NSString+SLExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 34C4E09D176BB7FF00D1EFD5 /* NSString+SLExtensions.m */; };
+		9C08B5891771DB6800C7FF75 /* Product.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C08B5881771DB6800C7FF75 /* Product.m */; };
 		9C195DB51767510500183192 /* ProductTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C195DB41767510500183192 /* ProductTableViewCell.m */; };
 		9C195DB81767588B00183192 /* Price+SLExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C195DB71767588B00183192 /* Price+SLExtensions.m */; };
 		9C195DC417679B4E00183192 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C195DC317679B4D00183192 /* QuartzCore.framework */; };
@@ -125,8 +125,6 @@
 		3447CEB9176B774700BF0490 /* Identifier.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Identifier.m; sourceTree = "<group>"; };
 		3447CEBE176B774800BF0490 /* Price.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Price.h; sourceTree = "<group>"; };
 		3447CEBF176B774800BF0490 /* Price.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Price.m; sourceTree = "<group>"; };
-		3447CEC1176B774800BF0490 /* Product.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Product.h; sourceTree = "<group>"; };
-		3447CEC2176B774800BF0490 /* Product.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Product.m; sourceTree = "<group>"; };
 		3447CEC4176B774900BF0490 /* Image.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Image.h; sourceTree = "<group>"; };
 		3447CEC5176B774900BF0490 /* Image.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Image.m; sourceTree = "<group>"; };
 		3454A1ED1770F3ED006D8CD5 /* JcrewParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JcrewParser.h; sourceTree = "<group>"; };
@@ -153,6 +151,8 @@
 		34BE7CBF176F77330005FB14 /* NordstromParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NordstromParser.m; sourceTree = "<group>"; };
 		34C4E09C176BB7FF00D1EFD5 /* NSString+SLExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+SLExtensions.h"; sourceTree = "<group>"; };
 		34C4E09D176BB7FF00D1EFD5 /* NSString+SLExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+SLExtensions.m"; sourceTree = "<group>"; };
+		9C08B5871771DB6800C7FF75 /* Product.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Product.h; sourceTree = "<group>"; };
+		9C08B5881771DB6800C7FF75 /* Product.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Product.m; sourceTree = "<group>"; };
 		9C195DB31767510500183192 /* ProductTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductTableViewCell.h; sourceTree = "<group>"; };
 		9C195DB41767510500183192 /* ProductTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductTableViewCell.m; sourceTree = "<group>"; };
 		9C195DB61767588B00183192 /* Price+SLExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Price+SLExtensions.h"; sourceTree = "<group>"; };
@@ -338,8 +338,8 @@
 				9C927B9E17627A9A00570F45 /* ShopLater.xcdatamodeld */,
 				9C927B97176278B800570F45 /* CoreDataManager.h */,
 				9C927B98176278B800570F45 /* CoreDataManager.m */,
-				3447CEC1176B774800BF0490 /* Product.h */,
-				3447CEC2176B774800BF0490 /* Product.m */,
+				9C08B5871771DB6800C7FF75 /* Product.h */,
+				9C08B5881771DB6800C7FF75 /* Product.m */,
 				9C226426176C83F100C3FDD9 /* Provider.h */,
 				9C226427176C83F100C3FDD9 /* Provider.m */,
 				3447CEBE176B774800BF0490 /* Price.h */,
@@ -631,7 +631,6 @@
 				9C195DD71767AE2500183192 /* Product+SLExtensions.m in Sources */,
 				3447CEBA176B774700BF0490 /* Identifier.m in Sources */,
 				3447CEC0176B774800BF0490 /* Price.m in Sources */,
-				3447CEC3176B774900BF0490 /* Product.m in Sources */,
 				3447CEC6176B774900BF0490 /* Image.m in Sources */,
 				346DE78D176B794200090C0E /* Identifier+SLExtensions.m in Sources */,
 				346DE796176B7F8800090C0E /* HomedepotParser.m in Sources */,
@@ -653,6 +652,7 @@
 				34449EE5176FC2F9000873DC /* SearsParser.m in Sources */,
 				9C9519FB1770876400F70377 /* ButtonFactory.m in Sources */,
 				3454A1EF1770F3ED006D8CD5 /* JcrewParser.m in Sources */,
+				9C08B5891771DB6800C7FF75 /* Product.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -32,9 +32,18 @@
         
         NSScanner* scanner = [[NSScanner alloc] initWithString:string];
         
-        [scanner scanUpToString:startTag intoString:nil];
-        scanner.scanLocation += [startTag length];
-        [scanner scanUpToString:endTag intoString:&scanString];
+        @try {
+            [scanner scanUpToString:startTag intoString:nil];
+            scanner.scanLocation += [startTag length];
+            [scanner scanUpToString:endTag intoString:&scanString];
+        }
+        @catch (NSException *exception) {
+            return nil;
+        }
+        @finally {
+            return scanString;
+        }
+    
     }
 
     

@@ -147,6 +147,7 @@
                                        self.provider, @"provider",
                                        [self.parser.delegate mobileURLString], @"mobileURL",
                                        [NSDate date], @"createdAt",
+                                       [NSNumber numberWithInteger:1], @"priceLoadedInSession",
                                        nil];
     self.coreDataManager = [CoreDataManager sharedManager];
     

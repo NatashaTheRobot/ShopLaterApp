@@ -87,8 +87,10 @@
     
     [self.activityIndicator startAnimating];
     
-    if (!self.priceChecked) {
+    if ([product.priceLoadedInSession integerValue] == 0) {
         [self parseCurrentPrice];
+    } else {
+        [self.activityIndicator stopAnimating];
     }
 }
 
@@ -111,6 +113,7 @@
             @finally {
                 if (newPrice) {
                     Price *currentPrice = [self.product priceWithType:sPriceTypeCurrent];
+                    self.product.priceLoadedInSession = [NSNumber numberWithInteger:1];
                     if ([currentPrice.dollarAmount floatValue] != [newPrice floatValue]) {
                         currentPrice.dollarAmount = newPrice;
                         self.product.priceDifference = [self.product priceDifference];

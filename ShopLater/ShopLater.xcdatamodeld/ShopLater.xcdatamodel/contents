@@ -22,6 +22,7 @@
         <attribute name="mobileURL" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="priceDifference" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="priceLoadedInSession" optional="YES" attributeType="Boolean" defaultValueString="NO" syncable="YES"/>
         <attribute name="url" attributeType="String" syncable="YES"/>
         <relationship name="images" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Image" inverseName="product" inverseEntity="Image" syncable="YES"/>
         <relationship name="prices" toMany="YES" minCount="1" deletionRule="Cascade" destinationEntity="Price" inverseName="product" inverseEntity="Price" syncable="YES"/>
@@ -39,7 +40,7 @@
         <element name="Identifier" positionX="160" positionY="192" width="128" height="75"/>
         <element name="Image" positionX="448" positionY="-27" width="128" height="105"/>
         <element name="Price" positionX="160" positionY="192" width="128" height="103"/>
-        <element name="Product" positionX="376" positionY="189" width="128" height="180"/>
+        <element name="Product" positionX="376" positionY="189" width="128" height="195"/>
         <element name="Provider" positionX="198" positionY="-171" width="128" height="135"/>
     </elements>
 </model>

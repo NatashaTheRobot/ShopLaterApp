@@ -2,7 +2,7 @@
 //  Product.h
 //  ShopLater
 //
-//  Created by Reza Fatahi on 6/14/13.
+//  Created by Natasha Murashev on 6/19/13.
 //  Copyright (c) 2013 Natasha Murashev. All rights reserved.
 //
 
@@ -19,6 +19,7 @@
 @property (nonatomic, retain) NSString * name;
 @property (nonatomic, retain) NSNumber * priceDifference;
 @property (nonatomic, retain) NSString * url;
+@property (nonatomic, retain) NSNumber * priceLoadedInSession;
 @property (nonatomic, retain) NSSet *images;
 @property (nonatomic, retain) NSSet *prices;
 @property (nonatomic, retain) Provider *provider;

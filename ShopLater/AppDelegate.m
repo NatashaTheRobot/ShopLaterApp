@@ -7,6 +7,8 @@
 //
 
 #import "AppDelegate.h"
+#import "CoreDataManager.h"
+#import "Product.h"
 
 @implementation AppDelegate
 
@@ -54,6 +56,20 @@
 {
     // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later. 
     // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
+    
+    CoreDataManager *coreDataManager = [CoreDataManager sharedManager];
+    
+    NSFetchedResultsController *fetchedResultsController = [coreDataManager fetchEntitiesWithClassName:NSStringFromClass([Product class])
+                                                sortDescriptors:@[[NSSortDescriptor sortDescriptorWithKey:@"createdAt" ascending:YES]]
+                                             sectionNameKeyPath:nil
+                                                      predicate:nil];
+    
+    [fetchedResultsController.fetchedObjects enumerateObjectsUsingBlock:^(Product *product, NSUInteger idx, BOOL *stop) {
+        product.priceLoadedInSession = [NSNumber numberWithInteger:0];
+    }];
+    
+    [coreDataManager saveDataInManagedContextUsingBlock:^(BOOL saved, NSError *error) {
+    }];
 }
 
 - (void)applicationWillEnterForeground:(UIApplication *)application

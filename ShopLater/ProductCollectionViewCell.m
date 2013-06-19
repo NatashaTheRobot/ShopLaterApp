@@ -114,7 +114,7 @@
                 return;
             }
             @finally {
-                if (newPrice) {
+                if ([newPrice floatValue] > 0) {
                     Price *currentPrice = [self.product priceWithType:sPriceTypeCurrent];
                     self.product.priceLoadedInSession = [NSNumber numberWithInteger:1];
                     if ([currentPrice.dollarAmount floatValue] != [newPrice floatValue]) {

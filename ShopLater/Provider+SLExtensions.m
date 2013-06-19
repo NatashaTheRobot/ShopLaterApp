@@ -17,7 +17,7 @@
 + (NSString *)urlStringFromProviderName:(NSString *)providerName
 {
     if ([providerName isEqualToString:@"dupontregistry"]) {
-        return @"http://http://m.dupontregistry.com/listings.cfm";
+        return @"http://m.dupontregistry.com/listings.cfm";
     } else if ([providerName isEqualToString:@"nordstrom"]) {
         return [NSString stringWithFormat:@"http://shop.%@.com", providerName];
     } else {

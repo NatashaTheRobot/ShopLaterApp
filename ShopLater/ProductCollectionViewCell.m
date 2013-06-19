@@ -31,18 +31,23 @@
 
 @implementation ProductCollectionViewCell
 
-- (id)initWithFrame:(CGRect)frame
+- (id)initWithCoder:(NSCoder *)aDecoder
 {
-    self = [super initWithFrame:frame];
+    self = [super initWithCoder:aDecoder];
+    
     if (self) {
-        // Initialization code
+        self.contentView.layer.cornerRadius = 4;
+        self.contentView.layer.borderColor = [[UIColor colorWithRed:80/255.0 green:80/255.0 blue:80/255.0 alpha:0.3] CGColor];
+        self.contentView.layer.borderWidth = 1;
     }
+    
     return self;
 }
 
 - (void)setProduct:(Product *)product
 {
     _product = product;
+    
     self.productNameLabel.text = [product formattedName:product.name];
     self.productImageView.image = [product image];
     self.currentPriceLabel.text = [product formattedPriceWithType:sPriceTypeCurrent];

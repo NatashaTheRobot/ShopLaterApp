@@ -151,9 +151,11 @@
     [self.delegate buyProduct:self.product];
 }
 
-- (void)removeProductLabel
+- (void)clearNameLabelView
 {
-    [self.productNameLabel removeFromSuperview];
+    [self.labelView.subviews enumerateObjectsUsingBlock:^(UIView *view, NSUInteger idx, BOOL *stop) {
+        [view removeFromSuperview];
+    }];
 }
 
 @end

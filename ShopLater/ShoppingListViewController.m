@@ -160,6 +160,8 @@
     
     Product *product = [self.fetchedResultsController objectAtIndexPath:indexPath];
     
+    [cell clearNameLabelView];
+    
     cell.product = product;
     
     cell.delegate = self;
@@ -181,7 +183,7 @@
 
 - (void)collectionView:(UICollectionView *)collectionView didEndDisplayingCell:(UICollectionViewCell *)cell forItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    [(ProductCollectionViewCell *)cell removeProductLabel];
+    [(ProductCollectionViewCell *)cell clearNameLabelView];
 }
 
 #pragma mark - NSFetchResultsController Delegate Methods

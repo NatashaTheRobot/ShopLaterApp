@@ -65,43 +65,12 @@
     self.navigationItem.rightBarButtonItem = [ButtonFactory barButtonItemWithImageName:@"save_btn.png"
                                                                                 target:self
                                                                                 action:@selector(saveProduct)];
+    self.navigationItem.rightBarButtonItem.enabled = NO;
 }
 
 - (void)goBack
 {
     [self.navigationController popViewControllerAnimated:YES];
-}
-
-- (void)saveProduct
-{
-    [self createProduct];
-    NSDictionary *wishPriceDictionary = [NSDictionary dictionaryWithObjectsAndKeys:
-                                         [NSNumber numberWithFloat:self.priceSlider.value], @"dollarAmount",
-                                         sPriceTypeWish, @"type",
-                                         [NSDate date], @"created_at",
-                                         nil];
-    Price *wishPrice = [self.coreDataManager createEntityWithClassName:NSStringFromClass([Price class])
-                                                  attributesDictionary:wishPriceDictionary];
-    self.product.prices = [self.product.prices setByAddingObject:wishPrice];
-    self.product.priceDifference = [self.product currentWishPriceDifference];
-    
-    [self.coreDataManager saveDataInManagedContextUsingBlock:^(BOOL saved, NSError *error) {
-        if (saved) {
-            UINavigationController *productListNavigationController = [self.storyboard instantiateViewControllerWithIdentifier:@"first"];
-            
-            [self.slidingViewController resetTopViewWithAnimations:nil onComplete:^{
-                CGRect frame = self.slidingViewController.topViewController.view.frame;
-                self.slidingViewController.topViewController = productListNavigationController;
-                self.slidingViewController.topViewController.view.frame = frame;
-                [self.slidingViewController resetTopView];
-                
-            }];
-        } else {
-            NSLog(@"%@", error.description);
-            // show alert view?
-        }
-    }];
-    
 }
 
 - (void)displayProduct
@@ -135,6 +104,8 @@
                     [self.activityIndicator stopAnimating];
                     
                 }];
+                
+                self.navigationItem.rightBarButtonItem.enabled = YES;
             }
         });
     });
@@ -157,6 +128,38 @@
     [self.product addImagesObject:[self.parser.delegate productImage]];
     [self.product addPricesObject:[self.parser.delegate productPrice]];
     
+    
+}
+
+- (void)saveProduct
+{
+    [self createProduct];
+    NSDictionary *wishPriceDictionary = [NSDictionary dictionaryWithObjectsAndKeys:
+                                         [NSNumber numberWithFloat:self.priceSlider.value], @"dollarAmount",
+                                         sPriceTypeWish, @"type",
+                                         [NSDate date], @"created_at",
+                                         nil];
+    Price *wishPrice = [self.coreDataManager createEntityWithClassName:NSStringFromClass([Price class])
+                                                  attributesDictionary:wishPriceDictionary];
+    self.product.prices = [self.product.prices setByAddingObject:wishPrice];
+    self.product.priceDifference = [self.product currentWishPriceDifference];
+    
+    [self.coreDataManager saveDataInManagedContextUsingBlock:^(BOOL saved, NSError *error) {
+        if (saved) {
+            UINavigationController *productListNavigationController = [self.storyboard instantiateViewControllerWithIdentifier:@"first"];
+            
+            [self.slidingViewController resetTopViewWithAnimations:nil onComplete:^{
+                CGRect frame = self.slidingViewController.topViewController.view.frame;
+                self.slidingViewController.topViewController = productListNavigationController;
+                self.slidingViewController.topViewController.view.frame = frame;
+                [self.slidingViewController resetTopView];
+                
+            }];
+        } else {
+            NSLog(@"%@", error.description);
+            // show alert view?
+        }
+    }];
     
 }
 

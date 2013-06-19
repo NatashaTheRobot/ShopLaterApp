@@ -99,7 +99,10 @@
                                                [Price formattedPriceFromNumber:priceInDollars]];
                 self.priceSlider.maximumValue = [priceInDollars floatValue];
                 self.priceSlider.value = [priceInDollars floatValue] * 0.8;
-                self.wishPriceLabel.text = [NSString stringWithFormat:@"$%.2f", ([priceInDollars floatValue] * 0.8)];
+                
+                NSString *wishPrice = [Price formattedPriceFromNumber:[NSNumber numberWithFloat:([priceInDollars floatValue] * 0.8)]];
+                self.wishPriceLabel.text = wishPrice;
+                
                 self.logoImageView.image = [Image imageForProvider:self.provider type:sImageTypeLogo];
                 
                 [self.view viewWithTag:1].alpha = 0;
@@ -181,7 +184,8 @@
 
 - (IBAction)adjustWishPrice:(UISlider *)slider
 {
-    self.wishPriceLabel.text = [NSString stringWithFormat:@"$%.2f", slider.value];
+    NSString *formattedPrice = [Price formattedPriceFromNumber:[NSNumber numberWithFloat:slider.value]];
+    self.wishPriceLabel.text = formattedPrice;
 }
 
 @end

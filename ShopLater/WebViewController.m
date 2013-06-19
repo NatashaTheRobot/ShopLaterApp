@@ -23,7 +23,6 @@
 
 @property (strong, nonatomic) UIBarButtonItem *buyLaterButton;
 @property (strong, nonatomic) UIImageView *logoImageView;
-@property (strong, nonatomic) NSMutableArray *toolbarButtonsRight;
 
 - (void)customizeNavigationBar;
 - (void)goBack;
@@ -76,7 +75,8 @@
                                                   forBarMetrics:UIBarMetricsDefault];
     
     self.buyLaterButton = [ButtonFactory barButtonItemWithImageName:@"buy_later_btn.png" target:self action:@selector(buyLaterAction)];
-    [self.navigationItem setRightBarButtonItem:self.buyLaterButton];
+    self.navigationItem.rightBarButtonItem = self.buyLaterButton;
+    self.navigationItem.rightBarButtonItem.enabled = NO;
 }
 
 - (void)addLogoToNavigationBar
@@ -96,10 +96,7 @@
 
 
 - (void)setupToolbarButtons
-{
-    self.toolbarButtonsRight = [self.navigationItem.rightBarButtonItems mutableCopy];
-    [self hideBuyLaterButton];
-    
+{    
     if (self.fromMenu) {
         UIBarButtonItem *menuButton = [ButtonFactory barButtonItemWithImageName:@"menu_btn.png"
                                                                                    target:self
@@ -131,20 +128,6 @@
     [self.slidingViewController anchorTopViewTo:ECRight];
 }
 
-- (void)hideBuyLaterButton
-{
-    [self.toolbarButtonsRight removeObject:self.buyLaterButton];
-    [self.navigationItem setRightBarButtonItems:self.toolbarButtonsRight animated:NO];
-}
-
-- (void)showBuyLaterButton
-{
-    if (![self.toolbarButtonsRight containsObject:self.buyLaterButton]) {
-        [self.toolbarButtonsRight addObject:self.buyLaterButton];
-        [self.navigationItem setRightBarButtonItems:self.toolbarButtonsRight animated:YES];
-    }
-}
-
 - (void)loadWebPage
 {
     NSString *urlString;
@@ -174,39 +157,36 @@
 
 - (void)checkIfProductPage:(NSString *)urlString
 {
+    BOOL providerPage = !([urlString rangeOfString:self.provider.name].location == NSNotFound);
     
+    BOOL newProduct = [[CoreDataManager sharedManager] uniqueAttributeForClassName:NSStringFromClass([Product class])
+                                                                     attributeName:@"mobileURL" attributeValue:urlString];
     
-    if ([self.provider.name isEqualToString:@"lululemon"]) {
-        NSString *urlLululemonPage = self.webView.request.URL.absoluteString;
-        if ([urlLululemonPage containsString:@"category"]) {
-            [self hideBuyLaterButton];
-        } else if (![urlLululemonPage containsString:@"category"]) {
-            [self showBuyLaterButton];
+    BOOL lululemonCategory = [self.provider.name isEqualToString:@"lululemon"]  && [urlString containsString:@"category"];
+    
+    __block BOOL productPage = YES;
+    
+    [self.provider.identifiers enumerateObjectsUsingBlock:^(Identifier *identifier, BOOL *stop) {
+        if ([urlString rangeOfString:identifier.name].location == NSNotFound) {
+            productPage = NO;
+            *stop = YES;
         }
-    } else {
-        
-        BOOL providerPage = !([urlString rangeOfString:self.provider.name].location == NSNotFound);
-        
-        BOOL newProduct = [[CoreDataManager sharedManager] uniqueAttributeForClassName:NSStringFromClass([Product class])
-                                                                         attributeName:@"mobileURL" attributeValue:urlString];
-        
-        __block BOOL productPage = YES;
-        
-        [self.provider.identifiers enumerateObjectsUsingBlock:^(Identifier *identifier, BOOL *stop) {
-            if ([urlString rangeOfString:identifier.name].location == NSNotFound) {
-                productPage = NO;
-                *stop = YES;
+    }];
+    
+    dispatch_async(dispatch_get_main_queue(), ^{
+        if (providerPage && productPage && newProduct) {
+            if (lululemonCategory) {
+                self.navigationItem.rightBarButtonItem.enabled = NO;
+                return;
             }
-        }];
+            self.navigationItem.rightBarButtonItem.enabled = YES;
+            return;
+        }
         
-        dispatch_async(dispatch_get_main_queue(), ^{
-            if (providerPage && productPage && newProduct) {
-                [self showBuyLaterButton];
-            } else {
-                [self hideBuyLaterButton];
-            }
-        });
-    }
+        self.navigationItem.rightBarButtonItem.enabled = NO;
+        
+    });
+
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender

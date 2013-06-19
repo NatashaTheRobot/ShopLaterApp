@@ -163,4 +163,9 @@
     [self.delegate buyProduct:self.product];
 }
 
+- (void)removeProductLabel
+{
+    [self.productNameLabel removeFromSuperview];
+}
+
 @end

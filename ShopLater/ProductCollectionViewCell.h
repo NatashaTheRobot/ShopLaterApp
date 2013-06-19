@@ -16,4 +16,6 @@
 
 @property (strong, nonatomic) id<ProductDelegate> delegate;
 
+- (void)removeProductLabel;
+
 @end

@@ -89,56 +89,39 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.94901960784313721" green="0.94117647058823528" blue="0.94901960784313721" alpha="1" colorSpace="calibratedRGB"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="15" minimumInteritemSpacing="15" id="GNe-yG-F4m">
-                            <size key="itemSize" width="290" height="356"/>
+                            <size key="itemSize" width="290" height="350"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                             <inset key="sectionInset" minX="10" minY="15" maxX="10" maxY="15"/>
                         </collectionViewFlowLayout>
                         <cells>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" contentMode="center" reuseIdentifier="product" id="98s-el-Tfo" customClass="ProductCollectionViewCell">
-                                <rect key="frame" x="15" y="15" width="290" height="356"/>
+                                <rect key="frame" x="15" y="15" width="290" height="350"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="290" height="356"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="290" height="350"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" id="bvq-oC-b2k">
-                                            <rect key="frame" x="29" y="66" width="230" height="213"/>
+                                            <rect key="frame" x="29" y="61" width="230" height="213"/>
                                         </imageView>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" id="lxs-oN-Bfj">
-                                            <rect key="frame" x="194" y="214" width="65" height="65"/>
+                                            <rect key="frame" x="194" y="209" width="65" height="65"/>
                                         </imageView>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Buy Price:   " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="xLt-Mb-BGR">
-                                            <rect key="frame" x="10" y="287" width="81" height="21"/>
+                                            <rect key="frame" x="10" y="282" width="81" height="21"/>
                                             <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="$49.99" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="YOq-2x-xkd">
-                                            <rect key="frame" x="79" y="287" width="132" height="21"/>
+                                            <rect key="frame" x="79" y="282" width="132" height="21"/>
                                             <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="8za-b2-NDK">
-                                            <rect key="frame" x="258" y="0.0" width="36" height="35"/>
-                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                            <state key="normal" image="delete_btn.png">
-                                                <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
-                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                            </state>
-                                            <state key="highlighted">
-                                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                            </state>
-                                            <connections>
-                                                <action selector="deleteProductWithButton:" destination="98s-el-Tfo" eventType="touchUpInside" id="mkP-Mc-qXJ"/>
-                                            </connections>
-                                        </button>
-                                        <imageView userInteractionEnabled="NO" alpha="0.0" contentMode="scaleToFill" image="price_match.png" id="Lck-pp-NZR">
-                                            <rect key="frame" x="194" y="20" width="102" height="98"/>
-                                        </imageView>
                                         <view contentMode="scaleToFill" id="06O-jh-mVc">
-                                            <rect key="frame" x="-2" y="316" width="292" height="40"/>
+                                            <rect key="frame" x="-2" y="311" width="292" height="40"/>
                                             <subviews>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="$49.99" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="WNL-yT-hkY">
                                                     <rect key="frame" x="14" y="0.0" width="159" height="40"/>
@@ -167,9 +150,26 @@
                                             <color key="backgroundColor" red="0.94901960784313721" green="0.94117647058823528" blue="0.94901960784313721" alpha="1" colorSpace="calibratedRGB"/>
                                         </view>
                                         <view contentMode="scaleToFill" id="5vY-5H-2Zx">
-                                            <rect key="frame" x="9" y="8" width="250" height="50"/>
+                                            <rect key="frame" x="9" y="8" width="250" height="30"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         </view>
+                                        <imageView userInteractionEnabled="NO" alpha="0.0" contentMode="scaleToFill" image="price_match.png" id="Lck-pp-NZR">
+                                            <rect key="frame" x="194" y="20" width="102" height="98"/>
+                                        </imageView>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="8za-b2-NDK">
+                                            <rect key="frame" x="250" y="4" width="36" height="35"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                            <state key="normal" image="delete_btn.png">
+                                                <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                            </state>
+                                            <state key="highlighted">
+                                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            </state>
+                                            <connections>
+                                                <action selector="deleteProductWithButton:" destination="98s-el-Tfo" eventType="touchUpInside" id="mkP-Mc-qXJ"/>
+                                            </connections>
+                                        </button>
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>

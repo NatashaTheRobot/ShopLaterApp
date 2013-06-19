@@ -169,7 +169,7 @@
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
     if (section == 1) {
-        UIView *header = [[UIView alloc] initWithFrame:CGRectMake(0, 0, tableView.frame.size.width, 40.0)];
+        UIView *header = [[UIView alloc] initWithFrame:CGRectMake(0, 0, tableView.frame.size.width, 20.0)];
         
         UILabel *textLabel = [[UILabel alloc] initWithFrame:header.frame];
         textLabel.text = sMenuStoreSectionTitle;
@@ -188,7 +188,7 @@
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {
     if (section == 1) {
-        return 40.0;
+        return 20.0;
     }
     
     return 0;

@@ -30,6 +30,7 @@
 - (IBAction)backWithButton:(id)sender;
 - (IBAction)forwardWithButton:(id)sender;
 
+- (void)setupSlidingViewController;
 - (void)customizeNavigationBar;
 - (void)goBack;
 - (void)buyLaterAction;
@@ -59,23 +60,29 @@
     
     [self setupToolbarButtons];
     
+    [self setupSlidingViewController];
+    
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
     
-    self.view.layer.shadowOpacity = 0.8f;
-    self.view.layer.shadowRadius = 10.0f;
-    self.view.layer.shadowColor = [UIColor blackColor].CGColor;
+    CALayer *navigationControllerLayer = self.navigationController.view.layer;
+    navigationControllerLayer.shadowOpacity = 0.8f;
+    navigationControllerLayer.shadowRadius = 10.0f;
+    navigationControllerLayer.shadowColor = [[UIColor colorWithRed:80/255.0 green:80/255.0 blue:80/255.0 alpha:1] CGColor];
     
+    [self addLogoToNavigationBar];
+}
+
+- (void)setupSlidingViewController
+{
     if (![self.slidingViewController.underLeftViewController isKindOfClass:[MenuViewController class]]) {
         self.slidingViewController.underLeftViewController  = [self.storyboard instantiateViewControllerWithIdentifier:NSStringFromClass([MenuViewController class])];
     }
     
     [self.view addGestureRecognizer:self.slidingViewController.panGesture];
-    
-    [self addLogoToNavigationBar];
 }
 
 - (IBAction)backWithButton:(id)sender

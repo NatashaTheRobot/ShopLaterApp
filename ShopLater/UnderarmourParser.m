@@ -18,7 +18,6 @@
 
 @property (strong, nonatomic) NSString *htmlString;
 @property (strong, nonatomic) CoreDataManager *coreDataManager;
-
 @property (strong, nonatomic) NSString *name;
 @property (strong, nonatomic) Price *price;
 @property (strong, nonatomic) Image *image;
@@ -29,7 +28,8 @@
 
 + (instancetype)parserWithProductURLString:(NSString *)productURLString
 {
-    UnderarmourParser *parser = [[UnderarmourParser alloc] init];
+    UnderarmourParser *parser = [[UnderarmourParser
+                                  alloc] init];
     parser.mobileURLString = productURLString;
     parser.cleanURLString = productURLString;
     

@@ -793,8 +793,8 @@
 		9C927B951762780100570F45 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer: Natalya Murashev (M85RRWYM3S)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Natalya Murashev (M85RRWYM3S)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Reza Fatahi (KUL62HHUVD)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Reza Fatahi (KUL62HHUVD)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ShopLater/ShopLater-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -805,8 +805,8 @@
 				HEADER_SEARCH_PATHS = "$(SDKROOT)/usr/include/libxml2";
 				INFOPLIST_FILE = "ShopLater/ShopLater-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "4555A98B-309D-4416-9BDB-AE9F9067FA36";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "4555A98B-309D-4416-9BDB-AE9F9067FA36";
+				PROVISIONING_PROFILE = "865E93C5-2A7A-49BC-BD7E-256641B07C07";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "865E93C5-2A7A-49BC-BD7E-256641B07C07";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -814,8 +814,8 @@
 		9C927B961762780100570F45 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer: Natalya Murashev (M85RRWYM3S)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Natalya Murashev (M85RRWYM3S)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Reza Fatahi (KUL62HHUVD)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Reza Fatahi (KUL62HHUVD)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ShopLater/ShopLater-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = "";
@@ -823,8 +823,8 @@
 				HEADER_SEARCH_PATHS = "$(SDKROOT)/usr/include/libxml2";
 				INFOPLIST_FILE = "ShopLater/ShopLater-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "4555A98B-309D-4416-9BDB-AE9F9067FA36";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "4555A98B-309D-4416-9BDB-AE9F9067FA36";
+				PROVISIONING_PROFILE = "865E93C5-2A7A-49BC-BD7E-256641B07C07";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "865E93C5-2A7A-49BC-BD7E-256641B07C07";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

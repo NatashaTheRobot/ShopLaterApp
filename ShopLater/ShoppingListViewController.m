@@ -25,6 +25,7 @@
 @property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
 
 @property (strong, nonatomic) Product *productToDelete;
+@property (strong, nonatomic) Product *producttoBuy;
 
 - (void)customizeNavigationBar;
 - (void)revealMenu;
@@ -124,7 +125,15 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if ([segue.destinationViewController isKindOfClass:[WebViewController class]]) {
-        Product *product = [self.fetchedResultsController objectAtIndexPath:[self.collectionView indexPathsForSelectedItems][0]];
+        
+        Product *product;
+        
+        if (self.producttoBuy) {
+            product = self.producttoBuy;
+            self.producttoBuy = nil;
+        } else {
+            product = [self.fetchedResultsController objectAtIndexPath:[self.collectionView indexPathsForSelectedItems][0]];
+        }
         
         WebViewController *webViewController = (WebViewController *)segue.destinationViewController;
         webViewController.product = product;
@@ -222,6 +231,12 @@
             }
         }];
     }
+}
+
+- (void)buyProduct:(Product *)product
+{
+    self.producttoBuy = product;
+    [self performSegueWithIdentifier:@"toWebView" sender:self];
 }
 
 

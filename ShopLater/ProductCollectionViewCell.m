@@ -86,30 +86,52 @@
     }
     
     [self.activityIndicator startAnimating];
-    [self parseCurrentPrice];
+    
+    if (!self.priceChecked) {
+        [self parseCurrentPrice];
+    }
 }
 
 - (void)parseCurrentPrice
 {
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{
         Parser *parser = [Parser parserWithProviderName:self.product.provider.name productURLString:self.product.mobileURL];
-        Price *currentPrice = [self.product priceWithType:sPriceTypeCurrent];
-        NSNumber *newPrice = [parser.delegate priceInDollars];
-        if ([currentPrice.dollarAmount floatValue] != [newPrice floatValue]) {
-            currentPrice.dollarAmount = newPrice;
-            self.product.priceDifference = [self.product priceDifference];
-            [[CoreDataManager sharedManager] saveDataInManagedContextUsingBlock:^(BOOL saved, NSError *error) {
-                if (saved) {
-                }
-            }];
-        }
-        dispatch_async(dispatch_get_main_queue(), ^{
-            [self.activityIndicator stopAnimating];
-            self.currentPriceLabel.text = [self.product formattedPriceWithType:sPriceTypeCurrent];
-            if ([self.product.priceDifference floatValue] <= 0) {
-                self.priceMatchImageView.alpha = 1;
+        NSNumber *newPrice;
+        
+        if (parser) {
+            @try {
+                newPrice = [parser.delegate priceInDollars];
             }
-        });
+            @catch (NSException *exception) {
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    [self.activityIndicator stopAnimating];
+                });
+                return;
+            }
+            @finally {
+                if (newPrice) {
+                    Price *currentPrice = [self.product priceWithType:sPriceTypeCurrent];
+                    if ([currentPrice.dollarAmount floatValue] != [newPrice floatValue]) {
+                        currentPrice.dollarAmount = newPrice;
+                        self.product.priceDifference = [self.product priceDifference];
+                        [[CoreDataManager sharedManager] saveDataInManagedContextUsingBlock:^(BOOL saved, NSError *error) {
+                            if (saved) {
+                            }
+                        }];
+                    }
+                    dispatch_async(dispatch_get_main_queue(), ^{
+                        [self.activityIndicator stopAnimating];
+                        self.currentPriceLabel.text = [self.product formattedPriceWithType:sPriceTypeCurrent];
+                        if ([self.product.priceDifference floatValue] <= 0) {
+                            self.priceMatchImageView.alpha = 1;
+                        }
+                    });
+
+                }
+            }
+            
+            
+        }
     });
 }
 

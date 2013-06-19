@@ -16,4 +16,6 @@
 
 @property (strong, nonatomic) id<ProductDelegate> delegate;
 
+@property (assign, nonatomic) BOOL priceChecked;
+
 @end

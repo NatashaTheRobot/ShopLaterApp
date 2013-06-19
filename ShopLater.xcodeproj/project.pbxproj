@@ -91,6 +91,8 @@
 		9C951A1D1770B1CD00F70377 /* welcome.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C951A1C1770B1CD00F70377 /* welcome.png */; };
 		9C951A1F1770C2C400F70377 /* list_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C951A1E1770C2C400F70377 /* list_icon@2x.png */; };
 		9C951A211770C2D800F70377 /* list_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C951A201770C2D800F70377 /* list_icon.png */; };
+		9C951A2B17713BD700F70377 /* buy_now_btn_background@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C951A2A17713BD700F70377 /* buy_now_btn_background@2x.png */; };
+		9C951A2D17713C0300F70377 /* buy_now_btn_background.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C951A2C17713C0300F70377 /* buy_now_btn_background.png */; };
 		9CA5D7451762AB5C0009098E /* toysrus_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 9CA5D7441762AB5C0009098E /* toysrus_logo.png */; };
 		9CA5D7471762AB970009098E /* toysrus_logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9CA5D7461762AB970009098E /* toysrus_logo@2x.png */; };
 		9CA5D7561763BFFF0009098E /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CA5D7551763BFFF0009098E /* WebViewController.m */; };
@@ -219,6 +221,8 @@
 		9C951A1C1770B1CD00F70377 /* welcome.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = welcome.png; sourceTree = "<group>"; };
 		9C951A1E1770C2C400F70377 /* list_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "list_icon@2x.png"; sourceTree = "<group>"; };
 		9C951A201770C2D800F70377 /* list_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = list_icon.png; sourceTree = "<group>"; };
+		9C951A2A17713BD700F70377 /* buy_now_btn_background@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "buy_now_btn_background@2x.png"; sourceTree = "<group>"; };
+		9C951A2C17713C0300F70377 /* buy_now_btn_background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = buy_now_btn_background.png; sourceTree = "<group>"; };
 		9CA5D7441762AB5C0009098E /* toysrus_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = toysrus_logo.png; sourceTree = "<group>"; };
 		9CA5D7461762AB970009098E /* toysrus_logo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "toysrus_logo@2x.png"; sourceTree = "<group>"; };
 		9CA5D7541763BFFF0009098E /* WebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewController.h; sourceTree = "<group>"; };
@@ -380,6 +384,8 @@
 		9C9519D6176F98E600F70377 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				9C951A2C17713C0300F70377 /* buy_now_btn_background.png */,
+				9C951A2A17713BD700F70377 /* buy_now_btn_background@2x.png */,
 				9C951A201770C2D800F70377 /* list_icon.png */,
 				9C951A1E1770C2C400F70377 /* list_icon@2x.png */,
 				9C951A1C1770B1CD00F70377 /* welcome.png */,
@@ -598,6 +604,8 @@
 				9C951A211770C2D800F70377 /* list_icon.png in Resources */,
 				3454A1F21770F7E0006D8CD5 /* jcrew_logo.png in Resources */,
 				3454A1F31770F7E0006D8CD5 /* jcrew_logo@2x.png in Resources */,
+				9C951A2B17713BD700F70377 /* buy_now_btn_background@2x.png in Resources */,
+				9C951A2D17713C0300F70377 /* buy_now_btn_background.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -54,13 +54,18 @@
 
 - (NSNumber *)priceInDollars
 {
-    NSString* priceString;
-    NSString* price = [Parser scanString:self.htmlString startTag:@"\"borderT\"" endTag:@"INPUT"];
-    if ([price containsString:@"now"]) {
-        priceString = [Parser scanString:price startTag:@"now $" endTag:@"</"];
+    NSString *priceString;
+    
+    if ([self.htmlString containsString:@"class=\"selected-color\">select colors"]) {
+        priceString = [Parser scanString:self.htmlString startTag:@"<DIV class=\"selected-color\">select colors $" endTag:@"\""];
     } else {
-        priceString = [Parser scanString:price startTag:@"$" endTag:@"<BR"];
+        priceString = [Parser scanString:self.htmlString startTag:@"<DIV class=\"spaceTB10 white\">$" endTag:@"</DIV>"];
     }
+//    if ([price containsString:@"now"]) {
+//        priceString = [Parser scanString:price startTag:@"now $" endTag:@"</"];
+//    } else {
+//        priceString = [Parser scanString:price startTag:@"$" endTag:@"<BR"];
+//    }
     
     return [NSNumber numberWithFloat:[priceString floatValue]];
 }

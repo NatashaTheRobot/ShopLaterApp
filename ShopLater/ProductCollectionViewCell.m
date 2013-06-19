@@ -39,42 +39,6 @@
 
 @implementation ProductCollectionViewCell
 
-- (id)initWithCoder:(NSCoder *)aDecoder
-{
-    self = [super initWithCoder:aDecoder];
-    
-    if (self) {
-        [self setupView];
-    }
-    
-    return self;
-}
-
-- (void)setupView
-{
-    self.layer.masksToBounds = NO;
-    
-    self.contentView.layer.cornerRadius = 4;
-    self.contentView.layer.borderColor = [[UIColor colorWithRed:80/255.0 green:80/255.0 blue:80/255.0 alpha:0.3] CGColor];
-    self.contentView.layer.borderWidth = 1;
-    
-    self.layer.cornerRadius = 4;
-    self.layer.shadowColor = [[UIColor colorWithRed:80/255.0 green:80/255.0 blue:80/255.0 alpha:1] CGColor];
-    self.layer.shadowOffset = CGSizeMake(2, 2);
-    self.layer.shadowRadius = 1;
-    self.layer.shadowPath = [[UIBezierPath bezierPathWithRoundedRect:self.bounds
-                                                        cornerRadius:4] CGPath];
-    self.layer.shadowOpacity = 0.5;
-    
-    self.buyNowButton.layer.cornerRadius = 4;
-    self.buyNowButton.layer.masksToBounds = YES;
-    
-    self.buyView.layer.cornerRadius = 4;
-    self.buyView.layer.masksToBounds = YES;
-    
-    self.backgroundView.layer.cornerRadius = 4;
-}
-
 - (void)setProduct:(Product *)product
 {
     _product = product;
@@ -111,7 +75,30 @@
     self.productNameLabel.text = [product formattedName:product.name];
     
     [self.labelView addSubview:self.productNameLabel];
+    
+    [self setupView];
 }
+
+- (void)setupView
+{
+    self.layer.masksToBounds = NO;
+    
+    self.layer.borderColor = [[UIColor colorWithRed:80/255.0 green:80/255.0 blue:80/255.0 alpha:0.3] CGColor];
+    self.layer.borderWidth = 1;
+    self.layer.cornerRadius = 4;
+    self.layer.shadowColor = [[UIColor colorWithRed:80/255.0 green:80/255.0 blue:80/255.0 alpha:1] CGColor];
+    self.layer.shadowOffset = CGSizeMake(2, 2);
+    self.layer.shadowRadius = 1;
+    self.layer.shadowOpacity = 0.5;
+    
+    self.buyNowButton.layer.cornerRadius = 4;
+    self.buyNowButton.layer.masksToBounds = YES;
+    
+    self.buyView.layer.cornerRadius = 4;
+    self.buyView.layer.masksToBounds = YES;
+    self.buyView.layer.shadowColor = [[UIColor greenColor] CGColor];
+}
+
 
 - (void)parseCurrentPrice
 {

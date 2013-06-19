@@ -24,6 +24,8 @@
 @property (strong, nonatomic) UIBarButtonItem *buyLaterButton;
 @property (strong, nonatomic) UIImageView *logoImageView;
 @property (weak, nonatomic) IBOutlet UIView *topBarView;
+@property (weak, nonatomic) IBOutlet UIButton *webBackButton;
+@property (weak, nonatomic) IBOutlet UIButton *webForwardButton;
 
 - (IBAction)backWithButton:(id)sender;
 - (IBAction)forwardWithButton:(id)sender;
@@ -163,6 +165,18 @@
 
 - (void)webViewDidStartLoad:(UIWebView *)webView
 {
+    if (self.webView.canGoBack) {
+        self.webBackButton.enabled = YES;
+    } else if (!self.webView.canGoBack) {
+        self.webBackButton.enabled = NO;
+    }
+    
+    if (self.webView.canGoForward) {
+        self.webForwardButton.enabled = YES;
+    } else if (!self.webView.canGoForward) {
+        self.webForwardButton.enabled = NO;
+    }
+    
     if (![self.activityIndicator isAnimating]) {
         [self.activityIndicator startAnimating];
     }

@@ -25,7 +25,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *currentPriceLabel;
 @property (weak, nonatomic) IBOutlet UILabel *wishPriceLabel;
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
-@property (strong, nonatomic) UIImageView *logoImageView;
+@property (weak, nonatomic) IBOutlet UIImageView *logoImageView;
+
 
 @property (strong, nonatomic) CoreDataManager *coreDataManager;
 @property (strong, nonatomic) Parser *parser;
@@ -55,6 +56,8 @@
     self.slidingViewController.underLeftWidthLayout = ECFullWidth;
     
     [self customizeNavigationBar];
+    
+    self.priceSlider.minimumTrackTintColor = [UIColor colorWithRed:119/255.0 green:117/255.0 blue:119/255.0 alpha:1];
 }
 
 - (void)customizeNavigationBar
@@ -92,10 +95,13 @@
                 NSNumber *priceInDollars = [(Price *)[self.parser.delegate productPrice] dollarAmount];
                 NSString *nameUnformatted = [self.parser.delegate productName];
                 self.productNameLabel.text = [Product formattedName:nameUnformatted];
-                self.currentPriceLabel.text = [Price formattedPriceFromNumber:priceInDollars];
+                self.currentPriceLabel.text = [NSString stringWithFormat:@"%@",
+                                               [Price formattedPriceFromNumber:priceInDollars]];
                 self.priceSlider.maximumValue = [priceInDollars floatValue];
                 self.priceSlider.value = [priceInDollars floatValue] * 0.8;
                 self.wishPriceLabel.text = [NSString stringWithFormat:@"$%.2f", ([priceInDollars floatValue] * 0.8)];
+                self.logoImageView.image = [Image imageForProvider:self.provider type:sImageTypeLogo];
+                
                 [self.view viewWithTag:1].alpha = 0;
                 
                 Image *image = [self.parser.delegate productImage];

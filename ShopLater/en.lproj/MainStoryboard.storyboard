@@ -80,7 +80,7 @@
             </objects>
             <point key="canvasLocation" x="-1286" y="-21"/>
         </scene>
-        <!--Shopping List View Controller - Shopping List-->
+        <!--Shopping List View Controller - Shopping Bag-->
         <scene sceneID="fhK-Jr-vE9">
             <objects>
                 <collectionViewController autoresizesArchivedViewToFullSize="NO" id="kf3-f8-LLF" customClass="ShoppingListViewController" sceneMemberID="viewController">
@@ -193,7 +193,7 @@
                             <outlet property="delegate" destination="kf3-f8-LLF" id="EcW-hV-trO"/>
                         </connections>
                     </collectionView>
-                    <navigationItem key="navigationItem" title="Shopping List" id="lTi-fZ-TyJ"/>
+                    <navigationItem key="navigationItem" title="Shopping Bag" id="lTi-fZ-TyJ"/>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iNh-bJ-tI3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

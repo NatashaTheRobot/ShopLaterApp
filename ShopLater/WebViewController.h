@@ -17,4 +17,6 @@
 
 @property (assign, nonatomic) BOOL fromMenu;
 
+- (void)revealMenu:(id)sender;
+
 @end

@@ -40,7 +40,6 @@
 - (void)loadWebPage;
 - (void)setupToolbarButtons;
 - (void)prepareToSlideToMenu;
-- (void)revealMenu;
 
 @end
 
@@ -115,7 +114,7 @@
     if (self.fromMenu) {
         UIBarButtonItem *menuButton = [ButtonFactory barButtonItemWithImageName:@"menu_btn.png"
                                                                                    target:self
-                                                                                   action:@selector(revealMenu)];
+                                                                         action:@selector(revealMenu:)];
         
         [self.navigationItem setLeftBarButtonItems:@[menuButton] animated:NO];
     } else {
@@ -143,10 +142,14 @@
     ((MenuViewController *)self.slidingViewController.underLeftViewController).selectedProvider = self.provider;
 }
 
-- (void)revealMenu
+- (void)revealMenu:(id)sender
 {
-    [self prepareToSlideToMenu];
-    [self.slidingViewController anchorTopViewTo:ECRight];
+    if (self.slidingViewController.underLeftShowing) {
+        [self.slidingViewController resetTopView];
+    } else {
+        [self prepareToSlideToMenu];
+        [self.slidingViewController anchorTopViewTo:ECRight];
+    }
 }
 
 - (void)loadWebPage

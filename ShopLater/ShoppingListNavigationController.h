@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ShoppingListNavigationViewController : UINavigationController
+@interface ShoppingListNavigationController : UINavigationController
 
 @end

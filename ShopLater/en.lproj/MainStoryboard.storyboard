@@ -63,10 +63,10 @@
             </objects>
             <point key="canvasLocation" x="-1946" y="402"/>
         </scene>
-        <!--Shopping List Navigation View Controller-->
+        <!--Shopping List Navigation Controller-->
         <scene sceneID="hZu-MF-ORj">
             <objects>
-                <navigationController storyboardIdentifier="first" definesPresentationContext="YES" id="dzT-QA-fZg" customClass="ShoppingListNavigationViewController" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="first" definesPresentationContext="YES" id="dzT-QA-fZg" customClass="ShoppingListNavigationController" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="YHA-ZE-AgP">
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" red="0.70588235294117641" green="0.51372549019607838" blue="0.6705882352941176" alpha="1" colorSpace="calibratedRGB"/>
@@ -199,10 +199,10 @@
             </objects>
             <point key="canvasLocation" x="-814" y="-17"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Web View Nativation Controller-->
         <scene sceneID="oaZ-sM-BTF">
             <objects>
-                <navigationController storyboardIdentifier="webViewNavigation" definesPresentationContext="YES" id="g7o-b5-nxK" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="webViewNavigation" definesPresentationContext="YES" id="g7o-b5-nxK" customClass="WebViewNativationController" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Qot-3x-RAc">
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" red="0.70588235290000001" green="0.51372549020000002" blue="0.6705882353" alpha="1" colorSpace="calibratedRGB"/>
@@ -430,8 +430,8 @@
                 <relationship kind="outlet" name="wishPriceLabel" candidateClass="UILabel"/>
             </relationships>
         </class>
-        <class className="ShoppingListNavigationViewController" superclassName="UINavigationController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ShoppingListNavigationViewController.h"/>
+        <class className="ShoppingListNavigationController" superclassName="UINavigationController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ShoppingListNavigationController.h"/>
         </class>
         <class className="ShoppingListViewController" superclassName="UICollectionViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ShoppingListViewController.h"/>
@@ -460,6 +460,9 @@
                 <relationship kind="outlet" name="webView" candidateClass="UIWebView"/>
             </relationships>
         </class>
+        <class className="WebViewNativationController" superclassName="UINavigationController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/WebViewNativationController.h"/>
+        </class>
     </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
@@ -467,6 +470,6 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="jb2-V4-MPz"/>
+        <segue reference="paE-o6-1Db"/>
     </inferredMetricsTieBreakers>
 </document>

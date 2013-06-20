@@ -6,17 +6,17 @@
 //  Copyright (c) 2013 Natasha Murashev. All rights reserved.
 //
 
-#import "ShoppingListNavigationViewController.h"
+#import "ShoppingListNavigationController.h"
 #import "Constants.h"
 #import "ButtonFactory.h"
 #import "MenuViewController.h"
 #import "ECSlidingViewController.h"
 
-@interface ShoppingListNavigationViewController ()
+@interface ShoppingListNavigationController ()
 
 @end
 
-@implementation ShoppingListNavigationViewController
+@implementation ShoppingListNavigationController
 
 - (void)viewDidLoad
 {

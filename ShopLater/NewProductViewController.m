@@ -59,8 +59,7 @@
     
     [self customizeNavigationBar];
     
-    self.scrollView.contentSize = CGSizeMake(self.contentView.frame.size.width, self.contentView.frame.size.height + 50);
-    self.scrollView.scrollEnabled = YES;
+    [self setupScrollViewScrolling];
     
     self.priceSlider.minimumTrackTintColor = [UIColor colorWithRed:119/255.0 green:117/255.0 blue:119/255.0 alpha:1];
 }
@@ -79,6 +78,16 @@
 - (void)goBack
 {
     [self.navigationController popViewControllerAnimated:YES];
+}
+
+- (void)setupScrollViewScrolling
+{
+    if (self.view.frame.size.height >= self.contentView.frame.size.height) {
+        self.scrollView.scrollEnabled = NO;
+    } else {
+        self.scrollView.contentSize = CGSizeMake(self.contentView.frame.size.width, self.contentView.frame.size.height + 50);
+        self.scrollView.scrollEnabled = YES;
+    }
 }
 
 - (void)displayProduct

@@ -28,6 +28,7 @@
 @property (weak, nonatomic) IBOutlet UIImageView *logoImageView;
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 @property (weak, nonatomic) IBOutlet UIView *contentView;
+@property (weak, nonatomic) IBOutlet UIView *productDetailsView;
 
 
 @property (strong, nonatomic) CoreDataManager *coreDataManager;
@@ -50,9 +51,11 @@
 {
     [super viewDidLoad];
     
-    [self.activityIndicator startAnimating];
+    self.productDetailsView.alpha = 0;
     
     [self displayProduct];
+    
+    [self.activityIndicator startAnimating];
     
     [self.slidingViewController setAnchorRightRevealAmount:sMenuAnchorRevealAmount];
     self.slidingViewController.underLeftWidthLayout = ECFullWidth;
@@ -60,6 +63,8 @@
     [self customizeNavigationBar];
     
     [self setupScrollViewScrolling];
+    
+    [self setupShadows];
     
     self.priceSlider.minimumTrackTintColor = [UIColor colorWithRed:180/255.0 green:131/255.0 blue:171/255.0 alpha:1];
 }
@@ -89,6 +94,19 @@
         self.scrollView.contentSize = CGSizeMake(self.contentView.frame.size.width, self.contentView.frame.size.height + 50);
         self.scrollView.scrollEnabled = YES;
     }
+}
+
+- (void)setupShadows
+{
+    self.productDetailsView.layer.masksToBounds = NO;
+    
+    self.productDetailsView.layer.borderColor = [[UIColor colorWithRed:80/255.0 green:80/255.0 blue:80/255.0 alpha:0.3] CGColor];
+    self.productDetailsView.layer.borderWidth = 1;
+    self.productDetailsView.layer.cornerRadius = 4;
+    self.productDetailsView.layer.shadowColor = [[UIColor colorWithRed:80/255.0 green:80/255.0 blue:80/255.0 alpha:1] CGColor];
+    self.productDetailsView.layer.shadowOffset = CGSizeMake(2, 2);
+    self.productDetailsView.layer.shadowRadius = 1;
+    self.productDetailsView.layer.shadowOpacity = 0.5;
 }
 
 - (void)displayProduct
@@ -128,6 +146,10 @@
                     self.imageView.contentMode = UIViewContentModeScaleAspectFit;
                     [self.activityIndicator stopAnimating];
                     
+                }];
+                
+                [UIView animateWithDuration:0.25 animations:^{
+                    self.productDetailsView.alpha = 1;
                 }];
                 
                 self.navigationItem.rightBarButtonItem.enabled = YES;

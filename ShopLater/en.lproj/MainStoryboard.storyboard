@@ -346,12 +346,12 @@
                                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" hidesWhenStopped="YES" style="gray" id="k6g-GJ-Pfr">
-                                                <rect key="frame" x="135" y="215" width="20" height="20"/>
-                                            </activityIndicatorView>
                                         </subviews>
                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     </view>
+                                    <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" hidesWhenStopped="YES" style="gray" id="k6g-GJ-Pfr">
+                                        <rect key="frame" x="150" y="242" width="20" height="20"/>
+                                    </activityIndicatorView>
                                 </subviews>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
@@ -370,6 +370,7 @@
                         <outlet property="imageView" destination="GgS-bi-hqu" id="yUP-kb-37y"/>
                         <outlet property="logoImageView" destination="KVw-Qp-SyU" id="qeG-Ka-xCi"/>
                         <outlet property="priceSlider" destination="AhZ-fA-MLm" id="UZD-V8-f7l"/>
+                        <outlet property="productDetailsView" destination="JKd-PU-44h" id="kFn-1L-w4y"/>
                         <outlet property="productNameLabel" destination="9pE-xD-z7C" id="kaG-Ol-1rL"/>
                         <outlet property="scrollView" destination="Vj2-pv-z3K" id="vpd-MB-dwg"/>
                         <outlet property="wishPriceLabel" destination="aAJ-Yn-Unf" id="HQu-un-rtP"/>
@@ -408,6 +409,7 @@
                 <relationship kind="outlet" name="imageView" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="logoImageView" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="priceSlider" candidateClass="UISlider"/>
+                <relationship kind="outlet" name="productDetailsView" candidateClass="UIView"/>
                 <relationship kind="outlet" name="productNameLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="scrollView" candidateClass="UIScrollView"/>
                 <relationship kind="outlet" name="wishPriceLabel" candidateClass="UILabel"/>

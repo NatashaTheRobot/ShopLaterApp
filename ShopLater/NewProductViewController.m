@@ -26,6 +26,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *wishPriceLabel;
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
 @property (weak, nonatomic) IBOutlet UIImageView *logoImageView;
+@property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
+@property (weak, nonatomic) IBOutlet UIView *contentView;
 
 
 @property (strong, nonatomic) CoreDataManager *coreDataManager;
@@ -56,6 +58,9 @@
     self.slidingViewController.underLeftWidthLayout = ECFullWidth;
     
     [self customizeNavigationBar];
+    
+    self.scrollView.contentSize = CGSizeMake(self.contentView.frame.size.width, self.contentView.frame.size.height + 50);
+    self.scrollView.scrollEnabled = YES;
     
     self.priceSlider.minimumTrackTintColor = [UIColor colorWithRed:119/255.0 green:117/255.0 blue:119/255.0 alpha:1];
 }

@@ -293,61 +293,70 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view tag="1" contentMode="scaleToFill" id="bzn-Ki-F1A">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" alwaysBounceVertical="YES" showsVerticalScrollIndicator="NO" id="Vj2-pv-z3K">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
-                                <color key="backgroundColor" red="0.94901960780000005" green="0.94117647059999998" blue="0.94901960780000005" alpha="1" colorSpace="calibratedRGB"/>
-                            </view>
-                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" hidesWhenStopped="YES" style="gray" id="k6g-GJ-Pfr">
-                                <rect key="frame" x="150" y="181" width="20" height="20"/>
-                            </activityIndicatorView>
-                            <view contentMode="scaleToFill" id="JKd-PU-44h">
-                                <rect key="frame" x="15" y="27" width="290" height="450"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text=" $37.88" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="aAJ-Yn-Unf">
-                                        <rect key="frame" x="145" y="343" width="145" height="39"/>
-                                        <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="17"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Buy Price:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="1GC-Sg-a6u">
-                                        <rect key="frame" x="48" y="343" width="89" height="39"/>
-                                        <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="17"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="0.0" id="AhZ-fA-MLm">
-                                        <rect key="frame" x="9" y="390" width="272" height="23"/>
-                                        <connections>
-                                            <action selector="adjustWishPrice:" destination="cqJ-YD-ehb" eventType="valueChanged" id="OAd-j5-TKG"/>
-                                        </connections>
-                                    </slider>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="GgS-bi-hqu">
-                                        <rect key="frame" x="30" y="75" width="230" height="213"/>
-                                    </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="KVw-Qp-SyU">
-                                        <rect key="frame" x="195" y="222" width="65" height="65"/>
+                                    <view tag="1" contentMode="scaleToFill" id="bzn-Ki-F1A">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
+                                    </view>
+                                    <view contentMode="scaleToFill" id="JKd-PU-44h">
+                                        <rect key="frame" x="15" y="27" width="290" height="450"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    </imageView>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Product Name" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="9pE-xD-z7C">
-                                        <rect key="frame" x="11" y="12" width="268" height="61"/>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="ic_tag.png" id="NZX-wm-aLA">
-                                        <rect key="frame" x="14" y="266" width="47" height="34"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    </imageView>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="$49.98" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="fIY-cK-FzF">
-                                        <rect key="frame" x="0.0" y="272" width="75" height="21"/>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="15"/>
-                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
+                                        <subviews>
+                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text=" $37.88" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="aAJ-Yn-Unf">
+                                                <rect key="frame" x="145" y="343" width="145" height="39"/>
+                                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="17"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Buy Price:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="1GC-Sg-a6u">
+                                                <rect key="frame" x="48" y="343" width="89" height="39"/>
+                                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="17"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="0.0" id="AhZ-fA-MLm">
+                                                <rect key="frame" x="9" y="390" width="272" height="23"/>
+                                                <connections>
+                                                    <action selector="adjustWishPrice:" destination="cqJ-YD-ehb" eventType="valueChanged" id="OAd-j5-TKG"/>
+                                                </connections>
+                                            </slider>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="GgS-bi-hqu">
+                                                <rect key="frame" x="30" y="75" width="230" height="213"/>
+                                            </imageView>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="KVw-Qp-SyU">
+                                                <rect key="frame" x="195" y="222" width="65" height="65"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            </imageView>
+                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Product Name" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="9pE-xD-z7C">
+                                                <rect key="frame" x="11" y="12" width="268" height="61"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="ic_tag.png" id="NZX-wm-aLA">
+                                                <rect key="frame" x="14" y="266" width="47" height="34"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            </imageView>
+                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="$49.98" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="fIY-cK-FzF">
+                                                <rect key="frame" x="0.0" y="272" width="75" height="21"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="15"/>
+                                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" hidesWhenStopped="YES" style="gray" id="k6g-GJ-Pfr">
+                                                <rect key="frame" x="135" y="215" width="20" height="20"/>
+                                            </activityIndicatorView>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                    </view>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                            </view>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <outlet property="delegate" destination="cqJ-YD-ehb" id="Jaz-nC-qji"/>
+                                </connections>
+                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" red="0.94901960780000005" green="0.94117647059999998" blue="0.94901960780000005" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
@@ -355,11 +364,13 @@
                     <navigationItem key="navigationItem" title="Set Price" id="gLv-oD-IBk"/>
                     <connections>
                         <outlet property="activityIndicator" destination="k6g-GJ-Pfr" id="Jd0-Ub-xhV"/>
+                        <outlet property="contentView" destination="bzn-Ki-F1A" id="mfq-ew-tY5"/>
                         <outlet property="currentPriceLabel" destination="fIY-cK-FzF" id="aKy-P5-KHj"/>
                         <outlet property="imageView" destination="GgS-bi-hqu" id="yUP-kb-37y"/>
                         <outlet property="logoImageView" destination="KVw-Qp-SyU" id="qeG-Ka-xCi"/>
                         <outlet property="priceSlider" destination="AhZ-fA-MLm" id="UZD-V8-f7l"/>
                         <outlet property="productNameLabel" destination="9pE-xD-z7C" id="kaG-Ol-1rL"/>
+                        <outlet property="scrollView" destination="Vj2-pv-z3K" id="vpd-MB-dwg"/>
                         <outlet property="wishPriceLabel" destination="aAJ-Yn-Unf" id="HQu-un-rtP"/>
                     </connections>
                 </viewController>
@@ -391,11 +402,13 @@
             <relationships>
                 <relationship kind="action" name="adjustWishPrice:"/>
                 <relationship kind="outlet" name="activityIndicator" candidateClass="UIActivityIndicatorView"/>
+                <relationship kind="outlet" name="contentView" candidateClass="UIView"/>
                 <relationship kind="outlet" name="currentPriceLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="imageView" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="logoImageView" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="priceSlider" candidateClass="UISlider"/>
                 <relationship kind="outlet" name="productNameLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="scrollView" candidateClass="UIScrollView"/>
                 <relationship kind="outlet" name="wishPriceLabel" candidateClass="UILabel"/>
             </relationships>
         </class>

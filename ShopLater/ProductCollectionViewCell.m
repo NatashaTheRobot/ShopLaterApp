@@ -52,6 +52,8 @@
     
     if ([product.priceDifference floatValue] <= 0) {
         self.priceMatchImageView.alpha = 1;
+    } else {
+        self.priceMatchImageView.alpha = 0;
     }
     
     if ([product.priceLoadedInSession integerValue] == 0) {

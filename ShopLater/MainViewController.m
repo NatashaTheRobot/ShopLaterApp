@@ -10,6 +10,8 @@
 
 @interface MainViewController ()
 
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
+
 @end
 
 @implementation MainViewController
@@ -18,6 +20,8 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    
+    [self.activityIndicator startAnimating];
     
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
     self.topViewController = [storyboard instantiateViewControllerWithIdentifier:@"first"];

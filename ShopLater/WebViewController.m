@@ -189,10 +189,6 @@
 
 - (void)webViewDidFinishLoad:(UIWebView *)webView
 {
-    if ([self.activityIndicator isAnimating]) {
-        [self.activityIndicator stopAnimating];
-    }
-    
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{
         [self checkIfProductPage:webView.request.URL.absoluteString];
     });
@@ -217,6 +213,11 @@
     }];
     
     dispatch_async(dispatch_get_main_queue(), ^{
+        
+        if ([self.activityIndicator isAnimating]) {
+            [self.activityIndicator stopAnimating];
+        }
+        
         if (providerPage && productPage && newProduct) {
             if (lululemonCategory) {
                 self.navigationItem.rightBarButtonItem.enabled = NO;

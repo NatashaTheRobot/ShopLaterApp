@@ -59,6 +59,7 @@
 		9C08B5B017725D6500C7FF75 /* list_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C08B5AF17725D6500C7FF75 /* list_icon.png */; };
 		9C08B5B21772969700C7FF75 /* victoriassecret_logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C08B5B11772969700C7FF75 /* victoriassecret_logo@2x.png */; };
 		9C08B5B4177296B700C7FF75 /* victoriassecret_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C08B5B3177296B700C7FF75 /* victoriassecret_logo.png */; };
+		9C08B5B71773075600C7FF75 /* ShoppingListNavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C08B5B61773075600C7FF75 /* ShoppingListNavigationViewController.m */; };
 		9C195DB81767588B00183192 /* Price+SLExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C195DB71767588B00183192 /* Price+SLExtensions.m */; };
 		9C195DC417679B4E00183192 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C195DC317679B4D00183192 /* QuartzCore.framework */; };
 		9C195DD71767AE2500183192 /* Product+SLExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C195DD61767AE2500183192 /* Product+SLExtensions.m */; };
@@ -186,6 +187,8 @@
 		9C08B5AF17725D6500C7FF75 /* list_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = list_icon.png; sourceTree = "<group>"; };
 		9C08B5B11772969700C7FF75 /* victoriassecret_logo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "victoriassecret_logo@2x.png"; sourceTree = "<group>"; };
 		9C08B5B3177296B700C7FF75 /* victoriassecret_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = victoriassecret_logo.png; sourceTree = "<group>"; };
+		9C08B5B51773075600C7FF75 /* ShoppingListNavigationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShoppingListNavigationViewController.h; sourceTree = "<group>"; };
+		9C08B5B61773075600C7FF75 /* ShoppingListNavigationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShoppingListNavigationViewController.m; sourceTree = "<group>"; };
 		9C195DB61767588B00183192 /* Price+SLExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Price+SLExtensions.h"; sourceTree = "<group>"; };
 		9C195DB71767588B00183192 /* Price+SLExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Price+SLExtensions.m"; sourceTree = "<group>"; };
 		9C195DC317679B4D00183192 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
@@ -396,6 +399,8 @@
 				9C22641D176BD12600C3FDD9 /* MainViewController.m */,
 				9C22641F176BD2AE00C3FDD9 /* MenuViewController.h */,
 				9C226420176BD2AE00C3FDD9 /* MenuViewController.m */,
+				9C08B5B51773075600C7FF75 /* ShoppingListNavigationViewController.h */,
+				9C08B5B61773075600C7FF75 /* ShoppingListNavigationViewController.m */,
 				9C9519DB176F9A1300F70377 /* ShoppingListViewController.h */,
 				9C9519DC176F9A1300F70377 /* ShoppingListViewController.m */,
 				9CA5D7541763BFFF0009098E /* WebViewController.h */,
@@ -703,6 +708,7 @@
 				9C08B5891771DB6800C7FF75 /* Product.m in Sources */,
 				344D78BB1772367E00C2CBF8 /* VictoriassecretParser.m in Sources */,
 				344D78C61772427A00C2CBF8 /* UnderarmourParser.m in Sources */,
+				9C08B5B71773075600C7FF75 /* ShoppingListNavigationViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

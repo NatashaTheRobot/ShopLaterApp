@@ -63,10 +63,10 @@
             </objects>
             <point key="canvasLocation" x="-1946" y="402"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Shopping List Navigation View Controller-->
         <scene sceneID="hZu-MF-ORj">
             <objects>
-                <navigationController storyboardIdentifier="first" definesPresentationContext="YES" id="dzT-QA-fZg" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="first" definesPresentationContext="YES" id="dzT-QA-fZg" customClass="ShoppingListNavigationViewController" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="YHA-ZE-AgP">
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" red="0.70588235294117641" green="0.51372549019607838" blue="0.6705882352941176" alpha="1" colorSpace="calibratedRGB"/>
@@ -429,6 +429,9 @@
                 <relationship kind="outlet" name="productImageView" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="wishPriceLabel" candidateClass="UILabel"/>
             </relationships>
+        </class>
+        <class className="ShoppingListNavigationViewController" superclassName="UINavigationController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ShoppingListNavigationViewController.h"/>
         </class>
         <class className="ShoppingListViewController" superclassName="UICollectionViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ShoppingListViewController.h"/>

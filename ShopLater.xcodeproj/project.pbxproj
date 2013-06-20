@@ -70,6 +70,8 @@
 		9C08B5D217735B5D00C7FF75 /* topshop_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C08B5D117735B5D00C7FF75 /* topshop_logo.png */; };
 		9C08B5D417735DCF00C7FF75 /* dupontregistry_logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C08B5D317735DCF00C7FF75 /* dupontregistry_logo@2x.png */; };
 		9C08B5D617735DE100C7FF75 /* dupontregistry_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C08B5D517735DE000C7FF75 /* dupontregistry_logo.png */; };
+		9C08B5E01773951700C7FF75 /* app_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C08B5DF1773951600C7FF75 /* app_icon@2x.png */; };
+		9C08B5E21773952600C7FF75 /* app_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C08B5E11773952500C7FF75 /* app_icon.png */; };
 		9C195DB81767588B00183192 /* Price+SLExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C195DB71767588B00183192 /* Price+SLExtensions.m */; };
 		9C195DC417679B4E00183192 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C195DC317679B4D00183192 /* QuartzCore.framework */; };
 		9C195DD71767AE2500183192 /* Product+SLExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C195DD61767AE2500183192 /* Product+SLExtensions.m */; };
@@ -110,8 +112,6 @@
 		9C951A0717708E4B00F70377 /* save_btn.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C951A0617708E4B00F70377 /* save_btn.png */; };
 		9C951A0D1770983500F70377 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C951A0C1770983500F70377 /* Default-568h@2x.png */; };
 		9C951A1117709A3A00F70377 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C951A1017709A3900F70377 /* Default@2x.png */; };
-		9C951A1717709B7F00F70377 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C951A1617709B7F00F70377 /* Icon.png */; };
-		9C951A1917709B8400F70377 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C951A1817709B8200F70377 /* Icon@2x.png */; };
 		9C951A1B1770B19B00F70377 /* welcome@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C951A1A1770B19B00F70377 /* welcome@2x.png */; };
 		9C951A1D1770B1CD00F70377 /* welcome.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C951A1C1770B1CD00F70377 /* welcome.png */; };
 		9C951A2B17713BD700F70377 /* buy_now_btn_background@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C951A2A17713BD700F70377 /* buy_now_btn_background@2x.png */; };
@@ -217,6 +217,8 @@
 		9C08B5D117735B5D00C7FF75 /* topshop_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = topshop_logo.png; sourceTree = "<group>"; };
 		9C08B5D317735DCF00C7FF75 /* dupontregistry_logo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dupontregistry_logo@2x.png"; sourceTree = "<group>"; };
 		9C08B5D517735DE000C7FF75 /* dupontregistry_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dupontregistry_logo.png; sourceTree = "<group>"; };
+		9C08B5DF1773951600C7FF75 /* app_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "app_icon@2x.png"; path = "../app_icon@2x.png"; sourceTree = "<group>"; };
+		9C08B5E11773952500C7FF75 /* app_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = app_icon.png; path = ../app_icon.png; sourceTree = "<group>"; };
 		9C195DB61767588B00183192 /* Price+SLExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Price+SLExtensions.h"; sourceTree = "<group>"; };
 		9C195DB71767588B00183192 /* Price+SLExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Price+SLExtensions.m"; sourceTree = "<group>"; };
 		9C195DC317679B4D00183192 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
@@ -273,8 +275,6 @@
 		9C951A0617708E4B00F70377 /* save_btn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = save_btn.png; sourceTree = "<group>"; };
 		9C951A0C1770983500F70377 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		9C951A1017709A3900F70377 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
-		9C951A1617709B7F00F70377 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Icon.png; path = ../Icon.png; sourceTree = "<group>"; };
-		9C951A1817709B8200F70377 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon@2x.png"; path = "../Icon@2x.png"; sourceTree = "<group>"; };
 		9C951A1A1770B19B00F70377 /* welcome@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "welcome@2x.png"; sourceTree = "<group>"; };
 		9C951A1C1770B1CD00F70377 /* welcome.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = welcome.png; sourceTree = "<group>"; };
 		9C951A2A17713BD700F70377 /* buy_now_btn_background@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "buy_now_btn_background@2x.png"; sourceTree = "<group>"; };
@@ -394,8 +394,6 @@
 		9C927B7B1762780100570F45 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				9C951A1817709B8200F70377 /* Icon@2x.png */,
-				9C951A1617709B7F00F70377 /* Icon.png */,
 				9C951A1017709A3900F70377 /* Default@2x.png */,
 				9C9519E3176FB0F400F70377 /* Default.png */,
 				9C951A0C1770983500F70377 /* Default-568h@2x.png */,
@@ -463,6 +461,8 @@
 		9C9519D6176F98E600F70377 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				9C08B5E11773952500C7FF75 /* app_icon.png */,
+				9C08B5DF1773951600C7FF75 /* app_icon@2x.png */,
 				9CA5D7431762A9840009098E /* ProviderLogos */,
 				9C08B5AF17725D6500C7FF75 /* list_icon.png */,
 				9C08B5AD17725D4300C7FF75 /* list_icon@2x.png */,
@@ -691,8 +691,6 @@
 				9C951A0717708E4B00F70377 /* save_btn.png in Resources */,
 				9C951A0D1770983500F70377 /* Default-568h@2x.png in Resources */,
 				9C951A1117709A3A00F70377 /* Default@2x.png in Resources */,
-				9C951A1717709B7F00F70377 /* Icon.png in Resources */,
-				9C951A1917709B8400F70377 /* Icon@2x.png in Resources */,
 				9C951A1B1770B19B00F70377 /* welcome@2x.png in Resources */,
 				9C951A1D1770B1CD00F70377 /* welcome.png in Resources */,
 				3454A1F21770F7E0006D8CD5 /* jcrew_logo.png in Resources */,
@@ -722,6 +720,8 @@
 				9C08B5D217735B5D00C7FF75 /* topshop_logo.png in Resources */,
 				9C08B5D417735DCF00C7FF75 /* dupontregistry_logo@2x.png in Resources */,
 				9C08B5D617735DE100C7FF75 /* dupontregistry_logo.png in Resources */,
+				9C08B5E01773951700C7FF75 /* app_icon@2x.png in Resources */,
+				9C08B5E21773952600C7FF75 /* app_icon.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -889,8 +889,8 @@
 		9C927B961762780100570F45 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer: Natalya Murashev (M85RRWYM3S)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Natalya Murashev (M85RRWYM3S)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Natalya Murashev (W6GNU64U6Q)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Natalya Murashev (W6GNU64U6Q)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ShopLater/ShopLater-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = "";
@@ -902,8 +902,8 @@
 					"\"$(SRCROOT)/ShopLater/Library\"",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "4555A98B-309D-4416-9BDB-AE9F9067FA36";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "4555A98B-309D-4416-9BDB-AE9F9067FA36";
+				PROVISIONING_PROFILE = "DBFD050B-4EDE-4301-A192-93CFF09BB506";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "DBFD050B-4EDE-4301-A192-93CFF09BB506";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

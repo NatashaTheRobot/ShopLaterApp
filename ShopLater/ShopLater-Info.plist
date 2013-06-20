@@ -14,10 +14,8 @@
 		<dict>
 			<key>CFBundleIconFiles</key>
 			<array>
-				<string>app_icon_appstore_lowres.png</string>
-				<string>app_icon_appstore_highres.png</string>
-				<string>Icon.png</string>
-				<string>Icon@2x.png</string>
+				<string>app_icon.png</string>
+				<string>app_icon@2x.png</string>
 			</array>
 		</dict>
 	</dict>

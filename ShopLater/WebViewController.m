@@ -64,6 +64,8 @@
     
     [self addLogoToNavigationBar];
     
+    self.trackedViewName = [NSString stringWithFormat:@"WebViewController for Provider: %@", self.provider.name];
+    
 }
 
 - (void)viewDidAppear:(BOOL)animated

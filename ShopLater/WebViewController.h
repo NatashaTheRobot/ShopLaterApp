@@ -6,11 +6,11 @@
 //  Copyright (c) 2013 Natasha Murashev. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "GAITrackedViewController.h"
 #import "Provider.h"
 #import "Product.h"
 
-@interface WebViewController : UIViewController
+@interface WebViewController : GAITrackedViewController
 
 @property (strong, nonatomic) Provider *provider;
 @property (strong, nonatomic) Product *product;

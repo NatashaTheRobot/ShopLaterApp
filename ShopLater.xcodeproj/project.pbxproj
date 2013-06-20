@@ -26,8 +26,6 @@
 		344D78BB1772367E00C2CBF8 /* VictoriassecretParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 344D78BA1772367E00C2CBF8 /* VictoriassecretParser.m */; };
 		344D78BE17723AC100C2CBF8 /* underarmour_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 344D78BC17723AC100C2CBF8 /* underarmour_logo.png */; };
 		344D78BF17723AC100C2CBF8 /* underarmour_logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 344D78BD17723AC100C2CBF8 /* underarmour_logo@2x.png */; };
-		344D78C217723C3C00C2CBF8 /* victoriassecret_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 344D78C017723C3C00C2CBF8 /* victoriassecret_logo.png */; };
-		344D78C317723C3C00C2CBF8 /* victoriassecret_logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 344D78C117723C3C00C2CBF8 /* victoriassecret_logo@2x.png */; };
 		344D78C61772427A00C2CBF8 /* UnderarmourParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 344D78C51772427A00C2CBF8 /* UnderarmourParser.m */; };
 		3454A1EF1770F3ED006D8CD5 /* JcrewParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 3454A1EE1770F3ED006D8CD5 /* JcrewParser.m */; };
 		3454A1F21770F7E0006D8CD5 /* jcrew_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 3454A1F01770F7E0006D8CD5 /* jcrew_logo.png */; };
@@ -59,6 +57,8 @@
 		9C08B5A917723FD800C7FF75 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C08B5A817723FD800C7FF75 /* logo.png */; };
 		9C08B5AE17725D4300C7FF75 /* list_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C08B5AD17725D4300C7FF75 /* list_icon@2x.png */; };
 		9C08B5B017725D6500C7FF75 /* list_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C08B5AF17725D6500C7FF75 /* list_icon.png */; };
+		9C08B5B21772969700C7FF75 /* victoriassecret_logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C08B5B11772969700C7FF75 /* victoriassecret_logo@2x.png */; };
+		9C08B5B4177296B700C7FF75 /* victoriassecret_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C08B5B3177296B700C7FF75 /* victoriassecret_logo.png */; };
 		9C195DB81767588B00183192 /* Price+SLExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C195DB71767588B00183192 /* Price+SLExtensions.m */; };
 		9C195DC417679B4E00183192 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C195DC317679B4D00183192 /* QuartzCore.framework */; };
 		9C195DD71767AE2500183192 /* Product+SLExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C195DD61767AE2500183192 /* Product+SLExtensions.m */; };
@@ -143,8 +143,6 @@
 		344D78BA1772367E00C2CBF8 /* VictoriassecretParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VictoriassecretParser.m; sourceTree = "<group>"; };
 		344D78BC17723AC100C2CBF8 /* underarmour_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = underarmour_logo.png; sourceTree = "<group>"; };
 		344D78BD17723AC100C2CBF8 /* underarmour_logo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "underarmour_logo@2x.png"; sourceTree = "<group>"; };
-		344D78C017723C3C00C2CBF8 /* victoriassecret_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = victoriassecret_logo.png; sourceTree = "<group>"; };
-		344D78C117723C3C00C2CBF8 /* victoriassecret_logo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "victoriassecret_logo@2x.png"; sourceTree = "<group>"; };
 		344D78C41772427A00C2CBF8 /* UnderarmourParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UnderarmourParser.h; sourceTree = "<group>"; };
 		344D78C51772427A00C2CBF8 /* UnderarmourParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UnderarmourParser.m; sourceTree = "<group>"; };
 		3454A1ED1770F3ED006D8CD5 /* JcrewParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JcrewParser.h; sourceTree = "<group>"; };
@@ -186,6 +184,8 @@
 		9C08B5A817723FD800C7FF75 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
 		9C08B5AD17725D4300C7FF75 /* list_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "list_icon@2x.png"; sourceTree = "<group>"; };
 		9C08B5AF17725D6500C7FF75 /* list_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = list_icon.png; sourceTree = "<group>"; };
+		9C08B5B11772969700C7FF75 /* victoriassecret_logo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "victoriassecret_logo@2x.png"; sourceTree = "<group>"; };
+		9C08B5B3177296B700C7FF75 /* victoriassecret_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = victoriassecret_logo.png; sourceTree = "<group>"; };
 		9C195DB61767588B00183192 /* Price+SLExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Price+SLExtensions.h"; sourceTree = "<group>"; };
 		9C195DB71767588B00183192 /* Price+SLExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Price+SLExtensions.m"; sourceTree = "<group>"; };
 		9C195DC317679B4D00183192 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
@@ -409,6 +409,7 @@
 		9C9519D6176F98E600F70377 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				9CA5D7431762A9840009098E /* ProviderLogos */,
 				9C08B5AF17725D6500C7FF75 /* list_icon.png */,
 				9C08B5AD17725D4300C7FF75 /* list_icon@2x.png */,
 				9C08B5A817723FD800C7FF75 /* logo.png */,
@@ -439,7 +440,6 @@
 				9C9519EF177078C900F70377 /* delete_btn@2x.png */,
 				9C226422176BD37B00C3FDD9 /* reveal-icon.png */,
 				9C226423176BD37B00C3FDD9 /* reveal-icon@2x.png */,
-				9CA5D7431762A9840009098E /* ProviderLogos */,
 			);
 			name = Images;
 			sourceTree = "<group>";
@@ -447,8 +447,8 @@
 		9CA5D7431762A9840009098E /* ProviderLogos */ = {
 			isa = PBXGroup;
 			children = (
-				344D78C017723C3C00C2CBF8 /* victoriassecret_logo.png */,
-				344D78C117723C3C00C2CBF8 /* victoriassecret_logo@2x.png */,
+				9C08B5B3177296B700C7FF75 /* victoriassecret_logo.png */,
+				9C08B5B11772969700C7FF75 /* victoriassecret_logo@2x.png */,
 				344D78BC17723AC100C2CBF8 /* underarmour_logo.png */,
 				344D78BD17723AC100C2CBF8 /* underarmour_logo@2x.png */,
 				3454A1F01770F7E0006D8CD5 /* jcrew_logo.png */,
@@ -646,8 +646,6 @@
 				9C08B59D1771F06800C7FF75 /* btn_browser_forward.png in Resources */,
 				344D78BE17723AC100C2CBF8 /* underarmour_logo.png in Resources */,
 				344D78BF17723AC100C2CBF8 /* underarmour_logo@2x.png in Resources */,
-				344D78C217723C3C00C2CBF8 /* victoriassecret_logo.png in Resources */,
-				344D78C317723C3C00C2CBF8 /* victoriassecret_logo@2x.png in Resources */,
 				9C08B5A11772302500C7FF75 /* ic_tag@2x.png in Resources */,
 				9C08B5A31772303800C7FF75 /* ic_tag.png in Resources */,
 				9C08B5A517723C7800C7FF75 /* lululemon_logo@2x.png in Resources */,
@@ -655,6 +653,8 @@
 				9C08B5A917723FD800C7FF75 /* logo.png in Resources */,
 				9C08B5AE17725D4300C7FF75 /* list_icon@2x.png in Resources */,
 				9C08B5B017725D6500C7FF75 /* list_icon.png in Resources */,
+				9C08B5B21772969700C7FF75 /* victoriassecret_logo@2x.png in Resources */,
+				9C08B5B4177296B700C7FF75 /* victoriassecret_logo.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

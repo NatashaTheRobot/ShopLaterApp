@@ -139,7 +139,8 @@
     
     cell.selectedBackgroundView =  customColorView;
     cell.textLabel.textColor = [UIColor blackColor];
-
+    cell.textLabel.font = [UIFont fontWithName:@"HalveticaNeueu" size:14.0];
+    
     return cell;
 }
 

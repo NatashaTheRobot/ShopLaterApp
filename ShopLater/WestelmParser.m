@@ -1,12 +1,12 @@
 //
-//  VictoriassecretParser.m
+//  WestelmParser.m
 //  ShopLater
 //
-//  Created by Reza Fatahi on 6/19/13.
+//  Created by Reza Fatahi on 6/20/13.
 //  Copyright (c) 2013 Natasha Murashev. All rights reserved.
 //
 
-#import "VictoriassecretParser.h"
+#import "WestelmParser.h"
 #import "Parser.h"
 #import "Price.h"
 #import "Image+SLExtensions.h"
@@ -14,7 +14,7 @@
 #import "Constants.h"
 #import "NSString+SLExtensions.h"
 
-@interface VictoriassecretParser ()
+@interface WestelmParser ()
 
 @property (strong, nonatomic) NSString *htmlString;
 @property (strong, nonatomic) CoreDataManager *coreDataManager;
@@ -25,11 +25,11 @@
 
 @end
 
-@implementation VictoriassecretParser
+@implementation WestelmParser
 
 + (instancetype)parserWithProductURLString:(NSString *)productURLString
 {
-    VictoriassecretParser *parser = [[VictoriassecretParser alloc] init];
+    WestelmParser *parser = [[WestelmParser alloc] init];
     parser.mobileURLString = productURLString;
     parser.cleanURLString = productURLString;
     
@@ -49,34 +49,11 @@
 
 - (NSNumber *)priceInDollars
 {
-    NSString* priceHTMLString = [Parser scanString:self.htmlString startTag:@" <p class=\"price\">" endTag:@"</section>"];
-    
     NSString *priceString;
-    if ([priceHTMLString containsString:@"Clearance"]) {
-        priceString = [Parser scanString:priceHTMLString startTag:@"Clearance $" endTag:@"</em>"];
-    } else if ([priceHTMLString containsString:@"Special"]) {
-        priceString = [Parser scanString:priceHTMLString startTag:@"$" endTag:@"or"];
-        if ([priceString containsString:@"</em>"]) {
-            priceString = [Parser scanString:priceHTMLString startTag:@"" endTag:@"</em>"];
-        }
-    } else if ([priceHTMLString containsString:@"Sale"]) {
-        priceString = [Parser scanString:priceHTMLString startTag:@"Sale $" endTag:@"</em>"];
-    } else if ([priceHTMLString containsString:@"price"]) {
-        priceString = [Parser scanString:priceHTMLString startTag:@"price" endTag:@"<br>"];
-    }  else if ([priceHTMLString containsString:@"Print"]) {
-        if ([[priceHTMLString componentsSeparatedByString:@","][0] containsString:@"Solids"]) {
-            priceString = [Parser scanString:priceHTMLString startTag:@"$" endTag:@"<br>"];
-        } else if ([priceHTMLString containsString:@"Print, $"]){
-            priceString = [Parser scanString:priceHTMLString startTag:@"Print, $" endTag:@"</em>"];
-            if ([priceString containsString:@"<br>"]) {
-                priceString = [priceString componentsSeparatedByString:@"<br>"][0];
-            }
-        }
-        else {
-            priceString = [Parser scanString:priceHTMLString startTag:@"$" endTag:@"<br>"];
-        }
+    if ([self.htmlString containsString:@"price-range"]) {
+        priceString = [Parser scanString:self.htmlString startTag:@"<span class=\"price-range\">$" endTag:@" "];
     } else {
-        priceString = [Parser scanString:priceHTMLString startTag:@"$" endTag:@"<br>"];
+        priceString = [Parser scanString:self.htmlString startTag:@"<span class=\"price\">$" endTag:@"</span>"];
     }
     
     return [NSNumber numberWithFloat:[priceString floatValue]];
@@ -105,7 +82,7 @@
     
     if (!self.name) {
         
-        self.name = [Parser scanString:self.htmlString startTag:@"<title>" endTag:@"</title>"];
+        self.name = [Parser scanString:self.htmlString startTag:@"<h1 id=\"product-title\" class=\"fn\">" endTag:@"</h1>"];
     }
     
     return self.name;
@@ -115,10 +92,8 @@
 {
     if (!self.image) {
         
-        NSString *image = [Parser scanString:self.htmlString startTag:@"mainContentOfPage" endTag:@"div class=\"name\""];
+        NSString *image = [Parser scanString:self.htmlString startTag:@"<img alt" endTag:@"height"];
         NSString *urlString = [Parser scanString:image startTag:@"src=\"" endTag:@"\""];
-        urlString = [urlString componentsSeparatedByString:@"-"][1];
-        urlString = [NSString stringWithFormat:@"http://%@", urlString];
         NSURL *urlImage = [NSURL URLWithString:urlString];
         NSString *imageFileName = [Image imageFileNameForURL:urlImage];
         NSDictionary *imageDictionary = [NSDictionary dictionaryWithObjectsAndKeys:imageFileName, @"fileName",
@@ -131,5 +106,6 @@
 }
 
 @end
+
 
 

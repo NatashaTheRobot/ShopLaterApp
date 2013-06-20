@@ -37,7 +37,7 @@
 
 + (NSArray *)providersArray
 {
-    NSMutableArray *providers = [[NSMutableArray alloc] initWithCapacity:14];
+    NSMutableArray *providers = [[NSMutableArray alloc] initWithCapacity:15];
     
     [providers addObject:[self dictionaryWithProviderName:@"toysrus"
                                               identifiers:[Identifier identifiersWithNames:@[@"productId"]]
@@ -94,6 +94,10 @@
     [providers addObject:[self dictionaryWithProviderName:@"westelm"
                                               identifiers:[Identifier identifiersWithNames:@[@"pkey="]]
                                            commercialName:@"West Elm"]];
+    
+    [providers addObject:[self dictionaryWithProviderName:@"topshop"
+                                              identifiers:[Identifier identifiersWithNames:@[@"/ProductDisplay?"]]
+                                           commercialName:@"Top Shop"]];
     
     
     return providers;

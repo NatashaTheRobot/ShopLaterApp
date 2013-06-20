@@ -41,6 +41,9 @@
 		34B576D51773491300FE4F87 /* WestelmParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 34B576D41773491300FE4F87 /* WestelmParser.m */; };
 		34B576D817734C0600FE4F87 /* westelm_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 34B576D617734C0600FE4F87 /* westelm_logo.png */; };
 		34B576D917734C0600FE4F87 /* westelm_logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 34B576D717734C0600FE4F87 /* westelm_logo@2x.png */; };
+		34B576DC1773540300FE4F87 /* topshop_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 34B576DA1773540300FE4F87 /* topshop_logo.png */; };
+		34B576DD1773540300FE4F87 /* topshop_logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 34B576DB1773540300FE4F87 /* topshop_logo@2x.png */; };
+		34B576E01773544A00FE4F87 /* TopshopParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 34B576DF1773544A00FE4F87 /* TopshopParser.m */; };
 		34BE7CB9176F58490005FB14 /* BuybuybabyParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 34BE7CB8176F58490005FB14 /* BuybuybabyParser.m */; };
 		34BE7CBC176F5BCA0005FB14 /* buybuybaby_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 34BE7CBA176F5BCA0005FB14 /* buybuybaby_logo.png */; };
 		34BE7CBD176F5BCA0005FB14 /* buybuybaby_logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 34BE7CBB176F5BCA0005FB14 /* buybuybaby_logo@2x.png */; };
@@ -173,6 +176,10 @@
 		34B576D41773491300FE4F87 /* WestelmParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WestelmParser.m; sourceTree = "<group>"; };
 		34B576D617734C0600FE4F87 /* westelm_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = westelm_logo.png; sourceTree = "<group>"; };
 		34B576D717734C0600FE4F87 /* westelm_logo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "westelm_logo@2x.png"; sourceTree = "<group>"; };
+		34B576DA1773540300FE4F87 /* topshop_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = topshop_logo.png; sourceTree = "<group>"; };
+		34B576DB1773540300FE4F87 /* topshop_logo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "topshop_logo@2x.png"; sourceTree = "<group>"; };
+		34B576DE1773544A00FE4F87 /* TopshopParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TopshopParser.h; sourceTree = "<group>"; };
+		34B576DF1773544A00FE4F87 /* TopshopParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TopshopParser.m; sourceTree = "<group>"; };
 		34BE7CB7176F58490005FB14 /* BuybuybabyParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BuybuybabyParser.h; sourceTree = "<group>"; };
 		34BE7CB8176F58490005FB14 /* BuybuybabyParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BuybuybabyParser.m; sourceTree = "<group>"; };
 		34BE7CBA176F5BCA0005FB14 /* buybuybaby_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = buybuybaby_logo.png; sourceTree = "<group>"; };
@@ -494,6 +501,8 @@
 		9CA5D7431762A9840009098E /* ProviderLogos */ = {
 			isa = PBXGroup;
 			children = (
+				34B576DA1773540300FE4F87 /* topshop_logo.png */,
+				34B576DB1773540300FE4F87 /* topshop_logo@2x.png */,
 				34B576D617734C0600FE4F87 /* westelm_logo.png */,
 				34B576D717734C0600FE4F87 /* westelm_logo@2x.png */,
 				9C08B5B3177296B700C7FF75 /* victoriassecret_logo.png */,
@@ -589,6 +598,8 @@
 				344D78BA1772367E00C2CBF8 /* VictoriassecretParser.m */,
 				34B576D31773491300FE4F87 /* WestelmParser.h */,
 				34B576D41773491300FE4F87 /* WestelmParser.m */,
+				34B576DE1773544A00FE4F87 /* TopshopParser.h */,
+				34B576DF1773544A00FE4F87 /* TopshopParser.m */,
 			);
 			name = Parsers;
 			sourceTree = "<group>";
@@ -709,6 +720,8 @@
 				9C08B5B4177296B700C7FF75 /* victoriassecret_logo.png in Resources */,
 				34B576D817734C0600FE4F87 /* westelm_logo.png in Resources */,
 				34B576D917734C0600FE4F87 /* westelm_logo@2x.png in Resources */,
+				34B576DC1773540300FE4F87 /* topshop_logo.png in Resources */,
+				34B576DD1773540300FE4F87 /* topshop_logo@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -760,6 +773,7 @@
 				9C08B5B71773075600C7FF75 /* ShoppingListNavigationController.m in Sources */,
 				9C08B5BA1773125000C7FF75 /* WebViewNativationController.m in Sources */,
 				34B576D51773491300FE4F87 /* WestelmParser.m in Sources */,
+				34B576E01773544A00FE4F87 /* TopshopParser.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

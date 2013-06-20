@@ -67,6 +67,8 @@
     [self setupShadows];
     
     self.priceSlider.minimumTrackTintColor = [UIColor colorWithRed:180/255.0 green:131/255.0 blue:171/255.0 alpha:1];
+    
+    self.trackedViewName = [NSString stringWithFormat:@"NewProductViewController for product with URL: %@", self.productURLString];
 }
 
 - (void)customizeNavigationBar

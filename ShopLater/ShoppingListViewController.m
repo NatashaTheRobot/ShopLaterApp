@@ -14,7 +14,6 @@
 #import "Product+SLExtensions.h"
 #import "Constants.h"
 #import "Provider+SLExtensions.h"
-#import <QuartzCore/QuartzCore.h>
 #import "WebViewController.h"
 #import "ButtonFactory.h"
 

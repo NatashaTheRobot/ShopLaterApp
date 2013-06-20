@@ -65,7 +65,7 @@
     
     [providers addObject:[self dictionaryWithProviderName:@"dupontregistry"
                                               identifiers:[Identifier identifiersWithNames:@[@"ItemID"]]
-                                           commercialName:@"Dupont Registry"]];
+                                           commercialName:@"duPont Registry"]];
     
     [providers addObject:[self dictionaryWithProviderName:@"buybuybaby"
                                               identifiers:[Identifier identifiersWithNames:@[@"/product/detail."]]
@@ -97,7 +97,7 @@
     
     [providers addObject:[self dictionaryWithProviderName:@"topshop"
                                               identifiers:[Identifier identifiersWithNames:@[@"/ProductDisplay?"]]
-                                           commercialName:@"Top Shop"]];
+                                           commercialName:@"TOPSHOP"]];
     
     
     return providers;

@@ -41,7 +41,7 @@
     
     [providers addObject:[self dictionaryWithProviderName:@"toysrus"
                                               identifiers:[Identifier identifiersWithNames:@[@"productId"]]
-                                           commercialName:@"Toys\"R\"Us"]];
+                                           commercialName:@"Toys \"Я\" Us"]];
     
     [providers addObject:[self dictionaryWithProviderName:@"homedepot"
                                               identifiers:[Identifier identifiersWithNames:@[@"/p/"]]

@@ -82,6 +82,7 @@
 
 - (void)setupScrollViewScrolling
 {
+    self.scrollView.backgroundColor = [UIColor colorWithRed:242/255.0 green:240/255.0 blue:242/255.0 alpha:1];
     if (self.view.frame.size.height >= self.contentView.frame.size.height) {
         self.scrollView.scrollEnabled = NO;
     } else {

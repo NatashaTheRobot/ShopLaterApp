@@ -26,6 +26,9 @@
 @property (weak, nonatomic) IBOutlet UILabel *wishPriceLabel;
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
 @property (weak, nonatomic) IBOutlet UIImageView *logoImageView;
+@property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
+@property (weak, nonatomic) IBOutlet UIView *contentView;
+@property (weak, nonatomic) IBOutlet UIView *productDetailsView;
 
 
 @property (strong, nonatomic) CoreDataManager *coreDataManager;
@@ -48,16 +51,22 @@
 {
     [super viewDidLoad];
     
-    [self.activityIndicator startAnimating];
+    self.productDetailsView.alpha = 0;
     
     [self displayProduct];
+    
+    [self.activityIndicator startAnimating];
     
     [self.slidingViewController setAnchorRightRevealAmount:sMenuAnchorRevealAmount];
     self.slidingViewController.underLeftWidthLayout = ECFullWidth;
     
     [self customizeNavigationBar];
     
-    self.priceSlider.minimumTrackTintColor = [UIColor colorWithRed:119/255.0 green:117/255.0 blue:119/255.0 alpha:1];
+    [self setupScrollViewScrolling];
+    
+    [self setupShadows];
+    
+    self.priceSlider.minimumTrackTintColor = [UIColor colorWithRed:180/255.0 green:131/255.0 blue:171/255.0 alpha:1];
 }
 
 - (void)customizeNavigationBar
@@ -74,6 +83,30 @@
 - (void)goBack
 {
     [self.navigationController popViewControllerAnimated:YES];
+}
+
+- (void)setupScrollViewScrolling
+{
+    self.scrollView.backgroundColor = [UIColor colorWithRed:242/255.0 green:240/255.0 blue:242/255.0 alpha:1];
+    if (self.view.frame.size.height >= self.contentView.frame.size.height) {
+        self.scrollView.scrollEnabled = NO;
+    } else {
+        self.scrollView.contentSize = CGSizeMake(self.contentView.frame.size.width, self.contentView.frame.size.height + 50);
+        self.scrollView.scrollEnabled = YES;
+    }
+}
+
+- (void)setupShadows
+{
+    self.productDetailsView.layer.masksToBounds = NO;
+    
+    self.productDetailsView.layer.borderColor = [[UIColor colorWithRed:80/255.0 green:80/255.0 blue:80/255.0 alpha:0.3] CGColor];
+    self.productDetailsView.layer.borderWidth = 1;
+    self.productDetailsView.layer.cornerRadius = 4;
+    self.productDetailsView.layer.shadowColor = [[UIColor colorWithRed:80/255.0 green:80/255.0 blue:80/255.0 alpha:1] CGColor];
+    self.productDetailsView.layer.shadowOffset = CGSizeMake(2, 2);
+    self.productDetailsView.layer.shadowRadius = 1;
+    self.productDetailsView.layer.shadowOpacity = 0.5;
 }
 
 - (void)displayProduct
@@ -95,7 +128,7 @@
                 NSNumber *priceInDollars = [(Price *)[self.parser.delegate productPrice] dollarAmount];
                 NSString *nameUnformatted = [self.parser.delegate productName];
                 self.productNameLabel.text = [Product formattedName:nameUnformatted];
-                self.currentPriceLabel.text = [NSString stringWithFormat:@"%@",
+                self.currentPriceLabel.text = [NSString stringWithFormat:@"Current Price:  %@",
                                                [Price formattedPriceFromNumber:priceInDollars]];
                 self.priceSlider.maximumValue = [priceInDollars floatValue];
                 self.priceSlider.value = [priceInDollars floatValue] * 0.8;
@@ -113,6 +146,10 @@
                     self.imageView.contentMode = UIViewContentModeScaleAspectFit;
                     [self.activityIndicator stopAnimating];
                     
+                }];
+                
+                [UIView animateWithDuration:0.25 animations:^{
+                    self.productDetailsView.alpha = 1;
                 }];
                 
                 self.navigationItem.rightBarButtonItem.enabled = YES;

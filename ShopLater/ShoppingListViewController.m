@@ -27,7 +27,6 @@
 @property (strong, nonatomic) Product *producttoBuy;
 
 - (void)customizeNavigationBar;
-- (void)revealMenu;
 - (void)fetchProducts;
 - (void)showWelcomeView;
 
@@ -52,7 +51,7 @@
 {
     self.navigationItem.leftBarButtonItem = [ButtonFactory barButtonItemWithImageName:@"menu_btn.png"
                                                                                target:self
-                                                                               action:@selector(revealMenu)];
+                                                                               action:@selector(revealMenu:)];
 }
 
 - (void)fetchProducts
@@ -75,7 +74,7 @@
             double delayInSeconds = 1.0;
             dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
             dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
-                [self revealMenu];
+                [self revealMenu:self];
             });
             
         }
@@ -94,10 +93,14 @@
     [self.view addSubview:welcomeImageView];
 }
 
-- (void)revealMenu
+- (void)revealMenu:(id)sender
 {
-    ((MenuViewController *)self.slidingViewController.underLeftViewController).selectedProvider = nil;
-    [self.slidingViewController anchorTopViewTo:ECRight];
+    if (self.slidingViewController.underLeftShowing) {
+        [self.slidingViewController resetTopView];
+    } else {
+        ((MenuViewController *)self.slidingViewController.underLeftViewController).selectedProvider = nil;
+        [self.slidingViewController anchorTopViewTo:ECRight];
+    }
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender

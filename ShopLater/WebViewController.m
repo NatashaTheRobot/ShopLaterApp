@@ -70,7 +70,9 @@
 
 - (void)viewDidAppear:(BOOL)animated
 {
-    self.navigationItem.rightBarButtonItem.enabled = NO;
+    [UIView animateWithDuration:0.25 animations:^{
+        [self.webView goBack];
+    }];
 }
 
 - (void)viewDidUnload

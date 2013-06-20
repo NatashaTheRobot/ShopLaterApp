@@ -70,9 +70,11 @@
 
 - (void)viewDidAppear:(BOOL)animated
 {
-    [UIView animateWithDuration:0.25 animations:^{
-        [self.webView goBack];
-    }];
+    if ([self.webView canGoBack]) {
+        [UIView animateWithDuration:0.25 animations:^{
+            [self.webView goBack];
+        }];
+    }
 }
 
 - (void)viewDidUnload

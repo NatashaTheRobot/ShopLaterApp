@@ -97,7 +97,7 @@
     
     [providers addObject:[self dictionaryWithProviderName:@"topshop"
                                               identifiers:[Identifier identifiersWithNames:@[@"/ProductDisplay?"]]
-                                           commercialName:@"Top Shop"]];
+                                           commercialName:@"TOPSHOP"]];
     
     
     return providers;

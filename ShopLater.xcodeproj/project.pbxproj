@@ -13,8 +13,6 @@
 		3401B4A9176CE34000DAD80D /* LululemonParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 3401B4A8176CE34000DAD80D /* LululemonParser.m */; };
 		3401B4AC176CEA6000DAD80D /* lululemon_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 3401B4AA176CEA6000DAD80D /* lululemon_logo.png */; };
 		3401B4B0176CEE0100DAD80D /* DupontregistryParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 3401B4AF176CEE0000DAD80D /* DupontregistryParser.m */; };
-		3401B4B3176CEFFD00DAD80D /* dupontregistry_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 3401B4B1176CEFFD00DAD80D /* dupontregistry_logo.png */; };
-		3401B4B4176CEFFD00DAD80D /* dupontregistry_logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3401B4B2176CEFFD00DAD80D /* dupontregistry_logo@2x.png */; };
 		34449EE5176FC2F9000873DC /* SearsParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 34449EE4176FC2F9000873DC /* SearsParser.m */; };
 		34449EF0176FC5DA000873DC /* sears_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 34449EEE176FC5DA000873DC /* sears_logo.png */; };
 		34449EF1176FC5DA000873DC /* sears_logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 34449EEF176FC5DA000873DC /* sears_logo@2x.png */; };
@@ -41,8 +39,6 @@
 		34B576D51773491300FE4F87 /* WestelmParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 34B576D41773491300FE4F87 /* WestelmParser.m */; };
 		34B576D817734C0600FE4F87 /* westelm_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 34B576D617734C0600FE4F87 /* westelm_logo.png */; };
 		34B576D917734C0600FE4F87 /* westelm_logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 34B576D717734C0600FE4F87 /* westelm_logo@2x.png */; };
-		34B576DC1773540300FE4F87 /* topshop_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 34B576DA1773540300FE4F87 /* topshop_logo.png */; };
-		34B576DD1773540300FE4F87 /* topshop_logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 34B576DB1773540300FE4F87 /* topshop_logo@2x.png */; };
 		34B576E01773544A00FE4F87 /* TopshopParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 34B576DF1773544A00FE4F87 /* TopshopParser.m */; };
 		34BE7CB9176F58490005FB14 /* BuybuybabyParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 34BE7CB8176F58490005FB14 /* BuybuybabyParser.m */; };
 		34BE7CBC176F5BCA0005FB14 /* buybuybaby_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 34BE7CBA176F5BCA0005FB14 /* buybuybaby_logo.png */; };
@@ -70,6 +66,10 @@
 		9C08B5C31773476400C7FF75 /* libGoogleAnalytics.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C08B5C11773476400C7FF75 /* libGoogleAnalytics.a */; };
 		9C08B5C41773476400C7FF75 /* libGoogleAnalytics_debug.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C08B5C21773476400C7FF75 /* libGoogleAnalytics_debug.a */; };
 		9C08B5C6177347A500C7FF75 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C08B5C5177347A400C7FF75 /* SystemConfiguration.framework */; };
+		9C08B5D017735B4700C7FF75 /* topshop_logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C08B5CF17735B4600C7FF75 /* topshop_logo@2x.png */; };
+		9C08B5D217735B5D00C7FF75 /* topshop_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C08B5D117735B5D00C7FF75 /* topshop_logo.png */; };
+		9C08B5D417735DCF00C7FF75 /* dupontregistry_logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C08B5D317735DCF00C7FF75 /* dupontregistry_logo@2x.png */; };
+		9C08B5D617735DE100C7FF75 /* dupontregistry_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C08B5D517735DE000C7FF75 /* dupontregistry_logo.png */; };
 		9C195DB81767588B00183192 /* Price+SLExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C195DB71767588B00183192 /* Price+SLExtensions.m */; };
 		9C195DC417679B4E00183192 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C195DC317679B4D00183192 /* QuartzCore.framework */; };
 		9C195DD71767AE2500183192 /* Product+SLExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C195DD61767AE2500183192 /* Product+SLExtensions.m */; };
@@ -136,8 +136,6 @@
 		3401B4AA176CEA6000DAD80D /* lululemon_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lululemon_logo.png; sourceTree = "<group>"; };
 		3401B4AE176CEE0000DAD80D /* DupontregistryParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DupontregistryParser.h; sourceTree = "<group>"; };
 		3401B4AF176CEE0000DAD80D /* DupontregistryParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DupontregistryParser.m; sourceTree = "<group>"; };
-		3401B4B1176CEFFD00DAD80D /* dupontregistry_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dupontregistry_logo.png; sourceTree = "<group>"; };
-		3401B4B2176CEFFD00DAD80D /* dupontregistry_logo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dupontregistry_logo@2x.png"; sourceTree = "<group>"; };
 		34449EE3176FC2F9000873DC /* SearsParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearsParser.h; sourceTree = "<group>"; };
 		34449EE4176FC2F9000873DC /* SearsParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearsParser.m; sourceTree = "<group>"; };
 		34449EEE176FC5DA000873DC /* sears_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sears_logo.png; sourceTree = "<group>"; };
@@ -176,8 +174,6 @@
 		34B576D41773491300FE4F87 /* WestelmParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WestelmParser.m; sourceTree = "<group>"; };
 		34B576D617734C0600FE4F87 /* westelm_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = westelm_logo.png; sourceTree = "<group>"; };
 		34B576D717734C0600FE4F87 /* westelm_logo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "westelm_logo@2x.png"; sourceTree = "<group>"; };
-		34B576DA1773540300FE4F87 /* topshop_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = topshop_logo.png; sourceTree = "<group>"; };
-		34B576DB1773540300FE4F87 /* topshop_logo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "topshop_logo@2x.png"; sourceTree = "<group>"; };
 		34B576DE1773544A00FE4F87 /* TopshopParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TopshopParser.h; sourceTree = "<group>"; };
 		34B576DF1773544A00FE4F87 /* TopshopParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TopshopParser.m; sourceTree = "<group>"; };
 		34BE7CB7176F58490005FB14 /* BuybuybabyParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BuybuybabyParser.h; sourceTree = "<group>"; };
@@ -217,6 +213,10 @@
 		9C08B5C11773476400C7FF75 /* libGoogleAnalytics.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libGoogleAnalytics.a; sourceTree = "<group>"; };
 		9C08B5C21773476400C7FF75 /* libGoogleAnalytics_debug.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libGoogleAnalytics_debug.a; sourceTree = "<group>"; };
 		9C08B5C5177347A400C7FF75 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		9C08B5CF17735B4600C7FF75 /* topshop_logo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "topshop_logo@2x.png"; sourceTree = "<group>"; };
+		9C08B5D117735B5D00C7FF75 /* topshop_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = topshop_logo.png; sourceTree = "<group>"; };
+		9C08B5D317735DCF00C7FF75 /* dupontregistry_logo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dupontregistry_logo@2x.png"; sourceTree = "<group>"; };
+		9C08B5D517735DE000C7FF75 /* dupontregistry_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dupontregistry_logo.png; sourceTree = "<group>"; };
 		9C195DB61767588B00183192 /* Price+SLExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Price+SLExtensions.h"; sourceTree = "<group>"; };
 		9C195DB71767588B00183192 /* Price+SLExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Price+SLExtensions.m"; sourceTree = "<group>"; };
 		9C195DC317679B4D00183192 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
@@ -501,8 +501,10 @@
 		9CA5D7431762A9840009098E /* ProviderLogos */ = {
 			isa = PBXGroup;
 			children = (
-				34B576DA1773540300FE4F87 /* topshop_logo.png */,
-				34B576DB1773540300FE4F87 /* topshop_logo@2x.png */,
+				9C08B5D517735DE000C7FF75 /* dupontregistry_logo.png */,
+				9C08B5D317735DCF00C7FF75 /* dupontregistry_logo@2x.png */,
+				9C08B5D117735B5D00C7FF75 /* topshop_logo.png */,
+				9C08B5CF17735B4600C7FF75 /* topshop_logo@2x.png */,
 				34B576D617734C0600FE4F87 /* westelm_logo.png */,
 				34B576D717734C0600FE4F87 /* westelm_logo@2x.png */,
 				9C08B5B3177296B700C7FF75 /* victoriassecret_logo.png */,
@@ -517,8 +519,6 @@
 				34449EEF176FC5DA000873DC /* sears_logo@2x.png */,
 				34BE7CBA176F5BCA0005FB14 /* buybuybaby_logo.png */,
 				34BE7CBB176F5BCA0005FB14 /* buybuybaby_logo@2x.png */,
-				3401B4B1176CEFFD00DAD80D /* dupontregistry_logo.png */,
-				3401B4B2176CEFFD00DAD80D /* dupontregistry_logo@2x.png */,
 				3401B4AA176CEA6000DAD80D /* lululemon_logo.png */,
 				9C08B5A417723C7700C7FF75 /* lululemon_logo@2x.png */,
 				3401B4A3176CDB0500DAD80D /* bedbathbeyond_logo.png */,
@@ -670,8 +670,6 @@
 				3401B4AC176CEA6000DAD80D /* lululemon_logo.png in Resources */,
 				9C22642A176CF0A300C3FDD9 /* macys_logo.png in Resources */,
 				9C22642C176CF0F600C3FDD9 /* macys_logo@2x.png in Resources */,
-				3401B4B3176CEFFD00DAD80D /* dupontregistry_logo.png in Resources */,
-				3401B4B4176CEFFD00DAD80D /* dupontregistry_logo@2x.png in Resources */,
 				34BE7CBC176F5BCA0005FB14 /* buybuybaby_logo.png in Resources */,
 				34BE7CBD176F5BCA0005FB14 /* buybuybaby_logo@2x.png in Resources */,
 				9C9519DA176F990E00F70377 /* delete_btn.png in Resources */,
@@ -720,8 +718,10 @@
 				9C08B5B4177296B700C7FF75 /* victoriassecret_logo.png in Resources */,
 				34B576D817734C0600FE4F87 /* westelm_logo.png in Resources */,
 				34B576D917734C0600FE4F87 /* westelm_logo@2x.png in Resources */,
-				34B576DC1773540300FE4F87 /* topshop_logo.png in Resources */,
-				34B576DD1773540300FE4F87 /* topshop_logo@2x.png in Resources */,
+				9C08B5D017735B4700C7FF75 /* topshop_logo@2x.png in Resources */,
+				9C08B5D217735B5D00C7FF75 /* topshop_logo.png in Resources */,
+				9C08B5D417735DCF00C7FF75 /* dupontregistry_logo@2x.png in Resources */,
+				9C08B5D617735DE100C7FF75 /* dupontregistry_logo.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

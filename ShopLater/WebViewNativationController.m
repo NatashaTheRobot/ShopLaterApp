@@ -31,7 +31,6 @@
     [self.navigationBar setBackgroundImage:[UIImage imageNamed: @"nav_bar.png"]
                              forBarMetrics:UIBarMetricsDefault];
     
-    [self.view addGestureRecognizer:self.slidingViewController.panGesture];
 }
 
 

@@ -64,6 +64,8 @@
     
     [self addLogoToNavigationBar];
     
+    [self.view addGestureRecognizer:self.slidingViewController.panGesture];
+    
 }
 
 - (void)viewDidAppear:(BOOL)animated

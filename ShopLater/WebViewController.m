@@ -64,8 +64,6 @@
     
     [self addLogoToNavigationBar];
     
-    [self.view addGestureRecognizer:self.slidingViewController.panGesture];
-    
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -124,6 +122,7 @@
                                                                          action:@selector(revealMenu:)];
         
         [self.navigationItem setLeftBarButtonItems:@[menuButton] animated:NO];
+        [self.view addGestureRecognizer:self.slidingViewController.panGesture];
     } else {
         UIBarButtonItem *backButton = [ButtonFactory barButtonItemWithImageName:@"back_btn.png"
                                                                          target:self

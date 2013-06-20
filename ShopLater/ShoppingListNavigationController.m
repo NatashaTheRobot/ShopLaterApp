@@ -33,8 +33,6 @@
     [self.slidingViewController setAnchorRightRevealAmount:sMenuAnchorRevealAmount];
     self.slidingViewController.shouldAllowUserInteractionsWhenAnchored = YES;
     
-    [self.view addGestureRecognizer:self.slidingViewController.panGesture];
-    
     [self.navigationBar setBackgroundImage:[UIImage imageNamed: @"nav_bar.png"]
                              forBarMetrics:UIBarMetricsDefault];
 }

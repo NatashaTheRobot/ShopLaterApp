@@ -45,6 +45,8 @@
     self.coreDataManager = [CoreDataManager sharedManager];
     
     [self fetchProducts];
+    
+    [self.view addGestureRecognizer:self.slidingViewController.panGesture];
 }
 
 - (void)customizeNavigationBar

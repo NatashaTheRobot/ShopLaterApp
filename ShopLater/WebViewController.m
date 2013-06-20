@@ -40,7 +40,6 @@
 - (void)loadWebPage;
 - (void)setupToolbarButtons;
 - (void)prepareToSlideToMenu;
-- (void)revealMenu;
 
 @end
 
@@ -63,6 +62,8 @@
     
     [self setupSlidingViewController];
     
+    [self addLogoToNavigationBar];
+    
 }
 
 - (void)viewDidUnload
@@ -70,25 +71,8 @@
     [[NSNotificationCenter defaultCenter] removeObserver:self name:ECSlidingViewUnderLeftWillAppear object:nil];
 }
 
-- (void)viewWillAppear:(BOOL)animated
-{
-    [super viewWillAppear:animated];
-    
-    CALayer *navigationControllerLayer = self.navigationController.view.layer;
-    navigationControllerLayer.shadowOpacity = 0.8f;
-    navigationControllerLayer.shadowRadius = 10.0f;
-    navigationControllerLayer.shadowColor = [[UIColor colorWithRed:80/255.0 green:80/255.0 blue:80/255.0 alpha:1] CGColor];
-    
-    [self addLogoToNavigationBar];
-}
-
 - (void)setupSlidingViewController
 {
-    if (![self.slidingViewController.underLeftViewController isKindOfClass:[MenuViewController class]]) {
-        self.slidingViewController.underLeftViewController  = [self.storyboard instantiateViewControllerWithIdentifier:NSStringFromClass([MenuViewController class])];
-    }
-    
-    [self.view addGestureRecognizer:self.slidingViewController.panGesture];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(prepareToSlideToMenu) name:ECSlidingViewUnderLeftWillAppear object:nil];
 }
 
@@ -104,9 +88,6 @@
 
 - (void)customizeNavigationBar
 {
-    [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed: @"nav_bar.png"]
-                                                  forBarMetrics:UIBarMetricsDefault];
-    
     self.buyLaterButton = [ButtonFactory barButtonItemWithImageName:@"buy_later_btn.png" target:self action:@selector(buyLaterAction)];
     self.navigationItem.rightBarButtonItem = self.buyLaterButton;
     self.navigationItem.rightBarButtonItem.enabled = NO;
@@ -133,7 +114,7 @@
     if (self.fromMenu) {
         UIBarButtonItem *menuButton = [ButtonFactory barButtonItemWithImageName:@"menu_btn.png"
                                                                                    target:self
-                                                                                   action:@selector(revealMenu)];
+                                                                         action:@selector(revealMenu:)];
         
         [self.navigationItem setLeftBarButtonItems:@[menuButton] animated:NO];
     } else {
@@ -161,10 +142,14 @@
     ((MenuViewController *)self.slidingViewController.underLeftViewController).selectedProvider = self.provider;
 }
 
-- (void)revealMenu
+- (void)revealMenu:(id)sender
 {
-    [self prepareToSlideToMenu];
-    [self.slidingViewController anchorTopViewTo:ECRight];
+    if (self.slidingViewController.underLeftShowing) {
+        [self.slidingViewController resetTopView];
+    } else {
+        [self prepareToSlideToMenu];
+        [self.slidingViewController anchorTopViewTo:ECRight];
+    }
 }
 
 - (void)loadWebPage

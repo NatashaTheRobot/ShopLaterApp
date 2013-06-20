@@ -14,7 +14,6 @@
 #import "Product+SLExtensions.h"
 #import "Constants.h"
 #import "Provider+SLExtensions.h"
-#import <QuartzCore/QuartzCore.h>
 #import "WebViewController.h"
 #import "ButtonFactory.h"
 
@@ -28,8 +27,6 @@
 @property (strong, nonatomic) Product *producttoBuy;
 
 - (void)customizeNavigationBar;
-- (void)setupSlidingViewController;
-- (void)revealMenu;
 - (void)fetchProducts;
 - (void)showWelcomeView;
 
@@ -48,30 +45,13 @@
     self.coreDataManager = [CoreDataManager sharedManager];
     
     [self fetchProducts];
-    
-    [self setupSlidingViewController];
 }
 
 - (void)customizeNavigationBar
 {
-    [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed: @"nav_bar.png"]
-                                                  forBarMetrics:UIBarMetricsDefault];
-
     self.navigationItem.leftBarButtonItem = [ButtonFactory barButtonItemWithImageName:@"menu_btn.png"
                                                                                target:self
-                                                                               action:@selector(revealMenu)];
-}
-
-- (void)setupSlidingViewController
-{
-    if (![self.slidingViewController.underLeftViewController isKindOfClass:[MenuViewController class]]) {
-        self.slidingViewController.underLeftViewController  = [self.storyboard instantiateViewControllerWithIdentifier:
-                                                               NSStringFromClass([MenuViewController class])];
-    }
-    ((MenuViewController *)self.slidingViewController.underLeftViewController).selectedProvider = nil;
-    [self.slidingViewController setAnchorRightRevealAmount:sMenuAnchorRevealAmount];
-    self.slidingViewController.shouldAllowUserInteractionsWhenAnchored = YES;
-    [self.view addGestureRecognizer:self.slidingViewController.panGesture];
+                                                                               action:@selector(revealMenu:)];
 }
 
 - (void)fetchProducts
@@ -85,17 +65,6 @@
     self.fetchedResultsController.delegate = self;
 }
 
-- (void)viewWillAppear:(BOOL)animated
-{
-    [super viewWillAppear:animated];
-    
-    CALayer *navigationControllerLayer = self.navigationController.view.layer;
-    navigationControllerLayer.shadowOpacity = 0.8f;
-    navigationControllerLayer.shadowRadius = 10.0f;
-    navigationControllerLayer.shadowColor = [[UIColor colorWithRed:80/255.0 green:80/255.0 blue:80/255.0 alpha:1] CGColor];
-    
-}
-
 - (void)viewDidAppear:(BOOL)animated
 {
     if (self.fetchedResultsController.fetchedObjects.count == 0) {
@@ -105,7 +74,7 @@
             double delayInSeconds = 1.0;
             dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
             dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
-                [self revealMenu];
+                [self revealMenu:self];
             });
             
         }
@@ -124,9 +93,14 @@
     [self.view addSubview:welcomeImageView];
 }
 
-- (void)revealMenu
+- (void)revealMenu:(id)sender
 {
-    [self.slidingViewController anchorTopViewTo:ECRight];
+    if (self.slidingViewController.underLeftShowing) {
+        [self.slidingViewController resetTopView];
+    } else {
+        ((MenuViewController *)self.slidingViewController.underLeftViewController).selectedProvider = nil;
+        [self.slidingViewController anchorTopViewTo:ECRight];
+    }
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender

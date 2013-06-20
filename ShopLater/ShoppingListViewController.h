@@ -11,4 +11,6 @@
 
 @interface ShoppingListViewController : UICollectionViewController <ProductDelegate>
 
+- (void)revealMenu:(id)sender;
+
 @end

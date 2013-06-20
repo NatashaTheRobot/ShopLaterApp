@@ -192,21 +192,10 @@
     self.product.prices = [self.product.prices setByAddingObject:wishPrice];
     self.product.priceDifference = [self.product currentWishPriceDifference];
     
+    [self.navigationController popToRootViewControllerAnimated:YES];
+    
     [self.coreDataManager saveDataInManagedContextUsingBlock:^(BOOL saved, NSError *error) {
-        if (saved) {
-            UINavigationController *productListNavigationController = [self.storyboard instantiateViewControllerWithIdentifier:@"first"];
-            
-            [self.slidingViewController resetTopViewWithAnimations:nil onComplete:^{
-                CGRect frame = self.slidingViewController.topViewController.view.frame;
-                self.slidingViewController.topViewController = productListNavigationController;
-                self.slidingViewController.topViewController.view.frame = frame;
-                [self.slidingViewController resetTopView];
-                
-            }];
-        } else {
-            NSLog(@"%@", error.description);
-            // show alert view?
-        }
+        nil;
     }];
     
 }

@@ -66,6 +66,11 @@
     
 }
 
+- (void)viewDidAppear:(BOOL)animated
+{
+    self.navigationItem.rightBarButtonItem.enabled = NO;
+}
+
 - (void)viewDidUnload
 {
     [[NSNotificationCenter defaultCenter] removeObserver:self name:ECSlidingViewUnderLeftWillAppear object:nil];

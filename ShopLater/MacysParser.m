@@ -72,13 +72,25 @@
         priceString = [Parser scanString:self.htmlString startTag:@"<!-- PRICE BLOCK: Single Price -->" endTag:@"<br>"];
         priceString = [Parser scanString:priceString startTag:@"$" endTag:@"</"];
         priceString = [priceString stringByReplacingOccurrencesOfString:@"," withString:@""];
-
+        
+    } else if ([self.htmlString containsString:@"<!-- PRICE BLOCK: Is at least 1 sale price --> "]) {
+        
+        priceString = [Parser scanString:self.htmlString startTag:@"<!-- PRICE BLOCK: Is at least 1 sale price --> " endTag:@"</div>"];
+        priceString = [Parser scanString:priceString startTag:@"$" endTag:@"</"];
+        priceString = [priceString stringByReplacingOccurrencesOfString:@"," withString:@""];
+        
+    } else if ([self.htmlString containsString:@"<!-- PRICE BLOCK: bestValue, EDV or your choice -->"]) {
+        
+        priceString = [Parser scanString:self.htmlString startTag:@"<!-- PRICE BLOCK: bestValue, EDV or your choice -->" endTag:@"</div>"];
+        priceString = [Parser scanString:priceString startTag:@"$" endTag:@"</"];
+        priceString = [priceString stringByReplacingOccurrencesOfString:@"," withString:@""];
+        
     } else {
         
         priceString = [Parser scanString:self.htmlString startTag:@"<span>Was" endTag:@"<br>"];
         priceString = [Parser scanString:priceString startTag:@"$" endTag:@"</"];
         priceString = [priceString stringByReplacingOccurrencesOfString:@"," withString:@""];
-
+        
     }
     
     return [NSNumber numberWithFloat:[priceString floatValue]];

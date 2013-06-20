@@ -91,7 +91,8 @@
     if (self.view.frame.size.height >= self.contentView.frame.size.height) {
         self.scrollView.scrollEnabled = NO;
     } else {
-        self.scrollView.contentSize = CGSizeMake(self.contentView.frame.size.width, self.contentView.frame.size.height + 50);
+        self.scrollView.contentSize = CGSizeMake(self.contentView.frame.size.width, self.contentView.frame.size.height + 57);
+        [self.scrollView setContentOffset:CGPointMake(0, 57) animated:YES];
         self.scrollView.scrollEnabled = YES;
     }
 }

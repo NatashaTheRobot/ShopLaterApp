@@ -60,7 +60,7 @@
                                            commercialName:@"Bed Bath & Beyond"]];
     
     [providers addObject:[self dictionaryWithProviderName:@"lululemon"
-                                              identifiers:[Identifier identifiersWithNames:@[@"skuId"]]
+                                              identifiers:[Identifier identifiersWithNames:@[@"/products/"]]
                                            commercialName:@"Lululemon"]];
     
     [providers addObject:[self dictionaryWithProviderName:@"dupontregistry"

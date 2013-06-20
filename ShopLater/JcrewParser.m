@@ -60,6 +60,8 @@
     
     if ([self.htmlString containsString:@"class=\"selected-color\">select colors"]) {
         priceString = [Parser scanString:self.htmlString startTag:@"<DIV class=\"selected-color\">select colors $" endTag:@"\""];
+    } else if ([self.htmlString containsString:@" full-price  "]) {
+        priceString = [Parser scanString:self.htmlString startTag:@"<SPAN class=\" full-price  \">$" endTag:@"</SPAN>"];
     } else {
         priceString = [Parser scanString:self.htmlString startTag:@"<DIV class=\"spaceTB10 white\">$" endTag:@"</DIV>"];
     }

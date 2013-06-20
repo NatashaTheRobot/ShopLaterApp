@@ -70,6 +70,7 @@
     self.productNameLabel.numberOfLines = 0;
     self.productNameLabel.font = font;
     self.productNameLabel.text = [product formattedName:product.name];
+    self.productNameLabel.textAlignment = NSTextAlignmentCenter;
     
     [self.labelView addSubview:self.productNameLabel];
     

@@ -61,7 +61,7 @@
     
     [self setupScrollViewScrolling];
     
-    self.priceSlider.minimumTrackTintColor = [UIColor colorWithRed:119/255.0 green:117/255.0 blue:119/255.0 alpha:1];
+    self.priceSlider.minimumTrackTintColor = [UIColor colorWithRed:180/255.0 green:131/255.0 blue:171/255.0 alpha:1];
 }
 
 - (void)customizeNavigationBar

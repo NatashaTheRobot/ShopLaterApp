@@ -23,6 +23,16 @@
     self.topViewController = [storyboard instantiateViewControllerWithIdentifier:@"first"];
 }
 
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    
+    if (!self.topViewController) {
+        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
+        self.topViewController = [storyboard instantiateViewControllerWithIdentifier:@"first"];
+    }
+}
+
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation
 {
     return NO;

@@ -70,7 +70,7 @@
 //    } else {
 //        priceString = [Parser scanString:price startTag:@"$" endTag:@"<BR"];
 //    }
-    
+    priceString = [priceString stringByReplacingOccurrencesOfString:@"," withString:@""];
     return [NSNumber numberWithFloat:[priceString floatValue]];
 }
 

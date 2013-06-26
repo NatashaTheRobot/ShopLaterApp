@@ -50,6 +50,7 @@
     NSString *priceString = [Parser scanString:self.htmlString startTag:@"class=\"amount\"" endTag:@"class=\"currency\""];
     
     priceString = [Parser scanString:priceString startTag:@"</span>" endTag:@"</span>"];
+    priceString = [priceString stringByReplacingOccurrencesOfString:@"," withString:@""];
     
     return [NSNumber numberWithFloat:[priceString floatValue]];
 }

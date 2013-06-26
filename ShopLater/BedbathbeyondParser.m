@@ -58,6 +58,7 @@
 - (NSNumber *)priceInDollars
 {
     NSString *priceString = [Parser scanString:self.htmlString startTag:@"name=\"price0\" id=\"price0\" value=\"" endTag:@"\">"];
+    priceString = [priceString stringByReplacingOccurrencesOfString:@"," withString:@""];
     
     return [NSNumber numberWithFloat:[priceString floatValue]];
 }

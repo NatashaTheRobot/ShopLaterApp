@@ -51,6 +51,7 @@
 {
     
     NSString *priceString = [Parser scanString:self.htmlString startTag:@"<span itemprop=\"price\">" endTag:@"</span>"];
+    priceString = [priceString stringByReplacingOccurrencesOfString:@"," withString:@""];
     
     return [NSNumber numberWithFloat:[priceString floatValue]];
 }

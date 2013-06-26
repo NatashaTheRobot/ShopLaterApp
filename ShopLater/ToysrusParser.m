@@ -67,6 +67,7 @@
     endTag = @"</span>";
     
     NSString *priceString = [Parser scanString:priceStringUnformatted startTag:startTag endTag:endTag];
+    priceString = [priceString stringByReplacingOccurrencesOfString:@"," withString:@""];
     
     return [NSNumber numberWithFloat:[priceString floatValue]];
 }

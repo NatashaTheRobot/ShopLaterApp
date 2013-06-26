@@ -79,6 +79,7 @@
         priceString = [Parser scanString:priceHTMLString startTag:@"$" endTag:@"<br>"];
     }
     
+    priceString = [priceString stringByReplacingOccurrencesOfString:@"," withString:@""];
     return [NSNumber numberWithFloat:[priceString floatValue]];
 }
 

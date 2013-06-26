@@ -214,6 +214,8 @@
                                                                      attributeName:@"mobileURL" attributeValue:urlString];
     
     BOOL lululemonCategory = [self.provider.name isEqualToString:@"lululemon"]  && [urlString containsString:@"category"];
+    BOOL lululemonProduct = [self.provider.name isEqualToString:@"lululemon"]  && [urlString containsString:@"products"] && [urlString containsString:@""];
+    NSLog(@"url string %@", urlString);
     
     __block BOOL productPage = YES;
     
@@ -228,6 +230,11 @@
         
         if ([self.activityIndicator isAnimating]) {
             [self.activityIndicator stopAnimating];
+        }
+        
+        if (lululemonProduct) {
+            self.navigationItem.rightBarButtonItem.enabled = YES;
+            return;
         }
         
         if (providerPage && productPage && newProduct) {

@@ -50,12 +50,34 @@
 
 - (NSNumber *)priceInDollars
 {
-    NSString *priceString = [Parser scanString:self.htmlString startTag:@"<li class=\"basePrice\">" endTag:@"</li>"];
-    
-    priceString = [Parser scanString:priceString startTag:@"$" endTag:@""];
+    NSString *priceStringNeedingEdit, *priceString;
+    if ([self.htmlString containsString:@"Seller Price"]) {
+        priceString = [Parser scanString:self.htmlString startTag:@"Seller Price:</span>&nbsp;<span class=\"fnt20 bold\">$" endTag:@"</"];
+    } else {
+        priceStringNeedingEdit = [Parser scanString:self.htmlString startTag:@"<li class=\"basePrice\">" endTag:@"</ul"];
+        
+        NSMutableString *mPriceString = [NSMutableString
+                                           stringWithCapacity:priceStringNeedingEdit.length];
+        
+        NSScanner *scanner = [NSScanner scannerWithString:priceStringNeedingEdit];
+        NSCharacterSet *numbers = [NSCharacterSet
+                                   characterSetWithCharactersInString:@"0123456789."];
+        
+        while ([scanner isAtEnd] == NO) {
+            NSString *buffer;
+            if ([scanner scanCharactersFromSet:numbers intoString:&buffer]) {
+                [mPriceString appendString:buffer];
+                
+            } else {
+                [scanner setScanLocation:([scanner scanLocation] + 1)];
+            }
+        }
+        
+        priceString = mPriceString;
+        
+    }
     
     priceString = [priceString stringByReplacingOccurrencesOfString:@"," withString:@""];
-        
     return [NSNumber numberWithFloat:[priceString floatValue]];
 }
 

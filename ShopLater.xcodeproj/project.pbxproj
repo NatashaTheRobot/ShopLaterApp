@@ -13,6 +13,9 @@
 		3401B4A9176CE34000DAD80D /* LululemonParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 3401B4A8176CE34000DAD80D /* LululemonParser.m */; };
 		3401B4AC176CEA6000DAD80D /* lululemon_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 3401B4AA176CEA6000DAD80D /* lululemon_logo.png */; };
 		3401B4B0176CEE0100DAD80D /* DupontregistryParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 3401B4AF176CEE0000DAD80D /* DupontregistryParser.m */; };
+		34337E2E177C099F00977D6A /* AnthropologieParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 34337E2D177C099F00977D6A /* AnthropologieParser.m */; };
+		34337E31177C0B7800977D6A /* anthropology-logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 34337E2F177C0B7800977D6A /* anthropology-logo.png */; };
+		34337E32177C0B7800977D6A /* anthropologie_logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 34337E30177C0B7800977D6A /* anthropologie_logo@2x.png */; };
 		34449EE5176FC2F9000873DC /* SearsParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 34449EE4176FC2F9000873DC /* SearsParser.m */; };
 		34449EF0176FC5DA000873DC /* sears_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 34449EEE176FC5DA000873DC /* sears_logo.png */; };
 		34449EF1176FC5DA000873DC /* sears_logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 34449EEF176FC5DA000873DC /* sears_logo@2x.png */; };
@@ -136,6 +139,10 @@
 		3401B4AA176CEA6000DAD80D /* lululemon_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lululemon_logo.png; sourceTree = "<group>"; };
 		3401B4AE176CEE0000DAD80D /* DupontregistryParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DupontregistryParser.h; sourceTree = "<group>"; };
 		3401B4AF176CEE0000DAD80D /* DupontregistryParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DupontregistryParser.m; sourceTree = "<group>"; };
+		34337E2C177C099F00977D6A /* AnthropologieParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnthropologieParser.h; sourceTree = "<group>"; };
+		34337E2D177C099F00977D6A /* AnthropologieParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnthropologieParser.m; sourceTree = "<group>"; };
+		34337E2F177C0B7800977D6A /* anthropology-logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "anthropology-logo.png"; sourceTree = "<group>"; };
+		34337E30177C0B7800977D6A /* anthropologie_logo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "anthropologie_logo@2x.png"; sourceTree = "<group>"; };
 		34449EE3176FC2F9000873DC /* SearsParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearsParser.h; sourceTree = "<group>"; };
 		34449EE4176FC2F9000873DC /* SearsParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearsParser.m; sourceTree = "<group>"; };
 		34449EEE176FC5DA000873DC /* sears_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sears_logo.png; sourceTree = "<group>"; };
@@ -501,6 +508,8 @@
 		9CA5D7431762A9840009098E /* ProviderLogos */ = {
 			isa = PBXGroup;
 			children = (
+				34337E2F177C0B7800977D6A /* anthropology-logo.png */,
+				34337E30177C0B7800977D6A /* anthropologie_logo@2x.png */,
 				9C08B5D517735DE000C7FF75 /* dupontregistry_logo.png */,
 				9C08B5D317735DCF00C7FF75 /* dupontregistry_logo@2x.png */,
 				9C08B5D117735B5D00C7FF75 /* topshop_logo.png */,
@@ -600,6 +609,8 @@
 				34B576D41773491300FE4F87 /* WestelmParser.m */,
 				34B576DE1773544A00FE4F87 /* TopshopParser.h */,
 				34B576DF1773544A00FE4F87 /* TopshopParser.m */,
+				34337E2C177C099F00977D6A /* AnthropologieParser.h */,
+				34337E2D177C099F00977D6A /* AnthropologieParser.m */,
 			);
 			name = Parsers;
 			sourceTree = "<group>";
@@ -722,6 +733,8 @@
 				9C08B5D617735DE100C7FF75 /* dupontregistry_logo.png in Resources */,
 				9C08B5E01773951700C7FF75 /* app_icon@2x.png in Resources */,
 				9C08B5E21773952600C7FF75 /* app_icon.png in Resources */,
+				34337E31177C0B7800977D6A /* anthropology-logo.png in Resources */,
+				34337E32177C0B7800977D6A /* anthropologie_logo@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -774,6 +787,7 @@
 				9C08B5BA1773125000C7FF75 /* WebViewNativationController.m in Sources */,
 				34B576D51773491300FE4F87 /* WestelmParser.m in Sources */,
 				34B576E01773544A00FE4F87 /* TopshopParser.m in Sources */,
+				34337E2E177C099F00977D6A /* AnthropologieParser.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

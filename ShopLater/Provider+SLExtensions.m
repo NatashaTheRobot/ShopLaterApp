@@ -99,6 +99,10 @@
                                               identifiers:[Identifier identifiersWithNames:@[@"/ProductDisplay?"]]
                                            commercialName:@"TOPSHOP"]];
     
+    [providers addObject:[self dictionaryWithProviderName:@"net-a-porter"
+                                              identifiers:[Identifier identifiersWithNames:@[@"/product/"]]
+                                           commercialName:@"Net-A-Porter"]];
+    
     
     return providers;
 }

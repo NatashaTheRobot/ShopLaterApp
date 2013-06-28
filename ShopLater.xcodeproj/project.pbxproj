@@ -45,6 +45,9 @@
 		34BE7CBD176F5BCA0005FB14 /* buybuybaby_logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 34BE7CBB176F5BCA0005FB14 /* buybuybaby_logo@2x.png */; };
 		34BE7CC0176F77330005FB14 /* NordstromParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 34BE7CBF176F77330005FB14 /* NordstromParser.m */; };
 		34C4E09E176BB7FF00D1EFD5 /* NSString+SLExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 34C4E09D176BB7FF00D1EFD5 /* NSString+SLExtensions.m */; };
+		34E5FC0A177D146100FDC471 /* net-a-porter_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 34E5FC08177D146100FDC471 /* net-a-porter_logo.png */; };
+		34E5FC0B177D146100FDC471 /* net-a-porter_logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 34E5FC09177D146100FDC471 /* net-a-porter_logo@2x.png */; };
+		34E5FC0E177D14F400FDC471 /* NetaporterParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 34E5FC0D177D14F400FDC471 /* NetaporterParser.m */; };
 		9C08B5891771DB6800C7FF75 /* Product.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C08B5881771DB6800C7FF75 /* Product.m */; };
 		9C08B58B1771E85900C7FF75 /* back_btn@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C08B58A1771E85900C7FF75 /* back_btn@2x.png */; };
 		9C08B58D1771E86400C7FF75 /* back_btn.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C08B58C1771E86400C7FF75 /* back_btn.png */; };
@@ -184,6 +187,10 @@
 		34BE7CBF176F77330005FB14 /* NordstromParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NordstromParser.m; sourceTree = "<group>"; };
 		34C4E09C176BB7FF00D1EFD5 /* NSString+SLExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+SLExtensions.h"; sourceTree = "<group>"; };
 		34C4E09D176BB7FF00D1EFD5 /* NSString+SLExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+SLExtensions.m"; sourceTree = "<group>"; };
+		34E5FC08177D146100FDC471 /* net-a-porter_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "net-a-porter_logo.png"; sourceTree = "<group>"; };
+		34E5FC09177D146100FDC471 /* net-a-porter_logo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "net-a-porter_logo@2x.png"; sourceTree = "<group>"; };
+		34E5FC0C177D14F400FDC471 /* NetaporterParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetaporterParser.h; sourceTree = "<group>"; };
+		34E5FC0D177D14F400FDC471 /* NetaporterParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetaporterParser.m; sourceTree = "<group>"; };
 		9C08B5871771DB6800C7FF75 /* Product.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Product.h; sourceTree = "<group>"; };
 		9C08B5881771DB6800C7FF75 /* Product.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Product.m; sourceTree = "<group>"; };
 		9C08B58A1771E85900C7FF75 /* back_btn@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "back_btn@2x.png"; sourceTree = "<group>"; };
@@ -501,6 +508,8 @@
 		9CA5D7431762A9840009098E /* ProviderLogos */ = {
 			isa = PBXGroup;
 			children = (
+				34E5FC08177D146100FDC471 /* net-a-porter_logo.png */,
+				34E5FC09177D146100FDC471 /* net-a-porter_logo@2x.png */,
 				9C08B5D517735DE000C7FF75 /* dupontregistry_logo.png */,
 				9C08B5D317735DCF00C7FF75 /* dupontregistry_logo@2x.png */,
 				9C08B5D117735B5D00C7FF75 /* topshop_logo.png */,
@@ -600,6 +609,8 @@
 				34B576D41773491300FE4F87 /* WestelmParser.m */,
 				34B576DE1773544A00FE4F87 /* TopshopParser.h */,
 				34B576DF1773544A00FE4F87 /* TopshopParser.m */,
+				34E5FC0C177D14F400FDC471 /* NetaporterParser.h */,
+				34E5FC0D177D14F400FDC471 /* NetaporterParser.m */,
 			);
 			name = Parsers;
 			sourceTree = "<group>";
@@ -722,6 +733,8 @@
 				9C08B5D617735DE100C7FF75 /* dupontregistry_logo.png in Resources */,
 				9C08B5E01773951700C7FF75 /* app_icon@2x.png in Resources */,
 				9C08B5E21773952600C7FF75 /* app_icon.png in Resources */,
+				34E5FC0A177D146100FDC471 /* net-a-porter_logo.png in Resources */,
+				34E5FC0B177D146100FDC471 /* net-a-porter_logo@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -774,6 +787,7 @@
 				9C08B5BA1773125000C7FF75 /* WebViewNativationController.m in Sources */,
 				34B576D51773491300FE4F87 /* WestelmParser.m in Sources */,
 				34B576E01773544A00FE4F87 /* TopshopParser.m in Sources */,
+				34E5FC0E177D14F400FDC471 /* NetaporterParser.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

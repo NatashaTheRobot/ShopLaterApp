@@ -14,7 +14,13 @@
 {
     Parser *parser = [[Parser alloc] init];
 
-    NSString *parserName = [NSString stringWithFormat:@"%@Parser", [providerName capitalizedString]];
+    NSString *parserName;
+    if ([providerName isEqualToString:@"net-a-porter"]) {
+        parserName = @"NetaporterParser";
+    } else {
+        parserName = [NSString stringWithFormat:@"%@Parser", [providerName capitalizedString]];
+    }
+    
     Class providerParser = NSClassFromString(parserName);
 
     parser.delegate = [providerParser parserWithProductURLString:productURLString];

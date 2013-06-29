@@ -29,6 +29,7 @@
 
 + (instancetype)parserWithProductURLString:(NSString *)productURLString
 {
+    NSLog(@"productURL = %@", productURLString);
     NetaporterParser *parser = [[NetaporterParser alloc] init];
     parser.mobileURLString = productURLString;
     parser.cleanURLString = productURLString;
@@ -54,7 +55,14 @@
     
     priceString = [Parser scanString:self.htmlString startTag:@"<div id=\"price\">" endTag:@"div"];
     if ([priceString containsString:@"Now"]) {
-        priceString = [Parser scanString:priceString startTag:@"Now $" endTag:@"</"];
+        if ([priceString containsString:@"$"]) {
+            priceString = [Parser scanString:priceString startTag:@"Now $" endTag:@"</"];
+        } else {
+            priceString = [Parser scanString:priceString startTag:@"Now &pound;" endTag:@"</"];
+        }
+        
+    } else if ([priceString containsString:@"&pound;"]) {
+        priceString = [Parser scanString:priceString startTag:@"&pound;" endTag:@"</"];
     } else {
         priceString = [Parser scanString:priceString startTag:@"$" endTag:@"</"];
     }

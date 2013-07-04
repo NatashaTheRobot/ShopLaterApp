@@ -215,7 +215,10 @@
     
     BOOL lululemonCategory = [self.provider.name isEqualToString:@"lululemon"]  && [urlString containsString:@"category"];
     BOOL lululemonProduct = [self.provider.name isEqualToString:@"lululemon"]  && [urlString containsString:@"products"] && [urlString containsString:@""];
-    NSLog(@"url string %@", urlString);
+    
+    BOOL topshopCategory = [self.provider.name isEqualToString:@"topshop"]  && [urlString containsString:@"category"];
+    BOOL topshopProduct = [self.provider.name isEqualToString:@"topshop"]  && [urlString containsString:@"/product/"];
+    //NSLog(@"url string %@", urlString);
     
     __block BOOL productPage = YES;
     
@@ -232,13 +235,13 @@
             [self.activityIndicator stopAnimating];
         }
         
-        if (lululemonProduct) {
+        if (lululemonProduct || topshopProduct) {
             self.navigationItem.rightBarButtonItem.enabled = YES;
             return;
         }
         
         if (providerPage && productPage && newProduct) {
-            if (lululemonCategory) {
+            if (lululemonCategory || topshopCategory) {
                 self.navigationItem.rightBarButtonItem.enabled = NO;
                 return;
             }

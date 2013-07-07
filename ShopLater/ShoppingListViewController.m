@@ -143,11 +143,7 @@
     
     Product *product = [self.fetchedResultsController objectAtIndexPath:indexPath];
     
-    [cell clearNameLabelView];
-    
-    cell.product = product;
-    
-    cell.delegate = self;
+    [self configureCell:cell atIndexPath:indexPath];
     
     return cell;
 
@@ -173,7 +169,9 @@
 
 - (void)configureCell:(ProductCollectionViewCell *)cell atIndexPath:(NSIndexPath *)indexPath
 {
+    [cell clearNameLabelView];
     cell.product = [self.fetchedResultsController objectAtIndexPath:indexPath];
+    cell.delegate = self;
 }
 
 - (void)controller:(NSFetchedResultsController *)controller

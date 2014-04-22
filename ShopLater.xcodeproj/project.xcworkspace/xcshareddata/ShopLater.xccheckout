@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>853C437B-C890-469A-A4BB-D829E5B0162B</string>
+	<key>IDESourceControlProjectName</key>
+	<string>ShopLater</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>878444AD-30CD-470F-8664-F47073134DFE</key>
+		<string>ssh://github.com/NatashaTheRobot/ShopLaterApp.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>ShopLater.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>878444AD-30CD-470F-8664-F47073134DFE</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>ssh://github.com/NatashaTheRobot/ShopLaterApp.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>878444AD-30CD-470F-8664-F47073134DFE</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>878444AD-30CD-470F-8664-F47073134DFE</string>
+			<key>IDESourceControlWCCName</key>
+			<string>ShopLaterApp</string>
+		</dict>
+	</array>
+</dict>
+</plist>

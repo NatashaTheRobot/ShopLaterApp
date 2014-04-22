@@ -39,10 +39,6 @@
 {
     NSMutableArray *providers = [[NSMutableArray alloc] initWithCapacity:17];
     
-    [providers addObject:[self dictionaryWithProviderName:@"toysrus"
-                                              identifiers:[Identifier identifiersWithNames:@[@"productId"]]
-                                           commercialName:@"Toys \"Я\" Us"]];
-    
     [providers addObject:[self dictionaryWithProviderName:@"homedepot"
                                               identifiers:[Identifier identifiersWithNames:@[@"/p/"]]
                                            commercialName:@"HomeDepot"]];

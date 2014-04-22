@@ -208,6 +208,10 @@
 
 - (void)checkIfProductPage:(NSString *)urlString
 {
+    NSLog(@"urlString = %@", urlString);
+    
+    
+    
     BOOL providerPage = !([urlString rangeOfString:self.provider.name].location == NSNotFound);
     
     BOOL newProduct = [[CoreDataManager sharedManager] uniqueAttributeForClassName:NSStringFromClass([Product class])

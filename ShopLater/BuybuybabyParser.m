@@ -47,10 +47,16 @@
 
 - (NSNumber *)priceInDollars
 {
-    NSString *content = [Parser scanString:self.htmlString startTag:@"<div class=\"detail\">" endTag:@"<div class=\"infor\">"];
-    NSString *priceString = [Parser scanString:content startTag:@"\"price\">$" endTag:@"&"];
-    priceString = [priceString stringByReplacingOccurrencesOfString:@"," withString:@""];
-    return [NSNumber numberWithFloat:[priceString floatValue]];
+    NSString *content = [Parser scanString:self.htmlString startTag:@"<h2 id=\"prodPrice\">" endTag:@"</h2>"];
+    if ([content containsString:@"<span>"]) {
+        content = [Parser scanString:content startTag:@"<span>" endTag:@"</span>"];
+    }
+    content = [content componentsSeparatedByCharactersInSet:[NSCharacterSet whitespaceCharacterSet]][0];
+    content = [content stringByReplacingOccurrencesOfString:@"," withString:@""];
+    content = [content stringByReplacingOccurrencesOfString:@"$" withString:@""];
+    
+    NSLog(@"content price = %@", content);
+    return [NSNumber numberWithFloat:[content floatValue]];
 }
 
 - (Price *)productPrice
@@ -73,8 +79,8 @@
 {
     if (!self.name) {
         
-        NSString *content = [Parser scanString:self.htmlString startTag:@"<div class=\"detail\">" endTag:@"<div class=\"infor\">"];
-        self.name = [Parser scanString:content startTag:@"<h1>" endTag:@"</h1>"];
+        NSString *content = [Parser scanString:self.htmlString startTag:@"<h1>" endTag:@"</h1>"];
+        self.name = content;
     }
     
     return self.name;
@@ -84,15 +90,17 @@
 {
     if (!self.image) {
 
-        NSString *content = [Parser scanString:self.htmlString startTag:@"<div class=\"detail\">" endTag:@"<div class=\"infor\">"];
-        NSString *imageString = [Parser scanString:content startTag:@"src=\"" endTag:@"\""];
+        NSString *content = [Parser scanString:self.htmlString startTag:@"<figure><img src=\"" endTag:@"\" "];
+        content = [NSString stringWithFormat:@"http:%@", content];
         
-        NSURL *urlImage = [NSURL URLWithString:imageString];
+        NSLog(@"content image = %@", content);
+        
+        NSURL *urlImage = [NSURL URLWithString:content];
         
         NSString *imageFileName = [Image imageFileNameForURL:urlImage];
         
         NSDictionary *imageDictionary = [NSDictionary dictionaryWithObjectsAndKeys:imageFileName, @"fileName",
-                                         imageString, @"externalURLString",
+                                         content, @"externalURLString",
                                          nil];
         self.image = [self.coreDataManager createEntityWithClassName:NSStringFromClass([Image class]) attributesDictionary:imageDictionary];
         

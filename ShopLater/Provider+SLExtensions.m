@@ -64,7 +64,7 @@
                                            commercialName:@"duPont Registry"]];
     
     [providers addObject:[self dictionaryWithProviderName:@"buybuybaby"
-                                              identifiers:[Identifier identifiersWithNames:@[@"/product/detail."]]
+                                              identifiers:[Identifier identifiersWithNames:@[@"/product/"]]
                                            commercialName:@"Buy Buy Baby"]];
     
     [providers addObject:[self dictionaryWithProviderName:@"nordstrom"

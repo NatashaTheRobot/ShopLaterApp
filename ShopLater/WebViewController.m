@@ -210,7 +210,7 @@
 {
     NSLog(@"urlString = %@", urlString);
     
-    if ([self.provider.name isEqualToString:@"bedbathbeyond"] && !([urlString rangeOfString:@"product"].location == NSNotFound)) {
+    if (([self.provider.name isEqualToString:@"bedbathbeyond"] || [self.provider.name isEqualToString:@"buybuybaby"]) && !([urlString rangeOfString:@"product"].location == NSNotFound)) {
         dispatch_async(dispatch_get_main_queue(), ^{
             [self.activityIndicator stopAnimating];
             self.navigationItem.rightBarButtonItem.enabled = YES;

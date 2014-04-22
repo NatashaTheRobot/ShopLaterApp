@@ -41,7 +41,7 @@
     
     NSData *data = [NSData dataWithContentsOfURL:[NSURL URLWithString:parser.cleanURLString]];
     
-    parser.htmlString = [[NSString alloc] initWithData:data encoding:NSASCIIStringEncoding];
+    parser.htmlString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
     
     parser.coreDataManager = [CoreDataManager sharedManager];
     
@@ -57,7 +57,19 @@
 
 - (NSNumber *)priceInDollars
 {
-    NSString *priceString = [Parser scanString:self.htmlString startTag:@"name=\"price0\" id=\"price0\" value=\"" endTag:@"\">"];
+    
+    if ([self.htmlString isMemberOfClass:[NSNull class]] || self.htmlString.length == 0) {
+        NSData* responseData = [NSURLConnection sendSynchronousRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:self.mobileURLString]] returningResponse:0 error:nil];
+        self.htmlString = [[NSString alloc] initWithData:responseData encoding:NSUTF8StringEncoding];
+    }
+    
+    
+    
+    NSString *priceString = [Parser scanString:self.htmlString startTag:@"<span>$" endTag:@"</span>"];
+    NSLog(@"priceString = %@", priceString);
+    if ([priceString containsString:@" "]) {
+        priceString = [priceString componentsSeparatedByCharactersInSet:[NSCharacterSet whitespaceCharacterSet]][0];
+    }
     priceString = [priceString stringByReplacingOccurrencesOfString:@"," withString:@""];
     
     return [NSNumber numberWithFloat:[priceString floatValue]];
@@ -83,7 +95,12 @@
 {
     if (!self.name) {
         
-        self.name = [Parser scanString:self.htmlString startTag:@"class=\"producttitle\">" endTag:@"</h1>"];
+        if ([self.htmlString isMemberOfClass:[NSNull class]] || self.htmlString.length == 0) {
+            NSData* responseData = [NSURLConnection sendSynchronousRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:self.mobileURLString]] returningResponse:0 error:nil];
+            self.htmlString = [[NSString alloc] initWithData:responseData encoding:NSUTF8StringEncoding];
+        }
+        
+        self.name = [Parser scanString:self.htmlString startTag:@"<h1>" endTag:@"</h1>"];
     }
     
     return self.name;
@@ -93,11 +110,16 @@
 {
     if (!self.image) {
         
-        NSString *imagePathString = [Parser scanString:self.htmlString startTag:@"ppimgandinfo" endTag:@"</a>"];
+        if ([self.htmlString isMemberOfClass:[NSNull class]] || self.htmlString.length == 0) {
+            NSData* responseData = [NSURLConnection sendSynchronousRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:self.mobileURLString]] returningResponse:0 error:nil];
+            self.htmlString = [[NSString alloc] initWithData:responseData encoding:NSUTF8StringEncoding];
+        }
         
-        imagePathString = [Parser scanString:imagePathString startTag:@"<img src=\"" endTag:@"\""];
+        NSString *imagePathString = [Parser scanString:self.htmlString startTag:@"<figure><img src=\"" endTag:@"\" "];
+                
+        NSString *imageString = [NSString stringWithFormat:@"http:%@", imagePathString];
         
-        NSString *imageString = [NSString stringWithFormat:@"http://www.bedbathandbeyond.com/%@", imagePathString];
+        NSLog(@"imageString = %@", imageString);
         
         NSURL *urlImage = [NSURL URLWithString:imageString];
         

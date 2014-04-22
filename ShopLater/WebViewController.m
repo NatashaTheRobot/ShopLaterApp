@@ -210,7 +210,13 @@
 {
     NSLog(@"urlString = %@", urlString);
     
-    
+    if ([self.provider.name isEqualToString:@"bedbathbeyond"] && !([urlString rangeOfString:@"product"].location == NSNotFound)) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self.activityIndicator stopAnimating];
+            self.navigationItem.rightBarButtonItem.enabled = YES;
+        });
+        return;
+    }
     
     BOOL providerPage = !([urlString rangeOfString:self.provider.name].location == NSNotFound);
     
@@ -264,6 +270,7 @@
     if ([segue.destinationViewController isKindOfClass:[NewProductViewController class]]) {
         NewProductViewController *newProductViewController = segue.destinationViewController;
         newProductViewController.productURLString = self.webView.request.URL.absoluteString;
+        NSLog(@"newProduct.productURL = %@", newProductViewController.productURLString);
         newProductViewController.provider = self.provider;
     }
     

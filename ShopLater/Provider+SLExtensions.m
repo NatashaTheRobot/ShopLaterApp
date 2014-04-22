@@ -52,7 +52,7 @@
                                            commercialName:@"BestBuy"]];
     
     [providers addObject:[self dictionaryWithProviderName:@"bedbathbeyond"
-                                              identifiers:[Identifier identifiersWithNames:@[@"/product/detail."]]
+                                              identifiers:[Identifier identifiersWithNames:@[@"/product/"]]
                                            commercialName:@"Bed Bath & Beyond"]];
     
     [providers addObject:[self dictionaryWithProviderName:@"lululemon"

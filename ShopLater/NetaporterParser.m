@@ -108,9 +108,11 @@
 - (Image *)productImage
 {
     if (!self.image) {
+        NSLog(@"self.html = %@", self.htmlString);
         
-        NSString *image = [Parser scanString:self.htmlString startTag:@"image_src" endTag:@"</"];
-        NSString *urlString= [Parser scanString:image startTag:@"href=\"" endTag:@"\""];
+        NSString *image = [Parser scanString:self.htmlString startTag:@"<link rel=\"image_src\" href=\"" endTag:@"\" "];
+        NSLog(@"image = %@", image);
+        NSString* urlString = [NSString stringWithFormat:@"http:%@", image];
         NSURL *urlImage = [NSURL URLWithString:urlString];
         NSString *imageFileName = [Image imageFileNameForURL:urlImage];
         NSDictionary *imageDictionary = [NSDictionary dictionaryWithObjectsAndKeys:imageFileName, @"fileName",

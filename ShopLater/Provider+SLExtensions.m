@@ -20,8 +20,6 @@
         return [NSString stringWithFormat:@"http://shop.%@.com", providerName];
     } else if ([providerName isEqualToString:@"underarmour"]) {
         return @"http://m.underarmour.com/shop/us/en";
-    } else if ([providerName isEqualToString:@"victoriassecret"]) {
-        return @"http://mobile.victoriassecret.com/";
     } else {
         return [NSString stringWithFormat:@"http://www.%@.com", providerName];
     }
@@ -72,10 +70,6 @@
     [providers addObject:[self dictionaryWithProviderName:@"underarmour"
                                               identifiers:[Identifier identifiersWithNames:@[@"/pid"]]
                                            commercialName:@"Under Armour"]];
-    
-    [providers addObject:[self dictionaryWithProviderName:@"victoriassecret"
-                                              identifiers:[Identifier identifiersWithNames:@[@"ProductID"]]
-                                           commercialName:@"Victoria's Secret"]];
     
     [providers addObject:[self dictionaryWithProviderName:@"westelm"
                                               identifiers:[Identifier identifiersWithNames:@[@"pkey="]]

@@ -20,7 +20,6 @@
 		3447CEBA176B774700BF0490 /* Identifier.m in Sources */ = {isa = PBXBuildFile; fileRef = 3447CEB9176B774700BF0490 /* Identifier.m */; };
 		3447CEC0176B774800BF0490 /* Price.m in Sources */ = {isa = PBXBuildFile; fileRef = 3447CEBF176B774800BF0490 /* Price.m */; };
 		3447CEC6176B774900BF0490 /* Image.m in Sources */ = {isa = PBXBuildFile; fileRef = 3447CEC5176B774900BF0490 /* Image.m */; };
-		344D78BB1772367E00C2CBF8 /* VictoriassecretParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 344D78BA1772367E00C2CBF8 /* VictoriassecretParser.m */; };
 		344D78BE17723AC100C2CBF8 /* underarmour_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 344D78BC17723AC100C2CBF8 /* underarmour_logo.png */; };
 		344D78BF17723AC100C2CBF8 /* underarmour_logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 344D78BD17723AC100C2CBF8 /* underarmour_logo@2x.png */; };
 		344D78C61772427A00C2CBF8 /* UnderarmourParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 344D78C51772427A00C2CBF8 /* UnderarmourParser.m */; };
@@ -61,8 +60,6 @@
 		9C08B5A917723FD800C7FF75 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C08B5A817723FD800C7FF75 /* logo.png */; };
 		9C08B5AE17725D4300C7FF75 /* list_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C08B5AD17725D4300C7FF75 /* list_icon@2x.png */; };
 		9C08B5B017725D6500C7FF75 /* list_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C08B5AF17725D6500C7FF75 /* list_icon.png */; };
-		9C08B5B21772969700C7FF75 /* victoriassecret_logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C08B5B11772969700C7FF75 /* victoriassecret_logo@2x.png */; };
-		9C08B5B4177296B700C7FF75 /* victoriassecret_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C08B5B3177296B700C7FF75 /* victoriassecret_logo.png */; };
 		9C08B5B71773075600C7FF75 /* ShoppingListNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C08B5B61773075600C7FF75 /* ShoppingListNavigationController.m */; };
 		9C08B5BA1773125000C7FF75 /* WebViewNativationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C08B5B91773124F00C7FF75 /* WebViewNativationController.m */; };
 		9C08B5C31773476400C7FF75 /* libGoogleAnalytics.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C08B5C11773476400C7FF75 /* libGoogleAnalytics.a */; };
@@ -143,8 +140,6 @@
 		3447CEBF176B774800BF0490 /* Price.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Price.m; sourceTree = "<group>"; };
 		3447CEC4176B774900BF0490 /* Image.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Image.h; sourceTree = "<group>"; };
 		3447CEC5176B774900BF0490 /* Image.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Image.m; sourceTree = "<group>"; };
-		344D78B91772367E00C2CBF8 /* VictoriassecretParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VictoriassecretParser.h; sourceTree = "<group>"; };
-		344D78BA1772367E00C2CBF8 /* VictoriassecretParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VictoriassecretParser.m; sourceTree = "<group>"; };
 		344D78BC17723AC100C2CBF8 /* underarmour_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = underarmour_logo.png; sourceTree = "<group>"; };
 		344D78BD17723AC100C2CBF8 /* underarmour_logo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "underarmour_logo@2x.png"; sourceTree = "<group>"; };
 		344D78C41772427A00C2CBF8 /* UnderarmourParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UnderarmourParser.h; sourceTree = "<group>"; };
@@ -198,8 +193,6 @@
 		9C08B5A817723FD800C7FF75 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
 		9C08B5AD17725D4300C7FF75 /* list_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "list_icon@2x.png"; sourceTree = "<group>"; };
 		9C08B5AF17725D6500C7FF75 /* list_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = list_icon.png; sourceTree = "<group>"; };
-		9C08B5B11772969700C7FF75 /* victoriassecret_logo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "victoriassecret_logo@2x.png"; sourceTree = "<group>"; };
-		9C08B5B3177296B700C7FF75 /* victoriassecret_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = victoriassecret_logo.png; sourceTree = "<group>"; };
 		9C08B5B51773075600C7FF75 /* ShoppingListNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShoppingListNavigationController.h; sourceTree = "<group>"; };
 		9C08B5B61773075600C7FF75 /* ShoppingListNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShoppingListNavigationController.m; sourceTree = "<group>"; };
 		9C08B5B81773124E00C7FF75 /* WebViewNativationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewNativationController.h; sourceTree = "<group>"; };
@@ -502,8 +495,6 @@
 				9C08B5CF17735B4600C7FF75 /* topshop_logo@2x.png */,
 				34B576D617734C0600FE4F87 /* westelm_logo.png */,
 				34B576D717734C0600FE4F87 /* westelm_logo@2x.png */,
-				9C08B5B3177296B700C7FF75 /* victoriassecret_logo.png */,
-				9C08B5B11772969700C7FF75 /* victoriassecret_logo@2x.png */,
 				344D78BC17723AC100C2CBF8 /* underarmour_logo.png */,
 				344D78BD17723AC100C2CBF8 /* underarmour_logo@2x.png */,
 				3454A1F01770F7E0006D8CD5 /* jcrew_logo.png */,
@@ -579,8 +570,6 @@
 				3454A1EE1770F3ED006D8CD5 /* JcrewParser.m */,
 				344D78C41772427A00C2CBF8 /* UnderarmourParser.h */,
 				344D78C51772427A00C2CBF8 /* UnderarmourParser.m */,
-				344D78B91772367E00C2CBF8 /* VictoriassecretParser.h */,
-				344D78BA1772367E00C2CBF8 /* VictoriassecretParser.m */,
 				34B576D31773491300FE4F87 /* WestelmParser.h */,
 				34B576D41773491300FE4F87 /* WestelmParser.m */,
 				34B576DE1773544A00FE4F87 /* TopshopParser.h */,
@@ -697,8 +686,6 @@
 				9C08B5A917723FD800C7FF75 /* logo.png in Resources */,
 				9C08B5AE17725D4300C7FF75 /* list_icon@2x.png in Resources */,
 				9C08B5B017725D6500C7FF75 /* list_icon.png in Resources */,
-				9C08B5B21772969700C7FF75 /* victoriassecret_logo@2x.png in Resources */,
-				9C08B5B4177296B700C7FF75 /* victoriassecret_logo.png in Resources */,
 				34B576D817734C0600FE4F87 /* westelm_logo.png in Resources */,
 				34B576D917734C0600FE4F87 /* westelm_logo@2x.png in Resources */,
 				9C08B5D017735B4700C7FF75 /* topshop_logo@2x.png in Resources */,
@@ -752,7 +739,6 @@
 				9C9519FB1770876400F70377 /* ButtonFactory.m in Sources */,
 				3454A1EF1770F3ED006D8CD5 /* JcrewParser.m in Sources */,
 				9C08B5891771DB6800C7FF75 /* Product.m in Sources */,
-				344D78BB1772367E00C2CBF8 /* VictoriassecretParser.m in Sources */,
 				344D78C61772427A00C2CBF8 /* UnderarmourParser.m in Sources */,
 				9C08B5B71773075600C7FF75 /* ShoppingListNavigationController.m in Sources */,
 				9C08B5BA1773125000C7FF75 /* WebViewNativationController.m in Sources */,

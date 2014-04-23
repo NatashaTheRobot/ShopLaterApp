@@ -15,9 +15,6 @@
 		34337E2E177C099F00977D6A /* AnthropologieParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 34337E2D177C099F00977D6A /* AnthropologieParser.m */; };
 		34337E31177C0B7800977D6A /* anthropology-logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 34337E2F177C0B7800977D6A /* anthropology-logo.png */; };
 		34337E32177C0B7800977D6A /* anthropologie_logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 34337E30177C0B7800977D6A /* anthropologie_logo@2x.png */; };
-		34449EE5176FC2F9000873DC /* SearsParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 34449EE4176FC2F9000873DC /* SearsParser.m */; };
-		34449EF0176FC5DA000873DC /* sears_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 34449EEE176FC5DA000873DC /* sears_logo.png */; };
-		34449EF1176FC5DA000873DC /* sears_logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 34449EEF176FC5DA000873DC /* sears_logo@2x.png */; };
 		34449EF4176FCDE8000873DC /* nordstrom_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 34449EF2176FCDE8000873DC /* nordstrom_logo.png */; };
 		34449EF5176FCDE8000873DC /* nordstrom_logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 34449EF3176FCDE8000873DC /* nordstrom_logo@2x.png */; };
 		3447CEBA176B774700BF0490 /* Identifier.m in Sources */ = {isa = PBXBuildFile; fileRef = 3447CEB9176B774700BF0490 /* Identifier.m */; };
@@ -138,10 +135,6 @@
 		34337E2D177C099F00977D6A /* AnthropologieParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnthropologieParser.m; sourceTree = "<group>"; };
 		34337E2F177C0B7800977D6A /* anthropology-logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "anthropology-logo.png"; sourceTree = "<group>"; };
 		34337E30177C0B7800977D6A /* anthropologie_logo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "anthropologie_logo@2x.png"; sourceTree = "<group>"; };
-		34449EE3176FC2F9000873DC /* SearsParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearsParser.h; sourceTree = "<group>"; };
-		34449EE4176FC2F9000873DC /* SearsParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearsParser.m; sourceTree = "<group>"; };
-		34449EEE176FC5DA000873DC /* sears_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sears_logo.png; sourceTree = "<group>"; };
-		34449EEF176FC5DA000873DC /* sears_logo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sears_logo@2x.png"; sourceTree = "<group>"; };
 		34449EF2176FCDE8000873DC /* nordstrom_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nordstrom_logo.png; sourceTree = "<group>"; };
 		34449EF3176FCDE8000873DC /* nordstrom_logo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "nordstrom_logo@2x.png"; sourceTree = "<group>"; };
 		3447CEB8176B774700BF0490 /* Identifier.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Identifier.h; sourceTree = "<group>"; };
@@ -517,8 +510,6 @@
 				3454A1F11770F7E0006D8CD5 /* jcrew_logo@2x.png */,
 				34449EF2176FCDE8000873DC /* nordstrom_logo.png */,
 				34449EF3176FCDE8000873DC /* nordstrom_logo@2x.png */,
-				34449EEE176FC5DA000873DC /* sears_logo.png */,
-				34449EEF176FC5DA000873DC /* sears_logo@2x.png */,
 				34BE7CBA176F5BCA0005FB14 /* buybuybaby_logo.png */,
 				34BE7CBB176F5BCA0005FB14 /* buybuybaby_logo@2x.png */,
 				3401B4AA176CEA6000DAD80D /* lululemon_logo.png */,
@@ -584,8 +575,6 @@
 				34BE7CB8176F58490005FB14 /* BuybuybabyParser.m */,
 				34BE7CBE176F77330005FB14 /* NordstromParser.h */,
 				34BE7CBF176F77330005FB14 /* NordstromParser.m */,
-				34449EE3176FC2F9000873DC /* SearsParser.h */,
-				34449EE4176FC2F9000873DC /* SearsParser.m */,
 				3454A1ED1770F3ED006D8CD5 /* JcrewParser.h */,
 				3454A1EE1770F3ED006D8CD5 /* JcrewParser.m */,
 				344D78C41772427A00C2CBF8 /* UnderarmourParser.h */,
@@ -672,8 +661,6 @@
 				34BE7CBD176F5BCA0005FB14 /* buybuybaby_logo@2x.png in Resources */,
 				9C9519DA176F990E00F70377 /* delete_btn.png in Resources */,
 				9C9519E4176FB0F400F70377 /* Default.png in Resources */,
-				34449EF0176FC5DA000873DC /* sears_logo.png in Resources */,
-				34449EF1176FC5DA000873DC /* sears_logo@2x.png in Resources */,
 				34449EF4176FCDE8000873DC /* nordstrom_logo.png in Resources */,
 				34449EF5176FCDE8000873DC /* nordstrom_logo@2x.png in Resources */,
 				9C9519EB1770775D00F70377 /* price_match@2x.png in Resources */,
@@ -762,7 +749,6 @@
 				34BE7CC0176F77330005FB14 /* NordstromParser.m in Sources */,
 				9C9519DD176F9A1300F70377 /* ShoppingListViewController.m in Sources */,
 				9C9519E0176F9AE800F70377 /* ProductCollectionViewCell.m in Sources */,
-				34449EE5176FC2F9000873DC /* SearsParser.m in Sources */,
 				9C9519FB1770876400F70377 /* ButtonFactory.m in Sources */,
 				3454A1EF1770F3ED006D8CD5 /* JcrewParser.m in Sources */,
 				9C08B5891771DB6800C7FF75 /* Product.m in Sources */,

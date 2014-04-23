@@ -65,10 +65,6 @@
                                               identifiers:[Identifier identifiersWithNames:@[@"/Product/Details/"]]
                                            commercialName:@"Nordstrom"]];
     
-    [providers addObject:[self dictionaryWithProviderName:@"sears"
-                                              identifiers:[Identifier identifiersWithNames:@[@"/productdetails.do?partNumber="]]
-                                           commercialName:@"Sears"]];
-    
     [providers addObject:[self dictionaryWithProviderName:@"jcrew"
                                               identifiers:[Identifier identifiersWithNames:@[@"/PRDOVR"]]
                                            commercialName:@"J.Crew"]];

@@ -56,15 +56,8 @@
 
 - (NSNumber *)priceInDollars
 {
-    NSString *priceString;
-    
-    if ([self.htmlString containsString:@"class=\"selected-color\">select colors"]) {
-        priceString = [Parser scanString:self.htmlString startTag:@"<DIV class=\"selected-color\">select colors $" endTag:@"\""];
-    } else if ([self.htmlString containsString:@" full-price  "]) {
-        priceString = [Parser scanString:self.htmlString startTag:@"<SPAN class=\" full-price  \">$" endTag:@"</SPAN>"];
-    } else {
-        priceString = [Parser scanString:self.htmlString startTag:@"<DIV class=\"spaceTB10 white\">$" endTag:@"</DIV>"];
-    }
+    NSString *priceString = [Parser scanString:self.htmlString startTag:@"lpAddVars('page','ProductValue','" endTag:@"'"];
+    NSLog(@"priceString = %@", priceString);
 //    if ([price containsString:@"now"]) {
 //        priceString = [Parser scanString:price startTag:@"now $" endTag:@"</"];
 //    } else {
@@ -106,24 +99,16 @@
 {
     if (!self.image) {
         
-        NSString *image = [Parser scanString:self.htmlString startTag:@"carousel_img" endTag:@"</div>"];
-        NSString *urlString = [Parser scanString:image startTag:@"src=\"" endTag:@"\""];
-        urlString = [NSString stringWithFormat:@"http://m.jcrew.com%@", urlString];
+        NSString *content = [Parser scanString:self.htmlString startTag:@"class=\"prod-main-img\" src=\"" endTag:@"\""];
         
-        NSData *data2 = [NSData dataWithContentsOfURL:[NSURL URLWithString:urlString]];
+        NSLog(@"content image = %@", content);
         
-        if (data2.length == 0) {
-            urlString = [Parser scanString:self.htmlString  startTag:@"productgalleryPage('" endTag:@"\'"];
-            urlString = [urlString stringByReplacingOccurrencesOfString:@";" withString:@""];
-            urlString = [urlString stringByReplacingOccurrencesOfString:@"amp" withString:@""];
-        }
-        
-        NSURL *urlImage = [NSURL URLWithString:urlString];
+        NSURL *urlImage = [NSURL URLWithString:content];
         
         NSString *imageFileName = [Image imageFileNameForURL:urlImage];
         
         NSDictionary *imageDictionary = [NSDictionary dictionaryWithObjectsAndKeys:imageFileName, @"fileName",
-                                         urlString, @"externalURLString",
+                                         content, @"externalURLString",
                                          nil];
         self.image = [self.coreDataManager createEntityWithClassName:NSStringFromClass([Image class]) attributesDictionary:imageDictionary];
         

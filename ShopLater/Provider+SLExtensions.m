@@ -16,9 +16,7 @@
 
 + (NSString *)urlStringFromProviderName:(NSString *)providerName
 {
-    if ([providerName isEqualToString:@"dupontregistry"]) {
-        return @"http://m.dupontregistry.com/listings.cfm";
-    } else if ([providerName isEqualToString:@"nordstrom"]) {
+    if ([providerName isEqualToString:@"nordstrom"]) {
         return [NSString stringWithFormat:@"http://shop.%@.com", providerName];
     } else if ([providerName isEqualToString:@"underarmour"]) {
         return @"http://m.underarmour.com/shop/us/en";
@@ -58,10 +56,6 @@
     [providers addObject:[self dictionaryWithProviderName:@"lululemon"
                                               identifiers:[Identifier identifiersWithNames:@[@"/products/"]]
                                            commercialName:@"Lululemon"]];
-    
-    [providers addObject:[self dictionaryWithProviderName:@"dupontregistry"
-                                              identifiers:[Identifier identifiersWithNames:@[@"ItemID"]]
-                                           commercialName:@"duPont Registry"]];
     
     [providers addObject:[self dictionaryWithProviderName:@"buybuybaby"
                                               identifiers:[Identifier identifiersWithNames:@[@"/product/"]]

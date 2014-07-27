@@ -26,6 +26,20 @@
 		3454A1EF1770F3ED006D8CD5 /* JcrewParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 3454A1EE1770F3ED006D8CD5 /* JcrewParser.m */; };
 		3454A1F21770F7E0006D8CD5 /* jcrew_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 3454A1F01770F7E0006D8CD5 /* jcrew_logo.png */; };
 		3454A1F31770F7E0006D8CD5 /* jcrew_logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3454A1F11770F7E0006D8CD5 /* jcrew_logo@2x.png */; };
+		34580125197E43A600E86929 /* NotificationsHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 34580124197E43A600E86929 /* NotificationsHelper.m */; };
+		34580128197E4D0B00E86929 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 34580127197E4D0B00E86929 /* User.m */; };
+		3462B9DF192FE66800907AEA /* close.png in Resources */ = {isa = PBXBuildFile; fileRef = 3462B9DD192FE66800907AEA /* close.png */; };
+		3462B9E0192FE66800907AEA /* close@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3462B9DE192FE66800907AEA /* close@2x.png */; };
+		3462B9E3192FE74900907AEA /* facebook-login.png in Resources */ = {isa = PBXBuildFile; fileRef = 3462B9E1192FE74900907AEA /* facebook-login.png */; };
+		3462B9E4192FE74900907AEA /* facebook-login@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3462B9E2192FE74900907AEA /* facebook-login@2x.png */; };
+		3462B9E7192FE96100907AEA /* facebook-register.png in Resources */ = {isa = PBXBuildFile; fileRef = 3462B9E5192FE96100907AEA /* facebook-register.png */; };
+		3462B9E8192FE96100907AEA /* facebook-register@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3462B9E6192FE96100907AEA /* facebook-register@2x.png */; };
+		3462B9EB192FEA9400907AEA /* twitter-login.png in Resources */ = {isa = PBXBuildFile; fileRef = 3462B9E9192FEA9400907AEA /* twitter-login.png */; };
+		3462B9EC192FEA9400907AEA /* twitter-login@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3462B9EA192FEA9400907AEA /* twitter-login@2x.png */; };
+		3462B9EF192FEB8900907AEA /* login.png in Resources */ = {isa = PBXBuildFile; fileRef = 3462B9ED192FEB8900907AEA /* login.png */; };
+		3462B9F0192FEB8900907AEA /* login@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3462B9EE192FEB8900907AEA /* login@2x.png */; };
+		3462B9F3192FEC4E00907AEA /* create-account.png in Resources */ = {isa = PBXBuildFile; fileRef = 3462B9F1192FEC4E00907AEA /* create-account.png */; };
+		3462B9F4192FEC4E00907AEA /* create-account@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3462B9F2192FEC4E00907AEA /* create-account@2x.png */; };
 		346DE78D176B794200090C0E /* Identifier+SLExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 346DE78C176B794200090C0E /* Identifier+SLExtensions.m */; };
 		346DE796176B7F8800090C0E /* HomedepotParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 346DE795176B7F8800090C0E /* HomedepotParser.m */; };
 		346DE799176B822300090C0E /* homedepot_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 346DE797176B822300090C0E /* homedepot_logo.png */; };
@@ -34,6 +48,8 @@
 		346DE7A4176B97C500090C0E /* MacysParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 346DE7A3176B97C500090C0E /* MacysParser.m */; };
 		346DE7A7176BA21600090C0E /* bestbuy_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 346DE7A5176BA21600090C0E /* bestbuy_logo.png */; };
 		346DE7A8176BA21600090C0E /* bestbuy_logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 346DE7A6176BA21600090C0E /* bestbuy_logo@2x.png */; };
+		34B44AFE1984743100C15D7B /* ShowMessageNotificationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34B44AFD1984743100C15D7B /* ShowMessageNotificationViewController.m */; };
+		34B44B01198474E000C15D7B /* ShopLaterAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 34B44B00198474E000C15D7B /* ShopLaterAPI.m */; };
 		34B576D51773491300FE4F87 /* WestelmParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 34B576D41773491300FE4F87 /* WestelmParser.m */; };
 		34B576D817734C0600FE4F87 /* westelm_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 34B576D617734C0600FE4F87 /* westelm_logo.png */; };
 		34B576D917734C0600FE4F87 /* westelm_logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 34B576D717734C0600FE4F87 /* westelm_logo@2x.png */; };
@@ -46,6 +62,11 @@
 		34E5FC0A177D146100FDC471 /* net-a-porter_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 34E5FC08177D146100FDC471 /* net-a-porter_logo.png */; };
 		34E5FC0B177D146100FDC471 /* net-a-porter_logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 34E5FC09177D146100FDC471 /* net-a-porter_logo@2x.png */; };
 		34E5FC0E177D14F400FDC471 /* NetaporterParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 34E5FC0D177D14F400FDC471 /* NetaporterParser.m */; };
+		34FF23CA193000FA00321143 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34FF23C9193000FA00321143 /* Accounts.framework */; };
+		34FF23CC1930015000321143 /* Twitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34FF23CB1930015000321143 /* Twitter.framework */; };
+		34FF23CE19300B3300321143 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34FF23CD19300B3300321143 /* Social.framework */; };
+		34FF23D11930169900321143 /* twitter-register@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 34FF23CF1930169900321143 /* twitter-register@2x.png */; };
+		34FF23D21930169900321143 /* twitter-register.png in Resources */ = {isa = PBXBuildFile; fileRef = 34FF23D01930169900321143 /* twitter-register.png */; };
 		9C08B5891771DB6800C7FF75 /* Product.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C08B5881771DB6800C7FF75 /* Product.m */; };
 		9C08B58B1771E85900C7FF75 /* back_btn@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C08B58A1771E85900C7FF75 /* back_btn@2x.png */; };
 		9C08B58D1771E86400C7FF75 /* back_btn.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C08B58C1771E86400C7FF75 /* back_btn.png */; };
@@ -62,8 +83,6 @@
 		9C08B5B017725D6500C7FF75 /* list_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C08B5AF17725D6500C7FF75 /* list_icon.png */; };
 		9C08B5B71773075600C7FF75 /* ShoppingListNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C08B5B61773075600C7FF75 /* ShoppingListNavigationController.m */; };
 		9C08B5BA1773125000C7FF75 /* WebViewNativationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C08B5B91773124F00C7FF75 /* WebViewNativationController.m */; };
-		9C08B5C31773476400C7FF75 /* libGoogleAnalytics.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C08B5C11773476400C7FF75 /* libGoogleAnalytics.a */; };
-		9C08B5C41773476400C7FF75 /* libGoogleAnalytics_debug.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C08B5C21773476400C7FF75 /* libGoogleAnalytics_debug.a */; };
 		9C08B5C6177347A500C7FF75 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C08B5C5177347A400C7FF75 /* SystemConfiguration.framework */; };
 		9C08B5D017735B4700C7FF75 /* topshop_logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C08B5CF17735B4600C7FF75 /* topshop_logo@2x.png */; };
 		9C08B5D217735B5D00C7FF75 /* topshop_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C08B5D117735B5D00C7FF75 /* topshop_logo.png */; };
@@ -128,6 +147,7 @@
 		3401B4A7176CE34000DAD80D /* LululemonParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LululemonParser.h; sourceTree = "<group>"; };
 		3401B4A8176CE34000DAD80D /* LululemonParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LululemonParser.m; sourceTree = "<group>"; };
 		3401B4AA176CEA6000DAD80D /* lululemon_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lululemon_logo.png; sourceTree = "<group>"; };
+		342055C01970CE2B00B60561 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		34337E2C177C099F00977D6A /* AnthropologieParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnthropologieParser.h; sourceTree = "<group>"; };
 		34337E2D177C099F00977D6A /* AnthropologieParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnthropologieParser.m; sourceTree = "<group>"; };
 		34337E2F177C0B7800977D6A /* anthropology-logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "anthropology-logo.png"; sourceTree = "<group>"; };
@@ -140,6 +160,7 @@
 		3447CEBF176B774800BF0490 /* Price.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Price.m; sourceTree = "<group>"; };
 		3447CEC4176B774900BF0490 /* Image.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Image.h; sourceTree = "<group>"; };
 		3447CEC5176B774900BF0490 /* Image.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Image.m; sourceTree = "<group>"; };
+		344A88771970CC1A009D4209 /* libcommonCrypto.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libcommonCrypto.dylib; path = usr/lib/system/libcommonCrypto.dylib; sourceTree = SDKROOT; };
 		344D78BC17723AC100C2CBF8 /* underarmour_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = underarmour_logo.png; sourceTree = "<group>"; };
 		344D78BD17723AC100C2CBF8 /* underarmour_logo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "underarmour_logo@2x.png"; sourceTree = "<group>"; };
 		344D78C41772427A00C2CBF8 /* UnderarmourParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UnderarmourParser.h; sourceTree = "<group>"; };
@@ -148,6 +169,22 @@
 		3454A1EE1770F3ED006D8CD5 /* JcrewParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JcrewParser.m; sourceTree = "<group>"; };
 		3454A1F01770F7E0006D8CD5 /* jcrew_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = jcrew_logo.png; sourceTree = "<group>"; };
 		3454A1F11770F7E0006D8CD5 /* jcrew_logo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "jcrew_logo@2x.png"; sourceTree = "<group>"; };
+		34580123197E43A600E86929 /* NotificationsHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotificationsHelper.h; sourceTree = "<group>"; };
+		34580124197E43A600E86929 /* NotificationsHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NotificationsHelper.m; sourceTree = "<group>"; };
+		34580126197E4D0B00E86929 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
+		34580127197E4D0B00E86929 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
+		3462B9DD192FE66800907AEA /* close.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = close.png; sourceTree = "<group>"; };
+		3462B9DE192FE66800907AEA /* close@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "close@2x.png"; sourceTree = "<group>"; };
+		3462B9E1192FE74900907AEA /* facebook-login.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "facebook-login.png"; sourceTree = "<group>"; };
+		3462B9E2192FE74900907AEA /* facebook-login@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "facebook-login@2x.png"; sourceTree = "<group>"; };
+		3462B9E5192FE96100907AEA /* facebook-register.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "facebook-register.png"; sourceTree = "<group>"; };
+		3462B9E6192FE96100907AEA /* facebook-register@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "facebook-register@2x.png"; sourceTree = "<group>"; };
+		3462B9E9192FEA9400907AEA /* twitter-login.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "twitter-login.png"; sourceTree = "<group>"; };
+		3462B9EA192FEA9400907AEA /* twitter-login@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "twitter-login@2x.png"; sourceTree = "<group>"; };
+		3462B9ED192FEB8900907AEA /* login.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = login.png; sourceTree = "<group>"; };
+		3462B9EE192FEB8900907AEA /* login@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "login@2x.png"; sourceTree = "<group>"; };
+		3462B9F1192FEC4E00907AEA /* create-account.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "create-account.png"; sourceTree = "<group>"; };
+		3462B9F2192FEC4E00907AEA /* create-account@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "create-account@2x.png"; sourceTree = "<group>"; };
 		346DE78B176B794200090C0E /* Identifier+SLExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Identifier+SLExtensions.h"; sourceTree = "<group>"; };
 		346DE78C176B794200090C0E /* Identifier+SLExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Identifier+SLExtensions.m"; sourceTree = "<group>"; };
 		346DE794176B7F8800090C0E /* HomedepotParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomedepotParser.h; sourceTree = "<group>"; };
@@ -160,6 +197,10 @@
 		346DE7A3176B97C500090C0E /* MacysParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MacysParser.m; sourceTree = "<group>"; };
 		346DE7A5176BA21600090C0E /* bestbuy_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bestbuy_logo.png; sourceTree = "<group>"; };
 		346DE7A6176BA21600090C0E /* bestbuy_logo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bestbuy_logo@2x.png"; sourceTree = "<group>"; };
+		34B44AFC1984743100C15D7B /* ShowMessageNotificationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShowMessageNotificationViewController.h; sourceTree = "<group>"; };
+		34B44AFD1984743100C15D7B /* ShowMessageNotificationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShowMessageNotificationViewController.m; sourceTree = "<group>"; };
+		34B44AFF198474E000C15D7B /* ShopLaterAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShopLaterAPI.h; sourceTree = "<group>"; };
+		34B44B00198474E000C15D7B /* ShopLaterAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShopLaterAPI.m; sourceTree = "<group>"; };
 		34B576D31773491300FE4F87 /* WestelmParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WestelmParser.h; sourceTree = "<group>"; };
 		34B576D41773491300FE4F87 /* WestelmParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WestelmParser.m; sourceTree = "<group>"; };
 		34B576D617734C0600FE4F87 /* westelm_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = westelm_logo.png; sourceTree = "<group>"; };
@@ -178,6 +219,11 @@
 		34E5FC09177D146100FDC471 /* net-a-porter_logo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "net-a-porter_logo@2x.png"; sourceTree = "<group>"; };
 		34E5FC0C177D14F400FDC471 /* NetaporterParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetaporterParser.h; sourceTree = "<group>"; };
 		34E5FC0D177D14F400FDC471 /* NetaporterParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetaporterParser.m; sourceTree = "<group>"; };
+		34FF23C9193000FA00321143 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
+		34FF23CB1930015000321143 /* Twitter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Twitter.framework; path = System/Library/Frameworks/Twitter.framework; sourceTree = SDKROOT; };
+		34FF23CD19300B3300321143 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
+		34FF23CF1930169900321143 /* twitter-register@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "twitter-register@2x.png"; sourceTree = "<group>"; };
+		34FF23D01930169900321143 /* twitter-register.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "twitter-register.png"; sourceTree = "<group>"; };
 		9C08B5871771DB6800C7FF75 /* Product.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Product.h; sourceTree = "<group>"; };
 		9C08B5881771DB6800C7FF75 /* Product.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Product.m; sourceTree = "<group>"; };
 		9C08B58A1771E85900C7FF75 /* back_btn@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "back_btn@2x.png"; sourceTree = "<group>"; };
@@ -197,13 +243,6 @@
 		9C08B5B61773075600C7FF75 /* ShoppingListNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShoppingListNavigationController.m; sourceTree = "<group>"; };
 		9C08B5B81773124E00C7FF75 /* WebViewNativationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewNativationController.h; sourceTree = "<group>"; };
 		9C08B5B91773124F00C7FF75 /* WebViewNativationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewNativationController.m; sourceTree = "<group>"; };
-		9C08B5BC1773476400C7FF75 /* GAI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAI.h; sourceTree = "<group>"; };
-		9C08B5BD1773476400C7FF75 /* GAITrackedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAITrackedViewController.h; sourceTree = "<group>"; };
-		9C08B5BE1773476400C7FF75 /* GAITracker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAITracker.h; sourceTree = "<group>"; };
-		9C08B5BF1773476400C7FF75 /* GAITransaction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAITransaction.h; sourceTree = "<group>"; };
-		9C08B5C01773476400C7FF75 /* GAITransactionItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAITransactionItem.h; sourceTree = "<group>"; };
-		9C08B5C11773476400C7FF75 /* libGoogleAnalytics.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libGoogleAnalytics.a; sourceTree = "<group>"; };
-		9C08B5C21773476400C7FF75 /* libGoogleAnalytics_debug.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libGoogleAnalytics_debug.a; sourceTree = "<group>"; };
 		9C08B5C5177347A400C7FF75 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		9C08B5CF17735B4600C7FF75 /* topshop_logo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "topshop_logo@2x.png"; sourceTree = "<group>"; };
 		9C08B5D117735B5D00C7FF75 /* topshop_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = topshop_logo.png; sourceTree = "<group>"; };
@@ -288,35 +327,21 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				34FF23CE19300B3300321143 /* Social.framework in Frameworks */,
+				34FF23CC1930015000321143 /* Twitter.framework in Frameworks */,
+				34FF23CA193000FA00321143 /* Accounts.framework in Frameworks */,
 				9C08B5C6177347A500C7FF75 /* SystemConfiguration.framework in Frameworks */,
 				9C195DC417679B4E00183192 /* QuartzCore.framework in Frameworks */,
 				9C927B771762780100570F45 /* Foundation.framework in Frameworks */,
 				9C927B9D17627A6200570F45 /* CoreData.framework in Frameworks */,
 				9C927B751762780100570F45 /* UIKit.framework in Frameworks */,
 				9C927B791762780100570F45 /* CoreGraphics.framework in Frameworks */,
-				9C08B5C31773476400C7FF75 /* libGoogleAnalytics.a in Frameworks */,
-				9C08B5C41773476400C7FF75 /* libGoogleAnalytics_debug.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		9C08B5BB1773476400C7FF75 /* GoogleAnalytics */ = {
-			isa = PBXGroup;
-			children = (
-				9C08B5BC1773476400C7FF75 /* GAI.h */,
-				9C08B5BD1773476400C7FF75 /* GAITrackedViewController.h */,
-				9C08B5BE1773476400C7FF75 /* GAITracker.h */,
-				9C08B5BF1773476400C7FF75 /* GAITransaction.h */,
-				9C08B5C01773476400C7FF75 /* GAITransactionItem.h */,
-				9C08B5C11773476400C7FF75 /* libGoogleAnalytics.a */,
-				9C08B5C21773476400C7FF75 /* libGoogleAnalytics_debug.a */,
-			);
-			name = GoogleAnalytics;
-			path = Library;
-			sourceTree = "<group>";
-		};
 		9C22640F176BCCC600C3FDD9 /* ECSlidingViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -348,6 +373,11 @@
 		9C927B731762780100570F45 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				342055C01970CE2B00B60561 /* Security.framework */,
+				344A88771970CC1A009D4209 /* libcommonCrypto.dylib */,
+				34FF23CD19300B3300321143 /* Social.framework */,
+				34FF23CB1930015000321143 /* Twitter.framework */,
+				34FF23C9193000FA00321143 /* Accounts.framework */,
 				9C08B5C5177347A400C7FF75 /* SystemConfiguration.framework */,
 				9C195DC317679B4D00183192 /* QuartzCore.framework */,
 				9C927B9C17627A6200570F45 /* CoreData.framework */,
@@ -363,6 +393,10 @@
 			children = (
 				9C927B831762780100570F45 /* AppDelegate.h */,
 				9C927B841762780100570F45 /* AppDelegate.m */,
+				34B44AFF198474E000C15D7B /* ShopLaterAPI.h */,
+				34B44B00198474E000C15D7B /* ShopLaterAPI.m */,
+				34580123197E43A600E86929 /* NotificationsHelper.h */,
+				34580124197E43A600E86929 /* NotificationsHelper.m */,
 				9C927B8C1762780100570F45 /* MainStoryboard.storyboard */,
 				9CA5D77F1766253A0009098E /* Constants.h */,
 				9C927BA217627D0200570F45 /* ViewControllers */,
@@ -397,6 +431,8 @@
 				9C927B9E17627A9A00570F45 /* ShopLater.xcdatamodeld */,
 				9C927B97176278B800570F45 /* CoreDataManager.h */,
 				9C927B98176278B800570F45 /* CoreDataManager.m */,
+				34580126197E4D0B00E86929 /* User.h */,
+				34580127197E4D0B00E86929 /* User.m */,
 				9C08B5871771DB6800C7FF75 /* Product.h */,
 				9C08B5881771DB6800C7FF75 /* Product.m */,
 				9C226426176C83F100C3FDD9 /* Provider.h */,
@@ -440,6 +476,8 @@
 				9CA5D7551763BFFF0009098E /* WebViewController.m */,
 				9CA5D76A1763E34C0009098E /* NewProductViewController.h */,
 				9CA5D76B1763E34C0009098E /* NewProductViewController.m */,
+				34B44AFC1984743100C15D7B /* ShowMessageNotificationViewController.h */,
+				34B44AFD1984743100C15D7B /* ShowMessageNotificationViewController.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -447,6 +485,20 @@
 		9C9519D6176F98E600F70377 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				3462B9DD192FE66800907AEA /* close.png */,
+				3462B9DE192FE66800907AEA /* close@2x.png */,
+				3462B9E1192FE74900907AEA /* facebook-login.png */,
+				3462B9E2192FE74900907AEA /* facebook-login@2x.png */,
+				3462B9E5192FE96100907AEA /* facebook-register.png */,
+				3462B9E6192FE96100907AEA /* facebook-register@2x.png */,
+				3462B9E9192FEA9400907AEA /* twitter-login.png */,
+				3462B9EA192FEA9400907AEA /* twitter-login@2x.png */,
+				34FF23CF1930169900321143 /* twitter-register@2x.png */,
+				34FF23D01930169900321143 /* twitter-register.png */,
+				3462B9ED192FEB8900907AEA /* login.png */,
+				3462B9EE192FEB8900907AEA /* login@2x.png */,
+				3462B9F1192FEC4E00907AEA /* create-account.png */,
+				3462B9F2192FEC4E00907AEA /* create-account@2x.png */,
 				9C08B5E11773952500C7FF75 /* app_icon.png */,
 				9C08B5DF1773951600C7FF75 /* app_icon@2x.png */,
 				9CA5D7431762A9840009098E /* ProviderLogos */,
@@ -541,7 +593,6 @@
 		9CA5D7571763C9520009098E /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
-				9C08B5BB1773476400C7FF75 /* GoogleAnalytics */,
 				9C22640F176BCCC600C3FDD9 /* ECSlidingViewController */,
 			);
 			name = Libraries;
@@ -634,52 +685,65 @@
 			buildActionMask = 2147483647;
 			files = (
 				9C927B7F1762780100570F45 /* InfoPlist.strings in Resources */,
+				34FF23D11930169900321143 /* twitter-register@2x.png in Resources */,
 				9C927B8E1762780100570F45 /* MainStoryboard.storyboard in Resources */,
 				346DE799176B822300090C0E /* homedepot_logo.png in Resources */,
 				346DE79A176B822300090C0E /* homedepot_log@2x.png in Resources */,
 				346DE7A7176BA21600090C0E /* bestbuy_logo.png in Resources */,
 				346DE7A8176BA21600090C0E /* bestbuy_logo@2x.png in Resources */,
 				9C226424176BD37B00C3FDD9 /* reveal-icon.png in Resources */,
+				3462B9E4192FE74900907AEA /* facebook-login@2x.png in Resources */,
 				9C226425176BD37B00C3FDD9 /* reveal-icon@2x.png in Resources */,
 				3401B4A5176CDB0500DAD80D /* bedbathbeyond_logo.png in Resources */,
 				3401B4A6176CDB0500DAD80D /* bedbathbeyond_logo@2x.png in Resources */,
 				3401B4AC176CEA6000DAD80D /* lululemon_logo.png in Resources */,
 				9C22642A176CF0A300C3FDD9 /* macys_logo.png in Resources */,
+				3462B9EF192FEB8900907AEA /* login.png in Resources */,
 				9C22642C176CF0F600C3FDD9 /* macys_logo@2x.png in Resources */,
 				34BE7CBC176F5BCA0005FB14 /* buybuybaby_logo.png in Resources */,
+				3462B9F4192FEC4E00907AEA /* create-account@2x.png in Resources */,
 				34BE7CBD176F5BCA0005FB14 /* buybuybaby_logo@2x.png in Resources */,
 				9C9519DA176F990E00F70377 /* delete_btn.png in Resources */,
 				9C9519E4176FB0F400F70377 /* Default.png in Resources */,
 				34449EF4176FCDE8000873DC /* nordstrom_logo.png in Resources */,
+				3462B9DF192FE66800907AEA /* close.png in Resources */,
 				34449EF5176FCDE8000873DC /* nordstrom_logo@2x.png in Resources */,
 				9C9519EB1770775D00F70377 /* price_match@2x.png in Resources */,
 				9C9519EC1770775D00F70377 /* price_match.png in Resources */,
 				9C9519F0177078C900F70377 /* delete_btn@2x.png in Resources */,
 				9C9519F21770791900F70377 /* nav_bar@2x.png in Resources */,
+				3462B9F0192FEB8900907AEA /* login@2x.png in Resources */,
 				9C9519F41770793300F70377 /* nav_bar.png in Resources */,
 				9C9519F617707A2400F70377 /* menu_btn.png in Resources */,
 				9C9519F817707A3000F70377 /* menu_btn@2x.png in Resources */,
 				9C951A0117708C7500F70377 /* buy_later_btn.png in Resources */,
 				9C951A0317708C8200F70377 /* buy_later_btn@2x.png in Resources */,
+				3462B9E3192FE74900907AEA /* facebook-login.png in Resources */,
+				3462B9F3192FEC4E00907AEA /* create-account.png in Resources */,
 				9C951A0517708E3E00F70377 /* save_btn@2x.png in Resources */,
 				9C951A0717708E4B00F70377 /* save_btn.png in Resources */,
 				9C951A0D1770983500F70377 /* Default-568h@2x.png in Resources */,
 				9C951A1117709A3A00F70377 /* Default@2x.png in Resources */,
 				9C951A1B1770B19B00F70377 /* welcome@2x.png in Resources */,
 				9C951A1D1770B1CD00F70377 /* welcome.png in Resources */,
+				3462B9E0192FE66800907AEA /* close@2x.png in Resources */,
 				3454A1F21770F7E0006D8CD5 /* jcrew_logo.png in Resources */,
 				3454A1F31770F7E0006D8CD5 /* jcrew_logo@2x.png in Resources */,
 				9C951A2B17713BD700F70377 /* buy_now_btn_background@2x.png in Resources */,
+				3462B9EB192FEA9400907AEA /* twitter-login.png in Resources */,
 				9C951A2D17713C0300F70377 /* buy_now_btn_background.png in Resources */,
 				9C08B58B1771E85900C7FF75 /* back_btn@2x.png in Resources */,
 				9C08B58D1771E86400C7FF75 /* back_btn.png in Resources */,
+				3462B9E7192FE96100907AEA /* facebook-register.png in Resources */,
 				9C08B5961771E8E900C7FF75 /* btn_browser_back.png in Resources */,
 				9C08B5971771E8E900C7FF75 /* btn_browser_back@2x.png in Resources */,
 				9C08B59B1771F05A00C7FF75 /* btn_browser_forward@2x.png in Resources */,
 				9C08B59D1771F06800C7FF75 /* btn_browser_forward.png in Resources */,
 				344D78BE17723AC100C2CBF8 /* underarmour_logo.png in Resources */,
+				3462B9EC192FEA9400907AEA /* twitter-login@2x.png in Resources */,
 				344D78BF17723AC100C2CBF8 /* underarmour_logo@2x.png in Resources */,
 				9C08B5A11772302500C7FF75 /* ic_tag@2x.png in Resources */,
+				3462B9E8192FE96100907AEA /* facebook-register@2x.png in Resources */,
 				9C08B5A31772303800C7FF75 /* ic_tag.png in Resources */,
 				9C08B5A517723C7800C7FF75 /* lululemon_logo@2x.png in Resources */,
 				9C08B5A717723FD000C7FF75 /* logo@2x.png in Resources */,
@@ -691,6 +755,7 @@
 				9C08B5D017735B4700C7FF75 /* topshop_logo@2x.png in Resources */,
 				9C08B5D217735B5D00C7FF75 /* topshop_logo.png in Resources */,
 				9C08B5E01773951700C7FF75 /* app_icon@2x.png in Resources */,
+				34FF23D21930169900321143 /* twitter-register.png in Resources */,
 				9C08B5E21773952600C7FF75 /* app_icon.png in Resources */,
 				34E5FC0A177D146100FDC471 /* net-a-porter_logo.png in Resources */,
 				34E5FC0B177D146100FDC471 /* net-a-porter_logo@2x.png in Resources */,
@@ -714,6 +779,7 @@
 				9CA5D76C1763E34D0009098E /* NewProductViewController.m in Sources */,
 				9CA5D77A1764C9D80009098E /* Image+SLExtensions.m in Sources */,
 				9CB940621766449000DC05D2 /* Provider+SLExtensions.m in Sources */,
+				34580128197E4D0B00E86929 /* User.m in Sources */,
 				9CB9406517665AC300DC05D2 /* Parser.m in Sources */,
 				9C195DB81767588B00183192 /* Price+SLExtensions.m in Sources */,
 				9C195DD71767AE2500183192 /* Product+SLExtensions.m in Sources */,
@@ -724,6 +790,7 @@
 				346DE796176B7F8800090C0E /* HomedepotParser.m in Sources */,
 				346DE79D176B8DEA00090C0E /* BestbuyParser.m in Sources */,
 				346DE7A4176B97C500090C0E /* MacysParser.m in Sources */,
+				34580125197E43A600E86929 /* NotificationsHelper.m in Sources */,
 				34C4E09E176BB7FF00D1EFD5 /* NSString+SLExtensions.m in Sources */,
 				9C226414176BCCC600C3FDD9 /* ECSlidingViewController.m in Sources */,
 				9C226415176BCCC600C3FDD9 /* UIImage+ImageWithUIView.m in Sources */,
@@ -731,7 +798,9 @@
 				9C226421176BD2AF00C3FDD9 /* MenuViewController.m in Sources */,
 				9C226428176C83F100C3FDD9 /* Provider.m in Sources */,
 				3401B4A2176CD83B00DAD80D /* BedbathbeyondParser.m in Sources */,
+				34B44AFE1984743100C15D7B /* ShowMessageNotificationViewController.m in Sources */,
 				3401B4A9176CE34000DAD80D /* LululemonParser.m in Sources */,
+				34B44B01198474E000C15D7B /* ShopLaterAPI.m in Sources */,
 				34BE7CB9176F58490005FB14 /* BuybuybabyParser.m in Sources */,
 				34BE7CC0176F77330005FB14 /* NordstromParser.m in Sources */,
 				9C9519DD176F9A1300F70377 /* ShoppingListViewController.m in Sources */,
@@ -849,7 +918,8 @@
 				INFOPLIST_FILE = "ShopLater/ShopLater-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/ShopLater/Library\"",
+					"\"$(SRCROOT)/ShopLater\"",
+					"$(SDKROOT)/usr/lib/system",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
@@ -871,7 +941,8 @@
 				INFOPLIST_FILE = "ShopLater/ShopLater-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/ShopLater/Library\"",
+					"\"$(SRCROOT)/ShopLater\"",
+					"$(SDKROOT)/usr/lib/system",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";

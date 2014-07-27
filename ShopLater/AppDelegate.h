@@ -8,8 +8,15 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol NotificationsAction <NSObject>
+
+- (void)notificationsToDo:(NSDictionary *)payload;
+
+@end
+
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
+@property (strong, nonatomic) id <NotificationsAction> notificationDelegateAppDelegate;
 
 @end

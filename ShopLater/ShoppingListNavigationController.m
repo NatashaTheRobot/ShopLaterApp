@@ -11,6 +11,7 @@
 #import "ButtonFactory.h"
 #import "MenuViewController.h"
 #import "ECSlidingViewController.h"
+#import "ShowMessageNotificationViewController.h"
 
 @interface ShoppingListNavigationController ()
 
@@ -35,6 +36,21 @@
     
     [self.navigationBar setBackgroundImage:[UIImage imageNamed: @"nav_bar.png"]
                              forBarMetrics:UIBarMetricsDefault];
+}
+
+- (void)notificationsToDo:(NSDictionary *)payload
+{
+    NSString* mime = [payload allKeys][0];
+    NSString* payloadValue = [payload valueForKey:mime];    
+    ShowMessageNotificationViewController* showViewController = [[ShowMessageNotificationViewController alloc] init];
+    showViewController.isWebViewMedia = ([mime isEqualToString:@"text"]) ? NO : YES;
+    if (showViewController.isWebViewMedia) {
+        [showViewController loadWebViewWithPayload:payloadValue];
+    } else {
+        showViewController.textPayload = payloadValue;
+    }
+    
+    [self.navigationController pushViewController:showViewController animated:YES];
 }
 
 @end

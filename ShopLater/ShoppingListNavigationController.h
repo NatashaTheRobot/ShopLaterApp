@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "AppDelegate.h"
 
-@interface ShoppingListNavigationController : UINavigationController
+@interface ShoppingListNavigationController : UINavigationController <NotificationsAction>
 
 @end

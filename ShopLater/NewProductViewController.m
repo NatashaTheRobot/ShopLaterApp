@@ -15,6 +15,7 @@
 #import "Constants.h"
 #import "ECSlidingViewController.h"
 #import "ButtonFactory.h"
+#import "ShopLaterAPI.h"
 
 @interface NewProductViewController ()
 
@@ -68,11 +69,11 @@
     
     self.priceSlider.minimumTrackTintColor = [UIColor colorWithRed:180/255.0 green:131/255.0 blue:171/255.0 alpha:1];
     
-    self.trackedViewName = [NSString stringWithFormat:@"NewProductViewController for product with URL: %@", self.productURLString];
+    //self.trackedViewName = [NSString stringWithFormat:@"NewProductViewController for product with URL: %@", self.productURLString];
 }
 
 - (void)customizeNavigationBar
-{    
+{
     self.navigationItem.leftBarButtonItem = [ButtonFactory barButtonItemWithImageName:@"back_btn.png"
                                                                                target:self
                                                                                action:@selector(goBack)];
@@ -115,7 +116,7 @@
 - (void)displayProduct
 {
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{
-            self.parser = [Parser parserWithProviderName:self.provider.name productURLString:self.productURLString];
+        self.parser = [Parser parserWithProviderName:self.provider.name productURLString:self.productURLString];
         
         dispatch_sync(dispatch_get_main_queue(), ^{
             
@@ -178,7 +179,18 @@
     [self.product addImagesObject:[self.parser.delegate productImage]];
     [self.product addPricesObject:[self.parser.delegate productPrice]];
     
-    
+    // save item to API
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0l), ^{
+        NSArray* users = [[CoreDataManager sharedManager] returnUsers];
+        if (users.count == 0) return;
+        User* user = [users objectAtIndex:0];
+        NSDictionary* itemData = @{@"ogToken":user.identifier, @"provider":self.provider.name, @"itemName": [Product formattedName:[self.parser.delegate productName]], @"itemValue": [(Price *)[self.parser.delegate productPrice] dollarAmount], @"itemPrice": [NSNumber numberWithFloat:self.priceSlider.value], @"url": [self.parser.delegate cleanURLString], @"mobileUrl": [self.parser.delegate mobileURLString]};
+        
+        NSLog(@"%s [Line %d]\n%@", __PRETTY_FUNCTION__, __LINE__, itemData);
+        
+        [[ShopLaterAPI sharedInstance] requestWithData:[NSJSONSerialization dataWithJSONObject:itemData options:0 error:nil] type:@"follow"];
+    });
+
 }
 
 - (void)saveProduct

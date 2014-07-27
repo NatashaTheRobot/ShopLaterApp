@@ -144,4 +144,40 @@ static CoreDataManager *coreDataManager;
     return fetchedResultsController.fetchedObjects.count == 0;
 }
 
+- (BOOL)coreDataHasEntriesForEntityName:(NSString *)entityName {
+    NSFetchRequest *request = [[NSFetchRequest alloc] init];
+    NSEntityDescription *entity = [NSEntityDescription entityForName:entityName inManagedObjectContext:self.managedObjectContext];
+    [request setEntity:entity];
+    [request setFetchLimit:1];
+    NSError *error = nil;
+    NSArray *results = [self.managedObjectContext executeFetchRequest:request error:&error];
+    if (!results) {
+        NSLog(@"error = %@", error);
+        abort();
+    }
+    if ([results count] == 0) {
+        return NO;
+    }
+    return YES;
+}
+
+- (NSArray *)returnUsers
+{
+    // initializing NSFetchRequest
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    
+    //Setting Entity to be Queried
+    NSEntityDescription *entity = [NSEntityDescription entityForName:@"User"
+                                              inManagedObjectContext:self.managedObjectContext];
+    [fetchRequest setEntity:entity];
+    NSError* error;
+    
+    NSArray* userInArray = [self.managedObjectContext executeFetchRequest:fetchRequest error:&error];
+    
+    if (userInArray.count > 0) return [self.managedObjectContext executeFetchRequest:fetchRequest error:&error];
+    
+    return @[];
+
+}
+
 @end

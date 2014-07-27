@@ -6,10 +6,9 @@
 //  Copyright (c) 2013 Natasha Murashev. All rights reserved.
 //
 
-#import "GAITrackedViewController.h"
 #import "Provider.h"
 
-@interface NewProductViewController : GAITrackedViewController
+@interface NewProductViewController : UIViewController
 
 @property (strong, nonatomic) NSString *productURLString;
 @property (strong, nonatomic) Provider *provider;

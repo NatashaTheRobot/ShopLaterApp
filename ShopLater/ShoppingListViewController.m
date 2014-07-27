@@ -16,6 +16,7 @@
 #import "Provider+SLExtensions.h"
 #import "WebViewController.h"
 #import "ButtonFactory.h"
+#import "ShopLaterAPI.h"
 
 @interface ShoppingListViewController () <NSFetchedResultsControllerDelegate, UIAlertViewDelegate>
 
@@ -228,6 +229,16 @@
                                                           otherButtonTitles:nil, nil];
                 [alertView show];
             }
+            
+            // unfollow item on API
+            dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0l), ^{
+                NSArray* users = [[CoreDataManager sharedManager] returnUsers];
+                if (users.count == 0) return;
+                User* user = [users objectAtIndex:0];
+                NSDictionary* unfollowData = @{@"ogToken":user.identifier, @"provider":self.productToDelete.provider.name, @"itemName": [Product formattedName:self.productToDelete.name]};
+                NSLog(@"%s [Line %d]\n%@", __PRETTY_FUNCTION__, __LINE__, unfollowData);
+                [[ShopLaterAPI sharedInstance] requestWithData:[NSJSONSerialization dataWithJSONObject:unfollowData options:0 error:nil] type:@"follow"];
+            });
         }];
     }
 }
